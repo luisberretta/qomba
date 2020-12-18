@@ -39,7 +39,7 @@
             </ul>
             <div [ngSwitch]="paso">
               <app-camiseta *ngSwitchCase="'camiseta'"></app-camiseta>
-              <app-numero *ngSwitchCase="'numero'"></app-numero>
+              <app-numero *ngSwitchCase="'numero'" (click)="confirmarNumero($event)"></app-numero>
               <app-short *ngSwitchCase="'short'"></app-short>
               <app-equipo *ngSwitchCase="'equipo'"></app-equipo>
               <app-checkout *ngSwitchCase="'checkout'"></app-checkout>

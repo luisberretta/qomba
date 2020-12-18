@@ -12,6 +12,7 @@ import { ShortComponent } from './componentes/futbol/short/short.component';
 import { EquipoComponent } from './componentes/futbol/equipo/equipo.component';
 import { CheckoutComponent } from './componentes/futbol/checkout/checkout.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,11 +26,12 @@ import { WizardComponent } from './componentes/futbol/wizard.component';
     CheckoutComponent,
     WizardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

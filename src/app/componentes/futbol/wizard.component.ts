@@ -62,6 +62,9 @@ export class WizardComponent implements OnInit {
   pasoNumero(paso) {
    this.paso = paso;
   }
+  confirmarNumero(eventoNumero){
+    console.log(eventoNumero);
+  }
 
   pasoShort(paso) {
    this.paso = paso;
