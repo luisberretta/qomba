@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import { SVG } from '@svgdotjs/svg.js'
 
 @Component({
   selector: 'app-persona',
