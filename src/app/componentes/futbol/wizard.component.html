@@ -39,14 +39,15 @@
             </ul>
             <div class="paso mt-3" [ngSwitch]="paso">
               <app-camiseta *ngSwitchCase="'camiseta'"></app-camiseta>
-              <app-numero *ngSwitchCase="'numero'" (click)="confirmarNumero($event)"></app-numero>
+              <app-camiseta *ngSwitchCase="'camiseta'" (proximoPaso)="siguiente($event)"></app-camiseta>
+              <app-numero *ngSwitchCase="'numero'"></app-numero>
               <app-short *ngSwitchCase="'short'"></app-short>
               <app-equipo *ngSwitchCase="'equipo'"></app-equipo>
               <app-checkout *ngSwitchCase="'checkout'"></app-checkout>
             </div>
           </div>
           <div class="col-4">
-            <img src="/assets/images/messi.png" height="500">
+            <app-persona></app-persona>
           </div>
         </div>
       </div>
