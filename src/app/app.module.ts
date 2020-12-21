@@ -13,6 +13,9 @@ import { EquipoComponent } from './componentes/futbol/equipo/equipo.component';
 import { CheckoutComponent } from './componentes/futbol/checkout/checkout.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
 import { ColorGithubModule } from 'ngx-color/github';
+import { PersonaComponent } from './componentes/futbol/persona/persona.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {NgxSvgModule} from "ngx-svg";
 
 @NgModule({
   declarations: [
@@ -24,15 +27,17 @@ import { ColorGithubModule } from 'ngx-color/github';
     ShortComponent,
     EquipoComponent,
     CheckoutComponent,
-    WizardComponent
+    WizardComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    ColorGithubModule
+    ColorGithubModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
