@@ -15,6 +15,9 @@ import { WizardComponent } from './componentes/futbol/wizard.component';
 import { ColorGithubModule } from 'ngx-color/github';
 import { PersonaComponent } from './componentes/futbol/persona/persona.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { HomeComponent } from './componentes/home/home.component';
+import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/pagina-no-encontrada.component';
+import {NgxUiLoaderModule} from "ngx-ui-loader";
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     EquipoComponent,
     CheckoutComponent,
     WizardComponent,
-    PersonaComponent
+    PersonaComponent,
+    HomeComponent,
+    PaginaNoEncontradaComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     NgbModule,
     ColorGithubModule,
     ReactiveFormsModule,
+    NgxUiLoaderModule.forRoot({
+      hasProgressBar: false,
+      // bgsType: "",
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
