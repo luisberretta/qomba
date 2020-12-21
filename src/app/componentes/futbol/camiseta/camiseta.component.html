@@ -1,1 +1,48 @@
-<p>camiseta works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-7 col-12">
+    <p>Elegí los colores de cada parte de tu camiseta.</p>
+    <div class="row align-items-center">
+      <div class="col-6 text-center">
+        <img src="/assets/images/rocky01.png">
+      </div>
+      <div class="col-6">
+        <color-github></color-github>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5 col-12">
+    <div class="form-group">
+      <label>Elegí el cuello de tu camiseta</label>
+      <select class="form-control">
+        <option value="" selected>Seleccione</option>
+        <option value="Chomba">Chomba</option>
+        <option value="Escote en V">Escote en V</option>
+        <option value="Escote redondo">Escote redondo</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Agregá un escudo a tu camiseta (opcional)</label>
+      <div class="text-center">
+        <a class="btn btn-secondary" (click)="uploadFile()">Subir escudo</a>
+        <input type="file" class="d-none" #archivoEscudo>
+      </div>
+    </div>
+    <div class="form-group">
+      <select class="form-control">
+        <option value="" selected>Posición</option>
+        <option value="Derecha">Derecha</option>
+        <option value="Izquierda">Izquierda</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select class="form-control">
+        <option value="" selected>Calidad</option>
+        <option value="Bordado">Bordado</option>
+        <option value="Estampado">Estampado</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-4 text-center">
+    <a class="btn btn-naranja btn-block">Siguiente</a>
+  </div>
+</div>

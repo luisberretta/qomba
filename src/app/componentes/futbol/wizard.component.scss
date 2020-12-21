@@ -47,9 +47,20 @@
       display: block;
       text-align: center;
       margin: 0 auto;
+      font-weight: 600;
+      position: relative;
+      &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        top: -2px;
+        left: -2px;
+        background: url("/assets/images/check.svg") no-repeat center;
+      }
     }
     h5 {
-
       font-size: 18px;
     }
   }
@@ -62,4 +73,129 @@
     background-color: white;
     z-index: 0;
   }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 26px;
+    width: 0;
+    height: 3px;
+    background-color: #e74c3c;
+    z-index: 1;
+    transition: width 0.25s ease;
+  }
+  &.camiseta {
+    &:after {
+      width: 10%;
+    }
+    li:nth-child(1) a {
+      background-color: #e74c3c;
+    }
+  }
+  &.short {
+    &:after {
+      width: 30%;
+    }
+    li:nth-child(1) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #e74c3c;
+    }
+  }
+  &.numero {
+    &:after {
+      width: 50%;
+    }
+    li:nth-child(1) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(3) a {
+      background-color: #e74c3c;
+    }
+  }
+  &.equipo {
+    &:after {
+      width: 70%;
+    }
+    li:nth-child(1) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(3) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(4) a {
+      background-color: #e74c3c;
+    }
+  }
+  &.checkout {
+    &:after {
+      width: 100%;
+    }
+    li:nth-child(1) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(3) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(4) a {
+      background-color: #e74c3c;
+      color: transparent;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(5) a {
+      background-color: #e74c3c;
+    }
+  }
+}
+
+.paso {
+  background-color: gray;
+  padding: 10px;
 }

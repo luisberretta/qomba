@@ -12,6 +12,7 @@ import { ShortComponent } from './componentes/futbol/short/short.component';
 import { EquipoComponent } from './componentes/futbol/equipo/equipo.component';
 import { CheckoutComponent } from './componentes/futbol/checkout/checkout.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
+import { ColorGithubModule } from 'ngx-color/github';
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -26,12 +27,12 @@ import {ReactiveFormsModule} from "@angular/forms";
     CheckoutComponent,
     WizardComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgbModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ColorGithubModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

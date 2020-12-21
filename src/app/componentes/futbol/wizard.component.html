@@ -15,18 +15,18 @@
         </div>
         <div class="row">
           <div class="col-8 mt-3">
-            <ul class="indicador-progreso">
+            <ul class="indicador-progreso" [ngClass]="paso">
               <li>
                 <a (click)="pasoCamiseta('camiseta')">1</a>
                 <h5>Camiseta</h5>
               </li>
               <li>
-                <a (click)="pasoNumero('numero')">2</a>
-                <h5>Número</h5>
+                <a (click)="pasoShort('short')">2</a>
+                <h5>Short</h5>
               </li>
               <li>
-                <a (click)="pasoShort('short')">3</a>
-                <h5>Short</h5>
+                <a (click)="pasoNumero('numero')">3</a>
+                <h5>Número</h5>
               </li>
               <li>
                 <a (click)="pasoEquipo('equipo')">4</a>
@@ -37,7 +37,7 @@
                 <h5>Checkout</h5>
               </li>
             </ul>
-            <div [ngSwitch]="paso">
+            <div class="paso mt-3" [ngSwitch]="paso">
               <app-camiseta *ngSwitchCase="'camiseta'"></app-camiseta>
               <app-numero *ngSwitchCase="'numero'" (click)="confirmarNumero($event)"></app-numero>
               <app-short *ngSwitchCase="'short'"></app-short>

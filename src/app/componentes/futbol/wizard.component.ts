@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class WizardComponent implements OnInit {
 
   paso: string = 'camiseta';
+  numeroPaso: number = 1;
 
   // @ViewChild('canvas', { static: true }) canvas: ElementRef<HTMLCanvasElement>;
   image = new Image();
@@ -56,26 +57,39 @@ export class WizardComponent implements OnInit {
   }
 
   pasoCamiseta(paso) {
-    this.paso = paso;
+      this.paso = paso;
+      this.numeroPaso = 1;
   }
 
-  pasoNumero(paso) {
-   this.paso = paso;
+  pasoShort(paso) {
+    if(this.numeroPaso > 2) {
+      this.paso = paso;
+      this.numeroPaso = 2;
+    }
   }
   confirmarNumero(eventoNumero){
     console.log(eventoNumero);
   }
 
-  pasoShort(paso) {
-   this.paso = paso;
+  pasoNumero(paso) {
+    if(this.numeroPaso > 3) {
+      this.paso = paso;
+      this.numeroPaso = 3;
+    }
   }
 
   pasoEquipo(paso) {
-    this.paso = paso;
+    if(this.numeroPaso > 4) {
+      this.paso = paso;
+      this.numeroPaso = 4;
+    }
   }
 
   pasoCheckout(paso) {
-    this.paso = paso;
+    if(this.numeroPaso > 5) {
+      this.paso = paso;
+      this.numeroPaso = 5;
+    }
   }
 
 }
