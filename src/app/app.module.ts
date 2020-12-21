@@ -15,7 +15,6 @@ import { WizardComponent } from './componentes/futbol/wizard.component';
 import { ColorGithubModule } from 'ngx-color/github';
 import { PersonaComponent } from './componentes/futbol/persona/persona.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {NgxSvgModule} from "ngx-svg";
 
 @NgModule({
   declarations: [
