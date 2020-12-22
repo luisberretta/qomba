@@ -41,7 +41,7 @@ export class CamisetaComponent implements OnInit {
 
   siguiente() {
     this.submit = true;
-    if(this.formPasoCamiseta.valid) {
+    if(true) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
   }

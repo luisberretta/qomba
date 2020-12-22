@@ -55,7 +55,7 @@ export class WizardComponent implements OnInit {
   }
 
   siguiente(event) {
-    this.numeroPaso++;
+    this.numeroPaso = 5;
     switch (this.numeroPaso) {
       case 1:
         this.paso = 'camiseta';

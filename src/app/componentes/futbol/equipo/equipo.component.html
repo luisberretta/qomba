@@ -1,1 +1,40 @@
-<p>equipo works!</p>
+<div class="form-group">
+  <form [formGroup]="formEquipo">
+    <label>¿Cuántos son en tu equipo?</label>
+    <input class="input-group" type="number" name="cantidadEquipo" id="cantidadEquipo"
+           formControlName="cantidadEquipo"
+           (change)="onValueChanges()">
+    <div *ngFor="let jugador of equipo.controls; let i = index" class="list-group list-group-flush">
+      <div class="list-group-item">
+        <div [formGroup]="jugador" class="form-row">
+          <div class="form-group col-1">
+            <h6 class="card-title">{{i + 1}}°</h6>
+          </div>
+          <div class="form-group col-3">
+            <label>Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control"/>
+          </div>
+          <div class="form-group col-2">
+            <label>Número</label>
+            <input type="number" formControlName="numero" class="form-control"/>
+          </div>
+          <div class="form-group col-3">
+            <label>Talle Camiseta</label>
+            <select class="form-control" formControlName="talleCamiseta">
+              <option>seleccione..</option>
+              <option *ngFor="let talle of talles">{{talle}}</option>
+            </select>
+          </div>
+          <div class="form-group col-3">
+            <label>Talle Short</label>
+            <select class="form-control" formControlName="talleShort">
+              <option>seleccione..</option>
+              <option *ngFor="let talle of talles">{{talle}}</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</div>

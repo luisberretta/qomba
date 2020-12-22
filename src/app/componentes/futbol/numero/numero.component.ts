@@ -15,31 +15,38 @@ export class NumeroComponent implements OnInit {
   posicionesNumeroShort: string[] = ["Derecha", "Izquierda"];
   esNumeroCamiseta: Boolean = false;
   esNumeroShort: Boolean = false;
-  @Output() confirmarNumero = new EventEmitter();
+  @Output() proximoPaso = new EventEmitter<string>();
+  @Output() anteriorPaso = new EventEmitter<string>();
 
   constructor(public fb: FormBuilder) {
   }
+
   formNumero = this.fb.group({
-    camisetaValor :['No agregar',[Validators.required]],
-    shortValor :['No agregar',[Validators.required]],
-    posicionNumeroSort :['',[Validators.required]],
-    posicionCamisetaSort :['',[Validators.required]]
+    camisetaValor: ['', [Validators.required]],
+    shortValor: ['', [Validators.required]],
+    posicionNumeroSort: ['', [Validators.required]],
+    posicionNumeroCamiseta: ['', [Validators.required]]
   });
 
   ngOnInit(): void {
   }
 
   checkCamiseta(seleccion) {
-    this.formNumero.value['camisetaValor'] = seleccion;
+    this.formNumero.controls.camisetaValor.setValue(seleccion);
     this.esNumeroCamiseta = seleccion === "Agregar Número" || seleccion === "Agregar Número y nombre";
   }
+
   checkShort(seleccion) {
-    this.formNumero.value['shortValor'] = seleccion;
+    this.formNumero.controls.shortValor.setValue(seleccion);
     this.esNumeroShort = seleccion === "Agregar Número" || seleccion === "Agregar Número y nombre";
   }
 
-  onSubmit() {
-    this.confirmarNumero.emit(this.formNumero);
+  siguiente() {
+    this.proximoPaso.emit(this.formNumero.value);
+  }
+
+  anterior() {
+    this.anteriorPaso.emit(this.formNumero);
   }
 
 }

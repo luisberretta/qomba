@@ -15,6 +15,7 @@ import { WizardComponent } from './componentes/futbol/wizard.component';
 import { ColorGithubModule } from 'ngx-color/github';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PersonaComponent } from './componentes/futbol/persona/persona.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PersonaComponent } from './componentes/futbol/persona/persona.component
     NgbModule,
     ColorGithubModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
