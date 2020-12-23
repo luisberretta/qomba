@@ -1,5 +1,6 @@
 import {Component, ElementRef, Input, OnInit, Output, EventEmitter, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {NgbCarousel, NgbSlideEvent} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-camiseta',
@@ -13,6 +14,9 @@ export class CamisetaComponent implements OnInit {
   submit: boolean = false;
   @Input() pasoNumero: number;
   @Output() proximoPaso = new EventEmitter<string>();
+  @Input() partesCamiseta: any;
+  nombreArchivo: string;
+  deshabilitado: boolean = true;
 
   constructor(private fb: FormBuilder) { }
 
@@ -24,7 +28,8 @@ export class CamisetaComponent implements OnInit {
     return this.formPasoCamiseta.controls;
   }
 
-  uploadFile() {
+  // Método para capturar el evento del click en el botón y disparar para que deje subir archivo
+  archivo() {
     this.fileInput.nativeElement.click();
   }
 
@@ -39,11 +44,27 @@ export class CamisetaComponent implements OnInit {
     });
   }
 
+  // Método que captura el evento de subida de archivo.
+  subirArchivo(event) {
+    if (event.target.files.length > 0) {
+      const archivo = event.target.files[0];
+      this.formPasoCamiseta.patchValue({
+        image: archivo
+      });
+      this.deshabilitado = false;
+      this.nombreArchivo = event.target.files[0].name;
+    }
+  }
+
   siguiente() {
     this.submit = true;
     if(this.formPasoCamiseta.valid) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
+  }
+
+  onSlide(event) {
+    // console.log(this.carousel.activeId);
   }
 
 }
