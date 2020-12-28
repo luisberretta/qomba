@@ -79,7 +79,7 @@
     top: 26px;
     width: 0;
     height: 3px;
-    background-color: #e74c3c;
+    background-color: #8d2429;
     z-index: 1;
     transition: width 0.25s ease;
   }
@@ -88,7 +88,7 @@
       width: 10%;
     }
     li:nth-child(1) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
     }
   }
   &.short {
@@ -96,14 +96,14 @@
       width: 30%;
     }
     li:nth-child(1) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(2) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
     }
   }
   &.numero {
@@ -111,21 +111,21 @@
       width: 50%;
     }
     li:nth-child(1) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(2) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(3) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
     }
   }
   &.equipo {
@@ -133,28 +133,28 @@
       width: 70%;
     }
     li:nth-child(1) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(2) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(3) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(4) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
     }
   }
   &.checkout {
@@ -162,35 +162,35 @@
       width: 100%;
     }
     li:nth-child(1) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(2) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(3) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(4) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
       color: transparent;
       &:after {
         display: block;
       }
     }
     li:nth-child(5) a {
-      background-color: #e74c3c;
+      background-color: #8d2429;
     }
   }
 }

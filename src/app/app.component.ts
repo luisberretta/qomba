@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front';
+
+  constructor(private ngxLoader: NgxUiLoaderService) {
+  }
+
+  ngOnInit() {
+    this.ngxLoader.start();
+    this.ngxLoader.stop();
+  }
 }
