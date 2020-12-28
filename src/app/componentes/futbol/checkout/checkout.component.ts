@@ -1,5 +1,6 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {WizardService} from "../wizard.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-checkout',
@@ -8,32 +9,24 @@ import {WizardService} from "../wizard.service";
 })
 export class CheckoutComponent implements OnInit {
 
-  fileToUpload: File = null;
+  @Input() checkOut: any;
+  @Output() finalizarPasos = new EventEmitter();
 
-  constructor(private wisardService: WizardService) {
+
+
+  constructor(private wisardService: WizardService,
+              private fb: FormBuilder) {
   }
+
+  formCheckOut: FormGroup = this.fb.group({
+    email:['',Validators.required]
+  })
 
   ngOnInit(): void {
-
   }
 
-  uploadFile(event) {
-    let fileList: FileList = event.target.files;
-    let formData: FormData = new FormData();
-    if (fileList.length > 0) {
-      let file: File = fileList[0];
-      formData.append('file', file, file.name);
-    }
-    let equipo = [
-      {nombre: "lucho", numero: 9, talleCamiseta: "L", talleShort: "L"},
-      {nombre: "luis", numero: 7, talleCamiseta: "M", talleShort: "M"}
-    ]
-    formData.append('equipo', JSON.stringify(equipo));
-
-    this.wisardService.crearPedido(formData).subscribe(data => {
-      console.log(data);
-    })
-
+  confirmar(){
+    this.finalizarPasos.emit(this.formCheckOut.value);
   }
 
 }
