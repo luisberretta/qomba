@@ -1,1 +1,10 @@
+.carousel {
+  &:focus {
+    outline: none;
+  }
 
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+}

@@ -1,17 +1,16 @@
 <form [formGroup]="formPasoCamiseta">
   <div class="row justify-content-center">
-    <div class="col-12">
-      <p class="mb-0">Modelos</p>
-      <p><em>Acá van los modelos según la categoría.</em></p>
-    </div>
     <div class="col-md-7 col-12">
       <p>Elegí los colores de cada parte de tu camiseta.</p>
-      <div class="row align-items-center">
-        <!-- Acá hay que recorrer cada parte de la camiseta, cuando se hace click en el modelo, tiene que traer las partes asociadas a ese modelo.-->
-        <div class="col-6 text-center">
-          <img src="/assets/images/rocky01.png">
+      <div class="row align-items-center mt-5">
+        <div class="col-5 text-center">
+          <ngb-carousel *ngIf="partesCamiseta" [showNavigationArrows]="true" [showNavigationIndicators]="false" [interval]="false" (slide)="onSlide($event)">
+            <ng-template ngbSlide *ngFor="let image of partesCamiseta; let i = index">
+              <img [src]="image" style="display: block;">
+            </ng-template>bo
+          </ngb-carousel>
         </div>
-        <div class="col-6">
+        <div class="col-7">
           <color-github></color-github>
         </div>
       </div>
@@ -32,20 +31,25 @@
       </div>
       <div class="form-group">
         <label>Agregá un escudo a tu camiseta (opcional)</label>
-        <div class="text-center">
-          <a class="btn btn-secondary" (click)="uploadFile()">Subir escudo</a>
-          <input type="file" class="d-none" formControlName="escudo" #archivoEscudo>
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>
+            <input type="file" class="d-none" formControlName="escudo" #archivoEscudo (change)="subirArchivo($event)">
+          </div>
+          <div class="col-md-6 col-12 align-self-center">
+            <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>
+          </div>
         </div>
       </div>
       <div class="form-group">
-        <select class="form-control" formControlName="posicionEscudo">
+        <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null">
           <option value="" selected>Posición</option>
           <option value="Derecha">Derecha</option>
           <option value="Izquierda">Izquierda</option>
         </select>
       </div>
       <div class="form-group">
-        <select class="form-control" formControlName="calidadEscudo">
+        <select class="form-control" formControlName="calidadEscudo" [attr.disabled]="deshabilitado ? '' : null">
           <option value="" selected>Calidad</option>
           <option value="Bordado">Bordado</option>
           <option value="Estampado">Estampado</option>
