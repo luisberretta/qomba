@@ -22,6 +22,7 @@ export class EquipoComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    this.onValueChanges();
   }
 
   get form() {
