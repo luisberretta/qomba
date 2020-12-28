@@ -17,7 +17,16 @@
   border: solid 1px black;
   opacity: 0.5;
   font-weight: 600;
-  &.active-link {
+  &.basica {
+    opacity: 1;
+  }
+  &.intermedia {
+    opacity: 1;
+  }
+  &.premium {
+    opacity: 1;
+  }
+  &.propio {
     opacity: 1;
   }
   &:focus {
@@ -198,4 +207,14 @@
 .paso {
   background-color: gray;
   padding: 10px;
+}
+
+.camisetas-categoria {
+  img {
+    cursor: pointer;
+    opacity: 0.5;
+    &.seleccionado {
+      opacity: 1;
+    }
+  }
 }

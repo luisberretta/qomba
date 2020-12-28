@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { camisetas } from '../../clases/Camiseta';
 
 @Component({
   selector: 'app-wizard',
@@ -9,6 +10,10 @@ export class WizardComponent implements OnInit {
 
   paso: string = 'camiseta';
   numeroPaso: number = 1;
+  categoria: string = 'basica';
+  camisetas: any = camisetas;
+  partesCamiseta: any;
+  seleccionoModelo: boolean = false;
 
   constructor() {
 
@@ -28,6 +33,9 @@ export class WizardComponent implements OnInit {
       this.paso = paso;
       this.numeroPaso = 2;
     }
+  }
+  confirmarNumero(eventoNumero){
+    console.log(eventoNumero);
   }
 
   pasoNumero(paso) {
@@ -51,8 +59,36 @@ export class WizardComponent implements OnInit {
     }
   }
 
+  basica() {
+    this.categoria = 'basica';
+  }
+
+  intermedia() {
+    this.categoria = 'intermedia';
+  }
+
+  premium() {
+    this.categoria = 'premium';
+  }
+
+  propio() {
+    this.categoria = 'propio';
+  }
+
+  modeloElegido(id) {
+    this.seleccionoModelo = true;
+    for (let i = 0; i < this.camisetas.length; i++) {
+      if(id == this.camisetas[i].id) {
+        this.camisetas[i].seleccionado = true;
+        this.partesCamiseta = this.camisetas[i].partes;
+      } else {
+        this.camisetas[i].seleccionado = false;
+      }
+    }
+  }
+
   siguiente(event) {
-    this.numeroPaso++;
+    this.numeroPaso = 4;
     switch (this.numeroPaso) {
       case 1:
         this.paso = 'camiseta';
