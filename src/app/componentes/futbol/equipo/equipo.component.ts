@@ -9,9 +9,9 @@ import {EventEmitter} from "events";
 })
 export class EquipoComponent implements OnInit {
 
-  @Output() siguienteEquipo = new EventEmitter<string>();
-
+  @Output() siguienteEquipo = new EventEmitter();
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
+  mostrarTabla: boolean = false;
 
   constructor(private fb: FormBuilder) {
   }
@@ -35,7 +35,11 @@ export class EquipoComponent implements OnInit {
 
   onValueChanges(): void {
     this.formEquipo.get('cantidadEquipo').valueChanges.subscribe(val => {
-      if (val < 0) return;
+      if (val <= 0) {
+        this.mostrarTabla = false;
+        return;
+      }
+      this.mostrarTabla = true;
       if (val < this.equipo.length) {
         this.equipo.controls.length = val;
       } else {
@@ -48,8 +52,6 @@ export class EquipoComponent implements OnInit {
           }));
         }
       }
-
-
     });
   }
 

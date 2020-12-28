@@ -15,8 +15,8 @@ export class NumeroComponent implements OnInit {
   posicionesNumeroShort: string[] = ["Derecha", "Izquierda"];
   esNumeroCamiseta: Boolean = false;
   esNumeroShort: Boolean = false;
-  @Output() proximoPaso = new EventEmitter<string>();
-  @Output() anteriorPaso = new EventEmitter<string>();
+  @Output() proximoPaso = new EventEmitter();
+  @Output() anteriorPaso = new EventEmitter();
 
   constructor(public fb: FormBuilder) {
   }
@@ -46,7 +46,7 @@ export class NumeroComponent implements OnInit {
   }
 
   anterior() {
-    this.anteriorPaso.emit(this.formNumero);
+    this.anteriorPaso.emit(this.formNumero.value);
   }
 
 }

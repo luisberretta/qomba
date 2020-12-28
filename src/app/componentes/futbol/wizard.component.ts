@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { camisetas } from '../../clases/Camiseta';
+import { camisetas } from "../../clases/Camiseta";
+import {Pedido} from "../../clases/Pedido";
 
 @Component({
   selector: 'app-wizard',
@@ -14,7 +15,22 @@ export class WizardComponent implements OnInit {
   camisetas: any = camisetas;
   partesCamiseta: any;
   seleccionoModelo: boolean = false;
-
+  chekOut: Pedido = {
+    mail:"luchoreyes92@gmail.com",
+    descripcion:"probando descripcion 123",
+    tieneNombre:false,
+    tieneShort:true,
+    tieneNroFrontalCamiseta:false,
+    posicionNroFrontalCamiseta:"",
+    tieneNroShort:false,
+    detalleEquipo:[
+      {nombreCamiseta: "lucho", numero: 9, talleCamiseta: "L", talleShort: "L"},
+      {nombreCamiseta: "luis", numero: 7, talleCamiseta: "M", talleShort: "M"},
+      {nombreCamiseta: "damian", numero: 3, talleCamiseta: "L", talleShort: "L"},
+      {nombreCamiseta: "felix", numero: 5, talleCamiseta: "M", talleShort: "M"},
+      {nombreCamiseta: "matute", numero: 8, talleCamiseta: "L", talleShort: "L"},
+    ]
+  };
   constructor() {
 
   }
