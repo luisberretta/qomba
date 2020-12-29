@@ -14,7 +14,7 @@ export class WizardService {
   constructor(private httpApiService: HttpClient) {
   }
 
-  crearPedido(asd: FormData): Observable<any> {
+  generarPedido(asd: FormData): Observable<any> {
     return this.httpApiService.post<FormData>(this.baseUrl + '/pedido', asd).pipe(map(result => result));
   }
 

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { camisetas } from "../../clases/Camiseta";
+import {Component, OnInit} from '@angular/core';
+import {camisetas} from "../../clases/Camiseta";
 import {Pedido} from "../../clases/Pedido";
+import {WizardService} from "./wizard.service";
 
 @Component({
   selector: 'app-wizard',
@@ -15,23 +16,25 @@ export class WizardComponent implements OnInit {
   camisetas: any = camisetas;
   partesCamiseta: any;
   seleccionoModelo: boolean = false;
-  chekOut: Pedido = {
-    mail:"luchoreyes92@gmail.com",
-    descripcion:"probando descripcion 123",
-    tieneNombre:false,
-    tieneShort:true,
-    tieneNroFrontalCamiseta:false,
-    posicionNroFrontalCamiseta:"",
-    tieneNroShort:false,
-    detalleEquipo:[
-      {nombreCamiseta: "lucho", numero: 9, talleCamiseta: "L", talleShort: "L"},
-      {nombreCamiseta: "luis", numero: 7, talleCamiseta: "M", talleShort: "M"},
-      {nombreCamiseta: "damian", numero: 3, talleCamiseta: "L", talleShort: "L"},
-      {nombreCamiseta: "felix", numero: 5, talleCamiseta: "M", talleShort: "M"},
-      {nombreCamiseta: "matute", numero: 8, talleCamiseta: "L", talleShort: "L"},
-    ]
-  };
-  constructor() {
+  pedido: Pedido = {};
+  // chekOut: Pedido = {
+  //   mail: "luchoreyes92@gmail.com",
+  //   descripcion: "probando descripcion 123",
+  //   tieneNombre: false,
+  //   tieneShort: true,
+  //   tieneNroFrontalCamiseta: false,
+  //   posicionNroFrontalCamiseta: "",
+  //   tieneNroShort: false,
+  //   detalleEquipo: [
+  //     {nombreCamiseta: "lucho", numero: 9, talleCamiseta: "L", talleShort: "L"},
+  //     {nombreCamiseta: "luis", numero: 7, talleCamiseta: "M", talleShort: "M"},
+  //     {nombreCamiseta: "damian", numero: 3, talleCamiseta: "L", talleShort: "L"},
+  //     {nombreCamiseta: "felix", numero: 5, talleCamiseta: "M", talleShort: "M"},
+  //     {nombreCamiseta: "matute", numero: 8, talleCamiseta: "L", talleShort: "L"},
+  //   ]
+  // };
+
+  constructor(private wizardService: WizardService) {
 
   }
 
@@ -40,36 +43,37 @@ export class WizardComponent implements OnInit {
   }
 
   pasoCamiseta(paso) {
-      this.paso = paso;
-      this.numeroPaso = 1;
+    this.paso = paso;
+    this.numeroPaso = 1;
   }
 
   pasoShort(paso) {
-    if(this.numeroPaso > 2) {
+    if (this.numeroPaso > 2) {
       this.paso = paso;
       this.numeroPaso = 2;
     }
   }
-  confirmarNumero(eventoNumero){
+
+  confirmarNumero(eventoNumero) {
     console.log(eventoNumero);
   }
 
   pasoNumero(paso) {
-    if(this.numeroPaso > 3) {
+    if (this.numeroPaso > 3) {
       this.paso = paso;
       this.numeroPaso = 3;
     }
   }
 
   pasoEquipo(paso) {
-    if(this.numeroPaso > 4) {
+    if (this.numeroPaso > 4) {
       this.paso = paso;
       this.numeroPaso = 4;
     }
   }
 
   pasoCheckout(paso) {
-    if(this.numeroPaso > 5) {
+    if (this.numeroPaso > 5) {
       this.paso = paso;
       this.numeroPaso = 5;
     }
@@ -94,7 +98,7 @@ export class WizardComponent implements OnInit {
   modeloElegido(id) {
     this.seleccionoModelo = true;
     for (let i = 0; i < this.camisetas.length; i++) {
-      if(id == this.camisetas[i].id) {
+      if (id == this.camisetas[i].id) {
         this.camisetas[i].seleccionado = true;
         this.partesCamiseta = this.camisetas[i].partes;
       } else {
@@ -104,24 +108,68 @@ export class WizardComponent implements OnInit {
   }
 
   siguiente(event) {
-    this.numeroPaso = 4;
     switch (this.numeroPaso) {
       case 1:
-        this.paso = 'camiseta';
+        this.generarPedidoCamiseta(event);
+        this.paso = 'short';
+        this.numeroPaso = 2;
         break;
       case 2:
-        this.paso = 'short';
+        this.generarPedidoShort(event);
+        this.paso = 'numero';
+        this.numeroPaso = 3;
         break;
       case 3:
-        this.paso = 'numero';
+        this.generarPedidoNumero(event);
+        this.paso = 'equipo';
+        this.numeroPaso = 4;
         break;
       case 4:
-        this.paso = 'equipo';
+        this.generarPedidoEquipo(event);
+        this.paso = 'checkout';
+        this.numeroPaso = 5;
         break;
       case 5:
-        this.paso = 'checkout';
+        this.generarPedido(event);
         break;
     }
+  }
+
+  generarPedidoCamiseta(event) {
+    this.pedido.cuelloCamiseta = event.cuello;
+    this.pedido.posicionEscudo = event.posicionEscudo;
+    this.pedido.calidadEscudo = event.calidadEscudo;
+  }
+
+  generarPedidoShort(event) {
+    if (event) {
+      // Realizar mapeo de datos
+    } else {
+      this.pedido.tieneShort = null;
+    }
+  }
+
+  generarPedidoNumero(event){
+    this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
+    this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
+    this.pedido.tieneNroShort = event.shortValor
+    this.pedido.posicionNroShort = event.posicionesNumeroShort;
+  }
+
+  generarPedidoEquipo(event){
+    this.pedido.detalleEquipo = event.equipo;
+  }
+
+  generarPedido(event) {
+    this.pedido.mail = event.mail;
+    let formData = new FormData();
+    formData.append('files', null);
+    formData.append('pedido', JSON.stringify(this.pedido));
+    this.wizardService.generarPedido(formData).subscribe((data) => {
+      if (data) {
+        console.log("La operación se realizó con éxito.");
+      }
+    })
   }
 
 }

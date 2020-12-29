@@ -1,5 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
-import {EventEmitter} from "events";
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
@@ -15,6 +14,7 @@ export class NumeroComponent implements OnInit {
   posicionesNumeroShort: string[] = ["Derecha", "Izquierda"];
   esNumeroCamiseta: Boolean = false;
   esNumeroShort: Boolean = false;
+  @Input() tieneShort: Boolean;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
 

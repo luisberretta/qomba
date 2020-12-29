@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {WizardService} from "../wizard.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 

@@ -1,6 +1,5 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {FormArray, FormBuilder, Validators} from "@angular/forms";
-import {EventEmitter} from "events";
 
 @Component({
   selector: 'app-equipo',
@@ -9,7 +8,7 @@ import {EventEmitter} from "events";
 })
 export class EquipoComponent implements OnInit {
 
-  @Output() siguienteEquipo = new EventEmitter();
+  @Output() proximoPaso = new EventEmitter();
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
   mostrarTabla: boolean = false;
 
@@ -56,7 +55,7 @@ export class EquipoComponent implements OnInit {
   }
 
   siguiente() {
-    this.siguienteEquipo.emit(this.formEquipo.value);
+    this.proximoPaso.emit(this.formEquipo.value);
   }
 
 
