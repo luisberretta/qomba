@@ -1,12 +1,14 @@
 export const camisetas = [
-  {id: 1, url: '/assets/images/basica1.png', seleccionado: false, categoria: 'basica', partes: [
-      '/assets/images/basica1parte1.png',
-      '/assets/images/basica1parte2.png',
+  {id: 1, url: '/assets/images/basica1.png', seleccionado: false, categoria: 'basica',
+    partes: [
+      { url: '/assets/images/basica1parte1.png', id: 1 },
+      { url: '/assets/images/basica1parte2.png', id: 2 }
     ]
   },
-  {id: 2, url: '/assets/images/basica2.png', seleccionado: false, categoria: 'basica', partes: [
-      '/assets/images/basica2parte1.png',
-      '/assets/images/basica2parte2.png',
+  {id: 2, url: '/assets/images/basica2.png', seleccionado: false, categoria: 'basica',
+    partes: [
+      { url: '/assets/images/basica2parte1.png', id: 1 },
+      { url: '/assets/images/basica2parte2.png', id: 2 }
     ]
   },
   {id: 3, url: '/assets/images/basica3.png', seleccionado: false, categoria: 'basica'},

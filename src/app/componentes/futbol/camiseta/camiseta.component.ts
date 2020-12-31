@@ -1,24 +1,53 @@
-import {Component, ElementRef, Input, OnInit, Output, EventEmitter, ViewChild} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  OnChanges,
+  SimpleChanges, OnDestroy
+} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {NgbCarousel, NgbSlideEvent} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-camiseta',
   templateUrl: './camiseta.component.html',
-  styleUrls: ['./camiseta.component.scss']
+  styleUrls: ['./camiseta.component.scss'],
 })
-export class CamisetaComponent implements OnInit {
+export class CamisetaComponent implements OnInit, OnChanges {
 
   @ViewChild('archivoEscudo') fileInput: ElementRef;
   formPasoCamiseta: FormGroup;
   submit: boolean = false;
   @Input() pasoNumero: number;
   @Output() proximoPaso = new EventEmitter<string>();
-  @Input() partesCamiseta: any;
+  @Input() partes;
   nombreArchivo: string;
   deshabilitado: boolean = true;
+  indiceActual: number = 1;
+  @Output() colorPartes = new EventEmitter();
+  idModelo: number;
 
-  constructor(private fb: FormBuilder) { }
+  cambioCarousel(index, esPrevio) {
+    if(esPrevio) {
+      if(index == 0) {
+        this.indiceActual = this.partes.length;
+      } else {
+        this.indiceActual = index;
+      }
+    } else {
+      if(index == this.partes.length + 1) {
+        this.indiceActual = 1;
+      } else {
+        this.indiceActual = index;
+      }
+    }
+  }
+
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit(): void {
     this.buildPasoCamisetaForm();
@@ -35,8 +64,6 @@ export class CamisetaComponent implements OnInit {
 
   buildPasoCamisetaForm() {
     this.formPasoCamiseta = this.fb.group({
-      modeloCamiseta: ['', Validators.required],
-      color: ['', Validators.required],
       cuello: ['', Validators.required],
       escudo: [''],
       posicionEscudo: [''],
@@ -63,8 +90,15 @@ export class CamisetaComponent implements OnInit {
     }
   }
 
-  onSlide(event) {
-    // console.log(this.carousel.activeId);
+  ngOnChanges(changeRecord: SimpleChanges): void {
+    this.indiceActual = 1;
+    this.idModelo = changeRecord.partes.currentValue.id;
+  }
+
+  cambioColor(event, idParte) {
+    this.colorPartes.emit({
+      'idParte': idParte, 'color': event.color.hex
+    });
   }
 
 }

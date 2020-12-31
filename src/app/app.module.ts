@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './componentes/layout/header/header.component';
 import { FooterComponent } from './componentes/layout/footer/footer.component';
 import { CamisetaComponent } from './componentes/futbol/camiseta/camiseta.component';
@@ -39,10 +39,10 @@ import {NgxUiLoaderModule} from "ngx-ui-loader";
     AppRoutingModule,
     NgbModule,
     ColorGithubModule,
+    NgbCarouselModule,
     ReactiveFormsModule,
     NgxUiLoaderModule.forRoot({
       hasProgressBar: false,
-      // bgsType: "",
     }),
   ],
   providers: [],

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { camisetas } from '../../clases/Camiseta';
+import {svgs} from "../../clases/ParteSvg";
 
 @Component({
   selector: 'app-wizard',
@@ -12,15 +13,18 @@ export class WizardComponent implements OnInit {
   numeroPaso: number = 1;
   categoria: string = 'basica';
   camisetas: any = camisetas;
-  partesCamiseta: any;
+  svgs: any = svgs;
+  partesSvg: any;
+  partes: any;
   seleccionoModelo: boolean = false;
+  colorPartes: any;
 
   constructor() {
 
   }
 
   ngOnInit(): void {
-
+    this.partes = null;
   }
 
   pasoCamiseta(paso) {
@@ -74,12 +78,19 @@ export class WizardComponent implements OnInit {
 
   modeloElegido(id) {
     this.seleccionoModelo = true;
+    this.partes = null;
+    this.partesSvg = null;
     for (let i = 0; i < this.camisetas.length; i++) {
       if(id == this.camisetas[i].id) {
         this.camisetas[i].seleccionado = true;
-        this.partesCamiseta = this.camisetas[i].partes;
+        this.partes = this.camisetas[i];
       } else {
         this.camisetas[i].seleccionado = false;
+      }
+    }
+    for(let i = 0; i < this.svgs.length; i++) {
+      if(id == this.svgs[i].idModelo) {
+        this.partesSvg = this.svgs[i];
       }
     }
   }
@@ -103,6 +114,10 @@ export class WizardComponent implements OnInit {
         this.paso = 'checkout';
         break;
     }
+  }
+
+  cambiarColor(event) {
+    this.colorPartes = event;
   }
 
 }
