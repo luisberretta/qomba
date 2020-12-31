@@ -1,5 +1,3 @@
-import { Component, OnInit } from '@angular/core';
-import { camisetas } from '../../clases/Camiseta';
 import {svgs} from "../../clases/ParteSvg";
 import {Component, OnInit} from '@angular/core';
 import {camisetas} from "../../clases/Camiseta";

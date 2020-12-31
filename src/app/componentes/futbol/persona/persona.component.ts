@@ -1,17 +1,14 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {svgAsPngUri} from 'save-svg-as-png';
 import {
-  Component,
+  Component, ElementRef,
   Input,
   OnChanges,
   OnInit,
   QueryList,
   Renderer2,
-  SimpleChanges,
-  ViewChild,
+  SimpleChanges, ViewChild,
   ViewChildren
 } from '@angular/core';
-import {svgs} from "../../../clases/ParteSvg";
 
 @Component({
   selector: 'app-persona',
@@ -24,17 +21,15 @@ export class PersonaComponent implements OnInit, OnChanges {
   @Input() colorPartes: any;
   @Input() partesSvg: any;
   @ViewChildren('path') paths: QueryList<any>;
+  @ViewChild('dataContainer') dataContainer: ElementRef;
 
   constructor(public renderer : Renderer2) { }
 
   ngOnInit(): void {
-    console.log(this.dataContainer);
     setTimeout(() => {
-      console.log();
       let svg = this.dataContainer.nativeElement.innerHTML;
 
       let svgArchivo = svgAsPngUri(this.dataContainer.nativeElement,"diagram.png");
-      console.log(svgArchivo);
     }, 2000);
   }
 
