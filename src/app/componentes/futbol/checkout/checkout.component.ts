@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {WizardService} from "../wizard.service";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-checkout',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor() { }
+  @Input() checkOut: any;
+  @Output() finalizarPasos = new EventEmitter();
+
+
+
+  constructor(private wisardService: WizardService,
+              private fb: FormBuilder) {
+  }
+
+  formCheckOut: FormGroup = this.fb.group({
+    email:['',Validators.required]
+  })
 
   ngOnInit(): void {
+  }
+
+  confirmar(){
+    this.finalizarPasos.emit(this.formCheckOut.value);
   }
 
 }

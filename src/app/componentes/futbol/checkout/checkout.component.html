@@ -1,1 +1,67 @@
-<p>checkout works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-5 col-12">
+    <div class="form-group">
+      <h4>Camiseta</h4>
+      <div class="row">
+        <label>¿Tiene Nombre?</label>
+        <input disabled class="form-control" value="{{checkOut.tieneNombre?'SI':'NO'}}">
+      </div>
+      <div class="row">
+        <label>¿Tiene número frontal?</label>
+        <input disabled class="form-control" value="{{checkOut.tieneNroFrontalCamiseta?'SI':'NO'}}">
+      </div>
+      <div class="row" *ngIf="checkOut.tieneNroFrontalCamiseta">
+        <label>Posición número frontal</label>
+        <input disabledclass="form-control" value="{{checkOut.posicionNroFrontalCamiseta}}">
+      </div>
+
+      <h4>Short</h4>
+      <div class="row">
+        <label>¿Tiene Short?</label>
+        <input disabled class="form-control" value="{{checkOut.tieneShort?'SI':'NO'}}">
+      </div>
+      <div class="row" *ngIf="checkOut.tieneShort">
+        <label>¿Tiene número?</label>
+        <input disabled class="form-control" value="{{checkOut.tieneNroShort?'SI':'NO'}}">
+      </div>
+
+      <h4>Equipo</h4>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Número</th>
+          <th scope="col">Talle camiseta</th>
+          <th scope="col">Talle short</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let equipo of checkOut.detalleEquipo; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{equipo.nombreCamiseta}}</td>
+          <td>{{ equipo.numero }}</td>
+          <td>{{ equipo.talleCamiseta}}</td>
+          <td>{{ equipo.talleShort}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <form [formGroup]="formCheckOut">
+        <div class="row">
+          <label>Ingrese su mail</label>
+          <input type="email" class="form-control" formControlName="email">
+        </div>
+        <div class="col-4 text-center">
+          <a class="btn btn-naranja btn-block" (click)="confirmar()">Confirmar</a>
+        </div>
+      </form>
+
+
+    </div>
+
+  </div>
+  <!--  <form [formGroup]="formCheckOut">-->
+  <!--  </form>-->
+
+</div>

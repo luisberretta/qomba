@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { camisetas } from '../../clases/Camiseta';
 import {svgs} from "../../clases/ParteSvg";
+import {Component, OnInit} from '@angular/core';
+import {camisetas} from "../../clases/Camiseta";
+import {Pedido} from "../../clases/Pedido";
+import {WizardService} from "./wizard.service";
 
 @Component({
   selector: 'app-wizard',
@@ -17,14 +21,16 @@ export class WizardComponent implements OnInit {
   partesSvg: any;
   partes: any;
   seleccionoModelo: boolean = false;
+  pedido: Pedido = {imagenes: []};
   colorPartes: any;
 
-  constructor() {
+
+  constructor(private wizardService: WizardService) {
 
   }
 
   ngOnInit(): void {
-    this.partes = null;
+
   }
 
   pasoCamiseta(paso) {
@@ -96,24 +102,66 @@ export class WizardComponent implements OnInit {
   }
 
   siguiente(event) {
-    this.numeroPaso++;
     switch (this.numeroPaso) {
       case 1:
-        this.paso = 'camiseta';
+        this.generarPedidoCamiseta(event);
+        this.paso = 'short';
+        this.numeroPaso = 2;
         break;
       case 2:
-        this.paso = 'short';
+        this.generarPedidoShort(event);
+        this.paso = 'numero';
+        this.numeroPaso = 3;
         break;
       case 3:
-        this.paso = 'numero';
+        this.generarPedidoNumero(event);
+        this.paso = 'equipo';
+        this.numeroPaso = 4;
         break;
       case 4:
-        this.paso = 'equipo';
+        this.generarPedidoEquipo(event);
+        this.paso = 'checkout';
+        this.numeroPaso = 5;
         break;
       case 5:
-        this.paso = 'checkout';
+        this.generarPedido(event);
         break;
     }
+  }
+
+  generarPedidoCamiseta(event) {
+    this.pedido.cuelloCamiseta = event.cuello;
+    this.pedido.posicionEscudo = event.posicionEscudo;
+    this.pedido.calidadEscudo = event.calidadEscudo;
+  }
+
+  generarPedidoShort(event) {
+    if (event) {
+      // Realizar mapeo de datos
+    } else {
+      this.pedido.tieneShort = null;
+    }
+  }
+
+  generarPedidoNumero(event) {
+    this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
+    this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
+    this.pedido.tieneNroShort = event.shortValor
+    this.pedido.posicionNroShort = event.posicionesNumeroShort;
+  }
+
+  generarPedidoEquipo(event) {
+    this.pedido.detalleEquipo = event.equipo;
+  }
+
+  generarPedido(event) {
+    this.pedido.mail = event.mail;
+    this.pedido.imagenes.push("iVBORw0KGgoAAAANSUhEUgAAAH0AAACbCAYAAABPnZS6AAASs0lEQVR4Xu2dCZgU1bXHz79uVffMsKvgHkUTkuAWjUt8hqcosskuCC7EuGE0wT2oIFI9M2BUFPcl");
+    this.wizardService.generarPedido(this.pedido).subscribe((data) => {
+      if (data) {
+        console.log("La operación se realizó con éxito.");
+      }
+    })
   }
 
   cambiarColor(event) {

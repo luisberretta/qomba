@@ -1,3 +1,5 @@
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {svgAsPngUri} from 'save-svg-as-png';
 import {
   Component,
   Input,
@@ -26,7 +28,14 @@ export class PersonaComponent implements OnInit, OnChanges {
   constructor(public renderer : Renderer2) { }
 
   ngOnInit(): void {
+    console.log(this.dataContainer);
+    setTimeout(() => {
+      console.log();
+      let svg = this.dataContainer.nativeElement.innerHTML;
 
+      let svgArchivo = svgAsPngUri(this.dataContainer.nativeElement,"diagram.png");
+      console.log(svgArchivo);
+    }, 2000);
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {

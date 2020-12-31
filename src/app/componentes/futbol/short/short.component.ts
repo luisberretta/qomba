@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output,EventEmitter} from '@angular/core';
+import {} from "events";
 
 @Component({
   selector: 'app-short',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShortComponent implements OnInit {
 
+  @Output() proximoPaso = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  siguiente(){
+    this.proximoPaso.emit(undefined);
   }
 
 }

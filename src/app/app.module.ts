@@ -13,8 +13,9 @@ import { EquipoComponent } from './componentes/futbol/equipo/equipo.component';
 import { CheckoutComponent } from './componentes/futbol/checkout/checkout.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
 import { ColorGithubModule } from 'ngx-color/github';
-import { PersonaComponent } from './componentes/futbol/persona/persona.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { PersonaComponent } from './componentes/futbol/persona/persona.component';
+import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './componentes/home/home.component';
 import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/pagina-no-encontrada.component';
 import {NgxUiLoaderModule} from "ngx-ui-loader";
@@ -44,6 +45,7 @@ import {NgxUiLoaderModule} from "ngx-ui-loader";
     NgxUiLoaderModule.forRoot({
       hasProgressBar: false,
     }),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
