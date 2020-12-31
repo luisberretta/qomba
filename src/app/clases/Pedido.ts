@@ -14,4 +14,5 @@ export interface Pedido {
   posicionNroShort?: string;
   imagenes?: string[];
   detalleEquipo ?: DetalleEquipo[];
+  escudo?: string;
 }

@@ -129,6 +129,7 @@ export class WizardComponent implements OnInit {
 
   generarPedidoCamiseta(event) {
     this.pedido.cuelloCamiseta = event.cuello;
+    this.pedido.escudo = event.escudo;
     this.pedido.posicionEscudo = event.posicionEscudo;
     this.pedido.calidadEscudo = event.calidadEscudo;
   }
