@@ -16,23 +16,8 @@ export class WizardComponent implements OnInit {
   camisetas: any = camisetas;
   partesCamiseta: any;
   seleccionoModelo: boolean = false;
-  pedido: Pedido = {};
-  // chekOut: Pedido = {
-  //   mail: "luchoreyes92@gmail.com",
-  //   descripcion: "probando descripcion 123",
-  //   tieneNombre: false,
-  //   tieneShort: true,
-  //   tieneNroFrontalCamiseta: false,
-  //   posicionNroFrontalCamiseta: "",
-  //   tieneNroShort: false,
-  //   detalleEquipo: [
-  //     {nombreCamiseta: "lucho", numero: 9, talleCamiseta: "L", talleShort: "L"},
-  //     {nombreCamiseta: "luis", numero: 7, talleCamiseta: "M", talleShort: "M"},
-  //     {nombreCamiseta: "damian", numero: 3, talleCamiseta: "L", talleShort: "L"},
-  //     {nombreCamiseta: "felix", numero: 5, talleCamiseta: "M", talleShort: "M"},
-  //     {nombreCamiseta: "matute", numero: 8, talleCamiseta: "L", talleShort: "L"},
-  //   ]
-  // };
+  pedido: Pedido = {imagenes: []};
+
 
   constructor(private wizardService: WizardService) {
 
@@ -149,23 +134,21 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  generarPedidoNumero(event){
+  generarPedidoNumero(event) {
     this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
     this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
     this.pedido.tieneNroShort = event.shortValor
     this.pedido.posicionNroShort = event.posicionesNumeroShort;
   }
 
-  generarPedidoEquipo(event){
+  generarPedidoEquipo(event) {
     this.pedido.detalleEquipo = event.equipo;
   }
 
   generarPedido(event) {
     this.pedido.mail = event.mail;
-    let formData = new FormData();
-    formData.append('files', null);
-    formData.append('pedido', JSON.stringify(this.pedido));
-    this.wizardService.generarPedido(formData).subscribe((data) => {
+    this.pedido.imagenes.push("iVBORw0KGgoAAAANSUhEUgAAAH0AAACbCAYAAABPnZS6AAASs0lEQVR4Xu2dCZgU1bXHz79uVffMsKvgHkUTkuAWjUt8hqcosskuCC7EuGE0wT2oIFI9M2BUFPcl");
+    this.wizardService.generarPedido(this.pedido).subscribe((data) => {
       if (data) {
         console.log("La operación se realizó con éxito.");
       }
