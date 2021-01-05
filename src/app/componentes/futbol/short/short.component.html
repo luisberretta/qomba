@@ -1,8 +1,18 @@
-
-
-
-<div class="col-12">
-  <div class="col-4 text-center">
-    <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
+<form [formGroup]="formPasoShort">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="form-group">
+        <label>¿Vas a agregar short para tu equipo?</label>
+        <input type="text">
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-4">
+          <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+        </div>
+        <div class="col-4">
+          <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</form>
