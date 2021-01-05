@@ -14,19 +14,21 @@
         <th scope="col">Talle short</th>
       </tr>
       </thead>
-      <tbody>
-      <tr [formGroup]="jugador" *ngFor="let jugador of equipo.controls; index as i">
+      <tbody formArrayName="equipo" *ngFor="let jugador of equipo.controls; index as i">
+      <tr formGroupName="{{i}}">
         <td>{{ i + 1 }}</td>
         <td><input type="text" formControlName="nombre" class="form-control"/></td>
-        <td><input type="number" min="0" max="99" formControlName="numero" class="form-control"/></td>
+        <td><input type="number" min="0" max="99"
+                   formControlName="numero" class="form-control"/></td>
         <td><select class="form-control" formControlName="talleCamiseta">
-          <option>seleccione..</option>
+          <option>Talle camiseta..</option>
           <option *ngFor="let talle of talles">{{talle}}</option>
         </select></td>
         <td><select class="form-control" formControlName="talleShort">
-          <option>seleccione..</option>
+          <option>Talle short..</option>
           <option *ngFor="let talle of talles">{{talle}}</option>
         </select></td>
+
       </tr>
       </tbody>
     </table>
