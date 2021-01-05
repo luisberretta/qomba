@@ -1,5 +1,6 @@
 import {svgAsPngUri} from 'save-svg-as-png';
 import {
+  AfterViewInit,
   Component, ElementRef,
   Input,
   OnChanges,
@@ -15,7 +16,7 @@ import {
   templateUrl: './persona.component.html',
   styleUrls: ['./persona.component.scss']
 })
-export class PersonaComponent implements OnInit, OnChanges {
+export class PersonaComponent implements OnInit, OnChanges, AfterViewInit {
 
   color: string = "blue";
   @Input() colorPartes: any;
@@ -44,6 +45,12 @@ export class PersonaComponent implements OnInit, OnChanges {
         }
       });
     }
+  }
+
+  ngAfterViewInit() {
+    this.paths.forEach((path) => {
+      this.renderer.setAttribute(path.nativeElement, 'fill', '#ffffff');
+    });
   }
 
 
