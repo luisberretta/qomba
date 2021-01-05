@@ -1,6 +1,6 @@
 export interface DetalleEquipo {
-  nombreCamiseta: string;
-  talleCamiseta: string;
-  numero: number;
-  talleShort: string;
+  nombreCamiseta?: string;
+  talleCamiseta?: string;
+  numero?: number;
+  talleShort?: string;
 }

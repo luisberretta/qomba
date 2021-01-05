@@ -1,4 +1,4 @@
-import {Component, OnInit, Output,EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {FormArray, FormBuilder, Validators} from "@angular/forms";
 
 @Component({
@@ -17,33 +17,31 @@ export class EquipoComponent implements OnInit {
 
   formEquipo = this.fb.group({
     cantidadEquipo: [0, Validators.required],
-    equipo: new FormArray([]),
+    equipo: this.fb.array([]),
   });
 
   ngOnInit(): void {
     this.onValueChanges();
   }
 
-  get form() {
-    return this.formEquipo.controls;
-  }
-
   get equipo() {
-    return this.form.equipo as FormArray;
+    return this.formEquipo.controls.equipo as FormArray;
   }
 
   onValueChanges(): void {
+    let equipo = this.formEquipo.controls.equipo as FormArray;
     this.formEquipo.get('cantidadEquipo').valueChanges.subscribe(val => {
       if (val <= 0) {
+        equipo.controls.length = val;
         this.mostrarTabla = false;
         return;
       }
       this.mostrarTabla = true;
-      if (val < this.equipo.length) {
-        this.equipo.controls.length = val;
+      if (val < equipo.length) {
+        equipo.controls.length = val;
       } else {
-        for (let i = this.equipo.controls.length; i < val; i++) {
-          this.equipo.controls.push(this.fb.group({
+        for (let i = equipo.controls.length; i < val; i++) {
+          equipo.push(this.fb.group({
             nombre: ['', Validators.required],
             numero: ['', [Validators.min(0), Validators.max(99)]],
             talleCamiseta: ['', Validators.required],
@@ -57,6 +55,5 @@ export class EquipoComponent implements OnInit {
   siguiente() {
     this.proximoPaso.emit(this.formEquipo.value);
   }
-
 
 }

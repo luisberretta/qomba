@@ -9,6 +9,7 @@ import {
   OnChanges,
   SimpleChanges, OnDestroy
 } from '@angular/core';
+import {svgAsPngUri} from 'save-svg-as-png';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -73,19 +74,14 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   // Método que captura el evento de subida de archivo.
   subirArchivo(event) {
-    if (event.target.files.length > 0) {
-      const archivo = event.target.files[0];
-      this.formPasoCamiseta.patchValue({
-        image: archivo
-      });
-      this.deshabilitado = false;
-      this.nombreArchivo = event.target.files[0].name;
-    }
+    let base64 = event[0].base64.replace('data:image/jpeg;base64,','');
+    this.formPasoCamiseta.controls['escudo'].setValue(base64);
+    this.deshabilitado = false;
   }
 
   siguiente() {
     this.submit = true;
-    if(this.formPasoCamiseta.valid) {
+    if (this.formPasoCamiseta.valid) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
   }
