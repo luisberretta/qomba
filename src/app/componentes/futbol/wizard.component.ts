@@ -28,7 +28,7 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.initCamisetas();
   }
 
   pasoCamiseta(paso) {
@@ -127,6 +127,27 @@ export class WizardComponent implements OnInit {
     }
   }
 
+  anterior(event) {
+    this.numeroPaso--;
+    switch (this.numeroPaso) {
+      case 1:
+        this.paso = 'camiseta';
+        break;
+      case 2:
+        this.paso = 'short';
+        break;
+      case 3:
+        this.paso = 'numero';
+        break;
+      case 4:
+        this.paso = 'equipo';
+        break;
+      case 5:
+        this.paso = 'checkout';
+        break;
+    }
+  }
+
   generarPedidoCamiseta(event) {
     this.pedido.cuelloCamiseta = event.cuello;
     this.pedido.escudo = event.escudo;
@@ -165,6 +186,12 @@ export class WizardComponent implements OnInit {
 
   cambiarColor(event) {
     this.colorPartes = event;
+  }
+
+  initCamisetas() {
+    for (let i = 0; i < this.camisetas.length; i++) {
+      this.camisetas[i].seleccionado = false;
+    }
   }
 
 }

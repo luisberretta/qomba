@@ -9,6 +9,7 @@ import {FormArray, FormBuilder, Validators} from "@angular/forms";
 export class EquipoComponent implements OnInit {
 
   @Output() proximoPaso = new EventEmitter();
+  @Output() anteriorPaso = new EventEmitter();
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
   mostrarTabla: boolean = false;
 
@@ -58,5 +59,7 @@ export class EquipoComponent implements OnInit {
     this.proximoPaso.emit(this.formEquipo.value);
   }
 
-
+  anterior() {
+    this.anteriorPaso.emit(this.formEquipo.value);
+  }
 }
