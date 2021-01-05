@@ -32,13 +32,14 @@ export class NumeroComponent implements OnInit {
   }
 
   checkCamiseta(seleccion) {
-    this.formNumero.controls.camisetaValor.setValue(seleccion);
     this.esNumeroCamiseta = seleccion === "Agregar Número" || seleccion === "Agregar Número y nombre";
+    this.formNumero.controls.camisetaValor.setValue(this.esNumeroCamiseta);
+
   }
 
   checkShort(seleccion) {
-    this.formNumero.controls.shortValor.setValue(seleccion);
     this.esNumeroShort = seleccion === "Agregar Número" || seleccion === "Agregar Número y nombre";
+    this.formNumero.controls.shortValor.setValue(this.esNumeroShort );
   }
 
   siguiente() {

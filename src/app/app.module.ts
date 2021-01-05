@@ -19,6 +19,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './componentes/home/home.component';
 import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/pagina-no-encontrada.component';
 import {NgxUiLoaderModule} from "ngx-ui-loader";
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {NgxUiLoaderModule} from "ngx-ui-loader";
       hasProgressBar: false,
     }),
     HttpClientModule,
+    AlifeFileToBase64Module
   ],
   providers: [],
   bootstrap: [AppComponent],
