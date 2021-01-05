@@ -11,22 +11,24 @@ export class CheckoutComponent implements OnInit {
 
   @Input() checkOut: any;
   @Output() finalizarPasos = new EventEmitter();
-
-
+  @Output() anteriorPaso = new EventEmitter();
 
   constructor(private wisardService: WizardService,
               private fb: FormBuilder) {
   }
 
   formCheckOut: FormGroup = this.fb.group({
-    email:['',Validators.required]
+    email: ['',Validators.required]
   })
 
   ngOnInit(): void {
   }
 
   confirmar(){
-    this.finalizarPasos.emit(this.formCheckOut.value);
+    this.anteriorPaso.emit(this.formCheckOut.value);
   }
 
+  anterior() {
+
+  }
 }
