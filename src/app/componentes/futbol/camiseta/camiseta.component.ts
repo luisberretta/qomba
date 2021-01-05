@@ -33,12 +33,12 @@ export class CamisetaComponent implements OnInit, OnChanges {
   cambioCarousel(index, esPrevio) {
     if(esPrevio) {
       if(index == 0) {
-        this.indiceActual = this.partes.length;
+        this.indiceActual = this.partes.partes.length;
       } else {
         this.indiceActual = index;
       }
     } else {
-      if(index == this.partes.length + 1) {
+      if(index == this.partes.partes.length + 1) {
         this.indiceActual = 1;
       } else {
         this.indiceActual = index;
