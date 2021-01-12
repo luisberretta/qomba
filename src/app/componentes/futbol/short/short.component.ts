@@ -34,7 +34,7 @@ export class ShortComponent implements OnInit {
   }
 
   anterior() {
-    this.anteriorPaso.emit(undefined);
+    this.anteriorPaso.emit();
   }
 
 }

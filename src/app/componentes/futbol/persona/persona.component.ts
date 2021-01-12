@@ -28,15 +28,7 @@ export class PersonaComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   let svg = this.dataContainer.nativeElement.innerHTML;
-    //   let svgArchivo = svgAsDataUri(this.dataContainer.nativeElement, "diagram.png").then((data) => {
-    //     console.log(data);
-    //   });
-    //   console.log(svgArchivo);
-    // }, 2000);
   }
-
 
   generarImagenes(): any {
     return this.dataContainer.nativeElement;

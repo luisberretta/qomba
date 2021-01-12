@@ -5,6 +5,7 @@ import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "./wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
+import {CamisetaComponent} from "./camiseta/camiseta.component";
 
 @Component({
   selector: 'app-wizard',
@@ -23,7 +24,7 @@ export class WizardComponent implements OnInit {
   seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
   colorPartes: any;
-
+  formCamiseta: any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -131,23 +132,24 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  anterior(event) {
-    this.numeroPaso--;
+  anterior() {
     switch (this.numeroPaso) {
-      case 1:
-        this.paso = 'camiseta';
-        break;
       case 2:
-        this.paso = 'short';
+        this.numeroPaso = 1;
+        this.paso = 'camiseta';
+        this.generarFormCamiseta();
         break;
       case 3:
-        this.paso = 'numero';
+        this.numeroPaso = 2;
+        this.paso = 'short';
         break;
       case 4:
-        this.paso = 'equipo';
+        this.numeroPaso = 3;
+        this.paso = 'numero';
         break;
       case 5:
-        this.paso = 'checkout';
+        this.numeroPaso = 4;
+        this.paso = 'equipo';
         break;
     }
   }
@@ -209,4 +211,14 @@ export class WizardComponent implements OnInit {
     }
   }
 
+  generarFormCamiseta() {
+    let form = {
+      'cuelloCamiseta': this.pedido.cuelloCamiseta,
+      'escudo': this.pedido.escudo,
+      'posicionEscudo': this.pedido.posicionEscudo,
+      'calidadEscudo': this.pedido.calidadEscudo,
+    }
+
+    this.formCamiseta = form;
+  }
 }

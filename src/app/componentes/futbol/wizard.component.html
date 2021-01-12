@@ -15,7 +15,7 @@
                 propio</a>
             </div>
             <div *ngIf="paso == 'camiseta'" [ngSwitch]="categoria" class="camisetas-categoria mt-3">
-              <h4 class="mb-4">Seleccioná un modelo</h4>
+              <h4 *ngIf="categoria !== 'propio'" class="mb-4">Seleccioná un modelo</h4>
               <div *ngSwitchCase="'basica'">
                 <div *ngFor="let camiseta of camisetas" class="d-inline">
                   <img *ngIf="camiseta.categoria == 'basica'" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
@@ -62,11 +62,11 @@
             </ul>
             <div class="paso mt-3" [ngSwitch]="paso">
               <app-camiseta *ngSwitchCase="'camiseta'" (colorPartes)="cambiarColor($event)" (proximoPaso)="siguiente($event)"
-                            [partes]="partes"></app-camiseta>
-              <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)"></app-short>
-              <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)"></app-numero>
-              <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)"></app-equipo>
-              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" [checkOut]="pedido"
+                            [partes]="partes" [formCamiseta]="formCamiseta"></app-camiseta>
+              <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)"></app-short>
+              <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)"></app-numero>
+              <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)"></app-equipo>
+              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior()" [checkOut]="pedido"
                             (finalizarPasos)="siguiente($event)"></app-checkout>
             </div>
           </div>
