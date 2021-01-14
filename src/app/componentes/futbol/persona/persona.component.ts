@@ -16,11 +16,12 @@ import {
   templateUrl: './persona.component.html',
   styleUrls: ['./persona.component.scss']
 })
-export class PersonaComponent implements OnInit, OnChanges, AfterViewInit {
+export class PersonaComponent implements OnInit, OnChanges {
 
   color: string = "blue";
   @Input() colorPartes: any;
   @Input() partesSvg: any;
+  @Input() colorShort: String;
   @ViewChildren('path') paths: QueryList<any>;
   @ViewChild('dataContainer') dataContainer: ElementRef;
 
@@ -47,12 +48,4 @@ export class PersonaComponent implements OnInit, OnChanges, AfterViewInit {
       });
     }
   }
-
-  ngAfterViewInit() {
-    this.paths.forEach((path) => {
-      this.renderer.setAttribute(path.nativeElement, 'fill', '#ffffff');
-    });
-  }
-
-
 }

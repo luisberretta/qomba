@@ -36,34 +36,34 @@
             </div>
           </div>
         </div>
-        <div class="row" *ngIf="seleccionoModelo">
+        <div class="row" *ngIf="seleccionoModelo && categoria !== 'propio'">
           <div class="col-8 mt-3">
             <ul class="indicador-progreso" [ngClass]="paso">
               <li>
-                <a (click)="pasoCamiseta('camiseta')">1</a>
+                <a>1</a>
                 <h5>Camiseta</h5>
               </li>
               <li>
-                <a (click)="pasoShort('short')">2</a>
+                <a>2</a>
                 <h5>Short</h5>
               </li>
               <li>
-                <a (click)="pasoNumero('numero')">3</a>
+                <a>3</a>
                 <h5>Número</h5>
               </li>
               <li>
-                <a (click)="pasoEquipo('equipo')">4</a>
+                <a>4</a>
                 <h5>Equipo</h5>
               </li>
               <li>
-                <a (click)="pasoCheckout('checkout')">5</a>
+                <a>5</a>
                 <h5>Checkout</h5>
               </li>
             </ul>
             <div class="paso mt-3" [ngSwitch]="paso">
               <app-camiseta *ngSwitchCase="'camiseta'" (colorPartes)="cambiarColor($event)" (proximoPaso)="siguiente($event)"
                             [partes]="partes" [formCamiseta]="formCamiseta"></app-camiseta>
-              <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)"></app-short>
+              <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)" (colorShort)="cambiarColorShort($event)"></app-short>
               <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)"></app-numero>
               <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)"></app-equipo>
               <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior()" [checkOut]="pedido"
@@ -71,7 +71,7 @@
             </div>
           </div>
           <div class="col-4 align-self-center text-center">
-            <app-persona [colorPartes]="colorPartes" [partesSvg]="partesSvg"></app-persona>
+            <app-persona [colorPartes]="colorPartes" [partesSvg]="partesSvg" [colorShort]="colorShort"></app-persona>
           </div>
         </div>
       </div>

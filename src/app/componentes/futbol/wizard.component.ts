@@ -24,6 +24,7 @@ export class WizardComponent implements OnInit {
   seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
   colorPartes: any;
+  colorShort: String;
   formCamiseta: any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
@@ -195,14 +196,16 @@ export class WizardComponent implements OnInit {
 
   }
 
-
   convertirBase64(cadena) {
     return cadena.replace('data:image/png;base64,', '');
-
   }
 
   cambiarColor(event) {
     this.colorPartes = event;
+  }
+
+  cambiarColorShort(event) {
+    this.colorShort = event;
   }
 
   initCamisetas() {

@@ -1,6 +1,6 @@
 import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {} from "events";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-short',
@@ -11,17 +11,27 @@ export class ShortComponent implements OnInit {
 
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
-  formPasoShort: FormGroup;
+  @Output() colorShort = new EventEmitter();
+  formPasoShort: FormGroup = new FormGroup({
+    llevaShort: new FormControl(''),
+    color: new FormControl(''),
+    llevaEscudo: new FormControl(''),
+    llevaNumero: new FormControl(''),
+  });
+  submit: boolean = false;
+  activo: boolean = false;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.buildFromPasoShort();
   }
 
   buildFromPasoShort() {
     this.formPasoShort = this.fb.group({
-      llevaShort: ['', Validators.required]
+      llevaShort: [''],
+      color: [''],
+      llevaEscudo: [''],
+      llevaNumero: [''],
     })
   }
 
@@ -30,11 +40,23 @@ export class ShortComponent implements OnInit {
   }
 
   siguiente() {
-    this.proximoPaso.emit(undefined);
+    this.submit = true;
+    console.log(this.formPasoShort);
+    // if(this.formPasoShort.valid) {
+    //   this.proximoPaso.emit(this.formPasoShort.value);
+    // }
   }
 
   anterior() {
     this.anteriorPaso.emit();
+  }
+
+  cambioColorShort(event) {
+    this.colorShort.emit(event.color.hex);
+  }
+
+  activarCampos() {
+    this.activo = !this.activo;
   }
 
 }

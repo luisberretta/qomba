@@ -85,7 +85,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   ngOnChanges(changeRecord: SimpleChanges): void {
     this.indiceActual = 1;
     this.idModelo = changeRecord.partes.currentValue.id;
-    if(changeRecord.formCamiseta.currentValue) {
+    if(changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
       this.generarFormulario(changeRecord.formCamiseta.currentValue);
     }
   }
