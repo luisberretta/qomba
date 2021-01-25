@@ -1,8 +1,8 @@
-import {svgs} from "../../clases/ParteSvg";
+import {camisetaSvg} from "../../clases/CamisetaSvg";
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {camisetas} from "../../clases/Camiseta";
+import {camisetaModelos} from "../../clases/CamisetaModelo";
 import {Pedido} from "../../clases/Pedido";
-import {WizardService} from "./wizard.service";
+import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
 import {CamisetaComponent} from "./camiseta/camiseta.component";
@@ -17,10 +17,11 @@ export class WizardComponent implements OnInit {
   paso: string = 'camiseta';
   numeroPaso: number = 1;
   categoria: string = 'basica';
-  camisetas: any = camisetas;
-  svgs: any = svgs;
+  url: string;
+  camisetaModelos: any = camisetaModelos;
+  camisetaSvg: any = camisetaSvg;
   partesSvg: any;
-  partes: any;
+  camiseta: any;
   seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
   colorPartes: any;
@@ -72,14 +73,17 @@ export class WizardComponent implements OnInit {
 
   basica() {
     this.categoria = 'basica';
+    this.url = '/assets/images/basicas/'
   }
 
   intermedia() {
     this.categoria = 'intermedia';
+    this.url = '/assets/images/intermedias/'
   }
 
   premium() {
     this.categoria = 'premium';
+    this.url = '/assets/images/premium/'
   }
 
   propio() {
@@ -88,19 +92,17 @@ export class WizardComponent implements OnInit {
 
   modeloElegido(id) {
     this.seleccionoModelo = true;
-    this.partes = null;
-    this.partesSvg = null;
-    for (let i = 0; i < this.camisetas.length; i++) {
-      if (id == this.camisetas[i].id) {
-        this.camisetas[i].seleccionado = true;
-        this.partes = this.camisetas[i];
+    for (let i = 0; i < this.camisetaModelos.length; i++) {
+      if (id == this.camisetaModelos[i].id) {
+        this.camisetaModelos[i].seleccionado = true;
+        this.camiseta = this.camisetaModelos[i];
       } else {
-        this.camisetas[i].seleccionado = false;
+        this.camisetaModelos[i].seleccionado = false;
       }
     }
-    for (let i = 0; i < this.svgs.length; i++) {
-      if (id == this.svgs[i].idModelo) {
-        this.partesSvg = this.svgs[i];
+    for (let i = 0; i < this.camisetaSvg.length; i++) {
+      if (id == this.camisetaSvg[i].idModelo) {
+        this.partesSvg = this.camisetaSvg[i];
       }
     }
   }
@@ -208,8 +210,8 @@ export class WizardComponent implements OnInit {
   }
 
   initCamisetas() {
-    for (let i = 0; i < this.camisetas.length; i++) {
-      this.camisetas[i].seleccionado = false;
+    for (let i = 0; i < this.camisetaModelos.length; i++) {
+      this.camisetaModelos[i].seleccionado = false;
     }
   }
 

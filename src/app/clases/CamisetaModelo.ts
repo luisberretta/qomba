@@ -1,4 +1,4 @@
-export const camisetas = [
+export const camisetaModelos = [
   {id: 1, url: '/assets/images/basica1.png', seleccionado: false, categoria: 'basica',
     partes: [
       { url: '/assets/images/basica1parte1.png', id: 1 },

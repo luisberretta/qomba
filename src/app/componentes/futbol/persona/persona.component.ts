@@ -10,6 +10,7 @@ import {
   SimpleChanges, ViewChild,
   ViewChildren
 } from '@angular/core';
+import {SvgService} from "../../../servicios/svg.service";
 
 @Component({
   selector: 'app-persona',
@@ -19,40 +20,57 @@ import {
 export class PersonaComponent implements OnInit, OnChanges {
 
   color: string = "blue";
-  @Input() colorPartes: any;
-  @Input() partesSvg: any;
+  frente: any;
+  dorso: any;
+  @Input() url: any;
+  @Input() camisetaSvg: any;
   @Input() colorShort: String;
   @ViewChildren('path') paths: QueryList<any>;
   @ViewChild('dataContainer') dataContainer: ElementRef;
 
-  constructor(public renderer : Renderer2) { }
+  constructor(public renderer: Renderer2,
+              private svgService: SvgService) {
+  }
 
   ngOnInit(): void {
     setTimeout(() => {
       let svg = this.dataContainer.nativeElement.innerHTML;
 
-      let svgArchivo = svgAsPngUri(this.dataContainer.nativeElement,"diagram.png");
+      let svgArchivo = svgAsPngUri(this.dataContainer.nativeElement, "diagram.png");
     }, 2000);
   }
 
+
   ngOnChanges(changeRecord: SimpleChanges): void {
-    if(changeRecord.colorPartes && changeRecord.colorPartes.currentValue) {
-      this.paths.forEach((path) => {
-        let idParte = path.nativeElement.attributes['data-idparte'].value;
-        let idParteColor = changeRecord.colorPartes.currentValue.idParte;
-        let color = changeRecord.colorPartes.currentValue.color;
-        if(idParte == idParteColor) {
-          this.renderer.setAttribute(path.nativeElement, 'fill', color);
-        }
+    console.log("AFUERA");
+    if (changeRecord.camiseta && changeRecord.camiseta.currentValue) {
+      console.log("ADENTROOO");
+      console.log(changeRecord.camiseta.currentValue.urls[0]);
+      this.svgService.obtenerSVG(this.url + changeRecord.camiseta.currentValue.urls[0]).subscribe((data) => {
+        this.frente = data;
+      });
+      this.svgService.obtenerSVG(this.url + changeRecord.camiseta.currentValue.urls[1]).subscribe((data) => {
+        this.dorso = data;
       });
     }
   }
 
-  ngAfterViewInit() {
-    console.log(this.dataContainer);
-    this.paths.forEach((path) => {
-      this.renderer.setAttribute(path.nativeElement, 'fill', '#ffffff');
-    });
+  generarImagenes(): any {
+    return this.dataContainer.nativeElement;
+
+  }
+
+  cambiarColor(event) {
+    let g = event.target.parentNode;
+    if (g.nodeName == 'g') {
+      let elementos = g.getElementsByTagName('path');
+      if (elementos) {
+        for (let i = 0; i < elementos.length; i++) {
+          elementos[i].setAttribute('fill', 'red');
+        }
+      }
+    }
+
   }
 
 

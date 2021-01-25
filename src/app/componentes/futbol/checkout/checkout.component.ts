@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {WizardService} from "../wizard.service";
+import {WizardService} from "../../../servicios/wizard.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
