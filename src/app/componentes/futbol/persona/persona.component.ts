@@ -57,6 +57,7 @@ export class PersonaComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   ngAfterViewInit() {
+    console.log(this.dataContainer);
     this.paths.forEach((path) => {
       this.renderer.setAttribute(path.nativeElement, 'fill', '#ffffff');
     });

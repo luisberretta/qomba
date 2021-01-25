@@ -175,8 +175,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoEquipo(event) {
-    this.pedido.detalleEquipo = [{nombreCamiseta: 'lucho', numero: 9, talleCamiseta: 'A', talleShort: 'S'},
-      {nombreCamiseta: 'luis', numero: 9, talleCamiseta: 'A', talleShort: 'S'}];
+    this.pedido.detalleEquipo = event.equipo;
   }
 
   generarPedido(event) {
