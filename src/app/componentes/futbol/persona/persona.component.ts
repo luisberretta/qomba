@@ -1,5 +1,6 @@
 import {svgAsPngUri} from 'save-svg-as-png';
 import {
+  AfterViewInit,
   Component, ElementRef,
   Input,
   OnChanges,
@@ -17,12 +18,12 @@ import {
 })
 export class PersonaComponent implements OnInit, OnChanges {
 
+  color: string = "blue";
   @Input() colorPartes: any;
   @Input() partesSvg: any;
+  @Input() colorShort: String;
   @ViewChildren('path') paths: QueryList<any>;
   @ViewChild('dataContainer') dataContainer: ElementRef;
-  @ViewChildren('dataGroup') dataGroup: ElementRef;
-  color: string;
 
   constructor(public renderer : Renderer2) { }
 
@@ -35,27 +36,16 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-
-  }
-
-  cambiarColor(event) {
-    console.log(event);
-    // this.renderer.setAttribute(this.dataGroup.nativeElement, 'fill', "red");
-    // if(booleano == "parte1") {
-    //   document.getElementById('grupo-1').setAttribute('fill', red);
-    // } else if(booleano == "mangas") {
-    //   document.getElementById('grupo-2').setAttribute('fill', 'green')
-    // } else {
-    //   document.getElementById('grupo-3').setAttribute('fill', 'yellow')
-    // }
-  }
-
-  aumentarZoom() {
-    document.getElementById('grupo-1').classList.add("zoom");
-  }
-
-  quitarZoom() {
-    document.getElementById('grupo-1').classList.remove("zoom");
+    if(changeRecord.colorPartes && changeRecord.colorPartes.currentValue) {
+      this.paths.forEach((path) => {
+        let idParte = path.nativeElement.attributes['data-idparte'].value;
+        let idParteColor = changeRecord.colorPartes.currentValue.idParte;
+        let color = changeRecord.colorPartes.currentValue.color;
+        if(idParte == idParteColor) {
+          this.renderer.setAttribute(path.nativeElement, 'fill', color);
+        }
+      });
+    }
   }
 
 

@@ -1,8 +1,11 @@
 import {svgs} from "../../clases/ParteSvg";
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {camisetas} from "../../clases/Camiseta";
 import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "./wizard.service";
+import {PersonaComponent} from "./persona/persona.component";
+import {svgAsPngUri} from 'save-svg-as-png';
+import {CamisetaComponent} from "./camiseta/camiseta.component";
 
 @Component({
   selector: 'app-wizard',
@@ -21,7 +24,10 @@ export class WizardComponent implements OnInit {
   seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
   colorPartes: any;
+  colorShort: String;
+  formCamiseta: any;
 
+  @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
   constructor(private wizardService: WizardService) {
 
@@ -32,33 +38,33 @@ export class WizardComponent implements OnInit {
   }
 
   pasoCamiseta(paso) {
-      this.paso = paso;
-      this.numeroPaso = 1;
+    this.paso = paso;
+    this.numeroPaso = 1;
   }
 
   pasoShort(paso) {
-    if(this.numeroPaso > 2) {
+    if (this.numeroPaso > 2) {
       this.paso = paso;
       this.numeroPaso = 2;
     }
   }
 
   pasoNumero(paso) {
-    if(this.numeroPaso > 3) {
+    if (this.numeroPaso > 3) {
       this.paso = paso;
       this.numeroPaso = 3;
     }
   }
 
   pasoEquipo(paso) {
-    if(this.numeroPaso > 4) {
+    if (this.numeroPaso > 4) {
       this.paso = paso;
       this.numeroPaso = 4;
     }
   }
 
   pasoCheckout(paso) {
-    if(this.numeroPaso > 5) {
+    if (this.numeroPaso > 5) {
       this.paso = paso;
       this.numeroPaso = 5;
     }
@@ -85,15 +91,15 @@ export class WizardComponent implements OnInit {
     this.partes = null;
     this.partesSvg = null;
     for (let i = 0; i < this.camisetas.length; i++) {
-      if(id == this.camisetas[i].id) {
+      if (id == this.camisetas[i].id) {
         this.camisetas[i].seleccionado = true;
         this.partes = this.camisetas[i];
       } else {
         this.camisetas[i].seleccionado = false;
       }
     }
-    for(let i = 0; i < this.svgs.length; i++) {
-      if(id == this.svgs[i].idModelo) {
+    for (let i = 0; i < this.svgs.length; i++) {
+      if (id == this.svgs[i].idModelo) {
         this.partesSvg = this.svgs[i];
       }
     }
@@ -127,30 +133,31 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  anterior(event) {
-    this.numeroPaso--;
+  anterior() {
     switch (this.numeroPaso) {
-      case 1:
-        this.paso = 'camiseta';
-        break;
       case 2:
-        this.paso = 'short';
+        this.numeroPaso = 1;
+        this.paso = 'camiseta';
+        this.generarFormCamiseta();
         break;
       case 3:
-        this.paso = 'numero';
+        this.numeroPaso = 2;
+        this.paso = 'short';
         break;
       case 4:
-        this.paso = 'equipo';
+        this.numeroPaso = 3;
+        this.paso = 'numero';
         break;
       case 5:
-        this.paso = 'checkout';
+        this.numeroPaso = 4;
+        this.paso = 'equipo';
         break;
     }
   }
 
   generarPedidoCamiseta(event) {
     this.pedido.cuelloCamiseta = event.cuello;
-    this.pedido.escudo = event.escudo;
+    this.pedido.escudo = this.convertirBase64(event.escudo);
     this.pedido.posicionEscudo = event.posicionEscudo;
     this.pedido.calidadEscudo = event.calidadEscudo;
   }
@@ -171,21 +178,34 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoEquipo(event) {
-    this.pedido.detalleEquipo = event.equipo;
+    this.pedido.detalleEquipo = [{nombreCamiseta: 'lucho', numero: 9, talleCamiseta: 'A', talleShort: 'S'},
+      {nombreCamiseta: 'luis', numero: 9, talleCamiseta: 'A', talleShort: 'S'}];
   }
 
   generarPedido(event) {
     this.pedido.mail = event.mail;
-    this.pedido.imagenes.push("iVBORw0KGgoAAAANSUhEUgAAAH0AAACbCAYAAABPnZS6AAASs0lEQVR4Xu2dCZgU1bXHz79uVffMsKvgHkUTkuAWjUt8hqcosskuCC7EuGE0wT2oIFI9M2BUFPcl");
-    this.wizardService.generarPedido(this.pedido).subscribe((data) => {
-      if (data) {
-        console.log("La operación se realizó con éxito.");
-      }
-    })
+    svgAsPngUri(this.personaComponent.generarImagenes(), "imagenes.png").then((data) => {
+      this.pedido.imagenes.push(this.convertirBase64(data));
+      this.pedido.imagenes.push(this.convertirBase64(data));
+      this.wizardService.generarPedido(this.pedido).subscribe((data) => {
+        if (data) {
+          console.log("La operación se realizó con éxito.");
+        }
+      })
+    });
+
+  }
+
+  convertirBase64(cadena) {
+    return cadena.replace('data:image/png;base64,', '');
   }
 
   cambiarColor(event) {
     this.colorPartes = event;
+  }
+
+  cambiarColorShort(event) {
+    this.colorShort = event;
   }
 
   initCamisetas() {
@@ -194,4 +214,14 @@ export class WizardComponent implements OnInit {
     }
   }
 
+  generarFormCamiseta() {
+    let form = {
+      'cuelloCamiseta': this.pedido.cuelloCamiseta,
+      'escudo': this.pedido.escudo,
+      'posicionEscudo': this.pedido.posicionEscudo,
+      'calidadEscudo': this.pedido.calidadEscudo,
+    }
+
+    this.formCamiseta = form;
+  }
 }
