@@ -5,4 +5,62 @@
     color: #8d2429;
     font-weight: 500;
   }
+  .navbar-toggler {
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    .burger-icon {
+      width: 30px;
+      height: 2px;
+      background-color: gray;
+      display: block;
+      transition: transform 500ms ease;
+      &:nth-child(2) {
+        margin-top: 5px;
+      }
+
+      &:nth-child(3) {
+        margin-top: 5px;
+      }
+    }
+    &.abierto {
+      .burger-icon {
+        width: 28px;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          margin-top: -2px;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.menu-mobile {
+  width: 100%;
+  background-color: #8d2429;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0 0;
+  transform: translate(0, -100%);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  z-index: 1000;
+  position: absolute;
+  top: -300px;
+  ul {
+    list-style: none;
+    li a {
+      color: white;
+    }
+  }
+  &.abierto {
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0 0;
+    transform: translate(0, 100%);
+    top: 0;
+  }
 }

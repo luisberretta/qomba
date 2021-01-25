@@ -1,21 +1,18 @@
 <div class="fondo">
-  <div class="container pt-4">
+  <div class="container py-4">
     <div class="card">
       <div class="card-body">
         <h3 class="text-white text-center font-weight-bold mb-4">Diseña tu conjunto de fútbol</h3>
         <div class="row justify-content-center">
           <div class="col-12 text-center">
-            <div class="btn-group" role="group">
-              <a class="btn btn-naranja" (click)="basica()"
-                 [ngClass]="categoria == 'basica' ? categoria : ''">Básicas</a>
-              <a class="btn btn-naranja" (click)="intermedia()" [ngClass]="categoria == 'intermedia' ? categoria : ''">Intermedias</a>
-              <a class="btn btn-naranja" (click)="premium()"
-                 [ngClass]="categoria == 'premium' ? categoria : ''">Premium</a>
-              <a class="btn btn-naranja" (click)="propio()" [ngClass]="categoria == 'propio' ? categoria : ''">Diseño
-                propio</a>
-            </div>
+             <div class="btn-group" role="group">
+               <a class="btn btn-naranja" (click)="basica()" [ngClass]="categoria == 'basica' ? categoria : ''">Básicas</a>
+               <a class="btn btn-naranja" (click)="intermedia()" [ngClass]="categoria == 'intermedia' ? categoria : ''">Intermedias</a>
+               <a class="btn btn-naranja" (click)="premium()" [ngClass]="categoria == 'premium' ? categoria : ''">Premium</a>
+               <a class="btn btn-naranja" (click)="propio()" [ngClass]="categoria == 'propio' ? categoria : ''">Tu diseño</a>
+             </div>
             <div *ngIf="paso == 'camiseta'" [ngSwitch]="categoria" class="camisetas-categoria mt-3">
-              <h4 class="mb-4">Seleccioná un modelo</h4>
+              <h4 *ngIf="categoria !== 'propio'" class="mb-4">Seleccioná un modelo</h4>
               <div *ngSwitchCase="'basica'">
                 <div *ngFor="let camiseta of camisetas" class="d-inline">
                   <img *ngIf="camiseta.categoria == 'basica'" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
@@ -23,45 +20,43 @@
               </div>
               <div *ngSwitchCase="'intermedia'">
                 <div *ngFor="let camiseta of camisetas" class="d-inline">
-                  <img *ngIf="camiseta.categoria == 'intermedia'" src="{{ camiseta.url }}"
-                       (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
+                  <img *ngIf="camiseta.categoria == 'intermedia'" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
+                  </div>
                 </div>
-              </div>
               <div *ngSwitchCase="'premium'">
                 <div *ngFor="let camiseta of camisetas" class="d-inline">
-                  <img *ngIf="camiseta.categoria == 'premium'" src="{{ camiseta.url }}"
-                       (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
+                  <img *ngIf="camiseta.categoria == 'premium'"  src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="row" *ngIf="seleccionoModelo">
-          <div class="col-8 mt-3">
+          <div class="col-md-7 col-12 mt-3">
             <ul class="indicador-progreso" [ngClass]="paso">
               <li>
-                <a (click)="pasoCamiseta('camiseta')">1</a>
+                <a>1</a>
                 <h5>Camiseta</h5>
               </li>
               <li>
-                <a (click)="pasoShort('short')">2</a>
+                <a>2</a>
                 <h5>Short</h5>
               </li>
               <li>
-                <a (click)="pasoNumero('numero')">3</a>
+                <a>3</a>
                 <h5>Número</h5>
               </li>
               <li>
-                <a (click)="pasoEquipo('equipo')">4</a>
+                <a>4</a>
                 <h5>Equipo</h5>
               </li>
               <li>
-                <a (click)="pasoCheckout('checkout')">5</a>
+                <a>5</a>
                 <h5>Checkout</h5>
               </li>
             </ul>
             <div class="paso mt-3" [ngSwitch]="paso">
-              <app-camiseta *ngSwitchCase="'camiseta'" (colorPartes)="cambiarColor($event)" (proximoPaso)="siguiente($event)"
+              <app-camiseta *ngSwitchCase="'camiseta'" (proximoPaso)="siguiente($event)"
                             [partes]="partes"></app-camiseta>
               <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)"></app-short>
               <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)"></app-numero>
@@ -70,7 +65,7 @@
                             (finalizarPasos)="siguiente($event)"></app-checkout>
             </div>
           </div>
-          <div class="col-4 align-self-center text-center">
+          <div class="col-md-5 col-12 align-self-center text-center">
             <app-persona [colorPartes]="colorPartes" [partesSvg]="partesSvg"></app-persona>
           </div>
         </div>

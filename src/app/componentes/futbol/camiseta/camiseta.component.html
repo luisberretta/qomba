@@ -1,34 +1,6 @@
 <form [formGroup]="formPasoCamiseta">
   <div class="row justify-content-center">
-    <div class="col-md-7 col-12">
-      <p>Elegí los colores de cada parte de tu camiseta.</p>
-      <div class="row align-items-center mt-5">
-        <div class="col-5 text-center">
-          <div class="carousel slide" data-ride="carousel" *ngIf="partes.partes">
-            <div class="carousel-inner">
-              <div class="carousel-item" [class.active]="indiceActual === image.id"
-                   *ngFor="let image of partes.partes; let i = index">
-                <img class="d-block w-100" src="{{ image.url }}" id="{{ image.id }}">
-              </div>
-            </div>
-            <a class="carousel-control-prev" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"
-                    (click)="cambioCarousel(indiceActual - 1, true)"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"
-                    (click)="cambioCarousel(indiceActual + 1, false)"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-        <div class="col-7">
-          <color-github (onChangeComplete)="cambioColor($event, indiceActual)"></color-github>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-5 col-12">
+    <div class="col-md-10 col-12">
       <div class="form-group">
         <label>Elegí el cuello de tu camiseta</label>
         <select class="form-control" formControlName="cuello">
@@ -47,8 +19,7 @@
         <div class="row">
           <div class="col-md-6 col-12">
             <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>
-            <input type="file" class="d-none"  alife-file-to-base64 multiple
-                   #archivoEscudo (onFileChanged)="subirArchivo($event)">
+            <input type="file" class="d-none" formControlName="escudo" #archivoEscudo (change)="subirArchivo($event)">
           </div>
           <div class="col-md-6 col-12 align-self-center">
             <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>
@@ -70,7 +41,7 @@
         </select>
       </div>
     </div>
-    <div class="col-4 text-center">
+    <div class="col-md-4 col-10 text-center">
       <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
     </div>
   </div>

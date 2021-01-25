@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  desplegado: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  abrirMenu() {
+    this.desplegado = !this.desplegado;
   }
 
 }

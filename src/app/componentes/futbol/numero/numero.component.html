@@ -26,14 +26,16 @@
       <div class="" *ngIf="esNumeroShort">
         <select class="form-control" formControlName="posicionNumeroSort">
           <option>Seleccione número frontal</option>
-          <option *ngFor="let posicion of posicionesNumeroShort"
-          >{{posicion}}</option>
+          <option *ngFor="let posicion of posicionesNumeroShort">{{posicion}}</option>
         </select>
       </div>
     </div>
 
-    <div class="col-12">
-      <div class="col-4 text-center">
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+      </div>
+      <div class="col-4">
         <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
       </div>
     </div>

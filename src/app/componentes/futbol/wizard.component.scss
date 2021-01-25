@@ -7,7 +7,7 @@
 }
 
 .card {
-  background-color: black;
+  background-color: #474444;
   color: white;
   border-radius: 0;
 }
@@ -216,5 +216,11 @@
     &.seleccionado {
       opacity: 1;
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn-group {
+    display: block;
   }
 }

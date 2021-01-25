@@ -7,10 +7,10 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
-  SimpleChanges, OnDestroy
+  SimpleChanges
 } from '@angular/core';
-import {svgAsPngUri} from 'save-svg-as-png';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-camiseta',
@@ -20,7 +20,12 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 export class CamisetaComponent implements OnInit, OnChanges {
 
   @ViewChild('archivoEscudo') fileInput: ElementRef;
-  formPasoCamiseta: FormGroup;
+  formPasoCamiseta: FormGroup = new FormGroup({
+    cuello: new FormControl('', [Validators.required]),
+    escudo: new FormControl(''),
+    posicionEscudo: new FormControl(''),
+    calidadEscudo: new FormControl(''),
+  });
   submit: boolean = false;
   @Input() pasoNumero: number;
   @Output() proximoPaso = new EventEmitter<string>();
@@ -30,6 +35,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   indiceActual: number = 1;
   @Output() colorPartes = new EventEmitter();
   idModelo: number;
+  @Input() formCamiseta;
 
   cambioCarousel(index, esPrevio) {
     if(esPrevio) {
@@ -47,11 +53,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
     }
   }
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.buildPasoCamisetaForm();
   }
 
   get pasoCamisetaForm() {
@@ -63,15 +68,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.fileInput.nativeElement.click();
   }
 
-  buildPasoCamisetaForm() {
-    this.formPasoCamiseta = this.fb.group({
-      cuello: ['', Validators.required],
-      escudo: [''],
-      posicionEscudo: [''],
-      calidadEscudo: [''],
-    });
-  }
-
   // Método que captura el evento de subida de archivo.
   subirArchivo(event) {
     let base64 = event[0].base64.replace('data:image/jpeg;base64,','');
@@ -81,8 +77,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    if(true) {
-    // if(this.formPasoCamiseta.valid) {
+    if(this.formPasoCamiseta.valid) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
   }
@@ -90,12 +85,25 @@ export class CamisetaComponent implements OnInit, OnChanges {
   ngOnChanges(changeRecord: SimpleChanges): void {
     this.indiceActual = 1;
     this.idModelo = changeRecord.partes.currentValue.id;
+    if(changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
+      this.generarFormulario(changeRecord.formCamiseta.currentValue);
+    }
   }
 
   cambioColor(event, idParte) {
     this.colorPartes.emit({
       'idParte': idParte, 'color': event.color.hex
     });
+  }
+
+  generarFormulario(formCamiseta) {
+    this.formPasoCamiseta.get('cuello').setValue(formCamiseta.cuelloCamiseta);
+    this.formPasoCamiseta.get('escudo').setValue(formCamiseta.escudo);
+    this.formPasoCamiseta.get('posicionEscudo').setValue(formCamiseta.posicionEscudo);
+    this.formPasoCamiseta.get('calidadEscudo').setValue(formCamiseta.calidadEscudo);
+    if(this.formPasoCamiseta.get('escudo').value) {
+      this.deshabilitado = false;
+    }
   }
 
 }
