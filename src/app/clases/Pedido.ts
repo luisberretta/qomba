@@ -4,7 +4,8 @@ export interface Pedido {
   mail?: string;
   descripcion?: string;
   tieneNombre?: boolean;
-  tieneShort?: boolean;
+  llevaShort?: boolean;
+  tieneNroCamiseta?:boolean;
   tieneNroFrontalCamiseta?: boolean;
   posicionNroFrontalCamiseta?: string;
   cuelloCamiseta?:string;

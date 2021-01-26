@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {FormArray, FormBuilder, Validators} from "@angular/forms";
 
 @Component({
@@ -8,6 +8,7 @@ import {FormArray, FormBuilder, Validators} from "@angular/forms";
 })
 export class EquipoComponent implements OnInit {
 
+  @Input() pedido: any;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
@@ -51,6 +52,10 @@ export class EquipoComponent implements OnInit {
         }
       }
     });
+  }
+
+  correspondeNumero(){
+    return (this.pedido.tieneNroCamiseta || this.pedido.tieneNroShort);
   }
 
   siguiente() {

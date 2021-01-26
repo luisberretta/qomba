@@ -8,15 +8,25 @@
                  (click)="checkCamiseta(radioCamiseta)">
           <label class="form-check-label">{{radioCamiseta}}</label>
         </div>
-        <div class="" *ngIf="esNumeroCamiseta">
+
+        <div class="form-group">
+          <label class="form-check-label" for="lleva-nro-frontal">¿Vas a agregar número frontal?</label>
+          <label class="switch">
+            <input class="form-check-input" formControlName="llevaNroFrontal" type="checkbox" value=""
+                   id="lleva-nro-frontal" (change)="llevaNroFrontal = !llevaNroFrontal">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="" *ngIf="llevaNroFrontal">
           <select class="form-control" formControlName="posicionNumeroCamiseta">
-            <option>Seleccione posición frontal si desea</option>
+            <option>Seleccione</option>
             <option *ngFor="let posicion of posicionesNumeroCamiseta">{{posicion}}</option>
           </select>
         </div>
       </div>
     </div>
-    <div *ngIf="tieneShort">
+    <div *ngIf="llevaShort">
       <label>Para tu Short</label>
       <div class="form-check form-switch" *ngFor="let radioShort of seleccionShort">
         <input class="form-check-input" type="radio" name="numeroShort" id="radioShort"

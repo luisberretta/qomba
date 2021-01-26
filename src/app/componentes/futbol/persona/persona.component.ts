@@ -28,6 +28,8 @@ export class PersonaComponent implements OnInit, OnChanges {
   @Input() colorShort: String;
   @ViewChildren('path') paths: QueryList<any>;
   @ViewChild('dataContainer') dataContainer: ElementRef;
+  @ViewChild('dataFrente') dataFrente: ElementRef;
+  @ViewChild('dataDorso') dataDorso: ElementRef;
 
   constructor(public renderer: Renderer2,
               private svgService: SvgService,
@@ -50,8 +52,10 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   generarImagenes(): any {
-    return this.dataContainer.nativeElement;
-
+    let images: HTMLAllCollection[] = [];
+    images.push(this.dataFrente.nativeElement);
+    images.push(this.dataDorso.nativeElement);
+    return images;
   }
 
   obtenerElementos(event) {
@@ -59,7 +63,7 @@ export class PersonaComponent implements OnInit, OnChanges {
       .getElementsByTagName('g')
     console.log(event.target.parentNode.id);
     for (let i = 0; i < groups.length; i++) {
-      if(groups[i].id == event.target.parentNode.id){
+      if (groups[i].id == event.target.parentNode.id) {
         let paths = groups[i].getElementsByTagName('path');
         this.cambiarColor(paths);
       }

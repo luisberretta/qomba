@@ -4,7 +4,6 @@ import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
-import {CamisetaComponent} from "./camiseta/camiseta.component";
 
 @Component({
   selector: 'app-wizard',
@@ -18,7 +17,6 @@ export class WizardComponent implements OnInit {
   categoria: string = 'basica';
   url: string = '/assets/images/basicas/';
   camisetaModelos: any = camisetaModelos;
-  camisetaSvg: any;
   camisetasSvg: any;
   camiseta: any;
   seleccionoModelo: boolean = false;
@@ -26,6 +24,7 @@ export class WizardComponent implements OnInit {
   colorPartes: any;
   colorShort: String;
   formCamiseta: any;
+
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -37,42 +36,9 @@ export class WizardComponent implements OnInit {
     this.initCamisetas();
   }
 
-  pasoCamiseta(paso) {
-    this.paso = paso;
-    this.numeroPaso = 1;
-  }
-
-  pasoShort(paso) {
-    if (this.numeroPaso > 2) {
-      this.paso = paso;
-      this.numeroPaso = 2;
-    }
-  }
-
-  pasoNumero(paso) {
-    if (this.numeroPaso > 3) {
-      this.paso = paso;
-      this.numeroPaso = 3;
-    }
-  }
-
-  pasoEquipo(paso) {
-    if (this.numeroPaso > 4) {
-      this.paso = paso;
-      this.numeroPaso = 4;
-    }
-  }
-
-  pasoCheckout(paso) {
-    if (this.numeroPaso > 5) {
-      this.paso = paso;
-      this.numeroPaso = 5;
-    }
-  }
-
   basica() {
     this.categoria = 'basica';
-    this.url= '/assets/images/basicas/';
+    this.url = '/assets/images/basicas/';
   }
 
   intermedia() {
@@ -160,17 +126,19 @@ export class WizardComponent implements OnInit {
 
   generarPedidoShort(event) {
     if (event) {
-      // Realizar mapeo de datos
+      this.pedido = event;
+
     } else {
-      this.pedido.tieneShort = null;
+      this.pedido.llevaShort = false;
     }
   }
 
   generarPedidoNumero(event) {
-    this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
-    this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
-    this.pedido.tieneNroShort = event.shortValor
-    this.pedido.posicionNroShort = event.posicionesNumeroShort;
+    this.pedido = event;
+    // this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
+    // this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
+    // this.pedido.tieneNroShort = event.shortValor
+    // this.pedido.posicionNroShort = event.posicionesNumeroShort;
   }
 
   generarPedidoEquipo(event) {
@@ -180,8 +148,8 @@ export class WizardComponent implements OnInit {
   generarPedido(event) {
     this.pedido.mail = event.mail;
     svgAsPngUri(this.personaComponent.generarImagenes(), "imagenes.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirBase64(data));
-      this.pedido.imagenes.push(this.convertirBase64(data));
+      this.pedido.imagenes.push(this.convertirBase64(data[0]));
+      this.pedido.imagenes.push(this.convertirBase64(data[1]));
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
         if (data) {
           console.log("La operación se realizó con éxito.");
