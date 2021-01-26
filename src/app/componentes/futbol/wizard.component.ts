@@ -119,15 +119,16 @@ export class WizardComponent implements OnInit {
 
   generarPedidoCamiseta(event) {
     this.pedido.cuelloCamiseta = event.cuello;
-    this.pedido.escudo = this.convertirBase64(event.escudo);
+    // this.pedido.escudo = this.convertirBase64(event.escudo);
     this.pedido.posicionEscudo = event.posicionEscudo;
     this.pedido.calidadEscudo = event.calidadEscudo;
   }
 
   generarPedidoShort(event) {
     if (event) {
-      this.pedido = event;
-
+      this.pedido.llevaShort = event.llevaShort;
+      this.pedido.tieneEscudoShort = event.llevaEscudo;
+      this.pedido.tieneNroShort = event.llevaNumero;
     } else {
       this.pedido.llevaShort = false;
     }
@@ -178,13 +179,11 @@ export class WizardComponent implements OnInit {
   }
 
   generarFormCamiseta() {
-    let form = {
+    this.formCamiseta = {
       'cuelloCamiseta': this.pedido.cuelloCamiseta,
       'escudo': this.pedido.escudo,
       'posicionEscudo': this.pedido.posicionEscudo,
       'calidadEscudo': this.pedido.calidadEscudo,
-    }
-
-    this.formCamiseta = form;
+    };
   }
 }

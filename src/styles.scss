@@ -66,3 +66,36 @@ html, body {
 .triangleShadow {
   display: none;
 }
+
+g {
+  transition: opacity 200ms ease;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+  &.parte-seleccionada {
+    opacity: 0.5;
+  }
+}
+
+.color-picker {
+  background-color: gray;
+  padding: 10px;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  .circle-picker {
+    width: 100% !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.modal {
+  .modal-content {
+    background-color: gray;
+    border-radius: 0;
+    button:focus {
+      box-shadow: none;
+    }
+  }
+}

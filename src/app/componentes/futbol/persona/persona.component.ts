@@ -1,14 +1,10 @@
-import {svgAsPngUri} from 'save-svg-as-png';
 import {
-  AfterViewInit,
   Component, ElementRef,
   Input,
   OnChanges,
   OnInit,
-  QueryList,
   Renderer2,
   SimpleChanges, ViewChild,
-  ViewChildren
 } from '@angular/core';
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -20,14 +16,17 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class PersonaComponent implements OnInit, OnChanges {
 
-  color: string = "blue";
   frente: any;
   dorso: any;
   @Input() url: any;
   @Input() camisetasSvg: any;
   @Input() colorShort: String;
-  @ViewChildren('path') paths: QueryList<any>;
   @ViewChild('dataContainer') dataContainer: ElementRef;
+  colors = ['#B80000', '#DB3E00', '#FCCB00', '#008B02', '#006B76', '#1273DE', '#004DCF', '#5300EB', '#FF37E1', '#992328', '#FFFFFF', '#000000'];
+  selectorColorVisible: boolean = false;
+  idGrupo: String;
+  parteSeleccionada: string;
+  @Input() paso: string;
   @ViewChild('dataFrente') dataFrente: ElementRef;
   @ViewChild('dataDorso') dataDorso: ElementRef;
 
@@ -38,7 +37,6 @@ export class PersonaComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
   }
-
 
   ngOnChanges(changeRecord: SimpleChanges): void {
     if (changeRecord.camisetasSvg && changeRecord.camisetasSvg.currentValue) {
@@ -52,6 +50,7 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   generarImagenes(): any {
+    return this.dataContainer.nativeElement;
     let images: HTMLAllCollection[] = [];
     images.push(this.dataFrente.nativeElement);
     images.push(this.dataDorso.nativeElement);
@@ -59,22 +58,30 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   obtenerElementos(event) {
-    let groups = this.dataContainer.nativeElement
-      .getElementsByTagName('g')
-    console.log(event.target.parentNode.id);
-    for (let i = 0; i < groups.length; i++) {
-      if (groups[i].id == event.target.parentNode.id) {
-        let paths = groups[i].getElementsByTagName('path');
-        this.cambiarColor(paths);
+    this.selectorColorVisible = true;
+    this.idGrupo = event.target.parentNode.id;
+    let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
+    for (let i = 0; i < grupos.length; i++) {
+      if (grupos[i].id == this.idGrupo) {
+        grupos[i].classList.add('parte-seleccionada');
+      } else {
+        grupos[i].classList.remove('parte-seleccionada');
+      }
+    }
+    this.parteSeleccionada = this.idGrupo.toString().charAt(0).toUpperCase() + this.idGrupo.toString().slice(1);
+  }
+
+  cambiarColor(color) {
+    let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
+    for (let i = 0; i < grupos.length; i++) {
+      if (grupos[i].id == this.idGrupo) {
+        let paths = grupos[i].getElementsByTagName('path');
+        for (let i = 0; i < paths.length; i++) {
+          paths[i].setAttribute('fill', color);
+        }
+        grupos[i].classList.remove('parte-seleccionada');
       }
     }
   }
 
-  cambiarColor(elementos) {
-    if (elementos) {
-      for (let i = 0; i < elementos.length; i++) {
-        elementos[i].setAttribute('fill', 'red');
-      }
-    }
-  }
 }

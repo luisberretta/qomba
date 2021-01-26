@@ -1,6 +1,6 @@
 <form [formGroup]="formPasoShort">
-  <div class="row">
-    <div class="col-12 col-md-7 text-left">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-11 text-center">
       <div class="form-group">
           <label class="form-check-label" for="lleva-short">¿Vas a agregar short para tu equipo?</label>
           <label class="switch">
@@ -9,12 +9,16 @@
           </label>
       </div>
       <div *ngIf="activo">
+          <em>Elegí el color de tu short</em>
         <div class="form-group">
-          <label>Elegí el color de tu short</label>
-          <color-github (onChangeComplete)="cambioColorShort($event)"></color-github>
+          <label class="form-check-label" for="lleva-numero">¿Vas a agregarle número al short?</label>
+          <label class="switch">
+            <input class="form-check-input" formControlName="llevaNumero" type="checkbox" value="" id="lleva-numero">
+            <span class="slider round"></span>
+          </label>
         </div>
       </div>
-      <div class="row justify-content-center">
+      <div class="row justify-content-center mt-3">
         <div class="col-4">
           <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
         </div>

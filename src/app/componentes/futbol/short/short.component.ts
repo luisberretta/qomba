@@ -1,4 +1,4 @@
-import {Component, OnInit, Output,EventEmitter} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input, SimpleChanges, OnChanges} from '@angular/core';
 import {} from "events";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
@@ -7,7 +7,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   templateUrl: './short.component.html',
   styleUrls: ['./short.component.scss']
 })
-export class ShortComponent implements OnInit {
+export class ShortComponent implements OnInit, OnChanges {
 
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
@@ -20,23 +20,23 @@ export class ShortComponent implements OnInit {
   });
   submit: boolean = false;
   activo: boolean = false;
+  @Input() formShort;
 
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  buildFromPasoShort() {
-    this.formPasoShort = this.fb.group({
-      llevaShort: [''],
-      color: [''],
-      llevaEscudo: [''],
-      llevaNumero: [''],
-    })
-  }
-
   get pasoCamisetaForm() {
     return this.formPasoShort.controls;
+  }
+
+  ngOnChanges(changeRecord: SimpleChanges): void {
+    if(changeRecord.formShort && changeRecord.formShort.currentValue) {
+      console.log(changeRecord.formShort.currentValue);
+      return;
+      this.generarFormulario(changeRecord.formShort.currentValue);
+    }
   }
 
   siguiente() {
@@ -52,12 +52,16 @@ export class ShortComponent implements OnInit {
     this.anteriorPaso.emit();
   }
 
-  cambioColorShort(event) {
-    this.colorShort.emit(event.color.hex);
-  }
-
   activarCampos() {
     this.activo = !this.activo;
+  }
+
+  generarFormulario(formShort) {
+
+    this.formPasoShort.get('llevaShort').setValue(formShort.cuelloCamiseta ?? null);
+    this.formPasoShort.get('color').setValue(formShort.escudo ?? null);
+    this.formPasoShort.get('llevaEscudo').setValue(formShort.posicionEscudo ?? null);
+    this.formPasoShort.get('llevaNumero').setValue(formShort.calidadEscudo ?? null);
   }
 
 }

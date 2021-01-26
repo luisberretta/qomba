@@ -10,7 +10,8 @@ import {
   SimpleChanges
 } from '@angular/core';
 
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-camiseta',
@@ -32,28 +33,13 @@ export class CamisetaComponent implements OnInit, OnChanges {
   @Input() partes;
   nombreArchivo: string;
   deshabilitado: boolean = true;
-  indiceActual: number = 1;
   @Output() colorPartes = new EventEmitter();
-  idModelo: number;
   @Input() formCamiseta;
+  cuellos: string[] = ["Chomba", "Escote en V", "Escote redondo"];
+  posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
+  calidadesEscudo: string[] = ["Bordado", "Estampado"];
 
-  cambioCarousel(index, esPrevio) {
-    if(esPrevio) {
-      if(index == 0) {
-        this.indiceActual = this.partes.partes.length;
-      } else {
-        this.indiceActual = index;
-      }
-    } else {
-      if(index == this.partes.partes.length + 1) {
-        this.indiceActual = 1;
-      } else {
-        this.indiceActual = index;
-      }
-    }
-  }
-
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -83,27 +69,24 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-    this.indiceActual = 1;
-    this.idModelo = changeRecord.partes.currentValue.id;
     if(changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
       this.generarFormulario(changeRecord.formCamiseta.currentValue);
     }
   }
 
-  cambioColor(event, idParte) {
-    this.colorPartes.emit({
-      'idParte': idParte, 'color': event.color.hex
-    });
-  }
-
   generarFormulario(formCamiseta) {
-    this.formPasoCamiseta.get('cuello').setValue(formCamiseta.cuelloCamiseta);
-    this.formPasoCamiseta.get('escudo').setValue(formCamiseta.escudo);
-    this.formPasoCamiseta.get('posicionEscudo').setValue(formCamiseta.posicionEscudo);
-    this.formPasoCamiseta.get('calidadEscudo').setValue(formCamiseta.calidadEscudo);
+
+    this.formPasoCamiseta.get('cuello').setValue(formCamiseta.cuelloCamiseta ?? null);
+    this.formPasoCamiseta.get('escudo').setValue(formCamiseta.escudo ?? null);
+    this.formPasoCamiseta.get('posicionEscudo').setValue(formCamiseta.posicionEscudo ?? null);
+    this.formPasoCamiseta.get('calidadEscudo').setValue(formCamiseta.calidadEscudo ?? null);
     if(this.formPasoCamiseta.get('escudo').value) {
       this.deshabilitado = false;
     }
+  }
+
+  open(content) {
+    this.modalService.open(content, { centered: true });
   }
 
 }

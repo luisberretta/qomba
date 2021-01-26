@@ -12,6 +12,7 @@ export interface Pedido {
   posicionEscudo?:string;
   calidadEscudo?:string;
   tieneNroShort?: boolean;
+  tieneEscudoShort?: boolean;
   posicionNroShort?: string;
   imagenes?: string[];
   detalleEquipo ?: DetalleEquipo[];
