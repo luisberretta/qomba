@@ -1,5 +1,13 @@
-<div #dataContainer (click)="obtenerElementos($event)">
-  <div [innerHTML]="frente"></div>
-  <div [innerHTML]="dorso"></div>
+<div class="color-picker">
+  <p *ngIf="parteSeleccionada && paso == 'camiseta'" class="text-dark">Elegí el color para: <strong>{{ parteSeleccionada }}</strong></p>
+  <color-circle [colors]="colors" (onChangeComplete)="paso == 'camiseta' ? cambiarColor($event.color.hex) : false" ></color-circle>
+</div>
+<div #dataContainer (click)="paso == 'camiseta' ? obtenerElementos($event) : false" class="row">
+  <div class="col-md-6 col-12">
+    <div [innerHTML]="frente"></div>
+  </div>
+  <div class="col-md-6 col-12">
+    <div [innerHTML]="dorso"></div>
+  </div>
 </div>
 

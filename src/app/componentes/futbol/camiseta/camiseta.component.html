@@ -1,13 +1,19 @@
 <form [formGroup]="formPasoCamiseta">
   <div class="row justify-content-center">
-    <div class="col-md-10 col-12">
-      <div class="form-group">
+    <div class="col-md-11 col-12">
+      <div class="row">
+        <div class="col-md-10 col-12">
+          <em>Para cambiarle el color a tu camiseta lo podés hacer clickeando sobre cada parte en las imágenes de tu derecha.</em>
+        </div>
+        <div class="col-md-2 col-12 align-self-center text-center">
+          <i class="fas fa-info-circle fa-2x" (click)="open(content)"></i>
+        </div>
+      </div>
+      <div class="form-group mt-3">
         <label>Elegí el cuello de tu camiseta</label>
         <select class="form-control" formControlName="cuello">
-          <option value="" selected>Seleccione</option>
-          <option value="Chomba">Chomba</option>
-          <option value="Escote en V">Escote en V</option>
-          <option value="Escote redondo">Escote redondo</option>
+          <option [ngValue]="null" selected disabled>Seleccione</option>
+          <option *ngFor="let cuello of cuellos" [ngValue]="cuello">{{ cuello }}</option>
         </select>
         <div *ngIf="submit && pasoCamisetaForm.cuello.errors" class="invalid-feedback">
           <div *ngIf="pasoCamisetaForm.cuello.errors.required">Seleccione el cuello.
@@ -28,16 +34,14 @@
       </div>
       <div class="form-group">
         <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null">
-          <option value="" selected>Posición</option>
-          <option value="Derecha">Derecha</option>
-          <option value="Izquierda">Izquierda</option>
+          <option [ngValue]="null" selected disabled>Posición</option>
+          <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
         </select>
       </div>
       <div class="form-group">
         <select class="form-control" formControlName="calidadEscudo" [attr.disabled]="deshabilitado ? '' : null">
-          <option value="" selected>Calidad</option>
-          <option value="Bordado">Bordado</option>
-          <option value="Estampado">Estampado</option>
+          <option [ngValue]="null" selected disabled>Calidad</option>
+          <option *ngFor="let calidad of calidadesEscudo" [ngValue]="calidad">{{ calidad }}</option>
         </select>
       </div>
     </div>
@@ -46,3 +50,13 @@
     </div>
   </div>
 </form>
+<ng-template #content let-modal>
+  <div class="modal-body text-center">
+    <img src="/assets/images/tutorial.gif" class="img-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-10">
+        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
+      </div>
+    </div>
+  </div>
+</ng-template>
