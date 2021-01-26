@@ -1,2 +1,5 @@
-<div [innerHTML]="frente"(click)="cambiarColor($event)"></div>
-<div [innerHTML]="dorso"(click)="cambiarColor($event)"></div>
+<div #dataContainer (click)="obtenerElementos($event)">
+  <div [innerHTML]="frente"></div>
+  <div [innerHTML]="dorso"></div>
+</div>
+

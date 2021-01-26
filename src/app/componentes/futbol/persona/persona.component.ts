@@ -11,6 +11,7 @@ import {
   ViewChildren
 } from '@angular/core';
 import {SvgService} from "../../../servicios/svg.service";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-persona',
@@ -23,34 +24,27 @@ export class PersonaComponent implements OnInit, OnChanges {
   frente: any;
   dorso: any;
   @Input() url: any;
-  @Input() camisetaSvg: any;
+  @Input() camisetasSvg: any;
   @Input() colorShort: String;
   @ViewChildren('path') paths: QueryList<any>;
   @ViewChild('dataContainer') dataContainer: ElementRef;
 
   constructor(public renderer: Renderer2,
-              private svgService: SvgService) {
+              private svgService: SvgService,
+              private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      let svg = this.dataContainer.nativeElement.innerHTML;
-
-      let svgArchivo = svgAsPngUri(this.dataContainer.nativeElement, "diagram.png");
-    }, 2000);
   }
 
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-    console.log("AFUERA");
-    if (changeRecord.camiseta && changeRecord.camiseta.currentValue) {
-      console.log("ADENTROOO");
-      console.log(changeRecord.camiseta.currentValue.urls[0]);
-      this.svgService.obtenerSVG(this.url + changeRecord.camiseta.currentValue.urls[0]).subscribe((data) => {
-        this.frente = data;
+    if (changeRecord.camisetasSvg && changeRecord.camisetasSvg.currentValue) {
+      this.svgService.obtenerSVG(this.url + changeRecord.camisetasSvg.currentValue[0]).subscribe((data) => {
+        this.frente = this.sanitizer.bypassSecurityTrustHtml(data);
       });
-      this.svgService.obtenerSVG(this.url + changeRecord.camiseta.currentValue.urls[1]).subscribe((data) => {
-        this.dorso = data;
+      this.svgService.obtenerSVG(this.url + changeRecord.camisetasSvg.currentValue[1]).subscribe((data) => {
+        this.dorso = this.sanitizer.bypassSecurityTrustHtml(data);
       });
     }
   }
@@ -60,18 +54,23 @@ export class PersonaComponent implements OnInit, OnChanges {
 
   }
 
-  cambiarColor(event) {
-    let g = event.target.parentNode;
-    if (g.nodeName == 'g') {
-      let elementos = g.getElementsByTagName('path');
-      if (elementos) {
-        for (let i = 0; i < elementos.length; i++) {
-          elementos[i].setAttribute('fill', 'red');
-        }
+  obtenerElementos(event) {
+    let groups = this.dataContainer.nativeElement
+      .getElementsByTagName('g')
+    console.log(event.target.parentNode.id);
+    for (let i = 0; i < groups.length; i++) {
+      if(groups[i].id == event.target.parentNode.id){
+        let paths = groups[i].getElementsByTagName('path');
+        this.cambiarColor(paths);
       }
     }
-
   }
 
-
+  cambiarColor(elementos) {
+    if (elementos) {
+      for (let i = 0; i < elementos.length; i++) {
+        elementos[i].setAttribute('fill', 'red');
+      }
+    }
+  }
 }

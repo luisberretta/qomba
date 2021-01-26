@@ -15,16 +15,16 @@
               <h4 *ngIf="categoria !== 'propio'" class="mb-4">Seleccioná un modelo</h4>
               <div *ngSwitchCase="'basica'">
                 <div *ngFor="let camiseta of camisetaModelos" class="d-inline">
-                  <img *ngIf="camiseta.categoria == 'basica'" src="{{ camiseta.urls }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
+                  <img *ngIf="camiseta.categoria == 'basica'" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
                 </div>
               </div>
               <div *ngSwitchCase="'intermedia'">
-                <div *ngFor="let camiseta of camisetas" class="d-inline">
+                <div *ngFor="let camiseta of camisetaModelos" class="d-inline">
                   <img *ngIf="camiseta.categoria == 'intermedia'" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
                   </div>
                 </div>
               <div *ngSwitchCase="'premium'">
-                <div *ngFor="let camiseta of camisetas" class="d-inline">
+                <div *ngFor="let camiseta of camisetaModelos" class="d-inline">
                   <img *ngIf="camiseta.categoria == 'premium'"  src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
                 </div>
               </div>
@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="col-md-5 col-12 align-self-center text-center">
-            <app-persona [url]="url" [camisetaSvg]="camisetaSvg"></app-persona>
+            <app-persona [url]="url" [camisetasSvg]="camisetasSvg"></app-persona>
           </div>
         </div>
       </div>

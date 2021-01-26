@@ -1,4 +1,3 @@
-import {camisetaSvg} from "../../clases/CamisetaSvg";
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {camisetaModelos} from "../../clases/CamisetaModelo";
 import {Pedido} from "../../clases/Pedido";
@@ -17,10 +16,10 @@ export class WizardComponent implements OnInit {
   paso: string = 'camiseta';
   numeroPaso: number = 1;
   categoria: string = 'basica';
-  url: string;
+  url: string = '/assets/images/basicas/';
   camisetaModelos: any = camisetaModelos;
-  camisetaSvg: any = camisetaSvg;
-  partesSvg: any;
+  camisetaSvg: any;
+  camisetasSvg: any;
   camiseta: any;
   seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
@@ -73,7 +72,7 @@ export class WizardComponent implements OnInit {
 
   basica() {
     this.categoria = 'basica';
-    this.url = '/assets/images/basicas/'
+    this.url= '/assets/images/basicas/';
   }
 
   intermedia() {
@@ -93,16 +92,11 @@ export class WizardComponent implements OnInit {
   modeloElegido(id) {
     this.seleccionoModelo = true;
     for (let i = 0; i < this.camisetaModelos.length; i++) {
+      this.camisetaModelos[i].seleccionado = false;
       if (id == this.camisetaModelos[i].id) {
         this.camisetaModelos[i].seleccionado = true;
         this.camiseta = this.camisetaModelos[i];
-      } else {
-        this.camisetaModelos[i].seleccionado = false;
-      }
-    }
-    for (let i = 0; i < this.camisetaSvg.length; i++) {
-      if (id == this.camisetaSvg[i].idModelo) {
-        this.partesSvg = this.camisetaSvg[i];
+        this.camisetasSvg = this.camisetaModelos[i].urlsSvg;
       }
     }
   }
