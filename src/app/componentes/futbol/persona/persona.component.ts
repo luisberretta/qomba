@@ -27,6 +27,8 @@ export class PersonaComponent implements OnInit, OnChanges {
   idGrupo: String;
   parteSeleccionada: string;
   @Input() paso: string;
+  @ViewChild('dataFrente') dataFrente: ElementRef;
+  @ViewChild('dataDorso') dataDorso: ElementRef;
 
   constructor(public renderer: Renderer2,
               private svgService: SvgService,
@@ -49,6 +51,10 @@ export class PersonaComponent implements OnInit, OnChanges {
 
   generarImagenes(): any {
     return this.dataContainer.nativeElement;
+    let images: HTMLAllCollection[] = [];
+    images.push(this.dataFrente.nativeElement);
+    images.push(this.dataDorso.nativeElement);
+    return images;
   }
 
   obtenerElementos(event) {

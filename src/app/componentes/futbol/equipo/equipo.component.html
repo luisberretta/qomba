@@ -1,39 +1,61 @@
 <div class="form-group">
   <form [formGroup]="formEquipo">
-    <label>¿Cuántos son en tu equipo?</label>
-    <input class="input-group" type="number" min="0" max="30" name="cantidadEquipo" id="cantidadEquipo"
-           formControlName="cantidadEquipo"
-           (change)="onValueChanges()">
-    <table class="table table-striped" *ngIf="mostrarTabla">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Número</th>
-        <th scope="col">Talle camiseta</th>
-        <th scope="col">Talle short</th>
-      </tr>
-      </thead>
-      <tbody formArrayName="equipo" *ngFor="let jugador of equipo.controls; index as i">
-      <tr formGroupName="{{i}}">
-        <td>{{ i + 1 }}</td>
-        <td><input type="text" formControlName="nombre" class="form-control"/></td>
-        <td><input type="number" min="0" max="99"
-                   formControlName="numero" class="form-control"/></td>
-        <td><select class="form-control" formControlName="talleCamiseta">
-          <option>Talle camiseta..</option>
-          <option *ngFor="let talle of talles">{{talle}}</option>
-        </select></td>
-        <td><select class="form-control" formControlName="talleShort">
-          <option>Talle short..</option>
-          <option *ngFor="let talle of talles">{{talle}}</option>
-        </select></td>
+    <div class="row justify-content-center">
+      <div class="form-group">
+        <div class="row">
+          <label>¿Cuántos son en tu equipo?</label>
+          <input class="form-control" type="number" min="0" max="30" name="cantidadEquipo" id="cantidadEquipo"
+                 formControlName="cantidadEquipo"
+                 (change)="onValueChanges()">
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group">
+          <table class="table-wrapper-scroll-y table-striped">
+            <thead>
+            <tr>
+              <th class="col-md-1">#</th>
+              <th class="col-md-2" *ngIf="formEquipoPedido.agregarNombreCamiseta">Nombre</th>
+              <th class="col-md-2" *ngIf="formEquipoPedido.agregarNumeroCamiseta || formEquipoPedido.agregarNumeroShort">
+                Número
+              </th>
+              <th class="col-md-3">Talle camiseta</th>
+              <th class="col-md-3" *ngIf="formEquipoPedido.llevaShort" >Talle short</th>
+            </tr>
+            </thead>
+            <tbody formArrayName="equipo" *ngFor="let jugador of formEquipoControl.value; index as i">
+            <tr formGroupName="{{i}}">
+              <td class="col-md-1">{{ i + 1 }}</td>
+              <td class="col-md-2" *ngIf="formEquipoPedido.agregarNombreCamiseta">
+                <input type="text" formControlName="nombre" class="form-control"/>
+              </td>
+              <td class="col-md-2"
+                  *ngIf="formEquipoPedido.agregarNumeroCamiseta || formEquipoPedido.agregarNumeroShort">
+                <input type="number" min="0" max="99" formControlName="numero" class="form-control"/>
+              </td>
+              <td class="col-md-3"><select class="form-control" formControlName="talleCamiseta">
+                <option disabled selected [ngValue]="null">Seleccione</option>
+                <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
+              </select></td>
+              <td class="col-md-3" *ngIf="formEquipoPedido.llevaShort"><select class="form-control"
+                                                                               formControlName="talleShort">
+                <option disabled selected [ngValue]="null">Seleccione</option>
+                <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
+              </select></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-      </tr>
-      </tbody>
-    </table>
-    <div class="col-4 text-center">
+  </form>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+    </div>
+    <div class="col-4">
       <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
     </div>
-  </form>
+  </div>
 </div>

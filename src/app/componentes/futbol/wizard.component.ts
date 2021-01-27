@@ -38,42 +38,9 @@ export class WizardComponent implements OnInit {
     this.initCamisetas();
   }
 
-  pasoCamiseta(paso) {
-    this.paso = paso;
-    this.numeroPaso = 1;
-  }
-
-  pasoShort(paso) {
-    if (this.numeroPaso > 2) {
-      this.paso = paso;
-      this.numeroPaso = 2;
-    }
-  }
-
-  pasoNumero(paso) {
-    if (this.numeroPaso > 3) {
-      this.paso = paso;
-      this.numeroPaso = 3;
-    }
-  }
-
-  pasoEquipo(paso) {
-    if (this.numeroPaso > 4) {
-      this.paso = paso;
-      this.numeroPaso = 4;
-    }
-  }
-
-  pasoCheckout(paso) {
-    if (this.numeroPaso > 5) {
-      this.paso = paso;
-      this.numeroPaso = 5;
-    }
-  }
-
   basica() {
     this.categoria = 'basica';
-    this.url= '/assets/images/basicas/';
+    this.url = '/assets/images/basicas/';
   }
 
   intermedia() {
@@ -172,10 +139,11 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoNumero(event) {
-    this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
-    this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
-    this.pedido.tieneNroShort = event.shortValor
-    this.pedido.posicionNroShort = event.posicionesNumeroShort;
+    this.pedido.agregarNumeroCamiseta = event.agregarNumeroCamiseta;
+    this.pedido.agregarNombreCamiseta = event.agregarNombreCamiseta;
+    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta;
+    this.pedido.agregarNumeroShort = event.agregarNumeroShort
+    this.pedido.posicionNumeroSort = event.posicionNumeroSort;
   }
 
   generarPedidoEquipo(event) {
@@ -185,8 +153,8 @@ export class WizardComponent implements OnInit {
   generarPedido(event) {
     this.pedido.mail = event.mail;
     svgAsPngUri(this.personaComponent.generarImagenes(), "imagenes.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirBase64(data));
-      this.pedido.imagenes.push(this.convertirBase64(data));
+      this.pedido.imagenes.push(this.convertirBase64(data[0]));
+      this.pedido.imagenes.push(this.convertirBase64(data[1]));
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
         if (data) {
           console.log("La operación se realizó con éxito.");
@@ -198,14 +166,6 @@ export class WizardComponent implements OnInit {
 
   convertirBase64(cadena) {
     return cadena.replace('data:image/png;base64,', '');
-  }
-
-  cambiarColor(event) {
-    this.colorPartes = event;
-  }
-
-  cambiarColorShort(event) {
-    this.colorShort = event;
   }
 
   initCamisetas() {

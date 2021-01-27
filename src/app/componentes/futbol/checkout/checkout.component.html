@@ -26,7 +26,7 @@
       </div>
 
       <h4>Equipo</h4>
-      <table class="table table-striped">
+      <table class="table-wrapper-scroll-y table-striped">
         <thead>
         <tr>
           <th scope="col">#</th>
@@ -40,9 +40,9 @@
         <tr *ngFor="let equipo of checkOut.detalleEquipo; index as i">
           <td>{{ i + 1 }}</td>
           <td>{{equipo.nombreCamiseta}}</td>
-          <td>{{ equipo.numero }}</td>
+          <td>{{ equipo.numero ? equipo.numero : "-" }}</td>
           <td>{{ equipo.talleCamiseta}}</td>
-          <td>{{ equipo.talleShort}}</td>
+          <td>{{ equipo.talleShort ? equipo.talleShort : "-"}}</td>
         </tr>
         </tbody>
       </table>
@@ -52,8 +52,9 @@
           <label>Ingrese su mail</label>
           <input type="email" class="form-control" formControlName="email">
         </div>
-        <div class="col-4 text-center">
-          <a class="btn btn-naranja btn-block" (click)="confirmar()">Confirmar</a>
+        <div *ngIf="submit && formCheckOut.controls.email.errors" class="invalid-feedback">
+          <div *ngIf="formCheckOut.controls.email.errors.required">Ingrese un email para confirmar el pedido.
+          </div>
         </div>
       </form>
 
@@ -64,4 +65,12 @@
   <!--  <form [formGroup]="formCheckOut">-->
   <!--  </form>-->
 
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col-4">
+    <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+  </div>
+  <div class="col-4">
+    <a class="btn btn-naranja btn-block" (click)="confirmar()">Confirmar</a>
+  </div>
 </div>
