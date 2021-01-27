@@ -4,7 +4,6 @@ import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
-import {CamisetaComponent} from "./camiseta/camiseta.component";
 
 @Component({
   selector: 'app-wizard',
@@ -18,7 +17,6 @@ export class WizardComponent implements OnInit {
   categoria: string = 'basica';
   url: string = '/assets/images/basicas/';
   camisetaModelos: any = camisetaModelos;
-  camisetaSvg: any;
   camisetasSvg: any;
   camiseta: any;
   seleccionoModelo: boolean = false;
@@ -26,6 +24,9 @@ export class WizardComponent implements OnInit {
   colorPartes: any;
   colorShort: String;
   formCamiseta: any;
+  formShort: any;
+  formNumero: any;
+  formEquipo: any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -139,6 +140,7 @@ export class WizardComponent implements OnInit {
       case 3:
         this.numeroPaso = 2;
         this.paso = 'short';
+        this.generarFormShort();
         break;
       case 4:
         this.numeroPaso = 3;
@@ -159,13 +161,14 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoShort(event) {
-    if (event) {
+    // if (event) {
+    console.log(event.llevaShort);
       this.pedido.tieneShort = event.llevaShort;
       this.pedido.tieneEscudoShort = event.llevaEscudo;
       this.pedido.tieneNroShort = event.llevaNumero;
-    } else {
-      this.pedido.tieneShort = null;
-    }
+    // } else {
+    //   this.pedido.tieneShort = null;
+    // }
   }
 
   generarPedidoNumero(event) {
@@ -217,6 +220,14 @@ export class WizardComponent implements OnInit {
       'escudo': this.pedido.escudo,
       'posicionEscudo': this.pedido.posicionEscudo,
       'calidadEscudo': this.pedido.calidadEscudo,
+    };
+  }
+
+  generarFormShort() {
+    this.formShort = {
+      'llevaShort': this.pedido.tieneShort,
+      'llevaEscudo': this.pedido.tieneEscudoShort,
+      'llevaNumero': this.pedido.tieneNroShort,
     };
   }
 }

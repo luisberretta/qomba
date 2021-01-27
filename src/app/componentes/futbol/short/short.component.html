@@ -4,12 +4,19 @@
       <div class="form-group">
           <label class="form-check-label" for="lleva-short">¿Vas a agregar short para tu equipo?</label>
           <label class="switch">
-            <input class="form-check-input" formControlName="llevaShort" type="checkbox" value="" id="lleva-short" (change)="activarCampos()">
+            <input class="form-check-input" formControlName="llevaShort" type="checkbox" id="lleva-short" (change)="activarCampos()" checked="false">
             <span class="slider round"></span>
           </label>
       </div>
       <div *ngIf="activo">
-          <em>Elegí el color de tu short</em>
+        <em>Elegí el color de tu short</em>
+        <div class="form-group">
+          <label class="form-check-label" for="lleva-escudo">¿Vas a agregarle escudo al short?</label>
+          <label class="switch">
+            <input class="form-check-input" formControlName="llevaEscudo" type="checkbox" value="" id="lleva-escudo">
+            <span class="slider round"></span>
+          </label>
+        </div>
         <div class="form-group">
           <label class="form-check-label" for="lleva-numero">¿Vas a agregarle número al short?</label>
           <label class="switch">

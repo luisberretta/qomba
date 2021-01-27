@@ -32,9 +32,10 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
+    // console.log(changeRecord);
     if(changeRecord.formShort && changeRecord.formShort.currentValue) {
-      console.log(changeRecord.formShort.currentValue);
-      return;
+      // // console.log(changeRecord.formShort.currentValue);
+      // return;
       this.generarFormulario(changeRecord.formShort.currentValue);
     }
   }
@@ -42,7 +43,7 @@ export class ShortComponent implements OnInit, OnChanges {
   siguiente() {
     this.submit = true;
     // if(this.formPasoShort.valid) {
-    //   this.proximoPaso.emit(this.formPasoShort.value);
+      this.proximoPaso.emit(this.formPasoShort.value);
     // }
   }
 
