@@ -21,7 +21,34 @@ export class EquipoComponent implements OnInit, OnChanges {
     equipo: new FormArray([])
   });
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.formEquipo.get('cantidadEquipo').valueChanges.subscribe((valor) => {
+
+      if (valor < 1) {
+        this.formEquipoControl.value.length = valor;
+        return;
+      }
+      if (valor < this.formEquipoControl.value.length) {
+        this.formEquipoControl.removeAt(this.formEquipoControl.value.length - 1);
+        // this.formEquipoControl.value.length = valor;
+        return;
+      }
+      if(this.formEquipoControl.value.length != valor) {
+        for (let i = this.formEquipoControl.value.length; i < valor; i++) {
+          this.formEquipoControl.push(
+            new FormGroup({
+              nombre: new FormControl(null, [Validators.required]),
+              numero: new FormControl(null, [Validators.min(0), Validators.max(99)]),
+              talleCamiseta: new FormControl(null, [Validators.required]),
+              talleShort: new FormControl(null, [Validators.required])
+            })
+          );
+        }
+        // return;
+      }
+      console.log("valor" + valor, "form" + this.formEquipoControl.value.length);
+    });
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.formEquipoPedido && changes.formEquipoPedido.currentValue) {
@@ -54,37 +81,40 @@ export class EquipoComponent implements OnInit, OnChanges {
     for (let i = 0; i < this.formEquipo.controls.cantidadEquipo.value; i++) {
       this.formEquipoControl.push(
         new FormGroup({
-          nombre: new FormControl('', [Validators.required]),
-          numero: new FormControl('', [Validators.min(0), Validators.max(99)]),
-          talleCamiseta: new FormControl('', [Validators.required]),
-          talleShort: new FormControl('', [Validators.required])
+          nombre: new FormControl(null, [Validators.required]),
+          numero: new FormControl(null, [Validators.min(0), Validators.max(99)]),
+          talleCamiseta: new FormControl(null, [Validators.required]),
+          talleShort: new FormControl(null, [Validators.required])
         })
       );
     }
   }
 
   onValueChanges(): void {
-    this.formEquipo.get('cantidadEquipo').valueChanges.subscribe(valor => {
-      this.formEquipo.get('cantidadEquipo').setValue(valor);
-      if (valor < 1) {
-        this.formEquipoControl.value.length = valor;
-        return;
-      }
-      if (valor < this.formEquipoControl.value.length) {
-        this.formEquipoControl.value.length = valor;
-      } else {
-        for (let i = this.formEquipoControl.value.length; i < valor; i++) {
-          this.formEquipoControl.push(
-            new FormGroup({
-              nombre: new FormControl('', [Validators.required]),
-              numero: new FormControl('', [Validators.min(0), Validators.max(99)]),
-              talleCamiseta: new FormControl('', [Validators.required]),
-              talleShort: new FormControl('', [Validators.required])
-            })
-          );
-        }
-      }
-    });
+    // this.formEquipo.get('cantidadEquipo').valueChanges.subscribe((valor) => {
+    //   console.log(valor);
+    //   if (valor < 1) {
+    //     this.formEquipoControl.value.length = valor;
+    //     return;
+    //   }
+    //   if (valor < this.formEquipoControl.value.length) {
+    //     this.formEquipoControl.value.length = valor;
+    //     return;
+    //   }
+    //   if(this.formEquipoControl.value.length != valor) {
+    //     for (let i = this.formEquipoControl.value.length; i < valor; i++) {
+    //       this.formEquipoControl.push(
+    //         new FormGroup({
+    //           nombre: new FormControl('', [Validators.required]),
+    //           numero: new FormControl('', [Validators.min(0), Validators.max(99)]),
+    //           talleCamiseta: new FormControl('', [Validators.required]),
+    //           talleShort: new FormControl('', [Validators.required])
+    //         })
+    //       );
+    //     }
+    //     return;
+    //   }
+    // });
   }
 
   siguiente() {

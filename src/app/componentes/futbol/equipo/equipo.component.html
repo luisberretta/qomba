@@ -1,61 +1,59 @@
-<div class="form-group">
-  <form [formGroup]="formEquipo">
-    <div class="row justify-content-center">
-      <div class="form-group">
-        <div class="row">
+<form [formGroup]="formEquipo">
+  <div class="row justify-content-center">
+    <div class="col-md-12 col-12 text-center">
+      <div class="row">
+        <div class="col-md-4 col-10">
           <label>¿Cuántos son en tu equipo?</label>
-          <input class="form-control" type="number" min="0" max="30" name="cantidadEquipo" id="cantidadEquipo"
-                 formControlName="cantidadEquipo"
-                 (change)="onValueChanges()">
         </div>
       </div>
       <div class="row">
-        <div class="form-group">
-          <table class="table-wrapper-scroll-y table-striped">
-            <thead>
-            <tr>
-              <th class="col-md-1">#</th>
-              <th class="col-md-2" *ngIf="formEquipoPedido.agregarNombreCamiseta">Nombre</th>
-              <th class="col-md-2" *ngIf="formEquipoPedido.agregarNumeroCamiseta || formEquipoPedido.agregarNumeroShort">
-                Número
-              </th>
-              <th class="col-md-3">Talle camiseta</th>
-              <th class="col-md-3" *ngIf="formEquipoPedido.llevaShort" >Talle short</th>
-            </tr>
-            </thead>
-            <tbody formArrayName="equipo" *ngFor="let jugador of formEquipoControl.value; index as i">
-            <tr formGroupName="{{i}}">
-              <td class="col-md-1">{{ i + 1 }}</td>
-              <td class="col-md-2" *ngIf="formEquipoPedido.agregarNombreCamiseta">
-                <input type="text" formControlName="nombre" class="form-control"/>
-              </td>
-              <td class="col-md-2"
-                  *ngIf="formEquipoPedido.agregarNumeroCamiseta || formEquipoPedido.agregarNumeroShort">
-                <input type="number" min="0" max="99" formControlName="numero" class="form-control"/>
-              </td>
-              <td class="col-md-3"><select class="form-control" formControlName="talleCamiseta">
-                <option disabled selected [ngValue]="null">Seleccione</option>
-                <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
-              </select></td>
-              <td class="col-md-3" *ngIf="formEquipoPedido.llevaShort"><select class="form-control"
-                                                                               formControlName="talleShort">
-                <option disabled selected [ngValue]="null">Seleccione</option>
-                <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
-              </select></td>
-            </tr>
-            </tbody>
-          </table>
+        <div class="col-md-5 col-10">
+          <div class="form-group">
+            <input class="form-control" type="number" min="0" max="30" id="cantidadEquipo" formControlName="cantidadEquipo" (change)="onValueChanges()">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-4 col-12">
+            <strong>Nombre</strong>
+          </div>
+          <div class="col-md-2 col-12">
+            <strong>Número</strong>
+          </div>
+          <div class="col-md-6 col-12 text-center">
+            <strong>Talle</strong>
+          </div>
+        </div>
+        <div class="row mt-2" formArrayName="equipo" *ngFor="let jugador of formEquipoControl.value; index as i">
+          <div *ngIf="formEquipoPedido.agregarNombreCamiseta" class="col-md-4 col-12" formGroupName="{{i}}">
+            <input type="text" formControlName="nombre" class="form-control"/>
+          </div>
+          <div *ngIf="formEquipoPedido.agregarNumeroCamiseta || formEquipoPedido.agregarNumeroShort" class="col-md-2 col-12" formGroupName="{{i}}">
+            <input type="number" min="0" max="99" formControlName="numero" class="form-control"/>
+          </div>
+          <div class="col" formGroupName="{{i}}">
+            <select class="form-control" formControlName="talleCamiseta">
+              <option disabled selected [ngValue]="null">Camiseta</option>
+              <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
+            </select>
+          </div>
+          <div *ngIf="formEquipoPedido.llevaShort" class="col" formGroupName="{{i}}">
+            <select class="form-control" formControlName="talleShort">
+              <option disabled selected [ngValue]="null">Short</option>
+              <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
-
-  </form>
-  <div class="row justify-content-center">
-    <div class="col-4">
-      <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
-    </div>
-    <div class="col-4">
-      <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
-    </div>
+  </div>
+</form>
+<div class="row justify-content-center">
+  <div class="col-4">
+    <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+  </div>
+  <div class="col-4">
+    <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
   </div>
 </div>

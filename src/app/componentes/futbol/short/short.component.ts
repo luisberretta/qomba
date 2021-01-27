@@ -43,9 +43,8 @@ export class ShortComponent implements OnInit, OnChanges {
   siguiente() {
     this.submit = true;
     console.log(this.formPasoShort);
-    this.proximoPaso.emit(this.formPasoShort.value);
     // if(this.formPasoShort.valid) {
-      this.proximoPaso.emit(this.formPasoShort.value);
+    this.proximoPaso.emit(this.formPasoShort.value);
     // }
   }
 

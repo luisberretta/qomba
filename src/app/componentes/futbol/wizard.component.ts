@@ -130,7 +130,7 @@ export class WizardComponent implements OnInit {
   generarPedidoShort(event) {
     // if (event) {
     console.log(event.llevaShort);
-      this.pedido.tieneShort = event.llevaShort;
+      this.pedido.llevaShort = event.llevaShort;
       this.pedido.tieneEscudoShort = event.llevaEscudo;
       this.pedido.tieneNroShort = event.llevaNumero;
     // } else {
@@ -185,7 +185,7 @@ export class WizardComponent implements OnInit {
 
   generarFormShort() {
     this.formShort = {
-      'llevaShort': this.pedido.tieneShort,
+      'llevaShort': this.pedido.llevaShort,
       'llevaEscudo': this.pedido.tieneEscudoShort,
       'llevaNumero': this.pedido.tieneNroShort,
     };
