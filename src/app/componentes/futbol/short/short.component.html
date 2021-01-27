@@ -2,11 +2,11 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-11 text-center">
       <div class="form-group">
-          <label class="form-check-label" for="lleva-short">¿Vas a agregar short para tu equipo?</label>
-          <label class="switch">
-            <input class="form-check-input" formControlName="llevaShort" type="checkbox" id="lleva-short" (change)="activarCampos()" checked="false">
-            <span class="slider round"></span>
-          </label>
+        <label class="form-check-label" for="llevaShort">¿Vas a agregar short para tu equipo?</label>
+        <label class="switch">
+          <input class="form-check-input" formControlName="llevaShort" type="checkbox" id="llevaShort" (change)="activarCampos()">
+          <span class="slider round"></span>
+        </label>
       </div>
       <div *ngIf="activo">
         <em>Elegí el color de tu short</em>

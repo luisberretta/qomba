@@ -129,7 +129,7 @@ export class WizardComponent implements OnInit {
 
   generarPedidoShort(event) {
     // if (event) {
-    console.log(event.llevaShort);
+    // console.log(event.llevaShort);
       this.pedido.llevaShort = event.llevaShort;
       this.pedido.tieneEscudoShort = event.llevaEscudo;
       this.pedido.tieneNroShort = event.llevaNumero;

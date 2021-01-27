@@ -13,7 +13,7 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() anteriorPaso = new EventEmitter();
   @Output() colorShort = new EventEmitter();
   formPasoShort: FormGroup = new FormGroup({
-    llevaShort: new FormControl(''),
+    llevaShort: new FormControl(null),
     color: new FormControl(''),
     llevaEscudo: new FormControl(''),
     llevaNumero: new FormControl(''),
@@ -25,6 +25,7 @@ export class ShortComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.formPasoShort.controls['llevaShort'].value)
   }
 
   get pasoCamisetaForm() {
