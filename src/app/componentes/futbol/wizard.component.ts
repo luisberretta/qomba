@@ -135,11 +135,11 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoNumero(event) {
-    this.pedido = event;
-    // this.pedido.tieneNroFrontalCamiseta = event.camisetaValor;
-    // this.pedido.posicionNroFrontalCamiseta = event.posicionNumeroCamiseta;
-    // this.pedido.tieneNroShort = event.shortValor
-    // this.pedido.posicionNroShort = event.posicionesNumeroShort;
+    this.pedido.agregarNumeroCamiseta = event.agregarNumeroCamiseta;
+    this.pedido.agregarNombreCamiseta = event.agregarNombreCamiseta;
+    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta;
+    this.pedido.agregarNumeroShort = event.agregarNumeroShort
+    this.pedido.posicionNumeroSort = event.posicionNumeroSort;
   }
 
   generarPedidoEquipo(event) {
@@ -162,14 +162,6 @@ export class WizardComponent implements OnInit {
 
   convertirBase64(cadena) {
     return cadena.replace('data:image/png;base64,', '');
-  }
-
-  cambiarColor(event) {
-    this.colorPartes = event;
-  }
-
-  cambiarColorShort(event) {
-    this.colorShort = event;
   }
 
   initCamisetas() {

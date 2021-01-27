@@ -17,4 +17,11 @@ export interface Pedido {
   imagenes?: string[];
   detalleEquipo ?: DetalleEquipo[];
   escudo?: string;
+
+  //Pedido Numero
+  agregarNumeroCamiseta?: boolean,
+  agregarNombreCamiseta?: boolean,
+  posicionNumeroCamiseta?: string,
+  agregarNumeroShort? :boolean,
+  posicionNumeroSort?: string
 }

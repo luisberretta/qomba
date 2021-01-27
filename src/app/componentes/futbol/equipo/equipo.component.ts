@@ -1,61 +1,90 @@
-import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
-import {FormArray, FormBuilder, Validators} from "@angular/forms";
+import {Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-equipo',
   templateUrl: './equipo.component.html',
   styleUrls: ['./equipo.component.scss']
 })
-export class EquipoComponent implements OnInit {
+export class EquipoComponent implements OnInit, OnChanges {
 
-  @Input() pedido: any;
+  @Input() formEquipoPedido: any;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
-  mostrarTabla: boolean = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor() {
   }
 
-  formEquipo = this.fb.group({
-    cantidadEquipo: [0, Validators.required],
-    equipo: this.fb.array([]),
+  formEquipo: FormGroup = new FormGroup({
+    cantidadEquipo: new FormControl(1, [Validators.required]),
+    equipo: new FormArray([])
   });
 
-  ngOnInit(): void {
-    this.onValueChanges();
+  ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.formEquipoPedido && changes.formEquipoPedido.currentValue) {
+      if (changes.formEquipoPedido.currentValue.detalleEquipo)
+        this.generarFormulario(changes.formEquipoPedido.currentValue);
+      else this.crearArrayFormEquipo();
+    }
   }
 
-  get equipo() {
-    return this.formEquipo.controls.equipo as FormArray;
+  generarFormulario(formEquipoPedido) {
+    for (let i = 0; i < formEquipoPedido.detalleEquipo.length; i++) {
+      if (this.formEquipoControl.value.length < formEquipoPedido.detalleEquipo.length) {
+        this.formEquipoControl.push(
+          new FormGroup({
+            nombre: new FormControl(formEquipoPedido.detalleEquipo[i].nombre, [Validators.required]),
+            numero: new FormControl(formEquipoPedido.detalleEquipo[i].numero, [Validators.min(0), Validators.max(99)]),
+            talleCamiseta: new FormControl(formEquipoPedido.detalleEquipo[i].talleCamiseta, [Validators.required]),
+            talleShort: new FormControl(formEquipoPedido.detalleEquipo[i].talleShort, [Validators.required])
+          })
+        );
+      }
+    }
+  }
+
+  get formEquipoControl() {
+    return this.formEquipo.get('equipo') as FormArray;
+  }
+
+  crearArrayFormEquipo() {
+    for (let i = 0; i < this.formEquipo.controls.cantidadEquipo.value; i++) {
+      this.formEquipoControl.push(
+        new FormGroup({
+          nombre: new FormControl('', [Validators.required]),
+          numero: new FormControl('', [Validators.min(0), Validators.max(99)]),
+          talleCamiseta: new FormControl('', [Validators.required]),
+          talleShort: new FormControl('', [Validators.required])
+        })
+      );
+    }
   }
 
   onValueChanges(): void {
-    let equipo = this.formEquipo.controls.equipo as FormArray;
-    this.formEquipo.get('cantidadEquipo').valueChanges.subscribe(val => {
-      if (val <= 0) {
-        equipo.controls.length = val;
-        this.mostrarTabla = false;
+    this.formEquipo.get('cantidadEquipo').valueChanges.subscribe(valor => {
+      this.formEquipo.get('cantidadEquipo').setValue(valor);
+      if (valor < 1) {
+        this.formEquipoControl.value.length = valor;
         return;
       }
-      this.mostrarTabla = true;
-      if (val < equipo.length) {
-        equipo.controls.length = val;
+      if (valor < this.formEquipoControl.value.length) {
+        this.formEquipoControl.value.length = valor;
       } else {
-        for (let i = equipo.controls.length; i < val; i++) {
-          equipo.push(this.fb.group({
-            nombre: ['', Validators.required],
-            numero: ['', [Validators.min(0), Validators.max(99)]],
-            talleCamiseta: ['', Validators.required],
-            talleShort: ['', Validators.required]
-          }));
+        for (let i = this.formEquipoControl.value.length; i < valor; i++) {
+          this.formEquipoControl.push(
+            new FormGroup({
+              nombre: new FormControl('', [Validators.required]),
+              numero: new FormControl('', [Validators.min(0), Validators.max(99)]),
+              talleCamiseta: new FormControl('', [Validators.required]),
+              talleShort: new FormControl('', [Validators.required])
+            })
+          );
         }
       }
     });
-  }
-
-  correspondeNumero(){
-    return (this.pedido.tieneNroCamiseta || this.pedido.tieneNroShort);
   }
 
   siguiente() {
@@ -63,6 +92,8 @@ export class EquipoComponent implements OnInit {
   }
 
   anterior() {
-    this.anteriorPaso.emit(this.formEquipo.value);
+    this.anteriorPaso.emit();
   }
+
+
 }

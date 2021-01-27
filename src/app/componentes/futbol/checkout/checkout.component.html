@@ -56,9 +56,6 @@
           <div *ngIf="formCheckOut.controls.email.errors.required">Ingrese un email para confirmar el pedido.
           </div>
         </div>
-        <div class="col-4 text-center">
-          <a class="btn btn-naranja btn-block" (click)="confirmar()">Confirmar</a>
-        </div>
       </form>
 
 
@@ -68,4 +65,12 @@
   <!--  <form [formGroup]="formCheckOut">-->
   <!--  </form>-->
 
+</div>
+<div class="row justify-content-center mt-3">
+  <div class="col-4">
+    <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+  </div>
+  <div class="col-4">
+    <a class="btn btn-naranja btn-block" (click)="confirmar()">Confirmar</a>
+  </div>
 </div>

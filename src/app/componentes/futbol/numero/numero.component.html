@@ -1,56 +1,83 @@
-<div class="form-group">
-  <form [formGroup]="formNumero">
-    <div>
-      <label>Para tu Camiseta</label>
-      <div>
-        <div class="form-check form-switch" *ngFor="let radioCamiseta of seleccionCamiseta">
-          <input class="form-check-input" type="radio" name="camisetaValor" id="radioCamiseta"
-                 (click)="checkCamiseta(radioCamiseta)">
-          <label class="form-check-label">{{radioCamiseta}}</label>
+<form [formGroup]="formNumero">
+  <div class="row justify-content-center">
+    <div class="form-group">
+      <strong>Para tu Camiseta</strong>
+      <div class="form-group ">
+        <div class="row">
+          <div class="col-md-12" *ngFor="let camisetaValor of seleccionCamiseta">
+            <label class="switch">
+              <input class="form-check-input" type="checkbox"
+                     id="valorCamiseta" (click)="checkCamiseta(camisetaValor)">
+              <span class="slider round"></span>
+            </label>
+            {{camisetaValor}}
+          </div>
         </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-8">
+            <label class="switch">
+              <input class="form-check-input" type="checkbox"
+                     id="lleva-nro-frontal" (change)="llevaNroFrontalCamiseta()">
+              <span class="slider round"></span>
+            </label>
+            <label class="form-check-label" for="lleva-nro-frontal">Agregar número frontal</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div *ngIf="llevaNroFrontal">
+              <label>Elegí la posición del número</label>
+              <select class="form-control" formControlName="posicionNumeroCamiseta">
+                <option [ngValue]="null" selected disabled>Seleccione</option>
+                <option *ngFor="let posicion of posicionesNumeroCamiseta" [ngValue]="posicion">{{posicion}}</option>
+              </select>
+              <div *ngIf="submit && formNumero.controls.posicionNumeroCamiseta.errors" class="invalid-feedback">
+                <div *ngIf="formNumero.controls.posicionNumeroCamiseta.errors.required">Seleccione la posición
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div class="form-group">
-          <label class="form-check-label" for="lleva-nro-frontal">¿Vas a agregar número frontal?</label>
+    <div class="form-group">
+      <div *ngIf="formNumeroPedido.llevaShort">
+        <strong>Para tu Short</strong>
+        <div class="col-md-12" *ngFor="let valorShort of seleccionShort">
           <label class="switch">
-            <input class="form-check-input" formControlName="llevaNroFrontal" type="checkbox" value=""
-                   id="lleva-nro-frontal" (change)="llevaNroFrontal = !llevaNroFrontal">
+            <input class="form-check-input" type="checkbox"
+                   id="valorShort" (click)="checkShort(valorShort)">
             <span class="slider round"></span>
           </label>
+          {{valorShort}}
         </div>
-
-        <div class="" *ngIf="llevaNroFrontal">
-          <select class="form-control" formControlName="posicionNumeroCamiseta">
-            <option>Seleccione</option>
-            <option *ngFor="let posicion of posicionesNumeroCamiseta">{{posicion}}</option>
+        <div class="" *ngIf="formNumero.controls.agregarNumeroShort.value">
+          <label>Elegí posición del número</label>
+          <select class="form-control" formControlName="posicionNumeroSort">
+            <option [ngValue]="null" selected disabled>Seleccione</option>
+            <option *ngFor="let posicion of posicionesNumeroShort" [ngValue]="posicion">{{posicion}}</option>
           </select>
+          <div *ngIf="submit && formNumero.controls.posicionNumeroSort.errors" class="invalid-feedback">
+            <div *ngIf="formNumero.controls.posicionNumeroSort.errors.required">Seleccione la posición
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div *ngIf="llevaShort">
-      <label>Para tu Short</label>
-      <div class="form-check form-switch" *ngFor="let radioShort of seleccionShort">
-        <input class="form-check-input" type="radio" name="numeroShort" id="radioShort"
-               (click)="checkShort(radioShort)">
-        <label class="form-check-label">{{radioShort}}</label>
-      </div>
-      <div class="" *ngIf="esNumeroShort">
-        <select class="form-control" formControlName="posicionNumeroSort">
-          <option>Seleccione número frontal</option>
-          <option *ngFor="let posicion of posicionesNumeroShort">{{posicion}}</option>
-        </select>
-      </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
     </div>
+    <div class="col-4">
+      <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
+    </div>
+  </div>
+</form>
 
-    <div class="row justify-content-center">
-      <div class="col-4">
-        <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
-      </div>
-      <div class="col-4">
-        <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
-      </div>
-    </div>
-  </form>
-</div>
 
 
 

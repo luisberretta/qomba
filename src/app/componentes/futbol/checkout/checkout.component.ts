@@ -33,6 +33,6 @@ export class CheckoutComponent implements OnInit {
   }
 
   anterior() {
-
+    this.anteriorPaso.emit();
   }
 }
