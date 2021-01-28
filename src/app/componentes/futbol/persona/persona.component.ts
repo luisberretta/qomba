@@ -18,10 +18,12 @@ export class PersonaComponent implements OnInit, OnChanges {
 
   frente: any;
   dorso: any;
-  @Input() url: any;
+  short: any;
+  @Input() urlCamiseta: any;
   @Input() camisetasSvg: any;
   @Input() colorShort: String;
   @ViewChild('dataContainer') dataContainer: ElementRef;
+  urlShort: string = 'assets/images/short/short.svg';
   colors = ['#B80000', '#DB3E00', '#FCCB00', '#008B02', '#006B76', '#1273DE', '#004DCF', '#5300EB', '#FF37E1', '#992328', '#FFFFFF', '#000000'];
   selectorColorVisible: boolean = false;
   idGrupo: String;
@@ -40,11 +42,14 @@ export class PersonaComponent implements OnInit, OnChanges {
 
   ngOnChanges(changeRecord: SimpleChanges): void {
     if (changeRecord.camisetasSvg && changeRecord.camisetasSvg.currentValue) {
-      this.svgService.obtenerSVG(this.url + changeRecord.camisetasSvg.currentValue[0]).subscribe((data) => {
+      this.svgService.obtenerSVGCamiseta(this.urlCamiseta + changeRecord.camisetasSvg.currentValue[0]).subscribe((data) => {
         this.frente = this.sanitizer.bypassSecurityTrustHtml(data);
       });
-      this.svgService.obtenerSVG(this.url + changeRecord.camisetasSvg.currentValue[1]).subscribe((data) => {
+      this.svgService.obtenerSVGCamiseta(this.urlCamiseta + changeRecord.camisetasSvg.currentValue[1]).subscribe((data) => {
         this.dorso = this.sanitizer.bypassSecurityTrustHtml(data);
+      });
+      this.svgService.obtenerSVGShort(this.urlShort).subscribe((data) => {
+        this.short = this.sanitizer.bypassSecurityTrustHtml(data);
       });
     }
   }

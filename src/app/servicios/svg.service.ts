@@ -12,7 +12,11 @@ export class SvgService {
   constructor(private httpApiService: HttpClient) {
   }
 
-  obtenerSVG(url): Observable<any> {
+  obtenerSVGCamiseta(url): Observable<any> {
+    return this.httpApiService.get(url, {responseType:'text'}).pipe(map(result => result));
+  }
+
+  obtenerSVGShort(url): Observable<any> {
     return this.httpApiService.get(url, {responseType:'text'}).pipe(map(result => result));
   }
 

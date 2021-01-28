@@ -19,9 +19,10 @@ export interface Pedido {
   escudo?: string;
 
   //Pedido Numero
-  agregarNumeroCamiseta?: boolean,
-  agregarNombreCamiseta?: boolean,
-  posicionNumeroCamiseta?: string,
-  agregarNumeroShort? :boolean,
+  llevaNombreCamiseta?: boolean,
+  llevaNumeroCamiseta?: boolean,
+  llevaNumeroFrontalCamiseta?: boolean,
+  posicionNumeroCamiseta? :string,
+  llevaNumeroShort?: boolean
   posicionNumeroSort?: string
 }

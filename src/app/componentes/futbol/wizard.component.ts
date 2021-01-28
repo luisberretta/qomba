@@ -128,21 +128,17 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoShort(event) {
-    // if (event) {
-    // console.log(event.llevaShort);
       this.pedido.llevaShort = event.llevaShort;
       this.pedido.tieneEscudoShort = event.llevaEscudo;
       this.pedido.tieneNroShort = event.llevaNumero;
-    // } else {
-    //   this.pedido.tieneShort = null;
-    // }
   }
 
   generarPedidoNumero(event) {
-    this.pedido.agregarNumeroCamiseta = event.agregarNumeroCamiseta;
-    this.pedido.agregarNombreCamiseta = event.agregarNombreCamiseta;
-    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta;
-    this.pedido.agregarNumeroShort = event.agregarNumeroShort
+    this.pedido.llevaNombreCamiseta = event.llevaNombreCamiseta;
+    this.pedido.llevaNumeroCamiseta = event.llevaNumeroCamiseta;
+    this.pedido.llevaNumeroFrontalCamiseta = event.llevaNumeroFrontalCamiseta;
+    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta
+    this.pedido.llevaNumeroShort = event.llevaNumeroShort;
     this.pedido.posicionNumeroSort = event.posicionNumeroSort;
   }
 

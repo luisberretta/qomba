@@ -13,7 +13,7 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() anteriorPaso = new EventEmitter();
   @Output() colorShort = new EventEmitter();
   formPasoShort: FormGroup = new FormGroup({
-    llevaShort: new FormControl(null),
+    llevaShort: new FormControl(''),
     color: new FormControl(''),
     llevaEscudo: new FormControl(''),
     llevaNumero: new FormControl(''),
@@ -25,7 +25,7 @@ export class ShortComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.formPasoShort.controls['llevaShort'].value)
+    console.log('paso short'+this.formPasoShort.controls['llevaShort'].value)
   }
 
   get pasoCamisetaForm() {
@@ -43,10 +43,7 @@ export class ShortComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    console.log(this.formPasoShort);
-    // if(this.formPasoShort.valid) {
     this.proximoPaso.emit(this.formPasoShort.value);
-    // }
   }
 
   anterior() {
@@ -59,10 +56,10 @@ export class ShortComponent implements OnInit, OnChanges {
 
   generarFormulario(formShort) {
 
-    this.formPasoShort.get('llevaShort').setValue(formShort.cuelloCamiseta ?? null);
+    this.formPasoShort.get('llevaShort').setValue(formShort.llevaShort ?? null);
     this.formPasoShort.get('color').setValue(formShort.escudo ?? null);
-    this.formPasoShort.get('llevaEscudo').setValue(formShort.posicionEscudo ?? null);
-    this.formPasoShort.get('llevaNumero').setValue(formShort.calidadEscudo ?? null);
+    this.formPasoShort.get('llevaEscudo').setValue(formShort.llevaEscudo ?? null);
+    this.formPasoShort.get('llevaNumero').setValue(formShort.llevaNumero ?? null);
   }
 
 }
