@@ -1,28 +1,32 @@
 import {DetalleEquipo} from "./DetalleEquipo";
 
 export interface Pedido {
-  mail?: string;
-  descripcion?: string;
-  tieneNombre?: boolean;
-  llevaShort?: boolean;
-  tieneNroCamiseta?:boolean;
-  tieneNroFrontalCamiseta?: boolean;
-  posicionNroFrontalCamiseta?: string;
+
+  //CAMISETA
   cuelloCamiseta?:string;
+  escudo?: string;
   posicionEscudo?:string;
   calidadEscudo?:string;
-  tieneNroShort?: boolean;
-  tieneEscudoShort?: boolean;
-  posicionNroShort?: string;
-  imagenes?: string[];
-  detalleEquipo ?: DetalleEquipo[];
-  escudo?: string;
 
-  //Pedido Numero
-  llevaNombreCamiseta?: boolean,
-  llevaNumeroCamiseta?: boolean,
-  llevaNumeroFrontalCamiseta?: boolean,
-  posicionNumeroCamiseta? :string,
-  llevaNumeroShort?: boolean
-  posicionNumeroSort?: string
+  //SHORT
+  llevaShort?: boolean;
+  llevaEscudoShort?: boolean;
+  llevaNroShort?:boolean;
+
+  //NUMERO
+  llevaNombreCamiseta?: boolean;
+  llevaNumeroCamiseta?: boolean;
+  llevaNumeroFrontalCamiseta?: boolean;
+  posicionNumeroCamiseta?:string;
+  llevaNumeroShort?: boolean;
+  posicionNumeroSort?: string;
+
+  //EQUIPO
+  detalleEquipo ?: DetalleEquipo[];
+
+  //CHECKOUT
+  mail?: string;
+
+  imagenes?: string[];
+
 }

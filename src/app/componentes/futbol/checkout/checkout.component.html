@@ -4,22 +4,22 @@
       <h4>Camiseta</h4>
       <div class="form-group">
         <label>¿Tiene Nombre?</label>
-        <input disabled class="form-control" value="{{checkOut.tieneNombre?'SI':'NO'}}">
+        <input disabled class="form-control" value="{{formCheckOut.llevaNombreCamiseta?'SI':'NO'}}">
       </div>
       <div class="form-group">
         <label>¿Tiene número frontal?</label>
-        <input disabled class="form-control" value="{{checkOut.tieneNroFrontalCamiseta?'SI':'NO'}}">
+        <input disabled class="form-control" value="{{formCheckOut.llevaNumeroFrontalCamiseta?'SI':'NO'}}">
       </div>
-      <div *ngIf="checkOut.tieneNroFrontalCamiseta">
+      <div *ngIf="formCheckOut.posicionNumeroCamiseta">
         <label>Posición número frontal</label>
-        <input disabled class="form-control" value="{{checkOut.posicionNroFrontalCamiseta}}">
+        <input disabled class="form-control" value="{{formCheckOut.posicionNumeroCamiseta}}">
       </div>
       <h4 class="mt-3">Short</h4>
       <label>¿Tiene Short?</label>
-      <input disabled class="form-control" value="{{checkOut.tieneShort?'SI':'NO'}}">
-      <div *ngIf="checkOut.tieneShort">
+      <input disabled class="form-control" value="{{formCheckOut.llevaShort?'SI':'NO'}}">
+      <div *ngIf="formCheckOut.tieneShort">
         <label>¿Tiene número?</label>
-        <input disabled class="form-control" value="{{checkOut.tieneNroShort?'SI':'NO'}}">
+        <input disabled class="form-control" value="{{formCheckOut.llevaNumeroShort?'SI':'NO'}}">
       </div>
       <h4 class="mt-3">Equipo</h4>
       <table class="table">
@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let equipo of checkOut.detalleEquipo; index as i">
+          <tr *ngFor="let equipo of formCheckOut.detalleEquipo; index as i">
             <td>{{ equipo.nombreCamiseta ? equipo.nombreCamiseta : '-' }}</td>
             <td>{{ equipo.numero ? equipo.numero : "-" }}</td>
             <td>{{ equipo.talleCamiseta }}</td>
@@ -40,12 +40,12 @@
           </tr>
         </tbody>
       </table>
-      <form [formGroup]="formCheckOut">
+      <form [formGroup]="formPasoCheckOut">
         <div class="form-group">
           <label>Ingrese su mail</label>
           <input type="email" class="form-control" formControlName="email">
-          <div *ngIf="submit && formCheckOut.controls.email.errors" class="invalid-feedback">
-            <div *ngIf="formCheckOut.controls.email.errors.required">Ingrese un email para confirmar el pedido.
+          <div *ngIf="submit && formPasoCheckOut.controls.email.errors" class="invalid-feedback">
+            <div *ngIf="formPasoCheckOut.controls.email.errors.required">Ingrese un email para confirmar el pedido.
             </div>
           </div>
         </div>
