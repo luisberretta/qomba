@@ -207,6 +207,9 @@
 .paso {
   background-color: gray;
   padding: 10px;
+  h3 {
+    display: none;
+  }
 }
 
 .camisetas-categoria {
@@ -222,5 +225,14 @@
 @media screen and (max-width: 768px) {
   .btn-group {
     display: block;
+  }
+  .indicador-progreso li h5 {
+    display: none;
+  }
+  .paso h3 {
+    display: block;
+    &:first-letter {
+      text-transform: uppercase;
+    }
   }
 }

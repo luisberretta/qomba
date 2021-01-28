@@ -1,6 +1,7 @@
 import {Component, OnInit, Output, EventEmitter, Input, SimpleChanges, OnChanges} from '@angular/core';
 import {} from "events";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-short',
@@ -21,8 +22,9 @@ export class ShortComponent implements OnInit, OnChanges {
   submit: boolean = false;
   activo: boolean = false;
   @Input() formShort;
+  @Output() llevaShort = new EventEmitter();
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -51,14 +53,18 @@ export class ShortComponent implements OnInit, OnChanges {
 
   activarCampos() {
     this.activo = !this.activo;
+    this.llevaShort.emit(this.formPasoShort.controls['llevaShort'].value);
   }
 
   generarFormulario(formShort) {
 
     this.formPasoShort.get('llevaShort').setValue(formShort.llevaShort ?? null);
-    // this.formPasoShort.get('color').setValue(formShort.escudo ?? null);
     this.formPasoShort.get('llevaEscudoShort').setValue(formShort.llevaEscudoShort ?? null);
     this.formPasoShort.get('llevaNroShort').setValue(formShort.llevaNroShort ?? null);
+  }
+
+  open(content) {
+    this.modalService.open(content, { centered: true });
   }
 
 }

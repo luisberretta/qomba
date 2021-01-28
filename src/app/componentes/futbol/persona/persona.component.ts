@@ -25,12 +25,12 @@ export class PersonaComponent implements OnInit, OnChanges {
   @ViewChild('dataContainer') dataContainer: ElementRef;
   urlShort: string = 'assets/images/short/short.svg';
   colors = ['#B80000', '#DB3E00', '#FCCB00', '#008B02', '#006B76', '#1273DE', '#004DCF', '#5300EB', '#FF37E1', '#992328', '#FFFFFF', '#000000'];
-  selectorColorVisible: boolean = false;
   idGrupo: String;
   parteSeleccionada: string;
   @Input() paso: string;
   @ViewChild('dataFrente') dataFrente: ElementRef;
   @ViewChild('dataDorso') dataDorso: ElementRef;
+  @Input() llevaShort;
 
   constructor(public renderer: Renderer2,
               private svgService: SvgService,
@@ -63,7 +63,6 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   obtenerElementos(event) {
-    this.selectorColorVisible = true;
     this.idGrupo = event.target.parentNode.id;
     let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
     for (let i = 0; i < grupos.length; i++) {
@@ -78,13 +77,17 @@ export class PersonaComponent implements OnInit, OnChanges {
 
   cambiarColor(color) {
     let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
-    for (let i = 0; i < grupos.length; i++) {
-      if (grupos[i].id == this.idGrupo) {
-        let paths = grupos[i].getElementsByTagName('path');
-        for (let i = 0; i < paths.length; i++) {
-          paths[i].setAttribute('fill', color);
+    if(this.idGrupo == 'short' && !this.llevaShort) {
+      return false;
+    } else {
+      for (let i = 0; i < grupos.length; i++) {
+        if (grupos[i].id == this.idGrupo) {
+          let paths = grupos[i].getElementsByTagName('path');
+          for (let i = 0; i < paths.length; i++) {
+            paths[i].setAttribute('fill', color);
+          }
+          grupos[i].classList.remove('parte-seleccionada');
         }
-        grupos[i].classList.remove('parte-seleccionada');
       }
     }
   }
