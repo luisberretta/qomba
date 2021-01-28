@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {WizardService} from "../../../servicios/wizard.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-checkout',
@@ -9,7 +9,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 })
 export class CheckoutComponent implements OnInit {
 
-  @Input() checkOut: any;
+  @Input() formCheckOut: any;
   @Output() finalizarPasos = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   submit = false;
@@ -18,17 +18,17 @@ export class CheckoutComponent implements OnInit {
               private fb: FormBuilder) {
   }
 
-  formCheckOut: FormGroup = this.fb.group({
-    email: ['', Validators.required]
-  })
+  formPasoCheckOut: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), Validators.required])
+  });
 
   ngOnInit(): void {
   }
 
   confirmar() {
     this.submit = true;
-    if(this.formCheckOut.valid){
-      this.anteriorPaso.emit(this.formCheckOut.value);
+    if (this.formPasoCheckOut.valid) {
+      this.anteriorPaso.emit(this.formPasoCheckOut.value);
     }
   }
 

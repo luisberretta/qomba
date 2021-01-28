@@ -21,12 +21,11 @@ export class WizardComponent implements OnInit {
   camiseta: any;
   seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
-  colorPartes: any;
-  colorShort: String;
   formCamiseta: any;
   formShort: any;
   formNumero: any;
   formEquipo: any;
+  formCheckOut: any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -75,21 +74,25 @@ export class WizardComponent implements OnInit {
         this.generarPedidoCamiseta(event);
         this.paso = 'short';
         this.numeroPaso = 2;
+        this.generarFormShort();
         break;
       case 2:
         this.generarPedidoShort(event);
         this.paso = 'numero';
         this.numeroPaso = 3;
+        this.generarFormNumero();
         break;
       case 3:
         this.generarPedidoNumero(event);
         this.paso = 'equipo';
         this.numeroPaso = 4;
+        this.generarFormEquipo();
         break;
       case 4:
         this.generarPedidoEquipo(event);
         this.paso = 'checkout';
         this.numeroPaso = 5;
+        this.generarFormCheckOut();
         break;
       case 5:
         this.generarPedido(event);
@@ -112,10 +115,12 @@ export class WizardComponent implements OnInit {
       case 4:
         this.numeroPaso = 3;
         this.paso = 'numero';
+        this.generarFormNumero();
         break;
       case 5:
         this.numeroPaso = 4;
         this.paso = 'equipo';
+        this.generarFormEquipo();
         break;
     }
   }
@@ -128,16 +133,16 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoShort(event) {
-      this.pedido.llevaShort = event.llevaShort;
-      this.pedido.tieneEscudoShort = event.llevaEscudo;
-      this.pedido.tieneNroShort = event.llevaNumero;
+    this.pedido.llevaShort = event.llevaShort;
+    this.pedido.llevaEscudoShort = event.llevaEscudoShort;
+    this.pedido.llevaNroShort = event.llevaNroShort;
   }
 
   generarPedidoNumero(event) {
     this.pedido.llevaNombreCamiseta = event.llevaNombreCamiseta;
     this.pedido.llevaNumeroCamiseta = event.llevaNumeroCamiseta;
     this.pedido.llevaNumeroFrontalCamiseta = event.llevaNumeroFrontalCamiseta;
-    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta
+    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta;
     this.pedido.llevaNumeroShort = event.llevaNumeroShort;
     this.pedido.posicionNumeroSort = event.posicionNumeroSort;
   }
@@ -172,18 +177,57 @@ export class WizardComponent implements OnInit {
 
   generarFormCamiseta() {
     this.formCamiseta = {
-      'cuelloCamiseta': this.pedido.cuelloCamiseta,
-      'escudo': this.pedido.escudo,
-      'posicionEscudo': this.pedido.posicionEscudo,
-      'calidadEscudo': this.pedido.calidadEscudo,
+      cuelloCamiseta: this.pedido.cuelloCamiseta,
+      escudo: this.pedido.escudo,
+      posicionEscudo: this.pedido.posicionEscudo,
+      calidadEscudo: this.pedido.calidadEscudo,
     };
   }
 
   generarFormShort() {
     this.formShort = {
-      'llevaShort': this.pedido.llevaShort,
-      'llevaEscudo': this.pedido.tieneEscudoShort,
-      'llevaNumero': this.pedido.tieneNroShort,
+      llevaShort: this.pedido.llevaShort,
+      llevaEscudoShort: this.pedido.llevaEscudoShort,
+      llevaNroShort: this.pedido.llevaNroShort,
     };
+  }
+
+  generarFormNumero() {
+    this.formNumero = {
+      llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
+      llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
+      llevaNumeroFrontalCamiseta: this.pedido.llevaNumeroFrontalCamiseta,
+      posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
+      llevaShort: this.pedido.llevaShort,
+      llevaNumeroShort: this.pedido.llevaNumeroShort,
+      posicionNumeroSort: this.pedido.posicionNumeroSort,
+    }
+  }
+
+  generarFormEquipo() {
+    this.formEquipo = {
+      llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
+      llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
+      llevaShort: this.pedido.llevaShort,
+      detalleEquipo : this.pedido.detalleEquipo,
+    }
+  }
+
+  generarFormCheckOut() {
+    this.formCheckOut = {
+      cuelloCamiseta: this.pedido.cuelloCamiseta,
+      escudo: this.pedido.escudo,
+      posicionEscudo: this.pedido.posicionEscudo,
+      calidadEscudo: this.pedido.calidadEscudo,
+      llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
+      llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
+      llevaNumeroFrontalCamiseta: this.pedido.llevaNumeroFrontalCamiseta,
+      posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
+      llevaShort: this.pedido.llevaShort,
+      llevaEscudoShort: this.pedido.llevaEscudoShort,
+      llevaNumeroShort: this.pedido.llevaNumeroShort,
+      posicionNumeroSort: this.pedido.posicionNumeroSort,
+      detalleEquipo: this.pedido.detalleEquipo,
+    }
   }
 }

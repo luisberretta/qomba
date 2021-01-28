@@ -9,20 +9,21 @@ import {Pedido} from "../../../clases/Pedido";
 })
 export class NumeroComponent implements OnInit, OnChanges {
 
-  formNumero: FormGroup = new FormGroup({
+  formPasoNumero: FormGroup = new FormGroup({
 
-    llevaNombreCamiseta: new FormControl(),
-    llevaNumeroCamiseta: new FormControl(),
-    llevaNumeroFrontalCamiseta: new FormControl(),
-    posicionNumeroCamiseta: new FormControl(''),
-    llevaNumeroShort: new FormControl(),
-    posicionNumeroSort: new FormControl(''),
+    llevaNombreCamiseta: new FormControl(false),
+    llevaNumeroCamiseta: new FormControl(false),
+    llevaNumeroFrontalCamiseta: new FormControl(false, ),
+    posicionNumeroCamiseta: new FormControl('',[]),
+    llevaNumeroShort: new FormControl(false),
+    posicionNumeroShort: new FormControl('', []),
   });
   posicionesNumeroCamiseta: string[] = ["Derecha", "Centro", "Izquierda"];
   posicionesNumeroShort: string[] = ["Derecha", "Izquierda"];
   llevaNroFrontal: Boolean = false;
+  llevaNroShort: Boolean =false;
   submit: Boolean = false;
-  @Input() formNumeroPedido: Pedido;
+  @Input() formNumero: Pedido;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
 
@@ -34,38 +35,57 @@ export class NumeroComponent implements OnInit, OnChanges {
 
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-    if (changeRecord.formNumeroPedido && changeRecord.formNumeroPedido.currentValue) {
-      this.generarFormulario(changeRecord.formNumeroPedido.currentValue);
+    if (changeRecord.formNumero && changeRecord.formNumero.currentValue) {
+      this.generarFormulario(changeRecord.formNumero.currentValue);
     }
   }
 
-  generarFormulario(formNumeroPedido) {
-    this.formNumero.get('llevaNombreCamiseta').setValue(formNumeroPedido.llevaNombreCamiseta ?? null);
-    this.formNumero.get('llevaNumeroCamiseta').setValue(formNumeroPedido.llevaNumeroCamiseta ?? null);
-    this.formNumero.get('llevaNumeroFrontalCamiseta').setValue(formNumeroPedido.llevaNumeroFrontalCamiseta ?? null);
-    this.formNumero.get('posicionNumeroCamiseta').setValue(formNumeroPedido.posicionNumeroCamiseta ?? null);
-    if (this.formNumeroPedido.llevaShort) {
-      this.formNumero.get('llevaNumeroShort').setValue(formNumeroPedido.llevaNumeroShort ?? null);
-      this.formNumero.get('posicionNumeroSort').setValue(formNumeroPedido.posicionNumeroSort ?? null);
+  generarFormulario(formNumero) {
+    this.formPasoNumero.get('llevaNombreCamiseta').setValue(!!formNumero.llevaNombreCamiseta);
+    this.formPasoNumero.get('llevaNumeroCamiseta').setValue(!!formNumero.llevaNumeroCamiseta);
+    this.llevaNroFrontal = !!formNumero.llevaNumeroFrontalCamiseta;
+    this.formPasoNumero.get('llevaNumeroFrontalCamiseta').setValue(!!formNumero.llevaNumeroFrontalCamiseta);
+    this.formPasoNumero.get('posicionNumeroCamiseta').setValue(formNumero.posicionNumeroCamiseta ?? null);
+    if(this.llevaNroFrontal){
+      this.formPasoNumero.controls.posicionNumeroCamiseta.setValidators([Validators.required]);
+    }
+    if (formNumero.llevaShort) {
+      this.llevaNroShort = !!formNumero.llevaNumeroShort;
+      this.formPasoNumero.get('llevaNumeroShort').setValue(!!formNumero.llevaNumeroShort);
+      this.formPasoNumero.get('posicionNumeroShort').setValue(formNumero.posicionNumeroSort ?? null);
+      if(this.llevaNroShort){
+        this.formPasoNumero.controls.posicionNumeroShort.setValidators([Validators.required]);
+      }
     }
   }
+  llevaNumeroFrontal(){
+    this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
+    this.llevaNroFrontal = !this.llevaNroFrontal;
+    if (this.llevaNroFrontal){
+      this.formPasoNumero.controls.posicionNumeroCamiseta.setValidators([Validators.required]);
+    }
+    else {
+      this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
 
-  get llevaNumeroFrontal() {
-    if (!this.formNumero.get('llevaNumeroFrontalCamiseta').value)
-      this.formNumero.get('posicionNumeroCamiseta').setValue(null);
-    return this.formNumero.get('llevaNumeroFrontalCamiseta').value;
+    }
+    this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
 
-  get llevaNumeroShort() {
-    if (!this.formNumero.get('llevaNumeroShort').value)
-      this.formNumero.get('posicionNumeroSort').setValue(null);
-    return this.formNumero.get('llevaNumeroShort').value;
+  llevaNumeroShort() {
+    this.llevaNroShort = !this.llevaNroShort;
+    if (this.llevaNroShort){
+      this.formPasoNumero.controls.posicionNumeroShort.setValidators([Validators.required]);
+    }
+    else {
+      this.formPasoNumero.controls.posicionNumeroShort.clearValidators();
+    }
+    this.formPasoNumero.controls.posicionNumeroShort.updateValueAndValidity();
   }
 
   siguiente() {
     this.submit = true;
-    if (this.formNumero.valid) {
-      this.proximoPaso.emit(this.formNumero.value);
+    if (this.formPasoNumero.valid) {
+      this.proximoPaso.emit(this.formPasoNumero.value);
     }
   }
 
