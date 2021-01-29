@@ -17,7 +17,6 @@ export class ShortComponent implements OnInit, OnChanges {
     llevaShort: new FormControl(''),
     color: new FormControl(''),
     llevaEscudoShort: new FormControl(''),
-    llevaNroShort: new FormControl(''),
   });
   submit: boolean = false;
   activo: boolean = false;
@@ -57,7 +56,6 @@ export class ShortComponent implements OnInit, OnChanges {
     this.activo = formShort.llevaShort;
     this.formPasoShort.get('llevaShort').setValue(formShort.llevaShort ?? null);
     this.formPasoShort.get('llevaEscudoShort').setValue(formShort.llevaEscudoShort ?? null);
-    this.formPasoShort.get('llevaNroShort').setValue(formShort.llevaNroShort ?? null);
   }
 
   open(content) {
