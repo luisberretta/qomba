@@ -1,4 +1,4 @@
-<div class="color-picker">
+<div class="color-picker" *ngIf="paso != 'checkout'">
   <p *ngIf="parteSeleccionada" class="text-dark">Elegí el color para:
     <strong>{{ parteSeleccionada }}</strong></p>
   <color-circle [colors]="colors"

@@ -34,10 +34,7 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-    // console.log(changeRecord);
     if(changeRecord.formShort && changeRecord.formShort.currentValue) {
-      // // console.log(changeRecord.formShort.currentValue);
-      // return;
       this.generarFormulario(changeRecord.formShort.currentValue);
     }
   }
@@ -57,7 +54,7 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formShort) {
-
+    this.activo = formShort.llevaShort;
     this.formPasoShort.get('llevaShort').setValue(formShort.llevaShort ?? null);
     this.formPasoShort.get('llevaEscudoShort').setValue(formShort.llevaEscudoShort ?? null);
     this.formPasoShort.get('llevaNroShort').setValue(formShort.llevaNroShort ?? null);

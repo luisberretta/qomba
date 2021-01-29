@@ -65,14 +65,18 @@ export class PersonaComponent implements OnInit, OnChanges {
   obtenerElementos(event) {
     this.idGrupo = event.target.parentNode.id;
     let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
-    for (let i = 0; i < grupos.length; i++) {
-      if (grupos[i].id == this.idGrupo) {
-        grupos[i].classList.add('parte-seleccionada');
-      } else {
-        grupos[i].classList.remove('parte-seleccionada');
+    if(this.idGrupo == 'short' && !this.llevaShort) {
+      return false;
+    } else {
+      for (let i = 0; i < grupos.length; i++) {
+        if (grupos[i].id == this.idGrupo) {
+          grupos[i].classList.add('parte-seleccionada');
+        } else {
+          grupos[i].classList.remove('parte-seleccionada');
+        }
       }
+      this.parteSeleccionada = this.idGrupo.toString().charAt(0).toUpperCase() + this.idGrupo.toString().slice(1);
     }
-    this.parteSeleccionada = this.idGrupo.toString().charAt(0).toUpperCase() + this.idGrupo.toString().slice(1);
   }
 
   cambiarColor(color) {
@@ -83,8 +87,8 @@ export class PersonaComponent implements OnInit, OnChanges {
       for (let i = 0; i < grupos.length; i++) {
         if (grupos[i].id == this.idGrupo) {
           let paths = grupos[i].getElementsByTagName('path');
-          for (let i = 0; i < paths.length; i++) {
-            paths[i].setAttribute('fill', color);
+          for (let j = 0; j < paths.length; j++) {
+            paths[j].setAttribute('fill', color);
           }
           grupos[i].classList.remove('parte-seleccionada');
         }
