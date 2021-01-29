@@ -45,7 +45,7 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   anterior() {
-    this.anteriorPaso.emit();
+    this.anteriorPaso.emit(this.formPasoShort.value);
   }
 
   activarCampos() {
