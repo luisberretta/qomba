@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
   confirmar() {
     this.submit = true;
     if (this.formPasoCheckOut.valid) {
-      this.anteriorPaso.emit(this.formPasoCheckOut.value);
+      this.finalizarPasos.emit(this.formPasoCheckOut.value);
     }
   }
 

@@ -61,7 +61,7 @@
               <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
               <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" (editarPersona)="editarPersona($event)" [formNumero]="formNumero"></app-numero>
               <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
-              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" [formCheckOut]="formCheckOut"></app-checkout>
+              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" (finalizarPasos)="generarPedido($event)"  [formCheckOut]="formCheckOut"></app-checkout>
             </div>
           </div>
           <div class="col-md-6 col-12 align-self-center text-center">
