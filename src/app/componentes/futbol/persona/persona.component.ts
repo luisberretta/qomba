@@ -31,6 +31,8 @@ export class PersonaComponent implements OnInit, OnChanges {
   @ViewChild('camisetaFrente') camisetaFrente: ElementRef;
   @ViewChild('camisetaDorso') camisetaDorso: ElementRef;
   @Input() llevaShort;
+  @Input() escudo;
+  imgUrl: any;
 
   constructor(public renderer: Renderer2,
               private svgService: SvgService,
@@ -51,6 +53,32 @@ export class PersonaComponent implements OnInit, OnChanges {
       this.svgService.obtenerSVGShort(this.urlShort).subscribe((data) => {
         this.short = this.sanitizer.bypassSecurityTrustHtml(data);
       });
+    }
+    // console.log(changeRecord.escudo.currentValue)
+    if(changeRecord.escudo && changeRecord.escudo.currentValue) {
+      let reader = new FileReader();
+      reader.readAsDataURL(changeRecord.escudo.currentValue);
+      reader.onload = (_event) => {
+        this.imgUrl = reader.result;
+        let img = new Image();
+        if (typeof reader.result === "string") {
+          img.src = reader.result;
+        }
+        img.onload = function(){
+          let imgSize = {
+            w: img.width,
+            h: img.height
+          };
+          let relacionAspecto = imgSize.w / imgSize.h;
+          let ancho = 100;
+          let alto = ancho / relacionAspecto;
+
+          document.getElementById('escudo_remera').firstElementChild.setAttribute('height', alto.toString() + 'px');
+          document.getElementById('escudo_remera').firstElementChild.setAttribute('width', ancho.toString() + 'px');
+        };
+        document.getElementById('escudo_remera').firstElementChild.setAttribute('xlink:href', this.imgUrl);
+
+      }
     }
   }
 

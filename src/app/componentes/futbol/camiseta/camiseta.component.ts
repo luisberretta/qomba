@@ -38,6 +38,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   cuellos: string[] = ["Chomba", "Escote en V", "Escote redondo"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
   calidadesEscudo: string[] = ["Bordado", "Estampado"];
+  @Output() imagenEscudo = new EventEmitter();
 
   constructor(private modalService: NgbModal) {
   }
@@ -56,9 +57,22 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   // Método que captura el evento de subida de archivo.
   subirArchivo(event) {
-    let base64 = event[0].base64.replace('data:image/jpeg;base64,','');
-    this.formPasoCamiseta.controls['escudo'].setValue(base64);
+    if (event.target.files.length > 0) {
+      const archivo = event.target.files[0];
+      let reader = new FileReader();
+      reader.onloadend = this._handleReaderLoaded.bind(this);
+      reader.readAsDataURL(archivo);
+      this.formPasoCamiseta.patchValue({
+        image: archivo
+      });
+    }
+    this.imagenEscudo.emit(event.target.files[0]);
     this.deshabilitado = false;
+  }
+
+  _handleReaderLoaded(readerEvt){
+    let binaryString = readerEvt.target.result;
+    this.formPasoCamiseta.get('escudo').setValue(btoa(binaryString));
   }
 
   siguiente() {

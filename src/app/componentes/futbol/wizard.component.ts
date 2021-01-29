@@ -27,6 +27,7 @@ export class WizardComponent implements OnInit {
   formEquipo: any;
   formCheckOut: any;
   short: boolean;
+  imagenEscudo: any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -237,6 +238,10 @@ export class WizardComponent implements OnInit {
 
   llevaShort(event) {
     this.short = event;
+  }
+
+  escudo(event) {
+    this.imagenEscudo = event;
   }
 
   editarPersona(editarCamiseta){
