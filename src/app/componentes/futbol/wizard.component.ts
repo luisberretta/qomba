@@ -132,7 +132,9 @@ export class WizardComponent implements OnInit {
 
   generarPedidoCamiseta(event) {
     this.pedido.cuelloCamiseta = event.cuello;
-    // this.pedido.escudo = this.convertirBase64(event.escudo);
+    if (event.escudo) {
+      this.pedido.escudo = this.convertirBase64(event.escudo);
+    }
     this.pedido.posicionEscudo = event.posicionEscudo;
     this.pedido.calidadEscudo = event.calidadEscudo;
   }
@@ -158,14 +160,18 @@ export class WizardComponent implements OnInit {
 
   generarPedido(event) {
     this.pedido.mail = event.mail;
-    svgAsPngUri(this.personaComponent.generarImagenes(), "imagenes.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirBase64(data[0]));
-      this.pedido.imagenes.push(this.convertirBase64(data[1]));
-      this.wizardService.generarPedido(this.pedido).subscribe((data) => {
-        if (data) {
-          console.log("La operación se realizó con éxito.");
-        }
-      })
+    let imagenes = this.personaComponent.generarImagenes();
+    svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
+      this.pedido.imagenes.push(this.convertirBase64(data));
+      svgAsPngUri(imagenes[1], "imagenes.png").then((data) => {
+        this.pedido.imagenes.push(this.convertirBase64(data));
+        this.pedido.escudo = this.convertirBase64(this.pedido.escudo);
+        this.wizardService.generarPedido(this.pedido).subscribe((data) => {
+          if (data) {
+            console.log("La operación se realizó con éxito.");
+          }
+        })
+      });
     });
 
   }
@@ -214,7 +220,7 @@ export class WizardComponent implements OnInit {
       llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
       llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
       llevaShort: this.pedido.llevaShort,
-      detalleEquipo : this.pedido.detalleEquipo,
+      detalleEquipo: this.pedido.detalleEquipo,
     }
   }
 
@@ -244,7 +250,7 @@ export class WizardComponent implements OnInit {
     this.imagenEscudo = event;
   }
 
-  editarPersona(editarCamiseta){
+  editarPersona(editarCamiseta) {
     this.personaComponent.editarCamiseta(editarCamiseta);
   }
 

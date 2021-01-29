@@ -38,6 +38,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   cuellos: string[] = ["Chomba", "Escote en V", "Escote redondo"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
   calidadesEscudo: string[] = ["Bordado", "Estampado"];
+  escudo: any;
   @Output() imagenEscudo = new EventEmitter();
 
   constructor(private modalService: NgbModal) {
@@ -60,30 +61,27 @@ export class CamisetaComponent implements OnInit, OnChanges {
     if (event.target.files.length > 0) {
       const archivo = event.target.files[0];
       let reader = new FileReader();
-      reader.onloadend = this._handleReaderLoaded.bind(this);
       reader.readAsDataURL(archivo);
-      this.formPasoCamiseta.patchValue({
-        image: archivo
-      });
+      reader.onload = (_event)=>{
+        this.formPasoCamiseta.controls['escudo'].setValue(reader.result);
+      }
     }
     this.imagenEscudo.emit(event.target.files[0]);
     this.deshabilitado = false;
   }
 
-  _handleReaderLoaded(readerEvt){
-    let binaryString = readerEvt.target.result;
-    this.formPasoCamiseta.get('escudo').setValue(btoa(binaryString));
-  }
+
 
   siguiente() {
     this.submit = true;
-    if(this.formPasoCamiseta.valid) {
+    if (this.formPasoCamiseta.valid) {
+      console.log(this.formPasoCamiseta.value);
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-    if(changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
+    if (changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
       this.generarFormulario(changeRecord.formCamiseta.currentValue);
     }
   }
@@ -94,13 +92,13 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('escudo').setValue(formCamiseta.escudo ?? null);
     this.formPasoCamiseta.get('posicionEscudo').setValue(formCamiseta.posicionEscudo ?? null);
     this.formPasoCamiseta.get('calidadEscudo').setValue(formCamiseta.calidadEscudo ?? null);
-    if(this.formPasoCamiseta.get('escudo').value) {
+    if (this.formPasoCamiseta.get('escudo').value) {
       this.deshabilitado = false;
     }
   }
 
   open(content) {
-    this.modalService.open(content, { centered: true });
+    this.modalService.open(content, {centered: true});
   }
 
 }

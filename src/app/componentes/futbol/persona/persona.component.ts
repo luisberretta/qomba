@@ -54,7 +54,6 @@ export class PersonaComponent implements OnInit, OnChanges {
         this.short = this.sanitizer.bypassSecurityTrustHtml(data);
       });
     }
-    // console.log(changeRecord.escudo.currentValue)
     if(changeRecord.escudo && changeRecord.escudo.currentValue) {
       let reader = new FileReader();
       reader.readAsDataURL(changeRecord.escudo.currentValue);
@@ -83,10 +82,9 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   generarImagenes(): any {
-    return this.dataContainer.nativeElement;
     let images: HTMLAllCollection[] = [];
-    images.push(this.camisetaFrente.nativeElement);
-    images.push(this.camisetaDorso.nativeElement);
+    images.push(this.camisetaFrente.nativeElement.children.namedItem('Layer_1'));
+    images.push(this.camisetaDorso.nativeElement.children.namedItem('Layer_1'));
     return images;
   }
 

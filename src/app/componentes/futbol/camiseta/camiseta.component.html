@@ -25,7 +25,7 @@
         <div class="row">
           <div class="col-md-6 col-12">
             <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>
-            <input type="file" class="d-none" formControlName="escudo" #archivoEscudo (change)="subirArchivo($event)">
+            <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
           </div>
           <div class="col-md-6 col-12 align-self-center">
             <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>
