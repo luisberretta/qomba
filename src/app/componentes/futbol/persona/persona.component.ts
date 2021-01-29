@@ -89,4 +89,21 @@ export class PersonaComponent implements OnInit, OnChanges {
     }
   }
 
+  llevaNroFrontal(visible){
+    let numeroFrontal = this.dataContainer.nativeElement.getElementById('numero_frontal');
+    if(numeroFrontal && visible)
+      numeroFrontal.setAttribute('visibility','visible');
+    else{
+      numeroFrontal.setAttribute('visibility','hidden');
+    }
+  }
+
+  llevaNombre(visible){
+
+  }
+
+  llevaNumeroDorso(visible){
+
+  }
+
 }

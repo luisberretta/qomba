@@ -1,6 +1,7 @@
-import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Pedido} from "../../../clases/Pedido";
+import {PersonaComponent} from "../persona/persona.component";
 
 @Component({
   selector: 'app-numero',
@@ -8,6 +9,8 @@ import {Pedido} from "../../../clases/Pedido";
   styleUrls: ['./numero.component.scss']
 })
 export class NumeroComponent implements OnInit, OnChanges {
+
+  @ViewChild(PersonaComponent) personaComponent : PersonaComponent;
 
   formPasoNumero: FormGroup = new FormGroup({
 
@@ -27,10 +30,17 @@ export class NumeroComponent implements OnInit, OnChanges {
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
 
+
   constructor() {
   }
 
   ngOnInit(): void {
+    this.formPasoNumero.get('llevaNombreCamiseta').valueChanges.subscribe((valor) => {
+      this.personaComponent.llevaNombre(valor);
+    });
+    this.formPasoNumero.get('llevaNumeroCamiseta').valueChanges.subscribe((valor) => {
+      this.personaComponent.llevaNroFrontal(valor);
+    });
   }
 
 
@@ -67,8 +77,8 @@ export class NumeroComponent implements OnInit, OnChanges {
     }
     else {
       this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
-
     }
+    this.personaComponent.llevaNroFrontal(this.llevaNroFrontal);
     this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
 

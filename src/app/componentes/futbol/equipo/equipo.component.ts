@@ -85,7 +85,6 @@ export class EquipoComponent implements OnInit, OnChanges {
   }
 
   siguiente() {
-    console.log(this.formPasoEquipo.controls.cantidadEquipo.errors)
     this.submit = true;
     if (this.formPasoEquipo.valid) {
       this.proximoPaso.emit(this.formPasoEquipo.value);
