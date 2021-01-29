@@ -22,10 +22,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   @ViewChild('archivoEscudo') fileInput: ElementRef;
   formPasoCamiseta: FormGroup = new FormGroup({
-    cuello: new FormControl('', [Validators.required]),
-    escudo: new FormControl(''),
-    posicionEscudo: new FormControl(''),
-    calidadEscudo: new FormControl(''),
+    cuello: new FormControl(null, [Validators.required]),
+    escudo: new FormControl(null),
+    posicionEscudo: new FormControl(null),
+    calidadEscudo: new FormControl(null),
   });
   submit: boolean = false;
   @Input() pasoNumero: number;

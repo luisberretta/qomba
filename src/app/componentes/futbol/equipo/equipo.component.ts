@@ -13,17 +13,16 @@ export class EquipoComponent implements OnInit, OnChanges {
   @Output() anteriorPaso = new EventEmitter();
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
   submit: boolean = false;
-  constructor() {
-  }
-
   formPasoEquipo: FormGroup = new FormGroup({
     cantidadEquipo: new FormControl(1, [Validators.min(1),Validators.required]),
     equipo: new FormArray([])
   });
 
+  constructor() {
+  }
+
   ngOnInit(): void {
     this.formPasoEquipo.get('cantidadEquipo').valueChanges.subscribe((valor) => {
-
       if (valor < 1 || valor < this.formEquipoControl.controls.length) {
         this.formEquipoControl.controls.length = valor;
         return;
@@ -39,15 +38,16 @@ export class EquipoComponent implements OnInit, OnChanges {
           );
         }
       }
-      console.log("valor" + valor, "form" + this.formEquipoControl.value.length);
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.formEquipo && changes.formEquipo.currentValue) {
-      if (changes.formEquipo.currentValue.detalleEquipo)
+      if (changes.formEquipo.currentValue.detalleEquipo) {
         this.generarFormulario(changes.formEquipo.currentValue);
-      else this.crearArrayFormEquipo();
+      } else {
+        this.crearArrayFormEquipo();
+      }
     }
   }
 
@@ -95,5 +95,18 @@ export class EquipoComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit();
   }
 
+  aumentarJugador() {
+    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
+    valor++;
+    this.formPasoEquipo.controls['cantidadEquipo'].setValue(valor);
+  }
 
+  restarJugador() {
+    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
+    if(valor == 1) {
+      this.formPasoEquipo.controls['cantidadEquipo'].setValue(1);
+    } else {
+      this.formPasoEquipo.controls['cantidadEquipo'].setValue(--valor);
+    }
+  }
 }

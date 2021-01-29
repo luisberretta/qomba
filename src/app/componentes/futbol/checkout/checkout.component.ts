@@ -13,6 +13,7 @@ export class CheckoutComponent implements OnInit {
   @Output() finalizarPasos = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   submit = false;
+  mostrar: boolean = false;
 
   constructor(private wisardService: WizardService,
               private fb: FormBuilder) {
@@ -34,5 +35,9 @@ export class CheckoutComponent implements OnInit {
 
   anterior() {
     this.anteriorPaso.emit();
+  }
+
+  mostrarDetalle() {
+    this.mostrar = !this.mostrar;
   }
 }

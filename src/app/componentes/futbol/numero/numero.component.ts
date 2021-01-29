@@ -69,6 +69,7 @@ export class NumeroComponent implements OnInit, OnChanges {
     }
     this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
+
   llevaNumeroFrontal(){
     this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
     this.llevaNroFrontal = !this.llevaNroFrontal;
