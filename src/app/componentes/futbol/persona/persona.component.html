@@ -6,11 +6,11 @@
 </div>
 <div #dataContainer (click)="obtenerElementos($event)" class="row">
   <div class="col-md-6 col-12">
-    <div [innerHTML]="frente"></div>
+    <div #camisetaFrente [innerHTML]="frente"></div>
     <div [innerHTML]="short"></div>
   </div>
   <div class="col-md-6 col-12">
-    <div [innerHTML]="dorso"></div>
+    <div #camisetaDorso [innerHTML]="dorso"></div>
     <div [innerHTML]="short"></div>
   </div>
 </div>

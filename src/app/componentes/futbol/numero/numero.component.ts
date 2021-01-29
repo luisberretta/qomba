@@ -2,6 +2,7 @@ import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Pedido} from "../../../clases/Pedido";
 import {PersonaComponent} from "../persona/persona.component";
+import {WizardComponent} from "../wizard.component";
 
 @Component({
   selector: 'app-numero',
@@ -9,8 +10,6 @@ import {PersonaComponent} from "../persona/persona.component";
   styleUrls: ['./numero.component.scss']
 })
 export class NumeroComponent implements OnInit, OnChanges {
-
-  @ViewChild(PersonaComponent) personaComponent : PersonaComponent;
 
   formPasoNumero: FormGroup = new FormGroup({
 
@@ -29,18 +28,25 @@ export class NumeroComponent implements OnInit, OnChanges {
   @Input() formNumero: Pedido;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
-
+  @Output() editarPersona = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit(): void {
     this.formPasoNumero.get('llevaNombreCamiseta').valueChanges.subscribe((valor) => {
-      this.personaComponent.llevaNombre(valor);
+      let editarPersona = {editar: 'nombre', valor : valor};
+      this.editarPersona.emit(editarPersona)
     });
     this.formPasoNumero.get('llevaNumeroCamiseta').valueChanges.subscribe((valor) => {
-      this.personaComponent.llevaNroFrontal(valor);
+      let editarPersona = {editar: 'numero_dorso', valor : valor};
+      this.editarPersona.emit(editarPersona);
     });
+    this.formPasoNumero.get('posicionNumeroCamiseta').valueChanges.subscribe((valor) => {
+      let editarPersona = {editar: 'numero_frente', posicion : valor};
+      this.editarPersona.emit(editarPersona);
+    });
+
   }
 
 
@@ -71,15 +77,16 @@ export class NumeroComponent implements OnInit, OnChanges {
   }
 
   llevaNumeroFrontal(){
-    this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
     this.llevaNroFrontal = !this.llevaNroFrontal;
     if (this.llevaNroFrontal){
       this.formPasoNumero.controls.posicionNumeroCamiseta.setValidators([Validators.required]);
     }
     else {
+      this.formPasoNumero.controls.posicionNumeroCamiseta.setValue(null);
       this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
     }
-    this.personaComponent.llevaNroFrontal(this.llevaNroFrontal);
+    let editarPersona = {editar: 'numero_frente', valor : this.llevaNroFrontal};
+    this.editarPersona.emit(editarPersona);
     this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
 
@@ -102,7 +109,7 @@ export class NumeroComponent implements OnInit, OnChanges {
   }
 
   anterior() {
-    this.anteriorPaso.emit();
+    this.anteriorPaso.emit(this.formPasoNumero.value);
   }
 
 }

@@ -28,8 +28,8 @@ export class PersonaComponent implements OnInit, OnChanges {
   idGrupo: String;
   parteSeleccionada: string;
   @Input() paso: string;
-  @ViewChild('dataFrente') dataFrente: ElementRef;
-  @ViewChild('dataDorso') dataDorso: ElementRef;
+  @ViewChild('camisetaFrente') camisetaFrente: ElementRef;
+  @ViewChild('camisetaDorso') camisetaDorso: ElementRef;
   @Input() llevaShort;
 
   constructor(public renderer: Renderer2,
@@ -57,15 +57,15 @@ export class PersonaComponent implements OnInit, OnChanges {
   generarImagenes(): any {
     return this.dataContainer.nativeElement;
     let images: HTMLAllCollection[] = [];
-    images.push(this.dataFrente.nativeElement);
-    images.push(this.dataDorso.nativeElement);
+    images.push(this.camisetaFrente.nativeElement);
+    images.push(this.camisetaDorso.nativeElement);
     return images;
   }
 
   obtenerElementos(event) {
     this.idGrupo = event.target.parentNode.id;
-    let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
-    if(this.idGrupo == 'short' && !this.llevaShort) {
+    let grupos = this.obtenerGrupos();
+    if (this.idGrupo == 'short' && !this.llevaShort) {
       return false;
     } else {
       for (let i = 0; i < grupos.length; i++) {
@@ -80,8 +80,8 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   cambiarColor(color) {
-    let grupos = this.dataContainer.nativeElement.getElementsByTagName('g');
-    if(this.idGrupo == 'short' && !this.llevaShort) {
+    let grupos = this.obtenerGrupos();
+    if (this.idGrupo == 'short' && !this.llevaShort) {
       return false;
     } else {
       for (let i = 0; i < grupos.length; i++) {
@@ -96,20 +96,47 @@ export class PersonaComponent implements OnInit, OnChanges {
     }
   }
 
-  llevaNroFrontal(visible){
-    let numeroFrontal = this.dataContainer.nativeElement.getElementById('numero_frontal');
-    if(numeroFrontal && visible)
-      numeroFrontal.setAttribute('visibility','visible');
-    else{
-      numeroFrontal.setAttribute('visibility','hidden');
+  editarCamiseta(editarCamiseta) {
+    if (editarCamiseta.editar) {
+      let numeroFrontal;
+      let grupos = this.obtenerGrupos();
+      if (editarCamiseta.editar == 'numero_frente') {
+        numeroFrontal = grupos.namedItem(editarCamiseta.editar);
+        if (editarCamiseta.posicion) {
+          let tagText = numeroFrontal.getElementsByTagName('text').namedItem('numero');
+          this.editarPosicionNumero(tagText,editarCamiseta.posicion);
+        }
+      } else {
+        numeroFrontal = grupos.namedItem(editarCamiseta.editar);
+      }
+      if (editarCamiseta.valor) {
+        numeroFrontal.setAttribute('visibility', 'visible');
+      } else {
+        if (editarCamiseta.valor != undefined) {
+          numeroFrontal.setAttribute('visibility', 'hidden');
+        }
+      }
     }
-  }
-
-  llevaNombre(visible){
 
   }
 
-  llevaNumeroDorso(visible){
+  obtenerGrupos() {
+    return this.dataContainer.nativeElement.getElementsByTagName('g');
+  }
+
+  editarPosicionNumero(text, posicion) {
+    let DERECHA = 180;
+    let IZQUIERDA = 400;
+    let CENTRO = 290;
+    if (posicion == 'Derecha') {
+      text.transform.baseVal.getItem('matrix').matrix.e = DERECHA;
+    }
+    if( posicion == 'Izquierda'){
+      text.transform.baseVal.getItem('matrix').matrix.e = IZQUIERDA;
+    }
+    if(posicion == 'Centro'){
+      text.transform.baseVal.getItem('matrix').matrix.e = CENTRO;
+    }
 
   }
 

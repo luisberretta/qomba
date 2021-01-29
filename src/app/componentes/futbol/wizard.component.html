@@ -58,10 +58,10 @@
             <div class="paso mt-3" [ngSwitch]="paso">
               <h3 class="text-center">{{ paso }}</h3>
               <app-camiseta *ngSwitchCase="'camiseta'" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta"></app-camiseta>
-              <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior()" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
-              <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)" [formNumero]="formNumero"></app-numero>
-              <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior()" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
-              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior()" [formCheckOut]="formCheckOut"></app-checkout>
+              <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
+              <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" (editarPersona)="editarPersona($event)" [formNumero]="formNumero"></app-numero>
+              <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
+              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" [formCheckOut]="formCheckOut"></app-checkout>
             </div>
           </div>
           <div class="col-md-6 col-12 align-self-center text-center">

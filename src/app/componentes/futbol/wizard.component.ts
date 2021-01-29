@@ -101,19 +101,22 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  anterior() {
+  anterior(event) {
     switch (this.numeroPaso) {
       case 2:
+        this.generarPedidoShort(event);
         this.numeroPaso = 1;
         this.paso = 'camiseta';
         this.generarFormCamiseta();
         break;
       case 3:
+        this.generarPedidoNumero(event);
         this.numeroPaso = 2;
         this.paso = 'short';
         this.generarFormShort();
         break;
       case 4:
+        this.generarPedidoEquipo(event);
         this.numeroPaso = 3;
         this.paso = 'numero';
         this.generarFormNumero();
@@ -235,4 +238,9 @@ export class WizardComponent implements OnInit {
   llevaShort(event) {
     this.short = event;
   }
+
+  editarPersona(editarCamiseta){
+    this.personaComponent.editarCamiseta(editarCamiseta);
+  }
+
 }
