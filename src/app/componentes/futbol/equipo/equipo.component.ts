@@ -22,23 +22,6 @@ export class EquipoComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.formPasoEquipo.get('cantidadEquipo').valueChanges.subscribe((valor) => {
-      if (valor < 1 || valor < this.formEquipoControl.controls.length) {
-        this.formEquipoControl.controls.length = valor;
-        return;
-      } else {
-        for (let i = this.formEquipoControl.controls.length; i < valor; i++) {
-          this.formEquipoControl.push(
-            new FormGroup({
-              nombreCamiseta: new FormControl(null, [Validators.required]),
-              numero: new FormControl(null, [Validators.min(0), Validators.max(99),Validators.required]),
-              talleCamiseta: new FormControl(null, [Validators.required]),
-              talleShort: new FormControl(null, [Validators.required])
-            })
-          );
-        }
-      }
-    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -57,10 +40,10 @@ export class EquipoComponent implements OnInit, OnChanges {
       if (this.formEquipoControl.value.length < formEquipo.detalleEquipo.length) {
         this.formEquipoControl.push(
           new FormGroup({
-            nombreCamiseta: new FormControl(formEquipo.detalleEquipo[i].nombreCamiseta, [Validators.required]),
-            numero: new FormControl(formEquipo.detalleEquipo[i].numero, [Validators.min(0), Validators.max(99),Validators.required]),
+            nombreCamiseta: new FormControl(formEquipo.detalleEquipo[i].nombreCamiseta,formEquipo.llevaNombreCamiseta?? [Validators.required]),
+            numero: new FormControl(formEquipo.detalleEquipo[i].numero, [Validators.min(0), Validators.max(99), formEquipo.llevaNumeroCamiseta?? Validators.required]),
             talleCamiseta: new FormControl(formEquipo.detalleEquipo[i].talleCamiseta, [Validators.required]),
-            talleShort: new FormControl(formEquipo.detalleEquipo[i].talleShort, [Validators.required])
+            talleShort: new FormControl(formEquipo.detalleEquipo[i].talleShort, formEquipo.llevaShort??[Validators.required])
           })
         );
       }
@@ -73,15 +56,30 @@ export class EquipoComponent implements OnInit, OnChanges {
 
   crearArrayFormEquipo() {
     for (let i = 0; i < this.formPasoEquipo.controls.cantidadEquipo.value; i++) {
-      this.formEquipoControl.push(
-        new FormGroup({
-          nombreCamiseta: new FormControl(null, [Validators.required]),
-          numero: new FormControl(null, [Validators.min(0), Validators.max(99),Validators.required]),
-          talleCamiseta: new FormControl(null, [Validators.required]),
-          talleShort: new FormControl(null, [Validators.required])
-        })
-      );
+      let jugador = new FormGroup({
+        nombreCamiseta: new FormControl(null,  ),
+        numero: new FormControl(null, [Validators.min(0), Validators.max(99)]),
+        talleCamiseta: new FormControl(null, [Validators.required]),
+        talleShort: new FormControl(null, )
+      });
+      jugador = this.agregarValidators(jugador);
+      this.formEquipoControl.push(jugador);
     }
+  }
+
+  agregarValidators(jugador){
+    if(this.formEquipo.llevaNombreCamiseta){
+      jugador.controls.nombreCamiseta.setValidators([Validators.required]);
+    }
+    if(this.formEquipo.llevaNumeroCamiseta){
+      jugador.controls.numero.setValidators([Validators.required]);
+    }
+    if(this.formEquipo.llevaShort){
+      jugador.controls.talleShort.setValidators([Validators.required]);
+
+    }
+    // this.formPasoEquipo.controls.nombreCamiseta.updateValueAndValidity();
+    return jugador
   }
 
   siguiente() {
@@ -92,7 +90,7 @@ export class EquipoComponent implements OnInit, OnChanges {
   }
 
   anterior() {
-    this.anteriorPaso.emit();
+    this.anteriorPaso.emit(this.formPasoEquipo.value);
   }
 
   aumentarJugador() {
