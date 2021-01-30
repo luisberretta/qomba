@@ -16,6 +16,9 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class PersonaComponent implements OnInit, OnChanges {
 
+  DERECHA = 180;
+  IZQUIERDA = 400;
+  CENTRO = 290;
   frente: any;
   dorso: any;
   short: any;
@@ -32,6 +35,7 @@ export class PersonaComponent implements OnInit, OnChanges {
   @ViewChild('camisetaDorso') camisetaDorso: ElementRef;
   @Input() llevaShort;
   @Input() escudo;
+  @Input() posicionEscudoCamiseta;
   imgUrl: any;
 
   constructor(public renderer: Renderer2,
@@ -76,7 +80,26 @@ export class PersonaComponent implements OnInit, OnChanges {
           document.getElementById('escudo_remera').firstElementChild.setAttribute('width', ancho.toString() + 'px');
         };
         document.getElementById('escudo_remera').firstElementChild.setAttribute('xlink:href', this.imgUrl);
-
+      }
+    }
+    if(changeRecord.posicionEscudoCamiseta && changeRecord.posicionEscudoCamiseta.currentValue) {
+      let posicion = changeRecord.posicionEscudoCamiseta.currentValue;
+      let grupos = this.obtenerGrupos();
+      let grupoEscudo = grupos.namedItem('escudo_remera');
+      let imageEscudo = grupoEscudo.getElementsByTagName('image').namedItem('escudo');
+      switch (posicion) {
+        case 'Centro':
+          imageEscudo.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
+          this.editarPosicionNumero(grupos.namedItem('numero_frente').getElementsByTagName('text').namedItem('numero'), 'Derecha')
+          break;
+        case 'Derecha':
+          imageEscudo.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
+          this.editarPosicionNumero(grupos.namedItem('numero_frente').getElementsByTagName('text').namedItem('numero'), 'Centro')
+          break;
+        case 'Izquierda':
+          imageEscudo.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
+          this.editarPosicionNumero(grupos.namedItem('numero_frente').getElementsByTagName('text').namedItem('numero'), 'Centro')
+          break;
       }
     }
   }
@@ -130,12 +153,18 @@ export class PersonaComponent implements OnInit, OnChanges {
         numeroFrontal = grupos.namedItem(editarCamiseta.editar);
         if (editarCamiseta.posicion) {
           let tagText = numeroFrontal.getElementsByTagName('text').namedItem('numero');
-          this.editarPosicionNumero(tagText,editarCamiseta.posicion);
+          this.editarPosicionNumero(tagText, editarCamiseta.posicion);
         }
       } else {
         numeroFrontal = grupos.namedItem(editarCamiseta.editar);
       }
       if (editarCamiseta.valor) {
+        if(editarCamiseta.posicionEscudoCamiseta && editarCamiseta.posicionEscudoCamiseta == 'Centro') {
+          this.editarPosicionNumero(numeroFrontal.getElementsByTagName('text').namedItem('numero'), 'Derecha')
+        }
+        else if(editarCamiseta.posicionEscudoCamiseta) {
+          this.editarPosicionNumero(numeroFrontal.getElementsByTagName('text').namedItem('numero'), 'Centro')
+        }
         numeroFrontal.setAttribute('visibility', 'visible');
       } else {
         if (editarCamiseta.valor != undefined) {
@@ -143,7 +172,6 @@ export class PersonaComponent implements OnInit, OnChanges {
         }
       }
     }
-
   }
 
   obtenerGrupos() {
@@ -151,17 +179,14 @@ export class PersonaComponent implements OnInit, OnChanges {
   }
 
   editarPosicionNumero(text, posicion) {
-    let DERECHA = 180;
-    let IZQUIERDA = 400;
-    let CENTRO = 290;
     if (posicion == 'Derecha') {
-      text.transform.baseVal.getItem('matrix').matrix.e = DERECHA;
+      text.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
     }
     if( posicion == 'Izquierda'){
-      text.transform.baseVal.getItem('matrix').matrix.e = IZQUIERDA;
+      text.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
     }
     if(posicion == 'Centro'){
-      text.transform.baseVal.getItem('matrix').matrix.e = CENTRO;
+      text.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
     }
 
   }

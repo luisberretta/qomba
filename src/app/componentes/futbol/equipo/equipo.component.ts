@@ -1,5 +1,6 @@
 import {Component, OnInit, Output, EventEmitter, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-equipo',
@@ -18,7 +19,7 @@ export class EquipoComponent implements OnInit, OnChanges {
     equipo: new FormArray([])
   });
 
-  constructor() {
+  constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
@@ -122,5 +123,9 @@ export class EquipoComponent implements OnInit, OnChanges {
     } else {
       this.formPasoEquipo.controls['cantidadEquipo'].setValue(--valor);
     }
+  }
+
+  open(content) {
+    this.modalService.open(content, {centered: true});
   }
 }

@@ -1,0 +1,11 @@
+.tabla-equipo {
+  max-height: 250px;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .scroll-mobile .tabla-equipo {
+    width: 400px;
+    white-space: nowrap;
+  }
+}

@@ -57,15 +57,15 @@
             </ul>
             <div class="paso mt-3" [ngSwitch]="paso">
               <h3 class="text-center">{{ paso }}</h3>
-              <app-camiseta *ngSwitchCase="'camiseta'" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta" (imagenEscudo)="escudo($event)"></app-camiseta>
+              <app-camiseta *ngSwitchCase="'camiseta'" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta" (imagenEscudo)="escudo($event)" (posicionEscudo)="cambiarPosicionEscudo($event)"></app-camiseta>
               <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
-              <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" (editarPersona)="editarPersona($event)" [formNumero]="formNumero"></app-numero>
+              <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" (editarPersona)="editarPersona($event)" [formNumero]="formNumero" [posicionEscudoCamiseta]="posicionEscudoCamiseta"></app-numero>
               <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
-              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" (finalizarPasos)="generarPedido($event)"  [formCheckOut]="formCheckOut"></app-checkout>
+              <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" (finalizarPasos)="generarPedido($event)" [formCheckOut]="formCheckOut"></app-checkout>
             </div>
           </div>
           <div class="col-md-6 col-12 align-self-center text-center">
-            <app-persona [urlCamiseta]="url" [camisetasSvg]="camisetasSvg" [paso]="paso" [llevaShort]="short" [escudo]="imagenEscudo"></app-persona>
+            <app-persona [urlCamiseta]="url" [camisetasSvg]="camisetasSvg" [paso]="paso" [llevaShort]="short" [escudo]="imagenEscudo" [posicionEscudoCamiseta]="posicionEscudoCamiseta"></app-persona>
           </div>
         </div>
       </div>

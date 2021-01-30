@@ -28,6 +28,7 @@ export class WizardComponent implements OnInit {
   formCheckOut: any;
   short: boolean;
   imagenEscudo: any;
+  posicionEscudoCamiseta: any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -252,6 +253,10 @@ export class WizardComponent implements OnInit {
 
   editarPersona(editarCamiseta) {
     this.personaComponent.editarCamiseta(editarCamiseta);
+  }
+
+  cambiarPosicionEscudo(event) {
+    this.posicionEscudoCamiseta = event;
   }
 
 }

@@ -225,7 +225,7 @@
 	<text id="numero" transform="matrix(1.1609 0 0 1 292.7095 227.8395)" font-family="'MyriadPro-Regular'" font-size="164.2046px">₉</text>
 </g>
 <g id="escudo_remera">
-  <image overflow="visible" id="escudo" xlink:href="" transform="matrix(0.8 0 0 0.6 409.5905 155.7968)">
+  <image overflow="visible" id="escudo" xlink:href="" transform="matrix(0.8 0 0 0.6 290 155.7968)">
 	</image>
 </g>
 </svg>

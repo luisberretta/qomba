@@ -3,7 +3,7 @@
     <div class="col-12 text-center">
       <div class="row">
         <div class="col-md-5 col-10">
-          <label>¿Cuántos son en tu equipo?</label>
+          <label><strong>¿Cuántos son en tu equipo?</strong></label>
         </div>
       </div>
       <div class="row">
@@ -18,53 +18,55 @@
         </div>
         <div class="col-2 pl-0 mt-1">
           <i (click)="aumentarJugador()" class="fas fa-plus-circle fa-lg"></i>
-          <i (click)="restarJugador()" class="fas fa-minus-circle ml-2 fa-lg"></i>
+          <i (click)="restarJugador()" class="fas fa-minus-circle ml-md-2 fa-lg"></i>
         </div>
       </div>
-      <div class="form-group tabla-equipo">
-        <div class="row">
-          <div class="col-md-4 col-12" *ngIf="formEquipo.llevaNombreCamiseta">
-            <strong>Nombre</strong>
-          </div>
-          <div class="col-md-2 col-12" *ngIf="formEquipo.llevaNumeroCamiseta">
-            <strong>Número</strong>
-          </div>
-          <div class="col-md-6 col-12 text-center">
-            <strong>Talle</strong>
-          </div>
-        </div>
-        <div formArrayName="equipo" class="row mt-2" *ngFor="let jugador of formEquipoControl.controls; index as i">
-          <div *ngIf="formEquipo.llevaNombreCamiseta" class="col-md-4 col-12" [formGroupName]="i">
-            <input type="text" formControlName="nombreCamiseta" class="form-control"/>
-            <div *ngIf="submit && formEquipoControl.controls[i].get('nombreCamiseta').errors" class="invalid-feedback">
-              <div *ngIf="formEquipoControl.controls[i].get('nombreCamiseta').errors.required">Seleccione el nombre.
-              </div>
+      <div class="scroll-mobile">
+        <div class="form-group tabla-equipo">
+          <div class="row">
+            <div class="col-4" *ngIf="formEquipo.llevaNombreCamiseta">
+              <strong>Nombre</strong>
+            </div>
+            <div class="col-md-2 col-3" *ngIf="formEquipo.llevaNumeroCamiseta">
+              <strong>Número</strong>
+            </div>
+            <div class="col-md-6 col-5 text-center">
+              <strong>Talle <i class="fas fa-info-circle fa-lg ml-2" (click)="open(content)"></i></strong>
             </div>
           </div>
-          <div *ngIf="formEquipo.llevaNumeroCamiseta || formEquipo.agregarNumeroShort" class="col-md-2 col-12" [formGroupName]="i">
-            <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control"/>
-            <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
-              <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Seleccione el número.
+          <div formArrayName="equipo" class="row mt-2" *ngFor="let jugador of formEquipoControl.controls; index as i">
+            <div *ngIf="formEquipo.llevaNombreCamiseta" class="col-4" [formGroupName]="i">
+              <input type="text" formControlName="nombreCamiseta" class="form-control"/>
+              <div *ngIf="submit && formEquipoControl.controls[i].get('nombreCamiseta').errors" class="invalid-feedback">
+                <div *ngIf="formEquipoControl.controls[i].get('nombreCamiseta').errors.required">Seleccione el nombre.
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col" [formGroupName]="i">
-            <select class="form-control" formControlName="talleCamiseta">
-              <option disabled selected [ngValue]="null">Camiseta</option>
-              <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
-            </select>
-            <div *ngIf="submit && formEquipoControl.controls[i].get('talleCamiseta').errors" class="invalid-feedback">
-              <div *ngIf="formEquipoControl.controls[i].get('talleCamiseta').errors.required">Seleccione el talle camiseta.
+            <div *ngIf="formEquipo.llevaNumeroCamiseta || formEquipo.agregarNumeroShort" class="col-md-2 col-3" [formGroupName]="i">
+              <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control"/>
+              <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
+                <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Seleccione el número.
+                </div>
               </div>
             </div>
-          </div>
-          <div *ngIf="formEquipo.llevaShort" class="col" [formGroupName]="i">
-            <select class="form-control" formControlName="talleShort">
-              <option disabled selected [ngValue]="null">Short</option>
-              <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
-            </select>
-            <div *ngIf="submit && formEquipoControl.controls[i].get('talleShort').errors" class="invalid-feedback">
-              <div *ngIf="formEquipoControl.controls[i].get('talleShort').errors.required">Seleccione el talle short.
+            <div class="col" [formGroupName]="i">
+              <select class="form-control" formControlName="talleCamiseta">
+                <option disabled selected [ngValue]="null">Camiseta</option>
+                <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
+              </select>
+              <div *ngIf="submit && formEquipoControl.controls[i].get('talleCamiseta').errors" class="invalid-feedback">
+                <div *ngIf="formEquipoControl.controls[i].get('talleCamiseta').errors.required">Seleccione el talle camiseta.
+                </div>
+              </div>
+            </div>
+            <div *ngIf="formEquipo.llevaShort" class="col" [formGroupName]="i">
+              <select class="form-control" formControlName="talleShort">
+                <option disabled selected [ngValue]="null">Short</option>
+                <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
+              </select>
+              <div *ngIf="submit && formEquipoControl.controls[i].get('talleShort').errors" class="invalid-feedback">
+                <div *ngIf="formEquipoControl.controls[i].get('talleShort').errors.required">Seleccione el talle short.
+                </div>
               </div>
             </div>
           </div>
@@ -81,3 +83,13 @@
     <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
   </div>
 </div>
+<ng-template #content let-modal>
+  <div class="modal-body text-center">
+    <h4 class="text-white">Listado de talles</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-10">
+        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

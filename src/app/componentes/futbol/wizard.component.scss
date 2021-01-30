@@ -224,7 +224,7 @@
 
 @media screen and (max-width: 768px) {
   .btn-group {
-    display: block;
+    display: grid;
   }
   .indicador-progreso li h5 {
     display: none;

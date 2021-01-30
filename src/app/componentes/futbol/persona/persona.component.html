@@ -1,10 +1,10 @@
 <div class="color-picker" *ngIf="paso != 'checkout'">
   <p *ngIf="parteSeleccionada" class="text-dark">Elegí el color para:
-    <strong>{{ parteSeleccionada }}</strong></p>
-  <color-circle [colors]="colors"
-                (onChangeComplete)="cambiarColor($event.color.hex)"></color-circle>
+    <strong>{{ parteSeleccionada }}</strong>
+  </p>
+  <color-circle [colors]="colors" (onChangeComplete)="cambiarColor($event.color.hex)"></color-circle>
 </div>
-<div #dataContainer (click)="obtenerElementos($event)" class="row">
+<div #dataContainer (click)="obtenerElementos($event)" class="row" [ngClass]="{ 'no-opacity': paso == 'checkout' }">
   <div class="col-md-6 col-12">
     <div #camisetaFrente [innerHTML]="frente"></div>
     <div [innerHTML]="short"></div>

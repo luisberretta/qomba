@@ -15,12 +15,12 @@ export class CheckoutComponent implements OnInit {
   submit = false;
   mostrar: boolean = false;
 
-  constructor(private wisardService: WizardService,
-              private fb: FormBuilder) {
+  constructor() {
   }
 
   formPasoCheckOut: FormGroup = new FormGroup({
-    email: new FormControl('', [Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"), Validators.required])
+    email: new FormControl('', [Validators.email, Validators.required]),
+    observaciones: new FormControl('')
   });
 
   ngOnInit(): void {

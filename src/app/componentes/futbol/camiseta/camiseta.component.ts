@@ -40,6 +40,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   calidadesEscudo: string[] = ["Bordado", "Estampado"];
   escudo: any;
   @Output() imagenEscudo = new EventEmitter();
+  @Output() posicionEscudo = new EventEmitter();
 
   constructor(private modalService: NgbModal) {
   }
@@ -67,6 +68,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
       }
     }
     this.imagenEscudo.emit(event.target.files[0]);
+    this.formPasoCamiseta.get('posicionEscudo').setValue('Centro');
+    this.posicionEscudo.emit(this.formPasoCamiseta.get('posicionEscudo').value);
     this.deshabilitado = false;
   }
 
@@ -75,7 +78,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
   siguiente() {
     this.submit = true;
     if (this.formPasoCamiseta.valid) {
-      console.log(this.formPasoCamiseta.value);
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
   }
@@ -99,6 +101,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   open(content) {
     this.modalService.open(content, {centered: true});
+  }
+
+  cambiarPosicionEscudo() {
+    this.posicionEscudo.emit(this.formPasoCamiseta.get('posicionEscudo').value);
   }
 
 }

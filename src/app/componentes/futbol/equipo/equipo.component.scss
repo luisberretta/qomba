@@ -5,23 +5,11 @@
 
 .tabla-equipo {
   max-height: 435px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  white-space: nowrap;
-  padding: 0 10px;
-  &::-webkit-scrollbar {
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: #484848;
-    width: 180px;
-    border-radius: 6px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #8d2429;
-    border-radius: 6px;
-  }
-  &::-moz-viewport-scroll {
-    background-color: #0C2035;
-  }
 }
+
+.fa-info-circle {
+  cursor: pointer;
+  color: #8d2429;
+}
+
+
