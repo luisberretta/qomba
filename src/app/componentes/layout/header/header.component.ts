@@ -7,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  desplegado: boolean = false;
+  mostrarMenuNavbar = false;
+  show: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  abrirMenu() {
-    this.desplegado = !this.desplegado;
+  mostrarMenuPerfil() {
+    this.mostrarMenuNavbar = true;
   }
 
 }

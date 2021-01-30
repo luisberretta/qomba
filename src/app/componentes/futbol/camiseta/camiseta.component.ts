@@ -68,8 +68,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
       }
     }
     this.imagenEscudo.emit(event.target.files[0]);
-    this.formPasoCamiseta.get('posicionEscudo').setValue('Centro');
-    this.posicionEscudo.emit(this.formPasoCamiseta.get('posicionEscudo').value);
+    this.formPasoCamiseta.controls['posicionEscudo'].setValidators([Validators.required]);
+    this.formPasoCamiseta.controls['posicionEscudo'].updateValueAndValidity();
+    this.formPasoCamiseta.controls['calidadEscudo'].setValidators([Validators.required]);
+    this.formPasoCamiseta.controls['calidadEscudo'].updateValueAndValidity();
     this.deshabilitado = false;
   }
 

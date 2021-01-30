@@ -2,10 +2,10 @@
   <div class="row justify-content-center">
     <div class="col-md-11 col-12">
       <div class="row">
-        <div class="col-10">
+        <div class="col-md-10 col-9">
           <em>Para cambiarle el color a tu camiseta, lo podés hacer clickeando sobre cada parte en las imágenes de tu derecha.</em>
         </div>
-        <div class="col-2 align-self-center text-center">
+        <div class="col-md-2 col-3 align-self-center text-center">
           <i class="fas fa-info-circle fa-2x" (click)="open(content)"></i>
         </div>
       </div>
@@ -37,12 +37,20 @@
           <option [ngValue]="null" selected disabled>Posición</option>
           <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
         </select>
+        <div *ngIf="submit && pasoCamisetaForm.posicionEscudo.errors" class="invalid-feedback">
+          <div *ngIf="pasoCamisetaForm.posicionEscudo.errors.required">Seleccione la posición del escudo.
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <select class="form-control" formControlName="calidadEscudo" [attr.disabled]="deshabilitado ? '' : null">
           <option [ngValue]="null" selected disabled>Calidad</option>
           <option *ngFor="let calidad of calidadesEscudo" [ngValue]="calidad">{{ calidad }}</option>
         </select>
+        <div *ngIf="submit && pasoCamisetaForm.calidadEscudo.errors" class="invalid-feedback">
+          <div *ngIf="pasoCamisetaForm.calidadEscudo.errors.required">Seleccione la calidad del escudo.
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-4 col-10 text-center">
