@@ -134,7 +134,7 @@ export class WizardComponent implements OnInit {
   generarPedidoCamiseta(event) {
     this.pedido.cuelloCamiseta = event.cuello;
     if (event.escudo) {
-      this.pedido.escudo = this.convertirBase64(event.escudo);
+      this.pedido.escudo = event.escudo;
     }
     this.pedido.posicionEscudo = event.posicionEscudo;
     this.pedido.calidadEscudo = event.calidadEscudo;
@@ -160,14 +160,14 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedido(event) {
-    this.pedido.mail = event.mail;
+    this.pedido.email = event.email;
     this.pedido.observaciones = event.observaciones;
     let imagenes = this.personaComponent.generarImagenes();
     svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirBase64(data));
+      this.pedido.imagenes.push(this.convertirBase64Jpg(data));
       svgAsPngUri(imagenes[1], "imagenes.png").then((data) => {
-        this.pedido.imagenes.push(this.convertirBase64(data));
-        this.pedido.escudo = this.convertirBase64(this.pedido.escudo);
+        this.pedido.imagenes.push(this.convertirBase64Jpg(data));
+        this.pedido.escudo = this.convertirBase64Png(this.pedido.escudo);
         this.wizardService.generarPedido(this.pedido).subscribe((data) => {
           if (data) {
             console.log("La operación se realizó con éxito.");
@@ -178,7 +178,11 @@ export class WizardComponent implements OnInit {
 
   }
 
-  convertirBase64(cadena) {
+  convertirBase64Jpg(cadena) {
+    return cadena.replace('data:image/jpeg;base64,', '');
+  }
+
+  convertirBase64Png(cadena) {
     return cadena.replace('data:image/png;base64,', '');
   }
 

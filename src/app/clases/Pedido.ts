@@ -25,7 +25,7 @@ export interface Pedido {
   detalleEquipo ?: DetalleEquipo[];
 
   //CHECKOUT
-  mail?: string;
+  email?: string;
   observaciones?: string;
 
   imagenes?: string[];
