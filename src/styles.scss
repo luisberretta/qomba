@@ -85,9 +85,11 @@ g {
 .no-opacity {
   g:hover {
     opacity: 1;
+    cursor: initial;
   }
   &.parte-seleccionada {
     opacity: 1;
+    cursor: initial;
   }
 }
 

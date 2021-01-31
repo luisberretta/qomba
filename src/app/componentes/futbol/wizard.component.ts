@@ -152,7 +152,7 @@ export class WizardComponent implements OnInit {
     this.pedido.llevaNumeroFrontalCamiseta = event.llevaNumeroFrontalCamiseta;
     this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta;
     this.pedido.llevaNumeroShort = event.llevaNumeroShort;
-    this.pedido.posicionNumeroSort = event.posicionNumeroSort;
+    this.pedido.posicionNumeroShort = event.posicionNumeroShort;
   }
 
   generarPedidoEquipo(event) {
@@ -161,6 +161,7 @@ export class WizardComponent implements OnInit {
 
   generarPedido(event) {
     this.pedido.mail = event.mail;
+    this.pedido.observaciones = event.observaciones;
     let imagenes = this.personaComponent.generarImagenes();
     svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
       this.pedido.imagenes.push(this.convertirBase64(data));
@@ -212,7 +213,7 @@ export class WizardComponent implements OnInit {
       posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
       llevaShort: this.pedido.llevaShort,
       llevaNumeroShort: this.pedido.llevaNumeroShort,
-      posicionNumeroSort: this.pedido.posicionNumeroSort,
+      posicionNumeroShort: this.pedido.posicionNumeroShort,
     }
   }
 
@@ -238,7 +239,7 @@ export class WizardComponent implements OnInit {
       llevaShort: this.pedido.llevaShort,
       llevaEscudoShort: this.pedido.llevaEscudoShort,
       llevaNumeroShort: this.pedido.llevaNumeroShort,
-      posicionNumeroSort: this.pedido.posicionNumeroSort,
+      posicionNumeroSort: this.pedido.posicionNumeroShort,
       detalleEquipo: this.pedido.detalleEquipo,
     }
   }

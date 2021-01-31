@@ -7,11 +7,11 @@
 <div #dataContainer (click)="obtenerElementos($event)" class="row" [ngClass]="{ 'no-opacity': paso == 'checkout' }">
   <div class="col-md-6 col-12">
     <div #camisetaFrente [innerHTML]="frente"></div>
-    <div [innerHTML]="short"></div>
+    <div [innerHTML]="short" [ngClass]="{ 'no-opacity': !llevaShort }"></div>
   </div>
   <div class="col-md-6 col-12">
     <div #camisetaDorso [innerHTML]="dorso"></div>
-    <div [innerHTML]="short"></div>
+    <div [innerHTML]="short" [ngClass]="{ 'no-opacity': !llevaShort }"></div>
   </div>
 </div>
 

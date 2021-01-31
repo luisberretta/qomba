@@ -19,13 +19,14 @@ export interface Pedido {
   llevaNumeroFrontalCamiseta?: boolean;
   posicionNumeroCamiseta?:string;
   llevaNumeroShort?: boolean;
-  posicionNumeroSort?: string;
+  posicionNumeroShort?: string;
 
   //EQUIPO
   detalleEquipo ?: DetalleEquipo[];
 
   //CHECKOUT
   mail?: string;
+  observaciones?: string;
 
   imagenes?: string[];
 

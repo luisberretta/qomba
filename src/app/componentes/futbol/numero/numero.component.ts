@@ -14,8 +14,8 @@ export class NumeroComponent implements OnInit, OnChanges {
   formPasoNumero: FormGroup = new FormGroup({
     llevaNombreCamiseta: new FormControl(false),
     llevaNumeroCamiseta: new FormControl(false),
-    llevaNumeroFrontalCamiseta: new FormControl(false, ),
-    posicionNumeroCamiseta: new FormControl('',[]),
+    llevaNumeroFrontalCamiseta: new FormControl(false,),
+    posicionNumeroCamiseta: new FormControl('', []),
     llevaNumeroShort: new FormControl(false),
     posicionNumeroShort: new FormControl('', []),
   });
@@ -36,15 +36,15 @@ export class NumeroComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.mostrarPosicionesNumero();
     this.formPasoNumero.get('llevaNombreCamiseta').valueChanges.subscribe((valor) => {
-      let editarPersona = {editar: 'nombre', valor : valor};
+      let editarPersona = {editar: 'nombre', valor: valor};
       this.editarPersona.emit(editarPersona)
     });
     this.formPasoNumero.get('llevaNumeroCamiseta').valueChanges.subscribe((valor) => {
-      let editarPersona = {editar: 'numero_dorso', valor : valor};
+      let editarPersona = {editar: 'numero_dorso', valor: valor};
       this.editarPersona.emit(editarPersona);
     });
     this.formPasoNumero.get('posicionNumeroCamiseta').valueChanges.subscribe((valor) => {
-      let editarPersona = {editar: 'numero_frente', posicion : valor};
+      let editarPersona = {editar: 'numero_frente', posicion: valor};
       this.editarPersona.emit(editarPersona);
     });
 
@@ -62,40 +62,42 @@ export class NumeroComponent implements OnInit, OnChanges {
     this.llevaNroFrontal = !!formNumero.llevaNumeroFrontalCamiseta;
     this.formPasoNumero.get('llevaNumeroFrontalCamiseta').setValue(!!formNumero.llevaNumeroFrontalCamiseta);
     this.formPasoNumero.get('posicionNumeroCamiseta').setValue(formNumero.posicionNumeroCamiseta ?? null);
-    if(this.llevaNroFrontal){
+    if (this.llevaNroFrontal) {
       this.formPasoNumero.controls.posicionNumeroCamiseta.setValidators([Validators.required]);
     }
     if (formNumero.llevaShort) {
       this.llevaNroShort = !!formNumero.llevaNumeroShort;
       this.formPasoNumero.get('llevaNumeroShort').setValue(!!formNumero.llevaNumeroShort);
-      this.formPasoNumero.get('posicionNumeroShort').setValue(formNumero.posicionNumeroSort ?? null);
-      if(this.llevaNroShort){
+      this.formPasoNumero.get('posicionNumeroShort').setValue(formNumero.posicionNumeroShort ?? null);
+      if (this.llevaNroShort) {
         this.formPasoNumero.controls.posicionNumeroShort.setValidators([Validators.required]);
       }
     }
     this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
 
-  llevaNumeroFrontal(){
+  llevaNumeroFrontal() {
     this.llevaNroFrontal = !this.llevaNroFrontal;
-    if (this.llevaNroFrontal){
+    if (this.llevaNroFrontal) {
       this.formPasoNumero.controls.posicionNumeroCamiseta.setValidators([Validators.required]);
-    }
-    else {
+    } else {
       this.formPasoNumero.controls.posicionNumeroCamiseta.setValue(null);
       this.formPasoNumero.controls.posicionNumeroCamiseta.clearValidators();
     }
-    let editarPersona = {editar: 'numero_frente', valor: this.llevaNroFrontal, posicionEscudoCamiseta: this.posicionEscudoCamiseta};
+    let editarPersona = {
+      editar: 'numero_frente',
+      valor: this.llevaNroFrontal,
+      posicionEscudoCamiseta: this.posicionEscudoCamiseta
+    };
     this.editarPersona.emit(editarPersona);
     this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
 
   llevaNumeroShort() {
     this.llevaNroShort = !this.llevaNroShort;
-    if (this.llevaNroShort){
+    if (this.llevaNroShort) {
       this.formPasoNumero.controls.posicionNumeroShort.setValidators([Validators.required]);
-    }
-    else {
+    } else {
       this.formPasoNumero.controls.posicionNumeroShort.clearValidators();
     }
     this.formPasoNumero.controls.posicionNumeroShort.updateValueAndValidity();
