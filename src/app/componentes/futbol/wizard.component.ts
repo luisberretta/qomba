@@ -164,10 +164,10 @@ export class WizardComponent implements OnInit {
     this.pedido.observaciones = event.observaciones;
     let imagenes = this.personaComponent.generarImagenes();
     svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirBase64Jpg(data));
+      this.pedido.imagenes.push(this.convertirABase64(data));
       svgAsPngUri(imagenes[1], "imagenes.png").then((data) => {
-        this.pedido.imagenes.push(this.convertirBase64Jpg(data));
-        this.pedido.escudo = this.convertirBase64Png(this.pedido.escudo);
+        this.pedido.imagenes.push(this.convertirABase64(data));
+        this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
         this.wizardService.generarPedido(this.pedido).subscribe((data) => {
           if (data) {
             console.log("La operación se realizó con éxito.");
@@ -178,12 +178,8 @@ export class WizardComponent implements OnInit {
 
   }
 
-  convertirBase64Jpg(cadena) {
-    return cadena.replace('data:image/jpeg;base64,', '');
-  }
-
-  convertirBase64Png(cadena) {
-    return cadena.replace('data:image/png;base64,', '');
+  convertirABase64(cadena) {
+    return cadena.substring(cadena.indexOf(",")+1,cadena.length+1);
   }
 
   initCamisetas() {
