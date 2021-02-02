@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {WizardService} from "../../../servicios/wizard.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-checkout',

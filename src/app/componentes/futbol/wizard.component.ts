@@ -4,6 +4,8 @@ import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-wizard',
@@ -32,7 +34,7 @@ export class WizardComponent implements OnInit {
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
-  constructor(private wizardService: WizardService) {
+  constructor(private wizardService: WizardService, private modalService: NgbModal, private router: Router) {
 
   }
 
@@ -169,6 +171,8 @@ export class WizardComponent implements OnInit {
         this.pedido.imagenes.push(this.convertirABase64(data));
         this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
         this.wizardService.generarPedido(this.pedido).subscribe((data) => {
+          alert("Tu pedido fue realizado con éxito!");
+          this.router.navigate(['/']);
           if (data) {
             console.log("La operación se realizó con éxito.");
           }
@@ -260,4 +264,12 @@ export class WizardComponent implements OnInit {
     this.posicionEscudoCamiseta = event;
   }
 
+  open(content) {
+    this.modalService.open(content, {centered: true});
+  }
+
+  close() {
+    this.modalService.dismissAll();
+    this.router.navigate(['/']);
+  }
 }
