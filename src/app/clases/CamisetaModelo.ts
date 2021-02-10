@@ -23,14 +23,14 @@ export const camisetaModelos = [
     precio: 300,
     seleccionado: false,
   },
-  {
-    id: 4,
-    nombre: 'City',
-    url: '/assets/images/intermedias/intermedia1.png',
-    urlsSvg: ['intermedia1-frente.svg', 'intermedia1-dorso.svg'],
-    precio: 400,
-    seleccionado: false,
-  },
+  // {
+  //   id: 4,
+  //   nombre: 'City',
+  //   url: '/assets/images/intermedias/intermedia1.png',
+  //   urlsSvg: ['intermedia1-frente.svg', 'intermedia1-dorso.svg'],
+  //   precio: 400,
+  //   seleccionado: false,
+  // },
   // {
   //   id: 5,
   //   url: '/assets/images/intermedias/intermedia2.png',
