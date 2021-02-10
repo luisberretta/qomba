@@ -15,6 +15,10 @@ export class EquipoComponent implements OnInit, OnChanges {
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
   submit: boolean = false;
   formPasoEquipo: FormGroup = new FormGroup({
+    nombreEquipo: new FormControl(null,[Validators.required]),
+    nombreContacto: new FormControl(null,[Validators.required]),
+    telefonoContacto: new FormControl(null, [Validators.required]),
+    emailContacto: new FormControl(null, [Validators.required, Validators.email]),
     cantidadEquipo: new FormControl(1, [Validators.min(1), Validators.required]),
     equipo: new FormArray([])
   });
@@ -109,20 +113,6 @@ export class EquipoComponent implements OnInit, OnChanges {
 
   anterior() {
     this.anteriorPaso.emit(this.formPasoEquipo.value);
-  }
-
-  aumentarJugador() {
-    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
-    this.formPasoEquipo.controls['cantidadEquipo'].setValue(++valor);
-  }
-
-  restarJugador() {
-    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
-    if (valor == 1) {
-      this.formPasoEquipo.controls['cantidadEquipo'].setValue(1);
-    } else {
-      this.formPasoEquipo.controls['cantidadEquipo'].setValue(--valor);
-    }
   }
 
   open(content) {

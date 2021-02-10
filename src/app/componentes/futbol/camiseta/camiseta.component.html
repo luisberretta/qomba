@@ -1,52 +1,31 @@
 <form [formGroup]="formPasoCamiseta">
-  <div class="row justify-content-center">
+  <div class="text-md-left text-right">
+    <div class="btn-group" role="group">
+      <a class="btn" (click)="modelosHombre()" [ngClass]="{ 'seleccionado': generoModelo == 'hombre' }">Hombre</a>
+      <a class="btn" (click)="modelosMujer()" [ngClass]="{ 'seleccionado': generoModelo == 'mujer' }">Mujer</a>
+    </div>
+  </div>
+  <div class="row mt-2">
     <div *ngFor="let camiseta of camisetaModelos" class="col-md-3 col-6 text-center">
       <div class="modelos-camisetas mt-3">
         <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
       </div>
     </div>
   </div>
-<!--  <div class="form-group">-->
-<!--    <label>Agregá un escudo a tu camiseta (opcional)</label>-->
-<!--    <div class="row">-->
-<!--      <div class="col-6">-->
-<!--        <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>-->
-<!--        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">-->
-<!--      </div>-->
-<!--      <div class="col-6 align-self-center">-->
-<!--        <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="form-group">-->
-<!--    <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null" (change)="cambiarPosicionEscudo()">-->
-<!--      <option [ngValue]="null" selected disabled>Posición</option>-->
-<!--      <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>-->
-<!--    </select>-->
-<!--    <div *ngIf="submit && pasoCamisetaForm.posicionEscudo.errors" class="invalid-feedback">-->
-<!--      <div *ngIf="pasoCamisetaForm.posicionEscudo.errors.required">Seleccione la posición del escudo.-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-  <div class="row">
-    <div class="form-group">
-      <label class="switch">
-        <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">
-        <span class="slider round"></span>
-      </label>
-      <label class="form-check-label" for="agregar-short">Agregar Short</label>
-    </div>
+  <div class="form-group mt-4">
+    <label class="switch">
+      <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">
+      <span class="slider round"></span>
+    </label>
+    <label class="form-check-label" for="agregar-short">Agregar Short</label>
   </div>
-  <div class="row">
-    <div class="form-group">
-      <label class="switch">
-        <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">
-        <span class="slider round"></span>
-      </label>
-      <label class="form-check-label" for="agregar-short">Agregar medias</label>
-    </div>
+  <div class="form-group">
+    <label class="switch">
+      <input class="form-check-input disabled" formControlName="agregarMedias" type="checkbox" id="agregar-medias" disabled>
+      <span class="slider round"></span>
+    </label>
+    <label class="form-check-label" for="agregar-medias">Agregar medias</label>
   </div>
-
   <div class="row justify-content-center mt-3">
     <div class="col-4 text-center">
       <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>

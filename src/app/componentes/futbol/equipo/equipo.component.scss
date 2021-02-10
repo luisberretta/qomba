@@ -5,6 +5,11 @@
 
 .tabla-equipo {
   max-height: 435px;
+  .titulos {
+    background-color: #eeeeee;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 }
 
 .fa-info-circle {
@@ -12,4 +17,18 @@
   color: #8d2429;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
 
+.form-control:disabled {
+  opacity: 0.5;
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  legend {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}

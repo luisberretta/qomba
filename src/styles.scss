@@ -93,7 +93,8 @@ html, body {
 }
 
 input.form-control, select.form-control {
-  border-radius: 0;
+  border-radius: 0.5rem;
+  border: solid 1px black;
 }
 
 g {
@@ -147,10 +148,10 @@ g {
 .switch {
   position: relative;
   display: inline-block;
-  margin: -2px 10px;
+  margin: -4px 10px;
   padding: 0;
-  width: 32px;
-  height: 16px;
+  width: 38px;
+  height: 22px;
   input {
     opacity: 0;
     width: 0;
@@ -170,6 +171,9 @@ g {
         background-color: #757575;
       }
     }
+    &.disabled + .slider {
+      opacity: 0.5;
+    }
   }
   .slider {
     position: absolute;
@@ -184,8 +188,8 @@ g {
     &:before {
       position: absolute;
       content: "";
-      height: 16px;
-      width: 16px;
+      height: 22px;
+      width: 22px;
       left: 0;
       bottom: 0;
       background-color: #1376d9;
@@ -201,25 +205,46 @@ g {
   }
 }
 
+.border-right {
+  border-right: solid 1px black !important;
+}
+
+fieldset {
+  border: 1px solid black;
+  padding: 0 1.4em 1.4em 1.4em;
+  box-shadow:  0 0 0 0 #000;
+  border-radius: 0.5rem;
+  legend {
+    font-size: 1.2em;
+    font-weight: 800;
+    text-align: left;
+    width:auto;
+    padding: 0 10px;
+    border-bottom: none;
+  }
+}
+
 .tabla-equipo {
   overflow-y: auto;
   overflow-x: hidden;
   white-space: nowrap;
-  padding: 0 10px;
+  padding: 10px;
+  padding-top: 0;
+  border: solid 1px black;
   &::-webkit-scrollbar {
-    border-radius: 6px;
+    border-radius: 0;
   }
   &::-webkit-scrollbar-track {
     background-color: #484848;
     width: 180px;
-    border-radius: 6px;
+    border-radius: 0;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #8d2429;
-    border-radius: 6px;
+    background-color: #cccccc;
+    border-radius: 0;
   }
   &::-moz-viewport-scroll {
-    background-color: #0C2035;
+    background-color: white;
   }
 }
 
@@ -232,37 +257,37 @@ g {
     overflow-x: scroll;
     margin-bottom: 1rem;
     &::-webkit-scrollbar {
-      border-radius: 6px;
+      border-radius: 0;
     }
     &::-webkit-scrollbar-track {
       background-color: #484848;
       width: 180px;
-      border-radius: 6px;
+      border-radius: 0;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: #8d2429;
-      border-radius: 6px;
+      background-color: #cccccc;
+      border-radius: 0;
     }
     &::-moz-viewport-scroll {
-      background-color: #0C2035;
+      background-color: white;
     }
     .tabla-equipo {
       width: 450px;
       white-space: nowrap;
       &::-webkit-scrollbar {
-        border-radius: 6px;
+        border-radius: 0;
       }
       &::-webkit-scrollbar-track {
         background-color: #484848;
         width: 180px;
-        border-radius: 6px;
+        border-radius: 0;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: #8d2429;
-        border-radius: 6px;
+        background-color: #cccccc;
+        border-radius: 0;
       }
       &::-moz-viewport-scroll {
-        background-color: #0C2035;
+        background-color: white;
       }
     }
   }

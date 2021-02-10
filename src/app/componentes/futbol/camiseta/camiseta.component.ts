@@ -43,6 +43,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   seleccionoModelo: boolean = false;
   modelosSVG: any;
   camiseta: any;
+  generoModelo: string = 'hombre';
 
   constructor(private modalService: NgbModal) {
   }
@@ -120,6 +121,16 @@ export class CamisetaComponent implements OnInit, OnChanges {
     if (this.formPasoCamiseta.valid) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
+  }
+
+  modelosHombre() {
+    this.generoModelo = 'hombre';
+    //Renderizar modelos hombre
+  }
+
+  modelosMujer() {
+    this.generoModelo = 'mujer';
+    //Renderizar modelos mujer
   }
 
 }
