@@ -20,7 +20,7 @@ import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/
 import {NgxUiLoaderModule} from "ngx-ui-loader";
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import {ColorCircleModule} from "ngx-color/circle";
-import { ColorComponent } from './componentes/color/color.component';
+import { ColorComponent } from './componentes/futbol/color/color.component';
 
 @NgModule({
   declarations: [
