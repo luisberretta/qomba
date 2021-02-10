@@ -122,7 +122,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoCamiseta(formCamiseta) {
-    this.pedido.modelo = formCamiseta.camiseta.nombre;
+    this.pedido.modelo = formCamiseta.nombre;
     this.pedido.llevaShort = formCamiseta.llevaShort;
     this.pedido.llevaMedias = formCamiseta.llevaMedias;
   }
