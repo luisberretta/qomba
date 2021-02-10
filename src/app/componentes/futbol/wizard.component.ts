@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {camisetaModelos} from "../../clases/CamisetaModelo";
 import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
@@ -16,12 +15,7 @@ export class WizardComponent implements OnInit {
 
   paso: string = 'camiseta';
   numeroPaso: number = 1;
-  categoria: string = 'basica';
   url: string = '/assets/images/basicas/';
-  camisetaModelos: any = camisetaModelos;
-  camisetasSvg: any;
-  camiseta: any;
-  seleccionoModelo: boolean = false;
   pedido: Pedido = {imagenes: []};
   formCamiseta: any;
   formShort: any;
@@ -31,6 +25,7 @@ export class WizardComponent implements OnInit {
   short: boolean;
   imagenEscudo: any;
   posicionEscudoCamiseta: any;
+  nombreMostrarPaso: string = 'Elegí tu Modelo';
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
 
@@ -39,63 +34,48 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initCamisetas();
+
   }
 
-  basica() {
-    this.categoria = 'basica';
-    this.url = '/assets/images/basicas/';
-  }
-
-  intermedia() {
-    this.categoria = 'intermedia';
-    this.url = '/assets/images/intermedias/'
-  }
-
-  premium() {
-    this.categoria = 'premium';
-    this.url = '/assets/images/premium/'
-  }
-
-  propio() {
-    this.categoria = 'propio';
-  }
-
-  modeloElegido(id) {
-    this.seleccionoModelo = true;
-    for (let i = 0; i < this.camisetaModelos.length; i++) {
-      this.camisetaModelos[i].seleccionado = false;
-      if (id == this.camisetaModelos[i].id) {
-        this.camisetaModelos[i].seleccionado = true;
-        this.camiseta = this.camisetaModelos[i];
-        this.camisetasSvg = this.camisetaModelos[i].urlsSvg;
-      }
-    }
-  }
+  // modeloElegido(id) {
+  //   this.seleccionoModelo = true;
+  //   for (let i = 0; i < this.camisetaModelos.length; i++) {
+  //     this.camisetaModelos[i].seleccionado = false;
+  //     if (id == this.camisetaModelos[i].id) {
+  //       this.camisetaModelos[i].seleccionado = true;
+  //       this.camiseta = this.camisetaModelos[i];
+  //       this.camisetasSvg = this.camisetaModelos[i].urlsSvg;
+  //     }
+  //   }
+  // }
 
   siguiente(event) {
     switch (this.numeroPaso) {
       case 1:
         this.generarPedidoCamiseta(event);
         this.paso = 'short';
+        this.nombreMostrarPaso = 'Elige Colores';
         this.numeroPaso = 2;
         this.generarFormShort();
         break;
       case 2:
         this.generarPedidoShort(event);
         this.paso = 'numero';
+        this.nombreMostrarPaso = 'Personalizá tu Modelo';
         this.numeroPaso = 3;
         this.generarFormNumero();
         break;
       case 3:
         this.generarPedidoNumero(event);
         this.paso = 'equipo';
+        this.nombreMostrarPaso = 'Armá tu Equipo';
         this.numeroPaso = 4;
         this.generarFormEquipo();
         break;
       case 4:
         this.generarPedidoEquipo(event);
         this.paso = 'checkout';
+        this.nombreMostrarPaso = 'Confirmación';
         this.numeroPaso = 5;
         this.generarFormCheckOut();
         break;
@@ -111,23 +91,27 @@ export class WizardComponent implements OnInit {
         this.generarPedidoShort(event);
         this.numeroPaso = 1;
         this.paso = 'camiseta';
+        this.nombreMostrarPaso = 'Elegí tu Modelo';
         this.generarFormCamiseta();
         break;
       case 3:
         this.generarPedidoNumero(event);
         this.numeroPaso = 2;
         this.paso = 'short';
+        this.nombreMostrarPaso = 'Elige Colores';
         this.generarFormShort();
         break;
       case 4:
         this.generarPedidoEquipo(event);
         this.numeroPaso = 3;
         this.paso = 'numero';
+        this.nombreMostrarPaso = 'Personalizá tu Modelo';
         this.generarFormNumero();
         break;
       case 5:
         this.numeroPaso = 4;
         this.paso = 'equipo';
+        this.nombreMostrarPaso = 'Armá tu Equipo';
         this.generarFormEquipo();
         break;
     }
@@ -184,12 +168,6 @@ export class WizardComponent implements OnInit {
 
   convertirABase64(cadena) {
     return cadena.substring(cadena.indexOf(",")+1,cadena.length+1);
-  }
-
-  initCamisetas() {
-    for (let i = 0; i < this.camisetaModelos.length; i++) {
-      this.camisetaModelos[i].seleccionado = false;
-    }
   }
 
   generarFormCamiseta() {

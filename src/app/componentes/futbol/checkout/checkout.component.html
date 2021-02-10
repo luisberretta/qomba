@@ -43,17 +43,17 @@
       </div>
       <div class="form-group">
         <label>Observaciones</label>
-        <textarea cols="10" rows="4" formControlName="observaciones" class="form-control">
+          <textarea cols="10" rows="4" formControlName="observaciones" class="form-control">
         </textarea>
       </div>
     </form>
   </div>
 </div>
 <div class="row justify-content-center">
-  <div class="col-md-4 col-10 order-md-0 order-1 mt-md-0 mt-2">
-    <a class="btn btn-light btn-block" (click)="anterior()">Atrás</a>
+  <div class="col-4 text-right">
+    <a class="btn btn-atras" (click)="anterior()">Atrás</a>
   </div>
-  <div class="col-md-4 col-10 order-md-1 order-0">
-    <a class="btn btn-naranja btn-block" (click)="confirmar()">Confirmar</a>
+  <div class="col-4">
+    <a class="btn btn-continuar" (click)="confirmar()">Confirmar</a>
   </div>
 </div>

@@ -12,6 +12,7 @@ import {
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {camisetaModelos} from "../../../clases/CamisetaModelo";
 
 @Component({
   selector: 'app-camiseta',
@@ -22,10 +23,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   @ViewChild('archivoEscudo') fileInput: ElementRef;
   formPasoCamiseta: FormGroup = new FormGroup({
-    cuello: new FormControl(null, [Validators.required]),
     escudo: new FormControl(null),
     posicionEscudo: new FormControl(null),
-    calidadEscudo: new FormControl(null),
   });
   submit: boolean = false;
   @Input() pasoNumero: number;
@@ -35,21 +34,30 @@ export class CamisetaComponent implements OnInit, OnChanges {
   deshabilitado: boolean = true;
   @Output() colorPartes = new EventEmitter();
   @Input() formCamiseta;
-  cuellos: string[] = ["Chomba", "Escote en V", "Escote redondo"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
-  calidadesEscudo: string[] = ["Bordado", "Estampado"];
   escudo: any;
   @Output() imagenEscudo = new EventEmitter();
   @Output() posicionEscudo = new EventEmitter();
+  camisetaModelos: any = camisetaModelos;
+  seleccionoModelo: boolean = false;
+  camisetasSvg: any;
+  camiseta: any;
 
   constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
+    this.initCamisetas();
   }
 
   get pasoCamisetaForm() {
     return this.formPasoCamiseta.controls;
+  }
+
+  initCamisetas() {
+    for (let i = 0; i < this.camisetaModelos.length; i++) {
+      this.camisetaModelos[i].seleccionado = false;
+    }
   }
 
   // Método para capturar el evento del click en el botón y disparar para que deje subir archivo
@@ -70,12 +78,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.imagenEscudo.emit(event.target.files[0]);
     this.formPasoCamiseta.controls['posicionEscudo'].setValidators([Validators.required]);
     this.formPasoCamiseta.controls['posicionEscudo'].updateValueAndValidity();
-    this.formPasoCamiseta.controls['calidadEscudo'].setValidators([Validators.required]);
-    this.formPasoCamiseta.controls['calidadEscudo'].updateValueAndValidity();
     this.deshabilitado = false;
   }
-
-
 
   siguiente() {
     this.submit = true;
@@ -91,11 +95,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formCamiseta) {
-
-    this.formPasoCamiseta.get('cuello').setValue(formCamiseta.cuelloCamiseta ?? null);
     this.formPasoCamiseta.get('escudo').setValue(formCamiseta.escudo ?? null);
     this.formPasoCamiseta.get('posicionEscudo').setValue(formCamiseta.posicionEscudo ?? null);
-    this.formPasoCamiseta.get('calidadEscudo').setValue(formCamiseta.calidadEscudo ?? null);
     if (this.formPasoCamiseta.get('escudo').value) {
       this.deshabilitado = false;
     }
@@ -107,6 +108,18 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   cambiarPosicionEscudo() {
     this.posicionEscudo.emit(this.formPasoCamiseta.get('posicionEscudo').value);
+  }
+
+  modeloElegido(id) {
+    this.seleccionoModelo = true;
+    for (let i = 0; i < this.camisetaModelos.length; i++) {
+      this.camisetaModelos[i].seleccionado = false;
+      if (id == this.camisetaModelos[i].id) {
+        this.camisetaModelos[i].seleccionado = true;
+        this.camiseta = this.camisetaModelos[i];
+        this.camisetasSvg = this.camisetaModelos[i].urlsSvg;
+      }
+    }
   }
 
 }

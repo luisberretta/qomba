@@ -1,60 +1,36 @@
 <form [formGroup]="formPasoCamiseta">
   <div class="row justify-content-center">
-    <div class="col-md-11 col-12">
-      <div class="row">
-        <div class="col-md-10 col-9">
-          <em>Para cambiarle el color a tu camiseta, lo podés hacer clickeando sobre cada parte en las imágenes de tu derecha.</em>
-        </div>
-        <div class="col-md-2 col-3 align-self-center text-center">
-          <i class="fas fa-info-circle fa-2x" (click)="open(content)"></i>
-        </div>
-      </div>
-      <div class="form-group mt-3">
-        <label>Elegí el cuello de tu camiseta</label>
-        <select class="form-control" formControlName="cuello">
-          <option [ngValue]="null" selected disabled>Seleccione</option>
-          <option *ngFor="let cuello of cuellos" [ngValue]="cuello">{{ cuello }}</option>
-        </select>
-        <div *ngIf="submit && pasoCamisetaForm.cuello.errors" class="invalid-feedback">
-          <div *ngIf="pasoCamisetaForm.cuello.errors.required">Seleccione el cuello.
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Agregá un escudo a tu camiseta (opcional)</label>
-        <div class="row">
-          <div class="col-6">
-            <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>
-            <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
-          </div>
-          <div class="col-6 align-self-center">
-            <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null" (change)="cambiarPosicionEscudo()">
-          <option [ngValue]="null" selected disabled>Posición</option>
-          <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
-        </select>
-        <div *ngIf="submit && pasoCamisetaForm.posicionEscudo.errors" class="invalid-feedback">
-          <div *ngIf="pasoCamisetaForm.posicionEscudo.errors.required">Seleccione la posición del escudo.
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <select class="form-control" formControlName="calidadEscudo" [attr.disabled]="deshabilitado ? '' : null">
-          <option [ngValue]="null" selected disabled>Calidad</option>
-          <option *ngFor="let calidad of calidadesEscudo" [ngValue]="calidad">{{ calidad }}</option>
-        </select>
-        <div *ngIf="submit && pasoCamisetaForm.calidadEscudo.errors" class="invalid-feedback">
-          <div *ngIf="pasoCamisetaForm.calidadEscudo.errors.required">Seleccione la calidad del escudo.
-          </div>
-        </div>
+    <div *ngFor="let camiseta of camisetaModelos" class="col-md-3 col-6 text-center">
+      <div class="modelos-camisetas mt-3">
+        <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
       </div>
     </div>
-    <div class="col-md-4 col-10 text-center">
-      <a class="btn btn-naranja btn-block" (click)="siguiente()">Siguiente</a>
+  </div>
+<!--  <div class="form-group">-->
+<!--    <label>Agregá un escudo a tu camiseta (opcional)</label>-->
+<!--    <div class="row">-->
+<!--      <div class="col-6">-->
+<!--        <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>-->
+<!--        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">-->
+<!--      </div>-->
+<!--      <div class="col-6 align-self-center">-->
+<!--        <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="form-group">-->
+<!--    <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null" (change)="cambiarPosicionEscudo()">-->
+<!--      <option [ngValue]="null" selected disabled>Posición</option>-->
+<!--      <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>-->
+<!--    </select>-->
+<!--    <div *ngIf="submit && pasoCamisetaForm.posicionEscudo.errors" class="invalid-feedback">-->
+<!--      <div *ngIf="pasoCamisetaForm.posicionEscudo.errors.required">Seleccione la posición del escudo.-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="row justify-content-center mt-3">
+    <div class="col-4 text-center">
+      <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
     </div>
   </div>
 </form>
