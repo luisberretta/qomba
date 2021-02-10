@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -8,10 +8,16 @@ import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ColorComponent implements OnInit, OnChanges {
 
+  @Input() formColor: any;
+  @Output() proximoPaso = new EventEmitter();
+  @Output() anteriorPaso = new EventEmitter();
+  @Output() colorSeleccionado = new EventEmitter();
+  submit: boolean = false;
+  partesColor: [];
 
   formPasoColor: FormGroup = new FormGroup({
-    partesColor: new FormArray([]),
-    colores: new FormArray([])
+    cantidadEquipo: new FormControl(1, [Validators.min(1), Validators.required]),
+    equipo: new FormArray([])
   });
 
   constructor() { }
@@ -21,17 +27,28 @@ export class ColorComponent implements OnInit, OnChanges {
 
   ngOnChanges(changeRecord: SimpleChanges): void {
     if (changeRecord.formColor && changeRecord.formColor.currentValue) {
-      this.formPartesColorControl.setValue(changeRecord.formColor.currentValue.gruposColor);
-      this.formColoresControl.setValue(changeRecord.formColor.currentValue.colores);
+      this.partesColor = changeRecord.formColor.currentValue;
     }
   }
 
-  get formPartesColorControl() {
-    return this.formPasoColor.get('partesColor') as FormArray;
-  }
-  get formColoresControl() {
-    return this.formPasoColor.get('colores') as FormArray;
+  cambiarColor(color,parte){
+    let cambio = {
+      color: color,
+      parte: parte,
+    }
+    this.colorSeleccionado.emit(cambio);
   }
 
 
+
+  siguiente() {
+    this.submit = true;
+    if (this.formPasoColor.valid) {
+      this.proximoPaso.emit(this.formPasoColor.value);
+    }
+  }
+
+  anterior() {
+    this.anteriorPaso.emit(this.formPasoColor.value);
+  }
 }

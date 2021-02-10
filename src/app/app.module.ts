@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {NgbCarouselModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './componentes/layout/header/header.component';
 import { FooterComponent } from './componentes/layout/footer/footer.component';
+import { ModeloComponent } from './componentes/futbol/modelo/modelo.component';
+import { ColorComponent } from './componentes/futbol/color/color.component';
 import { CamisetaComponent } from './componentes/futbol/camiseta/camiseta.component';
 import { NumeroComponent } from './componentes/futbol/numero/numero.component';
 import { ShortComponent } from './componentes/futbol/short/short.component';
@@ -20,14 +22,15 @@ import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/
 import {NgxUiLoaderModule} from "ngx-ui-loader";
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import {ColorCircleModule} from "ngx-color/circle";
-import { ColorComponent } from './componentes/futbol/color/color.component';
+import { NgxColorsModule } from 'ngx-colors';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    CamisetaComponent,
+    ModeloComponent,
     NumeroComponent,
     ShortComponent,
     EquipoComponent,
@@ -36,7 +39,8 @@ import { ColorComponent } from './componentes/futbol/color/color.component';
     PersonaComponent,
     HomeComponent,
     PaginaNoEncontradaComponent,
-    ColorComponent
+    ColorComponent,
+    CamisetaComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +52,7 @@ import { ColorComponent } from './componentes/futbol/color/color.component';
     NgxUiLoaderModule.forRoot({
       hasProgressBar: false,
     }),
+    NgxColorsModule,
     HttpClientModule,
     AlifeFileToBase64Module
   ],

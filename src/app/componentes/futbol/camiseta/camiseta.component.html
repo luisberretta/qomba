@@ -1,51 +1,112 @@
 <form [formGroup]="formPasoCamiseta">
-  <div class="row justify-content-center">
-    <div *ngFor="let camiseta of camisetaModelos" class="col-md-3 col-6 text-center">
-      <div class="modelos-camisetas mt-3">
-        <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
-      </div>
-    </div>
-  </div>
-<!--  <div class="form-group">-->
-<!--    <label>Agregá un escudo a tu camiseta (opcional)</label>-->
-<!--    <div class="row">-->
-<!--      <div class="col-6">-->
-<!--        <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>-->
-<!--        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">-->
-<!--      </div>-->
-<!--      <div class="col-6 align-self-center">-->
-<!--        <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="form-group">-->
-<!--    <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null" (change)="cambiarPosicionEscudo()">-->
-<!--      <option [ngValue]="null" selected disabled>Posición</option>-->
-<!--      <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>-->
-<!--    </select>-->
-<!--    <div *ngIf="submit && pasoCamisetaForm.posicionEscudo.errors" class="invalid-feedback">-->
-<!--      <div *ngIf="pasoCamisetaForm.posicionEscudo.errors.required">Seleccione la posición del escudo.-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-  <div class="row">
-    <div class="form-group">
+  <div class="row form-group">
+    <div class="col-md-4">
       <label class="switch">
-        <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">
+        <input class="form-check-input" formControlName="llevaEscudoDelantero" type="checkbox" id="lleva-escudo-delantero">
         <span class="slider round"></span>
       </label>
-      <label class="form-check-label" for="agregar-short">Agregar Short</label>
+      <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-secondary" (click)="archivo()" [attr.disabled]="formPasoCamiseta.controls['llevaEscudoDelantero'].value">Subir escudo</a>-->
+              <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+    </div>
+    <div class="col-md-4">
+      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="formPasoCamiseta.controls['llevaEscudoDelantero'].value" (change)="cambiarPosicionEscudo()">-->
+              <option [ngValue]="null" selected disabled>Posición</option>
+              <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
+            </select>
     </div>
   </div>
-  <div class="row">
-    <div class="form-group">
+  <div class="row form-group">
+    <div class="col-md-4">
       <label class="switch">
-        <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">
+        <input class="form-check-input" formControlName="llevaNumeroDelantero" type="checkbox" id="lleva-numero-delantero">
         <span class="slider round"></span>
       </label>
-      <label class="form-check-label" for="agregar-short">Agregar medias</label>
+      <label class="form-check-label" for="lleva-numero-delantero">Número Delantero</label>
+    </div>
+    <div class="col-md-4" [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value">
+      <ngx-colors ngx-colors-trigger style="display: inline-block; margin:5px;"
+                  (change)="cambiarColor($event,NUMERO_DELANTERO)"></ngx-colors>
+    </div>
+    <div>
+      <select class="form-control" formControlName="posicionNumeroDelantero" [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value" (change)="cambiarPosicionNumeroDelantero()">-->
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
     </div>
   </div>
+
+  <div class="row form-group">
+    <div class="col-md-4">
+      <label class="switch">
+        <input class="form-check-input" formControlName="llevaNombreEspalda" type="checkbox" id="lleva-nombre-espalda">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="lleva-nombre-espalda">Nombre en espalda</label>
+    </div>
+    <div class="col-md-4" [attr.disabled]="formPasoCamiseta.controls['llevaNombreEspalda'].value">
+      <ngx-colors ngx-colors-trigger style="display: inline-block; margin:5px;"
+                  (change)="cambiarColor($event,NOMBRE_ESPALDA)"></ngx-colors>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-4">
+      <label class="switch">
+        <input class="form-check-input" formControlName="llevaNumeroEspalda" type="checkbox" id="lleva-numero-espalda">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="lleva-numero-espalda">Número en espalda</label>
+    </div>
+    <div class="col-md-4" [attr.disabled]="formPasoCamiseta.controls['llevaNumeroEspalda'].value">
+      <ngx-colors ngx-colors-trigger style="display: inline-block; margin:5px;" [attr.disabled]="true"
+                  (change)="cambiarColor($event,NUMERO_ESPALDA)"></ngx-colors>
+    </div>
+  </div>
+
+
+  <!--  <div class="form-group">-->
+  <!--    <label>Agregá un escudo a tu modelo (opcional)</label>-->
+  <!--    <div class="row">-->
+  <!--      <div class="col-6">-->
+  <!--        <a class="btn btn-secondary" (click)="archivo()">Subir escudo</a>-->
+  <!--        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">-->
+  <!--      </div>-->
+  <!--      <div class="col-6 align-self-center">-->
+  <!--        <label>{{ nombreArchivo ? nombreArchivo : 'Archivo escudo' }}</label>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  <div class="form-group">-->
+  <!--    <select class="form-control" formControlName="posicionEscudo" [attr.disabled]="deshabilitado ? '' : null" (change)="cambiarPosicionEscudo()">-->
+  <!--      <option [ngValue]="null" selected disabled>Posición</option>-->
+  <!--      <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>-->
+  <!--    </select>-->
+  <!--    <div *ngIf="submit && pasoCamisetaForm.posicionEscudo.errors" class="invalid-feedback">-->
+  <!--      <div *ngIf="pasoCamisetaForm.posicionEscudo.errors.required">Seleccione la posición del escudo.-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div class="form-group">-->
+<!--      <label class="switch">-->
+<!--        <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">-->
+<!--        <span class="slider round"></span>-->
+<!--      </label>-->
+<!--      <label class="form-check-label" for="agregar-short">Agregar Short</label>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <div class="form-group">-->
+<!--      <label class="switch">-->
+<!--        <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">-->
+<!--        <span class="slider round"></span>-->
+<!--      </label>-->
+<!--      <label class="form-check-label" for="agregar-short">Agregar medias</label>-->
+<!--    </div>-->
+<!--  </div>-->
 
   <div class="row justify-content-center mt-3">
     <div class="col-4 text-center">
@@ -53,13 +114,3 @@
     </div>
   </div>
 </form>
-<ng-template #content let-modal>
-  <div class="modal-body text-center">
-    <img src="/assets/images/tutorial.gif" class="img-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-5 col-10">
-        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
-      </div>
-    </div>
-  </div>
-</ng-template>

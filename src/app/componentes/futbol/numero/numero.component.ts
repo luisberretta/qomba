@@ -27,7 +27,6 @@ export class NumeroComponent implements OnInit, OnChanges {
   @Input() formNumero: Pedido;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
-  @Output() editarPersona = new EventEmitter();
   @Input() posicionEscudoCamiseta;
 
   constructor() {
@@ -35,19 +34,6 @@ export class NumeroComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.mostrarPosicionesNumero();
-    this.formPasoNumero.get('llevaNombreCamiseta').valueChanges.subscribe((valor) => {
-      let editarPersona = {editar: 'nombre', valor: valor};
-      this.editarPersona.emit(editarPersona)
-    });
-    this.formPasoNumero.get('llevaNumeroCamiseta').valueChanges.subscribe((valor) => {
-      let editarPersona = {editar: 'numero_dorso', valor: valor};
-      this.editarPersona.emit(editarPersona);
-    });
-    this.formPasoNumero.get('posicionNumeroCamiseta').valueChanges.subscribe((valor) => {
-      let editarPersona = {editar: 'numero_frente', posicion: valor};
-      this.editarPersona.emit(editarPersona);
-    });
-
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
@@ -89,7 +75,6 @@ export class NumeroComponent implements OnInit, OnChanges {
       valor: this.llevaNroFrontal,
       posicionEscudoCamiseta: this.posicionEscudoCamiseta
     };
-    this.editarPersona.emit(editarPersona);
     this.formPasoNumero.controls.posicionNumeroCamiseta.updateValueAndValidity();
   }
 

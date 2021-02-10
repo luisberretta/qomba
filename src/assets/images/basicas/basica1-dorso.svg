@@ -142,10 +142,10 @@
 		</g>
 	</g>
 </g>
-<g id="numero_dorso" visibility="hidden">
+<g id="NUMERO_ESPALDA" visibility="hidden">
 	<text transform="matrix(1.0405 0 0 1 217.3989 480.5255)" font-family="'ArialMT'" font-size="381.4575px">9</text>
 </g>
-<g id="nombre" visibility="hidden">
+<g id="NOMBRE_ESPALDA" visibility="hidden">
 	<text transform="matrix(1.3695 -4.974136e-03 3.206701e-03 1 138.5998 172.4368)" font-family="'ArialMT'" font-size="59.7343px">NOMBRE</text>
 </g>
 </svg>

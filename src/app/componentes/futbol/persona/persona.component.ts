@@ -14,11 +14,13 @@ import {DomSanitizer} from "@angular/platform-browser";
   templateUrl: './persona.component.html',
   styleUrls: ['./persona.component.scss']
 })
-export class PersonaComponent implements OnInit, OnChanges {
+export class PersonaComponent implements OnInit {
 
   DERECHA = 180;
   IZQUIERDA = 400;
   CENTRO = 290;
+  NUMERO_DELANTERO = "NUMERO_DELANTERO";
+  ESCUDO_DELANTERO = "ESCUDO_DELANTERO";
   frente: any;
   dorso: any;
   short: any;
@@ -46,63 +48,101 @@ export class PersonaComponent implements OnInit, OnChanges {
   ngOnInit(): void {
   }
 
-  ngOnChanges(changeRecord: SimpleChanges): void {
-    if (changeRecord.camisetasSvg && changeRecord.camisetasSvg.currentValue) {
-      this.svgService.obtenerSVGCamiseta(this.urlCamiseta + changeRecord.camisetasSvg.currentValue[0]).subscribe((data) => {
-        this.frente = this.sanitizer.bypassSecurityTrustHtml(data);
-      });
-      this.svgService.obtenerSVGCamiseta(this.urlCamiseta + changeRecord.camisetasSvg.currentValue[1]).subscribe((data) => {
-        this.dorso = this.sanitizer.bypassSecurityTrustHtml(data);
-      });
-      this.svgService.obtenerSVGShort(this.urlShort).subscribe((data) => {
-        this.short = this.sanitizer.bypassSecurityTrustHtml(data);
-      });
+  generarModelo(modelo, esFrente) {
+    if (esFrente) {
+      this.frente = modelo;
+    } else {
+      this.dorso = modelo;
     }
-    if(changeRecord.escudo && changeRecord.escudo.currentValue) {
-      let reader = new FileReader();
-      reader.readAsDataURL(changeRecord.escudo.currentValue);
-      reader.onload = (_event) => {
-        this.imgUrl = reader.result;
-        let img = new Image();
-        if (typeof reader.result === "string") {
-          img.src = reader.result;
-        }
-        img.onload = function(){
-          let imgSize = {
-            w: img.width,
-            h: img.height
-          };
-          let relacionAspecto = imgSize.w / imgSize.h;
-          let ancho = 100;
-          let alto = ancho / relacionAspecto;
+  }
 
-          document.getElementById('escudo_remera').firstElementChild.setAttribute('height', alto.toString() + 'px');
-          document.getElementById('escudo_remera').firstElementChild.setAttribute('width', ancho.toString() + 'px');
-        };
-        document.getElementById('escudo_remera').firstElementChild.setAttribute('xlink:href', this.imgUrl);
-      }
-    }
-    if(changeRecord.posicionEscudoCamiseta && changeRecord.posicionEscudoCamiseta.currentValue) {
-      let posicion = changeRecord.posicionEscudoCamiseta.currentValue;
-      let grupos = this.obtenerGrupos();
-      let grupoEscudo = grupos.namedItem('escudo_remera');
-      let imageEscudo = grupoEscudo.getElementsByTagName('image').namedItem('escudo');
-      switch (posicion) {
-        case 'Centro':
-          imageEscudo.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
-          this.editarPosicionNumero(grupos.namedItem('numero_frente').getElementsByTagName('text').namedItem('numero'), 'Derecha')
-          break;
-        case 'Derecha':
-          imageEscudo.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
-          this.editarPosicionNumero(grupos.namedItem('numero_frente').getElementsByTagName('text').namedItem('numero'), 'Centro')
-          break;
-        case 'Izquierda':
-          imageEscudo.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
-          this.editarPosicionNumero(grupos.namedItem('numero_frente').getElementsByTagName('text').namedItem('numero'), 'Centro')
-          break;
+  cambiarColorParte(cambiar) {
+    let grupos = this.obtenerGrupos();
+    for (let i = 0; i < grupos.length; i++) {
+      if (grupos[i].id == cambiar.parte) {
+        let paths = grupos[i].getElementsByTagName('path');
+        for (let j = 0; j < paths.length; j++) {
+          paths[j].setAttribute('fill', cambiar.color);
+        }
+        grupos[i].classList.remove('parte-seleccionada');
       }
     }
   }
+
+  cambiarColorEstampa(cambiar) {
+    let grupos = this.obtenerGrupos();
+    for (let i = 0; i < grupos.length; i++) {
+      if (grupos[i].id == cambiar.parte) {
+        grupos[i].setAttribute('fill', cambiar.color);
+      }
+    }
+  }
+
+
+  visualizarEstampado(visualizar) {
+    if (visualizar.parte) {
+      let grupos = this.obtenerGrupos();
+      let estampado = grupos.namedItem(visualizar.parte);
+      if (visualizar.valor) {
+        estampado.setAttribute('visibility', 'visible');
+        this.posicionEstampado(visualizar);
+      } else {
+        estampado.setAttribute('visibility', 'hidden');
+      }
+    }
+  }
+
+  posicionEstampado(posicion) {
+    if (posicion.posicionOcupada) {
+      let grupos = this.obtenerGrupos();
+      let estampado = grupos.namedItem(posicion.parte);
+      if (estampado.id == this.ESCUDO_DELANTERO) {
+        estampado = estampado.getElementsByTagName('image').namedItem('escudo');
+      } else {
+        estampado = estampado.getElementsByTagName('text').namedItem('numero');
+      }
+      switch (posicion.posicionOcupada) {
+        case 'Centro':
+          estampado.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
+          break;
+        case 'Derecha':
+          estampado.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
+          break;
+        case 'Izquierda':
+          estampado.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
+          break;
+      }
+    }
+
+  }
+
+  estamparEscudo(escudo) {
+    let reader = new FileReader();
+    reader.readAsDataURL(escudo);
+    let grupos = this.obtenerGrupos();
+    let estampado = grupos.namedItem(this.ESCUDO_DELANTERO);
+    reader.onload = (_event) => {
+      this.imgUrl = reader.result;
+      let img = new Image();
+      if (typeof reader.result === "string") {
+        img.src = reader.result;
+      }
+      img.onload = function () {
+        let imgSize = {
+          w: img.width,
+          h: img.height
+        };
+        let relacionAspecto = imgSize.w / imgSize.h;
+        let ancho = 100;
+        let alto = ancho / relacionAspecto;
+
+        estampado.firstElementChild.setAttribute('height', alto.toString() + 'px');
+        estampado.firstElementChild.setAttribute('width', ancho.toString() + 'px');
+      };
+      estampado.firstElementChild.setAttribute('xlink:href', this.imgUrl);
+    }
+  }
+
 
   generarImagenes(): any {
     let images: HTMLAllCollection[] = [];
@@ -128,67 +168,9 @@ export class PersonaComponent implements OnInit, OnChanges {
     }
   }
 
-  cambiarColor(color) {
-    let grupos = this.obtenerGrupos();
-    if (this.idGrupo == 'short' && !this.llevaShort) {
-      return false;
-    } else {
-      for (let i = 0; i < grupos.length; i++) {
-        if (grupos[i].id == this.idGrupo) {
-          let paths = grupos[i].getElementsByTagName('path');
-          for (let j = 0; j < paths.length; j++) {
-            paths[j].setAttribute('fill', color);
-          }
-          grupos[i].classList.remove('parte-seleccionada');
-        }
-      }
-    }
-  }
-
-  editarCamiseta(editarCamiseta) {
-    if (editarCamiseta.editar) {
-      let numeroFrontal;
-      let grupos = this.obtenerGrupos();
-      if (editarCamiseta.editar == 'numero_frente') {
-        numeroFrontal = grupos.namedItem(editarCamiseta.editar);
-        if (editarCamiseta.posicion) {
-          let tagText = numeroFrontal.getElementsByTagName('text').namedItem('numero');
-          this.editarPosicionNumero(tagText, editarCamiseta.posicion);
-        }
-      } else {
-        numeroFrontal = grupos.namedItem(editarCamiseta.editar);
-      }
-      if (editarCamiseta.valor) {
-        if(editarCamiseta.posicionEscudoCamiseta && editarCamiseta.posicionEscudoCamiseta == 'Centro') {
-          this.editarPosicionNumero(numeroFrontal.getElementsByTagName('text').namedItem('numero'), 'Derecha')
-        }
-        else if(editarCamiseta.posicionEscudoCamiseta) {
-          this.editarPosicionNumero(numeroFrontal.getElementsByTagName('text').namedItem('numero'), 'Centro')
-        }
-        numeroFrontal.setAttribute('visibility', 'visible');
-      } else {
-        if (editarCamiseta.valor != undefined) {
-          numeroFrontal.setAttribute('visibility', 'hidden');
-        }
-      }
-    }
-  }
 
   obtenerGrupos() {
     return this.dataContainer.nativeElement.getElementsByTagName('g');
-  }
-
-  editarPosicionNumero(text, posicion) {
-    if (posicion == 'Derecha') {
-      text.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
-    }
-    if( posicion == 'Izquierda'){
-      text.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
-    }
-    if(posicion == 'Centro'){
-      text.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
-    }
-
   }
 
 }

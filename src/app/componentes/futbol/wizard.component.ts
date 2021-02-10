@@ -5,7 +5,9 @@ import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
-import {CamisetaComponent} from "./camiseta/camiseta.component";
+import {ModeloComponent} from "./modelo/modelo.component";
+import {SvgService} from "../../servicios/svg.service";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-wizard',
@@ -14,12 +16,12 @@ import {CamisetaComponent} from "./camiseta/camiseta.component";
 })
 export class WizardComponent implements OnInit {
 
-  paso: string = 'camiseta';
+  paso: string = 'modelo';
   numeroPaso: number = 1;
   url: string = '/assets/images/basicas/';
   pedido: Pedido = {imagenes: []};
-  formCamiseta: any;
-  formColor:any;
+  formModelo: any;
+  formColor: any;
   formShort: any;
   formNumero: any;
   formEquipo: any;
@@ -30,9 +32,11 @@ export class WizardComponent implements OnInit {
   nombreMostrarPaso: string = 'Elegí tu Modelo';
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
-  @ViewChild(CamisetaComponent) camisetaComponent : CamisetaComponent;
+  @ViewChild(ModeloComponent) camisetaComponent: ModeloComponent;
 
-  constructor(private wizardService: WizardService, private modalService: NgbModal, private router: Router) {
+  constructor(private wizardService: WizardService, private modalService: NgbModal,
+              private router: Router, private svgService: SvgService,
+              private sanitizer: DomSanitizer) {
 
   }
 
@@ -40,31 +44,18 @@ export class WizardComponent implements OnInit {
 
   }
 
-  // modeloElegido(id) {
-  //   this.seleccionoModelo = true;
-  //   for (let i = 0; i < this.camisetaModelos.length; i++) {
-  //     this.camisetaModelos[i].seleccionado = false;
-  //     if (id == this.camisetaModelos[i].id) {
-  //       this.camisetaModelos[i].seleccionado = true;
-  //       this.camiseta = this.camisetaModelos[i];
-  //       this.camisetasSvg = this.camisetaModelos[i].urlsSvg;
-  //     }
-  //   }
-  // }
-
   siguiente(event) {
     switch (this.numeroPaso) {
       case 1:
-        this.generarPedidoCamiseta(event);
-        this.paso = 'short';
+        this.generarPedidoModelo(event);
+        this.paso = 'color';
         this.nombreMostrarPaso = 'Elige Colores';
         this.numeroPaso = 2;
-        this.generarFormColor();
-        this.generarFormShort();
+        this.generarFormColorIndumentaria();
         break;
       case 2:
-        this.generarPedidoShort(event);
-        this.paso = 'numero';
+        this.generarPedidoColor(event);
+        this.paso = 'camiseta';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
         this.numeroPaso = 3;
         this.generarFormNumero();
@@ -94,21 +85,21 @@ export class WizardComponent implements OnInit {
       case 2:
         this.generarPedidoShort(event);
         this.numeroPaso = 1;
-        this.paso = 'camiseta';
+        this.paso = 'modelo';
         this.nombreMostrarPaso = 'Elegí tu Modelo';
-        this.generarFormCamiseta();
+        this.generarFormModelo();
         break;
       case 3:
         this.generarPedidoNumero(event);
         this.numeroPaso = 2;
-        this.paso = 'short';
+        this.paso = 'color';
         this.nombreMostrarPaso = 'Elige Colores';
         this.generarFormShort();
         break;
       case 4:
         this.generarPedidoEquipo(event);
         this.numeroPaso = 3;
-        this.paso = 'numero';
+        this.paso = 'camiseta';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
         this.generarFormNumero();
         break;
@@ -121,10 +112,30 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  generarPedidoCamiseta(formCamiseta) {
-    this.pedido.modelo = formCamiseta.nombre;
-    this.pedido.llevaShort = formCamiseta.llevaShort;
-    this.pedido.llevaMedias = formCamiseta.llevaMedias;
+  modeloSeleccionado(urlsSvg) {
+    this.svgService.obtenerSVGFrente(this.url + urlsSvg[0]).subscribe((data) => {
+      this.personaComponent.generarModelo(this.sanitizer.bypassSecurityTrustHtml(data), true);
+    });
+    this.svgService.obtenerSVGDorso(this.url + urlsSvg[1]).subscribe((data) => {
+      this.personaComponent.generarModelo(this.sanitizer.bypassSecurityTrustHtml(data), false);
+    });
+  }
+
+  cambiarColor(cambiar) {
+    if(cambiar.esEstampa){
+      this.personaComponent.cambiarColorEstampa(cambiar);
+    }
+    this.personaComponent.cambiarColorParte(cambiar);
+  }
+
+  visualizarEstampado(visualizar){
+    this.personaComponent.visualizarEstampado(visualizar);
+  }
+
+  generarPedidoModelo(formModelo) {
+    this.pedido.modelo = formModelo.camiseta.nombre;
+    this.pedido.llevaShort = formModelo.llevaShort;
+    this.pedido.llevaMedias = formModelo.llevaMedias;
   }
 
   generarPedidoShort(event) {
@@ -132,6 +143,11 @@ export class WizardComponent implements OnInit {
     this.pedido.llevaEscudoShort = event.llevaEscudoShort;
     this.pedido.llevaNroShort = event.llevaNroShort;
   }
+
+  generarPedidoColor(event) {
+
+  }
+
 
   generarPedidoNumero(event) {
     this.pedido.llevaNombreCamiseta = event.llevaNombreCamiseta;
@@ -168,11 +184,11 @@ export class WizardComponent implements OnInit {
   }
 
   convertirABase64(cadena) {
-    return cadena.substring(cadena.indexOf(",")+1,cadena.length+1);
+    return cadena.substring(cadena.indexOf(",") + 1, cadena.length + 1);
   }
 
-  generarFormCamiseta() {
-    this.formCamiseta = {
+  generarFormModelo() {
+    this.formModelo = {
       cuelloCamiseta: this.pedido.cuelloCamiseta,
       escudo: this.pedido.escudo,
       posicionEscudo: this.pedido.posicionEscudo,
@@ -180,26 +196,42 @@ export class WizardComponent implements OnInit {
     };
   }
 
-  generarFormColor(){
+  generarFormColorIndumentaria() {
     let gruposColor = this.obtenerGruposColor();
-    this.formColor = {
-      partesColor: gruposColor,
-      colores: this.pedido.colores,
+    let formColor = [];
+    for (let i = 0; i < gruposColor.length; i++) {
+      if (this.perteneceIndumentaria(gruposColor[i])) {
+        let parteColor = {
+          idParte: gruposColor[i],
+          colores: []
+        }
+        formColor.push(parteColor);
+      }
     }
+    this.formColor = formColor;
   }
 
-  obtenerGruposColor(){
+  perteneceIndumentaria(grupoColor) {
+    return grupoColor != 'NOMBRE_ESPALDA' &&
+      grupoColor != 'NUMERO_ESPALDA' &&
+      grupoColor != 'NUMERO_DELANTERO' &&
+      grupoColor != 'ESCUDO_DELANTERO';
+  }
+
+  obtenerGruposColor() {
     let gruposColor = [];
     let grupos = this.personaComponent.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if(grupos[i].id != '' && !this.existeEnGrupoColor(grupos[i].id,gruposColor)){
+      if (grupos[i].id != '' && !this.existeEnGrupoColor(grupos[i].id, gruposColor)) {
         gruposColor.push(grupos[i].id);
       }
     }
+    return gruposColor;
   }
-   existeEnGrupoColor(id,grupoColor){
+
+  existeEnGrupoColor(id, grupoColor) {
     return grupoColor.filter(x => x == id).length > 0;
-   }
+  }
 
 
   generarFormShort() {
@@ -253,13 +285,10 @@ export class WizardComponent implements OnInit {
     this.short = event;
   }
 
-  escudo(event) {
-    this.imagenEscudo = event;
+  archivoEscudo(escudo) {
+    this.personaComponent.estamparEscudo(escudo);
   }
 
-  editarPersona(editarCamiseta) {
-    this.personaComponent.editarCamiseta(editarCamiseta);
-  }
 
   cambiarPosicionEscudo(event) {
     this.posicionEscudoCamiseta = event;

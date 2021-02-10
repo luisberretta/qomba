@@ -2,7 +2,7 @@
   <div class="container py-4">
     <ul class="indicador-progreso" [ngClass]="paso">
       <li>
-        <a [ngClass]="{ 'actual': paso == 'camiseta' }">1</a>
+        <a [ngClass]="{ 'actual': paso == 'modelo' }">1</a>
       </li>
       <li>
         <a [ngClass]="{ 'actual': paso == 'short' }">2</a>
@@ -22,11 +22,11 @@
       <div class="row">
         <div class="col-md-6 col-12 mt-3">
           <div [ngSwitch]="paso">
-            <app-camiseta *ngSwitchCase="'camiseta'" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta" (imagenEscudo)="escudo($event)" (posicionEscudo)="cambiarPosicionEscudo($event)"></app-camiseta>
-<!--            <app-color *ngSwitchCase="'color'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]=""></app-color>-->
-
+            <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo" (imagenEscudo)="escudo($event)" (posicionEscudo)="cambiarPosicionEscudo($event)"></app-modelo>
+            <app-color *ngSwitchCase="'color'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]="formColor"></app-color>
+            <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta"></app-camiseta>
             <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
-            <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" (editarPersona)="editarPersona($event)" [formNumero]="formNumero" [posicionEscudoCamiseta]="posicionEscudoCamiseta"></app-numero>
+            <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formNumero]="formNumero" [posicionEscudoCamiseta]="posicionEscudoCamiseta"></app-numero>
             <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
             <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" (finalizarPasos)="generarPedido($event)" [formCheckOut]="formCheckOut"></app-checkout>
           </div>

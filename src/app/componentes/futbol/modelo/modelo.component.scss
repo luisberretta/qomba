@@ -1,0 +1,23 @@
+.carousel {
+  &:focus {
+    outline: none;
+  }
+}
+
+.fa-info-circle {
+  cursor: pointer;
+  color: #8d2429;
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+}
+
+.modelos-camisetas {
+  img {
+    cursor: pointer;
+    &.seleccionado {
+      opacity: 1;
+    }
+  }
+}
