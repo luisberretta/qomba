@@ -23,8 +23,9 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   @ViewChild('archivoEscudo') fileInput: ElementRef;
   formPasoCamiseta: FormGroup = new FormGroup({
-    escudo: new FormControl(null),
-    posicionEscudo: new FormControl(null),
+    agregarShort: new FormControl(null),
+    agregarMedias: new FormControl(null),
+    camiseta: new FormControl(null)
   });
   submit: boolean = false;
   @Input() pasoNumero: number;
@@ -40,7 +41,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   @Output() posicionEscudo = new EventEmitter();
   camisetaModelos: any = camisetaModelos;
   seleccionoModelo: boolean = false;
-  camisetasSvg: any;
+  modelosSVG: any;
   camiseta: any;
 
   constructor(private modalService: NgbModal) {
@@ -81,13 +82,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.deshabilitado = false;
   }
 
-  siguiente() {
-    this.submit = true;
-    if (this.formPasoCamiseta.valid) {
-      this.proximoPaso.emit(this.formPasoCamiseta.value);
-    }
-  }
-
   ngOnChanges(changeRecord: SimpleChanges): void {
     if (changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
       this.generarFormulario(changeRecord.formCamiseta.currentValue);
@@ -116,9 +110,15 @@ export class CamisetaComponent implements OnInit, OnChanges {
       this.camisetaModelos[i].seleccionado = false;
       if (id == this.camisetaModelos[i].id) {
         this.camisetaModelos[i].seleccionado = true;
-        this.camiseta = this.camisetaModelos[i];
-        this.camisetasSvg = this.camisetaModelos[i].urlsSvg;
+        this.formPasoCamiseta.get('camiseta').setValue(this.camisetaModelos[i]);
       }
+    }
+  }
+
+  siguiente() {
+    this.submit = true;
+    if (this.formPasoCamiseta.valid) {
+      this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
   }
 

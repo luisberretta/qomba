@@ -19,5 +19,8 @@ export class SvgService {
   obtenerSVGShort(url): Observable<any> {
     return this.httpApiService.get(url, {responseType:'text'}).pipe(map(result => result));
   }
+  obtenerSVGlogo(): Observable<any> {
+    return this.httpApiService.get("/assets/images/logo.svg", {responseType:'text'}).pipe(map(result => result));
+  }
 
 }

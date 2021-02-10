@@ -5,6 +5,7 @@ import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
+import {CamisetaComponent} from "./camiseta/camiseta.component";
 
 @Component({
   selector: 'app-wizard',
@@ -18,6 +19,7 @@ export class WizardComponent implements OnInit {
   url: string = '/assets/images/basicas/';
   pedido: Pedido = {imagenes: []};
   formCamiseta: any;
+  formColor:any;
   formShort: any;
   formNumero: any;
   formEquipo: any;
@@ -28,6 +30,7 @@ export class WizardComponent implements OnInit {
   nombreMostrarPaso: string = 'Elegí tu Modelo';
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
+  @ViewChild(CamisetaComponent) camisetaComponent : CamisetaComponent;
 
   constructor(private wizardService: WizardService, private modalService: NgbModal, private router: Router) {
 
@@ -56,6 +59,7 @@ export class WizardComponent implements OnInit {
         this.paso = 'short';
         this.nombreMostrarPaso = 'Elige Colores';
         this.numeroPaso = 2;
+        this.generarFormColor();
         this.generarFormShort();
         break;
       case 2:
@@ -117,13 +121,10 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  generarPedidoCamiseta(event) {
-    this.pedido.cuelloCamiseta = event.cuello;
-    if (event.escudo) {
-      this.pedido.escudo = event.escudo;
-    }
-    this.pedido.posicionEscudo = event.posicionEscudo;
-    this.pedido.calidadEscudo = event.calidadEscudo;
+  generarPedidoCamiseta(formCamiseta) {
+    this.pedido.modelo = formCamiseta.camiseta.nombre;
+    this.pedido.llevaShort = formCamiseta.llevaShort;
+    this.pedido.llevaMedias = formCamiseta.llevaMedias;
   }
 
   generarPedidoShort(event) {
@@ -178,6 +179,28 @@ export class WizardComponent implements OnInit {
       calidadEscudo: this.pedido.calidadEscudo,
     };
   }
+
+  generarFormColor(){
+    let gruposColor = this.obtenerGruposColor();
+    this.formColor = {
+      partesColor: gruposColor,
+      colores: this.pedido.colores,
+    }
+  }
+
+  obtenerGruposColor(){
+    let gruposColor = [];
+    let grupos = this.personaComponent.obtenerGrupos();
+    for (let i = 0; i < grupos.length; i++) {
+      if(grupos[i].id != '' && !this.existeEnGrupoColor(grupos[i].id,gruposColor)){
+        gruposColor.push(grupos[i].id);
+      }
+    }
+  }
+   existeEnGrupoColor(id,grupoColor){
+    return grupoColor.filter(x => x == id).length > 0;
+   }
+
 
   generarFormShort() {
     this.formShort = {
