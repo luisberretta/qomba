@@ -3,12 +3,12 @@ import {DetalleEquipo} from "./DetalleEquipo";
 export interface Pedido {
 
   //CAMISETA
-  modelo?:string;
-  llevaShort?: boolean;
-  llevaMedias?:boolean;
+  modelo?:any;
+  agregarShort?: boolean;
+  agregarMedias?:boolean;
 
   //COLORES
-  colores?:[];
+  coloresModelo?:[ {color?: null}];
 
   cuelloCamiseta?:string;
   escudo?: string;

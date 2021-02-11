@@ -52,6 +52,7 @@ export class WizardComponent implements OnInit {
         this.nombreMostrarPaso = 'Elige Colores';
         this.numeroPaso = 2;
         this.generarFormColorIndumentaria();
+        this.personaComponent.visualizarModeloCompleto();
         break;
       case 2:
         this.generarPedidoColor(event);
@@ -83,18 +84,20 @@ export class WizardComponent implements OnInit {
   anterior(event) {
     switch (this.numeroPaso) {
       case 2:
-        this.generarPedidoShort(event);
+        this.generarPedidoColor(event);
         this.numeroPaso = 1;
         this.paso = 'modelo';
         this.nombreMostrarPaso = 'Elegí tu Modelo';
+        this.personaComponent.visualizarModeloCompleto();
         this.generarFormModelo();
+        console.log(this.pedido);
         break;
       case 3:
         this.generarPedidoNumero(event);
         this.numeroPaso = 2;
         this.paso = 'color';
         this.nombreMostrarPaso = 'Elige Colores';
-        this.generarFormShort();
+        this.generarFormColorIndumentaria();
         break;
       case 4:
         this.generarPedidoEquipo(event);
@@ -133,19 +136,19 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoModelo(formModelo) {
-    this.pedido.modelo = formModelo.camiseta.nombre;
-    this.pedido.llevaShort = formModelo.llevaShort;
-    this.pedido.llevaMedias = formModelo.llevaMedias;
+    this.pedido.modelo = formModelo.modelo;
+    this.pedido.agregarShort = formModelo.agregarShort;
+    this.pedido.agregarMedias = formModelo.agregarMedias;
   }
 
   generarPedidoShort(event) {
-    this.pedido.llevaShort = event.llevaShort;
+    // this.pedido.llevaShort = event.llevaShort;
     this.pedido.llevaEscudoShort = event.llevaEscudoShort;
     this.pedido.llevaNroShort = event.llevaNroShort;
   }
 
   generarPedidoColor(event) {
-
+    this.pedido.coloresModelo = event.partesArray;
   }
 
 
@@ -189,10 +192,9 @@ export class WizardComponent implements OnInit {
 
   generarFormModelo() {
     this.formModelo = {
-      cuelloCamiseta: this.pedido.cuelloCamiseta,
-      escudo: this.pedido.escudo,
-      posicionEscudo: this.pedido.posicionEscudo,
-      calidadEscudo: this.pedido.calidadEscudo,
+      modelo: this.pedido.modelo,
+      agregarShort: this.pedido.agregarShort,
+      agregarMedias: this.pedido.agregarMedias,
     };
   }
 
@@ -203,9 +205,14 @@ export class WizardComponent implements OnInit {
       if (this.perteneceIndumentaria(gruposColor[i])) {
         let parteColor = {
           idParte: gruposColor[i],
-          colores: []
+          color: undefined,
         }
         formColor.push(parteColor);
+      }
+    }
+    if(this.pedido.coloresModelo){
+      for (let i = 0; i < formColor.length; i++) {
+        formColor[i].color = this.pedido.coloresModelo[i].color;
       }
     }
     this.formColor = formColor;
@@ -236,7 +243,7 @@ export class WizardComponent implements OnInit {
 
   generarFormShort() {
     this.formShort = {
-      llevaShort: this.pedido.llevaShort,
+      // llevaShort: this.pedido.llevaShort,
       llevaEscudoShort: this.pedido.llevaEscudoShort,
       llevaNroShort: this.pedido.llevaNroShort,
     };
@@ -248,7 +255,7 @@ export class WizardComponent implements OnInit {
       llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
       llevaNumeroFrontalCamiseta: this.pedido.llevaNumeroFrontalCamiseta,
       posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
-      llevaShort: this.pedido.llevaShort,
+      // llevaShort: this.pedido.llevaShort,
       llevaNumeroShort: this.pedido.llevaNumeroShort,
       posicionNumeroShort: this.pedido.posicionNumeroShort,
     }
@@ -258,7 +265,7 @@ export class WizardComponent implements OnInit {
     this.formEquipo = {
       llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
       llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
-      llevaShort: this.pedido.llevaShort,
+      // llevaShort: this.pedido.llevaShort,
       detalleEquipo: this.pedido.detalleEquipo,
     }
   }
@@ -273,7 +280,7 @@ export class WizardComponent implements OnInit {
       llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
       llevaNumeroFrontalCamiseta: this.pedido.llevaNumeroFrontalCamiseta,
       posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
-      llevaShort: this.pedido.llevaShort,
+      // llevaShort: this.pedido.llevaShort,
       llevaEscudoShort: this.pedido.llevaEscudoShort,
       llevaNumeroShort: this.pedido.llevaNumeroShort,
       posicionNumeroSort: this.pedido.posicionNumeroShort,

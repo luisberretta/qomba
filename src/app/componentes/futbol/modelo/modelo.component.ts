@@ -21,27 +21,22 @@ import {camisetaModelos} from "../../../clases/CamisetaModelo";
 })
 export class ModeloComponent implements OnInit, OnChanges {
 
-
   formPasoModelo: FormGroup = new FormGroup({
-    agregarShort: new FormControl(null),
+    agregarShort: new FormControl(null, ),
     agregarMedias: new FormControl(null),
-    camiseta: new FormControl(null)
+    modelo: new FormControl(null,[Validators.required])
   });
   submit: boolean = false;
   @Input() pasoNumero: number;
   @Output() proximoPaso = new EventEmitter<string>();
   @Input() partes;
-  nombreArchivo: string;
-  deshabilitado: boolean = true;
   @Output() colorPartes = new EventEmitter();
   @Input() formModelo;
-  escudo: any;
   @Output() imagenEscudo = new EventEmitter();
   @Output() posicionEscudo = new EventEmitter();
   @Output() modeloSeleccionado = new EventEmitter();
   camisetaModelos: any = camisetaModelos;
   seleccionoModelo: boolean = false;
-  modelosSVG: any;
   camiseta: any;
   generoModelo: string = 'hombre';
   modalRef: NgbModalRef;
@@ -55,13 +50,9 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.initCamisetas();
-    this.formPasoModelo.get('camiseta').valueChanges.subscribe(() => {
-      this.modeloSeleccionado.emit(this.formPasoModelo.get('camiseta').value.urlsSvg);
+    this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
+      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlsSvg);
     });
-  }
-
-  get pasoCamisetaForm() {
-    return this.formPasoModelo.controls;
   }
 
   initCamisetas() {
@@ -70,45 +61,21 @@ export class ModeloComponent implements OnInit, OnChanges {
     }
   }
 
-  // Método para capturar el evento del click en el botón y disparar para que deje subir archivo
-
-
-  // Método que captura el evento de subida de archivo.
-  subirArchivo(event) {
-    if (event.target.files.length > 0) {
-      const archivo = event.target.files[0];
-      let reader = new FileReader();
-      reader.readAsDataURL(archivo);
-      reader.onload = (_event)=>{
-        this.formPasoModelo.controls['escudo'].setValue(reader.result);
-      }
-    }
-    this.imagenEscudo.emit(event.target.files[0]);
-    this.formPasoModelo.controls['posicionEscudo'].setValidators([Validators.required]);
-    this.formPasoModelo.controls['posicionEscudo'].updateValueAndValidity();
-    this.deshabilitado = false;
-  }
-
   ngOnChanges(changeRecord: SimpleChanges): void {
-    if (changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
-      this.generarFormulario(changeRecord.formCamiseta.currentValue);
+    if (changeRecord.formModelo && changeRecord.formModelo.currentValue) {
+      this.generarFormulario(changeRecord.formModelo.currentValue);
     }
   }
 
-  generarFormulario(formCamiseta) {
-    this.formPasoModelo.get('escudo').setValue(formCamiseta.escudo ?? null);
-    this.formPasoModelo.get('posicionEscudo').setValue(formCamiseta.posicionEscudo ?? null);
-    if (this.formPasoModelo.get('escudo').value) {
-      this.deshabilitado = false;
-    }
+  generarFormulario(formModelo) {
+    this.formPasoModelo.get('agregarShort').setValue(formModelo.agregarShort);
+    this.formPasoModelo.get('agregarMedias').setValue(formModelo.agregarMedias);
+    this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
+    console.log(this.formPasoModelo.value);
   }
 
   abrirModal() {
     this.modalRef = this.modalService.open(this.modalTemplate, { centered: true });
-  }
-
-  cambiarPosicionEscudo() {
-    this.posicionEscudo.emit(this.formPasoModelo.get('posicionEscudo').value);
   }
 
   modeloElegido(id) {
@@ -117,7 +84,7 @@ export class ModeloComponent implements OnInit, OnChanges {
       this.camisetaModelos[i].seleccionado = false;
       if (id == this.camisetaModelos[i].id) {
         this.camisetaModelos[i].seleccionado = true;
-        this.formPasoModelo.get('camiseta').setValue(this.camisetaModelos[i]);
+        this.formPasoModelo.get('modelo').setValue(this.camisetaModelos[i]);
       }
     }
   }
