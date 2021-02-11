@@ -1,4 +1,4 @@
-<form [formGroup]="formPasoModelo">
+<form [formGroup]="formPasoModelo" class="ml-md-2">
   <div class="text-md-left text-right">
     <div class="btn-group" role="group">
       <a class="btn" (click)="modelosHombre()" [ngClass]="{ 'seleccionado': generoModelo == 'hombre' }">Hombre</a>
@@ -6,9 +6,14 @@
     </div>
   </div>
   <div class="row">
-    <div *ngFor="let camiseta of camisetaModelos" class="col-md-3 col-6 text-center">
+    <div *ngFor="let camiseta of camisetaModelos" class="col-md-4 col-6 text-center">
       <div class="modelos-camisetas mt-3">
-        <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''"/>
+       <div class="rectangulo-modelo" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''">
+         <div class="zoom" (click)="aumentarZoom(camiseta)">
+           <i class="fas fa-camera"></i>
+         </div>
+         <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid"/>
+       </div>
       </div>
     </div>
   </div>
@@ -32,13 +37,8 @@
     </div>
   </div>
 </form>
-<ng-template #content let-modal>
+<ng-template #template>
   <div class="modal-body text-center">
-    <img src="/assets/images/tutorial.gif" class="img-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-5 col-10">
-        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
-      </div>
-    </div>
+    <img [src]="modalText" height="400">
   </div>
 </ng-template>

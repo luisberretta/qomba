@@ -14,6 +14,10 @@ export class ColorComponent implements OnInit, OnChanges {
   @Output() colorSeleccionado = new EventEmitter();
   submit: boolean = false;
   partesColor: [];
+  desplegado: boolean = false;
+  listadoColores = [
+    'red', 'yellow', 'green', 'blue', 'black'
+  ]
 
   formPasoColor: FormGroup = new FormGroup({
     cantidadEquipo: new FormControl(1, [Validators.min(1), Validators.required]),
@@ -23,6 +27,7 @@ export class ColorComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
@@ -31,15 +36,15 @@ export class ColorComponent implements OnInit, OnChanges {
     }
   }
 
-  cambiarColor(color,parte){
+  cambiarColor(event, parte) {
+    const color = event.target.classList[0];
     let cambio = {
       color: color,
       parte: parte,
     }
     this.colorSeleccionado.emit(cambio);
+    (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
   }
-
-
 
   siguiente() {
     this.submit = true;
@@ -50,5 +55,9 @@ export class ColorComponent implements OnInit, OnChanges {
 
   anterior() {
     this.anteriorPaso.emit(this.formPasoColor.value);
+  }
+
+  desplegarColores(idParte) {
+    document.getElementById(idParte).querySelector('.dropdown').classList.toggle('desplegado');
   }
 }

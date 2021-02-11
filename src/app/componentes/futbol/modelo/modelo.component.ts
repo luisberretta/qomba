@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal,NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {camisetaModelos} from "../../../clases/CamisetaModelo";
 
 @Component({
@@ -35,7 +35,6 @@ export class ModeloComponent implements OnInit, OnChanges {
   deshabilitado: boolean = true;
   @Output() colorPartes = new EventEmitter();
   @Input() formModelo;
-
   escudo: any;
   @Output() imagenEscudo = new EventEmitter();
   @Output() posicionEscudo = new EventEmitter();
@@ -45,6 +44,11 @@ export class ModeloComponent implements OnInit, OnChanges {
   modelosSVG: any;
   camiseta: any;
   generoModelo: string = 'hombre';
+  modalRef: NgbModalRef;
+  modalHeader: string;
+  modalText: string;
+  modalLink: string;
+  @ViewChild('template', { static: true }) modalTemplate;
 
   constructor(private modalService: NgbModal) {
   }
@@ -99,8 +103,8 @@ export class ModeloComponent implements OnInit, OnChanges {
     }
   }
 
-  open(content) {
-    this.modalService.open(content, {centered: true});
+  abrirModal() {
+    this.modalRef = this.modalService.open(this.modalTemplate, { centered: true });
   }
 
   cambiarPosicionEscudo() {
@@ -135,5 +139,8 @@ export class ModeloComponent implements OnInit, OnChanges {
     //Renderizar modelos mujer
   }
 
-
+  aumentarZoom(camiseta) {
+    this.abrirModal();
+    this.modalText = camiseta.url;
+  }
 }

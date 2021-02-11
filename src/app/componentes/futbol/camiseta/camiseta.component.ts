@@ -22,7 +22,9 @@ export class CamisetaComponent implements OnInit {
   NUMERO_ESPALDA = "NUMERO_ESPALDA";
   NOMBRE_ESPALDA = "NOMBRE_ESPALDA";
   ESCUDO_DELANTERO = "ESCUDO_DELANTERO";
-
+  listadoColores = [
+    'red', 'yellow', 'green', 'blue', 'black'
+  ]
 
   formPasoCamiseta: FormGroup = new FormGroup({
     llevaEscudoDelantero: new FormControl(null),
@@ -109,13 +111,19 @@ export class CamisetaComponent implements OnInit {
     this.anteriorPaso.emit(this.formPasoCamiseta.value);
   }
 
-  cambiarColor(color, parte) {
+  cambiarColor(event, parte) {
+    const color = event.target.classList[0];
     let cambio = {
       color: color,
       parte: parte,
       esEstampa: true,
     }
     this.colorSeleccionado.emit(cambio);
+    (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
+  }
+
+  desplegarColores(idParte) {
+    document.getElementById(idParte).querySelector('.dropdown').classList.toggle('desplegado');
   }
 
 }
