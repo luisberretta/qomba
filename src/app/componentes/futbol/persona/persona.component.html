@@ -4,7 +4,7 @@
 <!--  </p>-->
 <!--  <color-circle [colors]="colors" (onChangeComplete)="cambiarColor($event.color.hex)"></color-circle>-->
 <!--</div>-->
-<div #dataContainer (click)="obtenerElementos($event)" class="row" [ngClass]="{ 'no-opacity': paso == 'checkout' }">
+<div #dataContainer (click)="obtenerElementos($event)" class="row" [ngClass]="{ 'no-opacity': paso == 'checkout' }" [hidden]="ocultarModelo">
   <div class="col-md-6 col-12">
     <div #camisetaFrente [innerHTML]="frente"></div>
     <div [innerHTML]="short" [ngClass]="{ 'no-opacity': !llevaShort }"></div>

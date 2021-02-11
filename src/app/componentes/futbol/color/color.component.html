@@ -1,17 +1,30 @@
-<div *ngFor="let parteColor of partesColor" class="row justify-content-center">
-  <div class="col-md-3 col-6 text-center">
-    <label>{{parteColor.idParte}}</label>
-  </div>
-  <ngx-colors ngx-colors-trigger style="display: inline-block; margin:5px;"
-              (change)="cambiarColor($event,parteColor.idParte)"></ngx-colors>
-</div>
-<!--[formControl]="colorFormControl"-->
+<form [formGroup]="formPasoColor">
+  <div formArrayName="partesArray" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="row justify-content-center">
+    <div [formGroupName]="i" class="row">
+      <div class="col-md-4 col-6 text-center">
+        <label>{{parteColor.value.idParte}}</label>
+      </div>
+      <div class="col-md-2 col-6 text-center">
+        <ngx-colors ngx-colors-trigger style="display: inline-block; margin:5px;"
+                    (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></ngx-colors>
+      </div>
+      <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
+        <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">El color es requerido.
+        </div>
+      </div>
+    </div>
 
-<div class="row justify-content-center">
-  <div class="col-4 text-right">
-    <a class="btn btn-atras" (click)="anterior()">Atrás</a>
   </div>
-  <div class="col-4">
-    <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
+  <!--[formControl]="colorFormControl"-->
+
+  <div class="row justify-content-center">
+    <div class="col-4 text-right">
+      <a class="btn btn-atras" (click)="anterior()">Atrás</a>
+    </div>
+    <div class="col-4">
+      <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
+    </div>
   </div>
-</div>
+</form>
+
+

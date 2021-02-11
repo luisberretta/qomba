@@ -23,6 +23,7 @@ import {NgxUiLoaderModule} from "ngx-ui-loader";
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import {ColorCircleModule} from "ngx-color/circle";
 import { NgxColorsModule } from 'ngx-colors';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { NgxColorsModule } from 'ngx-colors';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     NgbModule,
     ColorCircleModule,
     NgbCarouselModule,

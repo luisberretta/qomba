@@ -22,7 +22,7 @@
       <div class="row">
         <div class="col-md-6 col-12 mt-3">
           <div [ngSwitch]="paso">
-            <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo" (imagenEscudo)="escudo($event)" (posicionEscudo)="cambiarPosicionEscudo($event)"></app-modelo>
+            <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo"></app-modelo>
             <app-color *ngSwitchCase="'color'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]="formColor"></app-color>
             <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta"></app-camiseta>
             <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>

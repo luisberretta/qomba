@@ -24,11 +24,11 @@ export class PersonaComponent implements OnInit {
   frente: any;
   dorso: any;
   short: any;
+  ocultarModelo = true;
   @Input() urlCamiseta: any;
   @Input() camisetasSvg: any;
   @Input() colorShort: String;
   @ViewChild('dataContainer') dataContainer: ElementRef;
-  urlShort: string = 'assets/images/short/short.svg';
   colors = ['#B80000', '#DB3E00', '#FCCB00', '#008B02', '#006B76', '#1273DE', '#004DCF', '#5300EB', '#FF37E1', '#992328', '#FFFFFF', '#000000'];
   idGrupo: String;
   parteSeleccionada: string;
@@ -54,6 +54,10 @@ export class PersonaComponent implements OnInit {
     } else {
       this.dorso = modelo;
     }
+  }
+
+  visualizarModeloCompleto(){
+    this.ocultarModelo = !this.ocultarModelo;
   }
 
   cambiarColorParte(cambiar) {

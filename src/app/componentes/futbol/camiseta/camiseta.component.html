@@ -2,26 +2,30 @@
   <div class="row form-group">
     <div class="col-md-4">
       <label class="switch">
-        <input class="form-check-input" formControlName="llevaEscudoDelantero" type="checkbox" id="lleva-escudo-delantero">
+        <input class="form-check-input" formControlName="llevaEscudoDelantero" type="checkbox"
+               id="lleva-escudo-delantero">
         <span class="slider round"></span>
       </label>
       <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
     </div>
     <div class="col-md-4">
-      <a class="btn btn-secondary" (click)="archivo()" [attr.disabled]="formPasoCamiseta.controls['llevaEscudoDelantero'].value">Subir escudo</a>-->
-              <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+      <a class="btn btn-secondary" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero? true: null">Subir
+        escudo</a>
+      <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
     </div>
     <div class="col-md-4">
-      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="formPasoCamiseta.controls['llevaEscudoDelantero'].value" (change)="cambiarPosicionEscudo()">-->
-              <option [ngValue]="null" selected disabled>Posición</option>
-              <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
-            </select>
+      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="!llevaEscudoDelantero? true: null"
+              (change)="cambiarPosicionEscudo()">
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
     </div>
   </div>
   <div class="row form-group">
     <div class="col-md-4">
       <label class="switch">
-        <input class="form-check-input" formControlName="llevaNumeroDelantero" type="checkbox" id="lleva-numero-delantero">
+        <input class="form-check-input" formControlName="llevaNumeroDelantero" type="checkbox"
+               id="lleva-numero-delantero">
         <span class="slider round"></span>
       </label>
       <label class="form-check-label" for="lleva-numero-delantero">Número Delantero</label>
@@ -31,7 +35,9 @@
                   (change)="cambiarColor($event,NUMERO_DELANTERO)"></ngx-colors>
     </div>
     <div>
-      <select class="form-control" formControlName="posicionNumeroDelantero" [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value" (change)="cambiarPosicionNumeroDelantero()">-->
+      <select class="form-control" formControlName="posicionNumeroDelantero"
+              [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value"
+              (change)="cambiarPosicionNumeroDelantero()">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
       </select>
@@ -89,26 +95,29 @@
   <!--      </div>-->
   <!--    </div>-->
   <!--  </div>-->
-<!--  <div class="row">-->
-<!--    <div class="form-group">-->
-<!--      <label class="switch">-->
-<!--        <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">-->
-<!--        <span class="slider round"></span>-->
-<!--      </label>-->
-<!--      <label class="form-check-label" for="agregar-short">Agregar Short</label>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <div class="row">-->
-<!--    <div class="form-group">-->
-<!--      <label class="switch">-->
-<!--        <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">-->
-<!--        <span class="slider round"></span>-->
-<!--      </label>-->
-<!--      <label class="form-check-label" for="agregar-short">Agregar medias</label>-->
-<!--    </div>-->
-<!--  </div>-->
+  <!--  <div class="row">-->
+  <!--    <div class="form-group">-->
+  <!--      <label class="switch">-->
+  <!--        <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">-->
+  <!--        <span class="slider round"></span>-->
+  <!--      </label>-->
+  <!--      <label class="form-check-label" for="agregar-short">Agregar Short</label>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  <div class="row">-->
+  <!--    <div class="form-group">-->
+  <!--      <label class="switch">-->
+  <!--        <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">-->
+  <!--        <span class="slider round"></span>-->
+  <!--      </label>-->
+  <!--      <label class="form-check-label" for="agregar-short">Agregar medias</label>-->
+  <!--    </div>-->
+  <!--  </div>-->
 
   <div class="row justify-content-center mt-3">
+    <div class="col-4 text-right">
+      <a class="btn btn-atras" (click)="anterior()">Atrás</a>
+    </div>
     <div class="col-4 text-center">
       <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
     </div>
