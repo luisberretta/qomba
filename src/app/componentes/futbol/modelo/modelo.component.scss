@@ -21,3 +21,27 @@
     }
   }
 }
+
+.btn-group {
+  .btn {
+    background-color: white;
+    color: black;
+    display: block;
+    width: 100%;
+    border: solid 1px black;
+    &.seleccionado {
+      background-color: #e0e0e0;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &:first-child {
+      border-top-left-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
+    }
+    &:last-child {
+      border-top-right-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+    }
+  }
+}

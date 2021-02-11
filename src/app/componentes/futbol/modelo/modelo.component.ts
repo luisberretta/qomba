@@ -44,6 +44,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   seleccionoModelo: boolean = false;
   modelosSVG: any;
   camiseta: any;
+  generoModelo: string = 'hombre';
 
   constructor(private modalService: NgbModal) {
   }
@@ -123,5 +124,16 @@ export class ModeloComponent implements OnInit, OnChanges {
       this.proximoPaso.emit(this.formPasoModelo.value);
     }
   }
+
+  modelosHombre() {
+    this.generoModelo = 'hombre';
+    //Renderizar modelos hombre
+  }
+
+  modelosMujer() {
+    this.generoModelo = 'mujer';
+    //Renderizar modelos mujer
+  }
+
 
 }
