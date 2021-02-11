@@ -39,6 +39,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   camisetaModelos: any = camisetaModelos;
   seleccionoModelo: boolean = false;
   camiseta: any;
+  generoModelo: string = 'hombre';
 
   constructor(private modalService: NgbModal) {
   }
@@ -90,5 +91,16 @@ export class ModeloComponent implements OnInit, OnChanges {
       this.proximoPaso.emit(this.formPasoModelo.value);
     }
   }
+
+  modelosHombre() {
+    this.generoModelo = 'hombre';
+    //Renderizar modelos hombre
+  }
+
+  modelosMujer() {
+    this.generoModelo = 'mujer';
+    //Renderizar modelos mujer
+  }
+
 
 }
