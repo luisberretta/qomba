@@ -5,13 +5,7 @@
 <!--  <color-circle [colors]="colors" (onChangeComplete)="cambiarColor($event.color.hex)"></color-circle>-->
 <!--</div>-->
 <div #dataContainer (click)="obtenerElementos($event)" class="row mt-3" [ngClass]="{ 'no-opacity': paso == 'checkout' }" [hidden]="ocultarModelo">
-  <div class="col-6">
-    <div #camisetaFrente [innerHTML]="frente"></div>
-    <div [innerHTML]="short" [ngClass]="{ 'no-opacity': !llevaShort }"></div>
-  </div>
-  <div class="col-6">
-    <div #camisetaDorso [innerHTML]="dorso"></div>
-    <div [innerHTML]="short" [ngClass]="{ 'no-opacity': !llevaShort }"></div>
+  <div class="col-12" #camisetaFrente [innerHTML]="modelo">
   </div>
 </div>
 

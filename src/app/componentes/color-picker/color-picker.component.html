@@ -1,0 +1,3 @@
+<div class="color-box" [style.backgroundColor]="color" [ngClass]="{selected: selectedColor === color}"
+     (click)="colorClicked(color)" *ngFor="let color of colors">
+</div>

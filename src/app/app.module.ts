@@ -24,7 +24,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import {ColorCircleModule} from "ngx-color/circle";
 import { NgxColorsModule } from 'ngx-colors';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { ColorPickerModule } from 'ng2-color-picker';
+import { ColorPickerComponent } from './componentes/color-picker/color-picker.component';
 
 
 @NgModule({
@@ -42,14 +42,14 @@ import { ColorPickerModule } from 'ng2-color-picker';
     HomeComponent,
     PaginaNoEncontradaComponent,
     ColorComponent,
-    CamisetaComponent
+    CamisetaComponent,
+    ColorPickerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    ColorPickerModule,
     ColorCircleModule,
     NgbCarouselModule,
     ReactiveFormsModule,

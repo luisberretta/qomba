@@ -3,7 +3,7 @@ export const camisetaModelos = [
     id: 1,
     nombre: 'Bassic',
     url: '/assets/images/basicas/basica1.png',
-    urlsSvg: ['basica1-frente.svg', 'basica1-dorso.svg'],
+    urlSvg: 'CONJUNTO_1_COMPLETO.svg',
     precio: 100,
     seleccionado: false,
   },

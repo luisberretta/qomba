@@ -21,8 +21,7 @@ export class PersonaComponent implements OnInit {
   CENTRO = 290;
   NUMERO_DELANTERO = "NUMERO_DELANTERO";
   ESCUDO_DELANTERO = "ESCUDO_DELANTERO";
-  frente: any;
-  dorso: any;
+  modelo: any;
   short: any;
   ocultarModelo = true;
   @Input() urlCamiseta: any;
@@ -48,12 +47,8 @@ export class PersonaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  generarModelo(modelo, esFrente) {
-    if (esFrente) {
-      this.frente = modelo;
-    } else {
-      this.dorso = modelo;
-    }
+  generarModelo(modelo) {
+    this.modelo = modelo;
   }
 
   visualizarModeloCompleto() {

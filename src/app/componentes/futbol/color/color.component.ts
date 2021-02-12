@@ -18,9 +18,6 @@ export class ColorComponent implements OnInit, OnChanges {
     colores: []
   }];
   desplegado: boolean = false;
-  listadoColores = [
-    'red', 'yellow', 'green', 'blue', 'black'
-  ]
 
   formPasoColor: FormGroup = new FormGroup({
     partesArray: new FormArray([]),

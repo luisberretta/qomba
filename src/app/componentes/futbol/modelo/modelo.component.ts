@@ -51,7 +51,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.initCamisetas();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
-      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlsSvg);
+      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlSvg);
     });
   }
 
@@ -71,7 +71,6 @@ export class ModeloComponent implements OnInit, OnChanges {
     this.formPasoModelo.get('agregarShort').setValue(formModelo.agregarShort);
     this.formPasoModelo.get('agregarMedias').setValue(formModelo.agregarMedias);
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
-    console.log(this.formPasoModelo.value);
   }
 
   abrirModal() {

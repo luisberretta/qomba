@@ -18,7 +18,7 @@ export class WizardComponent implements OnInit {
 
   paso: string = 'modelo';
   numeroPaso: number = 1;
-  url: string = '/assets/images/basicas/';
+  url: string = '/assets/images/';
   pedido: Pedido = {imagenes: []};
   formModelo: any;
   formColor: any;
@@ -115,12 +115,9 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  modeloSeleccionado(urlsSvg) {
-    this.svgService.obtenerSVGFrente(this.url + urlsSvg[0]).subscribe((data) => {
-      this.personaComponent.generarModelo(this.sanitizer.bypassSecurityTrustHtml(data), true);
-    });
-    this.svgService.obtenerSVGDorso(this.url + urlsSvg[1]).subscribe((data) => {
-      this.personaComponent.generarModelo(this.sanitizer.bypassSecurityTrustHtml(data), false);
+  modeloSeleccionado(urlSvg) {
+    this.svgService.obtenerSVGFrente(this.url + urlSvg).subscribe((data) => {
+      this.personaComponent.generarModelo(this.sanitizer.bypassSecurityTrustHtml(data));
     });
   }
 
@@ -219,10 +216,13 @@ export class WizardComponent implements OnInit {
   }
 
   perteneceIndumentaria(grupoColor) {
-    return grupoColor != 'NOMBRE_ESPALDA' &&
+    return grupoColor != 'NOMBRE' &&
       grupoColor != 'NUMERO_ESPALDA' &&
       grupoColor != 'NUMERO_DELANTERO' &&
-      grupoColor != 'ESCUDO_DELANTERO';
+      grupoColor != 'ESCUDO_REMERA' &&
+      grupoColor != 'NUMERO_SHORT' &&
+      grupoColor != 'ESCUDO_SHORT' &&
+      !grupoColor.includes("GENERICO");
   }
 
   obtenerGruposColor() {
