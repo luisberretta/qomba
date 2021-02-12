@@ -48,7 +48,7 @@ export class ColorComponent implements OnInit, OnChanges {
       for (let i = 0; i < formColor.length; i++) {
         let color = new FormGroup({
           idParte: new FormControl(formColor[i].idParte),
-          color: new FormControl(formColor[i].color? formColor[i].color: null, [Validators.required])
+          color: new FormControl(formColor[i].color? formColor[i].color: null, )
         });
         this.formPartesArrayControl.push(color);
       }
@@ -66,6 +66,7 @@ export class ColorComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
+    console.log(this.formPasoColor);
     if (this.formPasoColor.valid) {
       this.proximoPaso.emit(this.formPasoColor.value);
     }

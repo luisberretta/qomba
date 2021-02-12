@@ -56,7 +56,7 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-  visualizarModeloCompleto(){
+  visualizarModeloCompleto() {
     this.ocultarModelo = !this.ocultarModelo;
   }
 
@@ -97,14 +97,14 @@ export class PersonaComponent implements OnInit {
   }
 
   posicionEstampado(posicion) {
-    if (posicion.posicionOcupada) {
-      let grupos = this.obtenerGrupos();
-      let estampado = grupos.namedItem(posicion.parte);
-      if (estampado.id == this.ESCUDO_DELANTERO) {
-        estampado = estampado.getElementsByTagName('image').namedItem('escudo');
-      } else {
-        estampado = estampado.getElementsByTagName('text').namedItem('numero');
-      }
+    let grupos = this.obtenerGrupos();
+    let estampado = grupos.namedItem(posicion.parte);
+    if (estampado.id == this.ESCUDO_DELANTERO) {
+      estampado = estampado.getElementsByTagName('image').namedItem('escudo');
+    } else {
+      estampado = estampado.getElementsByTagName('text').namedItem('numero');
+    }
+    if(posicion.posicion == posicion.posicionOcupada){
       switch (posicion.posicionOcupada) {
         case 'Centro':
           estampado.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
@@ -114,6 +114,19 @@ export class PersonaComponent implements OnInit {
           break;
         case 'Izquierda':
           estampado.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
+          break;
+      }
+    }
+    else{
+      switch (posicion.posicion) {
+        case 'Centro':
+          estampado.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
+          break;
+        case 'Derecha':
+          estampado.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
+          break;
+        case 'Izquierda':
+          estampado.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
           break;
       }
     }

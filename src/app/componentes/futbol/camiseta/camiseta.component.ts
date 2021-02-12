@@ -38,9 +38,10 @@ export class CamisetaComponent implements OnInit {
     llevaNumeroEspalda: new FormControl(null)
   });
   visualizar = {
-    valor: undefined,
-    parte: undefined,
-    posicionOcupada: undefined
+    valor: null,
+    parte: null,
+    posicionOcupada: null,
+    posicion: null
   }
   llevaEscudoDelantero: boolean;
   submit: boolean = false;
@@ -54,7 +55,8 @@ export class CamisetaComponent implements OnInit {
       this.visualizar.parte = this.ESCUDO_DELANTERO;
       this.visualizar.posicionOcupada = this.formPasoCamiseta.get('posicionNumeroDelantero').value;
       if (!this.visualizar.posicionOcupada) {
-        this.visualizar.posicionOcupada = "Centro";
+        this.visualizar.posicion = "Centro"
+        this.formPasoCamiseta.get('posicionEscudoDelantero').setValue("Centro");
       }
       this.llevaEscudoDelantero = valor;
       this.visualizarEstampado.emit(this.visualizar);
@@ -63,8 +65,10 @@ export class CamisetaComponent implements OnInit {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NUMERO_DELANTERO;
       this.visualizar.posicionOcupada = this.formPasoCamiseta.get('posicionEscudoDelantero').value;
-      if (!this.visualizar.posicionOcupada)
-        this.visualizar.posicionOcupada = "Centro";
+      if (!this.visualizar.posicionOcupada){
+        this.visualizar.posicion = "Centro";
+        this.formPasoCamiseta.get('posicionEscudoDelantero').setValue("Centro");
+      }
       this.visualizarEstampado.emit(this.visualizar);
     });
     this.formPasoCamiseta.get('llevaNombreEspalda').valueChanges.subscribe((valor) => {
@@ -79,22 +83,20 @@ export class CamisetaComponent implements OnInit {
     });
 
     this.formPasoCamiseta.get('posicionEscudoDelantero').valueChanges.subscribe((valor) => {
-      this.visualizar.valor = valor;
+      this.visualizar.posicion = valor;
       this.visualizar.parte = this.ESCUDO_DELANTERO;
       this.visualizar.posicionOcupada = this.formPasoCamiseta.get('posicionNumeroDelantero').value;
-      this.llevaEscudoDelantero = valor;
       this.posicionesNumeroDelantero=this.posicionesNumeroDelanteroEstatico;
-      this.posicionesNumeroDelantero = this.posicionesNumeroDelantero.filter(x => x != this.visualizar.posicionOcupada);
+      this.posicionesNumeroDelantero = this.posicionesNumeroDelantero.filter(x => x != this.visualizar.posicion);
       this.visualizarEstampado.emit(this.visualizar);
     });
 
     this.formPasoCamiseta.get('posicionNumeroDelantero').valueChanges.subscribe((valor) => {
-      this.visualizar.valor = valor;
+      this.visualizar.posicion = valor;
       this.visualizar.parte = this.NUMERO_DELANTERO;
       this.visualizar.posicionOcupada = this.formPasoCamiseta.get('posicionEscudoDelantero').value;
-      this.llevaEscudoDelantero = valor;
       this.posicionesEscudo= this.posicionesEscudoEstatico;
-      this.posicionesEscudo = this.posicionesEscudo.filter(x => x != this.visualizar.posicionOcupada);
+      this.posicionesEscudo = this.posicionesEscudo.filter(x => x != this.visualizar.posicion);
       this.visualizarEstampado.emit(this.visualizar);
     });
   }
