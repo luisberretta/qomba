@@ -73,6 +73,9 @@
         left: -2px;
         background: url("/assets/images/check.svg") no-repeat center;
       }
+      &:hover {
+        text-decoration: none;
+      }
     }
     h5 {
       font-size: 18px;

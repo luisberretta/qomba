@@ -43,22 +43,22 @@ export const camisetaModelos = [
     urlsSvg: ['intermedia3-frente.svg', 'intermedia3-dorso.svg'],
     seleccionado: false,
   },
-  // {
-  //   id: 7,
-  //   url: '/assets/images/premium/premium1.png',
-  //   urlsSvg: ['premium1-frente.svg', 'premium1-dorso.svg'],
-  //   seleccionado: false,
-  // },
-  // {
-  //   id: 8,
-  //   url: '/assets/images/premium/premium2.png',
-  //   urlsSvg: ['premium2-frente.svg', 'premium2-dorso.svg'],
-  //   seleccionado: false,
-  // },
-  // {
-  //   id: 9,
-  //   url: '/assets/images/premium/premium3.png',
-  //   urlsSvg: ['premium3-frente.svg', 'premium3-dorso.svg'],
-  //   seleccionado: false,
-  // }
+  {
+    id: 7,
+    url: '/assets/images/premium/premium1.png',
+    urlsSvg: ['premium1-frente.svg', 'premium1-dorso.svg'],
+    seleccionado: false,
+  },
+  {
+    id: 8,
+    url: '/assets/images/premium/premium2.png',
+    urlsSvg: ['premium2-frente.svg', 'premium2-dorso.svg'],
+    seleccionado: false,
+  },
+  {
+    id: 9,
+    url: '/assets/images/premium/premium3.png',
+    urlsSvg: ['premium3-frente.svg', 'premium3-dorso.svg'],
+    seleccionado: false,
+  }
 ]

@@ -7,7 +7,7 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
-  SimpleChanges
+  SimpleChanges, AfterViewInit
 } from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -40,19 +40,22 @@ export class ModeloComponent implements OnInit, OnChanges {
   camiseta: any;
   generoModelo: string = 'hombre';
   modalRef: NgbModalRef;
-  modalHeader: string;
   modalText: string;
-  modalLink: string;
   @ViewChild('template', { static: true }) modalTemplate;
+  secciones: any[];
+  seleccionada: boolean = false;
 
   constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
+
     this.initCamisetas();
+    this.obtenerCantidadSecciones();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
       this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlsSvg);
     });
+
   }
 
   initCamisetas() {
@@ -71,7 +74,6 @@ export class ModeloComponent implements OnInit, OnChanges {
     this.formPasoModelo.get('agregarShort').setValue(formModelo.agregarShort);
     this.formPasoModelo.get('agregarMedias').setValue(formModelo.agregarMedias);
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
-    console.log(this.formPasoModelo.value);
   }
 
   abrirModal() {
@@ -109,5 +111,34 @@ export class ModeloComponent implements OnInit, OnChanges {
   aumentarZoom(camiseta) {
     this.abrirModal();
     this.modalText = camiseta.url;
+  }
+
+
+  scroll(seccion) {
+    for (let i = 0; i < this.secciones.length; i++) {
+      if(seccion == this.secciones[i].id) {
+        this.secciones[i].seleccionada = true;
+      } else {
+        this.secciones[i].seleccionada = false;
+      }
+    }
+    let scrollerHijo = document.getElementsByClassName('scroller-hijo');
+    if(seccion == 1) {
+      scrollerHijo[0].scrollIntoView({block: "end"});
+    } else if(seccion >= (this.camisetaModelos.length)/4) {
+      scrollerHijo[scrollerHijo.length - 1].scrollIntoView({block: "end"});
+    } else {
+      scrollerHijo[seccion * 3].scrollIntoView({block: "end"});
+    }
+  }
+
+  obtenerCantidadSecciones() {
+    const cantidad = Math.ceil(this.camisetaModelos.length / 4);
+    this.secciones = [];
+    for (let i = 0; i < cantidad; i++) {
+      this.secciones.push({ 'id': i+1, 'seleccionada': false });
+    }
+
+    return this.secciones;
   }
 }

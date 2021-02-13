@@ -5,15 +5,20 @@
       <a class="btn" (click)="modelosMujer()" [ngClass]="{ 'seleccionado': generoModelo == 'mujer' }">Mujer</a>
     </div>
   </div>
-  <div class="row">
-    <div *ngFor="let camiseta of camisetaModelos" class="col-md-4 col-6 text-center">
-      <div class="modelos-camisetas mt-3">
-       <div class="rectangulo-modelo" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''">
-         <div class="zoom" (click)="aumentarZoom(camiseta)">
-           <i class="fas fa-camera"></i>
-         </div>
-         <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid"/>
-       </div>
+  <div class="contenedor-modelos">
+    <div class="scroller-modelos">
+      <div class="scroller-hijo" *ngFor="let camiseta of camisetaModelos">
+        <div class="contenedor-modelo" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''">
+          <div class="zoom" (click)="aumentarZoom(camiseta)">
+            <i class="fas fa-camera"></i>
+          </div>
+          <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="modelo"/>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <div *ngFor="let seccion of secciones" class="bullet mr-2" (click)="scroll(seccion.id)" [ngClass]="seccion.seleccionada ? 'seleccionada' : ''">
+
       </div>
     </div>
   </div>

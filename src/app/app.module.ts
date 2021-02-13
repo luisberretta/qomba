@@ -25,7 +25,6 @@ import {ColorCircleModule} from "ngx-color/circle";
 import { NgxColorsModule } from 'ngx-colors';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,9 +55,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     }),
     NgxColorsModule,
     HttpClientModule,
-    AlifeFileToBase64Module
+    AlifeFileToBase64Module,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
+
 export class AppModule { }

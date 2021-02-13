@@ -13,29 +13,29 @@
   opacity: 0.5;
 }
 
-.modelos-camisetas {
-  .seleccionado {
-    background-color: #ededef;
-  }
-  img {
-    cursor: pointer;
-  }
-  .rectangulo-modelo {
-    position: relative;
-    padding: 15px;
-    .zoom {
-      background-color: white;
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-      border-radius: 50%;
-      width: 25px;
-      height: 25px;
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      cursor: pointer;
-    }
-  }
-}
+//.modelos-camisetas {
+//  .seleccionado {
+//    background-color: #ededef;
+//  }
+//  img {
+//    cursor: pointer;
+//  }
+//  .rectangulo-modelo {
+//    position: relative;
+//    padding: 15px;
+//    .zoom {
+//      background-color: white;
+//      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+//      border-radius: 50%;
+//      width: 25px;
+//      height: 25px;
+//      position: absolute;
+//      right: 5px;
+//      top: 5px;
+//      cursor: pointer;
+//    }
+//  }
+//}
 
 .btn-group {
   .btn {
@@ -57,6 +57,116 @@
     &:last-child {
       border-top-right-radius: 0.75rem;
       border-bottom-right-radius: 0.75rem;
+    }
+  }
+}
+
+.contenedor-modelos {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: calc(100% - 135px);
+  .scroller-modelos {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .scroller-control {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 80px;
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      background-position: 50%;
+      cursor: pointer;
+      z-index: 3;
+      &.next {
+        right: -60px;
+        background-image: url("/assets/images/chevron-right-solid.svg");
+      }
+      &.prev {
+        left: -60px;
+        background-image: url("/assets/images/chevron-left-solid.svg");
+      }
+    }
+    .scroller-hijo {
+      //flex: 0 0 auto;
+      &:first-child {
+        margin-left: 0;
+      }
+
+      .contenedor-modelo {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+        position: relative;
+        text-align: center;
+        &.seleccionado {
+          background-color: #ededef;
+        }
+        .modelo {
+          position: relative;
+          margin-left: 5px;
+          margin-right: 5px;
+          overflow: hidden;
+          z-index: 1;
+          cursor: pointer;
+        }
+        .zoom {
+          background-color: white;
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          right: 5px;
+          top: 5px;
+          cursor: pointer;
+          i {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+  }
+  .bullet {
+    display: inline-block;
+    border: solid 1px black;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 3;
+    &.seleccionada {
+      background-color: #ededef;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contenedor-modelos {
+    max-width: none;
+    .scroller-modelos {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-auto-flow: column;
+      overflow-x: scroll;
+      .scroller-hijo {
+        .contenedor-modelo {
+          width: 230px;
+        }
+      }
     }
   }
 }
