@@ -13,30 +13,6 @@
   opacity: 0.5;
 }
 
-//.modelos-camisetas {
-//  .seleccionado {
-//    background-color: #ededef;
-//  }
-//  img {
-//    cursor: pointer;
-//  }
-//  .rectangulo-modelo {
-//    position: relative;
-//    padding: 15px;
-//    .zoom {
-//      background-color: white;
-//      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-//      border-radius: 50%;
-//      width: 25px;
-//      height: 25px;
-//      position: absolute;
-//      right: 5px;
-//      top: 5px;
-//      cursor: pointer;
-//    }
-//  }
-//}
-
 .btn-group {
   .btn {
     background-color: white;
@@ -67,43 +43,26 @@
   width: 100%;
   max-width: calc(100% - 135px);
   .scroller-modelos {
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-flow: column;
+    grid-auto-columns: 265px 265px 265px 265px;
     overflow-x: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
+    padding-top: 0.75rem;
     &::-webkit-scrollbar {
       display: none;
     }
-    .scroller-control {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 80px;
-      background-repeat: no-repeat;
-      background-size: 40px 40px;
-      background-position: 50%;
-      cursor: pointer;
-      z-index: 3;
-      &.next {
-        right: -60px;
-        background-image: url("/assets/images/chevron-right-solid.svg");
-      }
-      &.prev {
-        left: -60px;
-        background-image: url("/assets/images/chevron-left-solid.svg");
-      }
-    }
     .scroller-hijo {
-      //flex: 0 0 auto;
+      text-align: center;
+      display: flex;
       &:first-child {
         margin-left: 0;
       }
-
       .contenedor-modelo {
-        width: 250px;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 15px;
@@ -127,9 +86,12 @@
           width: 32px;
           height: 32px;
           position: absolute;
-          right: 5px;
-          top: 5px;
+          right: 2rem;
+          top: -10px;
           cursor: pointer;
+          z-index: 100;
+          align-items: center;
+          display: grid;
           i {
             display: inline-block;
             vertical-align: middle;
@@ -148,9 +110,22 @@
     bottom: 0;
     cursor: pointer;
     z-index: 3;
+    margin-left: 0.5rem;
     &.seleccionada {
       background-color: #ededef;
     }
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  .scroller-modelos {
+    grid-auto-columns: 190px 190px 190px 190px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1440px) {
+  .scroller-modelos {
+    grid-auto-columns: 230px 230px 230px 230px !important;
   }
 }
 
@@ -162,11 +137,22 @@
       grid-template-rows: auto auto;
       grid-auto-flow: column;
       overflow-x: scroll;
+      grid-auto-columns: 250px 250px;
       .scroller-hijo {
+        display: block;
         .contenedor-modelo {
-          width: 230px;
+          margin-left: initial;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .scroller-modelos {
+    grid-template-columns: repeat(6, 50%) !important;
+    .zoom {
+      right: 0.75rem !important;
     }
   }
 }

@@ -49,7 +49,6 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-
     this.initCamisetas();
     this.obtenerCantidadSecciones();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
@@ -116,19 +115,16 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   scroll(seccion) {
     for (let i = 0; i < this.secciones.length; i++) {
-      if(seccion == this.secciones[i].id) {
-        this.secciones[i].seleccionada = true;
-      } else {
-        this.secciones[i].seleccionada = false;
-      }
+      this.secciones[i].seleccionada = seccion == this.secciones[i].id;
     }
     let scrollerHijo = document.getElementsByClassName('scroller-hijo');
+    console.log(seccion * 3);
     if(seccion == 1) {
-      scrollerHijo[0].scrollIntoView({block: "end"});
+      scrollerHijo[0].scrollIntoView(true);
     } else if(seccion >= (this.camisetaModelos.length)/4) {
-      scrollerHijo[scrollerHijo.length - 1].scrollIntoView({block: "end"});
+      scrollerHijo[scrollerHijo.length - 1].scrollIntoView(true);
     } else {
-      scrollerHijo[seccion * 3].scrollIntoView({block: "end"});
+      scrollerHijo[seccion * 3].scrollIntoView(true);
     }
   }
 
@@ -138,7 +134,7 @@ export class ModeloComponent implements OnInit, OnChanges {
     for (let i = 0; i < cantidad; i++) {
       this.secciones.push({ 'id': i+1, 'seleccionada': false });
     }
-
+    this.secciones[0].seleccionada = true;
     return this.secciones;
   }
 }

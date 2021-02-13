@@ -5,9 +5,9 @@
       <a class="btn" (click)="modelosMujer()" [ngClass]="{ 'seleccionado': generoModelo == 'mujer' }">Mujer</a>
     </div>
   </div>
-  <div class="contenedor-modelos">
+  <div class="contenedor-modelos mt-3">
     <div class="scroller-modelos">
-      <div class="scroller-hijo" *ngFor="let camiseta of camisetaModelos">
+      <div class="scroller-hijo {{ camiseta.id }}" *ngFor="let camiseta of camisetaModelos">
         <div class="contenedor-modelo" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''">
           <div class="zoom" (click)="aumentarZoom(camiseta)">
             <i class="fas fa-camera"></i>
@@ -17,9 +17,7 @@
       </div>
     </div>
     <div class="text-center">
-      <div *ngFor="let seccion of secciones" class="bullet mr-2" (click)="scroll(seccion.id)" [ngClass]="seccion.seleccionada ? 'seleccionada' : ''">
-
-      </div>
+      <div *ngFor="let seccion of secciones" class="bullet" (click)="scroll(seccion.id)" [ngClass]="seccion.seleccionada ? 'seleccionada' : ''"></div>
     </div>
   </div>
   <div class="form-group mt-3">
