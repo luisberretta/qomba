@@ -2,14 +2,14 @@
 <div formArrayName="partesArray" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="form-group row ml-md-2">
   <div [formGroupName]="i" class="row">
     <div class="col-md-7 col-4">
-      <label>{{parteColor.value.idParte}}: </label>
+      <label>{{parteColor.value.nombreMostrar}}: </label>
     </div>
     <div class="col-md-5 col-4">
       <ul>
         <li class="selector" (click)="desplegarColores(parteColor.value.idParte)" id="{{ parteColor.value.idParte }}">
           <a class="selector-color"></a>
           <ul class="dropdown mt-2">
-            <app-color-picker formControlName="color" (click)="cambiarColor(parteColor.value.color, parteColor.value.idParte)"></app-color-picker>
+            <app-color-picker formControlName="colorSeleccionado" [selectedColor]="parteColor.value.colorSeleccionado" [colors]="parteColor.value.colores"  (click)="cambiarColor(parteColor.value.colorSeleccionado, parteColor.value.idParte)"></app-color-picker>
           </ul>
         </li>
       </ul>

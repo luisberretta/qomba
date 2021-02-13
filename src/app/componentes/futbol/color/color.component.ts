@@ -45,14 +45,17 @@ export class ColorComponent implements OnInit, OnChanges {
       for (let i = 0; i < formColor.length; i++) {
         let color = new FormGroup({
           idParte: new FormControl(formColor[i].idParte),
-          color: new FormControl(formColor[i].color? formColor[i].color: null, )
+          nombreMostrar: new FormControl(formColor[i].nombreMostrar),
+          colores: new FormControl(formColor[i].colores),
+          colorSeleccionado: new FormControl(formColor[i].colorSeleccionado ? formColor[i].colorSeleccionado : null,)
         });
         this.formPartesArrayControl.push(color);
       }
+      console.log(this.formPartesArrayControl.value);
     }
   }
 
-  cambiarColor(color,parte){
+  cambiarColor(color, parte) {
     let cambio = {
       color: color,
       parte: parte,

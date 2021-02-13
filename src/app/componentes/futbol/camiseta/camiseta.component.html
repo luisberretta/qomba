@@ -15,8 +15,7 @@
     </div>
     <div class="col-4">
       <select class="form-control" formControlName="posicionEscudoDelantero"
-              [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null"
-              (change)="cambiarPosicionEscudo()">-->
+              [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
       </select>
@@ -31,22 +30,19 @@
       </label>
       <label class="form-check-label" for="lleva-numero-delantero">Número Delantero</label>
     </div>
-    <!--    <div [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value">-->
     <ul>
       <li class="selector" (click)="desplegarColores(NUMERO_DELANTERO)" id="{{ NUMERO_DELANTERO }}">
         <a class="selector-color"></a>
         <ul class="dropdown mt-2">
-          <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor($event, NUMERO_DELANTERO)">
-            <a></a>
-          </li>
+          <app-color-picker formControlName="colorNumeroDelantero" [selectedColor]="colorSeleccionadoNumeroDelantero"  [colors]="coloresNumeroDelantero"  (click)="cambiarColor(NUMERO_DELANTERO)"></app-color-picker>
+
         </ul>
       </li>
     </ul>
     <!--    </div>-->
     <div class="col-4">
       <select class="form-control" formControlName="posicionNumeroDelantero"
-              [attr.disabled]="!formPasoCamiseta.controls['llevaNumeroDelantero'].value?true : null"
-              (change)="cambiarPosicionNumeroDelantero()">-->
+              [attr.disabled]="!formPasoCamiseta.controls['llevaNumeroDelantero'].value?true : null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
       </select>
@@ -65,7 +61,7 @@
         <li class="selector" (click)="desplegarColores(NOMBRE_ESPALDA)" id="{{ NOMBRE_ESPALDA }}">
           <a class="selector-color"></a>
           <ul class="dropdown mt-2">
-            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor($event, NOMBRE_ESPALDA)">
+            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor(NOMBRE_ESPALDA)">
               <a></a>
             </li>
           </ul>
@@ -86,7 +82,7 @@
         <li class="selector" (click)="desplegarColores(NUMERO_ESPALDA)" id="{{ NUMERO_ESPALDA }}">
           <a class="selector-color"></a>
           <ul class="dropdown mt-2">
-            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor($event, NUMERO_ESPALDA)">
+            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor(NUMERO_ESPALDA)">
               <a></a>
             </li>
           </ul>

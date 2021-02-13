@@ -1,4 +1,4 @@
-import {Component, forwardRef, OnInit} from '@angular/core';
+import {Component, forwardRef, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
@@ -13,10 +13,10 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     },
   ],
 })
-export class ColorPickerComponent implements OnInit, ControlValueAccessor {
-  colors = ["#7489ff", "#43d65d", "#d65943", "#d643a7"];
-  selectedColor = "";
+export class ColorPickerComponent implements OnInit, ControlValueAccessor,OnChanges {
 
+  @Input() selectedColor: any;
+  @Input() colors: any;
   private _onChange: any;
   private _onTouch: any;
   private _isDisabled: boolean;
@@ -25,9 +25,17 @@ export class ColorPickerComponent implements OnInit, ControlValueAccessor {
     return this._isDisabled;
   }
 
-  constructor() {}
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  ngOnChanges(changeRecord: SimpleChanges): void {
+    if (changeRecord.selectedColor && changeRecord.selectedColor.currentValue) {
+    }
+  }
+
 
   colorClicked(color: string) {
     this.selectedColor = color;
@@ -38,12 +46,15 @@ export class ColorPickerComponent implements OnInit, ControlValueAccessor {
   writeValue(obj: any): void {
     this.selectedColor = obj;
   }
+
   registerOnChange(fn: any): void {
     this._onChange = fn;
   }
+
   registerOnTouched(fn: any): void {
     this._onTouch = fn;
   }
+
   setDisabledState?(isDisabled: boolean): void {
     this._isDisabled = isDisabled;
   }

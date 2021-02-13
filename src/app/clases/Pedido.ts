@@ -8,7 +8,7 @@ export interface Pedido {
   agregarMedias?:boolean;
 
   //COLORES
-  coloresModelo?:[ {color?: null}];
+  coloresModelo?: any;
 
   cuelloCamiseta?:string;
   escudo?: string;

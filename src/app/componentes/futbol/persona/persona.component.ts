@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
+import {coloresParte} from "../../../clases/ColorParte";
 
 @Component({
   selector: 'app-persona',
@@ -16,11 +17,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 })
 export class PersonaComponent implements OnInit {
 
-  DERECHA = 180;
-  IZQUIERDA = 400;
-  CENTRO = 290;
-  NUMERO_DELANTERO = "NUMERO_DELANTERO";
-  ESCUDO_DELANTERO = "ESCUDO_DELANTERO";
+  ESCUDO_DELANTERO = "Escudo_remera";
   modelo: any;
   short: any;
   ocultarModelo = true;
@@ -99,33 +96,47 @@ export class PersonaComponent implements OnInit {
     } else {
       estampado = estampado.getElementsByTagName('text').namedItem('numero');
     }
-    if(posicion.posicion == posicion.posicionOcupada){
+    let svgMatrix = null;
+    if (posicion.posicion == posicion.posicionOcupada) {
       switch (posicion.posicionOcupada) {
         case 'Centro':
-          estampado.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
+          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
+          this.cambiarMatrix(estampado, svgMatrix);
           break;
         case 'Derecha':
-          estampado.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
+          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
+          this.cambiarMatrix(estampado, svgMatrix)
           break;
         case 'Izquierda':
-          estampado.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
+          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
+          this.cambiarMatrix(estampado, svgMatrix);
           break;
       }
-    }
-    else{
+    } else {
       switch (posicion.posicion) {
         case 'Centro':
-          estampado.transform.baseVal.getItem('matrix').matrix.e = this.CENTRO;
+          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
+          this.cambiarMatrix(estampado, svgMatrix)
           break;
         case 'Derecha':
-          estampado.transform.baseVal.getItem('matrix').matrix.e = this.DERECHA;
+          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
+          this.cambiarMatrix(estampado, svgMatrix)
           break;
         case 'Izquierda':
-          estampado.transform.baseVal.getItem('matrix').matrix.e = this.IZQUIERDA;
+          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
+          this.cambiarMatrix(estampado, svgMatrix)
           break;
       }
     }
+  }
 
+  cambiarMatrix(estampado, ubicacion) {
+    estampado.transform.baseVal.getItem('matrix').matrix.a = ubicacion[0];
+    estampado.transform.baseVal.getItem('matrix').matrix.b = ubicacion[1];
+    estampado.transform.baseVal.getItem('matrix').matrix.c = ubicacion[2];
+    estampado.transform.baseVal.getItem('matrix').matrix.d = ubicacion[3];
+    estampado.transform.baseVal.getItem('matrix').matrix.e = ubicacion[4];
+    estampado.transform.baseVal.getItem('matrix').matrix.f = ubicacion[5];
   }
 
   estamparEscudo(escudo) {
@@ -145,7 +156,7 @@ export class PersonaComponent implements OnInit {
           h: img.height
         };
         let relacionAspecto = imgSize.w / imgSize.h;
-        let ancho = 100;
+        let ancho = 710; //ANCHO DE IMAGEN ORIGINAL-
         let alto = ancho / relacionAspecto;
 
         estampado.firstElementChild.setAttribute('height', alto.toString() + 'px');

@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
 import {ModeloComponent} from "./modelo/modelo.component";
 import {SvgService} from "../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
+import {coloresParte} from "../../clases/ColorParte";
 
 @Component({
   selector: 'app-wizard',
@@ -122,13 +123,13 @@ export class WizardComponent implements OnInit {
   }
 
   cambiarColor(cambiar) {
-    if(cambiar.esEstampa){
+    if (cambiar.esEstampa) {
       this.personaComponent.cambiarColorEstampa(cambiar);
     }
     this.personaComponent.cambiarColorParte(cambiar);
   }
 
-  visualizarEstampado(visualizar){
+  visualizarEstampado(visualizar) {
     this.personaComponent.visualizarEstampado(visualizar);
   }
 
@@ -198,31 +199,47 @@ export class WizardComponent implements OnInit {
   generarFormColorIndumentaria() {
     let gruposColor = this.obtenerGruposColor();
     let formColor = [];
+
     for (let i = 0; i < gruposColor.length; i++) {
+      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: []}
       if (this.perteneceIndumentaria(gruposColor[i])) {
-        let parteColor = {
-          idParte: gruposColor[i],
-          color: undefined,
+        if (this.esGrupoShort(gruposColor[i])) {
+          if (this.pedido.agregarShort) {
+            parteColor.idParte = gruposColor[i];
+          }
+        } else {
+          parteColor.idParte = gruposColor[i];
         }
-        formColor.push(parteColor);
+        if (parteColor.idParte) {
+          let parteColores = coloresParte.find(x => x.idParte == parteColor.idParte);
+          if (parteColores) {
+            parteColor.colores = parteColores.colores;
+            parteColor.nombreMostrar = parteColores.nombreMostrar;
+            formColor.push(parteColor);
+          }
+        }
       }
     }
-    if(this.pedido.coloresModelo){
+    if (this.pedido.coloresModelo) {
       for (let i = 0; i < formColor.length; i++) {
-        formColor[i].color = this.pedido.coloresModelo[i].color;
+        formColor[i].colorSeleccionado = this.pedido.coloresModelo[i].colorSeleccionado;
       }
     }
     this.formColor = formColor;
   }
 
   perteneceIndumentaria(grupoColor) {
-    return grupoColor != 'NOMBRE' &&
-      grupoColor != 'NUMERO_ESPALDA' &&
-      grupoColor != 'NUMERO_DELANTERO' &&
+    return grupoColor != 'Nombre' &&
+      grupoColor != 'Número espalda' &&
+      grupoColor != 'Número delantero' &&
       grupoColor != 'ESCUDO_REMERA' &&
-      grupoColor != 'NUMERO_SHORT' &&
+      grupoColor != 'Short número' &&
       grupoColor != 'ESCUDO_SHORT' &&
       !grupoColor.includes("GENERICO");
+  }
+
+  esGrupoShort(grupoColor) {
+    return grupoColor.includes("Short");
   }
 
   obtenerGruposColor() {
