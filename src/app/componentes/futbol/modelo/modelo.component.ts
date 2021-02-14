@@ -22,7 +22,7 @@ import {camisetaModelos} from "../../../clases/CamisetaModelo";
 export class ModeloComponent implements OnInit, OnChanges {
 
   formPasoModelo: FormGroup = new FormGroup({
-    agregarShort: new FormControl(null, ),
+    agregarShort: new FormControl(null),
     agregarMedias: new FormControl(null),
     modelo: new FormControl(null,[Validators.required])
   });

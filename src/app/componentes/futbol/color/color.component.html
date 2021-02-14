@@ -1,21 +1,21 @@
 <form [formGroup]="formPasoColor">
-<div formArrayName="partesArray" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="form-group row ml-md-2">
-  <div [formGroupName]="i" class="row">
-    <div class="col-md-7 col-4">
-      <label>{{parteColor.value.nombreMostrar}}: </label>
-    </div>
-    <div class="col-md-5 col-4">
-      <ul>
-        <li class="selector" (click)="desplegarColores(parteColor.value.idParte)" id="{{ parteColor.value.idParte }}">
-          <a class="selector-color"></a>
-          <ul class="dropdown mt-2">
-            <app-color-picker formControlName="colorSeleccionado" [selectedColor]="parteColor.value.colorSeleccionado" [colors]="parteColor.value.colores"  (click)="cambiarColor(parteColor.value.colorSeleccionado, parteColor.value.idParte)"></app-color-picker>
-          </ul>
-        </li>
-      </ul>
+  <div formArrayName="partesArray" *ngFor="let parteColor of formPartesArrayControl.controls; index as i"
+       class="form-group row ml-md-2">
+    <div [formGroupName]="i" class="row">
+      <div class="col-md-8 col-6">
+        <label>{{parteColor.value.nombreMostrar}}: </label>
+      </div>
+      <div class="col-md-4 col-6">
+        <ngx-colors ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="parteColor.value.colores"
+                    [hideColorPicker]="true"
+                    [hideTextInput]="true"
+                    (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></ngx-colors>
+      </div>
+<!--      <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">-->
+<!--        <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>-->
+<!--      </div>-->
     </div>
   </div>
-</div>
   <div class="row justify-content-center">
     <div class="col-4 text-right">
       <a class="btn btn-atras" (click)="anterior()">Atrás</a>

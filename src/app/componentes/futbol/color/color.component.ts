@@ -12,6 +12,7 @@ export class ColorComponent implements OnInit, OnChanges {
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   @Output() colorSeleccionado = new EventEmitter();
+  public show = false;
   submit: boolean = false;
   partesColor: [{
     idParte: any,
@@ -47,11 +48,10 @@ export class ColorComponent implements OnInit, OnChanges {
           idParte: new FormControl(formColor[i].idParte),
           nombreMostrar: new FormControl(formColor[i].nombreMostrar),
           colores: new FormControl(formColor[i].colores),
-          colorSeleccionado: new FormControl(formColor[i].colorSeleccionado ? formColor[i].colorSeleccionado : null,)
+          color: new FormControl(formColor[i].color ? formColor[i].color : null)
         });
         this.formPartesArrayControl.push(color);
       }
-      console.log(this.formPartesArrayControl.value);
     }
   }
 
@@ -60,13 +60,14 @@ export class ColorComponent implements OnInit, OnChanges {
       color: color,
       parte: parte,
     }
-    this.colorSeleccionado.emit(cambio);
-    (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
+    if (color && parte) {
+      this.colorSeleccionado.emit(cambio);
+    }
+    // (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
   }
 
   siguiente() {
     this.submit = true;
-    console.log(this.formPasoColor);
     if (this.formPasoColor.valid) {
       this.proximoPaso.emit(this.formPasoColor.value);
     }
@@ -76,7 +77,4 @@ export class ColorComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit(this.formPasoColor.value);
   }
 
-  desplegarColores(idParte) {
-    document.getElementById(idParte).querySelector('.dropdown').classList.toggle('desplegado');
-  }
 }

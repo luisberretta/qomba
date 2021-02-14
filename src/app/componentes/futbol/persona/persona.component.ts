@@ -131,12 +131,14 @@ export class PersonaComponent implements OnInit {
   }
 
   cambiarMatrix(estampado, ubicacion) {
-    estampado.transform.baseVal.getItem('matrix').matrix.a = ubicacion[0];
-    estampado.transform.baseVal.getItem('matrix').matrix.b = ubicacion[1];
-    estampado.transform.baseVal.getItem('matrix').matrix.c = ubicacion[2];
-    estampado.transform.baseVal.getItem('matrix').matrix.d = ubicacion[3];
-    estampado.transform.baseVal.getItem('matrix').matrix.e = ubicacion[4];
-    estampado.transform.baseVal.getItem('matrix').matrix.f = ubicacion[5];
+    if (ubicacion) {
+      estampado.transform.baseVal.getItem('matrix').matrix.a = ubicacion[0];
+      estampado.transform.baseVal.getItem('matrix').matrix.b = ubicacion[1];
+      estampado.transform.baseVal.getItem('matrix').matrix.c = ubicacion[2];
+      estampado.transform.baseVal.getItem('matrix').matrix.d = ubicacion[3];
+      estampado.transform.baseVal.getItem('matrix').matrix.e = ubicacion[4];
+      estampado.transform.baseVal.getItem('matrix').matrix.f = ubicacion[5];
+    }
   }
 
   estamparEscudo(escudo) {

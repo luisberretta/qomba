@@ -1,5 +1,5 @@
-import {Component, forwardRef, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import {Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {FormGroup, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
   selector: 'app-color-picker',
@@ -13,49 +13,41 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
     },
   ],
 })
-export class ColorPickerComponent implements OnInit, ControlValueAccessor,OnChanges {
-
-  @Input() selectedColor: any;
-  @Input() colors: any;
-  private _onChange: any;
-  private _onTouch: any;
-  private _isDisabled: boolean;
-
-  public get isDisabled(): boolean {
-    return this._isDisabled;
-  }
+export class ColorPickerComponent implements OnInit, OnChanges {
+  @Input() formColor: FormGroup;
+  @Input() index: number;
+  @Input() colorSeleccionado: any;
+  @Input() heading: string;
+  @Input() color: string;
+  @Output() cambiarColor: EventEmitter<string> = new EventEmitter<string>();
+  @Input() colores: any;
+  public show = false;
 
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+  }
+
+  /**
+   * Change color from default colors
+   * @param {string} color
+   */
+  public changeColor(color: string): void {
+    this.color = color;
+    this.cambiarColor.emit(this.color);
+    this.show = false;
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
-    if (changeRecord.selectedColor && changeRecord.selectedColor.currentValue) {
+    if (changeRecord.colorSeleccionado && changeRecord.colorSeleccionado.currentValue) {
+      this.color = changeRecord.colorSeleccionado.currentValue;
     }
   }
 
-
-  colorClicked(color: string) {
-    this.selectedColor = color;
-    this._onChange(this.selectedColor);
-    this._onTouch(true);
+  public toggleColors(): void {
+    this.show = !this.show;
   }
 
-  writeValue(obj: any): void {
-    this.selectedColor = obj;
-  }
 
-  registerOnChange(fn: any): void {
-    this._onChange = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this._onTouch = fn;
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-    this._isDisabled = isDisabled;
-  }
 }
