@@ -12,6 +12,7 @@ export interface Pedido {
 
   //CAMISETA
   llevaEscudoDelantero?: boolean;
+  escudoDelantero?: any;
   posicionEscudoDelantero?: string;
   llevaNumeroDelantero?: boolean;
   posicionNumeroDelantero?: boolean;
@@ -21,15 +22,16 @@ export interface Pedido {
   llevaNumeroEspalda?: boolean;
   colorNumeroEspalda?: string;
 
-  cuelloCamiseta?:string;
-  escudo?: string;
-  posicionEscudo?:string;
-  calidadEscudo?:string;
-
   //SHORT
-
-  llevaEscudoShort?: boolean;
-  llevaNroShort?:boolean;
+  agregarEscudoShort?: boolean;
+  agregarNumeroShort?:boolean;
+  tipoLetra?:string;
+  sponsorDelantero?: boolean;
+  posicionSponsorDelantero?: string;
+  sponsorTrasero?: boolean;
+  posicionSponsorTrasero?: string;
+  sponsorManga?: boolean;
+  posicionSponsorManga?: string;
 
   //NUMERO
   llevaNombreCamiseta?: boolean;

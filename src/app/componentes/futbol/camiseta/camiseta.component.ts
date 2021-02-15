@@ -130,6 +130,7 @@ export class CamisetaComponent implements OnInit,OnChanges {
 
   generarFormulario(formCamiseta) {
     this.formPasoCamiseta.get('llevaEscudoDelantero').setValue(formCamiseta.llevaEscudoDelantero ?? null);
+    this.formPasoCamiseta.get('escudoDelantero').setValue(formCamiseta.llevaEscudoDelantero?? null);
     this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(formCamiseta.posicionEscudoDelantero ?? null);
     this.formPasoCamiseta.get('llevaNumeroDelantero').setValue(formCamiseta.llevaNumeroDelantero ?? null);
     this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(formCamiseta.posicionNumeroDelantero ?? null);
