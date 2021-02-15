@@ -35,7 +35,6 @@
                 [hideColorPicker]="true"
                 [hideTextInput]="true"
                 (change)="cambiarColor(NUMERO_DELANTERO,formPasoCamiseta.get('colorNumeroDelantero').value)" formControlName="colorNumeroDelantero"></ngx-colors>
-    <!--    </div>-->
     <div class="col-4">
       <select class="form-control" formControlName="posicionNumeroDelantero"
               [attr.disabled]="!formPasoCamiseta.controls['llevaNumeroDelantero'].value?true : null">

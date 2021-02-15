@@ -14,10 +14,10 @@
           </div>
           <input type="image" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="modelo"/>
         </div>
-        <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
-          <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Seleccione un modelo</div>
-        </div>
       </div>
+    </div>
+    <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
+      <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Seleccione un modelo</div>
     </div>
     <div class="text-center">
       <div *ngFor="let seccion of secciones" class="bullet" (click)="scroll(seccion.id)" [ngClass]="seccion.seleccionada ? 'seleccionada' : ''"></div>

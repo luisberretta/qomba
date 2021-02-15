@@ -19,6 +19,7 @@ export class ColorComponent implements OnInit, OnChanges {
     colores: []
   }];
   desplegado: boolean = false;
+  selectedColor: string = 'black';
 
   formPasoColor: FormGroup = new FormGroup({
     partesArray: new FormArray([]),
@@ -56,6 +57,7 @@ export class ColorComponent implements OnInit, OnChanges {
   }
 
   cambiarColor(color, parte) {
+    this.selectedColor = color;
     let cambio = {
       color: color,
       parte: parte,

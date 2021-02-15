@@ -112,10 +112,15 @@
     z-index: 3;
     margin-left: 0.5rem;
     &.seleccionada {
-      background-color: #ededef;
+      background-color: #bebebe;
     }
   }
 }
+
+input[type='image']:focus {
+  outline: none;
+}
+
 
 @media screen and (min-width: 990px) and (max-width: 1199px) {
   .scroller-modelos {

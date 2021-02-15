@@ -61,14 +61,14 @@ export const camisetaModelos = [
     urlsSvg: ['premium3-frente.svg', 'premium3-dorso.svg'],
     seleccionado: false,
   },
-  {
-    id: 1,
-    nombre: 'Bassic',
-    url: '/assets/images/basicas/basica1.png',
-    urlsSvg: ['basica1-frente.svg', 'basica1-dorso.svg'],
-    precio: 100,
-    seleccionado: false,
-  },
+  // {
+  //   id: 1,
+  //   nombre: 'Bassic',
+  //   url: '/assets/images/basicas/basica1.png',
+  //   urlsSvg: ['basica1-frente.svg', 'basica1-dorso.svg'],
+  //   precio: 100,
+  //   seleccionado: false,
+  // },
   {
     id: 2,
     nombre: 'Juve',
