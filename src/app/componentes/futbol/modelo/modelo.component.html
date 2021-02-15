@@ -7,7 +7,7 @@
   </div>
   <div class="contenedor-modelos mt-3">
     <div class="scroller-modelos">
-      <div class="scroller-hijo {{ camiseta.id }}" *ngFor="let camiseta of camisetaModelos">
+      <div class="scroller-hijo" *ngFor="let camiseta of camisetaModelos" id="modelo-{{ camiseta.id }}">
         <div class="contenedor-modelo" [ngClass]="camiseta.seleccionado ? 'seleccionado' : ''">
           <div class="zoom" (click)="aumentarZoom(camiseta)">
             <i class="fas fa-camera"></i>

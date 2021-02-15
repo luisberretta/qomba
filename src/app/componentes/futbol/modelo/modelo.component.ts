@@ -44,6 +44,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   @ViewChild('template', { static: true }) modalTemplate;
   secciones: any[];
   seleccionada: boolean = false;
+  seccionActual: any;
 
   constructor(private modalService: NgbModal) {
   }
@@ -114,17 +115,16 @@ export class ModeloComponent implements OnInit, OnChanges {
 
 
   scroll(seccion) {
+    this.seccionActual = seccion;
     for (let i = 0; i < this.secciones.length; i++) {
       this.secciones[i].seleccionada = seccion == this.secciones[i].id;
     }
+
     let scrollerHijo = document.getElementsByClassName('scroller-hijo');
-    console.log(seccion * 3);
-    if(seccion == 1) {
-      scrollerHijo[0].scrollIntoView(true);
-    } else if(seccion >= (this.camisetaModelos.length)/4) {
-      scrollerHijo[scrollerHijo.length - 1].scrollIntoView(true);
+    if(seccion == (this.secciones.length - 1)) {
+      scrollerHijo[(seccion * 4) - 1].scrollIntoView({ block: 'end' });
     } else {
-      scrollerHijo[seccion * 3].scrollIntoView(true);
+      scrollerHijo[seccion * 4].scrollIntoView({ block: 'end' });
     }
   }
 
@@ -132,7 +132,7 @@ export class ModeloComponent implements OnInit, OnChanges {
     const cantidad = Math.ceil(this.camisetaModelos.length / 4);
     this.secciones = [];
     for (let i = 0; i < cantidad; i++) {
-      this.secciones.push({ 'id': i+1, 'seleccionada': false });
+      this.secciones.push({ 'id': i, 'seleccionada': false });
     }
     this.secciones[0].seleccionada = true;
     return this.secciones;
