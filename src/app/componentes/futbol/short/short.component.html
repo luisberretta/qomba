@@ -1,26 +1,34 @@
 <form [formGroup]="formPasoShort">
 
   <div class="row form-group">
-    <div class="col-md-6 col-6">
+    <div class="col-md-4 col-4">
       <label class="switch">
-        <input [attr.disabled]="agregarShort? true: null" class="form-check-input" formControlName="agregarNumeroShort"
+        <input [attr.disabled]="!agregarShort? true: null" class="form-check-input" formControlName="agregarNumeroShort"
                type="checkbox" id="agregar-numero-short">
         <span class="slider round"></span>
       </label>
-      <label [attr.disabled]="agregarShort? true: null" class="form-check-label" for="agregar-numero-short">Número en
+      <label [attr.disabled]="!agregarShort? true: null" class="form-check-label" for="agregar-numero-short">Número en
         short</label>
     </div>
-    <div class="col-md-6 col-6">
+    <div class="col-md-4 col-4">
       <label class="switch">
-        <input class="form-check-input" formControlName="agregarEscudoShort" type="checkbox" id="agregar-escudo-short">
+        <input [attr.disabled]="!agregarShort? true: null" class="form-check-input" formControlName="agregarEscudoShort" type="checkbox" id="agregar-escudo-short">
         <span class="slider round"></span>
       </label>
-      <label class="form-check-label" for="agregar-escudo-short">Escudo en short</label>
+      <label [attr.disabled]="!agregarShort? true: null" class="form-check-label" for="agregar-escudo-short">Escudo en short</label>
+    </div>
+    <div class="col-md-4 col-4">
+      <div class="pl-0">
+        <a class="btn btn-secondary" (click)="archivo()"
+           [attr.disabled]="(!agregarShort || agregarEscudoDelantero)? true: null">Subir escudo</a>
+        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
+               [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
+      </div>
     </div>
   </div>
   <div class="row form-group">
     <div class="col-md-12">
-      <select [attr.disabled]="" class="form-control" formControlName="tipoLetra">
+      <select class="form-control" formControlName="tipoLetra">
         <option [ngValue]="null" selected disabled>Tipo de letra</option>
         <option *ngFor="let tipoLetra of tiposLetra" [ngValue]="tipoLetra">{{ tipoLetra }}</option>
       </select>

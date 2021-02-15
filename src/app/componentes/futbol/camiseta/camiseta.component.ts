@@ -139,7 +139,6 @@ export class CamisetaComponent implements OnInit,OnChanges {
     this.formPasoCamiseta.get('colorNombreEspalda').setValue(formCamiseta.colorNombreEspalda ?? null);
     this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(formCamiseta.llevaNumeroEspalda ?? null);
     this.formPasoCamiseta.get('colorNumeroEspalda').setValue(formCamiseta.colorNumeroEspalda ?? null);
-    console.log(this.formPasoCamiseta.value);
   }
 
 
@@ -163,6 +162,7 @@ export class CamisetaComponent implements OnInit,OnChanges {
 
   siguiente() {
     this.submit = true;
+    console.log(this.formPasoCamiseta.value);
     if (this.formPasoCamiseta.valid) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
     }
@@ -179,7 +179,6 @@ export class CamisetaComponent implements OnInit,OnChanges {
       esEstampa: true,
     }
     this.colorSeleccionado.emit(cambio);
-    // (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
   }
 
 }

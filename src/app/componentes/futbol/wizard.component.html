@@ -25,7 +25,7 @@
             <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo"></app-modelo>
             <app-color *ngSwitchCase="'color'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]="formColor"></app-color>
             <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta"></app-camiseta>
-            <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
+            <app-short *ngSwitchCase="'short'" (anteriorPaso)="anterior($event)" [formShort]="formShort" (visualizarEstampado)="visualizarEstampado($event)" (proximoPaso)="siguiente($event)" (llevaShort)="llevaShort($event)"></app-short>
             <app-numero *ngSwitchCase="'numero'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formNumero]="formNumero" [posicionEscudoCamiseta]="posicionEscudoCamiseta"></app-numero>
             <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
             <app-checkout *ngSwitchCase="'checkout'" (anteriorPaso)="anterior($event)" (finalizarPasos)="generarPedido($event)" [formCheckOut]="formCheckOut"></app-checkout>

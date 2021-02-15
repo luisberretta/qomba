@@ -1,10 +1,8 @@
 import {
   Component, ElementRef,
   Input,
-  OnChanges,
   OnInit,
-  Renderer2,
-  SimpleChanges, ViewChild,
+  Renderer2, ViewChild,
 } from '@angular/core';
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
@@ -141,11 +139,11 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-  estamparEscudo(escudo) {
+  estamparEscudo(escudo,estampadoEscudo) {
     let reader = new FileReader();
     reader.readAsDataURL(escudo);
     let grupos = this.obtenerGrupos();
-    let estampado = grupos.namedItem(this.ESCUDO_DELANTERO);
+    let estampadoGrupo = grupos.namedItem(estampadoEscudo);
     reader.onload = (_event) => {
       this.imgUrl = reader.result;
       let img = new Image();
@@ -161,10 +159,10 @@ export class PersonaComponent implements OnInit {
         let ancho = 710; //ANCHO DE IMAGEN ORIGINAL-
         let alto = ancho / relacionAspecto;
 
-        estampado.firstElementChild.setAttribute('height', alto.toString() + 'px');
-        estampado.firstElementChild.setAttribute('width', ancho.toString() + 'px');
+        estampadoGrupo.firstElementChild.setAttribute('height', alto.toString() + 'px');
+        estampadoGrupo.firstElementChild.setAttribute('width', ancho.toString() + 'px');
       };
-      estampado.firstElementChild.setAttribute('xlink:href', this.imgUrl);
+      estampadoGrupo.firstElementChild.setAttribute('xlink:href', this.imgUrl);
     }
   }
 

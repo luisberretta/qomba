@@ -63,7 +63,6 @@ export class ColorComponent implements OnInit, OnChanges {
     if (color && parte) {
       this.colorSeleccionado.emit(cambio);
     }
-    // (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
   }
 
   siguiente() {

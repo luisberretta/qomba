@@ -17,6 +17,9 @@ import {coloresParte} from "../../clases/ColorParte";
 })
 export class WizardComponent implements OnInit {
 
+  ESCUDO_DELANTERO = "Escudo_remera";
+  ESCUDO_SHORT = "Short_escudo"
+
   paso: string = 'modelo';
   numeroPaso: number = 1;
   url: string = '/assets/images/';
@@ -149,6 +152,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoModelo(formModelo) {
+    console.log(formModelo);
     this.pedido.modelo = formModelo.modelo;
     this.pedido.agregarShort = formModelo.agregarShort;
     this.pedido.agregarMedias = formModelo.agregarMedias;
@@ -263,11 +267,11 @@ export class WizardComponent implements OnInit {
 
   perteneceIndumentaria(grupoColor) {
     return grupoColor != 'Nombre' &&
-      grupoColor != 'Número espalda' &&
-      grupoColor != 'Número delantero' &&
-      grupoColor != 'ESCUDO_REMERA' &&
+      grupoColor != 'Número_espalda' &&
+      grupoColor != 'Número_delantero' &&
+      grupoColor != 'Escudo_remera' &&
       grupoColor != 'Short número' &&
-      grupoColor != 'ESCUDO_SHORT' &&
+      grupoColor != 'Short_escudo' &&
       !grupoColor.includes("GENERICO");
   }
 
@@ -291,6 +295,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarFormCamiseta() {
+    console.log("ESCUDO DELANTERO:" + this.pedido.llevaEscudoDelantero);
     this.formCamiseta = {
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
@@ -306,6 +311,7 @@ export class WizardComponent implements OnInit {
 
   generarFormShort() {
     this.formShort = {
+      llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
       agregarEscudoShort: this.pedido.agregarEscudoShort,
       agregarNumeroShort: this.pedido.agregarNumeroShort,
@@ -363,7 +369,9 @@ export class WizardComponent implements OnInit {
   }
 
   archivoEscudo(escudo) {
-    this.personaComponent.estamparEscudo(escudo);
+    this.personaComponent.estamparEscudo(escudo,this.ESCUDO_DELANTERO);
+    if(this.pedido.agregarShort)
+      this.personaComponent.estamparEscudo(escudo,this.ESCUDO_SHORT);
   }
 
 
