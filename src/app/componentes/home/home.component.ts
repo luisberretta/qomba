@@ -8,13 +8,10 @@ import {SvgService} from "../../servicios/svg.service";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private svgService: SvgService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-    this.svgService.obtenerSVGlogo().subscribe((data) => {
-      console.log(data.toString())
-    })
   }
 
 }

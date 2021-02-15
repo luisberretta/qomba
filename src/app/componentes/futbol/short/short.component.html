@@ -1,30 +1,97 @@
 <form [formGroup]="formPasoShort">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-11">
-      <div class="form-group">
-        <label class="switch">
-          <input class="form-check-input" formControlName="llevaShort" type="checkbox" id="llevaShort" (change)="activarCampos()">
-          <span class="slider round"></span>
-        </label>
-        <label class="form-check-label" for="llevaShort">¿Vas a agregar short para tu equipo?</label>
-      </div>
-      <div *ngIf="activo" class="mt-2">
-        <div class="form-group mt-2">
-          <label class="switch">
-            <input class="form-check-input" formControlName="llevaEscudoShort" type="checkbox" value="" id="lleva-escudo">
-            <span class="slider round"></span>
-          </label>
-          <label class="form-check-label" for="lleva-escudo">¿Vas a agregarle escudo al short?</label>
-        </div>
-      </div>
-      <div class="row justify-content-center mt-3">
-        <div class="col-4 text-right">
-          <a class="btn btn-atras" (click)="anterior()">Atrás</a>
-        </div>
-        <div class="col-4">
-          <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
-        </div>
-      </div>
+
+  <div class="row form-group">
+    <div class="col-md-6 col-6">
+      <label class="switch">
+        <input [attr.disabled]="agregarShort? true: null" class="form-check-input" formControlName="agregarNumeroShort"
+               type="checkbox" id="agregar-numero-short">
+        <span class="slider round"></span>
+      </label>
+      <label [attr.disabled]="agregarShort? true: null" class="form-check-label" for="agregar-numero-short">Número en
+        short</label>
+    </div>
+    <div class="col-md-6 col-6">
+      <label class="switch">
+        <input class="form-check-input" formControlName="agregarEscudoShort" type="checkbox" id="agregar-escudo-short">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="agregar-escudo-short">Escudo en short</label>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-12">
+      <select [attr.disabled]="" class="form-control" formControlName="tipoLetra">
+        <option [ngValue]="null" selected disabled>Tipo de letra</option>
+        <option *ngFor="let tipoLetra of tiposLetra" [ngValue]="tipoLetra">{{ tipoLetra }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-6 align-self-center">
+      <label class="switch">
+        <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorDelantero" type="checkbox"
+               id="lleva-sponsor-delantero">
+        <span class="slider round"></span>
+      </label>
+      <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-delantero">Sponsor delantero</label>
+    </div>
+    <div class="pl-0">
+      <a [attr.disabled]="true" class="btn btn-secondary" (click)="archivo()">Subir</a>
+      <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+    </div>
+    <div class="col-4">
+      <select [attr.disabled]="true" class="form-control" formControlName="posicionSponsorDelantero">
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicioneSponsorDelantero" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-6 align-self-center">
+      <label class="switch">
+        <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorTrasero" type="checkbox"
+               id="lleva-sponsor-trasero">
+        <span class="slider round"></span>
+      </label>
+      <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-trasero">Sponsor trasero</label>
+    </div>
+    <div class="pl-0">
+      <a class="btn btn-secondary" (click)="archivo()">Subir</a>
+      <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+    </div>
+    <div class="col-4">
+      <select [attr.disabled]="true" class="form-control" formControlName="posicionSponsorTrasero">
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicioneSponsorTrasero" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-6 align-self-center">
+      <label class="switch">
+        <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorManga" type="checkbox"
+               id="lleva-sponsor-manga">
+        <span class="slider round"></span>
+      </label>
+      <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-manga">Sponsor mangas</label>
+    </div>
+    <div class="pl-0">
+      <a class="btn btn-secondary" (click)="archivo()">Subir</a>
+      <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+    </div>
+    <div class="col-4">
+      <select [attr.disabled]="true" class="form-control" formControlName="posicionSponsorManga">
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicionesSponsorManga" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-3">
+    <div class="col-4 text-right">
+      <a class="btn btn-atras" (click)="anterior()">Atrás</a>
+    </div>
+    <div class="col-4">
+      <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
     </div>
   </div>
 </form>

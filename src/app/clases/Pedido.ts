@@ -2,23 +2,36 @@ import {DetalleEquipo} from "./DetalleEquipo";
 
 export interface Pedido {
 
-  //CAMISETA
+  //MODELO
   modelo?:any;
   agregarShort?: boolean;
   agregarMedias?:boolean;
 
   //COLORES
-  coloresModelo?:[ {color?: null}];
+  coloresModelo?: any;
 
-  cuelloCamiseta?:string;
-  escudo?: string;
-  posicionEscudo?:string;
-  calidadEscudo?:string;
+  //CAMISETA
+  llevaEscudoDelantero?: boolean;
+  escudoDelantero?: any;
+  posicionEscudoDelantero?: string;
+  llevaNumeroDelantero?: boolean;
+  posicionNumeroDelantero?: boolean;
+  colorNumeroDelantero?: string;
+  llevaNombreEspalda?: boolean;
+  colorNombreEspalda?: string;
+  llevaNumeroEspalda?: boolean;
+  colorNumeroEspalda?: string;
 
   //SHORT
-
-  llevaEscudoShort?: boolean;
-  llevaNroShort?:boolean;
+  agregarEscudoShort?: boolean;
+  agregarNumeroShort?:boolean;
+  tipoLetra?:string;
+  sponsorDelantero?: boolean;
+  posicionSponsorDelantero?: string;
+  sponsorTrasero?: boolean;
+  posicionSponsorTrasero?: string;
+  sponsorManga?: boolean;
+  posicionSponsorManga?: string;
 
   //NUMERO
   llevaNombreCamiseta?: boolean;

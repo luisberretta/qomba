@@ -7,7 +7,7 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
-  SimpleChanges, AfterViewInit
+  SimpleChanges
 } from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -53,9 +53,8 @@ export class ModeloComponent implements OnInit, OnChanges {
     this.initCamisetas();
     this.obtenerCantidadSecciones();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
-      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlsSvg);
+      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlSvg);
     });
-
   }
 
   initCamisetas() {
@@ -70,10 +69,15 @@ export class ModeloComponent implements OnInit, OnChanges {
     }
   }
 
+  get modeloFormulario(){
+    return this.formPasoModelo.get('modelo').value;
+  }
+
   generarFormulario(formModelo) {
     this.formPasoModelo.get('agregarShort').setValue(formModelo.agregarShort);
     this.formPasoModelo.get('agregarMedias').setValue(formModelo.agregarMedias);
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
+    this.modeloElegido(this.formPasoModelo.get('modelo').value.id);
   }
 
   abrirModal() {

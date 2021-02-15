@@ -12,7 +12,10 @@
           <div class="zoom" (click)="aumentarZoom(camiseta)">
             <i class="fas fa-camera"></i>
           </div>
-          <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="modelo"/>
+          <input type="image" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="modelo"/>
+        </div>
+        <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
+          <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Seleccione un modelo</div>
         </div>
       </div>
     </div>

@@ -2,17 +2,21 @@
   <div class="row form-group">
     <div class="col-6 align-self-center">
       <label class="switch">
-        <input class="form-check-input" formControlName="llevaEscudoDelantero" type="checkbox" id="lleva-escudo-delantero">
+        <input class="form-check-input" formControlName="llevaEscudoDelantero" type="checkbox"
+               id="lleva-escudo-delantero">
         <span class="slider round"></span>
       </label>
       <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
     </div>
     <div class="pl-0">
-      <a class="btn btn-secondary" (click)="archivo()" [attr.disabled]="formPasoCamiseta.controls['llevaEscudoDelantero'].value">Subir</a>
-      <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+      <a class="btn btn-secondary" (click)="archivo()"
+         [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">Subir</a>
+      <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
+             [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">
     </div>
     <div class="col-4">
-      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="formPasoCamiseta.controls['llevaEscudoDelantero'].value" (change)="cambiarPosicionEscudo()">-->
+      <select class="form-control" formControlName="posicionEscudoDelantero"
+              [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
       </select>
@@ -21,25 +25,20 @@
   <div class="row form-group">
     <div class="col-6 align-self-center">
       <label class="switch">
-        <input class="form-check-input" formControlName="llevaNumeroDelantero" type="checkbox" id="lleva-numero-delantero">
+        <input class="form-check-input" formControlName="llevaNumeroDelantero" type="checkbox"
+               id="lleva-numero-delantero">
         <span class="slider round"></span>
       </label>
       <label class="form-check-label" for="lleva-numero-delantero">Número Delantero</label>
     </div>
-<!--    <div [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value">-->
-      <ul>
-        <li class="selector" (click)="desplegarColores(NUMERO_DELANTERO)" id="{{ NUMERO_DELANTERO }}">
-          <a class="selector-color"></a>
-          <ul class="dropdown mt-2">
-            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor($event, NUMERO_DELANTERO)">
-              <a></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-<!--    </div>-->
+    <ngx-colors *ngIf="formPasoCamiseta.controls['llevaNumeroDelantero'].value" ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="coloresNumeroDelantero"
+                [hideColorPicker]="true"
+                [hideTextInput]="true"
+                (change)="cambiarColor(NUMERO_DELANTERO,formPasoCamiseta.get('colorNumeroDelantero').value)" formControlName="colorNumeroDelantero"></ngx-colors>
+    <!--    </div>-->
     <div class="col-4">
-      <select class="form-control" formControlName="posicionNumeroDelantero" [attr.disabled]="formPasoCamiseta.controls['llevaNumeroDelantero'].value" (change)="cambiarPosicionNumeroDelantero()">-->
+      <select class="form-control" formControlName="posicionNumeroDelantero"
+              [attr.disabled]="!formPasoCamiseta.controls['llevaNumeroDelantero'].value?true : null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
       </select>
@@ -53,17 +52,11 @@
       </label>
       <label class="form-check-label" for="lleva-nombre-espalda">Nombre en espalda</label>
     </div>
-    <div  [attr.disabled]="formPasoCamiseta.controls['llevaNombreEspalda'].value">
-      <ul class="col m-auto">
-        <li class="selector" (click)="desplegarColores(NOMBRE_ESPALDA)" id="{{ NOMBRE_ESPALDA }}">
-          <a class="selector-color"></a>
-          <ul class="dropdown mt-2">
-            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor($event, NOMBRE_ESPALDA)">
-              <a></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <div>
+      <ngx-colors *ngIf="formPasoCamiseta.controls['llevaNombreEspalda'].value" ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="coloresNombre"
+                  [hideColorPicker]="true"
+                  [hideTextInput]="true"
+                  (change)="cambiarColor(NOMBRE_ESPALDA,formPasoCamiseta.get('colorNombreEspalda').value)" formControlName="colorNombreEspalda"></ngx-colors>
     </div>
   </div>
   <div class="row form-group">
@@ -74,17 +67,11 @@
       </label>
       <label class="form-check-label" for="lleva-numero-espalda">Número en espalda</label>
     </div>
-    <div [attr.disabled]="formPasoCamiseta.controls['llevaNumeroEspalda'].value">
-      <ul class="col m-auto">
-        <li class="selector" (click)="desplegarColores(NUMERO_ESPALDA)" id="{{ NUMERO_ESPALDA }}">
-          <a class="selector-color"></a>
-          <ul class="dropdown mt-2">
-            <li *ngFor="let color of listadoColores" class="{{ color }}" (click)="cambiarColor($event, NUMERO_ESPALDA)">
-              <a></a>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <div >
+      <ngx-colors *ngIf="formPasoCamiseta.controls['llevaNumeroEspalda'].value" ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="coloresNumeroEspalda"
+                  [hideColorPicker]="true"
+                  [hideTextInput]="true"
+                  (change)="cambiarColor(NUMERO_ESPALDA,formPasoCamiseta.get('colorNumeroEspalda').value)" formControlName="colorNumeroEspalda"></ngx-colors>
     </div>
   </div>
   <div class="row justify-content-center mt-3">

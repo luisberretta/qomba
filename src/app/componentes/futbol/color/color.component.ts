@@ -12,15 +12,13 @@ export class ColorComponent implements OnInit, OnChanges {
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   @Output() colorSeleccionado = new EventEmitter();
+  public show = false;
   submit: boolean = false;
   partesColor: [{
     idParte: any,
     colores: []
   }];
   desplegado: boolean = false;
-  listadoColores = [
-    'red', 'yellow', 'green', 'blue', 'black'
-  ]
 
   formPasoColor: FormGroup = new FormGroup({
     partesArray: new FormArray([]),
@@ -48,20 +46,24 @@ export class ColorComponent implements OnInit, OnChanges {
       for (let i = 0; i < formColor.length; i++) {
         let color = new FormGroup({
           idParte: new FormControl(formColor[i].idParte),
-          color: new FormControl(formColor[i].color? formColor[i].color: null, [Validators.required])
+          nombreMostrar: new FormControl(formColor[i].nombreMostrar),
+          colores: new FormControl(formColor[i].colores),
+          color: new FormControl(formColor[i].color ? formColor[i].color : null)
         });
         this.formPartesArrayControl.push(color);
       }
     }
   }
 
-  cambiarColor(color,parte){
+  cambiarColor(color, parte) {
     let cambio = {
       color: color,
       parte: parte,
     }
-    this.colorSeleccionado.emit(cambio);
-    (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
+    if (color && parte) {
+      this.colorSeleccionado.emit(cambio);
+    }
+    // (<HTMLElement>document.getElementById(parte).querySelector('.selector-color')).style.backgroundColor = color;
   }
 
   siguiente() {
@@ -75,7 +77,4 @@ export class ColorComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit(this.formPasoColor.value);
   }
 
-  desplegarColores(idParte) {
-    document.getElementById(idParte).querySelector('.dropdown').classList.toggle('desplegado');
-  }
 }

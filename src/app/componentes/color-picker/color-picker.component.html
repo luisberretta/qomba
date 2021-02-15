@@ -1,0 +1,10 @@
+<div class="color-picker">
+    <input formControlName="colorSeleccionado" type="button" class="circle" [ngStyle]="{'background': color}"
+           (click)="toggleColors()">
+    <div *ngIf="show" class="opened">
+      <div class="colors">
+        <div (click)="changeColor(paint)" *ngFor="let paint of colores" class="circle"
+             [ngStyle]="{'background': paint}"></div>
+      </div>
+    </div>
+</div>
