@@ -24,13 +24,18 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() anteriorPaso = new EventEmitter();
   @Output() colorShort = new EventEmitter();
   @ViewChild('archivoEscudo') fileInput: ElementRef;
+  @Output() visualizarEstampado = new EventEmitter();
 
   tiposLetra = ['Mundial Sudáfrica', 'Otro Tipo', 'Otro Tipo 2'];
   posicionesSponsorManga = ['Derecha', 'Centro', 'Izquierda'];
-    posicioneSponsorTrasero = ['Derecha', 'Centro', 'Izquierda'];
-      posicioneSponsorDelantero = ['Derecha', 'Centro', 'Izquierda'];
+  posicioneSponsorTrasero = ['Derecha', 'Centro', 'Izquierda'];
+  posicioneSponsorDelantero = ['Derecha', 'Centro', 'Izquierda'];
+
+  ESCUDO_SHORT = "Short_escudo";
+  NUMERO_SHORT = "Short_número";
   formPasoShort: FormGroup = new FormGroup({
     agregarShort: new FormControl(''),
+    agregarEscudoDelantero: new FormControl(''),
     agregarEscudoShort: new FormControl(''),
     agregarNumeroShort: new FormControl(''),
     tipoLetra: new FormControl(''),
@@ -49,10 +54,27 @@ export class ShortComponent implements OnInit, OnChanges {
   @Input() formShort;
   @Output() llevaShort = new EventEmitter();
 
+  visualizar = {
+    valor: null,
+    parte: null,
+    posicionOcupada: null,
+    posicion: null
+  }
+
   constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
+    this.formPasoShort.get('agregarEscudoShort').valueChanges.subscribe((valor) => {
+      this.visualizar.valor = valor;
+      this.visualizar.parte = this.ESCUDO_SHORT;
+      this.visualizarEstampado.emit(this.visualizar);
+    });
+    this.formPasoShort.get('agregarNumeroShort').valueChanges.subscribe((valor) => {
+      this.visualizar.valor = valor;
+      this.visualizar.parte = this.NUMERO_SHORT;
+      this.visualizarEstampado.emit(this.visualizar);
+    });
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
@@ -72,6 +94,7 @@ export class ShortComponent implements OnInit, OnChanges {
 
   generarFormulario(formShort) {
     this.formPasoShort.get('agregarShort').setValue(formShort.agregarShort ?? null);
+    this.formPasoShort.get('agregarEscudoDelantero').setValue(formShort.llevaEscudoDelantero ?? null);
     this.formPasoShort.get('agregarEscudoShort').setValue(formShort.agregarEscudoShort ?? null);
     this.formPasoShort.get('agregarNumeroShort').setValue(formShort.agregarNumeroShort ?? null);
     this.formPasoShort.get('tipoLetra').setValue(formShort.tipoLetra ?? null);
@@ -83,6 +106,11 @@ export class ShortComponent implements OnInit, OnChanges {
 
   get agregarShort() {
     return this.formPasoShort.get('agregarShort').value;
+  }
+
+  get agregarEscudoDelantero(){
+    console.log(this.formPasoShort.get('agregarEscudoDelantero').value);
+    return this.formPasoShort.get('agregarEscudoDelantero').value;
   }
 
   open(content) {
