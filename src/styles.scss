@@ -192,9 +192,6 @@ input.form-control, select.form-control {
     &[disabled] + .slider {
       opacity: 0.5;
     }
-    //&.disabled + .slider {
-    //  opacity: 0.5;
-    //}
   }
   .slider {
     position: absolute;
