@@ -19,7 +19,7 @@
     </div>
     <div class="col-md-4 col-4">
       <div class="pl-0">
-        <a class="btn btn-secondary" (click)="archivo()"
+        <a class="btn btn-subir" (click)="archivo()"
            [attr.disabled]="(!agregarShort || agregarEscudoDelantero)? true: null">Subir escudo</a>
         <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
                [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
