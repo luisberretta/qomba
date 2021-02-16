@@ -3,8 +3,12 @@
   cursor: pointer;
 }
 
+.scroll-mobile {
+  overflow-x: auto;
+}
+
 .tabla-equipo {
-  max-height: 435px;
+  max-height: 450px;
   .titulos {
     background-color: #eeeeee;
     padding-top: 8px;

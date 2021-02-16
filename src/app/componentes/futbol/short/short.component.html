@@ -1,4 +1,4 @@
-<form [formGroup]="formPasoShort">
+<form [formGroup]="formPasoShort" class="ml-2">
 
   <div class="row form-group">
     <div class="col-md-6 col-6">
@@ -19,9 +19,12 @@
     </div>
   </div>
   <div class="row form-group">
-    <div class="col-md-12">
+    <div class="col-md-4 col-4 align-self-center">
+      <label>Tipo de letra: </label>
+    </div>
+    <div class="col-md-8 col-5">
       <select [attr.disabled]="" class="form-control" formControlName="tipoLetra">
-        <option [ngValue]="null" selected disabled>Tipo de letra</option>
+        <option [ngValue]="null" selected disabled>Seleccione</option>
         <option *ngFor="let tipoLetra of tiposLetra" [ngValue]="tipoLetra">{{ tipoLetra }}</option>
       </select>
     </div>
@@ -36,7 +39,7 @@
       <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-delantero">Sponsor delantero</label>
     </div>
     <div class="pl-0">
-      <a [attr.disabled]="true" class="btn btn-secondary" (click)="archivo()">Subir</a>
+      <a [attr.disabled]="true" class="btn btn-subir" (click)="archivo()">Subir</a>
       <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
     </div>
     <div class="col-4">
@@ -56,7 +59,7 @@
       <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-trasero">Sponsor trasero</label>
     </div>
     <div class="pl-0">
-      <a class="btn btn-secondary" (click)="archivo()">Subir</a>
+      <a [attr.disabled]="true" class="btn btn-subir" (click)="archivo()">Subir</a>
       <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
     </div>
     <div class="col-4">
@@ -76,7 +79,7 @@
       <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-manga">Sponsor mangas</label>
     </div>
     <div class="pl-0">
-      <a class="btn btn-secondary" (click)="archivo()">Subir</a>
+      <a [attr.disabled]="true" class="btn btn-subir" (click)="archivo()">Subir</a>
       <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
     </div>
     <div class="col-4">

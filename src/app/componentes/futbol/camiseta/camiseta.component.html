@@ -1,4 +1,4 @@
-<form [formGroup]="formPasoCamiseta" class="ml-md-2">
+<form [formGroup]="formPasoCamiseta" class="ml-2">
   <div class="row form-group">
     <div class="col-6 align-self-center">
       <label class="switch">
@@ -9,7 +9,7 @@
       <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
     </div>
     <div class="pl-0">
-      <a class="btn btn-secondary" (click)="archivo()"
+      <a class="btn btn-subir" (click)="archivo()"
          [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">Subir</a>
       <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
              [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">
@@ -31,10 +31,14 @@
       </label>
       <label class="form-check-label" for="lleva-numero-delantero">Número Delantero</label>
     </div>
-    <ngx-colors *ngIf="formPasoCamiseta.controls['llevaNumeroDelantero'].value" ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="coloresNumeroDelantero"
-                [hideColorPicker]="true"
-                [hideTextInput]="true"
-                (change)="cambiarColor(NUMERO_DELANTERO,formPasoCamiseta.get('colorNumeroDelantero').value)" formControlName="colorNumeroDelantero"></ngx-colors>
+    <div *ngIf="formPasoCamiseta.controls['llevaNumeroDelantero'].value" class="cuadro-color">
+      <div ngx-colors-trigger #colorPickerNroDelantero [palette]="coloresNumeroDelantero"
+                  [hideColorPicker]="true"
+                  [hideTextInput]="true"
+                  [style.background]="formPasoCamiseta.get('colorNumeroDelantero').value ? formPasoCamiseta.get('colorNumeroDelantero').value : 'black'"
+                  (change)="cambiarColor(NUMERO_DELANTERO, formPasoCamiseta.get('colorNumeroDelantero').value)" formControlName="colorNumeroDelantero"></div>
+      <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroDelantero.click()"></i>
+    </div>
     <div class="col-4">
       <select class="form-control" formControlName="posicionNumeroDelantero"
               [attr.disabled]="!formPasoCamiseta.controls['llevaNumeroDelantero'].value?true : null">
@@ -51,12 +55,14 @@
       </label>
       <label class="form-check-label" for="lleva-nombre-espalda">Nombre en espalda</label>
     </div>
-    <div>
-      <ngx-colors *ngIf="formPasoCamiseta.controls['llevaNombreEspalda'].value" ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="coloresNombre"
-                  [hideColorPicker]="true"
-                  [hideTextInput]="true"
-                  (change)="cambiarColor(NOMBRE_ESPALDA,formPasoCamiseta.get('colorNombreEspalda').value)" formControlName="colorNombreEspalda"></ngx-colors>
-    </div>
+      <div *ngIf="formPasoCamiseta.controls['llevaNombreEspalda'].value" class="cuadro-color">
+        <div #colorPickerNombreEspalda ngx-colors-trigger [palette]="coloresNombre"
+                    [hideColorPicker]="true"
+                    [hideTextInput]="true"
+                    [style.background]="formPasoCamiseta.get('colorNombreEspalda').value ? formPasoCamiseta.get('colorNombreEspalda').value : 'black'"
+                    (change)="cambiarColor(NOMBRE_ESPALDA,formPasoCamiseta.get('colorNombreEspalda').value)" formControlName="colorNombreEspalda"></div>
+        <i class="fas fa-sort-down fa-lg" (click)="colorPickerNombreEspalda.click()"></i>
+      </div>
   </div>
   <div class="row form-group">
     <div class="col-6 align-self-center">
@@ -66,11 +72,13 @@
       </label>
       <label class="form-check-label" for="lleva-numero-espalda">Número en espalda</label>
     </div>
-    <div >
-      <ngx-colors *ngIf="formPasoCamiseta.controls['llevaNumeroEspalda'].value" ngx-colors-trigger style="display: inline-block; margin:5px;" [palette]="coloresNumeroEspalda"
+    <div *ngIf="formPasoCamiseta.controls['llevaNumeroEspalda'].value" class="cuadro-color">
+      <div ngx-colors-trigger #colorPickerNroEspalda [palette]="coloresNumeroEspalda"
                   [hideColorPicker]="true"
                   [hideTextInput]="true"
-                  (change)="cambiarColor(NUMERO_ESPALDA,formPasoCamiseta.get('colorNumeroEspalda').value)" formControlName="colorNumeroEspalda"></ngx-colors>
+                  [style.background]="formPasoCamiseta.get('colorNumeroEspalda').value ? formPasoCamiseta.get('colorNumeroEspalda').value : 'black'"
+                  (change)="cambiarColor(NUMERO_ESPALDA,formPasoCamiseta.get('colorNumeroEspalda').value)" formControlName="colorNumeroEspalda"></div>
+      <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
     </div>
   </div>
   <div class="row justify-content-center mt-3">

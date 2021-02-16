@@ -32,7 +32,7 @@
   </div>
   <div class="form-group">
     <label class="switch">
-      <input class="form-check-input disabled" formControlName="agregarMedias" type="checkbox" id="agregar-medias" disabled>
+      <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias" [attr.disabled]="true">
       <span class="slider round"></span>
     </label>
     <label class="form-check-label" for="agregar-medias">Agregar medias</label>
