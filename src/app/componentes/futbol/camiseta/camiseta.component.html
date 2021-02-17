@@ -10,16 +10,22 @@
     </div>
     <div class="pl-0">
       <a class="btn btn-subir" (click)="archivo()"
-         [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">Subir</a>
-      <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
-             [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">
+         [attr.disabled]="!llevaEscudoDelantero? true: null">Subir</a>
+      <input type="file" formControlName="escudoDelantero" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
+             [attr.disabled]="!llevaEscudoDelantero? true: null">
+    </div>
+    <div *ngIf="submit && formPasoCamiseta.controls['escudoDelantero'].errors" class="invalid-feedback">
+      <div *ngIf="formPasoCamiseta.controls['escudoDelantero'].errors.required">La imagen es requerida.</div>
     </div>
     <div class="col-4">
       <select class="form-control" formControlName="posicionEscudoDelantero"
-              [attr.disabled]="!formPasoCamiseta.controls['llevaEscudoDelantero'].value? true: null">
+              [attr.disabled]="!llevaEscudoDelantero? true: null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
       </select>
+    </div>
+    <div *ngIf="submit && formPasoCamiseta.controls['posicionEscudoDelantero'].errors" class="invalid-feedback">
+      <div *ngIf="formPasoCamiseta.controls['posicionEscudoDelantero'].errors.required">La posición es requerida.</div>
     </div>
   </div>
   <div class="row form-group">
@@ -38,6 +44,9 @@
                   [style.background]="formPasoCamiseta.get('colorNumeroDelantero').value ? formPasoCamiseta.get('colorNumeroDelantero').value : 'black'"
                   (change)="cambiarColor(NUMERO_DELANTERO, formPasoCamiseta.get('colorNumeroDelantero').value)" formControlName="colorNumeroDelantero"></div>
       <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroDelantero.click()"></i>
+      <div *ngIf="submit && formPasoCamiseta.controls['colorNumeroDelantero'].errors" class="invalid-feedback">
+        <div *ngIf="formPasoCamiseta.controls['colorNumeroDelantero'].errors.required">El color es requerido.</div>
+      </div>
     </div>
     <div class="col-4">
       <select class="form-control" formControlName="posicionNumeroDelantero"
@@ -45,6 +54,9 @@
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
       </select>
+      <div *ngIf="submit && formPasoCamiseta.controls['posicionNumeroDelantero'].errors" class="invalid-feedback">
+        <div *ngIf="formPasoCamiseta.controls['posicionNumeroDelantero'].errors.required">La posición es requerida.</div>
+      </div>
     </div>
   </div>
   <div class="row form-group">
@@ -63,6 +75,9 @@
                     (change)="cambiarColor(NOMBRE_ESPALDA,formPasoCamiseta.get('colorNombreEspalda').value)" formControlName="colorNombreEspalda"></div>
         <i class="fas fa-sort-down fa-lg" (click)="colorPickerNombreEspalda.click()"></i>
       </div>
+    <div *ngIf="submit && formPasoCamiseta.controls['colorNombreEspalda'].errors" class="invalid-feedback">
+      <div *ngIf="formPasoCamiseta.controls['colorNombreEspalda'].errors.required">El color es requerido.</div>
+    </div>
   </div>
   <div class="row form-group">
     <div class="col-6 align-self-center">
@@ -79,6 +94,9 @@
                   [style.background]="formPasoCamiseta.get('colorNumeroEspalda').value ? formPasoCamiseta.get('colorNumeroEspalda').value : 'black'"
                   (change)="cambiarColor(NUMERO_ESPALDA,formPasoCamiseta.get('colorNumeroEspalda').value)" formControlName="colorNumeroEspalda"></div>
       <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
+    </div>
+    <div *ngIf="submit && formPasoCamiseta.controls['colorNumeroEspalda'].errors" class="invalid-feedback">
+      <div *ngIf="formPasoCamiseta.controls['colorNumeroEspalda'].errors.required">El color es requerido.</div>
     </div>
   </div>
   <div class="row justify-content-center mt-3">

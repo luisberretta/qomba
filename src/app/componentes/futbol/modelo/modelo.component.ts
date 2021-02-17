@@ -44,7 +44,6 @@ export class ModeloComponent implements OnInit, OnChanges {
   @ViewChild('template', { static: true }) modalTemplate;
   secciones: any[];
   seleccionada: boolean = false;
-  seccionActual: any;
 
   constructor(private modalService: NgbModal) {
   }
@@ -52,6 +51,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.initCamisetas();
     this.obtenerCantidadSecciones();
+    this.visualizarModelosInicio();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
       this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlSvg);
     });
@@ -67,10 +67,6 @@ export class ModeloComponent implements OnInit, OnChanges {
     if (changeRecord.formModelo && changeRecord.formModelo.currentValue) {
       this.generarFormulario(changeRecord.formModelo.currentValue);
     }
-  }
-
-  get modeloFormulario(){
-    return this.formPasoModelo.get('modelo').value;
   }
 
   generarFormulario(formModelo) {
@@ -119,16 +115,11 @@ export class ModeloComponent implements OnInit, OnChanges {
 
 
   scroll(seccion) {
-    this.seccionActual = seccion;
     for (let i = 0; i < this.secciones.length; i++) {
       this.secciones[i].seleccionada = seccion == this.secciones[i].id;
     }
-
-    let scrollerHijo = document.getElementsByClassName('scroller-hijo');
-    if(seccion == (this.secciones.length - 1)) {
-      scrollerHijo[(seccion * 4) - 1].scrollIntoView({ block: 'end' });
-    } else {
-      scrollerHijo[seccion * 4].scrollIntoView({ block: 'end' });
+    for (let i = 0; i < this.camisetaModelos.length; i++) {
+      this.camisetaModelos[i].visible = (i >= seccion*4) && i< ((seccion+1)*4);
     }
   }
 
@@ -140,5 +131,11 @@ export class ModeloComponent implements OnInit, OnChanges {
     }
     this.secciones[0].seleccionada = true;
     return this.secciones;
+  }
+
+  visualizarModelosInicio(){
+    for (let i = 0; i < 4; i++) {
+      this.camisetaModelos[i].visible = true;
+    }
   }
 }

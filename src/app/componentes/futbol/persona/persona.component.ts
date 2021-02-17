@@ -95,36 +95,19 @@ export class PersonaComponent implements OnInit {
       estampado = estampado.getElementsByTagName('text').namedItem('numero');
     }
     let svgMatrix = null;
-    if (posicion.posicion == posicion.posicionOcupada) {
-      switch (posicion.posicionOcupada) {
-        case 'Centro':
-          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
-          this.cambiarMatrix(estampado, svgMatrix);
-          break;
-        case 'Derecha':
-          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
-          this.cambiarMatrix(estampado, svgMatrix)
-          break;
-        case 'Izquierda':
-          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
-          this.cambiarMatrix(estampado, svgMatrix);
-          break;
-      }
-    } else {
-      switch (posicion.posicion) {
-        case 'Centro':
-          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
-          this.cambiarMatrix(estampado, svgMatrix)
-          break;
-        case 'Derecha':
-          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
-          this.cambiarMatrix(estampado, svgMatrix)
-          break;
-        case 'Izquierda':
-          svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
-          this.cambiarMatrix(estampado, svgMatrix)
-          break;
-      }
+    switch (posicion.posicion) {
+      case 'Centro':
+        svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
+        this.cambiarMatrix(estampado, svgMatrix)
+        break;
+      case 'Derecha':
+        svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
+        this.cambiarMatrix(estampado, svgMatrix)
+        break;
+      case 'Izquierda':
+        svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
+        this.cambiarMatrix(estampado, svgMatrix)
+        break;
     }
   }
 
@@ -139,7 +122,7 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-  estamparEscudo(escudo,estampadoEscudo) {
+  estamparEscudo(escudo, estampadoEscudo) {
     let reader = new FileReader();
     reader.readAsDataURL(escudo);
     let grupos = this.obtenerGrupos();
