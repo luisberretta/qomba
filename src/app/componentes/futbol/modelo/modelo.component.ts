@@ -83,9 +83,9 @@ export class ModeloComponent implements OnInit, OnChanges {
   modeloElegido(id) {
     this.seleccionoModelo = true;
     for (let i = 0; i < this.camisetaModelos.length; i++) {
-      this.camisetaModelos[i].seleccionado = false;
+      this.camisetaModelos[i].seleccionada = false;
       if (id == this.camisetaModelos[i].id) {
-        this.camisetaModelos[i].seleccionado = true;
+        this.camisetaModelos[i].seleccionada = true;
         this.formPasoModelo.get('modelo').setValue(this.camisetaModelos[i]);
       }
     }

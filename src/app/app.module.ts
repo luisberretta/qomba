@@ -9,7 +9,7 @@ import { FooterComponent } from './componentes/layout/footer/footer.component';
 import { ModeloComponent } from './componentes/futbol/modelo/modelo.component';
 import { ColorComponent } from './componentes/futbol/color/color.component';
 import { CamisetaComponent } from './componentes/futbol/camiseta/camiseta.component';
-import { NumeroComponent } from './componentes/futbol/numero/numero.component';
+import { ResumenPrecioComponent } from './componentes/futbol/resumen-precio/resumen-precio.component';
 import { ShortComponent } from './componentes/futbol/short/short.component';
 import { EquipoComponent } from './componentes/futbol/equipo/equipo.component';
 import { CheckoutComponent } from './componentes/futbol/checkout/checkout.component';
@@ -32,7 +32,7 @@ import { ColorPickerComponent } from './componentes/color-picker/color-picker.co
     HeaderComponent,
     FooterComponent,
     ModeloComponent,
-    NumeroComponent,
+    ResumenPrecioComponent,
     ShortComponent,
     EquipoComponent,
     CheckoutComponent,

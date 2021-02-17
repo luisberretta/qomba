@@ -14,6 +14,8 @@ import {CamisetaComponent} from "./camiseta/camiseta.component";
 import {ShortComponent} from "./short/short.component";
 import {EquipoComponent} from "./equipo/equipo.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
+import {FormControl, Validators} from "@angular/forms";
+import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-wizard',
@@ -33,7 +35,7 @@ export class WizardComponent implements OnInit {
   formColor: any;
   formCamiseta: any;
   formShort: any;
-  formNumero: any;
+  formResumenPrecio: any;
   formEquipo: any;
   formCheckOut: any;
   short: boolean;
@@ -43,11 +45,11 @@ export class WizardComponent implements OnInit {
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
   @ViewChild(ModeloComponent) modeloComponent: ModeloComponent;
-  @ViewChild(ColorComponent) colorComponent: ModeloComponent;
-  @ViewChild(CamisetaComponent) camisetaComponent: ModeloComponent;
-  @ViewChild(ShortComponent) shortComponent: ModeloComponent;
-  @ViewChild(EquipoComponent) equipoComponet: ModeloComponent;
-  @ViewChild(CheckoutComponent) checkOutComponent: ModeloComponent;
+  @ViewChild(ColorComponent) colorComponent: ColorComponent;
+  @ViewChild(CamisetaComponent) camisetaComponent: CamisetaComponent;
+  @ViewChild(ShortComponent) shortComponent: ShortComponent;
+  @ViewChild(EquipoComponent) equipoComponet: EquipoComponent;
+  @ViewChild(CheckoutComponent) checkOutComponent: CheckoutComponent;
 
   constructor(private wizardService: WizardService, private modalService: NgbModal,
               private router: Router, private svgService: SvgService,
@@ -62,7 +64,7 @@ export class WizardComponent implements OnInit {
   siguiente(event?) {
     switch (this.numeroPaso) {
       case 1:
-        if(!event){
+        if (!event) {
           this.modeloComponent.siguiente();
           break;
         }
@@ -74,7 +76,7 @@ export class WizardComponent implements OnInit {
         this.personaComponent.visualizarModeloCompleto();
         break;
       case 2:
-        if(!event){
+        if (!event) {
           this.colorComponent.siguiente();
           break;
         }
@@ -85,7 +87,7 @@ export class WizardComponent implements OnInit {
         this.generarFormCamiseta();
         break;
       case 3:
-        if(!event){
+        if (!event) {
           this.camisetaComponent.siguiente();
           break;
         }
@@ -96,7 +98,7 @@ export class WizardComponent implements OnInit {
         this.generarFormShort();
         break;
       case 4:
-        if(!event){
+        if (!event) {
           this.shortComponent.siguiente();
           break;
         }
@@ -107,19 +109,20 @@ export class WizardComponent implements OnInit {
         this.generarFormEquipo();
         break;
       case 5:
-        if(!event){
+        if (!event) {
           this.equipoComponet.siguiente();
           break;
         }
         this.generarPedidoEquipo(event);
         this.paso = 'checkout';
         this.nombreMostrarPaso = 'Confirmación';
-        this.numeroPaso = 5;
+        this.numeroPaso = 6;
         this.generarFormCheckOut();
+        this.generarFormResumenPrecio();
         break;
       case 6:
-        if(!event){
-          this.checkOutComponent.siguiente();
+        if (!event) {
+          this.checkOutComponent.confirmar();
           break;
         }
         this.generarPedido(event);
@@ -131,6 +134,10 @@ export class WizardComponent implements OnInit {
   anterior(event?) {
     switch (this.numeroPaso) {
       case 2:
+        if (!event) {
+          this.colorComponent.anterior();
+          break;
+        }
         this.generarPedidoColor(event);
         this.numeroPaso = 1;
         this.paso = 'modelo';
@@ -139,6 +146,10 @@ export class WizardComponent implements OnInit {
         this.generarFormModelo();
         break;
       case 3:
+        if (!event) {
+          this.camisetaComponent.anterior();
+          break;
+        }
         this.generarPedidoCamiseta(event);
         this.numeroPaso = 2;
         this.paso = 'color';
@@ -146,6 +157,10 @@ export class WizardComponent implements OnInit {
         this.generarFormColorIndumentaria();
         break;
       case 4:
+        if (!event) {
+          this.shortComponent.anterior();
+          break;
+        }
         this.generarPedidoShort(event);
         this.numeroPaso = 3;
         this.paso = 'camiseta';
@@ -153,6 +168,10 @@ export class WizardComponent implements OnInit {
         this.generarFormCamiseta();
         break;
       case 5:
+        if (!event) {
+          this.equipoComponet.anterior();
+          break;
+        }
         this.generarPedidoEquipo(event);
         this.numeroPaso = 4;
         this.paso = 'short';
@@ -188,7 +207,6 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoModelo(formModelo) {
-    console.log(formModelo);
     this.pedido.modelo = formModelo.modelo;
     this.pedido.agregarShort = formModelo.agregarShort;
     this.pedido.agregarMedias = formModelo.agregarMedias;
@@ -234,6 +252,11 @@ export class WizardComponent implements OnInit {
 
   generarPedidoEquipo(event) {
     this.pedido.detalleEquipo = event.equipo;
+    this.pedido.nombreEquipo = event.nombreEquipo;
+    this.pedido.nombreContacto = event.nombreContacto;
+    this.pedido.telefonoContacto = event.telefonoContacto;
+    this.pedido.emailContacto = event.emailContacto;
+    this.pedido.cantidadEquipo = event.cantidadEquipo;
   }
 
   generarPedido(event) {
@@ -242,17 +265,14 @@ export class WizardComponent implements OnInit {
     let imagenes = this.personaComponent.generarImagenes();
     svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
       this.pedido.imagenes.push(this.convertirABase64(data));
-      svgAsPngUri(imagenes[1], "imagenes.png").then((data) => {
-        this.pedido.imagenes.push(this.convertirABase64(data));
-        // this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
-        this.wizardService.generarPedido(this.pedido).subscribe((data) => {
-          alert("Tu pedido fue realizado con éxito!");
-          this.router.navigate(['/']);
-          if (data) {
-            console.log("La operación se realizó con éxito.");
-          }
-        })
-      });
+      // this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
+      this.wizardService.generarPedido(this.pedido).subscribe((data) => {
+        alert("Tu pedido fue realizado con éxito!");
+        this.router.navigate(['/']);
+        if (data) {
+          console.log("La operación se realizó con éxito.");
+        }
+      })
     });
 
   }
@@ -293,9 +313,21 @@ export class WizardComponent implements OnInit {
         }
       }
     }
+
+    if (!this.pedido.agregarShort && this.pedido.coloresModelo) {
+      this.pedido.coloresModelo = this.pedido.coloresModelo.filter(x => !x.idParte.includes("Short"));
+    }
+
     if (this.pedido.coloresModelo) {
       for (let i = 0; i < formColor.length; i++) {
-        formColor[i].color = this.pedido.coloresModelo[i].color;
+        for (let j = 0; j < this.pedido.coloresModelo.length; j++) {
+          let indexColor = formColor.findIndex(x => x.idParte == this.pedido.coloresModelo[j].idParte);
+          if (indexColor) {
+            formColor[indexColor].color = this.pedido.coloresModelo[j].color;
+          } else {
+            formColor[i].color = null;
+          }
+        }
       }
     }
     this.formColor = formColor;
@@ -331,7 +363,6 @@ export class WizardComponent implements OnInit {
   }
 
   generarFormCamiseta() {
-    console.log("ESCUDO DELANTERO:" + this.pedido.llevaEscudoDelantero);
     this.formCamiseta = {
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
@@ -361,42 +392,33 @@ export class WizardComponent implements OnInit {
     };
   }
 
-  generarFormNumero() {
-    this.formNumero = {
-      llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
-      llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
-      llevaNumeroFrontalCamiseta: this.pedido.llevaNumeroFrontalCamiseta,
-      posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
-      // llevaShort: this.pedido.llevaShort,
-      llevaNumeroShort: this.pedido.llevaNumeroShort,
-      posicionNumeroShort: this.pedido.posicionNumeroShort,
-    }
-  }
-
   generarFormEquipo() {
     this.formEquipo = {
       llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
       llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
-      // llevaShort: this.pedido.llevaShort,
+      llevaShort: this.pedido.agregarShort,
       detalleEquipo: this.pedido.detalleEquipo,
+      nombreEquipo: this.pedido.nombreEquipo,
+      nombreContacto: this.pedido.nombreContacto,
+      telefonoContacto: this.pedido.telefonoContacto,
+      emailContacto: this.pedido.emailContacto,
+      cantidadEquipo: this.pedido.cantidadEquipo,
     }
   }
 
   generarFormCheckOut() {
     this.formCheckOut = {
-      // cuelloCamiseta: this.pedido.cuelloCamiseta,
-      // escudo: this.pedido.escudo,
-      // posicionEscudo: this.pedido.posicionEscudo,
-      // calidadEscudo: this.pedido.calidadEscudo,
-      // llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
-      // llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
-      // llevaNumeroFrontalCamiseta: this.pedido.llevaNumeroFrontalCamiseta,
-      // posicionNumeroCamiseta: this.pedido.posicionNumeroCamiseta,
-      // // llevaShort: this.pedido.llevaShort,
-      // llevaEscudoShort: this.pedido.llevaEscudoShort,
-      // llevaNumeroShort: this.pedido.llevaNumeroShort,
-      // posicionNumeroSort: this.pedido.posicionNumeroShort,
-      // detalleEquipo: this.pedido.detalleEquipo,
+      imagen: this.pedido.imagen,
+      email: this.pedido.email,
+    }
+  }
+
+  generarFormResumenPrecio(){
+    let formResumenPrecio = {
+      precioCamiseta: this.pedido.precioCamiseta,
+      precioShort: this.pedido.precioShort,
+      precioMedias: this.pedido.precioMedias,
+      precioConjunto: this.pedido.precioConjunto,
     }
   }
 
@@ -405,9 +427,9 @@ export class WizardComponent implements OnInit {
   }
 
   archivoEscudo(escudo) {
-    this.personaComponent.estamparEscudo(escudo,this.ESCUDO_DELANTERO);
-    if(this.pedido.agregarShort)
-      this.personaComponent.estamparEscudo(escudo,this.ESCUDO_SHORT);
+    this.personaComponent.estamparEscudo(escudo, this.ESCUDO_DELANTERO);
+    if (this.pedido.agregarShort)
+      this.personaComponent.estamparEscudo(escudo, this.ESCUDO_SHORT);
   }
 
   open(content) {
@@ -419,13 +441,12 @@ export class WizardComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  inicioDePagina(){
+  inicioDePagina() {
     window.scroll({
       top: 100,
       behavior: 'smooth'
     });
   }
-
 
 
 }

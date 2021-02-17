@@ -43,8 +43,18 @@ export interface Pedido {
 
   //EQUIPO
   detalleEquipo ?: DetalleEquipo[];
+  nombreEquipo? : string;
+  nombreContacto? : string;
+  telefonoContacto? : string;
+  emailContacto? : string;
+  cantidadEquipo? : number;
 
   //CHECKOUT
+  precioCamiseta?: string;
+  precioShort?: string;
+  precioMedias?: string;
+  precioConjunto?: string;
+  imagen?: string;
   email?: string;
   observaciones?: string;
 

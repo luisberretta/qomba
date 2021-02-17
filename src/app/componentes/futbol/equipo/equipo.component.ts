@@ -57,7 +57,12 @@ export class EquipoComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formEquipo) {
-    this.formPasoEquipo.controls['cantidadEquipo'].setValue(formEquipo.detalleEquipo.length);
+    this.formPasoEquipo.controls['nombreEquipo'].setValue(formEquipo.nombreEquipo);
+    this.formPasoEquipo.controls['nombreContacto'].setValue(formEquipo.nombreContacto);
+    this.formPasoEquipo.controls['cantidadEquipo'].setValue(formEquipo.detalleEquipo);
+    this.formPasoEquipo.controls['telefonoContacto'].setValue(formEquipo.telefonoContacto);
+    this.formPasoEquipo.controls['emailContacto'].setValue(formEquipo.emailContacto);
+    this.formPasoEquipo.controls['cantidadEquipo'].setValue(formEquipo.cantidadEquipo);
     for (let i = 0; i < formEquipo.detalleEquipo.length; i++) {
       if (this.formEquipoControl.value.length < formEquipo.detalleEquipo.length) {
         let jugador = new FormGroup({
@@ -79,10 +84,10 @@ export class EquipoComponent implements OnInit, OnChanges {
   crearArrayFormEquipo() {
     for (let i = 0; i < this.formPasoEquipo.controls.cantidadEquipo.value; i++) {
       let jugador = new FormGroup({
-        nombreCamiseta: new FormControl(null,),
+        nombreCamiseta: new FormControl(null),
         numero: new FormControl(null, [Validators.min(0), Validators.max(99)]),
         talleCamiseta: new FormControl(null, [Validators.required]),
-        talleShort: new FormControl(null,)
+        talleShort: new FormControl(null)
       });
       jugador = this.agregarValidadores(jugador);
       this.formEquipoControl.push(jugador);
@@ -100,7 +105,9 @@ export class EquipoComponent implements OnInit, OnChanges {
       jugador.controls.talleShort.setValidators([Validators.required]);
 
     }
-    // this.formPasoEquipo.controls.nombreCamiseta.updateValueAndValidity();
+    jugador.controls['nombreCamiseta'].updateValueAndValidity();
+    jugador.controls['numero'].updateValueAndValidity();
+    jugador.controls['talleShort'].updateValueAndValidity();
     return jugador;
   }
 

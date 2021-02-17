@@ -46,8 +46,8 @@
             </div>
             <div class="col" [formGroupName]="i">
               <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control" [attr.disabled]="!formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? true : null"/>
-              <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
-                <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Requerido.
+              <div *ngIf="submit && formEquipoControl.controls[i].get('resumen-precio').errors" class="invalid-feedback">
+                <div *ngIf="formEquipoControl.controls[i].get('resumen-precio').errors.required">Requerido.
                 </div>
               </div>
             </div>

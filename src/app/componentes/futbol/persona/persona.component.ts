@@ -152,8 +152,7 @@ export class PersonaComponent implements OnInit {
 
   generarImagenes(): any {
     let images: HTMLAllCollection[] = [];
-    images.push(this.camisetaFrente.nativeElement.children.namedItem('Layer_1'));
-    images.push(this.camisetaDorso.nativeElement.children.namedItem('Layer_1'));
+    images.push(this.camisetaFrente.nativeElement.children.namedItem('Capa_1'));
     return images;
   }
 

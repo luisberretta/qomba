@@ -25,6 +25,7 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() colorShort = new EventEmitter();
   @ViewChild('archivoEscudo') fileInput: ElementRef;
   @Output() visualizarEstampado = new EventEmitter();
+  @Output() archivoEscudo = new EventEmitter();
 
   tiposLetra = ['Mundial Sudáfrica', 'Otro Tipo', 'Otro Tipo 2'];
   posicionesSponsorManga = ['Derecha', 'Centro', 'Izquierda'];
@@ -37,6 +38,7 @@ export class ShortComponent implements OnInit, OnChanges {
     agregarShort: new FormControl(''),
     agregarEscudoDelantero: new FormControl(''),
     agregarEscudoShort: new FormControl(''),
+    escudoShort: new FormControl(''),
     agregarNumeroShort: new FormControl(''),
     tipoLetra: new FormControl(''),
     agregarSponsorDelantero: new FormControl(''),
@@ -109,7 +111,6 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   get agregarEscudoDelantero(){
-    console.log(this.formPasoShort.get('agregarEscudoDelantero').value);
     return this.formPasoShort.get('agregarEscudoDelantero').value;
   }
 
@@ -127,9 +128,9 @@ export class ShortComponent implements OnInit, OnChanges {
       let reader = new FileReader();
       reader.readAsDataURL(archivo);
       reader.onload = (_event) => {
-        this.formPasoShort.controls['escudoDelantero'].setValue(reader.result);
+        this.formPasoShort.controls['escudoShort'].setValue(reader.result);
       }
-      // this.archivoEscudo.emit(event.target.files[0]);
+       this.archivoEscudo.emit(event.target.files[0]);
     }
     // this.formPasoCamiseta.controls['posicionEscudo'].setValidators([Validators.required]);
     // this.formPasoCamiseta.controls['posicionEscudo'].updateValueAndValidity();

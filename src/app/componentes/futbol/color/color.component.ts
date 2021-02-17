@@ -12,7 +12,6 @@ export class ColorComponent implements OnInit, OnChanges {
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   @Output() colorSeleccionado = new EventEmitter();
-  public show = false;
   submit: boolean = false;
   partesColor: [{
     idParte: any,
