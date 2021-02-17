@@ -11,10 +11,13 @@
         <a [ngClass]="{ 'actual': paso == 'camiseta' }">3</a>
       </li>
       <li>
-        <a [ngClass]="{ 'actual': paso == 'equipo' }">4</a>
+        <a [ngClass]="{ 'actual': paso == 'short' }">4</a>
       </li>
       <li>
-        <a [ngClass]="{ 'actual': paso == 'checkout' }">5</a>
+        <a [ngClass]="{ 'actual': paso == 'equipo' }">5</a>
+      </li>
+      <li>
+        <a [ngClass]="{ 'actual': paso == 'checkout' }">6</a>
       </li>
     </ul>
     <fieldset class="mt-3">
@@ -35,7 +38,19 @@
           <app-persona  [paso]="paso" [llevaShort]="short" [escudo]="imagenEscudo" [posicionEscudoCamiseta]="posicionEscudoCamiseta"></app-persona>
         </div>
       </div>
+      <div class="row justify-content-center">
+        <div class="col-4 text-right" *ngIf="paso != 'modelo'">
+          <a class="btn btn-atras" (click)="anterior()">Atrás</a>
+        </div>
+        <div class="col-4" *ngIf="paso != 'checkout'">
+          <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
+        </div>
+        <div class="col-4" *ngIf="paso == 'checkout'">
+          <a class="btn btn-continuar" (click)="siguiente()">Confirmar</a>
+        </div>
+      </div>
     </fieldset>
+
   </div>
 </div>
 <ng-template #content>

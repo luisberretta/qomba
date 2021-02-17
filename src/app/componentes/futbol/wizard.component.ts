@@ -9,6 +9,11 @@ import {ModeloComponent} from "./modelo/modelo.component";
 import {SvgService} from "../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../clases/ColorParte";
+import {ColorComponent} from "./color/color.component";
+import {CamisetaComponent} from "./camiseta/camiseta.component";
+import {ShortComponent} from "./short/short.component";
+import {EquipoComponent} from "./equipo/equipo.component";
+import {CheckoutComponent} from "./checkout/checkout.component";
 
 @Component({
   selector: 'app-wizard',
@@ -37,7 +42,12 @@ export class WizardComponent implements OnInit {
   nombreMostrarPaso: string = 'Elegí tu Modelo';
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
-  @ViewChild(ModeloComponent) camisetaComponent: ModeloComponent;
+  @ViewChild(ModeloComponent) modeloComponent: ModeloComponent;
+  @ViewChild(ColorComponent) colorComponent: ModeloComponent;
+  @ViewChild(CamisetaComponent) camisetaComponent: ModeloComponent;
+  @ViewChild(ShortComponent) shortComponent: ModeloComponent;
+  @ViewChild(EquipoComponent) equipoComponet: ModeloComponent;
+  @ViewChild(CheckoutComponent) checkOutComponent: ModeloComponent;
 
   constructor(private wizardService: WizardService, private modalService: NgbModal,
               private router: Router, private svgService: SvgService,
@@ -49,9 +59,13 @@ export class WizardComponent implements OnInit {
 
   }
 
-  siguiente(event) {
+  siguiente(event?) {
     switch (this.numeroPaso) {
       case 1:
+        if(!event){
+          this.modeloComponent.siguiente();
+          break;
+        }
         this.generarPedidoModelo(event);
         this.paso = 'color';
         this.nombreMostrarPaso = 'Elige Colores';
@@ -60,6 +74,10 @@ export class WizardComponent implements OnInit {
         this.personaComponent.visualizarModeloCompleto();
         break;
       case 2:
+        if(!event){
+          this.colorComponent.siguiente();
+          break;
+        }
         this.generarPedidoColor(event);
         this.paso = 'camiseta';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
@@ -67,6 +85,10 @@ export class WizardComponent implements OnInit {
         this.generarFormCamiseta();
         break;
       case 3:
+        if(!event){
+          this.camisetaComponent.siguiente();
+          break;
+        }
         this.generarPedidoCamiseta(event);
         this.paso = 'short';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
@@ -74,13 +96,21 @@ export class WizardComponent implements OnInit {
         this.generarFormShort();
         break;
       case 4:
+        if(!event){
+          this.shortComponent.siguiente();
+          break;
+        }
         this.generarPedidoShort(event);
         this.paso = 'equipo';
         this.nombreMostrarPaso = 'Armá tu Equipo';
-        this.numeroPaso = 4;
+        this.numeroPaso = 5;
         this.generarFormEquipo();
         break;
       case 5:
+        if(!event){
+          this.equipoComponet.siguiente();
+          break;
+        }
         this.generarPedidoEquipo(event);
         this.paso = 'checkout';
         this.nombreMostrarPaso = 'Confirmación';
@@ -88,12 +118,17 @@ export class WizardComponent implements OnInit {
         this.generarFormCheckOut();
         break;
       case 6:
+        if(!event){
+          this.checkOutComponent.siguiente();
+          break;
+        }
         this.generarPedido(event);
         break;
     }
+    this.inicioDePagina();
   }
 
-  anterior(event) {
+  anterior(event?) {
     switch (this.numeroPaso) {
       case 2:
         this.generarPedidoColor(event);
@@ -120,7 +155,7 @@ export class WizardComponent implements OnInit {
       case 5:
         this.generarPedidoEquipo(event);
         this.numeroPaso = 4;
-        this.paso = 'equipo';
+        this.paso = 'short';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
         this.generarFormShort();
         break;
@@ -130,9 +165,10 @@ export class WizardComponent implements OnInit {
         this.nombreMostrarPaso = 'Armá tu Equipo';
         this.generarFormEquipo();
         break;
-
     }
+    this.inicioDePagina();
   }
+
 
   modeloSeleccionado(urlSvg) {
     this.svgService.obtenerSVG(this.url + urlSvg).subscribe((data) => {
@@ -374,11 +410,6 @@ export class WizardComponent implements OnInit {
       this.personaComponent.estamparEscudo(escudo,this.ESCUDO_SHORT);
   }
 
-
-  cambiarPosicionEscudo(event) {
-    this.posicionEscudoCamiseta = event;
-  }
-
   open(content) {
     this.modalService.open(content, {centered: true});
   }
@@ -387,4 +418,14 @@ export class WizardComponent implements OnInit {
     this.modalService.dismissAll();
     this.router.navigate(['/']);
   }
+
+  inicioDePagina(){
+    window.scroll({
+      top: 100,
+      behavior: 'smooth'
+    });
+  }
+
+
+
 }

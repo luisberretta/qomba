@@ -1,16 +1,45 @@
 <div class="row justify-content-center">
   <div class="col-md-11 col-12">
-    <div class="form-group">
-      <label>¿Tiene short?</label>
-      <input readonly class="form-control" value="{{formCheckOut.llevaShort ? 'SI' : 'NO' }}">
+    <div class="form-group row">
+      <div class="col-md-6 col-6">
+        <label>Modelo:</label>
+        <input readonly class="form-control" value="{{formCheckOut.modelo}}">
+      </div>
+      <div class="col-md-6 col-6">
+        <label>Equipo:</label>
+        <input readonly class="form-control" value="{{formCheckOut.nombreEquipo}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-6 col-6">
+        <label for="ID_HERE" class="toggle-switchy">
+          <input checked type="checkbox" id="ID_HERE">
+          <span class="toggle">
+		        <span class="switch"></span>
+	        </span>
+        </label>
+        <label>Short:</label>
+        <input id="bootswitch-text1" type="checkbox"
+               [attr.data-off-color]="formCheckOut.agregarShort? 'primary': 'warning'"
+               [attr.data-off-text]="formCheckOut.agregarShort">
+      </div>
+      <div class="col-md-6 col-6">
+        <label>Contacto:</label>
+        <input readonly class="form-control" value="{{formCheckOut.nombreContacto}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-6 col-6">
+        <label>Medias:</label>
+        <input id="bootswitch-text2" type="checkbox"
+               [attr.data-off-color]="formCheckOut.agregarMedias? 'primary': 'warning'"
+               [attr.data-off-text]="formCheckOut.agregarMedias">
+      </div>
+      <div class="col-md-6 col-6">
+        <label>Jugadores:</label>
+        <input type="number" readonly class="form-control" value="{{formCheckOut.cantidadJugadores}}">
+      </div>
     </div>
   </div>
 </div>
-<div class="row justify-content-center">
-  <div class="col-4 text-right">
-    <a class="btn btn-atras" (click)="anterior()">Atrás</a>
-  </div>
-  <div class="col-4">
-    <a class="btn btn-continuar" (click)="confirmar()">Confirmar</a>
-  </div>
-</div>
+
