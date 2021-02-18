@@ -42,16 +42,32 @@ export class ModeloComponent implements OnInit, OnChanges {
   modalRef: NgbModalRef;
   modalText: string;
   @ViewChild('template', { static: true }) modalTemplate;
-  secciones: any[];
   seleccionada: boolean = false;
+  slideConfig = {
+    "slidesToShow": 4,
+    "slidesToScroll": 4,
+    "arrows": false,
+    "rows": 1,
+    "dots": true,
+    "autoplay": false,
+    "adaptiveHeight": true,
+    "responsive": [
+      {
+        "breakpoint": 768,
+        "settings": {
+          "slidesToShow": 2,
+          "slidesToScroll": 2,
+          "rows": 2,
+        }
+      },
+    ]
+  };
 
   constructor(private modalService: NgbModal) {
   }
 
   ngOnInit(): void {
     this.initCamisetas();
-    this.obtenerCantidadSecciones();
-    this.visualizarModelosInicio();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
       this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlSvg);
     });
@@ -111,31 +127,5 @@ export class ModeloComponent implements OnInit, OnChanges {
   aumentarZoom(camiseta) {
     this.abrirModal();
     this.modalText = camiseta.url;
-  }
-
-
-  scroll(seccion) {
-    for (let i = 0; i < this.secciones.length; i++) {
-      this.secciones[i].seleccionada = seccion == this.secciones[i].id;
-    }
-    for (let i = 0; i < this.camisetaModelos.length; i++) {
-      this.camisetaModelos[i].visible = (i >= seccion*4) && i< ((seccion+1)*4);
-    }
-  }
-
-  obtenerCantidadSecciones() {
-    const cantidad = Math.ceil(this.camisetaModelos.length / 4);
-    this.secciones = [];
-    for (let i = 0; i < cantidad; i++) {
-      this.secciones.push({ 'id': i, 'seleccionada': false });
-    }
-    this.secciones[0].seleccionada = true;
-    return this.secciones;
-  }
-
-  visualizarModelosInicio(){
-    for (let i = 0; i < 4; i++) {
-      this.camisetaModelos[i].visible = true;
-    }
   }
 }

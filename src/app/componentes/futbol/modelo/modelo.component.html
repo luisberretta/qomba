@@ -5,24 +5,16 @@
       <a class="btn" (click)="modelosMujer()" [ngClass]="{ 'seleccionado': generoModelo == 'mujer' }">Mujer</a>
     </div>
   </div>
-  <div class="contenedor-modelos mt-3 d-inline-block">
-    <div class="scroller-modelos ml-1 d-inline-block" *ngFor="let camiseta of camisetaModelos">
-      <div class="scroller-hijo" *ngIf="camiseta.visible"  id="modelo-{{ camiseta.id }}">
-        <div  class="contenedor-modelo" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''">
-          <div class="zoom" (click)="aumentarZoom(camiseta)">
-            <i class="fas fa-camera"></i>
-          </div>
-          <input type="image" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="modelo"/>
-        </div>
-      </div>
+  <ngx-slick-carousel class="carousel mt-3" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide py-3" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''">
+      <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>
+      <input type="image" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
     </div>
-    <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
-      <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Seleccione un modelo</div>
-    </div>
-    <div class="text-center">
-      <div *ngFor="let seccion of secciones" class="bullet" (click)="scroll(seccion.id)" [ngClass]="seccion.seleccionada ? 'seleccionada' : ''"></div>
-    </div>
+  </ngx-slick-carousel>
+  <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
+    <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Seleccione un modelo</div>
   </div>
+
   <div class="form-group mt-3">
     <label class="switch">
       <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">

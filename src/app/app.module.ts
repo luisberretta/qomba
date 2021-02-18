@@ -25,6 +25,7 @@ import {ColorCircleModule} from "ngx-color/circle";
 import { NgxColorsModule } from 'ngx-colors';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ColorPickerComponent } from './componentes/color-picker/color-picker.component';
+import {SlickCarouselModule} from "ngx-slick-carousel";
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ColorPickerComponent } from './componentes/color-picker/color-picker.co
     NgxColorsModule,
     HttpClientModule,
     AlifeFileToBase64Module,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],
