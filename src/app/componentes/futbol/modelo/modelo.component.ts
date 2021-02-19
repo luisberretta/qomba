@@ -27,22 +27,16 @@ export class ModeloComponent implements OnInit, OnChanges {
     modelo: new FormControl(null,[Validators.required])
   });
   submit: boolean = false;
-  @Input() pasoNumero: number;
   @Output() proximoPaso = new EventEmitter<string>();
-  @Input() partes;
   @Output() colorPartes = new EventEmitter();
   @Input() formModelo;
-  @Output() imagenEscudo = new EventEmitter();
-  @Output() posicionEscudo = new EventEmitter();
   @Output() modeloSeleccionado = new EventEmitter();
   camisetaModelos: any = camisetaModelos;
   seleccionoModelo: boolean = false;
-  camiseta: any;
   generoModelo: string = 'hombre';
   modalRef: NgbModalRef;
   modalText: string;
   @ViewChild('template', { static: true }) modalTemplate;
-  seleccionada: boolean = false;
   slideConfig = {
     "slidesToShow": 4,
     "slidesToScroll": 4,
@@ -69,7 +63,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.initCamisetas();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
-      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value.urlSvg);
+      this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value);
     });
   }
 

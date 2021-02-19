@@ -7,6 +7,7 @@ import {
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../../clases/ColorParte";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-persona',
@@ -15,35 +16,31 @@ import {coloresParte} from "../../../clases/ColorParte";
 })
 export class PersonaComponent implements OnInit {
 
-  ESCUDO_DELANTERO = "Escudo_remera";
-  modelo: any;
-  short: any;
+  ESCUDO_DELANTERO = "Remera_escudo";
+  modeloSVG: any;
+  url: string = '/assets/images/modelosSVG/';
+  modeloSeleccionado: any;
   ocultarModelo = true;
-  @Input() urlCamiseta: any;
-  @Input() camisetasSvg: any;
-  @Input() colorShort: String;
   @ViewChild('dataContainer') dataContainer: ElementRef;
-  colors = ['#B80000', '#DB3E00', '#FCCB00', '#008B02', '#006B76', '#1273DE', '#004DCF', '#5300EB', '#FF37E1', '#992328', '#FFFFFF', '#000000'];
   idGrupo: String;
   parteSeleccionada: string;
   @Input() paso: string;
-  @ViewChild('camisetaFrente') camisetaFrente: ElementRef;
-  @ViewChild('camisetaDorso') camisetaDorso: ElementRef;
+  @ViewChild('remera') remera: ElementRef;
   @Input() llevaShort;
-  @Input() escudo;
   @Input() posicionEscudoCamiseta;
   imgUrl: any;
 
-  constructor(public renderer: Renderer2,
-              private svgService: SvgService,
-              private sanitizer: DomSanitizer) {
+  constructor(private svgService: SvgService,private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
   }
 
   generarModelo(modelo) {
-    this.modelo = modelo;
+    this.modeloSeleccionado = modelo;
+    this.svgService.obtenerSVG(this.url + modelo.urlSvg).subscribe((data) => {
+      this.modeloSVG =this.sanitizer.bypassSecurityTrustHtml(data);
+    });
   }
 
   visualizarModeloCompleto() {
@@ -95,17 +92,18 @@ export class PersonaComponent implements OnInit {
       estampado = estampado.getElementsByTagName('text').namedItem('numero');
     }
     let svgMatrix = null;
+    let coloresModelo = coloresParte.find(x=> x.idModelo == this.modeloSeleccionado.id).partes;
     switch (posicion.posicion) {
       case 'Centro':
-        svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
+        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
       case 'Derecha':
-        svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
+        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
       case 'Izquierda':
-        svgMatrix = coloresParte.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
+        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
     }
@@ -152,7 +150,7 @@ export class PersonaComponent implements OnInit {
 
   generarImagenes(): any {
     let images: HTMLAllCollection[] = [];
-    images.push(this.camisetaFrente.nativeElement.children.namedItem('Capa_1'));
+    images.push(this.remera.nativeElement.children.namedItem('Capa_1'));
     return images;
   }
 

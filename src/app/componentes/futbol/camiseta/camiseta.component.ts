@@ -27,6 +27,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   @Output() visualizarEstampado = new EventEmitter();
   @Input() formCamiseta: any;
 
+
   posicionesEscudoEstatico: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesNumeroDelanteroEstatico: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
@@ -34,14 +35,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
   NUMERO_DELANTERO = "Número_delantero";
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
-  ESCUDO_DELANTERO = "Escudo_remera";
-  ESCUDO_SHORT = "Escudo_short"
-  listadoColores = [
-    'red', 'yellow', 'green', 'blue', 'black'
-  ]
-  coloresNumeroDelantero = coloresParte.find(x => x.idParte == this.NUMERO_DELANTERO).colores;
-  coloresNombre = coloresParte.find(x => x.idParte == this.NOMBRE_ESPALDA).colores;
-  coloresNumeroEspalda = coloresParte.find(x => x.idParte == this.NUMERO_ESPALDA).colores;
+  ESCUDO_DELANTERO = "Remera_escudo";
+  coloresNumeroDelantero;
+  coloresNombre;
+  coloresNumeroEspalda;
 
   formPasoCamiseta: FormGroup = new FormGroup({
     llevaEscudoDelantero: new FormControl(null),
@@ -151,6 +148,12 @@ export class CamisetaComponent implements OnInit, OnChanges {
     });
   }
 
+  modeloElegido(modelo){
+    this.coloresNumeroDelantero = coloresParte.find(x=>x.idModelo == modelo.id).partes.find(x => x.idParte == this.NUMERO_DELANTERO);
+    this.coloresNombre = coloresParte.find(x => x.idModelo == modelo.id).partes.find(x => x.idParte == this.NOMBRE_ESPALDA).colores;
+    this.coloresNumeroEspalda = coloresParte.find(x=>x.idModelo == modelo.id).partes.find(x => x.idParte == this.NUMERO_ESPALDA).colores;
+  }
+
 
   ngOnChanges(changeRecord: SimpleChanges): void {
     if (changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
@@ -160,7 +163,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   generarFormulario(formCamiseta) {
     this.formPasoCamiseta.get('llevaEscudoDelantero').setValue(formCamiseta.llevaEscudoDelantero ?? null);
-    this.formPasoCamiseta.get('escudoDelantero').setValue(formCamiseta.llevaEscudoDelantero ?? null);
+    this.formPasoCamiseta.get('escudoDelantero').setValue(formCamiseta.escudoDelantero ?? null);
     this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(formCamiseta.posicionEscudoDelantero ?? null);
     this.formPasoCamiseta.get('llevaNumeroDelantero').setValue(formCamiseta.llevaNumeroDelantero ?? null);
     this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(formCamiseta.posicionNumeroDelantero ?? null);
