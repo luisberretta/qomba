@@ -44,11 +44,11 @@
         <div class="col-4 text-right" *ngIf="paso != 'modelo'">
           <a class="btn btn-atras" (click)="anterior()">Atrás</a>
         </div>
-        <div class="col-4" *ngIf="paso != 'checkout'">
+        <div class="col-4" [ngClass]="{ 'text-center': paso == 'modelo' }" *ngIf="paso != 'checkout'">
           <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
         </div>
         <div class="col-4" *ngIf="paso == 'checkout'">
-          <a class="btn  btn-primary" (click)="siguiente()">Confirmar</a>
+          <a class="btn btn-primary btn-confirmar" (click)="siguiente()">Confirmar</a>
         </div>
       </div>
     </fieldset>

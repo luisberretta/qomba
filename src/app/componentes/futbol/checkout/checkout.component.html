@@ -12,17 +12,35 @@
     </div>
     <div class="form-group row">
       <div class="col-md-6 col-6">
-        <label for="ID_HERE" class="toggle-switchy">
-          <input checked type="checkbox" id="ID_HERE">
-          <span class="toggle">
-		        <span class="switch"></span>
-	        </span>
-        </label>
-        <label>Short:</label>
-        <input id="bootswitch-text1" type="checkbox"
-               [attr.data-off-color]="formCheckOut.agregarShort? 'primary': 'warning'"
-               [attr.data-off-text]="formCheckOut.agregarShort">
+        <div class="row">
+          <div class="col-md-6 col-4 align-self-center">
+            <label>Short:</label>
+          </div>
+          <div class="col-md-6 col-6">
+            <div class="btn-group" role="group">
+              <a class="btn" [ngClass]="{ 'seleccionado': formCheckOut.agregarShort }">Si</a>
+              <a class="btn" [ngClass]="{ 'seleccionado': !formCheckOut.agregarShort }">No</a>
+            </div>
+          </div>
+        </div>
       </div>
+<!--        <label class="form-check-label" for="agregar-medias">Short:</label>-->
+<!--        <label class="switch">-->
+<!--          <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">-->
+<!--          <span class="slider round"></span>-->
+<!--        </label>-->
+
+<!--        <label for="ID_HERE" class="toggle-switchy">-->
+<!--          <input checked type="checkbox" id="ID_HERE">-->
+<!--          <span class="toggle">-->
+<!--		        <span class="switch"></span>-->
+<!--	        </span>-->
+<!--        </label>-->
+<!--        <label>Short:</label>-->
+<!--        <input id="bootswitch-text1" type="checkbox"-->
+<!--               [attr.data-off-color]="formCheckOut.agregarShort? 'primary': 'warning'"-->
+<!--               [attr.data-off-text]="formCheckOut.agregarShort">-->
+
       <div class="col-md-6 col-6">
         <label>Contacto:</label>
         <input readonly class="form-control" value="{{formCheckOut.nombreContacto}}">
@@ -30,10 +48,20 @@
     </div>
     <div class="form-group row">
       <div class="col-md-6 col-6">
-        <label>Medias:</label>
-        <input id="bootswitch-text2" type="checkbox"
-               [attr.data-off-color]="formCheckOut.agregarMedias? 'primary': 'warning'"
-               [attr.data-off-text]="formCheckOut.agregarMedias">
+        <div class="row">
+          <div class="col-md-6 col-4 align-self-center">
+            <label>Medias:</label>
+          </div>
+          <div class="col-md-6 col-6">
+            <div class="btn-group" role="group">
+              <a class="btn" [ngClass]="{ 'seleccionado': formCheckOut.agregarMedias }">Si</a>
+              <a class="btn" [ngClass]="{ 'seleccionado': !formCheckOut.agregarMedias }">No</a>
+            </div>
+          </div>
+        </div>
+<!--        <input id="bootswitch-text2" type="checkbox"-->
+<!--               [attr.data-off-color]="formCheckOut.agregarMedias? 'primary': 'warning'"-->
+<!--               [attr.data-off-text]="formCheckOut.agregarMedias">-->
       </div>
       <div class="col-md-6 col-6">
         <label>Jugadores:</label>

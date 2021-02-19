@@ -1,35 +1,40 @@
-<div class="row justify-content-center">
-  <div class="form-group row">
+<div class="row">
+  <div class="col">
+    <a class="btn btn-primary btn-precio">Calcular precio $</a>
+  </div>
+  <div class="col">
+    <label>Precio por camiseta:</label>
+  </div>
+  <div class="col">
+    <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioCamiseta}}">
+  </div>
+</div>
+<div class="col-8 col-md-8 text-left">
+<!--  <div class="row form-group">-->
+<!--    -->
+<!--  </div>-->
+  <div class="row form-group">
     <div class="col-6 col-md-6">
-      <div class="col-4 text-right">
-        <a class="btn btn-primary">Calcular precio</a>
-      </div>
+      <label>Precio por short:</label>
     </div>
     <div class="col-6 col-md-6">
-      <div class="row form-group">
-        <div class="col-6 col-md-6">
-          <label>Precio por camiseta:</label>
-          <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioCamiseta}}">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-6 col-md-6">
-          <label>Precio por short:</label>
-          <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioShort}}">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-6 col-md-6">
-          <label>Precio por medias:</label>
-          <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioMedias}}">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-6 col-md-6">
-          <label>Precio por cada conjunto:</label>
-          <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
-        </div>
-      </div>
+      <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioShort}}">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-6 col-md-6">
+      <label>Precio por medias:</label>
+    </div>
+    <div class="col-6 col-md-6">
+      <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioMedias}}">
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-6 col-md-6">
+      <label>Precio por cada conjunto:</label>
+    </div>
+    <div class="col-6 col-md-6">
+      <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
     </div>
   </div>
 </div>
