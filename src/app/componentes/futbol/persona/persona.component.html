@@ -5,7 +5,7 @@
 <!--  <color-circle [colors]="colors" (onChangeComplete)="cambiarColor($event.color.hex)"></color-circle>-->
 <!--</div>-->
 <div #dataContainer (click)="obtenerElementos($event)" class="row mt-3" [ngClass]="{ 'no-opacity': paso == 'checkout' }" [hidden]="ocultarModelo">
-  <div class="col-12" #camisetaFrente [innerHTML]="modelo">
+  <div class="col-12" #remera [innerHTML]="modeloSVG">
   </div>
 </div>
 

@@ -6,16 +6,12 @@ import {svgAsPngUri} from 'save-svg-as-png';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
 import {ModeloComponent} from "./modelo/modelo.component";
-import {SvgService} from "../../servicios/svg.service";
-import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../clases/ColorParte";
 import {ColorComponent} from "./color/color.component";
 import {CamisetaComponent} from "./camiseta/camiseta.component";
 import {ShortComponent} from "./short/short.component";
 import {EquipoComponent} from "./equipo/equipo.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
-import {FormControl, Validators} from "@angular/forms";
-import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-wizard',
@@ -24,12 +20,11 @@ import {forkJoin} from "rxjs";
 })
 export class WizardComponent implements OnInit {
 
-  ESCUDO_DELANTERO = "Escudo_remera";
+  ESCUDO_DELANTERO = "Remera_escudo";
   ESCUDO_SHORT = "Short_escudo"
 
   paso: string = 'modelo';
   numeroPaso: number = 1;
-  url: string = '/assets/images/';
   pedido: Pedido = {imagenes: []};
   formModelo: any;
   formColor: any;
@@ -39,9 +34,8 @@ export class WizardComponent implements OnInit {
   formEquipo: any;
   formCheckOut: any;
   short: boolean;
-  imagenEscudo: any;
-  posicionEscudoCamiseta: any;
   nombreMostrarPaso: string = 'Elegí tu Modelo';
+  modeloElegido:any;
 
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
   @ViewChild(ModeloComponent) modeloComponent: ModeloComponent;
@@ -52,8 +46,7 @@ export class WizardComponent implements OnInit {
   @ViewChild(CheckoutComponent) checkOutComponent: CheckoutComponent;
 
   constructor(private wizardService: WizardService, private modalService: NgbModal,
-              private router: Router, private svgService: SvgService,
-              private sanitizer: DomSanitizer) {
+              private router: Router) {
 
   }
 
@@ -189,10 +182,11 @@ export class WizardComponent implements OnInit {
   }
 
 
-  modeloSeleccionado(urlSvg) {
-    this.svgService.obtenerSVG(this.url + urlSvg).subscribe((data) => {
-      this.personaComponent.generarModelo(this.sanitizer.bypassSecurityTrustHtml(data));
-    });
+  modeloSeleccionado(modelo) {
+    this.modeloElegido = modelo;
+    this.pedido = {imagenes: []};
+    // this.camisetaComponent.modeloElegido(this.modeloElegido);
+    this.personaComponent.generarModelo(this.modeloElegido);
   }
 
   cambiarColor(cambiar) {
@@ -240,15 +234,6 @@ export class WizardComponent implements OnInit {
     this.pedido.coloresModelo = event.partesArray;
   }
 
-
-  generarPedidoNumero(event) {
-    this.pedido.llevaNombreCamiseta = event.llevaNombreCamiseta;
-    this.pedido.llevaNumeroCamiseta = event.llevaNumeroCamiseta;
-    this.pedido.llevaNumeroFrontalCamiseta = event.llevaNumeroFrontalCamiseta;
-    this.pedido.posicionNumeroCamiseta = event.posicionNumeroCamiseta;
-    this.pedido.llevaNumeroShort = event.llevaNumeroShort;
-    this.pedido.posicionNumeroShort = event.posicionNumeroShort;
-  }
 
   generarPedidoEquipo(event) {
     this.pedido.detalleEquipo = event.equipo;
@@ -304,7 +289,7 @@ export class WizardComponent implements OnInit {
           parteColor.idParte = gruposColor[i];
         }
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idParte == parteColor.idParte);
+          let parteColores = coloresParte.find(x=>x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
@@ -337,8 +322,8 @@ export class WizardComponent implements OnInit {
     return grupoColor != 'Nombre' &&
       grupoColor != 'Número_espalda' &&
       grupoColor != 'Número_delantero' &&
-      grupoColor != 'Escudo_remera' &&
-      grupoColor != 'Short número' &&
+      grupoColor != 'Remera_escudo' &&
+      grupoColor != 'Short_número' &&
       grupoColor != 'Short_escudo' &&
       !grupoColor.includes("GENERICO");
   }
@@ -394,8 +379,8 @@ export class WizardComponent implements OnInit {
 
   generarFormEquipo() {
     this.formEquipo = {
-      llevaNombreCamiseta: this.pedido.llevaNombreCamiseta,
-      llevaNumeroCamiseta: this.pedido.llevaNumeroCamiseta,
+      llevaNombreCamiseta: this.pedido.llevaNombreEspalda,
+      llevaNumeroCamiseta: this.pedido.llevaNumeroDelantero,
       llevaShort: this.pedido.agregarShort,
       detalleEquipo: this.pedido.detalleEquipo,
       nombreEquipo: this.pedido.nombreEquipo,
@@ -413,7 +398,7 @@ export class WizardComponent implements OnInit {
     }
   }
 
-  generarFormResumenPrecio(){
+  generarFormResumenPrecio() {
     let formResumenPrecio = {
       precioCamiseta: this.pedido.precioCamiseta,
       precioShort: this.pedido.precioShort,

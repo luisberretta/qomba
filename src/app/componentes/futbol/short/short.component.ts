@@ -22,7 +22,6 @@ export class ShortComponent implements OnInit, OnChanges {
 
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
-  @Output() colorShort = new EventEmitter();
   @ViewChild('archivoEscudo') fileInput: ElementRef;
   @Output() visualizarEstampado = new EventEmitter();
   @Output() archivoEscudo = new EventEmitter();

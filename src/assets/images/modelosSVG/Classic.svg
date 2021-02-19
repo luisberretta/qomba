@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 2101.8 2736.4" enable-background="new 0 0 2101.8 2736.4" xml:space="preserve">
+     viewBox="0 300 2101.8 2236.4" enable-background="new 0 0 2101.8 2736.4" xml:space="preserve">
 <g id="Medias_principal">
 	<path id="XMLID_1_" fill="#20201F" d="M644.3,1714.5c-2.3-9.1-4.5-21.4,7.5-37s75.1-62.4,123.1,11.7c0,0,3,35.1,0,116.9
 		s-66.1,229.9-72.1,253.3s3,31.2,0,50.7s-6,46.8-6,46.8h-6c0,0-13.9-34.8-40.9-3.6c0,0-37.2-15.9-25.2-58.7c0,0,18-31.2,18-54.6
@@ -8369,7 +8369,7 @@ Z//JoRQMBoPBYDAYDAaDwWAwGAwGg8FgMBgb+H8BBgDvM6lyykhG+QAAAABJRU5ErkJggg==" transf
 <g id="Nombre" visibility="hidden">
 	<text transform="matrix(1 0 0 1 1443.2725 526.67)" enable-background="new    " font-family="'ArialMT'" font-size="72px">NOMBRE</text>
 </g>
-<g id="Escudo_remera" visibility="hidden">
+<g id="Remera_escudo" visibility="hidden">
 
 		<image display="inline" overflow="visible" enable-background="new    " width="710" height="659" id="escudo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAsYAAAKTCAYAAAAaK87xAAAACXBIWXMAAHH1AABx9QHZ3VIOAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAvj1JREFUeNrsnQmYHlWV/g8QQhIC
@@ -9236,7 +9236,7 @@ X4ABAI7D9/2X4yTRAAAAAElFTkSuQmCC" transform="matrix(9.621171e-02 0 0 8.249200e-0
 </g>
 <g id="Número_espalda" visibility="hidden">
 
-		<text id="numero_1_" transform="matrix(0.7905 0 0 1 1425.957 865.4728)" display="inline" font-family="'ArialMT'" font-size="357.4474px">10</text>
+		<text id="numero" transform="matrix(0.7905 0 0 1 1425.957 865.4728)" display="inline" font-family="'ArialMT'" font-size="357.4474px">10</text>
 </g>
 <g id="GENERICO_3_">
 

@@ -58,11 +58,10 @@ export class EquipoComponent implements OnInit, OnChanges {
 
   generarFormulario(formEquipo) {
     this.formPasoEquipo.controls['nombreEquipo'].setValue(formEquipo.nombreEquipo);
+    this.formPasoEquipo.controls['cantidadEquipo'].setValue(formEquipo.cantidadEquipo);
     this.formPasoEquipo.controls['nombreContacto'].setValue(formEquipo.nombreContacto);
-    this.formPasoEquipo.controls['cantidadEquipo'].setValue(formEquipo.detalleEquipo);
     this.formPasoEquipo.controls['telefonoContacto'].setValue(formEquipo.telefonoContacto);
     this.formPasoEquipo.controls['emailContacto'].setValue(formEquipo.emailContacto);
-    this.formPasoEquipo.controls['cantidadEquipo'].setValue(formEquipo.cantidadEquipo);
     for (let i = 0; i < formEquipo.detalleEquipo.length; i++) {
       if (this.formEquipoControl.value.length < formEquipo.detalleEquipo.length) {
         let jugador = new FormGroup({

@@ -39,8 +39,4 @@ export class CheckoutComponent implements OnInit,OnChanges {
       this.finalizarPasos.emit(this.formPasoCheckOut.value);
     }
   }
-
-  anterior() {
-    this.anteriorPaso.emit();
-  }
 }

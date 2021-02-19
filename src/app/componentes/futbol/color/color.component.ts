@@ -17,7 +17,6 @@ export class ColorComponent implements OnInit, OnChanges {
     idParte: any,
     colores: []
   }];
-  desplegado: boolean = false;
   selectedColor: string = 'black';
 
   formPasoColor: FormGroup = new FormGroup({
@@ -52,7 +51,12 @@ export class ColorComponent implements OnInit, OnChanges {
         });
         this.formPartesArrayControl.push(color);
       }
+      this.ordenarFormulario();
     }
+  }
+
+  ordenarFormulario(){
+
   }
 
   cambiarColor(color, parte) {
