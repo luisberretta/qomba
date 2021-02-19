@@ -257,9 +257,9 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    if (this.formPasoCamiseta.valid) {
+    // if (this.formPasoCamiseta.valid) {
       this.proximoPaso.emit(this.formPasoCamiseta.value);
-    }
+    // }
   }
 
   anterior() {

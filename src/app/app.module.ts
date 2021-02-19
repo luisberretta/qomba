@@ -24,7 +24,6 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import {ColorCircleModule} from "ngx-color/circle";
 import { NgxColorsModule } from 'ngx-colors';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { ColorPickerComponent } from './componentes/color-picker/color-picker.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
 
 @NgModule({
@@ -43,7 +42,6 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
     PaginaNoEncontradaComponent,
     ColorComponent,
     CamisetaComponent,
-    ColorPickerComponent,
   ],
   imports: [
     BrowserModule,
