@@ -52,6 +52,7 @@
       font-weight: 600;
       position: relative;
       padding-top: 3px;
+      transition: color 300ms ease;
       &:after {
         display: none;
         content: '';

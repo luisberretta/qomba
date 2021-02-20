@@ -11,8 +11,9 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
   formPasoCheckOut: FormGroup = new FormGroup({
     precioCamiseta: new FormControl(null),
     precioShort: new FormControl(null),
-    precioMedias: new FormControl(null,),
-    precioConjunto: new FormControl('', []),
+    precioMedias: new FormControl(null),
+    precioConjunto: new FormControl(null),
+    precioTotal: new FormControl(null)
   });
   @Input() formResumenPrecio: any;
   @Input() formCheckOut: any;
@@ -34,6 +35,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     this.formPasoCheckOut.get('precioShort').setValue(formNumero.precioShort);
     this.formPasoCheckOut.get('precioMedias').setValue(formNumero.precioMedias);
     this.formPasoCheckOut.get('precioConjunto').setValue(formNumero.precioConjunto);
+    this.formPasoCheckOut.get('precioTotal').setValue(formNumero.precioTotal);
   }
 
 }
