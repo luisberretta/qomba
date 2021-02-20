@@ -189,7 +189,7 @@ export class WizardComponent implements OnInit {
         }
         this.numeroPaso = 5;
         this.paso = 'medias';
-        this.nombreMostrarPaso = 'Armá tu Equipo';
+        this.nombreMostrarPaso = 'Personalizá tu Modelo';
         this.generarFormMedias();
         break;
       case 7:

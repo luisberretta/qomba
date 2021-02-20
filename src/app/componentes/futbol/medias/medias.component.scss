@@ -20,4 +20,13 @@
     width: 400px;
     white-space: nowrap;
   }
+  .form-check-label {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .btn-subir, select {
+    font-size: 0.75rem;
+  }
 }

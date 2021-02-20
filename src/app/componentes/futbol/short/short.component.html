@@ -1,19 +1,18 @@
 <form [formGroup]="formPasoShort" class="ml-2">
-  <div class="form-group mt-3">
+  <div class="form-group">
     <label class="switch">
       <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">
       <span class="slider round"></span>
     </label>
     <label class="form-check-label" for="agregar-short">Agregar Short</label>
   </div>
-  <div class=" form-grupo row" *ngIf="agregarShort">
-    <div formArrayName="partesShortSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i"
-         class="form-group">
+  <div *ngIf="agregarShort">
+    <div formArrayName="partesShortSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="form-group">
       <div [formGroupName]="i" class="row">
-        <div class="col-md-4 col-6 align-self-center">
+        <div class="col-md-4 col-8 align-self-center">
           <label>{{parteColor.value.nombreMostrar}}: </label>
         </div>
-        <div class="col-md-8 col-6">
+        <div class="col-md-8 col-4">
           <div class="cuadro-color">
             <div #colorPicker ngx-colors-trigger [palette]="parteColor.value.colores"
                  [hideColorPicker]="true"
@@ -23,53 +22,34 @@
             <i class="fas fa-sort-down fa-lg" (click)="colorPicker.click()"></i>
           </div>
         </div>
-
       </div>
       <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
         <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>
       </div>
     </div>
   </div>
-
   <div class="row form-group">
     <div class="col-md-6 col-8">
       <label class="switch">
-        <input [attr.disabled]="!agregarShort ? true: null" class="form-check-input"
-               formControlName="agregarNumeroShort"
-               type="checkbox" id="agregar-numero-short">
+        <input [attr.disabled]="!agregarShort ? true: null" class="form-check-input" formControlName="agregarNumeroShort" type="checkbox" id="agregar-numero-short">
         <span class="slider round"></span>
       </label>
-      <label [attr.disabled]="!agregarShort? true: null" class="form-check-label" for="agregar-numero-short">Número en
-        short</label>
+      <label [attr.disabled]="!agregarShort? true: null" class="form-check-label" for="agregar-numero-short">Número en short</label>
     </div>
   </div>
   <div class="row form-group">
-    <div class="col-md-6 col-6">
+    <div class="col-md-5 col-7 align-self-center">
       <label class="switch">
-        <input [attr.disabled]="!agregarShort? true: null" class="form-check-input" formControlName="agregarEscudoShort"
-               type="checkbox" id="agregar-escudo-short">
+        <input [attr.disabled]="!agregarShort? true: null" class="form-check-input" formControlName="agregarEscudoShort" type="checkbox" id="agregar-escudo-short">
         <span class="slider round"></span>
       </label>
-      <label [attr.disabled]="!agregarShort? true: null" class="form-check-label" for="agregar-escudo-short">Escudo en
-        short</label>
+      <label [attr.disabled]="!agregarShort? true: null" class="form-check-label" for="agregar-escudo-short">Escudo en short</label>
     </div>
-    <div class="col-md-6 col-6">
+    <div class="col-md-6 col-5">
       <div class="pl-0">
-        <a class="btn btn-subir " (click)="archivo()"
-           [attr.disabled]="(!agregarShort || agregarEscudoDelantero)? true: null">Subir escudo</a>
-        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)"
-               [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
+        <a class="btn btn-subir" (click)="archivo()" [attr.disabled]="(!agregarShort || agregarEscudoDelantero)? true: null">Subir escudo <i class="fas fa-upload"></i></a>
+        <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
       </div>
     </div>
   </div>
 </form>
-<ng-template #content let-modal>
-  <div class="modal-body text-center">
-    <img src="/assets/images/tutorial.gif" class="img-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-5 col-10">
-        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
-      </div>
-    </div>
-  </div>
-</ng-template>
