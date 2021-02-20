@@ -15,22 +15,14 @@
   <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
     <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Seleccione un modelo</div>
   </div>
-  <div class="form-group mt-3">
-    <label class="switch">
-      <input class="form-check-input" formControlName="agregarShort" type="checkbox" id="agregar-short">
-      <span class="slider round"></span>
-    </label>
-    <label class="form-check-label" for="agregar-short">Agregar Short</label>
-  </div>
-  <div class="form-group">
-    <label class="switch">
-      <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias" [attr.disabled]="true">
-      <span class="slider round"></span>
-    </label>
-    <label class="form-check-label" for="agregar-medias">Agregar medias</label>
-  </div>
+
 </form>
 <ng-template #template>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="cerrar()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div class="modal-body text-center">
     <img [src]="modalText" height="400">
   </div>

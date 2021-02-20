@@ -1,45 +1,51 @@
-<div class="row">
-  <div class="col">
-    <a class="btn btn-primary btn-precio">Calcular precio $</a>
+<div class="ml-md-2 mr-md-0 mx-2">
+  <div class="form-group row">
+    <div class="col-6 text-left">
+      <label for="modelo">Modelo</label>
+      <input id="modelo" readonly class="form-control" value="{{formResumenPrecio.modelo}}">
+    </div>
+    <div class="col-6 text-left">
+      <label for="cantidadJugadores">Jugadores</label>
+      <input id="cantidadJugadores" type="number" readonly class="form-control" value="{{formResumenPrecio.cantidadJugadores}}">
+    </div>
   </div>
-  <div class="col">
-    <label>Precio por camiseta:</label>
-  </div>
-  <div class="col">
-    <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioCamiseta}}">
-  </div>
+  <fieldset>
+    <legend>
+      Cotización
+    </legend>
+    <div class="row form-group">
+      <label for="precioCamiseta" class="col-md-6 col-6">Precio por camiseta:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioCamiseta" type="number" readonly class="form-control" value="{{formResumenPrecio.precioCamiseta}}">
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="precioShort" class="col-md-6 col-6">Precio por short:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioShort" type="number" readonly class="form-control" value="{{formResumenPrecio.precioShort}}">
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="precioMedias" class="col-md-6 col-6">Precio por medias:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioMedias" type="number" readonly class="form-control" value="{{formResumenPrecio.precioMedias}}">
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="precioConjunto" class="col-md-6 col-6">Precio por cada conjunto:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioConjunto" type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
+      </div>
+    </div>
+    <hr>
+    <div class="row form-group">
+      <label for="precioTotal" class="col-md-6 col-6">Precio total:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioTotal" type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
+      </div>
+    </div>
+  </fieldset>
 </div>
-<div class="col-8 col-md-8 text-left">
-<!--  <div class="row form-group">-->
-<!--    -->
-<!--  </div>-->
-  <div class="row form-group">
-    <div class="col-6 col-md-6">
-      <label>Precio por short:</label>
-    </div>
-    <div class="col-6 col-md-6">
-      <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioShort}}">
-    </div>
-  </div>
-  <div class="row form-group">
-    <div class="col-6 col-md-6">
-      <label>Precio por medias:</label>
-    </div>
-    <div class="col-6 col-md-6">
-      <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioMedias}}">
-    </div>
-  </div>
-  <div class="row form-group">
-    <div class="col-6 col-md-6">
-      <label>Precio por cada conjunto:</label>
-    </div>
-    <div class="col-6 col-md-6">
-      <input type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
-    </div>
-  </div>
-</div>
-
-
 
 
 

@@ -16,11 +16,9 @@ export interface Pedido {
   posicionEscudoDelantero?: string;
   llevaNumeroDelantero?: boolean;
   posicionNumeroDelantero?: boolean;
-  colorNumeroDelantero?: string;
   llevaNombreEspalda?: boolean;
-  colorNombreEspalda?: string;
   llevaNumeroEspalda?: boolean;
-  colorNumeroEspalda?: string;
+  colorEstampado?: string;
 
   //SHORT
   agregarEscudoShort?: boolean;

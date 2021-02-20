@@ -36,3 +36,10 @@ fieldset {
     font-size: 1rem;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+  }
+}

@@ -17,7 +17,7 @@ export class EquipoComponent implements OnInit, OnChanges {
   formPasoEquipo: FormGroup = new FormGroup({
     nombreEquipo: new FormControl(null,[Validators.required]),
     nombreContacto: new FormControl(null,[Validators.required]),
-    telefonoContacto: new FormControl(null, [Validators.required]),
+    telefonoContacto: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
     emailContacto: new FormControl(null, [Validators.required, Validators.email]),
     cantidadEquipo: new FormControl(1, [Validators.min(1), Validators.required]),
     equipo: new FormArray([])
@@ -112,9 +112,9 @@ export class EquipoComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    if (this.formPasoEquipo.valid) {
+    // if (this.formPasoEquipo.valid) {
       this.proximoPaso.emit(this.formPasoEquipo.value);
-    }
+    // }
   }
 
   anterior() {
