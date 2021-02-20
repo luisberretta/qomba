@@ -20,7 +20,7 @@
     <legend>{{ nombreMostrarPaso }}</legend>
     <div *ngIf="paso != 'modelo' && paso != 'medias'" class="text-right">Modelo: <strong>{{ modeloElegido?.nombre }}</strong></div>
     <div class="row">
-      <div class="mt-3 px-0 {{ paso == 'modelo' ? 'col-12' : 'col-md-6 col-12' }} ">
+      <div class="mt-2 px-0 {{ paso == 'modelo' ? 'col-12' : 'col-md-6 col-12' }} ">
         <div [ngSwitch]="paso">
           <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo"></app-modelo>
           <app-color *ngSwitchCase="'color'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]="formColor"></app-color>
