@@ -84,11 +84,11 @@
       </select>
     </div>
   </div>
-  <div class="row form-group">
+  <div *ngIf="llevaEstampado()"  class="row form-group">
     <div>
       <label>Color letras y número:</label>
     </div>
-    <div *ngIf="llevaEstampado()" class="cuadro-color">
+    <div class="cuadro-color">
       <div ngx-colors-trigger #colorPickerNroEspalda [palette]="coloresNumeroEspalda"
            [hideColorPicker]="true"
            [hideTextInput]="true"
@@ -97,6 +97,4 @@
       <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
     </div>
   </div>
-
-
 </form>

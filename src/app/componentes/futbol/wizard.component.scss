@@ -113,7 +113,7 @@
       color: #d36157;
     }
   }
-  &.camiseta {
+  &.camiseta, &.short, &.medias {
     &:after {
       width: 50%;
     }
@@ -135,9 +135,38 @@
       color: #d36157;
     }
   }
-  &.short {
+  //&.short {
+  //  &:after {
+  //    width: 70%;
+  //  }
+  //  li:nth-child(1) a {
+  //    background-color: #19bd9a;
+  //    color: white;
+  //    &:after {
+  //      display: block;
+  //    }
+  //  }
+  //  li:nth-child(2) a {
+  //    background-color: #19bd9a;
+  //    color: white;
+  //    &:after {
+  //      display: block;
+  //    }
+  //  }
+  //  li:nth-child(3) a {
+  //    background-color: #19bd9a;
+  //    color: white;
+  //    &:after {
+  //      display: block;
+  //    }
+  //  }
+  //  li:nth-child(4) a {
+  //    color: #d36157;
+  //  }
+  //}
+  &.equipo {
     &:after {
-      width: 70%;
+      width: 100%;
     }
     li:nth-child(1) a {
       background-color: #19bd9a;
@@ -164,7 +193,7 @@
       color: #d36157;
     }
   }
-  &.equipo {
+  &.resumen-precio {
     &:after {
       width: 100%;
     }

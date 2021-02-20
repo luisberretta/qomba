@@ -35,11 +35,11 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formNumero) {
-    this.formPasoCheckOut.get('precioCamiseta').setValue(formNumero.precioCamiseta);
-    this.formPasoCheckOut.get('precioShort').setValue(formNumero.precioShort);
-    this.formPasoCheckOut.get('precioMedias').setValue(formNumero.precioMedias);
-    this.formPasoCheckOut.get('precioConjunto').setValue(formNumero.precioConjunto);
-    this.formPasoCheckOut.get('precioTotal').setValue(formNumero.precioTotal);
+    this.formPasoResumenPrecio.get('precioCamiseta').setValue(formNumero.precioCamiseta);
+    this.formPasoResumenPrecio.get('precioShort').setValue(formNumero.precioShort);
+    this.formPasoResumenPrecio.get('precioMedias').setValue(formNumero.precioMedias);
+    this.formPasoResumenPrecio.get('precioConjunto').setValue(formNumero.precioConjunto);
+    this.formPasoResumenPrecio.get('precioTotal').setValue(formNumero.precioTotal);
   }
 
   anterior() {
