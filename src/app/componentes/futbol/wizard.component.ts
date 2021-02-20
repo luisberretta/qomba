@@ -3,7 +3,7 @@ import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
 import {svgAsPngUri} from 'save-svg-as-png';
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
 import {ModeloComponent} from "./modelo/modelo.component";
 import {coloresParte} from "../../clases/ColorParte";
@@ -36,8 +36,10 @@ export class WizardComponent implements OnInit {
   formMedias: any;
   nombreMostrarPaso: string = 'Elegí tu Modelo';
   modeloElegido: any;
+  modalRef: NgbModalRef;
+  modalText: string;
 
-
+  @ViewChild('template', { static: true }) modalTemplate;
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
   @ViewChild(ModeloComponent) modeloComponent: ModeloComponent;
   @ViewChild(ColorComponent) colorComponent: ColorComponent;
@@ -317,9 +319,10 @@ export class WizardComponent implements OnInit {
     let imagenes = this.personaComponent.generarImagenes();
     svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
       this.pedido.imagenes.push(this.convertirABase64(data));
+
       // this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
-        alert("Tu pedido fue realizado con éxito!");
+        this.abrirModal();
         this.router.navigate(['/']);
         if (data) {
           console.log("La operación se realizó con éxito.");
@@ -487,7 +490,6 @@ export class WizardComponent implements OnInit {
     }
   }
 
-
   perteneceRemera(grupoColor) {
     return grupoColor.includes('Remera') && grupoColor != 'Remera_escudo';
   }
@@ -536,4 +538,11 @@ export class WizardComponent implements OnInit {
     });
   }
 
+  abrirModal() {
+    this.modalRef = this.modalService.open(this.modalTemplate, { centered: true });
+  }
+
+  cerrar() {
+    this.modalService.dismissAll();
+  }
 }

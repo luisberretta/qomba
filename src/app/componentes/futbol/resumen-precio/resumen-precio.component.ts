@@ -1,8 +1,5 @@
 import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Pedido} from "../../../clases/Pedido";
-import {PersonaComponent} from "../persona/persona.component";
-import {WizardComponent} from "../wizard.component";
 
 @Component({
   selector: 'app-resumen-precio',

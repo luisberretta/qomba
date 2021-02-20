@@ -29,7 +29,7 @@ export const coloresParte = [
       },
       {
         idParte: "Medias_lineas",
-        nombreMostrar: "Medias lineas",
+        nombreMostrar: "Medias líneas",
         colores: ["#C500AC", "#0E6D7C", "#D9E067", "#a89851"],
         posicionMatrix: {}
       },
@@ -41,13 +41,13 @@ export const coloresParte = [
       },
       {
         idParte: "Short_linea_superior",
-        nombreMostrar: "Short linea superior",
+        nombreMostrar: "Short línea superior",
         colores: ["#4A0641", "#133407", "#4A4F00", "#218213"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
-        nombreMostrar: "Short linea inferior",
+        nombreMostrar: "Short línea inferior",
         colores: ["#4A0641", "#133407", "#4A4F00", "#218213"],
         posicionMatrix: {}
       },
@@ -103,7 +103,7 @@ export const coloresParte = [
       },
       {
         idParte: "Medias_lineas",
-        nombreMostrar: "Medias lineas",
+        nombreMostrar: "Medias líneas",
         colores: ["#C500AC", "#0E6D7C", "#D9E067", "#a89851"],
         posicionMatrix: {}
       },
@@ -115,19 +115,19 @@ export const coloresParte = [
       },
       {
         idParte: "Short_linea_superior",
-        nombreMostrar: "Short linea superior",
+        nombreMostrar: "Short línea superior",
         colores: ["#4A0641", "#133407", "#4A4F00", "#218213"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
-        nombreMostrar: "Short linea inferior",
+        nombreMostrar: "Short línea inferior",
         colores: ["#4A0641", "#133407", "#4A4F00", "#218213"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
-        nombreMostrar: "Short linea lateral",
+        nombreMostrar: "Short línea lateral",
         colores: ["#4A0641", "#133407", "#4A4F00", "#218213"],
         posicionMatrix: {}
       },
