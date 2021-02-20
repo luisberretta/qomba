@@ -5,31 +5,6 @@
   border-radius: 0.5rem;
 }
 
-.btn-naranja {
-  padding: 8px 25px;
-  border: solid 1px black;
-  opacity: 0.5;
-  font-weight: 600;
-  &.basica {
-    opacity: 1;
-  }
-  &.intermedia {
-    opacity: 1;
-  }
-  &.premium {
-    opacity: 1;
-  }
-  &.propio {
-    opacity: 1;
-  }
-  &:focus {
-    box-shadow: none;
-  }
-  &:hover {
-    color: white;
-  }
-}
-
 .indicador-progreso {
   display: flex;
   position: relative;
@@ -95,7 +70,7 @@
       width: 10%;
     }
     li:nth-child(1) a {
-      color: #d36157;
+      color: #8d2429;
     }
   }
   &.color {
@@ -110,7 +85,7 @@
       }
     }
     li:nth-child(2) a {
-      color: #d36157;
+      color: #8d2429;
     }
   }
   &.camiseta, &.short, &.medias {
@@ -132,38 +107,9 @@
       }
     }
     li:nth-child(3) a {
-      color: #d36157;
+      color: #8d2429;
     }
   }
-  //&.short {
-  //  &:after {
-  //    width: 70%;
-  //  }
-  //  li:nth-child(1) a {
-  //    background-color: #19bd9a;
-  //    color: white;
-  //    &:after {
-  //      display: block;
-  //    }
-  //  }
-  //  li:nth-child(2) a {
-  //    background-color: #19bd9a;
-  //    color: white;
-  //    &:after {
-  //      display: block;
-  //    }
-  //  }
-  //  li:nth-child(3) a {
-  //    background-color: #19bd9a;
-  //    color: white;
-  //    &:after {
-  //      display: block;
-  //    }
-  //  }
-  //  li:nth-child(4) a {
-  //    color: #d36157;
-  //  }
-  //}
   &.equipo {
     &:after {
       width: 100%;
@@ -190,7 +136,7 @@
       }
     }
     li:nth-child(4) a {
-      color: #d36157;
+      color: #8d2429;
     }
   }
   &.resumen-precio {
@@ -226,7 +172,7 @@
       }
     }
     li:nth-child(5) a {
-      color: #d36157;
+      color: #8d2429;
     }
   }
 }
