@@ -11,7 +11,7 @@
       <a class="btn btn-subir btn-block" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero? true: null">Subir <i class="fas fa-upload"></i></a>
       <input type="file" formControlName="escudoDelantero" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
       <div *ngIf="submit && formPasoCamiseta.controls['escudoDelantero'].errors" class="invalid-feedback">
-        <div *ngIf="formPasoCamiseta.controls['escudoDelantero'].errors.required">La imagen es requerida.</div>
+        <div *ngIf="formPasoCamiseta.controls['escudoDelantero'].errors.required">La imágen es requerida.</div>
       </div>
     </div>
     <div class="col">
