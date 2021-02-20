@@ -321,8 +321,8 @@ export class WizardComponent implements OnInit {
       this.pedido.imagenes.push(this.convertirABase64(data));
 
       // this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
+      this.abrirModal();
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
-        this.abrirModal();
         this.router.navigate(['/']);
         if (data) {
           console.log("La operación se realizó con éxito.");
@@ -483,6 +483,8 @@ export class WizardComponent implements OnInit {
 
   generarFormResumenPrecio() {
     this.formResumenPrecio = {
+      modelo : this.pedido.modelo.nombre,
+      cantidadJugadores : this.pedido.detalleEquipo.length,
       precioCamiseta: this.pedido.precioCamiseta,
       precioShort: this.pedido.precioShort,
       precioMedias: this.pedido.precioMedias,
