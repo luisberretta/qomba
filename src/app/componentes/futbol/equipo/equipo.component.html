@@ -93,6 +93,7 @@
             <input class="form-control" type="text" id="telefonoContacto" formControlName="telefonoContacto">
             <div *ngIf="submit && formPasoEquipo.controls.telefonoContacto.errors" class="invalid-feedback">
               <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.required">Teléfono requerido.</div>
+              <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.pattern">Ingrese sólo números.</div>
             </div>
           </div>
         </div>

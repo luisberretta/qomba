@@ -1,8 +1,5 @@
-import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges, ViewChild} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Pedido} from "../../../clases/Pedido";
-import {PersonaComponent} from "../persona/persona.component";
-import {WizardComponent} from "../wizard.component";
+import {Component, Input, OnInit, SimpleChanges, OnChanges} from '@angular/core';
+import {FormControl, FormGroup,} from "@angular/forms";
 
 @Component({
   selector: 'app-resumen-precio',
@@ -18,6 +15,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     precioConjunto: new FormControl('', []),
   });
   @Input() formResumenPrecio: any;
+  @Input() formCheckOut: any;
 
   constructor() {
   }
