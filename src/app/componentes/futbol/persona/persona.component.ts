@@ -17,6 +17,7 @@ import {Router} from "@angular/router";
 export class PersonaComponent implements OnInit {
 
   ESCUDO_DELANTERO = "Remera_escudo";
+  VALORES_ESTAMPA = ['Número_espalda','Número_delantero','Nombre'];
   modeloSVG: any;
   url: string = '/assets/images/modelosSVG/';
   modeloSeleccionado: any;
@@ -63,12 +64,14 @@ export class PersonaComponent implements OnInit {
   cambiarColorEstampa(cambiar) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if (grupos[i].id == cambiar.parte) {
+      if(this.perteneceEstampado(grupos[i]))
         grupos[i].setAttribute('fill', cambiar.color);
-      }
     }
   }
 
+  perteneceEstampado(grupo){
+    return this.VALORES_ESTAMPA.find(x=> x == grupo.id);
+  }
 
   visualizarEstampado(visualizar) {
     if (visualizar.parte) {

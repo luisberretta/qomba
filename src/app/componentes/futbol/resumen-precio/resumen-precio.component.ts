@@ -11,13 +11,14 @@ import {WizardComponent} from "../wizard.component";
 })
 export class ResumenPrecioComponent implements OnInit, OnChanges {
 
-  formPasoCheckOut: FormGroup = new FormGroup({
+  formPasoResumenPrecio: FormGroup = new FormGroup({
     precioCamiseta: new FormControl(null),
     precioShort: new FormControl(null),
     precioMedias: new FormControl(null,),
     precioConjunto: new FormControl('', []),
   });
   @Input() formResumenPrecio: any;
+  @Output() anteriorPaso = new EventEmitter();
 
   constructor() {
   }
@@ -32,10 +33,14 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formNumero) {
-    this.formPasoCheckOut.get('precioCamiseta').setValue(formNumero.precioCamiseta);
-    this.formPasoCheckOut.get('precioShort').setValue(formNumero.precioShort);
-    this.formPasoCheckOut.get('precioMedias').setValue(formNumero.precioMedias);
-    this.formPasoCheckOut.get('precioConjunto').setValue(formNumero.precioConjunto);
+    this.formPasoResumenPrecio.get('precioCamiseta').setValue(formNumero.precioCamiseta);
+    this.formPasoResumenPrecio.get('precioShort').setValue(formNumero.precioShort);
+    this.formPasoResumenPrecio.get('precioMedias').setValue(formNumero.precioMedias);
+    this.formPasoResumenPrecio.get('precioConjunto').setValue(formNumero.precioConjunto);
+  }
+
+  anterior() {
+    this.anteriorPaso.emit(this.formPasoResumenPrecio.value);
   }
 
 }

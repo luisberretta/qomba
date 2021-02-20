@@ -4,6 +4,24 @@ export const coloresParte = [
     idModelo: 1,
     partes: [
       {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        colores: ["#98A103", "#0F3302", "#B1BB10", "#B2089C"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_mangas_y_recorte",
+        nombreMostrar: "Mangas y recorte",
+        colores: ["#3F47CC", "#97CC84", "#98A103", "#B2082E"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        colores: ["#90047E", "#446E35", "#EBF901", "#0D4B04"],
+        posicionMatrix: {}
+      },
+      {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
         colores: ["#F609D8", "#3BCD09", "#7B7E4B", "#F0F606"],
@@ -31,24 +49,6 @@ export const coloresParte = [
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short linea inferior",
         colores: ["#4A0641", "#133407", "#4A4F00", "#218213"],
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Cuello_y_puños",
-        nombreMostrar: "Cuello y puños",
-        colores: ["#90047E", "#446E35", "#EBF901", "#0D4B04"],
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Mangas_y_recorte",
-        nombreMostrar: "Mangas y recorte",
-        colores: ["#3F47CC", "#97CC84", "#98A103", "#B2082E"],
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Remera_principal",
-        nombreMostrar: "Remera principal",
-        colores: ["#98A103", "#0F3302", "#B1BB10", "#B2089C"],
         posicionMatrix: {}
       },
       {
@@ -132,13 +132,13 @@ export const coloresParte = [
         posicionMatrix: {}
       },
       {
-        idParte: "Cuello_y_puños",
+        idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
         colores: ["#90047E", "#446E35", "#EBF901", "#0D4B04"],
         posicionMatrix: {}
       },
       {
-        idParte: "Mangas_y_recorte",
+        idParte: "Remera_mangas_y_recorte",
         nombreMostrar: "Mangas y recorte",
         colores: ["#3F47CC", "#97CC84", "#98A103", "#B2082E"],
         posicionMatrix: {}
