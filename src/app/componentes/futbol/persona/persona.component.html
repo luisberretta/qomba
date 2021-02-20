@@ -1,9 +1,3 @@
-<!--<div class="color-picker" *ngIf="paso != 'medias'">-->
-<!--  <p *ngIf="parteSeleccionada" class="text-dark">Elegí el color para:-->
-<!--    <strong>{{ parteSeleccionada }}</strong>-->
-<!--  </p>-->
-<!--  <color-circle [colors]="colors" (onChangeComplete)="cambiarColor($event.color.hex)"></color-circle>-->
-<!--</div>-->
 <div #dataContainer (click)="obtenerElementos($event)" class="row mt-3" [ngClass]="{ 'no-opacity': paso == 'medias' }" [hidden]="ocultarModelo">
   <div class="col-12" #remera [innerHTML]="modeloSVG">
   </div>
