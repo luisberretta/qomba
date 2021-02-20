@@ -20,11 +20,11 @@ export class ColorComponent implements OnInit, OnChanges {
   selectedColor: string = 'black';
 
   formPasoColor: FormGroup = new FormGroup({
-    partesArray: new FormArray([]),
+    partesRemeraSVG: new FormArray([]),
   });
 
   get formPartesArrayControl() {
-    return this.formPasoColor.get('partesArray') as FormArray;
+    return this.formPasoColor.get('partesRemeraSVG') as FormArray;
   }
 
   constructor() {

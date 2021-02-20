@@ -163,7 +163,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(formCamiseta.posicionNumeroDelantero ?? null);
     this.formPasoCamiseta.get('llevaNombreEspalda').setValue(formCamiseta.llevaNombreEspalda ?? null);
     this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(formCamiseta.llevaNumeroEspalda ?? null);
-    this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorNumeroEspalda ?? null);
+    this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? null);
   }
 

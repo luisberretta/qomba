@@ -68,11 +68,12 @@ export class MediasComponent implements OnInit,OnChanges {
   }
 
   generarFormularioMedias(formMedias){
+    this.formPasoMedias.get('agregarMedias').setValue(formMedias.agregarMedias ?? null);
     this.formPasoMedias.get('sponsorDelantero').setValue(formMedias.sponsorDelantero ?? null);
     this.formPasoMedias.get('posicionSponsorDelantero').setValue(formMedias.posicionSponsorDelantero ?? null);
     this.formPasoMedias.get('posicionSponsorTrasero').setValue(formMedias.posicionSponsorTrasero ?? null);
     this.formPasoMedias.get('posicionSponsorManga').setValue(formMedias.posicionSponsorManga ?? null);
-    this.crearFormPartesArray(formMedias.partesShortSVG);
+    this.crearFormPartesArray(formMedias.partesMediasSVG);
   }
 
   crearFormPartesArray(formColor) {
