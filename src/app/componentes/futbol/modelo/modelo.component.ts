@@ -22,8 +22,6 @@ import {camisetaModelos} from "../../../clases/CamisetaModelo";
 export class ModeloComponent implements OnInit, OnChanges {
 
   formPasoModelo: FormGroup = new FormGroup({
-    agregarShort: new FormControl(null, ),
-    agregarMedias: new FormControl(null),
     modelo: new FormControl(null,[Validators.required])
   });
   submit: boolean = false;
@@ -80,8 +78,6 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formModelo) {
-    this.formPasoModelo.get('agregarShort').setValue(formModelo.agregarShort);
-    this.formPasoModelo.get('agregarMedias').setValue(formModelo.agregarMedias);
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
     this.modeloElegido(this.formPasoModelo.get('modelo').value.id);
   }

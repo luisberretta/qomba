@@ -51,14 +51,8 @@ export class ColorComponent implements OnInit, OnChanges {
         });
         this.formPartesArrayControl.push(color);
       }
-      this.ordenarFormulario();
     }
   }
-
-  ordenarFormulario(){
-
-  }
-
   cambiarColor(color, parte) {
     this.selectedColor = color;
     let cambio = {

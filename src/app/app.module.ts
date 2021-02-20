@@ -12,7 +12,7 @@ import { CamisetaComponent } from './componentes/futbol/camiseta/camiseta.compon
 import { ResumenPrecioComponent } from './componentes/futbol/resumen-precio/resumen-precio.component';
 import { ShortComponent } from './componentes/futbol/short/short.component';
 import { EquipoComponent } from './componentes/futbol/equipo/equipo.component';
-import { CheckoutComponent } from './componentes/futbol/checkout/checkout.component';
+import { MediasComponent } from './componentes/futbol/medias/medias.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PersonaComponent } from './componentes/futbol/persona/persona.component';
@@ -35,7 +35,7 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
     ResumenPrecioComponent,
     ShortComponent,
     EquipoComponent,
-    CheckoutComponent,
+    MediasComponent,
     WizardComponent,
     PersonaComponent,
     HomeComponent,

@@ -1,0 +1,101 @@
+<form [formGroup]="formPasoMedias" class="ml-2">
+  <div class="row justify-content-center">
+    <div class="col-md-11 col-12">
+      <div class="form-group row">
+        <div class="form-group">
+          <label class="switch">
+            <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias"
+                   [attr.disabled]="true">
+            <span class="slider round"></span>
+          </label>
+          <label class="form-check-label" for="agregar-medias">Agregar medias</label>
+        </div>
+      </div>
+      <div class=" form-grupo row" *ngIf="agregarMedias">
+        <div formArrayName="partesMediasSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="form-group">
+          <div [formGroupName]="i" class="row">
+            <div class="col-md-4 col-6 align-self-center">
+              <label>{{parteColor.value.nombreMostrar}}: </label>
+            </div>
+            <div class="col-md-8 col-6">
+              <div class="cuadro-color">
+                <div #colorPicker ngx-colors-trigger [palette]="parteColor.value.colores"
+                     [hideColorPicker]="true"
+                     [hideTextInput]="true"
+                     [style.background]="formPartesArrayControl.controls[i].get('color').value ? formPartesArrayControl.controls[i].get('color').value : 'black'"
+                     (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></div>
+                <i class="fas fa-sort-down fa-lg" (click)="colorPicker.click()"></i>
+              </div>
+            </div>
+
+          </div>
+          <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
+            <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="row form-group">
+          <div class="col-6 align-self-center">
+            <label class="switch">
+              <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorDelantero" type="checkbox"
+                     id="lleva-sponsor-delantero">
+              <span class="slider round"></span>
+            </label>
+            <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-delantero">Sponsor frente</label>
+          </div>
+          <div class="pl-0">
+            <a [attr.disabled]="true" class="btn btn-subir" (click)="archivo()">Subir</a>
+            <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+          </div>
+          <div class="col-4">
+            <select [attr.disabled]="true" class="form-control" formControlName="posicionSponsorDelantero">
+              <option [ngValue]="null" selected disabled>Posición</option>
+              <option *ngFor="let posicion of posicioneSponsorDelantero" [ngValue]="posicion">{{ posicion }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-6 align-self-center">
+            <label class="switch">
+              <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorTrasero" type="checkbox"
+                     id="lleva-sponsor-trasero">
+              <span class="slider round"></span>
+            </label>
+            <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-trasero">Sponsor trasero</label>
+          </div>
+          <div class="pl-0">
+            <a [attr.disabled]="true" class="btn btn-subir" (click)="archivo()">Subir</a>
+            <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+          </div>
+          <div class="col-4">
+            <select [attr.disabled]="true" class="form-control" formControlName="posicionSponsorTrasero">
+              <option [ngValue]="null" selected disabled>Posición</option>
+              <option *ngFor="let posicion of posicioneSponsorTrasero" [ngValue]="posicion">{{ posicion }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="col-6 align-self-center">
+            <label class="switch">
+              <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorManga" type="checkbox"
+                     id="lleva-sponsor-manga">
+              <span class="slider round"></span>
+            </label>
+            <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-manga">Sponsor manga</label>
+          </div>
+          <div class="pl-0">
+            <a [attr.disabled]="true" class="btn btn-subir" (click)="archivo()">Subir</a>
+            <input [attr.disabled]="true" type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)">
+          </div>
+          <div class="col-4">
+            <select [attr.disabled]="true" class="form-control" formControlName="posicionSponsorManga">
+              <option [ngValue]="null" selected disabled>Posición</option>
+              <option *ngFor="let posicion of posicionesSponsorManga" [ngValue]="posicion">{{ posicion }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

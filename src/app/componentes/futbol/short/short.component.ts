@@ -10,7 +10,7 @@ import {
   ElementRef
 } from '@angular/core';
 import {} from "events";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
@@ -23,35 +23,31 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
   @ViewChild('archivoEscudo') fileInput: ElementRef;
-  @Output() visualizarEstampado = new EventEmitter();
   @Output() archivoEscudo = new EventEmitter();
+  @Output() visualizarEstampado = new EventEmitter();
+  @Output() colorSeleccionado = new EventEmitter();
 
-  tiposLetra = ['Mundial Sudáfrica', 'Otro Tipo', 'Otro Tipo 2'];
-  posicionesSponsorManga = ['Derecha', 'Centro', 'Izquierda'];
-  posicioneSponsorTrasero = ['Derecha', 'Centro', 'Izquierda'];
-  posicioneSponsorDelantero = ['Derecha', 'Centro', 'Izquierda'];
+
 
   ESCUDO_SHORT = "Short_escudo";
   NUMERO_SHORT = "Short_número";
+  selectedColor: string = 'black';
+
   formPasoShort: FormGroup = new FormGroup({
-    agregarShort: new FormControl(''),
+    agregarShort: new FormControl(null, ),
     agregarEscudoDelantero: new FormControl(''),
     agregarEscudoShort: new FormControl(''),
     escudoShort: new FormControl(''),
     agregarNumeroShort: new FormControl(''),
-    tipoLetra: new FormControl(''),
-    agregarSponsorDelantero: new FormControl(''),
-    posicionSponsorDelantero: new FormControl(''),
-    sponsorDelantero: new FormControl(''),
-    agregarSponsorTrasero: new FormControl(''),
-    posicionSponsorTrasero: new FormControl(''),
-    sponsorTrasero: new FormControl(''),
-    agregarSponsorManga: new FormControl(''),
-    posicionSponsorManga: new FormControl(''),
-    sponsorManga: new FormControl(''),
+    partesShortSVG: new FormArray([]),
   });
+
+
+  get formPartesArrayControl() {
+    return this.formPasoShort.get('partesShortSVG') as FormArray;
+  }
+
   submit: boolean = false;
-  activo: boolean = false;
   @Input() formShort;
   @Output() llevaShort = new EventEmitter();
 
@@ -84,6 +80,39 @@ export class ShortComponent implements OnInit, OnChanges {
     }
   }
 
+  generarFormulario(formShort) {
+    this.formPasoShort.get('agregarShort').setValue(formShort.agregarShort ?? null);
+    this.formPasoShort.get('agregarEscudoDelantero').setValue(formShort.llevaEscudoDelantero ?? null);
+    this.formPasoShort.get('agregarEscudoShort').setValue(formShort.agregarEscudoShort ?? null);
+    this.formPasoShort.get('agregarNumeroShort').setValue(formShort.agregarNumeroShort ?? null);
+    this.crearFormPartesArray(formShort.partesShortSVG);
+  }
+
+  crearFormPartesArray(formColor) {
+    if (formColor) {
+      for (let i = 0; i < formColor.length; i++) {
+        let color = new FormGroup({
+          idParte: new FormControl(formColor[i].idParte),
+          nombreMostrar: new FormControl(formColor[i].nombreMostrar),
+          colores: new FormControl(formColor[i].colores),
+          color: new FormControl(formColor[i].color ? formColor[i].color : null)
+        });
+        this.formPartesArrayControl.push(color);
+      }
+    }
+  }
+
+  cambiarColor(color, parte) {
+    this.selectedColor = color;
+    let cambio = {
+      color: color,
+      parte: parte,
+    }
+    if (color && parte) {
+      this.colorSeleccionado.emit(cambio);
+    }
+  }
+
   siguiente() {
     this.submit = true;
     this.proximoPaso.emit(this.formPasoShort.value);
@@ -91,18 +120,6 @@ export class ShortComponent implements OnInit, OnChanges {
 
   anterior() {
     this.anteriorPaso.emit(this.formPasoShort.value);
-  }
-
-  generarFormulario(formShort) {
-    this.formPasoShort.get('agregarShort').setValue(formShort.agregarShort ?? null);
-    this.formPasoShort.get('agregarEscudoDelantero').setValue(formShort.llevaEscudoDelantero ?? null);
-    this.formPasoShort.get('agregarEscudoShort').setValue(formShort.agregarEscudoShort ?? null);
-    this.formPasoShort.get('agregarNumeroShort').setValue(formShort.agregarNumeroShort ?? null);
-    this.formPasoShort.get('tipoLetra').setValue(formShort.tipoLetra ?? null);
-    this.formPasoShort.get('sponsorDelantero').setValue(formShort.sponsorDelantero ?? null);
-    this.formPasoShort.get('posicionSponsorDelantero').setValue(formShort.posicionSponsorDelantero ?? null);
-    this.formPasoShort.get('posicionSponsorTrasero').setValue(formShort.posicionSponsorTrasero ?? null);
-    this.formPasoShort.get('posicionSponsorManga').setValue(formShort.posicionSponsorManga ?? null);
   }
 
   get agregarShort() {

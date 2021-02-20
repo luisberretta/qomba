@@ -35,18 +35,7 @@
                id="lleva-numero-delantero">
         <span class="slider round"></span>
       </label>
-      <label class="form-check-label" for="lleva-numero-delantero">Núm. Delantero</label>
-    </div>
-    <div *ngIf="formPasoCamiseta.controls['llevaNumeroDelantero'].value" class="cuadro-color">
-      <div ngx-colors-trigger #colorPickerNroDelantero [palette]="coloresNumeroDelantero"
-                  [hideColorPicker]="true"
-                  [hideTextInput]="true"
-                  [style.background]="formPasoCamiseta.get('colorNumeroDelantero').value ? formPasoCamiseta.get('colorNumeroDelantero').value : 'black'"
-                  (change)="cambiarColor(NUMERO_DELANTERO, formPasoCamiseta.get('colorNumeroDelantero').value)" formControlName="colorNumeroDelantero"></div>
-      <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroDelantero.click()"></i>
-      <div *ngIf="submit && formPasoCamiseta.controls['colorNumeroDelantero'].errors" class="invalid-feedback">
-        <div *ngIf="formPasoCamiseta.controls['colorNumeroDelantero'].errors.required">El color es requerido.</div>
-      </div>
+      <label class="form-check-label" for="lleva-numero-delantero">Número. Delantero</label>
     </div>
     <div class="col-4">
       <select class="form-control" formControlName="posicionNumeroDelantero"
@@ -55,7 +44,8 @@
         <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
       </select>
       <div *ngIf="submit && formPasoCamiseta.controls['posicionNumeroDelantero'].errors" class="invalid-feedback">
-        <div *ngIf="formPasoCamiseta.controls['posicionNumeroDelantero'].errors.required">La posición es requerida.</div>
+        <div *ngIf="formPasoCamiseta.controls['posicionNumeroDelantero'].errors.required">La posición es requerida.
+        </div>
       </div>
     </div>
   </div>
@@ -67,14 +57,6 @@
       </label>
       <label class="form-check-label" for="lleva-nombre-espalda">Nombre en espalda</label>
     </div>
-      <div *ngIf="formPasoCamiseta.controls['llevaNombreEspalda'].value" class="cuadro-color">
-        <div #colorPickerNombreEspalda ngx-colors-trigger [palette]="coloresNombre"
-                    [hideColorPicker]="true"
-                    [hideTextInput]="true"
-                    [style.background]="formPasoCamiseta.get('colorNombreEspalda').value ? formPasoCamiseta.get('colorNombreEspalda').value : 'black'"
-                    (change)="cambiarColor(NOMBRE_ESPALDA,formPasoCamiseta.get('colorNombreEspalda').value)" formControlName="colorNombreEspalda"></div>
-        <i class="fas fa-sort-down fa-lg" (click)="colorPickerNombreEspalda.click()"></i>
-      </div>
     <div *ngIf="submit && formPasoCamiseta.controls['colorNombreEspalda'].errors" class="invalid-feedback">
       <div *ngIf="formPasoCamiseta.controls['colorNombreEspalda'].errors.required">El color es requerido.</div>
     </div>
@@ -87,16 +69,34 @@
       </label>
       <label class="form-check-label" for="lleva-numero-espalda">Número en espalda</label>
     </div>
-    <div *ngIf="formPasoCamiseta.controls['llevaNumeroEspalda'].value" class="cuadro-color">
-      <div ngx-colors-trigger #colorPickerNroEspalda [palette]="coloresNumeroEspalda"
-                  [hideColorPicker]="true"
-                  [hideTextInput]="true"
-                  [style.background]="formPasoCamiseta.get('colorNumeroEspalda').value ? formPasoCamiseta.get('colorNumeroEspalda').value : 'black'"
-                  (change)="cambiarColor(NUMERO_ESPALDA,formPasoCamiseta.get('colorNumeroEspalda').value)" formControlName="colorNumeroEspalda"></div>
-      <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
-    </div>
     <div *ngIf="submit && formPasoCamiseta.controls['colorNumeroEspalda'].errors" class="invalid-feedback">
       <div *ngIf="formPasoCamiseta.controls['colorNumeroEspalda'].errors.required">El color es requerido.</div>
     </div>
   </div>
+  <div class="row form-group">
+    <div class="col-md-4 col-6 align-self-center">
+      <label>Tipo de letra: </label>
+    </div>
+    <div class="col-md-8 col-6">
+      <select [attr.disabled]="llevaEstampado()? null: true" class="form-control" formControlName="tipoLetra">
+        <option [ngValue]="null" selected disabled>Seleccione</option>
+        <option *ngFor="let tipoLetra of tiposLetra" [ngValue]="tipoLetra">{{ tipoLetra }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div>
+      <label>Color letras y número:</label>
+    </div>
+    <div *ngIf="llevaEstampado()" class="cuadro-color">
+      <div ngx-colors-trigger #colorPickerNroEspalda [palette]="coloresNumeroEspalda"
+           [hideColorPicker]="true"
+           [hideTextInput]="true"
+           [style.background]="formPasoCamiseta.get('colorEstampado').value ? formPasoCamiseta.get('colorEstampado').value : 'black'"
+           (change)="cambiarColor($event)" formControlName="colorEstampado"></div>
+      <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
+    </div>
+  </div>
+
+
 </form>

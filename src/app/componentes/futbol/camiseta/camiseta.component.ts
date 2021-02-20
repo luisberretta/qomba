@@ -32,6 +32,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   posicionesNumeroDelanteroEstatico: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesNumeroDelantero: string[] = ["Derecha", "Izquierda", "Centro"];
+  tiposLetra = ['Mundial Sudáfrica', 'Otro Tipo', 'Otro Tipo 2'];
   NUMERO_DELANTERO = "Número_delantero";
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
@@ -41,16 +42,15 @@ export class CamisetaComponent implements OnInit, OnChanges {
   coloresNumeroEspalda;
 
   formPasoCamiseta: FormGroup = new FormGroup({
+    tipoLetra: new FormControl(null),
     llevaEscudoDelantero: new FormControl(null),
     escudoDelantero: new FormControl(null),
     posicionEscudoDelantero: new FormControl(null),
     llevaNumeroDelantero: new FormControl(null),
     posicionNumeroDelantero: new FormControl(null),
-    colorNumeroDelantero: new FormControl(null),
     llevaNombreEspalda: new FormControl(null),
-    colorNombreEspalda: new FormControl(null),
     llevaNumeroEspalda: new FormControl(null),
-    colorNumeroEspalda: new FormControl(null),
+    colorEstampado: new FormControl(null),
   });
   visualizar = {
     valor: null,
@@ -80,8 +80,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
       } else {
         this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(null);
       }
-      this.configurarValidadores(true);
       this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNumeroDelantero').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
@@ -99,30 +99,20 @@ export class CamisetaComponent implements OnInit, OnChanges {
       } else {
         this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(null);
       }
-      this.configurarValidadores(false);
       this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNombreEspalda').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NOMBRE_ESPALDA;
-      if (this.visualizar.valor) {
-        this.formPasoCamiseta.controls['colorNombreEspalda'].setValidators([Validators.required]);
-      } else {
-        this.formPasoCamiseta.controls['colorNombreEspalda'].setValidators(null);
-      }
-      this.formPasoCamiseta.controls['colorNombreEspalda'].updateValueAndValidity();
       this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNumeroEspalda').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
-      if (this.visualizar.valor) {
-        this.formPasoCamiseta.controls['colorNumeroEspalda'].setValidators([Validators.required]);
-      } else {
-        this.formPasoCamiseta.controls['colorNumeroEspalda'].setValidators(null);
-      }
-      this.formPasoCamiseta.controls['colorNumeroEspalda'].updateValueAndValidity();
       this.visualizar.parte = this.NUMERO_ESPALDA;
       this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
     });
 
     this.formPasoCamiseta.get('posicionEscudoDelantero').valueChanges.subscribe((valor) => {
@@ -148,6 +138,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
     });
   }
 
+  llevaEstampado(){
+    return this.llevaNumeroDelantero || this.llevaNumeroEspalda || this.llevaNombreEspalda;
+  }
+
   modeloElegido(modelo){
     this.coloresNumeroDelantero = coloresParte.find(x=>x.idModelo == modelo.id).partes.find(x => x.idParte == this.NUMERO_DELANTERO);
     this.coloresNombre = coloresParte.find(x => x.idModelo == modelo.id).partes.find(x => x.idParte == this.NOMBRE_ESPALDA).colores;
@@ -167,11 +161,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(formCamiseta.posicionEscudoDelantero ?? null);
     this.formPasoCamiseta.get('llevaNumeroDelantero').setValue(formCamiseta.llevaNumeroDelantero ?? null);
     this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(formCamiseta.posicionNumeroDelantero ?? null);
-    this.formPasoCamiseta.get('colorNumeroDelantero').setValue(formCamiseta.colorNumeroDelantero ?? null);
     this.formPasoCamiseta.get('llevaNombreEspalda').setValue(formCamiseta.llevaNombreEspalda ?? null);
-    this.formPasoCamiseta.get('colorNombreEspalda').setValue(formCamiseta.colorNombreEspalda ?? null);
     this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(formCamiseta.llevaNumeroEspalda ?? null);
-    this.formPasoCamiseta.get('colorNumeroEspalda').setValue(formCamiseta.colorNumeroEspalda ?? null);
+    this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorNumeroEspalda ?? null);
+    this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? null);
   }
 
 
@@ -191,10 +184,9 @@ export class CamisetaComponent implements OnInit, OnChanges {
     }
   }
 
-  cambiarColor(parte, color) {
+  cambiarColor(color) {
     let cambio = {
       color: color,
-      parte: parte,
       esEstampa: true,
     }
     this.colorSeleccionado.emit(cambio);
@@ -203,6 +195,15 @@ export class CamisetaComponent implements OnInit, OnChanges {
   get llevaEscudoDelantero() {
     return this.formPasoCamiseta.controls['llevaEscudoDelantero'].value;
   }
+
+  get llevaNumeroEspalda(){
+    return this.formPasoCamiseta.controls['llevaNumeroEspalda'].value;
+  }
+
+  get llevaNombreEspalda(){
+    return this.formPasoCamiseta.controls['llevaNombreEspalda'].value;
+  }
+
 
   get llevaNumeroDelantero() {
     return this.formPasoCamiseta.controls['llevaNumeroDelantero'].value;
@@ -214,6 +215,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   get posicionEscudoDelantero() {
     return this.formPasoCamiseta.get('posicionEscudoDelantero').value;
+  }
+
+  get colorEstampa(){
+    return this.formPasoCamiseta.get('colorEstampa').value;
   }
 
   generarPosicion(posicionOcupada) {
@@ -228,31 +233,30 @@ export class CamisetaComponent implements OnInit, OnChanges {
         this.visualizar.posicion = "Centro";
         break;
     }
-
   }
 
-  configurarValidadores(esEscudoDelantero) {
-    if (esEscudoDelantero) {
-      if (this.llevaEscudoDelantero) {
-        this.formPasoCamiseta.controls['posicionEscudoDelantero'].setValidators([Validators.required]);
-        this.formPasoCamiseta.controls['escudoDelantero'].setValidators([Validators.required]);
-      } else {
-        this.formPasoCamiseta.controls['posicionEscudoDelantero'].setValidators(null);
-        this.formPasoCamiseta.controls['escudoDelantero'].setValidators(null);
-      }
-      this.formPasoCamiseta.controls['posicionEscudoDelantero'].updateValueAndValidity();
-      this.formPasoCamiseta.controls['escudoDelantero'].updateValueAndValidity();
+  configurarValidadores(){
+    if (this.llevaEscudoDelantero) {
+      this.formPasoCamiseta.controls['posicionEscudoDelantero'].setValidators([Validators.required]);
+      this.formPasoCamiseta.controls['escudoDelantero'].setValidators([Validators.required]);
     } else {
-      if (this.llevaNumeroDelantero) {
-        this.formPasoCamiseta.controls['posicionNumeroDelantero'].setValidators([Validators.required]);
-        this.formPasoCamiseta.controls['colorNumeroDelantero'].setValidators([Validators.required]);
-      } else {
-        this.formPasoCamiseta.controls['posicionNumeroDelantero'].setValidators(null);
-        this.formPasoCamiseta.controls['colorNumeroDelantero'].setValidators(null);
-      }
-      this.formPasoCamiseta.controls['posicionNumeroDelantero'].updateValueAndValidity();
-      this.formPasoCamiseta.controls['colorNumeroDelantero'].updateValueAndValidity();
+      this.formPasoCamiseta.controls['posicionEscudoDelantero'].setValidators(null);
+      this.formPasoCamiseta.controls['escudoDelantero'].setValidators(null);
     }
+    if (this.llevaNumeroDelantero) {
+      this.formPasoCamiseta.controls['posicionNumeroDelantero'].setValidators([Validators.required]);
+    } else {
+      this.formPasoCamiseta.controls['posicionNumeroDelantero'].setValidators(null);
+    }
+    if (this.llevaEstampado()) {
+      this.formPasoCamiseta.controls['colorEstampado'].setValidators([Validators.required]);
+    } else {
+      this.formPasoCamiseta.controls['colorEstampado'].setValidators(null);
+    }
+    this.formPasoCamiseta.controls['posicionEscudoDelantero'].updateValueAndValidity();
+    this.formPasoCamiseta.controls['escudoDelantero'].updateValueAndValidity();
+    this.formPasoCamiseta.controls['posicionNumeroDelantero'].updateValueAndValidity();
+    this.formPasoCamiseta.controls['colorEstampado'].updateValueAndValidity();
   }
 
   siguiente() {

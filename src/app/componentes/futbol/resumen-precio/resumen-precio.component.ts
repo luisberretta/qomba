@@ -1,5 +1,8 @@
-import {Component, Input, OnInit, SimpleChanges, OnChanges} from '@angular/core';
-import {FormControl, FormGroup,} from "@angular/forms";
+import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges, ViewChild} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Pedido} from "../../../clases/Pedido";
+import {PersonaComponent} from "../persona/persona.component";
+import {WizardComponent} from "../wizard.component";
 
 @Component({
   selector: 'app-resumen-precio',
@@ -8,7 +11,7 @@ import {FormControl, FormGroup,} from "@angular/forms";
 })
 export class ResumenPrecioComponent implements OnInit, OnChanges {
 
-  formPasoCheckOut: FormGroup = new FormGroup({
+  formPasoResumenPrecio: FormGroup = new FormGroup({
     precioCamiseta: new FormControl(null),
     precioShort: new FormControl(null),
     precioMedias: new FormControl(null),
@@ -17,6 +20,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
   });
   @Input() formResumenPrecio: any;
   @Input() formCheckOut: any;
+  @Output() anteriorPaso = new EventEmitter();
 
   constructor() {
   }
@@ -36,6 +40,10 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     this.formPasoCheckOut.get('precioMedias').setValue(formNumero.precioMedias);
     this.formPasoCheckOut.get('precioConjunto').setValue(formNumero.precioConjunto);
     this.formPasoCheckOut.get('precioTotal').setValue(formNumero.precioTotal);
+  }
+
+  anterior() {
+    this.anteriorPaso.emit(this.formPasoResumenPrecio.value);
   }
 
 }
