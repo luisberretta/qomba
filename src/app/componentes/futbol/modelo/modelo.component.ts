@@ -90,6 +90,10 @@ export class ModeloComponent implements OnInit, OnChanges {
     this.modalRef = this.modalService.open(this.modalTemplate, { centered: true });
   }
 
+  cerrar() {
+    this.modalService.dismissAll();
+  }
+
   modeloElegido(id) {
     this.seleccionoModelo = true;
     for (let i = 0; i < this.camisetaModelos.length; i++) {

@@ -5,8 +5,11 @@
     display: block;
     width: 100%;
     border: solid 1px black;
+    font-size: 13px;
+    transition: font-size 200ms ease;
     &.seleccionado {
       background-color: #e0e0e0;
+      font-size: 14px;
     }
     &:focus {
       box-shadow: none;
