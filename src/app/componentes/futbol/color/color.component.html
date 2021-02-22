@@ -18,11 +18,10 @@
         </div>
 
       </div>
-      <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
-        <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>
-      </div>
     </div>
-
+    <div *ngIf="submit && !this.formPasoColor.valid" class="invalid-feedback">
+      <div *ngIf="!this.formPasoColor.valid">Seleccioná los colores de tú modelo</div>
+    </div>
   </form>
 </div>
 

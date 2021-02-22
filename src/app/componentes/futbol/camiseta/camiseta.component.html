@@ -10,18 +10,12 @@
     <div>
       <a class="btn btn-subir btn-block" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero? true: null">Subir <i class="fas fa-upload"></i></a>
       <input type="file" formControlName="escudoDelantero" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
-      <div *ngIf="submit && formPasoCamiseta.controls['escudoDelantero'].errors" class="invalid-feedback">
-        <div *ngIf="formPasoCamiseta.controls['escudoDelantero'].errors.required">La imágen es requerida.</div>
-      </div>
     </div>
     <div class="col">
       <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="!llevaEscudoDelantero? true: null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
       </select>
-    </div>
-    <div *ngIf="submit && formPasoCamiseta.controls['posicionEscudoDelantero'].errors" class="invalid-feedback">
-      <div *ngIf="formPasoCamiseta.controls['posicionEscudoDelantero'].errors.required">La posición es requerida.</div>
     </div>
   </div>
   <div class="row form-group">
@@ -37,10 +31,6 @@
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
       </select>
-      <div *ngIf="submit && formPasoCamiseta.controls['posicionNumeroDelantero'].errors" class="invalid-feedback">
-        <div *ngIf="formPasoCamiseta.controls['posicionNumeroDelantero'].errors.required">La posición es requerida.
-        </div>
-      </div>
     </div>
   </div>
   <div class="row form-group">
@@ -51,9 +41,6 @@
       </label>
       <label class="form-check-label" for="lleva-nombre-espalda">Nombre Espalda</label>
     </div>
-    <div *ngIf="submit && formPasoCamiseta.controls['colorNombreEspalda'].errors" class="invalid-feedback">
-      <div *ngIf="formPasoCamiseta.controls['colorNombreEspalda'].errors.required">El color es requerido.</div>
-    </div>
   </div>
   <div class="row form-group">
     <div class="col-md-6 col-8 align-self-center">
@@ -62,9 +49,6 @@
         <span class="slider round"></span>
       </label>
       <label class="form-check-label" for="lleva-numero-espalda">Número Espalda</label>
-    </div>
-    <div *ngIf="submit && formPasoCamiseta.controls['colorNumeroEspalda'].errors" class="invalid-feedback">
-      <div *ngIf="formPasoCamiseta.controls['colorNumeroEspalda'].errors.required">El color es requerido.</div>
     </div>
   </div>
   <div class="row form-group">
@@ -92,5 +76,8 @@
         <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
       </div>
     </div>
+  </div>
+  <div *ngIf="submit && !formPasoCamiseta.valid" class="invalid-feedback">
+    <div *ngIf="submit && !formPasoCamiseta.valid">Seleccione los campos obligatorios.</div>
   </div>
 </form>
