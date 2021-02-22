@@ -181,11 +181,11 @@ export class PersonaComponent implements OnInit {
   cambiarTipografia(tipografia) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if(this.perteneceTipografia(grupos[i])) {
+      if(this.perteneceTipografia(grupos[i].id)) {
         if(tipografia == 'Sablon') {
           tipografia = 'SablonUp-College';
         }
-        grupos[i].getElementsByTagName('text').setAttribute('font-family', tipografia);
+        grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia);
       }
     }
   }
