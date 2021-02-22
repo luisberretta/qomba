@@ -92,17 +92,6 @@ input.form-control, select.form-control {
   border: solid 1px black;
 }
 
-.no-opacity {
-  g:hover {
-    opacity: 1;
-    cursor: initial;
-  }
-  &.parte-seleccionada {
-    opacity: 1;
-    cursor: initial;
-  }
-}
-
 .color-picker {
   background-color: gray;
   padding: 10px;
@@ -146,6 +135,7 @@ input.form-control, select.form-control {
   position: relative;
   div {
     height: 20px;
+    border: solid 1px #8e8b8b !important;
   }
   i {
     position: absolute;
