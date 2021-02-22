@@ -11,7 +11,12 @@
   <div class="form-group row">
     <label for="cantidadEquipo" class="col-md-5 col-7 text-left align-self-center pr-0">Cantidad Jugadores:</label>
     <div class="col-md-2 col-5 text-left pl-0">
-      <input class="form-control" type="number" min="0" max="30" id="cantidadEquipo" formControlName="cantidadEquipo">
+      <div class="input-group">
+        <input class="form-control" type="number" min="0" max="30" id="cantidadEquipo" formControlName="cantidadEquipo">
+        <div class="input-group-append">
+          <span class="input-group-text"><i class="fas fa-sort-up" (click)="aumentarJugador()"></i> <i class="fas fa-sort-down" (click)="restarJugador()"></i></span>
+        </div>
+      </div>
     </div>
     <div *ngIf="submit && formPasoEquipo.controls.cantidadEquipo.errors" class="invalid-feedback">
       <div *ngIf="formPasoEquipo.controls.cantidadEquipo.errors">Ingrese un valor válido.
