@@ -52,7 +52,7 @@ export const camisetaModelos = [
   {
     id: 6,
     nombre: 'Dortmund',
-    url: '/assets/images/modelos/Dortmund.png',
+    url: '/assets/images/modelos/Dortmund.svg',
     urlSvg: 'Dortmund.svg',
     precioIndividual: 1990,
     precioMayorista: 1490,
