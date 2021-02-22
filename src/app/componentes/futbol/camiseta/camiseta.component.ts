@@ -37,20 +37,19 @@ export class CamisetaComponent implements OnInit, OnChanges {
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
   ESCUDO_DELANTERO = "Remera_escudo";
-  coloresNumeroDelantero;
-  coloresNombre;
-  coloresNumeroEspalda;
+  coloresLetrasYNumeros = ["#FFFFFF", "#000000"];
 
   formPasoCamiseta: FormGroup = new FormGroup({
+    colorRemera: new FormControl(null),
     tipoLetra: new FormControl(null),
     llevaEscudoDelantero: new FormControl(null),
     escudoDelantero: new FormControl(null),
     posicionEscudoDelantero: new FormControl(null),
     llevaNumeroDelantero: new FormControl(null),
     posicionNumeroDelantero: new FormControl(null),
-    llevaNombreEspalda: new FormControl(null),
+    llevaNombreEspalda: new FormControl(),
     llevaNumeroEspalda: new FormControl(null),
-    colorEstampado: new FormControl(null),
+    colorEstampado: new FormControl(null)
   });
   visualizar = {
     valor: null,
@@ -64,8 +63,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.formPasoCamiseta.get('llevaNombreEspalda').setValue(true);
-    this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(true);
     this.formPasoCamiseta.get('llevaEscudoDelantero').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.ESCUDO_DELANTERO;
@@ -141,24 +138,25 @@ export class CamisetaComponent implements OnInit, OnChanges {
     });
   }
 
-  llevaEstampado(){
+  llevaEstampado() {
     return this.llevaNumeroDelantero || this.llevaNumeroEspalda || this.llevaNombreEspalda;
   }
-
-  modeloElegido(modelo){
-    this.coloresNumeroDelantero = coloresParte.find(x=>x.idModelo == modelo.id).partes.find(x => x.idParte == this.NUMERO_DELANTERO);
-    this.coloresNombre = coloresParte.find(x => x.idModelo == modelo.id).partes.find(x => x.idParte == this.NOMBRE_ESPALDA).colores;
-    this.coloresNumeroEspalda = coloresParte.find(x=>x.idModelo == modelo.id).partes.find(x => x.idParte == this.NUMERO_ESPALDA).colores;
-  }
-
 
   ngOnChanges(changeRecord: SimpleChanges): void {
     if (changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
       this.generarFormulario(changeRecord.formCamiseta.currentValue);
     }
+
   }
 
   generarFormulario(formCamiseta) {
+    this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
+    if (this.colorRemera == "#000000"){
+      this.coloresLetrasYNumeros = ["#FFFFFF"];
+    }
+    else{
+      this.coloresLetrasYNumeros = ["#000000"]
+    }
     this.formPasoCamiseta.get('llevaEscudoDelantero').setValue(formCamiseta.llevaEscudoDelantero ?? null);
     this.formPasoCamiseta.get('escudoDelantero').setValue(formCamiseta.escudoDelantero ?? null);
     this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(formCamiseta.posicionEscudoDelantero ?? null);
@@ -168,8 +166,20 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(formCamiseta.llevaNumeroEspalda ?? null);
     this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? null);
+    this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
+    if (this.colorRemera == "#000000"){
+      this.coloresLetrasYNumeros = ["#FFFFFF"];
+      if(this.llevaEstampado){
+        this.formPasoCamiseta.get('colorEstampado').setValue("#FFFFFF");
+      }
+    }
+    else{
+      this.coloresLetrasYNumeros = ["#000000"]
+      if(this.llevaEstampado){
+        this.formPasoCamiseta.get('colorEstampado').setValue("#000000");
+      }
+    }
   }
-
 
   archivo() {
     this.fileInput.nativeElement.click();
@@ -188,10 +198,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   cambiarColor(color) {
-    let cambio = {
-      color: color,
-      esEstampa: true,
-    }
+      let cambio = {
+        color: color,
+        esEstampa: true,
+      }
     this.colorSeleccionado.emit(cambio);
   }
 
@@ -199,11 +209,11 @@ export class CamisetaComponent implements OnInit, OnChanges {
     return this.formPasoCamiseta.controls['llevaEscudoDelantero'].value;
   }
 
-  get llevaNumeroEspalda(){
+  get llevaNumeroEspalda() {
     return this.formPasoCamiseta.controls['llevaNumeroEspalda'].value;
   }
 
-  get llevaNombreEspalda(){
+  get llevaNombreEspalda() {
     return this.formPasoCamiseta.controls['llevaNombreEspalda'].value;
   }
 
@@ -220,8 +230,12 @@ export class CamisetaComponent implements OnInit, OnChanges {
     return this.formPasoCamiseta.get('posicionEscudoDelantero').value;
   }
 
-  get colorEstampa(){
+  get colorEstampa() {
     return this.formPasoCamiseta.get('colorEstampa').value;
+  }
+
+  get colorRemera() {
+    return this.formPasoCamiseta.get('colorRemera').value;
   }
 
   generarPosicion(posicionOcupada) {
@@ -238,7 +252,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
     }
   }
 
-  configurarValidadores(){
+  configurarValidadores() {
     if (this.llevaEscudoDelantero) {
       this.formPasoCamiseta.controls['posicionEscudoDelantero'].setValidators([Validators.required]);
       this.formPasoCamiseta.controls['escudoDelantero'].setValidators([Validators.required]);

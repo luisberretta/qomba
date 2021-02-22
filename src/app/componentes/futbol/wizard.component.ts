@@ -402,6 +402,7 @@ export class WizardComponent implements OnInit {
   generarFormCamiseta() {
     this.formCamiseta = {
       escudoDelantero: this.pedido.imagenes[0],
+      colorCamiseta: this.pedido.coloresModelo.find(x=> x.idParte == 'Remera_principal').color,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
       llevaNumeroDelantero: this.pedido.llevaNumeroDelantero,

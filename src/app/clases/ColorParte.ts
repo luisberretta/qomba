@@ -1,7 +1,7 @@
 export const coloresParte = [
 
   {
-    idModelo: 1,
+    idModelo: 16,
     partes: [
       {
         idParte: "Remera_principal",
@@ -98,13 +98,13 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#FFFFFF"],
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_mangas_y_recorte",
-        nombreMostrar: "Mangas y recorte",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        idParte: "Remera_estampa",
+        nombreMostrar: "Estampa",
+        colores: ["#FFFF00", "#00FF0F", "#050fdf", "#db0606","#FF8000","#F300FF","#8A571B","#E303CC","#9203E3","#67636A","#000000"],
         posicionMatrix: {}
       },
       {
@@ -120,8 +120,8 @@ export const coloresParte = [
         posicionMatrix: {},
       },
       {
-        idParte: "Medias_lineas",
-        nombreMostrar: "Medias líneas",
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias línea",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -144,6 +144,12 @@ export const coloresParte = [
         posicionMatrix: {}
       },
       {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea letaral",
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        posicionMatrix: {}
+      },
+      {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
         colores: ["#FFFF00", "#00FF0F", "#050fdf", "#db0606","#FF8000","#F300FF","#8A571B","#E303CC","#9203E3","#67636A","#000000"],
@@ -160,9 +166,9 @@ export const coloresParte = [
         nombreMostrar: "Número delantero",
         colores: ["#FFFF00", "#00FF0F", "#050fdf", "#db0606","#FF8000","#F300FF","#8A571B","#E303CC","#9203E3","#67636A","#000000"],
         posicionMatrix: {
-          derecha: [0.9086, 0, 0, 1, 332.2709, 595.6812],
-          izquierda: [0.9086, 0, 0, 1, 617.4053, 595.6812],
-          centro: [0.9086, 0, 0, 1, 483.4053, 623.6368]
+          derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
+          izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
+          centro: [1, 0, 0, 1, 579.3328, 562.0125]
         }
 
       },
@@ -177,9 +183,9 @@ export const coloresParte = [
         nombreMostrar: "Escudo remera",
         colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
         posicionMatrix: {
-          derecha: [0.1122, 0, 0, 0.1029, 341.2709, 527.8898],
-          izquierda: [0.1122, 0, 0, 0.1029, 613.2725, 527.8898],
-          centro: [0.1122, 0, 0, 0.1029, 487.6725, 527.8898]
+          derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
+          izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
+          centro: [0.5456, 0, 0, 0.5456, 562.7837,478.4709]
         }
       }
     ]
