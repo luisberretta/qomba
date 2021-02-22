@@ -64,6 +64,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.formPasoCamiseta.get('llevaNombreEspalda').setValue(true);
+    this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(true);
     this.formPasoCamiseta.get('llevaEscudoDelantero').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.ESCUDO_DELANTERO;

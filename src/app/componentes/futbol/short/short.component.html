@@ -10,7 +10,7 @@
     <div formArrayName="partesShortSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="form-group">
       <div [formGroupName]="i" class="row">
         <div class="col-md-4 col-8 align-self-center">
-          <label>{{parteColor.value.nombreMostrar}}: </label>
+          <label>{{parteColor.value.nombreMostrar}}<span *ngIf="submit && !formPartesArrayControl.controls[i].valid" class="text-danger">* </span>: </label>
         </div>
         <div class="col-md-8 col-4">
           <div class="cuadro-color">
@@ -50,6 +50,6 @@
     </div>
   </div>
   <div *ngIf="submit && !formPasoShort.valid" class="invalid-feedback">
-    <div *ngIf="!formPasoShort.valid">Seleccione los campos obligatorios.</div>
+    <div *ngIf="!formPasoShort.valid">*Obligatorio.</div>
   </div>
 </form>

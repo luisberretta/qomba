@@ -1,5 +1,5 @@
+<div *ngIf="paso != 'modelo' && paso != 'resumen-precio'" class="text-right">Modelo: <strong>{{ modeloSeleccionado?.nombre }}</strong></div>
 <div #dataContainer (click)="obtenerElementos($event)" class="row mt-3" [ngClass]="{ 'no-opacity': paso == 'medias' }" [hidden]="ocultarModelo">
-  <div *ngIf="paso != 'modelo' && paso != 'resumen-precio'" class="text-right">Modelo: <strong>{{ modeloSeleccionado?.nombre }}</strong></div>
   <div class="col-12" #remera [innerHTML]="modeloSVG">
   </div>
 </div>

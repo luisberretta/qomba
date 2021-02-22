@@ -11,17 +11,8 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/Roboto-Regular.ttf') format('truetype');
-  font-display: swap;
-}
-
 html, body {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
 }
 
 @media screen and (min-width: 1440px) {
@@ -101,17 +92,6 @@ input.form-control, select.form-control {
   border: solid 1px black;
 }
 
-.no-opacity {
-  g:hover {
-    opacity: 1;
-    cursor: initial;
-  }
-  &.parte-seleccionada {
-    opacity: 1;
-    cursor: initial;
-  }
-}
-
 .color-picker {
   background-color: gray;
   padding: 10px;
@@ -122,6 +102,10 @@ input.form-control, select.form-control {
     align-items: center;
     justify-content: center;
   }
+}
+
+.circle-border {
+  border: solid 1px #8e8b8b !important;
 }
 
 .modal {
@@ -151,6 +135,7 @@ input.form-control, select.form-control {
   position: relative;
   div {
     height: 20px;
+    border: solid 1px #8e8b8b !important;
   }
   i {
     position: absolute;
@@ -238,7 +223,7 @@ fieldset {
   box-shadow:  0 0 0 0 #000;
   border-radius: 0.5rem;
   legend {
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 800;
     text-align: left;
     width:auto;
