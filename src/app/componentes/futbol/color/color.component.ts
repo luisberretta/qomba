@@ -1,4 +1,14 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -77,4 +87,8 @@ export class ColorComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit(this.formPasoColor.value);
   }
 
+  abrirSelector(picker) {
+    let selector: HTMLElement = document.getElementById(picker) as HTMLElement;
+    selector.click();
+  }
 }

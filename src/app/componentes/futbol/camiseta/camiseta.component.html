@@ -8,11 +8,11 @@
       <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
     </div>
     <div>
-      <a class="btn btn-subir btn-block" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero? true: null">Subir <i class="fas fa-upload"></i></a>
+      <a class="btn btn-subir btn-block" [ngClass]="{ 'text-danger border-danger': submit && !formPasoCamiseta.controls['escudoDelantero'].valid }" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero ? true: null">Subir <i class="fas fa-upload"></i></a>
       <input type="file" formControlName="escudoDelantero" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
     </div>
     <div class="col">
-      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="!llevaEscudoDelantero? true: null">
+      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="!llevaEscudoDelantero ? true: null">
         <option [ngValue]="null" selected disabled>Posición</option>
         <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
       </select>
@@ -34,7 +34,7 @@
     </div>
   </div>
   <div class="row form-group">
-    <div class="col-md-6 col-8 align-self-center">
+    <div class="col-md-6 col-8">
       <label class="switch">
         <input class="form-check-input" formControlName="llevaNombreEspalda" type="checkbox" id="lleva-nombre-espalda">
         <span class="slider round"></span>
@@ -42,8 +42,8 @@
       <label class="form-check-label" for="lleva-nombre-espalda">Nombre Espalda</label>
     </div>
   </div>
-  <div class="row form-group">
-    <div class="col-md-6 col-8 align-self-center">
+  <div class="row form-group mt-4">
+    <div class="col-md-6 col-8">
       <label class="switch">
         <input class="form-check-input" formControlName="llevaNumeroEspalda" type="checkbox" id="lleva-numero-espalda">
         <span class="slider round"></span>
@@ -56,7 +56,7 @@
       <label>Tipo de letra: </label>
     </div>
     <div class="col-md-5 col-7">
-      <select [attr.disabled]="llevaEstampado()? null: true" class="form-control" formControlName="tipoLetra">
+      <select [attr.disabled]="llevaEstampado() ? null: true" class="form-control" formControlName="tipoLetra">
         <option [ngValue]="null" selected disabled>Seleccione</option>
         <option *ngFor="let tipoLetra of tiposLetra" [ngValue]="tipoLetra">{{ tipoLetra }}</option>
       </select>
@@ -68,16 +68,16 @@
     </div>
     <div class="col-md-8 col-4">
       <div class="cuadro-color">
-        <div ngx-colors-trigger #colorPickerNroEspalda [palette]="coloresNumeroEspalda"
+        <ngx-colors [id]="'colorPickerNroEspalda'" ngx-colors-trigger [palette]="coloresNumeroEspalda"
              [hideColorPicker]="true"
              [hideTextInput]="true"
              [style.background]="formPasoCamiseta.get('colorEstampado').value ? formPasoCamiseta.get('colorEstampado').value : 'black'"
-             (change)="cambiarColor($event)" formControlName="colorEstampado"></div>
-        <i class="fas fa-sort-down fa-lg" (click)="colorPickerNroEspalda.click()"></i>
+             (change)="cambiarColor($event)" formControlName="colorEstampado"></ngx-colors>
+        <i class="fas fa-sort-down fa-lg" (click)="abrirSelector('colorPickerNroEspalda')"></i>
       </div>
     </div>
   </div>
   <div *ngIf="submit && !formPasoCamiseta.valid" class="invalid-feedback">
-    <div *ngIf="submit && !formPasoCamiseta.valid">Seleccione los campos obligatorios.</div>
+    <div *ngIf="submit && !formPasoCamiseta.valid">*Obligatorio.</div>
   </div>
 </form>

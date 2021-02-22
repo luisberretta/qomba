@@ -14,12 +14,12 @@
         </div>
         <div class="col-md-8 col-4">
           <div class="cuadro-color">
-            <div #colorPicker ngx-colors-trigger [palette]="parteColor.value.colores"
+            <ngx-colors [id]="'selector-' + i" ngx-colors-trigger [palette]="parteColor.value.colores"
                  [hideColorPicker]="true"
                  [hideTextInput]="true"
                  [style.background]="formPartesArrayControl.controls[i].get('color').value ? formPartesArrayControl.controls[i].get('color').value : 'black'"
-                 (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></div>
-            <i class="fas fa-sort-down fa-lg" (click)="colorPicker.click()"></i>
+                 (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></ngx-colors>
+            <i class="fas fa-sort-down fa-lg" (click)="abrirSelector('selector-' + i)"></i>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
     </div>
     <div class="col-md-6 col-5" *ngIf="agregarEscudoShort && !agregarEscudoDelantero">
       <div class="pl-0">
-        <a class="btn btn-subir" (click)="archivo()" >Subir escudo <i class="fas fa-upload"></i></a>
+        <a class="btn btn-subir" [ngClass]="{ 'text-danger border-danger': submit && !formPasoShort.controls['escudoShort'].valid }" (click)="archivo()" >Subir escudo <i class="fas fa-upload"></i></a>
         <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
       </div>
     </div>

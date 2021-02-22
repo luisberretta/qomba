@@ -273,4 +273,9 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit(this.formPasoCamiseta.value);
   }
 
+  abrirSelector(picker) {
+    let selector: HTMLElement = document.getElementById(picker) as HTMLElement;
+    selector.click();
+  }
+
 }

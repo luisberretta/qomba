@@ -67,7 +67,7 @@ export class WizardComponent implements OnInit {
         }
         this.generarPedidoModelo(event);
         this.paso = 'color';
-        this.nombreMostrarPaso = 'Elige Colores';
+        this.nombreMostrarPaso = 'Elegí los Colores';
         this.numeroPaso = 2;
         this.generarFormColor();
         this.personaComponent.visualizarModeloCompleto();
@@ -159,7 +159,7 @@ export class WizardComponent implements OnInit {
         this.generarPedidoCamiseta(event);
         this.numeroPaso = 2;
         this.paso = 'color';
-        this.nombreMostrarPaso = 'Elige Colores';
+        this.nombreMostrarPaso = 'Elegí los Colores';
         this.generarFormColor();
         break;
       case 4:
