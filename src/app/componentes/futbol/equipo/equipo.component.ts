@@ -128,4 +128,19 @@ export class EquipoComponent implements OnInit, OnChanges {
   open(content) {
     this.modalService.open(content, {centered: true});
   }
+
+  aumentarJugador() {
+    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
+    valor++;
+    this.formPasoEquipo.controls['cantidadEquipo'].setValue(valor);
+  }
+
+  restarJugador() {
+    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
+    if(valor == 1) {
+      this.formPasoEquipo.controls['cantidadEquipo'].setValue(1);
+    } else {
+      this.formPasoEquipo.controls['cantidadEquipo'].setValue(--valor);
+    }
+  }
 }
