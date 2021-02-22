@@ -18,7 +18,7 @@ export class ColorComponent implements OnInit, OnChanges {
     colores: []
   }];
   selectedColor: string = 'black';
-
+  visible = false;
   formPasoColor: FormGroup = new FormGroup({
     partesRemeraSVG: new FormArray([]),
   });
@@ -51,8 +51,10 @@ export class ColorComponent implements OnInit, OnChanges {
         });
         this.formPartesArrayControl.push(color);
       }
+      this.visible = true;
     }
   }
+
   cambiarColor(color, parte) {
     this.selectedColor = color;
     let cambio = {

@@ -151,10 +151,10 @@ export class PersonaComponent implements OnInit {
   }
 
 
-  generarImagenes(): any {
-    let images: HTMLAllCollection[] = [];
-    images.push(this.remera.nativeElement.children.namedItem('Capa_1'));
-    return images;
+  generarImagen(): any {
+    let imagen: HTMLAllCollection;
+    imagen = this.remera.nativeElement.children.namedItem('Capa_1');
+    return imagen;
   }
 
   obtenerElementos(event) {

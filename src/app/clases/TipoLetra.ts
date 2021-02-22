@@ -1,4 +1,4 @@
-export const coloresParte = [
+export const coloresLetras = [
   {
     nombre: 'Sablon',
   },

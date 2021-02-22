@@ -1,26 +1,29 @@
-<form [formGroup]="formPasoColor" class="ml-2">
-  <div formArrayName="partesRemeraSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i" class="form-group">
-    <div [formGroupName]="i" class="row">
-      <div class="col-md-4 col-6 align-self-center">
-        <label>{{parteColor.value.nombreMostrar}}: </label>
-      </div>
-      <div class="col-md-8 col-6">
-        <div class="cuadro-color">
-          <div #colorPicker ngx-colors-trigger [palette]="parteColor.value.colores"
-               [hideColorPicker]="true"
-               [hideTextInput]="true"
-               [style.background]="formPartesArrayControl.controls[i].get('color').value ? formPartesArrayControl.controls[i].get('color').value : 'black'"
-               (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></div>
-          <i class="fas fa-sort-down fa-lg" (click)="colorPicker.click()"></i>
+<div *ngIf="visible">
+  <form [formGroup]="formPasoColor" class="ml-2">
+    <div formArrayName="partesRemeraSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i"
+         class="form-group">
+      <div [formGroupName]="i" class="row">
+        <div class="col-md-4 col-6 align-self-center">
+          <label>{{parteColor.value.nombreMostrar}}: </label>
         </div>
+        <div class="col-md-8 col-6">
+          <div class="cuadro-color">
+            <div #colorPicker ngx-colors-trigger [palette]="parteColor.value.colores"
+                 [hideColorPicker]="true"
+                 [hideTextInput]="true"
+                 [style.background]="formPartesArrayControl.controls[i].get('color').value ? formPartesArrayControl.controls[i].get('color').value : 'black'"
+                 (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></div>
+            <i class="fas fa-sort-down fa-lg" (click)="colorPicker.click()"></i>
+          </div>
+        </div>
+
       </div>
-
+      <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
+        <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>
+      </div>
     </div>
-    <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
-      <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>
-    </div>
-  </div>
 
-</form>
+  </form>
+</div>
 
 

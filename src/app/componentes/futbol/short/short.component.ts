@@ -62,6 +62,10 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.formPasoShort.get('agregarShort').valueChanges.subscribe((valor) => {
+      this.formPasoShort.get('agregarNumeroShort').setValue(null);
+      this.formPasoShort.get('agregarEscudoShort').setValue(null);
+    });
     this.formPasoShort.get('agregarEscudoShort').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.ESCUDO_SHORT;
@@ -148,8 +152,6 @@ export class ShortComponent implements OnInit, OnChanges {
       }
        this.archivoEscudo.emit(event.target.files[0]);
     }
-    // this.formPasoCamiseta.controls['posicionEscudo'].setValidators([Validators.required]);
-    // this.formPasoCamiseta.controls['posicionEscudo'].updateValueAndValidity();
   }
 
 }

@@ -15,8 +15,8 @@ export class EquipoComponent implements OnInit, OnChanges {
   talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
   submit: boolean = false;
   formPasoEquipo: FormGroup = new FormGroup({
-    nombreEquipo: new FormControl(null,[Validators.required]),
-    nombreContacto: new FormControl(null,[Validators.required]),
+    nombreEquipo: new FormControl(null, [Validators.required]),
+    nombreContacto: new FormControl(null, [Validators.required]),
     telefonoContacto: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
     emailContacto: new FormControl(null, [Validators.required, Validators.email]),
     cantidadEquipo: new FormControl(1, [Validators.min(1), Validators.required]),
@@ -29,10 +29,14 @@ export class EquipoComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.formPasoEquipo.get('cantidadEquipo').valueChanges.subscribe((valor) => {
       if (valor < 1 || valor < this.formEquipoControl.controls.length) {
-        this.formEquipoControl.controls.length = valor;
+        this.formEquipoControl.controls.length = 1;
         return;
       } else {
-        for (let i = this.formEquipoControl.controls.length; i < valor; i++) {
+        let desde = 0;
+        if (this.formEquipoControl.controls.length) {
+          desde = this.formEquipoControl.controls.length;
+        }
+        for (let i = desde; i < valor; i++) {
           let jugador = new FormGroup({
             nombreCamiseta: new FormControl(null),
             numero: new FormControl(null, [Validators.min(0), Validators.max(99)]),
@@ -113,7 +117,7 @@ export class EquipoComponent implements OnInit, OnChanges {
   siguiente() {
     this.submit = true;
     // if (this.formPasoEquipo.valid) {
-      this.proximoPaso.emit(this.formPasoEquipo.value);
+    this.proximoPaso.emit(this.formPasoEquipo.value);
     // }
   }
 

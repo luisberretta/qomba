@@ -252,6 +252,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoCamiseta(formCamiseta) {
+    this.pedido.imagenes.push(formCamiseta.escudoDelantero);
     this.pedido.llevaEscudoDelantero = formCamiseta.llevaEscudoDelantero;
     this.pedido.posicionEscudoDelantero = formCamiseta.posicionEscudoDelantero;
     this.pedido.llevaNumeroDelantero = formCamiseta.llevaNumeroDelantero;
@@ -264,6 +265,7 @@ export class WizardComponent implements OnInit {
 
   generarPedidoShort(formShort) {
     this.pedido.agregarShort = formShort.agregarShort;
+    this.pedido.imagenes.push(formShort.escudoShort);
     this.pedido.agregarEscudoShort = formShort.agregarEscudoShort;
     this.pedido.agregarNumeroShort = formShort.agregarNumeroShort;
     for (let i = 0; i < formShort.partesShortSVG.length; i++) {
@@ -316,11 +318,14 @@ export class WizardComponent implements OnInit {
   generarPedido(formResumenPrecio) {
     this.pedido.email = formResumenPrecio.email;
     this.pedido.observaciones = formResumenPrecio.observaciones;
-    let imagenes = this.personaComponent.generarImagenes();
-    svgAsPngUri(imagenes[0], "imagenes.png").then((data) => {
+    let imagen = this.personaComponent.generarImagen();
+    svgAsPngUri(imagen, "svg.png").then((data) => {
       this.pedido.imagenes.push(this.convertirABase64(data));
-
-      // this.pedido.escudo = this.convertirABase64(this.pedido.escudo);
+      for (let i = 0; i < this.pedido.imagenes.length; i++) {
+        if(this.pedido.imagenes[i]){
+          this.pedido.imagenes[i] = this.convertirABase64(this.pedido.imagenes[i]);
+        }
+      }
       this.abrirModal();
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
         this.router.navigate(['/']);
@@ -376,6 +381,7 @@ export class WizardComponent implements OnInit {
 
   generarFormCamiseta() {
     this.formCamiseta = {
+      escudoDelantero : this.pedido.imagenes[0],
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
       llevaNumeroDelantero: this.pedido.llevaNumeroDelantero,
@@ -417,6 +423,7 @@ export class WizardComponent implements OnInit {
       }
     }
     this.formShort = {
+      escudoShort : this.pedido.imagenes[1],
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
       agregarEscudoShort: this.pedido.agregarEscudoShort,

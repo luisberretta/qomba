@@ -79,6 +79,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
         }
       } else {
         this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(null);
+        this.formPasoCamiseta.get('escudoDelantero').setValue(null);
       }
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
