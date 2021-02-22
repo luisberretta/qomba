@@ -187,4 +187,8 @@ export class ShortComponent implements OnInit, OnChanges {
     this.formPasoShort.controls['escudoShort'].updateValueAndValidity();
   }
 
+  abrirSelector(picker) {
+    let selector: HTMLElement = document.getElementById(picker) as HTMLElement;
+    selector.click();
+  }
 }

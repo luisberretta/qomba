@@ -165,4 +165,9 @@ export class MediasComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit(this.formPasoMedias.value);
   }
 
+  abrirSelector(picker) {
+    let selector: HTMLElement = document.getElementById(picker) as HTMLElement;
+    selector.click();
+  }
+
 }

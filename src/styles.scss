@@ -92,15 +92,32 @@ input.form-control, select.form-control {
   border: solid 1px black;
 }
 
-.color-picker {
-  background-color: gray;
-  padding: 10px;
-  margin-top: 7rem;
-  margin-bottom: 2rem;
-  .circle-picker {
-    width: 100% !important;
-    align-items: center;
-    justify-content: center;
+//.color-picker {
+//  background-color: gray;
+//  padding: 10px;
+//  margin-top: 7rem;
+//  margin-bottom: 2rem;
+//  .circle-picker {
+//    width: 100% !important;
+//    align-items: center;
+//    justify-content: center;
+//  }
+//}
+
+ngx-colors .app-color-picker .preview {
+  box-shadow: none !important;
+  padding: 0 !important;
+  //border: solid 1px #8e8b8b !important;
+  .circle.colornull {
+    background: none !important;
+  }
+  .preview-background {
+    background: none !important;
+    .circle {
+      border: solid 1px #8e8b8b !important;
+      width: 23px;
+      height: 23px;
+    }
   }
 }
 
@@ -127,20 +144,20 @@ input.form-control, select.form-control {
   opacity: 0.5;
 }
 
+.opened .colors {
+  justify-content: center;
+}
+
 .cuadro-color {
   border: solid 1px black;
   padding: 5px;
   padding-right: 1.2rem;
   width: 60px;
   position: relative;
-  div {
-    height: 20px;
-    border: solid 1px #8e8b8b !important;
-  }
   i {
     position: absolute;
-    right: 2px;
-    top: 3px;
+    right: 3px;
+    top: 6px;
     cursor: pointer;
   }
 }
