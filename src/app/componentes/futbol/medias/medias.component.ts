@@ -17,7 +17,7 @@ import {svgAsPngUri} from 'save-svg-as-png';
   templateUrl: './medias.component.html',
   styleUrls: ['./medias.component.scss']
 })
-export class MediasComponent implements OnInit,OnChanges {
+export class MediasComponent implements OnInit, OnChanges {
 
   @Input() formMedias: any;
   @Output() anteriorPaso = new EventEmitter();
@@ -31,15 +31,13 @@ export class MediasComponent implements OnInit,OnChanges {
   posicioneSponsorDelantero = ['Derecha', 'Centro', 'Izquierda'];
   submit = false;
   selectedColor = 'black';
+  seleccionoSponsors = false;
 
   constructor() {
   }
 
   formPasoMedias: FormGroup = new FormGroup({
     agregarMedias: new FormControl(null),
-    imagen: new FormControl(''),
-    email: new FormControl('', [Validators.email, Validators.required]),
-    observaciones: new FormControl(''),
     agregarSponsorDelantero: new FormControl(''),
     posicionSponsorDelantero: new FormControl(''),
     sponsorDelantero: new FormControl(''),
@@ -58,7 +56,23 @@ export class MediasComponent implements OnInit,OnChanges {
   }
 
   ngOnInit(): void {
+    this.formPasoMedias.get('agregarMedias').valueChanges.subscribe(() => {
+      this.configurarValidadores();
+    });
+    this.formPasoMedias.get('agregarSponsorDelantero').valueChanges.subscribe((valor) => {
+      this.seleccionoSponsors = true;
+      this.formPasoMedias.get('agregarSponsorDelantero').setValue(false);
+    });
+    this.formPasoMedias.get('agregarSponsorTrasero').valueChanges.subscribe((valor) => {
+      this.seleccionoSponsors = true;
+      this.formPasoMedias.get('agregarSponsorTrasero').setValue(false);
 
+    });
+    this.formPasoMedias.get('agregarSponsorManga').valueChanges.subscribe((valor) => {
+      this.seleccionoSponsors = true;
+      this.formPasoMedias.get('agregarSponsorManga').setValue(false);
+
+    });
   }
 
   ngOnChanges(changeRecord: SimpleChanges): void {
@@ -67,7 +81,7 @@ export class MediasComponent implements OnInit,OnChanges {
     }
   }
 
-  generarFormularioMedias(formMedias){
+  generarFormularioMedias(formMedias) {
     this.formPasoMedias.get('agregarMedias').setValue(formMedias.agregarMedias ?? null);
     this.formPasoMedias.get('sponsorDelantero').setValue(formMedias.sponsorDelantero ?? null);
     this.formPasoMedias.get('posicionSponsorDelantero').setValue(formMedias.posicionSponsorDelantero ?? null);
@@ -85,12 +99,16 @@ export class MediasComponent implements OnInit,OnChanges {
           colores: new FormControl(formColor[i].colores),
           color: new FormControl(formColor[i].color ? formColor[i].color : null)
         });
+        if (this.agregarMedias) {
+          color.controls['color'].setValidators([Validators.required]);
+        }
+        color.controls['color'].updateValueAndValidity();
         this.formPartesArrayControl.push(color);
       }
     }
   }
 
-  get agregarMedias(){
+  get agregarMedias() {
     return this.formPasoMedias.get('agregarMedias').value;
   }
 
@@ -124,9 +142,23 @@ export class MediasComponent implements OnInit,OnChanges {
     // this.formPasoCamiseta.controls['posicionEscudo'].updateValueAndValidity();
   }
 
+  configurarValidadores() {
+    for (let i = 0; i < this.formPartesArrayControl.controls.length; i++) {
+      if (this.agregarMedias) {
+        this.formPartesArrayControl.controls[i]["controls"]['color'].setValidators([Validators.required]);
+      } else {
+        this.formPartesArrayControl.controls[i]["controls"]['color'].setValidators(null);
+      }
+      this.formPartesArrayControl.controls[i]["controls"]['color'].updateValueAndValidity();
+    }
+  }
+
+
   siguiente() {
     this.submit = true;
-    this.proximoPaso.emit(this.formPasoMedias.value);
+    if (this.formPasoMedias.valid) {
+      this.proximoPaso.emit(this.formPasoMedias.value);
+    }
   }
 
   anterior() {

@@ -28,13 +28,12 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() colorSeleccionado = new EventEmitter();
 
 
-
   ESCUDO_SHORT = "Short_escudo";
   NUMERO_SHORT = "Short_número";
   selectedColor: string = 'black';
 
   formPasoShort: FormGroup = new FormGroup({
-    agregarShort: new FormControl(null, ),
+    agregarShort: new FormControl(null,),
     agregarEscudoDelantero: new FormControl(''),
     agregarEscudoShort: new FormControl(''),
     escudoShort: new FormControl(''),
@@ -62,19 +61,22 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    this.formPasoShort.get('agregarShort').valueChanges.subscribe((valor) => {
+    this.formPasoShort.get('agregarShort').valueChanges.subscribe(() => {
       this.formPasoShort.get('agregarNumeroShort').setValue(null);
       this.formPasoShort.get('agregarEscudoShort').setValue(null);
-    });
-    this.formPasoShort.get('agregarEscudoShort').valueChanges.subscribe((valor) => {
-      this.visualizar.valor = valor;
-      this.visualizar.parte = this.ESCUDO_SHORT;
-      this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
     });
     this.formPasoShort.get('agregarNumeroShort').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NUMERO_SHORT;
       this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
+    });
+    this.formPasoShort.get('agregarEscudoShort').valueChanges.subscribe((valor) => {
+      this.visualizar.valor = valor;
+      this.visualizar.parte = this.ESCUDO_SHORT;
+      this.visualizarEstampado.emit(this.visualizar);
+      this.configurarValidadores();
     });
   }
 
@@ -101,6 +103,10 @@ export class ShortComponent implements OnInit, OnChanges {
           colores: new FormControl(formColor[i].colores),
           color: new FormControl(formColor[i].color ? formColor[i].color : null)
         });
+        if (this.agregarShort) {
+          color.controls['color'].setValidators([Validators.required]);
+        }
+        color.controls['color'].updateValueAndValidity();
         this.formPartesArrayControl.push(color);
       }
     }
@@ -119,7 +125,9 @@ export class ShortComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    this.proximoPaso.emit(this.formPasoShort.value);
+    if (this.formPasoShort.valid) {
+      this.proximoPaso.emit(this.formPasoShort.value);
+    }
   }
 
   anterior() {
@@ -130,7 +138,15 @@ export class ShortComponent implements OnInit, OnChanges {
     return this.formPasoShort.get('agregarShort').value;
   }
 
-  get agregarEscudoDelantero(){
+  get agregarNumeroShort() {
+    return this.formPasoShort.get('agregarShort').value;
+  }
+
+  get agregarEscudoShort() {
+    return this.formPasoShort.get('agregarEscudoShort').value;
+  }
+
+  get agregarEscudoDelantero() {
     return this.formPasoShort.get('agregarEscudoDelantero').value;
   }
 
@@ -150,8 +166,25 @@ export class ShortComponent implements OnInit, OnChanges {
       reader.onload = (_event) => {
         this.formPasoShort.controls['escudoShort'].setValue(reader.result);
       }
-       this.archivoEscudo.emit(event.target.files[0]);
+      this.archivoEscudo.emit(event.target.files[0]);
     }
+  }
+
+  configurarValidadores() {
+    if (this.agregarEscudoShort) {
+      this.formPasoShort.controls['escudoShort'].setValidators([Validators.required]);
+    } else {
+      this.formPasoShort.controls['escudoShort'].setValidators(null);
+    }
+    for (let i = 0; i < this.formPartesArrayControl.controls.length; i++) {
+      if (this.agregarShort) {
+        this.formPartesArrayControl.controls[i]["controls"]['color'].setValidators([Validators.required]);
+      } else {
+        this.formPartesArrayControl.controls[i]["controls"]['color'].setValidators(null);
+      }
+      this.formPartesArrayControl.controls[i]["controls"]['color'].updateValueAndValidity();
+    }
+    this.formPasoShort.controls['escudoShort'].updateValueAndValidity();
   }
 
 }

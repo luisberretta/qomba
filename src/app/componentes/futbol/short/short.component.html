@@ -23,9 +23,6 @@
           </div>
         </div>
       </div>
-      <div *ngIf="submit && formPartesArrayControl.controls[i].get('color').errors" class="invalid-feedback">
-        <div *ngIf="formPartesArrayControl.controls[i].get('color').errors.required">Seleccione un color</div>
-      </div>
     </div>
   </div>
   <div class="row form-group" *ngIf="agregarShort">
@@ -45,11 +42,14 @@
       </label>
       <label  class="form-check-label" for="agregar-escudo-short">Escudo en short</label>
     </div>
-    <div class="col-md-6 col-5" *ngIf="agregarShort && !agregarEscudoDelantero">
+    <div class="col-md-6 col-5" *ngIf="agregarEscudoShort && !agregarEscudoDelantero">
       <div class="pl-0">
         <a class="btn btn-subir" (click)="archivo()" >Subir escudo <i class="fas fa-upload"></i></a>
         <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
       </div>
     </div>
+  </div>
+  <div *ngIf="submit && !formPasoShort.valid" class="invalid-feedback">
+    <div *ngIf="!formPasoShort.valid">Seleccione los campos obligatorios.</div>
   </div>
 </form>

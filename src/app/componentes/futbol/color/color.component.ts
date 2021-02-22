@@ -47,7 +47,7 @@ export class ColorComponent implements OnInit, OnChanges {
           idParte: new FormControl(formColor[i].idParte),
           nombreMostrar: new FormControl(formColor[i].nombreMostrar),
           colores: new FormControl(formColor[i].colores),
-          color: new FormControl(formColor[i].color ? formColor[i].color : null)
+          color: new FormControl(formColor[i].color ? formColor[i].color : null,[Validators.required])
         });
         this.formPartesArrayControl.push(color);
       }
