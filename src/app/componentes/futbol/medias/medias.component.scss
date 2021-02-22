@@ -29,3 +29,10 @@
     font-size: 0.75rem;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .cartel .overlay {
+    left: 19%;
+    top: 22%;
+  }
+}
