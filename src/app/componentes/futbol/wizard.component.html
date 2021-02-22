@@ -23,7 +23,7 @@
         <div [ngSwitch]="paso">
           <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo"></app-modelo>
           <app-color *ngSwitchCase="'color'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]="formColor"></app-color>
-          <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta"></app-camiseta>
+          <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta" (cambiarTipografia)="cambiarTipografia($event)"></app-camiseta>
           <app-short *ngSwitchCase="'short'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" [formShort]="formShort" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (proximoPaso)="siguiente($event)"></app-short>
           <app-medias *ngSwitchCase="'medias'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formMedias]="formMedias"></app-medias>
           <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>

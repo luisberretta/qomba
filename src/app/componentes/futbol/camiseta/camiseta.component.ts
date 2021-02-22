@@ -25,6 +25,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   @Output() archivoEscudo = new EventEmitter();
   @Output() colorSeleccionado = new EventEmitter();
   @Output() visualizarEstampado = new EventEmitter();
+  @Output() cambiarTipografia = new EventEmitter();
   @Input() formCamiseta: any;
 
 
@@ -32,7 +33,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   posicionesNumeroDelanteroEstatico: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesNumeroDelantero: string[] = ["Derecha", "Izquierda", "Centro"];
-  tiposLetra = ['Mundial Sudáfrica', 'Otro Tipo', 'Otro Tipo 2'];
+  tiposLetra = ['Sablon', 'Nike', 'Puma'];
   NUMERO_DELANTERO = "Número_delantero";
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
@@ -41,7 +42,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
-    tipoLetra: new FormControl(null),
+    tipoLetra: new FormControl("Sablon"),
     llevaEscudoDelantero: new FormControl(null),
     escudoDelantero: new FormControl(null),
     posicionEscudoDelantero: new FormControl(null),
@@ -113,6 +114,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
       this.visualizar.parte = this.NUMERO_ESPALDA;
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
+    });
+
+    this.formPasoCamiseta.get('tipoLetra').valueChanges.subscribe((valor) => {
+      this.cambiarTipografia.emit(valor);
     });
 
     this.formPasoCamiseta.get('posicionEscudoDelantero').valueChanges.subscribe((valor) => {
@@ -216,7 +221,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
   get llevaNombreEspalda() {
     return this.formPasoCamiseta.controls['llevaNombreEspalda'].value;
   }
-
 
   get llevaNumeroDelantero() {
     return this.formPasoCamiseta.controls['llevaNumeroDelantero'].value;

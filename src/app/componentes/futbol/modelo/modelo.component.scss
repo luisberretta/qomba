@@ -29,6 +29,9 @@
   position: relative;
   cursor: pointer;
   text-align: center;
+  input {
+    width: 150px;
+  }
   &.seleccionado {
     background-color: #ededef;
   }

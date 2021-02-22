@@ -12,9 +12,12 @@
     <label for="cantidadEquipo" class="col-md-5 col-7 text-left align-self-center pr-0">Cantidad Jugadores:</label>
     <div class="col-md-2 col-5 text-left pl-0">
       <div class="input-group">
-        <input class="form-control" type="number" min="0" max="30" id="cantidadEquipo" formControlName="cantidadEquipo">
+        <input class="form-control" type="number" min="1" max="99" id="cantidadEquipo" formControlName="cantidadEquipo">
         <div class="input-group-append">
-          <span class="input-group-text"><i class="fas fa-sort-up" (click)="aumentarJugador()"></i> <i class="fas fa-sort-down" (click)="restarJugador()"></i></span>
+          <span class="input-group-text">
+            <a (click)="aumentarJugador()"><i class="fas fa-sort-up fa-lg"></i> </a>
+            <a (click)="restarJugador()"><i class="fas fa-sort-down fa-lg"></i></a>
+          </span>
         </div>
       </div>
     </div>

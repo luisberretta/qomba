@@ -28,11 +28,12 @@ export class EquipoComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.formPasoEquipo.get('cantidadEquipo').valueChanges.subscribe((valor) => {
-      if (valor < 1 || valor < this.formEquipoControl.controls.length) {
+      if (valor < 1) {
         this.formEquipoControl.controls.length = 1;
-        return;
+      } else if(valor < this.formEquipoControl.controls.length) {
+        this.formEquipoControl.controls.length = valor;
       } else {
-        let desde = 0;
+        let desde = 1;
         if (this.formEquipoControl.controls.length) {
           desde = this.formEquipoControl.controls.length;
         }
@@ -132,11 +133,13 @@ export class EquipoComponent implements OnInit, OnChanges {
   aumentarJugador() {
     let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
     valor++;
+    console.log(valor);
     this.formPasoEquipo.controls['cantidadEquipo'].setValue(valor);
   }
 
   restarJugador() {
     let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
+    console.log(valor);
     if(valor == 1) {
       this.formPasoEquipo.controls['cantidadEquipo'].setValue(1);
     } else {

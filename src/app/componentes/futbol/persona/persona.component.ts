@@ -140,7 +140,7 @@ export class PersonaComponent implements OnInit {
           h: img.height
         };
         let relacionAspecto = imgSize.w / imgSize.h;
-        let ancho = 710; //ANCHO DE IMAGEN ORIGINAL-
+        let ancho = 200; //ANCHO DE IMAGEN ORIGINAL-
         let alto = ancho / relacionAspecto;
 
         estampadoGrupo.firstElementChild.setAttribute('height', alto.toString() + 'px');
@@ -174,9 +174,24 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-
   obtenerGrupos() {
     return this.dataContainer.nativeElement.getElementsByTagName('g');
+  }
+
+  cambiarTipografia(tipografia) {
+    let grupos = this.obtenerGrupos();
+    for (let i = 0; i < grupos.length; i++) {
+      if(this.perteneceTipografia(grupos[i])) {
+        if(tipografia == 'Sablon') {
+          tipografia = 'SablonUp-College';
+        }
+        grupos[i].getElementsByTagName('text').setAttribute('font-family', tipografia);
+      }
+    }
+  }
+
+  perteneceTipografia(grupo) {
+    return grupo == "Número_espalda" || grupo == "Nombre" || grupo == "Short_número" || grupo == "Número_delantero";
   }
 
 }
