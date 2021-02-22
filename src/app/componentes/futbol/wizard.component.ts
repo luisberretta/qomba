@@ -13,12 +13,15 @@ import {ShortComponent} from "./short/short.component";
 import {EquipoComponent} from "./equipo/equipo.component";
 import {MediasComponent} from "./medias/medias.component";
 import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component";
+import {NgxUiLoaderService} from "ngx-ui-loader";
+import {catchError} from "rxjs/operators";
 
 @Component({
   selector: 'app-wizard',
   templateUrl: './wizard.component.html',
   styleUrls: ['./wizard.component.scss']
 })
+
 export class WizardComponent implements OnInit {
 
   ESCUDO_DELANTERO = "Remera_escudo";
@@ -39,7 +42,7 @@ export class WizardComponent implements OnInit {
   modalRef: NgbModalRef;
   modalText: string;
 
-  @ViewChild('template', { static: true }) modalTemplate;
+  @ViewChild('template', {static: true}) modalTemplate;
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
   @ViewChild(ModeloComponent) modeloComponent: ModeloComponent;
   @ViewChild(ColorComponent) colorComponent: ColorComponent;
@@ -50,7 +53,7 @@ export class WizardComponent implements OnInit {
   @ViewChild(ResumenPrecioComponent) resumenPrecioComponent: ResumenPrecioComponent;
 
   constructor(private wizardService: WizardService, private modalService: NgbModal,
-              private router: Router) {
+              private router: Router, private ngxLoader: NgxUiLoaderService) {
 
   }
 
@@ -316,23 +319,40 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedido(formResumenPrecio) {
-    this.pedido.email = formResumenPrecio.email;
-    this.pedido.observaciones = formResumenPrecio.observaciones;
+    this.ngxLoader.start();
+    let solicitudPedido = {
+      nombreContacto: this.pedido.nombreContacto,
+      email: formResumenPrecio.email,
+      telefonoContacto: this.pedido.telefonoContacto,
+      modelo: this.pedido.modelo.nombre,
+      detalleEquipo: this.pedido.detalleEquipo,
+      imagenes: [],
+      partes: this.pedido.coloresModelo,
+
+    }
     let imagen = this.personaComponent.generarImagen();
     svgAsPngUri(imagen, "svg.png").then((data) => {
       this.pedido.imagenes.push(this.convertirABase64(data));
       for (let i = 0; i < this.pedido.imagenes.length; i++) {
-        if(this.pedido.imagenes[i]){
-          this.pedido.imagenes[i] = this.convertirABase64(this.pedido.imagenes[i]);
+        if (this.pedido.imagenes[i]) {
+          solicitudPedido.imagenes.push(this.convertirABase64(this.pedido.imagenes[i]));
         }
       }
-      this.abrirModal();
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
-        this.router.navigate(['/']);
-        if (data) {
-          console.log("La operación se realizó con éxito.");
-        }
-      })
+          this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
+          this.abrirModal();
+          this.ngxLoader.stop();
+          this.router.navigate(['/']);
+          if (data) {
+            console.log("La operación se realizó con éxito.");
+          }
+        },
+        (error) => {
+          this.modalText = "Se produjo un error al realizar el pedido."
+          this.abrirModal();
+          this.ngxLoader.stop();
+        });
+
     });
 
   }
@@ -381,7 +401,7 @@ export class WizardComponent implements OnInit {
 
   generarFormCamiseta() {
     this.formCamiseta = {
-      escudoDelantero : this.pedido.imagenes[0],
+      escudoDelantero: this.pedido.imagenes[0],
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
       llevaNumeroDelantero: this.pedido.llevaNumeroDelantero,
@@ -423,7 +443,7 @@ export class WizardComponent implements OnInit {
       }
     }
     this.formShort = {
-      escudoShort : this.pedido.imagenes[1],
+      escudoShort: this.pedido.imagenes[1],
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
       agregarEscudoShort: this.pedido.agregarEscudoShort,
@@ -490,8 +510,8 @@ export class WizardComponent implements OnInit {
 
   generarFormResumenPrecio() {
     this.formResumenPrecio = {
-      modelo : this.pedido.modelo.nombre,
-      cantidadJugadores : this.pedido.detalleEquipo.length,
+      modelo: this.pedido.modelo.nombre,
+      cantidadJugadores: this.pedido.detalleEquipo.length,
       precioCamiseta: this.pedido.precioCamiseta,
       precioShort: this.pedido.precioShort,
       precioMedias: this.pedido.precioMedias,
@@ -548,7 +568,7 @@ export class WizardComponent implements OnInit {
   }
 
   abrirModal() {
-    this.modalRef = this.modalService.open(this.modalTemplate, { centered: true });
+    this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
   }
 
   cerrar() {

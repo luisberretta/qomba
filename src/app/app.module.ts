@@ -16,7 +16,7 @@ import { MediasComponent } from './componentes/futbol/medias/medias.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PersonaComponent } from './componentes/futbol/persona/persona.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { HomeComponent } from './componentes/home/home.component';
 import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/pagina-no-encontrada.component';
 import {NgxUiLoaderModule} from "ngx-ui-loader";

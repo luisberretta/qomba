@@ -171,7 +171,7 @@ export class ShortComponent implements OnInit, OnChanges {
   }
 
   configurarValidadores() {
-    if (this.agregarEscudoShort) {
+    if (this.agregarEscudoShort && !this.agregarEscudoDelantero) {
       this.formPasoShort.controls['escudoShort'].setValidators([Validators.required]);
     } else {
       this.formPasoShort.controls['escudoShort'].setValidators(null);
