@@ -120,6 +120,6 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   aumentarZoom(camiseta) {
     this.abrirModal();
-    this.modalText = camiseta.url;
+    this.modalText = camiseta.urlZoom;
   }
 }

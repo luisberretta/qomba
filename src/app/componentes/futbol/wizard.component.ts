@@ -575,4 +575,9 @@ export class WizardComponent implements OnInit {
   cerrar() {
     this.modalService.dismissAll();
   }
+
+  cambiarTipografia(tipografia) {
+    this.personaComponent.cambiarTipografia(tipografia);
+  }
+
 }

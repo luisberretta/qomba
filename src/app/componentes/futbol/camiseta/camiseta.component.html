@@ -57,8 +57,7 @@
     </div>
     <div class="col-md-5 col-7">
       <select [attr.disabled]="llevaEstampado() ? null: true" class="form-control" formControlName="tipoLetra">
-        <option [ngValue]="null" selected disabled>Seleccione</option>
-        <option *ngFor="let tipoLetra of tiposLetra" [ngValue]="tipoLetra">{{ tipoLetra }}</option>
+        <option *ngFor="let tipoLetra of tiposLetra" [selected]="tipoLetra == formPasoCamiseta.get('tipoLetra').value">{{ tipoLetra }}</option>
       </select>
     </div>
   </div>
@@ -68,11 +67,12 @@
     </div>
     <div class="col-md-8 col-4">
       <div class="cuadro-color">
-        <ngx-colors [id]="'colorPickerNroEspalda'" ngx-colors-trigger [palette]="coloresNumeroEspalda"
+        <ngx-colors [id]="'colorPickerNroEspalda'" ngx-colors-trigger [palette]="coloresLetrasYNumeros"
              [hideColorPicker]="true"
              [hideTextInput]="true"
              [style.background]="formPasoCamiseta.get('colorEstampado').value ? formPasoCamiseta.get('colorEstampado').value : 'black'"
-             (change)="cambiarColor($event)" formControlName="colorEstampado"></ngx-colors>
+             (change)="cambiarColor($event)" formControlName="colorEstampado">
+        </ngx-colors>
         <i class="fas fa-sort-down fa-lg" (click)="abrirSelector('colorPickerNroEspalda')"></i>
       </div>
     </div>

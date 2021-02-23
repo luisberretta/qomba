@@ -170,6 +170,12 @@
   }
 }
 
+.info {
+  cursor: pointer;
+}
+
+
+
 @media screen and (max-width: 768px) {
   .btn-group {
     display: grid;

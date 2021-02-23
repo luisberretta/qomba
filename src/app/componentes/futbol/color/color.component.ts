@@ -78,9 +78,9 @@ export class ColorComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    if (this.formPasoColor.valid) {
+    // if (this.formPasoColor.valid) {
       this.proximoPaso.emit(this.formPasoColor.value);
-    }
+    // }
   }
 
   anterior() {

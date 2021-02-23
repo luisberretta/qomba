@@ -11,6 +11,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'SablonUp-College';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Sablon_Up_College.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nike';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Nike.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Puma';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/Puma.ttf') format('truetype');
+  font-display: swap;
+}
+
 html, body {
   font-family: 'Roboto', sans-serif;
 }
@@ -92,22 +116,9 @@ input.form-control, select.form-control {
   border: solid 1px black;
 }
 
-//.color-picker {
-//  background-color: gray;
-//  padding: 10px;
-//  margin-top: 7rem;
-//  margin-bottom: 2rem;
-//  .circle-picker {
-//    width: 100% !important;
-//    align-items: center;
-//    justify-content: center;
-//  }
-//}
-
 ngx-colors .app-color-picker .preview {
   box-shadow: none !important;
   padding: 0 !important;
-  //border: solid 1px #8e8b8b !important;
   .circle.colornull {
     background: none !important;
   }
@@ -126,6 +137,9 @@ ngx-colors .app-color-picker .preview {
 }
 
 .modal {
+  .modal-dialog {
+    max-width: 750px;
+  }
   .modal-header {
     border-bottom: none;
     .close:focus {
@@ -160,6 +174,13 @@ ngx-colors .app-color-picker .preview {
     top: 6px;
     cursor: pointer;
   }
+}
+
+.arrow:before {
+  border-top-color: #174435 !important;
+}
+.tooltip-inner {
+  background-color: #174435 !important;
 }
 
 .switch {

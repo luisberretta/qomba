@@ -1,19 +1,19 @@
-<div class="container py-4">
+<div class="container pb-4 pt-5">
   <ul class="indicador-progreso" [ngClass]="paso">
     <li>
-      <a>1</a>
+      <a placement="top" ngbTooltip="Modelo">1</a>
     </li>
     <li>
-      <a>2</a>
+      <a placement="top" ngbTooltip="Colores">2</a>
     </li>
     <li>
-      <a>3</a>
+      <a placement="top" ngbTooltip="Detalles">3</a>
     </li>
     <li>
-      <a>4</a>
+      <a placement="top" ngbTooltip="Equipo">4</a>
     </li>
     <li>
-      <a>5</a>
+      <a placement="top" ngbTooltip="Precios">5</a>
     </li>
   </ul>
   <fieldset class="mt-3">
@@ -23,7 +23,7 @@
         <div [ngSwitch]="paso">
           <app-modelo *ngSwitchCase="'modelo'" (proximoPaso)="siguiente($event)" (modeloSeleccionado)="modeloSeleccionado($event)" [formModelo]="formModelo"></app-modelo>
           <app-color *ngSwitchCase="'color'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formColor]="formColor"></app-color>
-          <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta"></app-camiseta>
+          <app-camiseta *ngSwitchCase="'camiseta'" (colorSeleccionado)="cambiarColor($event)" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formCamiseta]="formCamiseta" (cambiarTipografia)="cambiarTipografia($event)"></app-camiseta>
           <app-short *ngSwitchCase="'short'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" [formShort]="formShort" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (proximoPaso)="siguiente($event)"></app-short>
           <app-medias *ngSwitchCase="'medias'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formMedias]="formMedias"></app-medias>
           <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
@@ -41,12 +41,14 @@
       <div class="col-6 col-md-4" [ngClass]="{ 'text-center': paso == 'modelo' }" *ngIf="paso != 'resumen-precio'">
         <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
       </div>
-      <div class="col-4" *ngIf="paso == 'resumen-precio'">
+      <div class="col-md-4 col-6">
         <a class="btn btn-primary btn-confirmar" (click)="generarPedido(formResumenPrecio)">Confirmar</a>
+        <i class="fas fa-info-circle fa-lg info ml-3" placement="top" [ngbTooltip]="confirmar"></i>
       </div>
     </div>
   </fieldset>
 </div>
+<ng-template #confirmar>Al <b>Confirmar</b>, un asesor te contactará para coordinar el pago y la entrega.</ng-template>
 <ng-template #template>
   <div class="modal-header border-bottom">
     <h4 class="modal-title">hacetucamiseta.com.ar</h4>

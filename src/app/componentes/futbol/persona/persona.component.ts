@@ -174,9 +174,24 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-
   obtenerGrupos() {
     return this.dataContainer.nativeElement.getElementsByTagName('g');
+  }
+
+  cambiarTipografia(tipografia) {
+    let grupos = this.obtenerGrupos();
+    for (let i = 0; i < grupos.length; i++) {
+      if(this.perteneceTipografia(grupos[i].id)) {
+        if(tipografia == 'Sablon') {
+          tipografia = 'SablonUp-College';
+        }
+        grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia);
+      }
+    }
+  }
+
+  perteneceTipografia(grupo) {
+    return grupo == "Número_espalda" || grupo == "Nombre" || grupo == "Short_número" || grupo == "Número_delantero";
   }
 
 }

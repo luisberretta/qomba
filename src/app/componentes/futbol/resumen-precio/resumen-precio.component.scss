@@ -15,5 +15,10 @@ hr {
 }
 
 .conjunto {
-  color: #1376d9;
+  label {
+    color: #1376d9;
+  }
+  .form-control {
+    border: solid 1px #1376d9;
+  }
 }
