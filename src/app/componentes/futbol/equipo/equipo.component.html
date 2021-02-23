@@ -29,17 +29,17 @@
   <div class="scroll-mobile">
     <div class="form-group tabla-equipo">
       <div class="row titulos">
-        <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'No podrás agregarle nombre ya que no lo configuraste en el paso 3' : '' }}">
+        <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}">
           Nombre
         </div>
         <div class="col border-right border-left text-center"
-             placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'No podrás agregarle número ya que no lo configuraste en el paso 3' : '' }}">
+             placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'Tu diseño no tiene esta opción' : '' }}">
           Número
         </div>
         <div class="col text-center border-right border-left">
           Camiseta
         </div>
-        <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'No podrás agregarle short ya que no lo configuraste en el paso 3' : '' }}">
+        <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'Tu diseño no tiene esta opción' : '' }}">
           Short
         </div>
       </div>

@@ -14,34 +14,28 @@ export class AppComponent {
   modalText: string;
   @ViewChild('template', {static: true}) modalTemplate;
 
-  constructor(private ngxLoader: NgxUiLoaderService, private modalService: NgbModal, private locationStrategy: LocationStrategy) {
+  constructor(private ngxLoader: NgxUiLoaderService, private modalService: NgbModal) {
   }
 
   ngOnInit() {
     this.ngxLoader.start();
     this.ngxLoader.stop();
-    this.preventBackButton();
+    window.onbeforeunload = function() { return "Your work will be lost."; };
   }
 
-  // @HostListener('window:popstate', ['$event'])
-  // onPopState(event) {
-  //   event.preventDefault();
-  //   this.modalText = "Recordá que si regresas, deberás volver a comenzar."
-  //   this.abrirModal();
-  // }
-  //
-  // abrirModal() {
-  //   this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
-  // }
-  //
-  // cerrar() {
-  //   this.modalService.dismissAll();
-  // }
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+    return false;
+    // this.modalText = "Recordá que si regresas, deberás volver a comenzar."
+    // this.abrirModal();
+  }
 
-  preventBackButton() {
-    history.pushState(null, null, location.href);
-    this.locationStrategy.onPopState(() => {
-      history.pushState(null, null, location.href);
-    })
+  abrirModal() {
+    this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
+  }
+
+  cerrar() {
+    this.modalService.dismissAll();
+
   }
 }

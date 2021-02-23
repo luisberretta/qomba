@@ -1,19 +1,19 @@
-<div class="container py-4">
+<div class="container pb-4 pt-5">
   <ul class="indicador-progreso" [ngClass]="paso">
     <li>
-      <a placement="top" ngbTooltip="Elegí tu modelo">1</a>
+      <a placement="top" ngbTooltip="Modelo">1</a>
     </li>
     <li>
-      <a placement="top" ngbTooltip="Elegí los colores de tu camiseta">2</a>
+      <a placement="top" ngbTooltip="Colores">2</a>
     </li>
     <li>
-      <a placement="top" ngbTooltip="Personalizá tu camista, short y medias, agregandole número, nombre o escudo">3</a>
+      <a placement="top" ngbTooltip="Detalles">3</a>
     </li>
     <li>
-      <a placement="top" ngbTooltip="Armá tu equipo">4</a>
+      <a placement="top" ngbTooltip="Equipo">4</a>
     </li>
     <li>
-      <a placement="top" ngbTooltip="Confirmación">5</a>
+      <a placement="top" ngbTooltip="Precios">5</a>
     </li>
   </ul>
   <fieldset class="mt-3">
@@ -41,12 +41,14 @@
       <div class="col-6 col-md-4" [ngClass]="{ 'text-center': paso == 'modelo' }" *ngIf="paso != 'resumen-precio'">
         <a class="btn btn-continuar" (click)="siguiente()">Siguiente</a>
       </div>
-      <div class="col-md-4 col-6" *ngIf="paso == 'resumen-precio'">
+      <div class="col-md-4 col-6">
         <a class="btn btn-primary btn-confirmar" (click)="generarPedido(formResumenPrecio)">Confirmar</a>
+        <i class="fas fa-info-circle fa-lg info ml-3" placement="top" [ngbTooltip]="confirmar"></i>
       </div>
     </div>
   </fieldset>
 </div>
+<ng-template #confirmar>Al <b>Confirmar</b>, un asesor te contactará para coordinar el pago y la entrega.</ng-template>
 <ng-template #template>
   <div class="modal-header border-bottom">
     <h4 class="modal-title">hacetucamiseta.com.ar</h4>
