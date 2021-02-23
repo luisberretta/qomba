@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, HostListener, ViewChild} from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
+import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
+import {LocationStrategy} from "@angular/common";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,38 @@ import {NgxUiLoaderService} from "ngx-ui-loader";
 })
 export class AppComponent {
 
-  constructor(private ngxLoader: NgxUiLoaderService) {
+  modalRef: NgbModalRef;
+  modalText: string;
+  @ViewChild('template', {static: true}) modalTemplate;
+
+  constructor(private ngxLoader: NgxUiLoaderService, private modalService: NgbModal, private locationStrategy: LocationStrategy) {
   }
 
   ngOnInit() {
     this.ngxLoader.start();
     this.ngxLoader.stop();
+    this.preventBackButton();
+  }
+
+  // @HostListener('window:popstate', ['$event'])
+  // onPopState(event) {
+  //   event.preventDefault();
+  //   this.modalText = "Recordá que si regresas, deberás volver a comenzar."
+  //   this.abrirModal();
+  // }
+  //
+  // abrirModal() {
+  //   this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
+  // }
+  //
+  // cerrar() {
+  //   this.modalService.dismissAll();
+  // }
+
+  preventBackButton() {
+    history.pushState(null, null, location.href);
+    this.locationStrategy.onPopState(() => {
+      history.pushState(null, null, location.href);
+    })
   }
 }

@@ -34,18 +34,17 @@
 .input-group-append {
   .input-group-text {
     display: block;
-    padding-top: 15px;
-    .fa-sort-up, .fa-sort-down {
-      display: flex;
-      height: 10px;
-      cursor: pointer;
-    }
-    .fa-sort-up {
-      margin-top: -8px;
-    }
-    .fa-sort-down {
-      margin-top: -8px;
-    }
+    //.fa-sort-up, .fa-sort-down {
+    //  display: flex;
+    //  height: 10px;
+    //  cursor: pointer;
+    //}
+    //.fa-sort-up {
+    //  margin-top: -8px;
+    //}
+    //.fa-sort-down {
+    //  margin-top: -8px;
+    //}
   }
 }
 
@@ -68,6 +67,31 @@ fieldset {
       border: solid 1px black;
       background-color: white;
       border-radius: 0 0.5rem 0.5rem 0;
+    }
+  }
+  .scroll-mobile .tabla-equipo {
+    width: initial;
+    padding: 5px;
+    .titulos {
+      margin-top: -5px;
+      .col {
+        font-size: 13px;
+      }
+    }
+    .datos {
+      .camiseta {
+        padding-left: 0;
+      }
+      .short {
+        padding-left: 0;
+        border-right: none;
+      }
+      .numero {
+        padding-left: 0;
+      }
+      .form-control {
+        font-size: 0.8rem;
+      }
     }
   }
 }

@@ -131,19 +131,18 @@ export class EquipoComponent implements OnInit, OnChanges {
   }
 
   aumentarJugador() {
-    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
+    let valor = this.formPasoEquipo.get('cantidadEquipo').value;
     valor++;
     console.log(valor);
-    this.formPasoEquipo.controls['cantidadEquipo'].setValue(valor);
+    this.formPasoEquipo.get('cantidadEquipo').setValue(valor);
   }
 
   restarJugador() {
-    let valor = this.formPasoEquipo.controls['cantidadEquipo'].value;
-    console.log(valor);
+    let valor = this.formPasoEquipo.get('cantidadEquipo').value;
     if(valor == 1) {
-      this.formPasoEquipo.controls['cantidadEquipo'].setValue(1);
+      this.formPasoEquipo.get('cantidadEquipo').setValue(1);
     } else {
-      this.formPasoEquipo.controls['cantidadEquipo'].setValue(--valor);
+      this.formPasoEquipo.get('cantidadEquipo').setValue(--valor);
     }
   }
 }
