@@ -7,7 +7,7 @@
   </div>
   <ngx-slick-carousel class="carousel mt-3" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''"
-         (mouseover)="detallePrecioId = camiseta.id" (mouseleave)="detallePrecioId = null">
+         (mouseover)="detallePrecioId = camiseta.id" (mouseleave)="detallePrecioId = null" (click)="detalle(camiseta.id)">
       <ng-template [ngIf]="detallePrecioId == camiseta.id">
         <div class="tooltip fade show bs-tooltip-top custom">
           <div class="arrow"></div>
