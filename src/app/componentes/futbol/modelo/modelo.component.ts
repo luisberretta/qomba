@@ -80,6 +80,8 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   generarFormulario(formModelo) {
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
+    this.generoModelo = formModelo.modelo.tipo;
+    this.generoModelo == 'hombre'? this.modelosHombre() :this.modelosMujer();
     this.modeloElegido(this.formPasoModelo.get('modelo').value.id);
   }
 

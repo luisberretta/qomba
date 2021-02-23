@@ -14,6 +14,7 @@ import {EquipoComponent} from "./equipo/equipo.component";
 import {MediasComponent} from "./medias/medias.component";
 import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component";
 import {NgxUiLoaderService} from "ngx-ui-loader";
+import {indumentariaInferior} from "../../clases/IndumentariaInferior";
 
 @Component({
   selector: 'app-wizard',
@@ -180,7 +181,7 @@ export class WizardComponent implements OnInit {
           this.mediasComponent.anterior();
           break;
         }
-        this.generarPedidoEquipo(event);
+        this.generarPedidoMedias(event);
         this.numeroPaso = 4;
         this.paso = 'short';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
@@ -191,6 +192,7 @@ export class WizardComponent implements OnInit {
           this.equipoComponet.anterior();
           break;
         }
+        this.generarPedidoEquipo(event);
         this.numeroPaso = 5;
         this.paso = 'medias';
         this.nombreMostrarPaso = 'Personalizá tu Modelo';
@@ -401,7 +403,7 @@ export class WizardComponent implements OnInit {
   generarFormCamiseta() {
     this.formCamiseta = {
       escudoDelantero: this.pedido.imagenes[0],
-      colorCamiseta: this.pedido.coloresModelo.find(x=> x.idParte == 'Remera_principal').color,
+      colorCamiseta: this.pedido.coloresModelo.find(x => x.idParte == 'Remera_principal').color,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
       llevaNumeroDelantero: this.pedido.llevaNumeroDelantero,
@@ -511,11 +513,10 @@ export class WizardComponent implements OnInit {
   generarFormResumenPrecio() {
     this.formResumenPrecio = {
       modelo: this.pedido.modelo.nombre,
-      cantidadJugadores: this.pedido.detalleEquipo.length,
-      precioCamiseta: this.pedido.precioCamiseta,
-      precioShort: this.pedido.precioShort,
-      precioMedias: this.pedido.precioMedias,
-      precioConjunto: this.pedido.precioConjunto,
+      cantidadJugadores: this.pedido.cantidadEquipo,
+      precioCamiseta: this.pedido.cantidadEquipo > 6 ? this.pedido.modelo.precioMayorista : this.pedido.modelo.precioIndividual,
+      precioShort: this.pedido.cantidadEquipo> 6 ? this.pedido.agregarShort ? indumentariaInferior[0].precioMayorista : 0 : this.pedido.agregarShort? indumentariaInferior[0].precioIndividual : 0,
+      precioMedias: indumentariaInferior[1].precioIndividual,
     }
   }
 
