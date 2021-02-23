@@ -388,7 +388,7 @@
 <g id="Número_delantero"visibility="hidden">
 	<text id="numero" transform="matrix(1 0 0 1 702.6883 583.8918)" display="inline" font-family="'SablonUp-College'" font-size="100px">10</text>
 </g>
-<g id="Nombre"visibility="hidden">
+<g id="Nombre" visibility="hidden">
 	<text transform="matrix(1 0 0 1 1527.4098 430.1457)" display="inline" font-family="'SablonUp-College'" font-size="90px">nombre</text>
 </g>
 <g id="Numero_espalda"visibility="hidden">

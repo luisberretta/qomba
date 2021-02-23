@@ -140,7 +140,7 @@ export class PersonaComponent implements OnInit {
           h: img.height
         };
         let relacionAspecto = imgSize.w / imgSize.h;
-        let ancho = 710; //ANCHO DE IMAGEN ORIGINAL-
+        let ancho = 200; //ANCHO DE IMAGEN ORIGINAL-
         let alto = ancho / relacionAspecto;
 
         estampadoGrupo.firstElementChild.setAttribute('height', alto.toString() + 'px');
