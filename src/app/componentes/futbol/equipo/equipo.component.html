@@ -29,23 +29,23 @@
   <div class="scroll-mobile">
     <div class="form-group tabla-equipo">
       <div class="row titulos">
-        <div class="col border-right text-center">
+        <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'No podrás agregarle nombre ya que no lo configuraste en el paso 3' : '' }}">
           Nombre
         </div>
-        <div class="col border-right border-left text-center">
+        <div class="col border-right border-left text-center"
+             placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'No podrás agregarle número ya que no lo configuraste en el paso 3' : '' }}">
           Número
         </div>
         <div class="col text-center border-right border-left">
           Camiseta
         </div>
-        <div class="col text-md-center">
+        <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'No podrás agregarle short ya que no lo configuraste en el paso 3' : '' }}">
           Short
         </div>
       </div>
       <div formArrayName="equipo" class="row datos mt-2" *ngFor="let jugador of formEquipoControl.controls; index as i">
         <div class="col" [formGroupName]="i">
-          <input type="text" formControlName="nombreCamiseta" class="form-control" [attr.disabled]="!formEquipo.llevaNombreCamiseta ? true : null"
-                 placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'No podrás agregarle nombre ya que no lo configuraste en el paso 3' : '' }}"/>
+          <input type="text" formControlName="nombreCamiseta" class="form-control" [attr.disabled]="!formEquipo.llevaNombreCamiseta ? true : null"/>
           <div *ngIf="submit && formEquipoControl.controls[i].get('nombreCamiseta').errors" class="invalid-feedback">
             <div *ngIf="formEquipoControl.controls[i].get('nombreCamiseta').errors.required">Requerido.
             </div>
@@ -53,8 +53,7 @@
         </div>
         <div class="col numero" [formGroupName]="i">
           <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control"
-                 [attr.disabled]="!formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? true : null"
-                 placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'No podrás agregarle número ya que no lo configuraste en el paso 3' : '' }}"/>
+                 [attr.disabled]="!formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? true : null"/>
           <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
             <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Requerido.
             </div>
@@ -71,8 +70,7 @@
           </div>
         </div>
         <div class="col short" [formGroupName]="i">
-          <select class="form-control" formControlName="talleShort" [attr.disabled]="!formEquipo.llevaShort ? true : null"
-                  placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'No podrás agregarle short ya que no lo configuraste en el paso 3' : '' }}">
+          <select class="form-control" formControlName="talleShort" [attr.disabled]="!formEquipo.llevaShort ? true : null">
             <option disabled selected [ngValue]="null">Talle</option>
             <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
           </select>
