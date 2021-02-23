@@ -1,12 +1,13 @@
+<form [formGroup]="formPasoResumenPrecio" class="ml-md-2">
 <div class="ml-md-2 mr-md-0 mx-2">
   <div class="form-group row">
     <div class="col-6 text-left">
       <label for="modelo">Modelo</label>
-      <input id="modelo" readonly class="form-control" value="{{formResumenPrecio.modelo}}">
+      <input id="modelo" formControlName="modelo" readonly class="form-control">
     </div>
     <div class="col-6 text-left">
       <label for="cantidadJugadores">Jugadores</label>
-      <input id="cantidadJugadores" type="number" readonly class="form-control" value="{{formResumenPrecio.cantidadJugadores}}">
+      <input id="cantidadJugadores" formControlName="cantidadJugadores" type="number" readonly class="form-control">
     </div>
   </div>
   <fieldset>
@@ -16,38 +17,38 @@
     <div class="row form-group mt-2">
       <label for="precioCamiseta" class="col-md-6 col-6">Por Camiseta $:</label>
       <div class="col-md-6 col-6">
-        <input id="precioCamiseta" type="number" readonly class="form-control" value="{{formResumenPrecio.precioCamiseta}}">
+        <input id="precioCamiseta" formControlName="precioCamiseta" type="number" readonly class="form-control" >
       </div>
     </div>
     <div class="row form-group">
       <label for="precioShort" class="col-md-6 col-6">Por Short $:</label>
       <div class="col-md-6 col-6">
-        <input id="precioShort" type="number" readonly class="form-control" value="{{formResumenPrecio.precioShort}}">
+        <input id="precioShort" formControlName="precioShort" type="number" readonly class="form-control">
       </div>
     </div>
     <div class="row form-group">
       <label for="precioMedias" class="col-md-6 col-6">Por Medias $:</label>
       <div class="col-md-6 col-6">
-        <input id="precioMedias" type="number" readonly class="form-control" value="{{formResumenPrecio.precioMedias}}">
+        <input id="precioMedias" formControlName="precioMedias" type="number" readonly class="form-control">
       </div>
     </div>
     <hr>
     <div class="row form-group conjunto">
       <label for="precioConjunto" class="col-md-6 col-6">Por Conjunto $:</label>
       <div class="col-md-6 col-6">
-        <input id="precioConjunto" type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
+        <input id="precioConjunto" formControlName="precioConjunto" type="number" readonly class="form-control">
       </div>
     </div>
     <hr>
     <div class="row form-group">
       <label for="precioTotal" class="col-md-6 col-6">Monto total $:</label>
       <div class="col-md-6 col-6">
-        <input id="precioTotal" type="number" readonly class="form-control" value="{{formResumenPrecio.precioConjunto}}">
+        <input id="precioTotal" formControlName="precioTotal" type="number" readonly class="form-control">
       </div>
     </div>
   </fieldset>
 </div>
-
+</form>
 
 
 

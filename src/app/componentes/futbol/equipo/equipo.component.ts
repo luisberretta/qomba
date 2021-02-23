@@ -33,7 +33,7 @@ export class EquipoComponent implements OnInit, OnChanges {
       } else if(valor < this.formEquipoControl.controls.length) {
         this.formEquipoControl.controls.length = valor;
       } else {
-        let desde = 1;
+        let desde = 0;
         if (this.formEquipoControl.controls.length) {
           desde = this.formEquipoControl.controls.length;
         }
