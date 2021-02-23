@@ -67,7 +67,7 @@ export class EquipoComponent implements OnInit, OnChanges {
     this.formPasoEquipo.controls['nombreContacto'].setValue(formEquipo.nombreContacto);
     this.formPasoEquipo.controls['telefonoContacto'].setValue(formEquipo.telefonoContacto);
     this.formPasoEquipo.controls['emailContacto'].setValue(formEquipo.emailContacto);
-    for (let i = 0; i < formEquipo.detalleEquipo.length; i++) {
+    for (let i = 0; i < formEquipo.cantidadEquipo; i++) {
       if (this.formEquipoControl.value.length < formEquipo.detalleEquipo.length) {
         let jugador = new FormGroup({
           nombreCamiseta: new FormControl(formEquipo.detalleEquipo[i].nombreCamiseta),
@@ -133,7 +133,6 @@ export class EquipoComponent implements OnInit, OnChanges {
   aumentarJugador() {
     let valor = this.formPasoEquipo.get('cantidadEquipo').value;
     valor++;
-    console.log(valor);
     this.formPasoEquipo.get('cantidadEquipo').setValue(valor);
   }
 
