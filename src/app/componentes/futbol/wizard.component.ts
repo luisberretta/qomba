@@ -14,7 +14,6 @@ import {EquipoComponent} from "./equipo/equipo.component";
 import {MediasComponent} from "./medias/medias.component";
 import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component";
 import {NgxUiLoaderService} from "ngx-ui-loader";
-import {catchError} from "rxjs/operators";
 
 @Component({
   selector: 'app-wizard',

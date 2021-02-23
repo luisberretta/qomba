@@ -103,14 +103,6 @@ html, body {
   display: block;
 }
 
-.triangle {
-  display: none;
-}
-
-.triangleShadow {
-  display: none;
-}
-
 input.form-control, select.form-control {
   border-radius: 0.5rem;
   border: solid 1px black;
@@ -173,6 +165,12 @@ ngx-colors .app-color-picker .preview {
     right: 3px;
     top: 6px;
     cursor: pointer;
+  }
+}
+
+.tooltip.custom {
+  .arrow {
+    right: 10px;
   }
 }
 
@@ -334,9 +332,6 @@ fieldset {
 }
 
 @media screen and (max-width: 768px) {
-  .color-picker {
-    margin-top: 2rem;
-  }
   .scroll-mobile {
     overflow-x: scroll;
     margin-bottom: 1rem;

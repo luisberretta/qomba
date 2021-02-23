@@ -1,6 +1,5 @@
 import {
   Component,
-  ElementRef,
   Input,
   OnInit,
   Output,
@@ -32,6 +31,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   camisetaModelos: any = camisetaModelos.filter(x => x.tipo == 'hombre');
   seleccionoModelo: boolean = false;
   generoModelo: string = 'hombre';
+  detallePrecioId: number;
   modalRef: NgbModalRef;
   modalText: string;
   @ViewChild('template', { static: true }) modalTemplate;
@@ -93,6 +93,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   modeloElegido(id) {
+    this.detallePrecioId = null;
     this.seleccionoModelo = true;
     for (let i = 0; i < this.camisetaModelos.length; i++) {
       this.camisetaModelos[i].seleccionada = false;

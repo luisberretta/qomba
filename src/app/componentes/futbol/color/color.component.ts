@@ -1,13 +1,11 @@
 import {
   Component,
-  ElementRef,
   EventEmitter,
   Input,
   OnChanges,
   OnInit,
   Output,
   SimpleChanges,
-  ViewChild
 } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 
