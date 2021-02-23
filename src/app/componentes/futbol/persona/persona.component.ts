@@ -2,7 +2,7 @@ import {
   Component, ElementRef,
   Input,
   OnInit,
-  Renderer2, ViewChild,
+  ViewChild,
 } from '@angular/core';
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";

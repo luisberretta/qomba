@@ -1,5 +1,5 @@
-import {Component, Input, OnInit, Output, EventEmitter, SimpleChanges, OnChanges, ViewChild} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-resumen-precio',
