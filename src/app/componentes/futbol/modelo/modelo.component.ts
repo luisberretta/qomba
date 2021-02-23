@@ -32,6 +32,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   camisetaModelos: any = camisetaModelos;
   seleccionoModelo: boolean = false;
   generoModelo: string = 'hombre';
+  detallePrecioId: number;
   modalRef: NgbModalRef;
   modalText: string;
   @ViewChild('template', { static: true }) modalTemplate;
@@ -91,6 +92,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   modeloElegido(id) {
+    this.detallePrecioId = null;
     this.seleccionoModelo = true;
     for (let i = 0; i < this.camisetaModelos.length; i++) {
       this.camisetaModelos[i].seleccionada = false;
@@ -121,5 +123,9 @@ export class ModeloComponent implements OnInit, OnChanges {
   aumentarZoom(camiseta) {
     this.abrirModal();
     this.modalText = camiseta.urlZoom;
+  }
+
+  abrirDetalle(idCamiseta) {
+    this.detallePrecioId = idCamiseta;
   }
 }

@@ -6,17 +6,24 @@
     </div>
   </div>
   <ngx-slick-carousel class="carousel mt-3" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''">
+    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''" (mouseover)="abrirDetalle(camiseta.id)">
+      <ng-template [ngIf]="detallePrecioId == camiseta.id">
+        <div class="tooltip fade show bs-tooltip-top custom">
+          <div class="arrow"></div>
+          <div class="tooltip-inner"> Desde $ {{ camiseta.precioMayorista }}</div>
+        </div>
+      </ng-template>
       <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>
       <input type="image" src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
       <p class="mb-0">{{ camiseta.nombre }}</p>
     </div>
+
   </ngx-slick-carousel>
   <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
     <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Hacé click para seleccionar un modelo</div>
   </div>
-
 </form>
+
 <ng-template #template>
   <div class="modal-header">
     <button type="button" class="close" aria-label="Close" (click)="cerrar()">

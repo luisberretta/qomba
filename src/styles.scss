@@ -176,6 +176,12 @@ ngx-colors .app-color-picker .preview {
   }
 }
 
+.tooltip.custom {
+  .arrow {
+    right: 10px;
+  }
+}
+
 .arrow:before {
   border-top-color: #174435 !important;
 }
