@@ -53,8 +53,16 @@ export class PersonaComponent implements OnInit {
     for (let i = 0; i < grupos.length; i++) {
       if (grupos[i].id == cambiar.parte) {
         let paths = grupos[i].getElementsByTagName('path');
+        let polygon = grupos[i].getElementsByTagName('polygon');
+        let line = grupos[i].getElementsByTagName('line');
         for (let j = 0; j < paths.length; j++) {
           paths[j].setAttribute('fill', cambiar.color);
+        }
+        for (let j = 0; j < polygon.length; j++) {
+          polygon[j].setAttribute('fill', cambiar.color);
+        }
+        for (let j = 0; j < line.length; j++) {
+          line[j].setAttribute('fill', cambiar.color);
         }
         grupos[i].classList.remove('parte-seleccionada');
       }

@@ -1,7 +1,8 @@
 export const camisetaModelos = [
   {
     id: 1,
-    nombre: 'Ondine',
+
+tipo: 'hombre',    nombre: 'Ondine',
     url: '/assets/images/modelos/Ondine.svg',
     urlSvg: 'Ondine.svg',
     urlZoom: '/assets/images/zoom/Ondine.svg',
@@ -12,7 +13,8 @@ export const camisetaModelos = [
   },
   {
     id: 2,
-    nombre: 'Borussia',
+
+tipo: 'hombre',    nombre: 'Borussia',
     url: '/assets/images/modelos/Borussia.svg',
     urlSvg: 'Borussia.svg',
     urlZoom: '/assets/images/zoom/Borussia.svg',
@@ -23,7 +25,8 @@ export const camisetaModelos = [
   },
   {
     id: 3,
-    nombre: 'Juve',
+
+tipo: 'hombre',    nombre: 'Juve',
     url: '/assets/images/modelos/Juve.svg',
     urlSvg: 'Juve.svg',
     urlZoom: '/assets/images/zoom/Juve.svg',
@@ -34,7 +37,8 @@ export const camisetaModelos = [
   },
   {
     id: 4,
-    nombre: 'City',
+
+tipo: 'hombre',    nombre: 'City',
     url: '/assets/images/modelos/City.svg',
     urlSvg: 'City.svg',
     urlZoom: '/assets/images/zoom/City.svg',
@@ -45,7 +49,8 @@ export const camisetaModelos = [
   },
   {
     id: 5,
-    nombre: 'Inter',
+
+tipo: 'hombre',    nombre: 'Inter',
     url: '/assets/images/modelos/Inter.svg',
     urlSvg: 'Inter.svg',
     urlZoom: '/assets/images/zoom/Inter.svg',
@@ -56,7 +61,8 @@ export const camisetaModelos = [
   },
   {
     id: 6,
-    nombre: 'Dortmund',
+
+tipo: 'hombre',    nombre: 'Dortmund',
     url: '/assets/images/modelos/Dortmund.svg',
     urlSvg: 'Dortmund.svg',
     urlZoom: '/assets/images/zoom/Dortmund.svg',
@@ -67,7 +73,8 @@ export const camisetaModelos = [
   },
   {
     id: 7,
-    nombre: 'Master',
+
+tipo: 'hombre',    nombre: 'Master',
     url: '/assets/images/modelos/Master.svg',
     urlSvg: 'Master.svg',
     urlZoom: '/assets/images/zoom/Master.svg',
@@ -78,7 +85,8 @@ export const camisetaModelos = [
   },
   {
     id: 8,
-    nombre: 'United',
+
+tipo: 'hombre',    nombre: 'United',
     url: '/assets/images/modelos/United.svg',
     urlSvg: 'United.svg',
     urlZoom: '/assets/images/zoom/United.svg',
@@ -89,7 +97,8 @@ export const camisetaModelos = [
   },
   {
     id: 9,
-    nombre: 'Rivera',
+
+tipo: 'hombre',    nombre: 'Rivera',
     url: '/assets/images/modelos/Rivera.svg',
     urlSvg: 'Rivera.svg',
     urlZoom: '/assets/images/zoom/Rivera.svg',
@@ -100,6 +109,7 @@ export const camisetaModelos = [
   },
   {
     id: 10,
+    tipo: 'hombre',
     nombre: 'Millo',
     url: '/assets/images/modelos/Millo.svg',
     urlSvg: 'Millo.svg',
@@ -111,6 +121,7 @@ export const camisetaModelos = [
   },
   {
     id: 11,
+    tipo: 'hombre',
     nombre: 'Matador',
     url: '/assets/images/modelos/Matador.svg',
     urlSvg: 'Matador.svg',
@@ -122,6 +133,7 @@ export const camisetaModelos = [
   },
   {
     id: 12,
+    tipo: 'hombre',
     nombre: 'Pirata',
     url: '/assets/images/modelos/Pirata.svg',
     urlSvg: 'Pirata.svg',
@@ -133,6 +145,7 @@ export const camisetaModelos = [
   },
   {
     id: 13,
+    tipo: 'hombre',
     nombre: 'Argento',
     url: '/assets/images/modelos/Argento.svg',
     urlSvg: 'Argento.svg',
@@ -144,6 +157,7 @@ export const camisetaModelos = [
   },
   {
     id: 14,
+    tipo: 'hombre',
     nombre: 'Vecort',
     url: '/assets/images/modelos/Vecort.svg',
     urlSvg: 'Vecort.svg',
@@ -155,6 +169,7 @@ export const camisetaModelos = [
   },
   {
     id: 15,
+    tipo: 'hombre',
     nombre: 'Verline',
     url: '/assets/images/modelos/Verline.svg',
     urlSvg: 'Verline.svg',
@@ -166,6 +181,7 @@ export const camisetaModelos = [
   },
   {
     id: 16,
+    tipo: 'hombre',
     nombre: 'Classic',
     url: '/assets/images/modelos/Classic.svg',
     urlSvg: 'Classic.svg',
@@ -177,6 +193,7 @@ export const camisetaModelos = [
   },
   {
     id: 17,
+    tipo: 'hombre',
     nombre: 'Lepra',
     url: '/assets/images/modelos/Lepra.svg',
     urlSvg: 'Lepra.svg',
@@ -188,6 +205,7 @@ export const camisetaModelos = [
   },
   {
     id: 18,
+    tipo: 'hombre',
     nombre: 'Duline',
     url: '/assets/images/modelos/Duline.svg',
     urlSvg: 'Duline.svg',
@@ -199,6 +217,7 @@ export const camisetaModelos = [
   },
   {
     id: 19,
+    tipo: 'hombre',
     nombre: 'Trilo',
     url: '/assets/images/modelos/Trilo.svg',
     urlSvg: 'Trilo.svg',
@@ -210,6 +229,7 @@ export const camisetaModelos = [
   },
   {
     id: 20,
+    tipo: 'hombre',
     nombre: 'Dynamo',
     url: '/assets/images/modelos/Dynamo.svg',
     urlSvg: 'Dynamo.svg',
@@ -221,6 +241,7 @@ export const camisetaModelos = [
   },
   {
     id: 21,
+    tipo: 'hombre',
     nombre: 'Albo',
     url: '/assets/images/modelos/Albo.svg',
     urlSvg: 'Albo.svg',
@@ -232,6 +253,7 @@ export const camisetaModelos = [
   },
   {
     id: 22,
+    tipo: 'hombre',
     nombre: "Pixel",
     url: '/assets/images/modelos/Pixel.svg',
     urlSvg: 'Pixel.svg',
@@ -242,37 +264,61 @@ export const camisetaModelos = [
   //MODELOS DE MUJER
   {
     id: 23,
+    tipo: 'mujer',
     nombre: 'completar',
     url: '/assets/images/modelos/intermedia3.svg',
-    urlSvg: 'intermedia3-dorso.svg',
-    urlZoom: 'Ondine.svg',
+    urlSvg: '',
+    urlZoom: '/assets/images/zoom/',
     seleccionada: false,
     visible: false,
   },
   {
     id: 24,
+    tipo: 'mujer',
     nombre: 'completar',
-    url: '/assets/images/modelos/premium1.png',
-    urlSvg: 'premium1-dorso.svg',
-    urlZoom: 'Ondine.svg',
+    url: '/assets/images/modelos/premium1.svg',
+    urlSvg: '',
+    urlZoom: '/assets/images/zoom/',
     seleccionada: false,
     visible: false,
   },
   {
     id: 25,
+    tipo: 'mujer',
     nombre: 'completar',
-    url: '/assets/images/modelos/premium2.png',
-    urlSvg: 'premium2-dorso.svg',
-    urlZoom: 'Ondine.svg',
+    url: '/assets/images/modelos/premium2.svg',
+    urlSvg: '',
+    urlZoom: '/assets/images/zoom/',
     seleccionada: false,
     visible: false,
   },
   {
     id: 26,
+    tipo: 'mujer',
+    nombre: 'Cresi',
+    url: '/assets/images/modelos/Cresi.svg',
+    urlSvg: 'Cresi.svg',
+    urlZoom: '/assets/images/zoom/Cresi.svg',
+    seleccionada: false,
+    visible: false,
+  },
+  {
+    id: 27,
+    tipo: 'mujer',
     nombre: 'completar',
-    url: '/assets/images/modelos/premium3.png',
-    urlSvg: 'premium3-dorso.svg',
-    urlZoom: 'Ondine.svg',
+    url: '/assets/images/modelos/Valencia.svg',
+    urlSvg: 'Valencia.svg',
+    urlZoom: '/assets/images/zoom/Valencia.svg',
+    seleccionada: false,
+    visible: false,
+  },
+  {
+    id: 28,
+    tipo: 'mujer',
+    nombre: 'Pyramid',
+    url: '/assets/images/modelos/Pyramid.svg',
+    urlSvg: 'Pyramid.svg',
+    urlZoom: '/assets/images/zoom/Pyramid.svg',
     seleccionada: false,
     visible: false,
   },

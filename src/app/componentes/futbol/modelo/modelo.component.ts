@@ -29,7 +29,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   @Output() colorPartes = new EventEmitter();
   @Input() formModelo;
   @Output() modeloSeleccionado = new EventEmitter();
-  camisetaModelos: any = camisetaModelos;
+  camisetaModelos: any = camisetaModelos.filter(x => x.tipo == 'hombre');
   seleccionoModelo: boolean = false;
   generoModelo: string = 'hombre';
   detallePrecioId: number;
@@ -112,12 +112,12 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   modelosHombre() {
     this.generoModelo = 'hombre';
-    //Renderizar modelos hombre
+    this.camisetaModelos = camisetaModelos.filter(x => x.tipo == 'hombre');
   }
 
   modelosMujer() {
     this.generoModelo = 'mujer';
-    //Renderizar modelos mujer
+    this.camisetaModelos = camisetaModelos.filter(x => x.tipo == 'mujer');
   }
 
   aumentarZoom(camiseta) {

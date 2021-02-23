@@ -697,7 +697,7 @@
 <g id="Nombre" visibility="hidden">
 	<text transform="matrix(1 0 0 1 1527.4098 430.1457)" display="inline" font-family="'SablonUp-College'" font-size="90px">nombre</text>
 </g>
-<g id="Número_Espalda" visibility="hidden">
+<g id="Número_espalda" visibility="hidden">
 	<text id="numero" transform="matrix(1 0 0 1 1543.4102 719.4009)" display="inline" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
 <g id="GENERICO">
@@ -20635,9 +20635,8 @@ poesHzXuCkV3ozTaQN+JFylntxq3cxW13XfQ4twEhemsThmgKgygL4KAqRYfFEioD5p1a8ZC5Sz2
 	<path fill="#FFFFFF" d="M1719,2389.2l-0.8,26.6c0,0,40.2,20.4,88.4,3.7c0,0,15.5-6.1,17.1-18.2c1.6-12.1,6.4-15.2,14.5-21.2
 		c8-6.1,37.4-28.3,24.3-59.6c0,0,10.1,24.8-24.7,48c-4.2,2.8-8.7,4.1-16.7,11.6C1805,2404.3,1745.5,2401.3,1719,2389.2z"/>
 </g>
-<g id="Escudo_Short"visibility="hidden">
-
-		<image overflow="visible" width="200" height="200" id="escudo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
+<g id="Short_escudo"visibility="hidden">
+		<image id="escudo"overflow="visible" width="200" height="200" id="escudo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAKtpJREFUeNrsXQtYVNXaXsooF+Uq
 SoIImNc079fyMmpqaQmW5+SpTNRSq2Pi7WjnP3+hnv9kaorlSc0b6imtTLA001JBPWp5w0vmXUBR
 CBgGVAZwgH+/21njns3ec59hBtb7PJvZ7Ovaa613re/71re+RQgDAwMDAwMDAwMDAwMDAwMDAwMD
@@ -20834,7 +20833,7 @@ K9eBgmWBawBhPXUu7AG1McQnAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD
 Q63E/wswAKdYFDHYKKkHAAAAAElFTkSuQmCC" transform="matrix(0.3018 -3.972827e-02 3.711764e-02 0.2819 843.5142 1433.7471)">
 	</image>
 </g>
-<g id="Escudo_Camiseta" visibility="hidden">
+<g id="Remera_escudo" visibility="hidden">
 
 		<image  overflow="visible" width="200" height="200" id="escudo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAADKCAYAAADkZd+oAAAACXBIWXMAABRMAAAUTAFGjW/LAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAKu5JREFUeNrsXQlcVNX+P8ooi7KK
