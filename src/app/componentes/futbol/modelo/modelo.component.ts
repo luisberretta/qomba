@@ -124,8 +124,4 @@ export class ModeloComponent implements OnInit, OnChanges {
     this.abrirModal();
     this.modalText = camiseta.urlZoom;
   }
-
-  abrirDetalle(idCamiseta) {
-    this.detallePrecioId = idCamiseta;
-  }
 }
