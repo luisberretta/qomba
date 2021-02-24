@@ -15,26 +15,20 @@ export class AppComponent {
 
   modalRef: NgbModalRef;
   modalText: string;
+  redireccion: string;
   @ViewChild('template', {static: true}) modalTemplate;
 
   constructor(private ngxLoader: NgxUiLoaderService, private modalService: NgbModal, private location: Location, private router: Router) {
-    // location.onPopState((e) => {
-    //
-    //   console.log(e);
-    //   alert("Recordá que s");
-    // });
-    // window.onpopstate = function(e)
-    // {
-    //     e.stopPropagation();
-    //     // history.go(1);
-    // }
-    // this.router.events
-    //   .pipe(filter((event: NavigationStart) =>
-    //     event.navigationTrigger === 'popstate')).subscribe((e) => {
-    //       console.log(e);
-    //     this.router.navigateByUrl(this.router.url);
-    //     this.location.go(this.router.url);
-    //   });
+
+    this.router.events.pipe(filter((event: NavigationStart) =>
+      event.navigationTrigger === 'popstate')).subscribe((e) => {
+      if(this.router.url == '/futbol') {
+        this.redireccion = e.url;
+        this.router.navigateByUrl(this.router.url);
+        this.location.go(this.router.url);
+        this.abrirModal();
+      }
+    });
   }
 
   ngOnInit() {
@@ -42,12 +36,12 @@ export class AppComponent {
     this.ngxLoader.stop();
   }
 
-  // abrirModal() {
-  //   this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
-  // }
-  //
-  // cerrar() {
-  //   this.modalService.dismissAll();
-  //
-  // }
+  abrirModal() {
+    this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
+  }
+
+  confirmarYRedireccionar() {
+    this.modalService.dismissAll();
+    this.router.navigateByUrl(this.redireccion);
+  }
 }
