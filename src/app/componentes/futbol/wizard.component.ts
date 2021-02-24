@@ -372,7 +372,7 @@ export class WizardComponent implements OnInit {
     let gruposColor = this.obtenerGruposColor();
     let formColor = [];
     for (let i = 0; i < gruposColor.length; i++) {
-      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: []}
+      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: [], color: undefined}
       if (this.perteneceRemera(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
@@ -391,8 +391,6 @@ export class WizardComponent implements OnInit {
           let indexColor = formColor.findIndex(x => x.idParte == this.pedido.coloresModelo[j].idParte);
           if (indexColor > -1) {
             formColor[indexColor].color = this.pedido.coloresModelo[j].color;
-          } else {
-            formColor[i].color = null;
           }
         }
       }
@@ -419,7 +417,7 @@ export class WizardComponent implements OnInit {
     let gruposColor = this.obtenerGruposColor();
     let partesShortSVG = [];
     for (let i = 0; i < gruposColor.length; i++) {
-      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: []}
+      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: [], color: undefined};
       if (this.perteneceShort(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
@@ -438,8 +436,6 @@ export class WizardComponent implements OnInit {
           let indexColor = partesShortSVG.findIndex(x => x.idParte == this.pedido.coloresModelo[j].idParte);
           if (indexColor > -1) {
             partesShortSVG[indexColor].color = this.pedido.coloresModelo[j].color;
-          } else {
-            partesShortSVG[i].color = null;
           }
         }
       }
@@ -459,7 +455,7 @@ export class WizardComponent implements OnInit {
     let gruposColor = this.obtenerGruposColor();
     let partesMediasSVG = [];
     for (let i = 0; i < gruposColor.length; i++) {
-      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: []}
+      let parteColor = {nombreMostrar: undefined, idParte: undefined, colores: [], color: undefined}
       if (this.perteneceMedias(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
@@ -478,8 +474,6 @@ export class WizardComponent implements OnInit {
           let indexColor = partesMediasSVG.findIndex(x => x.idParte == this.pedido.coloresModelo[j].idParte);
           if (indexColor > -1) {
             partesMediasSVG[indexColor].color = this.pedido.coloresModelo[j].color;
-          } else {
-            partesMediasSVG[i].color = null;
           }
         }
       }
