@@ -39,6 +39,7 @@ export class PersonaComponent implements OnInit {
 
   generarModelo(modelo) {
     this.modeloSeleccionado = modelo;
+    this.modeloSVG = null;
     this.svgService.obtenerSVG(this.url + modelo.urlSvg).subscribe((data) => {
       this.modeloSVG =this.sanitizer.bypassSecurityTrustHtml(data);
     });
@@ -55,6 +56,7 @@ export class PersonaComponent implements OnInit {
         let paths = grupos[i].getElementsByTagName('path');
         let polygon = grupos[i].getElementsByTagName('polygon');
         let line = grupos[i].getElementsByTagName('line');
+        let polyline = grupos[i].getElementsByTagName('polyline');
         for (let j = 0; j < paths.length; j++) {
           paths[j].setAttribute('fill', cambiar.color);
         }
@@ -63,6 +65,9 @@ export class PersonaComponent implements OnInit {
         }
         for (let j = 0; j < line.length; j++) {
           line[j].setAttribute('fill', cambiar.color);
+        }
+        for (let j = 0; j < polyline.length; j++) {
+          polyline[j].setAttribute('fill', cambiar.color);
         }
         grupos[i].classList.remove('parte-seleccionada');
       }
