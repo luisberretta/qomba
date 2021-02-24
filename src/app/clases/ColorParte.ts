@@ -53,7 +53,7 @@ export const coloresParte = [
       },
       {
         idParte: "Short_linea_lateral",
-        nombreMostrar: "Short línea letaral",
+        nombreMostrar: "Short línea lateral",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
