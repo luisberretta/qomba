@@ -172,9 +172,8 @@
 
 .info {
   cursor: pointer;
+  color: #1376d9;
 }
-
-
 
 @media screen and (max-width: 768px) {
   .btn-group {
@@ -187,5 +186,17 @@
     &:first-letter {
       text-transform: uppercase;
     }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .info {
+    font-size: 1rem !important;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .info {
+    font-size: 0.60rem !important;
   }
 }

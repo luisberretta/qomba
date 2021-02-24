@@ -117,9 +117,9 @@ export class EquipoComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    // if (this.formPasoEquipo.valid) {
+    if (this.formPasoEquipo.valid) {
       this.proximoPaso.emit(this.formPasoEquipo.value);
-    // }
+    }
   }
 
   anterior() {
