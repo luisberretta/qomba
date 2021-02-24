@@ -29,17 +29,17 @@
   <div class="scroll-mobile">
     <div class="form-group tabla-equipo">
       <div class="row titulos">
-        <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}">
+        <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
           Nombre
         </div>
         <div class="col border-right border-left text-center"
-             placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'Tu diseño no tiene esta opción' : '' }}">
+             placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
           Número
         </div>
         <div class="col text-center border-right border-left">
           Camiseta
         </div>
-        <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'Tu diseño no tiene esta opción' : '' }}">
+        <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
           Short
         </div>
       </div>
@@ -87,7 +87,7 @@
       Datos de Contacto
     </legend>
     <div class="form-group row mt-3">
-      <label for="nombreContacto" class="col-md-2 col-4 text-left align-self-center pr-0">Nombre:</label>
+      <label for="nombreContacto" class="col-md-2 col-4 text-left pr-0">Nombre:</label>
       <div class="col-md-4 col-6 text-left pl-0">
         <input class="form-control" type="text" id="nombreContacto" placeholder="Qomba" formControlName="nombreContacto">
         <div *ngIf="submit && formPasoEquipo.controls.nombreContacto.errors" class="invalid-feedback">
@@ -96,7 +96,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="telefonoContacto" class="col-md-2 col-4 text-left align-self-center pr-0">Celular:</label>
+      <label for="telefonoContacto" class="col-md-2 col-4 text-left pr-0">Celular:</label>
       <div class="col-md-4 col-6 text-left pl-0">
         <input class="form-control" type="text" id="telefonoContacto" placeholder="351 386-0000" formControlName="telefonoContacto">
         <div *ngIf="submit && formPasoEquipo.controls.telefonoContacto.errors" class="invalid-feedback">
@@ -106,7 +106,7 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="emailContacto" class="col-md-2 col-4 text-left align-self-center pr-0">E-mail:</label>
+      <label for="emailContacto" class="col-md-2 col-4 text-left pr-0">E-mail:</label>
       <div class="col-md-4 col-6 text-left pl-0">
         <input class="form-control" type="text" id="emailContacto" placeholder="qombasport@gmail.com"  formControlName="emailContacto">
         <div *ngIf="submit && formPasoEquipo.controls.emailContacto.errors" class="invalid-feedback">
