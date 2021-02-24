@@ -331,14 +331,14 @@ export class WizardComponent implements OnInit {
       partes: this.pedido.coloresModelo,
 
     }
-    let imagen = this.personaComponent.generarImagen();
-    svgAsPngUri(imagen, "svg.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirABase64(data));
-      for (let i = 0; i < this.pedido.imagenes.length; i++) {
-        if (this.pedido.imagenes[i]) {
-          solicitudPedido.imagenes.push(this.convertirABase64(this.pedido.imagenes[i]));
-        }
-      }
+    // let imagen = this.personaComponent.generarImagen();
+    // svgAsPngUri(imagen, "svg.png").then((data) => {
+    //   this.pedido.imagenes.push(this.convertirABase64(data));
+    //   for (let i = 0; i < this.pedido.imagenes.length; i++) {
+    //     if (this.pedido.imagenes[i]) {
+    //       solicitudPedido.imagenes.push(this.convertirABase64(this.pedido.imagenes[i]));
+    //     }
+    //   }
       this.wizardService.generarPedido(this.pedido).subscribe((data) => {
           this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
           this.abrirModal();
@@ -349,12 +349,12 @@ export class WizardComponent implements OnInit {
           }
         },
         (error) => {
-          this.modalText = "Se produjo un error al realizar el pedido."
+          this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba."
           this.abrirModal();
           this.ngxLoader.stop();
         });
 
-    });
+    // });
 
   }
 
