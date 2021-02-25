@@ -57,7 +57,7 @@
     </div>
     <div class="col-md-5 col-7">
       <select [attr.disabled]="llevaEstampado() ? null: true" class="form-control" formControlName="tipoLetra">
-        <option *ngFor="let tipoLetra of tiposLetra" [selected]="tipoLetra == formPasoCamiseta.get('tipoLetra').value">{{ tipoLetra }}</option>
+        <option *ngFor="let tipoLetra of tiposLetra" [value]="tipoLetra.valor">{{ tipoLetra.nombre }}</option>
       </select>
     </div>
   </div>

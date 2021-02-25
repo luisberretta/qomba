@@ -14,24 +14,28 @@
 @font-face {
   font-family: 'SablonUp-College';
   font-style: normal;
-  font-weight: 400;
   src: url('/assets/fonts/Sablon_Up_College.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Nike';
+  font-family: 'Fools Errand';
   font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/Nike.ttf') format('truetype');
+  src: url('/assets/fonts/FoolsErrand.otf') format('opentype');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Puma';
+  font-family: 'Accidental Presidency';
   font-style: normal;
-  font-weight: 400;
-  src: url('/assets/fonts/Puma.ttf') format('truetype');
+  src: url('/assets/fonts/accid.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Agron';
+  font-style: normal;
+  src: url('/assets/fonts/Agron.otf') format('opentype');
   font-display: swap;
 }
 
