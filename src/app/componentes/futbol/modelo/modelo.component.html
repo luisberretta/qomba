@@ -5,8 +5,8 @@
       <a class="btn" (click)="modelosMujer()" [ngClass]="{ 'seleccionado': generoModelo == 'mujer' }">Mujer</a>
     </div>
   </div>
-  <ngx-slick-carousel *ngIf="generoModelo == 'hombre'" class="carousel mt-3" [config]="slideConfig">
-    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''"
+  <ngx-slick-carousel *ngIf="generoModelo == 'hombre'" #slickModal="slick-carousel" class="carousel mt-3" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos;" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''"
          (mouseover)="detallePrecioId = camiseta.id" (mouseleave)="detallePrecioId = null" (click)="detalle(camiseta.id)">
       <ng-template [ngIf]="detallePrecioId == camiseta.id">
         <div class="tooltip fade show bs-tooltip-top custom">
@@ -19,7 +19,7 @@
       <p class="mb-0">{{ camiseta.nombre }}</p>
     </div>
   </ngx-slick-carousel>
-  <ngx-slick-carousel *ngIf="generoModelo == 'mujer'" class="carousel mt-3" [config]="slideConfig">
+  <ngx-slick-carousel *ngIf="generoModelo == 'mujer'" #slickModal="slick-carousel" class="carousel mt-3" [config]="slideConfig">
     <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''"
          (mouseover)="detallePrecioId = camiseta.id" (mouseleave)="detallePrecioId = null" (click)="detalle(camiseta.id)">
       <ng-template [ngIf]="detallePrecioId == camiseta.id">
