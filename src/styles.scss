@@ -174,8 +174,6 @@ ngx-colors .app-color-picker .preview {
   }
 }
 
-
-
 .arrow:before {
   border-top-color: #174435 !important;
 }
@@ -294,6 +292,10 @@ fieldset {
   }
 }
 
+.slick-dotted.slick-slider {
+  margin-bottom: 40px !important;
+}
+
 .slick-dots {
   .slick-active {
     button {
@@ -331,6 +333,10 @@ fieldset {
   &:before {
     color: black !important;
   }
+}
+
+.tooltip-mobile.tooltip {
+  width: 170px;
 }
 
 @media screen and (max-width: 768px) {
@@ -378,5 +384,11 @@ fieldset {
     .arrow:before {
       right: -49px;
     }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .btn-confirmar {
+    padding-left: 0.8rem;
   }
 }

@@ -32,7 +32,6 @@
       <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
       <p class="mb-0">{{ camiseta.nombre }}</p>
     </div>
-
   </ngx-slick-carousel>
   <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
     <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Hacé click para seleccionar un modelo</div>
