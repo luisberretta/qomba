@@ -15,6 +15,7 @@ import {MediasComponent} from "./medias/medias.component";
 import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component";
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {indumentariaInferior} from "../../clases/IndumentariaInferior";
+import {tipografias} from "../../clases/Tipografia";
 
 @Component({
   selector: 'app-wizard',
@@ -354,28 +355,27 @@ export class WizardComponent implements OnInit {
   }
 
   confeccionarPedido(){
-    let pedido = {
-      nombreCliente : this.pedido.nombreContacto,
+    return {
+      nombreCliente: this.pedido.nombreContacto,
       celular: this.pedido.telefonoContacto,
       email: this.pedido.emailContacto,
       nombreEquipo: this.pedido.nombreEquipo,
-      cantidadJugadores : this.pedido.cantidadEquipo,
-      modelo : this.pedido.modelo.nombre,
-      precioTotal : this.pedido.precioTotal,
-      llevaEscudoDelantero : this.pedido.llevaEscudoDelantero,
-      llevaNumeroDelantero : this.pedido.llevaNumeroDelantero,
+      cantidadJugadores: this.pedido.cantidadEquipo,
+      modelo: this.pedido.modelo.nombre,
+      precioTotal: this.pedido.precioTotal,
+      llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
+      llevaNumeroDelantero: this.pedido.llevaNumeroDelantero,
       llevaNumeroEspalda: this.pedido.llevaNumeroEspalda,
       llevaNombreEspalda: this.pedido.llevaNombreEspalda,
-      tipoLetra: this.pedido.tipoLetra,
+      tipoLetra: this.obtenerNombreLetra(),
       colorLetra: this.pedido.colorEstampado,
       llevaShort: this.pedido.agregarShort,
       llevaEscudoShort: this.pedido.agregarEscudoShort,
       llevaNumeroShort: this.pedido.agregarNumeroShort,
       llevaMedias: this.pedido.agregarMedias,
-      detalleEquipo : this.pedido.detalleEquipo,
+      detalleEquipo: this.pedido.detalleEquipo,
       imagenes: this.pedido.imagenes,
-    }
-    return pedido;
+    };
   }
 
   convertirABase64(cadena) {
@@ -597,6 +597,10 @@ export class WizardComponent implements OnInit {
 
   cambiarTipografia(tipografia) {
     this.personaComponent.cambiarTipografia(tipografia);
+  }
+
+  obtenerNombreLetra() {
+    return tipografias.find(x => x.valor == this.pedido.tipoLetra).nombre;
   }
 
 }
