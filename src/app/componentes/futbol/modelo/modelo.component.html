@@ -15,7 +15,7 @@
         </div>
       </ng-template>
       <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>
-      <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
+      <img src="{{ camiseta.url }}" alt="{{ camiseta.nombre }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
       <p class="mb-0">{{ camiseta.nombre }}</p>
     </div>
   </ngx-slick-carousel>
@@ -45,6 +45,6 @@
     </button>
   </div>
   <div class="modal-body text-center">
-    <img [src]="modalText" class="img-fluid">
+    <img [src]="modalText" [alt]="modalText" class="img-fluid">
   </div>
 </ng-template>
