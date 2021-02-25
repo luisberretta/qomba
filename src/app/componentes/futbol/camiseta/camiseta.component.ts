@@ -10,7 +10,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {coloresParte} from "../../../clases/ColorParte";
+import {tipografias} from "../../../clases/Tipografia";
 
 @Component({
   selector: 'app-camiseta',
@@ -33,7 +33,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   posicionesNumeroDelanteroEstatico: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesEscudo: string[] = ["Derecha", "Izquierda", "Centro"];
   posicionesNumeroDelantero: string[] = ["Derecha", "Izquierda", "Centro"];
-  tiposLetra = ['Sablon', 'Nike', 'Puma'];
+  tiposLetra = tipografias;
   NUMERO_DELANTERO = "Número_delantero";
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
@@ -42,7 +42,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
-    tipoLetra: new FormControl("Sablon"),
+    tipoLetra: new FormControl(null),
     llevaEscudoDelantero: new FormControl(null),
     escudoDelantero: new FormControl(null),
     posicionEscudoDelantero: new FormControl(null),
@@ -170,7 +170,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('llevaNombreEspalda').setValue(formCamiseta.llevaNombreEspalda ?? null);
     this.formPasoCamiseta.get('llevaNumeroEspalda').setValue(formCamiseta.llevaNumeroEspalda ?? null);
     this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
-    this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? null);
+    this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? "SablonUp-College");
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
     if (this.colorRemera == "#000000"){
       this.coloresLetrasYNumeros = ["#FFFFFF"];

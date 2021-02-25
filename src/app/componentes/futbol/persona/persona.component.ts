@@ -163,28 +163,10 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-
   generarImagen(): any {
     let imagen: HTMLAllCollection;
     imagen = this.remera.nativeElement.children.namedItem('svg');
     return imagen;
-  }
-
-  obtenerElementos(event) {
-    this.idGrupo = event.target.parentNode.id;
-    let grupos = this.obtenerGrupos();
-    if (this.idGrupo == 'short' && !this.llevaShort) {
-      return false;
-    } else {
-      for (let i = 0; i < grupos.length; i++) {
-        if (grupos[i].id == this.idGrupo) {
-          grupos[i].classList.add('parte-seleccionada');
-        } else {
-          grupos[i].classList.remove('parte-seleccionada');
-        }
-      }
-      this.parteSeleccionada = this.idGrupo.toString().charAt(0).toUpperCase() + this.idGrupo.toString().slice(1);
-    }
   }
 
   obtenerGrupos() {

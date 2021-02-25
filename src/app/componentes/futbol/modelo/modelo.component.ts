@@ -6,12 +6,13 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
-  SimpleChanges
+  SimpleChanges, AfterViewInit, HostListener
 } from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal,NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {camisetaModelos} from "../../../clases/CamisetaModelo";
+import {SlickCarouselComponent} from "ngx-slick-carousel";
 
 @Component({
   selector: 'app-modelo',
@@ -36,6 +37,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   modalRef: NgbModalRef;
   modalText: string;
   @ViewChild('template', { static: true }) modalTemplate;
+  @ViewChild('slickModal') slick: SlickCarouselComponent;
   slideConfig = {
     "slidesToShow": 4,
     "slidesToScroll": 4,
@@ -79,6 +81,10 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formModelo) {
+    setTimeout(()=> {
+      this.slick.slickGoTo(formModelo.modelo.id - 1)
+    }, 100);
+
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
     this.generoModelo = formModelo.modelo.tipo;
     this.generoModelo == 'hombre'? this.modelosHombre() :this.modelosMujer();
@@ -107,9 +113,9 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    // if (this.formPasoModelo.valid) {
+    if (this.formPasoModelo.valid) {
       this.proximoPaso.emit(this.formPasoModelo.value);
-    // }
+    }
   }
 
   modelosHombre() {

@@ -3,10 +3,6 @@
   cursor: pointer;
 }
 
-.scroll-mobile {
-  overflow-x: auto;
-}
-
 .tabla-equipo {
   max-height: 450px;
   .titulos {
@@ -34,20 +30,8 @@
 .input-group-append {
   .input-group-text {
     display: block;
-    //.fa-sort-up, .fa-sort-down {
-    //  display: flex;
-    //  height: 10px;
-    //  cursor: pointer;
-    //}
-    //.fa-sort-up {
-    //  margin-top: -8px;
-    //}
-    //.fa-sort-down {
-    //  margin-top: -8px;
-    //}
   }
 }
-
 
 fieldset {
   margin-bottom: 1rem;
@@ -76,7 +60,7 @@ fieldset {
       }
     }
   }
-  .scroll-mobile .tabla-equipo {
+  .tabla-equipo {
     width: initial;
     padding: 5px;
     .titulos {

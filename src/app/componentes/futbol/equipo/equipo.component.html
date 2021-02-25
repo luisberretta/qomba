@@ -26,57 +26,55 @@
       </div>
     </div>
   </div>
-  <div class="scroll-mobile">
-    <div class="form-group tabla-equipo">
-      <div class="row titulos">
-        <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
-          Nombre
-        </div>
-        <div class="col border-right border-left text-center"
-             placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
-          Número
-        </div>
-        <div class="col text-center border-right border-left">
-          Camiseta
-        </div>
-        <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
-          Short
+  <div class="form-group tabla-equipo">
+    <div class="row titulos">
+      <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
+        Nombre
+      </div>
+      <div class="col border-right border-left text-center"
+           placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
+        Número
+      </div>
+      <div class="col text-center border-right border-left">
+        Camiseta
+      </div>
+      <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
+        Short
+      </div>
+    </div>
+    <div formArrayName="equipo" class="row datos mt-2" *ngFor="let jugador of formEquipoControl.controls; index as i">
+      <div class="col" [formGroupName]="i">
+        <input type="text" formControlName="nombreCamiseta" class="form-control" [attr.disabled]="!formEquipo.llevaNombreCamiseta ? true : null"/>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('nombreCamiseta').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('nombreCamiseta').errors.required">Requerido.
+          </div>
         </div>
       </div>
-      <div formArrayName="equipo" class="row datos mt-2" *ngFor="let jugador of formEquipoControl.controls; index as i">
-        <div class="col" [formGroupName]="i">
-          <input type="text" formControlName="nombreCamiseta" class="form-control" [attr.disabled]="!formEquipo.llevaNombreCamiseta ? true : null"/>
-          <div *ngIf="submit && formEquipoControl.controls[i].get('nombreCamiseta').errors" class="invalid-feedback">
-            <div *ngIf="formEquipoControl.controls[i].get('nombreCamiseta').errors.required">Requerido.
-            </div>
+      <div class="col numero" [formGroupName]="i">
+        <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control"
+               [attr.disabled]="!formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? true : null"/>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Requerido.
           </div>
         </div>
-        <div class="col numero" [formGroupName]="i">
-          <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control"
-                 [attr.disabled]="!formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? true : null"/>
-          <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
-            <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Requerido.
-            </div>
+      </div>
+      <div class="col camiseta" [formGroupName]="i">
+        <select class="form-control" formControlName="talleCamiseta">
+          <option disabled selected [ngValue]="null">Talle</option>
+          <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
+        </select>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('talleCamiseta').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('talleCamiseta').errors.required">Requerido.
           </div>
         </div>
-        <div class="col camiseta" [formGroupName]="i">
-          <select class="form-control" formControlName="talleCamiseta">
-            <option disabled selected [ngValue]="null">Talle</option>
-            <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
-          </select>
-          <div *ngIf="submit && formEquipoControl.controls[i].get('talleCamiseta').errors" class="invalid-feedback">
-            <div *ngIf="formEquipoControl.controls[i].get('talleCamiseta').errors.required">Requerido.
-            </div>
-          </div>
-        </div>
-        <div class="col short" [formGroupName]="i">
-          <select class="form-control" formControlName="talleShort" [attr.disabled]="!formEquipo.llevaShort ? true : null">
-            <option disabled selected [ngValue]="null">Talle</option>
-            <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
-          </select>
-          <div *ngIf="submit && formEquipoControl.controls[i].get('talleShort').errors" class="invalid-feedback">
-            <div *ngIf="formEquipoControl.controls[i].get('talleShort').errors.required">Requerido.
-            </div>
+      </div>
+      <div class="col short" [formGroupName]="i">
+        <select class="form-control" formControlName="talleShort" [attr.disabled]="!formEquipo.llevaShort ? true : null">
+          <option disabled selected [ngValue]="null">Talle</option>
+          <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
+        </select>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('talleShort').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('talleShort').errors.required">Requerido.
           </div>
         </div>
       </div>
