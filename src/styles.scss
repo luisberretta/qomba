@@ -4,14 +4,6 @@
 @import '~bootstrap/scss/bootstrap';
 
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/assets/fonts/Roboto-Light.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'SablonUp-College';
   font-style: normal;
   src: url('/assets/fonts/Sablon_Up_College.otf') format('opentype');
@@ -325,63 +317,11 @@ fieldset {
   padding-top: 1rem !important;
 }
 
-.slick-next {
-  right: 0 !important;
-}
-
-.slick-prev {
-  left: 0 !important;
-}
-
-.slick-next, .slick-prev {
-  &:before {
-    color: black !important;
-  }
-}
-
 .tooltip-mobile.tooltip {
   width: 170px;
 }
 
 @media screen and (max-width: 768px) {
-  .scroll-mobile {
-    overflow-x: scroll;
-    margin-bottom: 1rem;
-    &::-webkit-scrollbar {
-      border-radius: 0;
-    }
-    &::-webkit-scrollbar-track {
-      background-color: #484848;
-      width: 180px;
-      border-radius: 0;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: #cccccc;
-      border-radius: 0;
-    }
-    &::-moz-viewport-scroll {
-      background-color: white;
-    }
-    .tabla-equipo {
-      width: 450px;
-      white-space: nowrap;
-      &::-webkit-scrollbar {
-        border-radius: 0;
-      }
-      &::-webkit-scrollbar-track {
-        background-color: #484848;
-        width: 180px;
-        border-radius: 0;
-      }
-      &::-webkit-scrollbar-thumb {
-        background-color: #cccccc;
-        border-radius: 0;
-      }
-      &::-moz-viewport-scroll {
-        background-color: white;
-      }
-    }
-  }
   .tooltip-mobile.tooltip {
     top: -3px !important;
     left: -50px !important;

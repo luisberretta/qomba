@@ -3,11 +3,11 @@
     <a class="navbar-brand" [routerLink]="['/']">
       <img src="/assets/images/logo.svg" alt="Qomba">
     </a>
-    <button class="navbar-toggler" [ngClass]="{ 'abierto': show }" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" (click)="show = !show">
+    <a class="navbar-toggler" [ngClass]="{ 'abierto': show }" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" (click)="show = !show">
       <span class="burger-icon"></span>
       <span class="burger-icon"></span>
       <span class="burger-icon"></span>
-    </button>
+    </a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
