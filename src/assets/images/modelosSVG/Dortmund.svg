@@ -84,7 +84,7 @@
 	<path fill="#E5CA0D" d="M850.2,1171.5c0,0,10.4,31.8,11.1,50.5c0.7,18.8,22.9,69,26.8,84.2c3.9,15.2,27.2,95.4,30.9,189.3l11.5,2.3
 		c0,0-17-178.5-52.4-245.5c0,0-8.6-11.5-8.3-35.5c0.3-24-7.9-47.2-7.9-47.2L850.2,1171.5"/>
 </g>
-<g id="Short_Número">
+<g id="Short_Número" visibility="hidden">
 				<path fill="#FFFFFF" d="M387.7,1521.6h-7.2V1480l-7.3,4.3v-7.1l7.3-4.7h7.2V1521.6z"/>
 				<path fill="#FFFFFF" d="M403,1518.4c-2.5-2.5-3.7-5.9-3.7-10.3v-22.3c0-4.4,1.2-7.8,3.7-10.3c2.5-2.4,6.1-3.7,10.9-3.7
 					c4.8,0,8.4,1.2,10.9,3.6c2.5,2.4,3.7,5.9,3.7,10.3v22.3c0,4.4-1.2,7.8-3.7,10.3c-2.5,2.4-6.1,3.7-10.9,3.7
@@ -707,19 +707,18 @@
 		c1.3,1,2.9,2,4.7,2.9c0.4,0.2,0.7,0.4,1.1,0.6c0.3,0.1,0.6,0.3,0.9,0.4c10.3,5.9,33.7,15.3,62.7,23.2c1,0.3,2,0.5,3,0.8
 		C1363.3,621.7,1388.8,626.7,1411.5,628z"/>
 </g>
-
-<g id="Short_número">
+<g id="Short_número" visibility="hidden">
 		<text id="numero" transform="matrix(1 0 0 1 368.5655 1520.3032)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="72px">10</text>
 </g>
-<g id="Número_delantero">
+<g id="Número_delantero" visibility="hidden">
 
 		<text id="numero" transform="matrix(1 0 0 1 573.4424 566.8592)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="100px">10</text>
 </g>
-<g id="Número_espalda">
+<g id="Número_espalda" visibility="hidden">
 
 		<text id="numero" transform="matrix(1 0 0 1 1528.8315 699.2467)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
-<g id="Nombre">
+<g id="Nombre" visibility="hidden">
 			<text id="nombre" transform="matrix(1 0 0 1 1514.8309 418.9915)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="90px">NOMBRE</text>
 </g>
 <g id="GENERICO">
@@ -4202,7 +4201,7 @@
 	<path fill="#FFFFFF" d="M1719,2389.2l-0.8,26.6c0,0,40.2,20.4,88.4,3.7c0,0,15.5-6.1,17.1-18.2c1.6-12.1,6.4-15.2,14.5-21.2
 		c8-6.1,37.4-28.3,24.3-59.6c0,0,10.1,24.8-24.7,48c-4.2,2.8-8.7,4.1-16.7,11.6C1805,2404.3,1745.5,2401.3,1719,2389.2z"/>
 </g>
-<g id="Short_escudo">
+<g id="Short_escudo" visibility="hidden">
 		<image id="escudo" overflow="visible" width="200" height="200" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAKtpJREFUeNrsXQtYVNXaXsooF+Uq
 SoIImNc079fyMmpqaQmW5+SpTNRSq2Pi7WjnP3+hnv9kaorlSc0b6imtTLA001JBPWp5w0vmXUBR
@@ -4400,7 +4399,7 @@ K9eBgmWBawBhPXUu7AG1McQnAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMD
 Q63E/wswAKdYFDHYKKkHAAAAAElFTkSuQmCC"  transform="matrix(0.3018 -3.972827e-02 3.711764e-02 0.2819 843.5142 1433.7471)">
 	</image>
 </g>
-<g id="Remera_escudo">
+<g id="Remera_escudo" visibility="hidden">
 
 		<image id="escudo" overflow="visible" width="200" height="200"  xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsSAAALEgHS3X78AAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAKtpJREFUeNrsXQtYVNXaXsooF+Uq
