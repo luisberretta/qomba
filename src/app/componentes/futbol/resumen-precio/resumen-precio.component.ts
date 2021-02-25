@@ -22,7 +22,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
 
   @Input() formCheckOut: any;
   @Output() anteriorPaso = new EventEmitter();
-
+  @Output() precioPedido = new EventEmitter();
   constructor() {
   }
 
@@ -44,6 +44,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     this.formPasoResumenPrecio.get('precioMedias').setValue(formResumenPrecio.precioMedias);
     this.formPasoResumenPrecio.get('precioConjunto').setValue(this.calcularPrecioConjunto());
     this.formPasoResumenPrecio.get('precioTotal').setValue(this.calcularPrecioTotal());
+    this.precioPedido.emit(this.precioTotal);
   }
 
   get cantidadJugadores(){
@@ -64,6 +65,10 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
 
   get precioConjunto(){
     return this.formPasoResumenPrecio.get('precioConjunto').value;
+  }
+
+  get precioTotal(){
+    return this.formPasoResumenPrecio.get('precioTotal').value;
   }
 
   calcularPrecioConjunto(){

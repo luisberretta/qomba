@@ -256,22 +256,22 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoCamiseta(formCamiseta) {
-    this.pedido.imagenes.push(formCamiseta.escudoDelantero);
-    this.pedido.llevaEscudoDelantero = formCamiseta.llevaEscudoDelantero;
+    this.pedido.imagenEscudo = formCamiseta.escudoDelantero;
+    this.pedido.llevaEscudoDelantero = !!formCamiseta.llevaEscudoDelantero;
     this.pedido.posicionEscudoDelantero = formCamiseta.posicionEscudoDelantero;
-    this.pedido.llevaNumeroDelantero = formCamiseta.llevaNumeroDelantero;
+    this.pedido.llevaNumeroDelantero = !!formCamiseta.llevaNumeroDelantero;
     this.pedido.posicionNumeroDelantero = formCamiseta.posicionNumeroDelantero;
-    this.pedido.llevaNombreEspalda = formCamiseta.llevaNombreEspalda;
-    this.pedido.llevaNumeroEspalda = formCamiseta.llevaNumeroEspalda;
+    this.pedido.llevaNombreEspalda = !!formCamiseta.llevaNombreEspalda;
+    this.pedido.llevaNumeroEspalda = !!formCamiseta.llevaNumeroEspalda;
     this.pedido.colorEstampado = formCamiseta.colorEstampado;
     this.pedido.tipoLetra = formCamiseta.tipoLetra;
   }
 
   generarPedidoShort(formShort) {
-    this.pedido.agregarShort = formShort.agregarShort;
-    this.pedido.imagenes.push(formShort.escudoShort);
-    this.pedido.agregarEscudoShort = formShort.agregarEscudoShort;
-    this.pedido.agregarNumeroShort = formShort.agregarNumeroShort;
+    this.pedido.agregarShort = !!formShort.agregarShort;
+    this.pedido.imagenEscudo = formShort.escudoShort? formShort.escudoShort : this.pedido.imagenEscudo;
+    this.pedido.agregarEscudoShort = !!formShort.agregarEscudoShort;
+    this.pedido.agregarNumeroShort = !!formShort.agregarNumeroShort;
     for (let i = 0; i < formShort.partesShortSVG.length; i++) {
       let indexParte = -1;
       for (let j = 0; j < this.pedido.coloresModelo.length; j++) {
@@ -288,7 +288,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedidoMedias(formMedias) {
-    this.pedido.agregarMedias = formMedias.agregarMedias;
+    this.pedido.agregarMedias = !!formMedias.agregarMedias;
     this.pedido.sponsorDelantero = formMedias.sponsorDelantero;
     this.pedido.posicionSponsorDelantero = formMedias.posicionSponsorDelantero;
     this.pedido.sponsorTrasero = formMedias.sponsorTrasero;
@@ -321,25 +321,20 @@ export class WizardComponent implements OnInit {
 
   generarPedido(formResumenPrecio) {
     this.ngxLoader.start();
-    let solicitudPedido = {
-      nombreContacto: this.pedido.nombreContacto,
-      email: formResumenPrecio.email,
-      telefonoContacto: this.pedido.telefonoContacto,
-      modelo: this.pedido.modelo.nombre,
-      detalleEquipo: this.pedido.detalleEquipo,
-      imagenes: [],
-      partes: this.pedido.coloresModelo,
 
-    }
-    // let imagen = this.personaComponent.generarImagen();
-    // svgAsPngUri(imagen, "svg.png").then((data) => {
-    //   this.pedido.imagenes.push(this.convertirABase64(data));
-    //   for (let i = 0; i < this.pedido.imagenes.length; i++) {
-    //     if (this.pedido.imagenes[i]) {
-    //       solicitudPedido.imagenes.push(this.convertirABase64(this.pedido.imagenes[i]));
-    //     }
-    //   }
-      this.wizardService.generarPedido(this.pedido).subscribe((data) => {
+    let imagen = this.personaComponent.generarImagen();
+    svgAsPngUri(imagen, "svg.png").then((data) => {
+      this.pedido.imagenes.push(this.convertirABase64(data));
+      this.pedido.imagenes.push(this.pedido.imagenEscudo);
+      let imagenesBase64 = [];
+      for (let i = 0; i < this.pedido.imagenes.length; i++) {
+        if (this.pedido.imagenes[i]) {
+          imagenesBase64.push(this.convertirABase64(this.pedido.imagenes[i]));
+        }
+      }
+      this.pedido.imagenes = imagenesBase64;
+      let generarPedido = this.confeccionarPedido();
+      this.wizardService.generarPedido(generarPedido).subscribe((data) => {
           this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
           this.abrirModal();
           this.ngxLoader.stop();
@@ -354,8 +349,33 @@ export class WizardComponent implements OnInit {
           this.ngxLoader.stop();
         });
 
-    // });
+    });
 
+  }
+
+  confeccionarPedido(){
+    let pedido = {
+      nombreCliente : this.pedido.nombreContacto,
+      celular: this.pedido.telefonoContacto,
+      email: this.pedido.emailContacto,
+      nombreEquipo: this.pedido.nombreEquipo,
+      cantidadJugadores : this.pedido.cantidadEquipo,
+      modelo : this.pedido.modelo.nombre,
+      precioTotal : this.pedido.precioTotal,
+      llevaEscudoDelantero : this.pedido.llevaEscudoDelantero,
+      llevaNumeroDelantero : this.pedido.llevaNumeroDelantero,
+      llevaNumeroEspalda: this.pedido.llevaNumeroEspalda,
+      llevaNombreEspalda: this.pedido.llevaNombreEspalda,
+      tipoLetra: this.pedido.tipoLetra,
+      colorLetra: this.pedido.colorEstampado,
+      llevaShort: this.pedido.agregarShort,
+      llevaEscudoShort: this.pedido.agregarEscudoShort,
+      llevaNumeroShort: this.pedido.agregarNumeroShort,
+      llevaMedias: this.pedido.agregarMedias,
+      detalleEquipo : this.pedido.detalleEquipo,
+      imagenes: this.pedido.imagenes,
+    }
+    return pedido;
   }
 
   convertirABase64(cadena) {
@@ -400,7 +420,7 @@ export class WizardComponent implements OnInit {
 
   generarFormCamiseta() {
     this.formCamiseta = {
-      escudoDelantero: this.pedido.imagenes[0],
+      escudoDelantero: this.pedido.imagenEscudo,
       colorCamiseta: this.pedido.coloresModelo.find(x => x.idParte == 'Remera_principal').color,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       posicionEscudoDelantero: this.pedido.posicionEscudoDelantero,
@@ -441,7 +461,7 @@ export class WizardComponent implements OnInit {
       }
     }
     this.formShort = {
-      escudoShort: this.pedido.imagenes[1],
+      escudoShort: this.pedido.imagenEscudo,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
       agregarEscudoShort: this.pedido.agregarEscudoShort,
@@ -513,6 +533,11 @@ export class WizardComponent implements OnInit {
       precioMedias: indumentariaInferior[1].precioIndividual,
     }
   }
+
+  agregarPrecioTotal(precioTotal){
+    this.pedido.precioTotal = precioTotal;
+  }
+
 
   perteneceRemera(grupoColor) {
     return grupoColor.includes('Remera') && grupoColor != 'Remera_escudo';

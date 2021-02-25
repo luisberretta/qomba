@@ -52,10 +52,11 @@ export interface Pedido {
   precioShort?: string;
   precioMedias?: string;
   precioConjunto?: string;
-  imagen?: string;
   email?: string;
   observaciones?: string;
 
-  imagenes?: string[];
-
+  precioTotal?: string;
+  imagenEscudo?: string;
+  imagenSvg?: string;
+  imagenes?: string [];
 }

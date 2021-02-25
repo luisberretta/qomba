@@ -27,7 +27,7 @@
           <app-short *ngSwitchCase="'short'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" [formShort]="formShort" (visualizarEstampado)="visualizarEstampado($event)" (archivoEscudo)="archivoEscudo($event)" (proximoPaso)="siguiente($event)"></app-short>
           <app-medias *ngSwitchCase="'medias'" (colorSeleccionado)="cambiarColor($event)" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formMedias]="formMedias"></app-medias>
           <app-equipo *ngSwitchCase="'equipo'" (anteriorPaso)="anterior($event)" (proximoPaso)="siguiente($event)" [formEquipo]="formEquipo"></app-equipo>
-          <app-resumen-precio *ngSwitchCase="'resumen-precio'" (anteriorPaso)="anterior($event)"[formResumenPrecio]="formResumenPrecio"></app-resumen-precio>
+          <app-resumen-precio *ngSwitchCase="'resumen-precio'" (anteriorPaso)="anterior($event)"[formResumenPrecio]="formResumenPrecio" (precioPedido)=agregarPrecioTotal($event)></app-resumen-precio>
         </div>
       </div>
       <div class="col-md-6 col-12 align-self-center text-center">
