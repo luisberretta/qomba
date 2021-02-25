@@ -3586,7 +3586,7 @@ yqdhHgr+/AAAAABJRU5ErkJggg==" transform="matrix(0.2169 0 0 0.2083 867.5822 1437.
 	<text id="numero" transform="matrix(1 0 0 1 702.6883 583.8918)" display="inline" font-family="'SablonUp-College'" font-size="100px">10</text>
 </g>
 <g id="Nombre" visibility="hidden">
-	<text transform="matrix(1 0 0 1 1527.4098 430.1457)" display="inline" font-family="'SablonUp-College'" font-size="90px">nombre</text>
+	<text transform="matrix(1 0 0 1 1518.4098 430.1458)" display="inline" font-family="'SablonUp-College'" font-size="90px">NOMBRE</text>
 </g>
 <g id="Remera_escudo" visibility="hidden">
 		<image id="escudo" overflow="visible" width="200" height="200" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAADKCAYAAADkZd+oAAAACXBIWXMAABRMAAAUTAFGjW/LAAAA
@@ -3883,8 +3883,8 @@ wX2e+HIREFRAlm7EfZ6AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA
 oK7wPwEGAFGfA3v3SM5JAAAAAElFTkSuQmCC" transform="matrix(0.5456 0 0 0.5456 380.0514 455.9552)">
 	</image>
 </g>
-<g id="Numero_espalda" visibility="hidden">
-	<text id="numero" transform="matrix(1 0 0 1 1543.4102 719.4009)" display="inline" font-family="'SablonUp-College'" font-size="300px">10</text>
+<g id="Número_espalda" visibility="hidden">
+	<text id="numero" transform="matrix(1 0 0 1 1529.0101 722.2809)" display="inline" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
 <g id="GENERICO">
 	<path id="TIRA_LIMPIEZA_2_" fill="#E32121" stroke="#292A27" stroke-width="0.75" stroke-miterlimit="10" d="M722.6,277.5

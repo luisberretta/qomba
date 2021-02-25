@@ -107,9 +107,9 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   siguiente() {
     this.submit = true;
-    if (this.formPasoModelo.valid) {
+    // if (this.formPasoModelo.valid) {
       this.proximoPaso.emit(this.formPasoModelo.value);
-    }
+    // }
   }
 
   modelosHombre() {

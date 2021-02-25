@@ -417,14 +417,14 @@ YII=" transform="matrix(0.3018 -3.972827e-02 3.711764e-02 0.2819 768.5872 1383.3
 		c-50.3-2.9-115.1-24.3-137.2-36.6c-0.7-0.4-1.4-0.7-2-1c-1.8-0.9-3.3-1.9-4.7-2.9c-0.8-3.8,2.6-4.8,3.4-7.3
 		c11.4-36,23.5-63.7,27.8-97.5c10.9-85.7,16.5-111.1,38.2-133.2C1268,300.7,1273.1,296,1275.9,294z"/>
 </g>
-<g id="Nombre"visibility="hidden">
-	<text transform="matrix(1.0192 0 0 1 1426.0435 398.7121)" font-family="'MyriadPro-Regular'" font-size="78.3628px">NOMBRE</text>
+<g id="Nombre" visibility="hidden">
+	<text transform="matrix(1.0192 0 0 1 1408.9722 399.1395)" font-family="'SablonUp-College'" font-size="78.3628px">NOMBRE</text>
 </g>
-<g id="Número_delantero"visibility="hidden">
+<g id="Número_delantero" visibility="hidden">
 	<text id="numero" transform="matrix(1 0 0 1 702.6883 583.8918)" display="inline" font-family="'SablonUp-College'" font-size="100px">10</text>
 </g>
 <g id="Numero_espalda" visibility="hidden">
-	<text id="numero" transform="matrix(1 0 0 1 1543.4102 719.4009)" display="inline" font-family="'SablonUp-College'" font-size="300px">10</text>
+	<text id="numero" transform="matrix(1 0 0 1 1467.8 684.9999)" display="inline" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
 <g id="GENERICO">
 	<path id="TIRA_LIMPIEZA_2_" fill="#FF0600" stroke="#0D0D0C" stroke-width="0.75" stroke-miterlimit="10" d="M650.1,233.1
