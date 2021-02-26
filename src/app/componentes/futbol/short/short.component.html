@@ -44,12 +44,15 @@
     </div>
     <div class="col-md-6 col-5" *ngIf="agregarEscudoShort && !agregarEscudoDelantero">
       <div class="pl-0">
-        <a class="btn btn-subir" [ngClass]="{ 'text-danger border-danger': submit && !formPasoShort.controls['escudoShort'].valid }" (click)="archivo()" >Subir escudo <i class="fas fa-upload"></i></a>
+        <a class="btn btn-subir" [ngClass]="{ 'text-danger border-danger': (submit && !formPasoShort.controls['escudoShort'].valid) || formatoEscudoInvalido }" (click)="archivo()" >Subir escudo <i class="fas fa-upload"></i></a>
         <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!agregarShort || agregarEscudoDelantero? true: null">
       </div>
     </div>
   </div>
   <div *ngIf="submit && !formPasoShort.valid" class="invalid-feedback">
     <div *ngIf="!formPasoShort.valid">*Obligatorio.</div>
+  </div>
+  <div *ngIf="formatoEscudoInvalido" class="invalid-feedback">
+    <div>*El formato del archivo debe ser png o jpg.</div>
   </div>
 </form>

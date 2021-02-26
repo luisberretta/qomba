@@ -8,7 +8,7 @@
       <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
     </div>
     <div>
-      <a class="btn btn-subir btn-block" [ngClass]="{ 'text-danger border-danger': submit && !formPasoCamiseta.controls['escudoDelantero'].valid }" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero ? true: null">Subir <i class="fas fa-upload"></i></a>
+      <a class="btn btn-subir btn-block" [ngClass]="{ 'text-danger border-danger': (submit && !formPasoCamiseta.controls['escudoDelantero'].valid) || formatoEscudoInvalido }" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero ? true: null">Subir <i class="fas fa-upload"></i></a>
       <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
     </div>
     <div class="col">
@@ -79,5 +79,8 @@
   </div>
   <div *ngIf="submit && !formPasoCamiseta.valid" class="invalid-feedback">
     <div *ngIf="submit && !formPasoCamiseta.valid">*Obligatorio.</div>
+  </div>
+  <div *ngIf="formatoEscudoInvalido" class="invalid-feedback">
+    <div>*El formato del archivo debe ser png o jpg.</div>
   </div>
 </form>

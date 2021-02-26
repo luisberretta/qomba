@@ -62,6 +62,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
     posicion: null
   }
   submit: boolean = false;
+  formatoEscudoInvalido: boolean = false;
 
   constructor() {
   }
@@ -187,10 +188,15 @@ export class CamisetaComponent implements OnInit, OnChanges {
   subirArchivo(event) {
     if (event.target.files.length > 0) {
       const archivo = event.target.files[0];
+      if (archivo.type !== 'image/jpeg' && archivo.type !== 'image/png') {
+        this.formatoEscudoInvalido = true;
+        return false;
+      }
+
+      this.formatoEscudoInvalido = false;
       let reader = new FileReader();
       reader.readAsDataURL(archivo);
       reader.onload = (_event) => {
-        console.log(_event);
         this.formPasoCamiseta.controls['escudoDelantero'].setValue(reader.result);
       }
       this.archivoEscudo.emit(event.target.files[0]);

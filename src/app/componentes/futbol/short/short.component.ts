@@ -31,6 +31,7 @@ export class ShortComponent implements OnInit, OnChanges {
   ESCUDO_SHORT = "Short_escudo";
   NUMERO_SHORT = "Short_número";
   selectedColor: string = 'black';
+  formatoEscudoInvalido: boolean = false;
 
   formPasoShort: FormGroup = new FormGroup({
     agregarShort: new FormControl(null,),
@@ -161,6 +162,12 @@ export class ShortComponent implements OnInit, OnChanges {
   subirArchivo(event) {
     if (event.target.files.length > 0) {
       const archivo = event.target.files[0];
+      if (archivo.type !== 'image/jpeg' && archivo.type !== 'image/png') {
+        this.formatoEscudoInvalido = true;
+        return false;
+      }
+
+      this.formatoEscudoInvalido = false;
       let reader = new FileReader();
       reader.readAsDataURL(archivo);
       reader.onload = (_event) => {
