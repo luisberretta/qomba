@@ -42,7 +42,7 @@
         <a class="btn btn-continuar btn-block" (click)="siguiente()">Siguiente</a>
       </div>
       <div class="col-md-2 col-5" *ngIf="paso == 'resumen-precio'">
-        <a class="btn btn-primary btn-confirmar btn-block" (click)="generarPedido(formResumenPrecio)">Confirmar</a>
+        <a class="btn btn-primary btn-confirmar btn-block" (click)="generarPedido()">Confirmar</a>
       </div>
       <div class="col-2 col-md-1 align-self-center" *ngIf="paso == 'resumen-precio'">
         <i class="fas fa-info-circle fa-lg info" placement="top" [ngbTooltip]="confirmar" triggers="click" tooltipClass="tooltip-mobile"></i>

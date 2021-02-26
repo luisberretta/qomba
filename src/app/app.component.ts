@@ -1,7 +1,6 @@
 import {Component, HostListener, ViewChild} from '@angular/core';
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
-import {LocationStrategy, PlatformLocation} from "@angular/common";
 import {NavigationStart, Router} from "@angular/router";
 import {filter} from "rxjs/operators";
 import {Location} from "@angular/common";
