@@ -11,7 +11,7 @@
       <ng-template [ngIf]="detallePrecioId == camiseta.id">
         <div class="tooltip fade show bs-tooltip-top custom">
           <div class="arrow"></div>
-          <div class="tooltip-inner"> Desde $ {{ camiseta.precioMayorista }}</div>
+          <div class="tooltip-inner"> Desde $ {{ obtenerPrecioFormateado(camiseta.precioMayorista) }}</div>
         </div>
       </ng-template>
       <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>

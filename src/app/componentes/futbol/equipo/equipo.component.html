@@ -87,7 +87,7 @@
     <div class="form-group row mt-3">
       <label for="nombreContacto" class="col-md-2 col-4 text-left pr-0">Nombre:</label>
       <div class="col-md-4 col-6 text-left pl-0">
-        <input class="form-control" type="text" id="nombreContacto" placeholder="Qomba" formControlName="nombreContacto">
+        <input class="form-control" type="text" id="nombreContacto" placeholder="Tu nombre" formControlName="nombreContacto">
         <div *ngIf="submit && formPasoEquipo.controls.nombreContacto.errors" class="invalid-feedback">
           <div *ngIf="formPasoEquipo.controls.nombreContacto.errors.required">Nombre requerido.</div>
         </div>
@@ -96,7 +96,7 @@
     <div class="form-group row">
       <label for="telefonoContacto" class="col-md-2 col-4 text-left pr-0">Celular:</label>
       <div class="col-md-4 col-6 text-left pl-0">
-        <input class="form-control" type="text" id="telefonoContacto" placeholder="351 386-0000" formControlName="telefonoContacto">
+        <input class="form-control" type="text" id="telefonoContacto" placeholder="Cód. Área + Número" formControlName="telefonoContacto">
         <div *ngIf="submit && formPasoEquipo.controls.telefonoContacto.errors" class="invalid-feedback">
           <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.required">Teléfono requerido.</div>
           <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.pattern">Ingrese sólo números.</div>
@@ -106,7 +106,7 @@
     <div class="form-group row">
       <label for="emailContacto" class="col-md-2 col-4 text-left pr-0">E-mail:</label>
       <div class="col-md-4 col-6 text-left pl-0">
-        <input class="form-control" type="text" id="emailContacto" placeholder="qombasport@gmail.com"  formControlName="emailContacto">
+        <input class="form-control" type="text" id="emailContacto" placeholder="tumail@gmail.com" formControlName="emailContacto">
         <div *ngIf="submit && formPasoEquipo.controls.emailContacto.errors" class="invalid-feedback">
           <div *ngIf="formPasoEquipo.controls.emailContacto.errors.required">Email requerido.</div>
           <div *ngIf="formPasoEquipo.controls.emailContacto.errors.email">El emáil no es una dirección válida.</div>

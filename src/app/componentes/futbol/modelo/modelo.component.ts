@@ -140,4 +140,8 @@ export class ModeloComponent implements OnInit, OnChanges {
       this.detallePrecioId = null;
     }
   }
+
+  obtenerPrecioFormateado(precio) {
+    return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
 }

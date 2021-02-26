@@ -20,6 +20,16 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     precioTotal: new FormControl(null)
   });
 
+  vistaResumenPrecio: FormGroup = new FormGroup({
+    modelo: new FormControl(null),
+    cantidadJugadores: new FormControl(null),
+    precioCamiseta: new FormControl(null),
+    precioShort: new FormControl(null),
+    precioMedias: new FormControl(null),
+    precioConjunto: new FormControl(null),
+    precioTotal: new FormControl(null)
+  });
+
   @Input() formCheckOut: any;
   @Output() anteriorPaso = new EventEmitter();
   @Output() precioPedido = new EventEmitter();
@@ -33,7 +43,6 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     if (changeRecord.formResumenPrecio && changeRecord.formResumenPrecio.currentValue) {
       this.generarFormulario(changeRecord.formResumenPrecio.currentValue);
     }
-
   }
 
   generarFormulario(formResumenPrecio) {
@@ -44,7 +53,18 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     this.formPasoResumenPrecio.get('precioMedias').setValue(formResumenPrecio.precioMedias);
     this.formPasoResumenPrecio.get('precioConjunto').setValue(this.calcularPrecioConjunto());
     this.formPasoResumenPrecio.get('precioTotal').setValue(this.calcularPrecioTotal());
+    this.mapearFormVista();
     this.precioPedido.emit(this.precioTotal);
+  }
+
+  mapearFormVista() {
+    this.vistaResumenPrecio.get('modelo').setValue(this.formPasoResumenPrecio.get('modelo').value);
+    this.vistaResumenPrecio.get('cantidadJugadores').setValue(this.formPasoResumenPrecio.get('cantidadJugadores').value);
+    this.vistaResumenPrecio.get('precioCamiseta').setValue(this.obtenerPrecioFormateado(this.formPasoResumenPrecio.get('precioCamiseta').value));
+    this.vistaResumenPrecio.get('precioShort').setValue(this.obtenerPrecioFormateado(this.formPasoResumenPrecio.get('precioShort').value));
+    this.vistaResumenPrecio.get('precioMedias').setValue(this.obtenerPrecioFormateado(this.formPasoResumenPrecio.get('precioMedias').value));
+    this.vistaResumenPrecio.get('precioConjunto').setValue(this.obtenerPrecioFormateado(this.calcularPrecioConjunto()));
+    this.vistaResumenPrecio.get('precioTotal').setValue(this.obtenerPrecioFormateado(this.calcularPrecioTotal()));
   }
 
   get cantidadJugadores(){
@@ -86,4 +106,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     this.anteriorPaso.emit(this.formPasoResumenPrecio.value);
   }
 
+  obtenerPrecioFormateado(precio) {
+    return precio.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }
 }
