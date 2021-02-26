@@ -1787,7 +1787,7 @@ mSwSj46IrZEVpkh7ojoiK0yR9t0IiK2yTojsiK2yQ158xeyIrbJElv5i9kciydndlkh7oWRZP0fo
 	<text transform="matrix(1 0 0 1 1410.7174 531.4254)" fill="#0A0A35" font-family="'SablonUp-College'" font-size="85px">NOMBRE</text>
 </g>
 <g id="Número_espalda" visibility="hidden">
-	<text transform="matrix(1 0 0 1 1418.9176 801.5856)" fill="#0A0A35" font-family="'SablonUp-College'" font-size="300px">10</text>
+	<text id="numero" transform="matrix(1 0 0 1 1418.9176 801.5856)" fill="#0A0A35" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
 <g id="GENERICO">
 	<linearGradient id="SVGID_58_" gradientUnits="userSpaceOnUse" x1="508.8893" y1="429.7772" x2="653.8026" y2="429.7772">
@@ -2731,14 +2731,14 @@ VVVVVVVVVVVVVa9+Eqqqqqqqqqr/AJX/2Q==" transform="matrix(1 0 0 1 1283.4772 356.06
 	</g>
 </g>
 <g id="Número_delantero" visibility="hidden">
-	<text transform="matrix(1.0493 0 0 1 702.8859 607.0255)" fill="#0A0A35" font-family="'SablonUp-College'" font-size="90px">10</text>
+	<text id="numero" transform="matrix(1.0493 0 0 1 702.8859 607.0255)" fill="#0A0A35" font-family="'SablonUp-College'" font-size="90px">10</text>
 </g>
 <g id="Short_número" visibility="hidden">
-	<text transform="matrix(1.0493 0 0 1 342.5504 1427.1583)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="70px">10</text>
+	<text id="numero" transform="matrix(1.0493 0 0 1 342.5504 1427.1583)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="70px">10</text>
 </g>
 <g id="Remera_escudo" visibility="hidden">
 
-		<image overflow="visible" width="200" height="200" id="escudo_1_" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAAC/CAYAAAC/ikPaAAAACXBIWXMAABhMAAAYTAGIN/zbAAAA
+		<image overflow="visible" width="200" height="200" id="escudo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMoAAAC/CAYAAAC/ikPaAAAACXBIWXMAABhMAAAYTAGIN/zbAAAA
 GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAASllJREFUeNrsXQd8VFXWv+/Nm5nM
 TDLpvQAhBAi9hE7oRYqIYAMFpakrCnZ017q7upZVcbF9ooIiiIWu9N5BIBBKSO+9J9Nf+c55mRkn
 IY0wgQTe398xJDPz2tz/PeWecy4hEiRIkCBBggQJEiRIkCBBggQJEiRIkCBBggQJEiRIkNBMUNIj

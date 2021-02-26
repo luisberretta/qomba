@@ -2372,10 +2372,10 @@ VVVVVVVVVVVVVa9+Eqqqqqqqqqr/AJX/2Q==" transform="matrix(1 0 0 1 1283.4772 355.06
 		h-12.3h-20c0,0-44.5,0-87.5-34.6l-23,20c0,0,41.4,29.3,92.1,38.6C1504,396,1522.5,398.6,1542.4,398.6z"/>
 </g>
 <g id="Número_delantero" visibility="hidden">
-	<text transform="matrix(1.0493 0 0 1 700.8859 600.0255)" fill="#AA1A1A" font-family="'SablonUp-College'" font-size="90px">10</text>
+	<text id="numero" transform="matrix(1.0493 0 0 1 700.8859 600.0255)" fill="#AA1A1A" font-family="'SablonUp-College'" font-size="90px">10</text>
 </g>
 <g id="Short_número" visibility="hidden">
-	<text transform="matrix(1.0493 0 0 1 342.5504 1427.1583)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="70px">10</text>
+	<text id="numero" transform="matrix(1.0493 0 0 1 342.5504 1427.1583)" fill="#FFFFFF" font-family="'SablonUp-College'" font-size="70px">10</text>
 </g>
 <g id="Remera_escudo" visibility="hidden">
 
