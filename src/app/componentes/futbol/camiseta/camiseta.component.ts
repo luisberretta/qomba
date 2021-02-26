@@ -41,7 +41,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
   coloresLetrasYNumeros = ["#FFFF00", "#00FF0F", "#050fdf",
                           "#db0606", "#FF8000", "#F300FF",
                           "#8A571B", "#E303CC", "#9203E3",
-                          "#67636A", "#000000"];
+                          "#67636A", "#000000","#FFFFFF"];
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
@@ -190,6 +190,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
       let reader = new FileReader();
       reader.readAsDataURL(archivo);
       reader.onload = (_event) => {
+        console.log(_event);
         this.formPasoCamiseta.controls['escudoDelantero'].setValue(reader.result);
       }
       this.archivoEscudo.emit(event.target.files[0]);

@@ -23,49 +23,50 @@ export const coloresParte = [
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
         color: "#E7EAEF",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#E7EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
         color: "#EBEDF1",
-        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#EBEDF1"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
         color: "#484A9A",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF",
+          "#484A9A"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
         color: "#45478E",
-        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF",],
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF","#45478E"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
         color: "#E9EAEF",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF","#E9EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
         color: "#44478E",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF","#44478E"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
         color: "#E9EAEF",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF","#E9EAEF"],
         posicionMatrix: {}
       },
       {
@@ -130,9 +131,9 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#282828",
+        color: "#000000",
         colores: [
-          "#DB0606", "#F012B3", "#282828", "#DC12F0",
+          "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
@@ -147,14 +148,14 @@ export const coloresParte = [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
-          "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
+          "#BFFF00", "#E5CA0B", "#FFBF00", "#FFA500",
           "#FF8C00", "#964B00", "#696969", "#6699CC"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#E7EAEF",
+        color: "#000000",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -175,21 +176,21 @@ export const coloresParte = [
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#282828",
-        colores: ["#DB0606", "#050FDF", "#282828", "#E8EAEF"],
+        color: "#000000",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
         color: "#E4CA0D",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF","#E4CA0D"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#282828",
+        color: "#000000",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -197,7 +198,7 @@ export const coloresParte = [
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
         color: "#E6CD19",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF","#E6CD19"],
         posicionMatrix: {}
       },
       {

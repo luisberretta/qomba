@@ -9,7 +9,7 @@
     </div>
     <div>
       <a class="btn btn-subir btn-block" [ngClass]="{ 'text-danger border-danger': submit && !formPasoCamiseta.controls['escudoDelantero'].valid }" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero ? true: null">Subir <i class="fas fa-upload"></i></a>
-      <input type="file" formControlName="escudoDelantero" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
+      <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
     </div>
     <div class="col">
       <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="!llevaEscudoDelantero ? true: null">

@@ -19,11 +19,13 @@ export interface Pedido {
   llevaNombreEspalda?: boolean;
   llevaNumeroEspalda?: boolean;
   colorEstampado?: string;
+  nombreEscudo?: string;
+  tipoLetra?:string;
 
   //SHORT
   agregarEscudoShort?: boolean;
   agregarNumeroShort?:boolean;
-  tipoLetra?:string;
+
   sponsorDelantero?: boolean;
   posicionSponsorDelantero?: string;
   sponsorTrasero?: boolean;

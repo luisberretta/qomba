@@ -17,14 +17,12 @@ import {Router} from "@angular/router";
 export class PersonaComponent implements OnInit {
 
   ESCUDO_DELANTERO = "Remera_escudo";
-  VALORES_ESTAMPA = ['Número_espalda','Número_delantero','Nombre'];
+  VALORES_ESTAMPA = ['Número_espalda','Número_delantero','Nombre','Short_número'];
   modeloSVG: any;
   url: string = '/assets/images/modelosSVG/';
   modeloSeleccionado: any;
   ocultarModelo = true;
   @ViewChild('dataContainer') dataContainer: ElementRef;
-  idGrupo: String;
-  parteSeleccionada: string;
   @Input() paso: string;
   @ViewChild('remera') remera: ElementRef;
   @Input() llevaShort;
@@ -78,7 +76,7 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
       if(this.perteneceEstampado(grupos[i]))
-        grupos[i].setAttribute('fill', cambiar.color);
+        grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
     }
   }
 

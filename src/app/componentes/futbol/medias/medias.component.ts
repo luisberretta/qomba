@@ -10,7 +10,6 @@ import {
   ViewChild
 } from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {svgAsPngUri} from 'save-svg-as-png';
 
 @Component({
   selector: 'app-medias',
@@ -59,16 +58,16 @@ export class MediasComponent implements OnInit, OnChanges {
     this.formPasoMedias.get('agregarMedias').valueChanges.subscribe(() => {
       this.configurarValidadores();
     });
-    this.formPasoMedias.get('agregarSponsorDelantero').valueChanges.subscribe((valor) => {
+    this.formPasoMedias.get('agregarSponsorDelantero').valueChanges.subscribe(() => {
       this.seleccionoSponsors = true;
       this.formPasoMedias.get('agregarSponsorDelantero').setValue(false);
     });
-    this.formPasoMedias.get('agregarSponsorTrasero').valueChanges.subscribe((valor) => {
+    this.formPasoMedias.get('agregarSponsorTrasero').valueChanges.subscribe(() => {
       this.seleccionoSponsors = true;
       this.formPasoMedias.get('agregarSponsorTrasero').setValue(false);
 
     });
-    this.formPasoMedias.get('agregarSponsorManga').valueChanges.subscribe((valor) => {
+    this.formPasoMedias.get('agregarSponsorManga').valueChanges.subscribe(() => {
       this.seleccionoSponsors = true;
       this.formPasoMedias.get('agregarSponsorManga').setValue(false);
 
@@ -138,8 +137,6 @@ export class MediasComponent implements OnInit, OnChanges {
       }
       this.archivoEscudo.emit(event.target.files[0]);
     }
-    // this.formPasoCamiseta.controls['posicionEscudo'].setValidators([Validators.required]);
-    // this.formPasoCamiseta.controls['posicionEscudo'].updateValueAndValidity();
   }
 
   configurarValidadores() {

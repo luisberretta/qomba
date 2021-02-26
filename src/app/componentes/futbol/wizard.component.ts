@@ -135,7 +135,7 @@ export class WizardComponent implements OnInit {
         if (!event) {
           break;
         }
-        this.generarPedido(event);
+        this.generarPedido();
         break;
     }
     this.inicioDePagina();
@@ -320,9 +320,8 @@ export class WizardComponent implements OnInit {
     this.pedido.cantidadEquipo = formEquipo.cantidadEquipo;
   }
 
-  generarPedido(formResumenPrecio) {
+  generarPedido() {
     this.ngxLoader.start();
-
     let imagen = this.personaComponent.generarImagen();
     svgAsPngUri(imagen, "svg.png").then((data) => {
       this.pedido.imagenes.push(this.convertirABase64(data));
@@ -373,6 +372,7 @@ export class WizardComponent implements OnInit {
       llevaMedias: this.pedido.agregarMedias,
       detalleEquipo: this.pedido.detalleEquipo,
       imagenes: this.pedido.imagenes,
+      nombreEscudo: this.pedido.nombreEscudo,
     };
   }
 
@@ -567,6 +567,7 @@ export class WizardComponent implements OnInit {
   }
 
   archivoEscudo(escudo) {
+    this.pedido.nombreEscudo = escudo.name;
     this.personaComponent.estamparEscudo(escudo, this.ESCUDO_DELANTERO);
     this.personaComponent.estamparEscudo(escudo, this.ESCUDO_SHORT);
   }
