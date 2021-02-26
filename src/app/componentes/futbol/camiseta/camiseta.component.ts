@@ -38,7 +38,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
   ESCUDO_DELANTERO = "Remera_escudo";
-  coloresLetrasYNumeros = ["#FFFFFF", "#000000"];
+  coloresLetrasYNumeros = ["#FFFF00", "#00FF0F", "#050fdf",
+                          "#db0606", "#FF8000", "#F300FF",
+                          "#8A571B", "#E303CC", "#9203E3",
+                          "#67636A", "#000000"];
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
