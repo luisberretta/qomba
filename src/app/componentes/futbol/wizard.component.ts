@@ -351,7 +351,6 @@ export class WizardComponent implements OnInit {
         });
 
     });
-
   }
 
   confeccionarPedido(){
@@ -469,7 +468,6 @@ export class WizardComponent implements OnInit {
       partesShortSVG: partesShortSVG,
     }
   }
-
 
   generarFormMedias() {
     let gruposColor = this.obtenerGruposColor();
@@ -603,4 +601,8 @@ export class WizardComponent implements OnInit {
     return tipografias.find(x => x.valor == this.pedido.tipoLetra).nombre;
   }
 
+  redireccionar() {
+    this.modalService.dismissAll();
+    window.location.reload();
+  }
 }

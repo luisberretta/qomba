@@ -51,7 +51,7 @@
   </fieldset>
 </div>
 <ng-template #confirmar>Al <b>Confirmar</b>, un asesor te contactará para coordinar el pago y la entrega.</ng-template>
-<ng-template #template>
+<ng-template #template let-modal>
   <div class="modal-header border-bottom">
     <h4 class="modal-title">hacetucamiseta.com.ar</h4>
     <button type="button" class="close" aria-label="Close" (click)="cerrar()">
@@ -61,7 +61,13 @@
   <div class="modal-body text-center">
     <div class="row justify-content-center">
       <div class="col-10">
-        <p>{{modalText}}</p>
+        <p>Gracias por tu pedido! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega.
+          <br>Equipo Qomba Sport.</p>
+        <div class="row justify-content-center">
+          <div class="col-md-4 col-6">
+            <a class="btn btn-naranja btn-block" (click)="redireccionar()">OK</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 <ngx-ui-loader fgsColor="#8d2429" bgsType="ball-spin-clockwise-fade-rotating"></ngx-ui-loader>
-<ng-template #template  let-modal>
+<ng-template #template let-modal>
   <div class="modal-header border-bottom">
     <h4 class="text-center">¿Estás seguro que deseas volver atrás?</h4>
     <button type="button" class="close" aria-label="Close">
@@ -18,7 +18,7 @@
             <a class="btn btn-secondary btn-block" (click)="modal.close()">Cancelar</a>
           </div>
           <div class="col-md-4 col-6">
-            <a class="btn btn-warning btn-block" (click)="confirmarYRedireccionar()">OK</a>
+            <a class="btn btn-warning btn-block" (click)="confirmarYRedireccionar()">Si, regresar</a>
           </div>
         </div>
       </div>
