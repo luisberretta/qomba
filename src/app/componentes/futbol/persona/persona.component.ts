@@ -165,7 +165,7 @@ export class PersonaComponent implements OnInit {
 
   generarImagen(): any {
     let imagen: HTMLAllCollection;
-    imagen = this.remera.nativeElement.children.namedItem('svg');
+    imagen = this.remera.nativeElement.getElementsByTagName('svg')[0];
     return imagen;
   }
 

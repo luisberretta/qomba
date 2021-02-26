@@ -339,7 +339,6 @@ export class WizardComponent implements OnInit {
           this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
           this.abrirModal();
           this.ngxLoader.stop();
-          this.router.navigate(['/']);
           if (data) {
             console.log("La operación se realizó con éxito.");
           }
