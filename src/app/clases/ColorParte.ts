@@ -649,7 +649,7 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#0D0D0D",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -715,8 +715,8 @@ export const coloresParte = [
         color: "#",
         colores: [],
         posicionMatrix: {
-          derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-          izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
+          derecha: [1, 0, 0, 1, 400.6424, 526.5392],
+          izquierda: [1, 0, 0, 1, 730.6883, 526.8918],
           centro: [1, 0, 0, 1, 579.3328, 562.0125]
         }
       },
@@ -734,7 +734,7 @@ export const coloresParte = [
         colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-          izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
+          izquierda: [0.5456, 0, 0, 0.5456, 730.5656, 440.891],
           centro: [0.5456, 0, 0, 0.5456, 562.7837,478.4709]
         }
       }

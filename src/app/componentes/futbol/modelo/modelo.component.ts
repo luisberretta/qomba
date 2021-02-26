@@ -13,6 +13,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal,NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {camisetaModelos} from "../../../clases/CamisetaModelo";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 
 @Component({
   selector: 'app-modelo',
@@ -58,7 +59,7 @@ export class ModeloComponent implements OnInit, OnChanges {
     ]
   };
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private ngxLoader: NgxUiLoaderService ) {
   }
 
   ngOnInit(): void {
@@ -114,7 +115,11 @@ export class ModeloComponent implements OnInit, OnChanges {
   siguiente() {
     this.submit = true;
     if (this.formPasoModelo.valid) {
-      this.proximoPaso.emit(this.formPasoModelo.value);
+      this.ngxLoader.start();
+      setTimeout(()=>{
+        this.ngxLoader.stop();
+        this.proximoPaso.emit(this.formPasoModelo.value);
+      },2000)
     }
   }
 
