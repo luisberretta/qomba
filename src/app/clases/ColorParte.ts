@@ -5,15 +5,15 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
-        colores: ["#FFFFFF"],
+        color: "#E7EAEF",
+        colores: ["#E7EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Estampa",
-        color: "#",
-        colores: ["#FFFF00", "#00FF0F", "#050fdf",
+        color: "#484A99",
+        colores: ["#FFFF00", "#00FF0F", "#484A99",
                   "#db0606", "#FF8000", "#F300FF",
                   "#8A571B", "#E303CC", "#9203E3",
                   "#67636A", "#000000"],
@@ -22,49 +22,49 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
-        colores: ["red", "blue", "#000000", "#FFFFFF"],
+        color: "#E7EAEF",
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#EBEDF1",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#",
+        color: "#484A9A",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#45478E",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF",],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#E9EAEF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#44478E",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
+        color: "#E9EAEF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -130,9 +130,9 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#282828",
         colores: [
-          "#DB0606", "#F012B3", "#000000", "#DC12F0",
+          "#DB0606", "#F012B3", "#282828", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
@@ -142,7 +142,7 @@ export const coloresParte = [
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Remera estampa",
-        color: "#",
+        color: "#E5CA0B",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
@@ -154,49 +154,49 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#E7EAEF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0A0A0A",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias líneas",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#282828",
+        colores: ["#DB0606", "#050FDF", "#282828", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#E4CA0D",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#282828",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
+        color: "#E6CD19",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -251,85 +251,85 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#EE7C29",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
-          "#FF8C00", "#964B00", "#696969", "#6699CC"],
+          "#FF8C00", "#EE7C29", "#696969", "#6699CC"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_estampa_uno",
         nombreMostrar: "Remera estampa uno",
-        color: "#",
+        color: "#E84C1E",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
-          "#FF8C00", "#964B00", "#696969", "#6699CC"],
+          "#E84C1E", "#964B00", "#696969", "#6699CC"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_estampa_dos",
         nombreMostrar: "Remera estampa dos",
-        color: "#",
+        color: "#39130F",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
-          "#FF8C00", "#964B00", "#696969", "#6699CC"],
+          "#39130F", "#964B00", "#696969", "#6699CC"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#2A201F",
+        colores: ["#DB0606", "#050FDF", "#060606", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0A0A0A",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias líneas",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#D54D1C",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#361B13",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
+        color: "#412420",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -384,7 +384,7 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#53B6E1",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
@@ -396,10 +396,10 @@ export const coloresParte = [
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Remera estampa",
-        color: "#",
+        color: "#F9F9F9",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
-          "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
+          "#3A243B", "#4B0082", "#050FDF", "#F9F9F9",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
           "#FF8C00", "#964B00", "#696969", "#6699CC"],
@@ -408,49 +408,49 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#AED5F1",
+        colores: ["#DB0606", "#050FDF", "#0C0C0C", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#A9D2F2",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias líneas",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#E4E6EB",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#A8D1F1",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
+        color: "#A1CBEC",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -505,9 +505,9 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#1D1D1B",
         colores: [
-          "#DB0606", "#F012B3", "#000000", "#DC12F0",
+          "#DB0606", "#F012B3", "#1D1D1B", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
@@ -517,9 +517,9 @@ export const coloresParte = [
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Estampa",
-        color: "#",
+        color: "#2275BA",
         colores: ["#DB0606", "#F012B3", "#000000", "#DC12F0",
-          "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
+          "#3A243B", "#4B0082", "#2275BA", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
           "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
           "#FF8C00", "#964B00", "#696969", "#6699CC"],
@@ -528,49 +528,49 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#000000",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0A0A0A",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#030303",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#030303",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#030303",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea letaral",
-        color: "#",
+        color: "#030303",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -625,19 +625,19 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#E5CA0B",
         colores: [
           "#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
-          "#BFFF00", "#FFFF00", "#FFBF00", "#FFA500",
+          "#BFFF00", "#E5CA0B", "#FFBF00", "#FFA500",
           "#FF8C00", "#964B00", "#696969", "#6699CC"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Estampa",
-        color: "#",
+        color: "#000000",
         colores: ["#DB0606", "#F012B3", "#000000", "#DC12F0",
           "#3A243B", "#4B0082", "#050FDF", "#ADD8E6",
           "#00FFFF", "#008080", "#00FF00", "#90EE90",
@@ -648,49 +648,49 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#0D0D0D",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0A0A0A",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0D0D0D",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_Línea_Superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#CCB510",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_Línea_Inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#0D0D0D",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_Línea_Lateral",
         nombreMostrar: "Short línea letaral",
-        color: "#",
+        color: "#CCB510",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -745,49 +745,56 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#E2E5E5",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E2E5E5"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#345594",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#24519B",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias líneas",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#21498B",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#21498B",
+        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea Short_linea_lateral",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -842,9 +849,9 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#E52A3A",
         colores: ["#FFFF00", "#00FF0F", "#050fdf",
-                  "#db0606", "#FF8000", "#F300FF",
+                  "#E52A3A", "#FF8000", "#F300FF",
                   "#8A571B", "#E303CC","#9203E3",
                   "#67636A", "#000000"],
         posicionMatrix: {}
@@ -852,59 +859,59 @@ export const coloresParte = [
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Estampa",
-        color: "#",
+        color: "#6B5D5D",
         colores: ["#FFFF00", "#00FF0F", "#050fdf",
                   "#db0606", "#FF8000", "#F300FF",
                   "#8A571B", "#E303CC","#9203E3",
-                  "#67636A", "#000000"],
+                  "#6B5D5D", "#000000"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#BF181C",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#BF181C",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#BF181C",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#BF181C",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea letaral",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
@@ -987,22 +994,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1120,22 +1127,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1240,22 +1247,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1360,22 +1367,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1498,22 +1505,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1632,22 +1639,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1778,22 +1785,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -1901,22 +1908,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2005,22 +2012,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2109,22 +2116,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2237,22 +2244,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2354,22 +2361,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2472,22 +2479,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2613,22 +2620,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2724,22 +2731,22 @@ export const coloresParte = [
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0A0A0A",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#E8EAEF",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
@@ -2845,22 +2852,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -2976,22 +2983,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -3087,22 +3094,22 @@ export const coloresParte = [
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#0A0A0A",
+        colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#",
+        color: "#FFFFFF",
         colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#",
-        colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+        color: "#E8EAEF",
+        colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
         posicionMatrix: {}
       },
       {
@@ -3221,22 +3228,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {
@@ -3359,22 +3366,22 @@ export const coloresParte = [
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#0A0A0A",
+  //       colores: ["#DB0606", "#050FDF", "#0A0A0A", "#FFFFFF"],
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
-  //       color: "#",
+  //       color: "#FFFFFF",
   //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
-  //       color: "#",
-  //       colores: ["#DB0606", "#050FDF", "#000000", "#FFFFFF"],
+  //       color: "#E8EAEF",
+  //       colores: ["#DB0606", "#050FDF", "#000000", "#E8EAEF"],
   //       posicionMatrix: {}
   //     },
   //     {

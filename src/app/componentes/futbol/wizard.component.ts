@@ -399,6 +399,7 @@ export class WizardComponent implements OnInit {
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
+            parteColor.color = parteColores.color;
             formColor.push(parteColor);
           }
         }
@@ -444,6 +445,7 @@ export class WizardComponent implements OnInit {
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
+            parteColor.color = parteColores.color;
             partesShortSVG.push(parteColor);
           }
         }
@@ -481,6 +483,7 @@ export class WizardComponent implements OnInit {
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
+            parteColor.color = parteColores.color;
             partesMediasSVG.push(parteColor);
           }
         }
