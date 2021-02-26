@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, Output, ViewChild} from '@angular/core';
 import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
@@ -16,6 +16,7 @@ import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component"
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {indumentariaInferior} from "../../clases/IndumentariaInferior";
 import {tipografias} from "../../clases/Tipografia";
+import {EventEmitter} from "events";
 
 @Component({
   selector: 'app-wizard',
@@ -343,7 +344,7 @@ export class WizardComponent implements OnInit {
           }
         },
         (error) => {
-          this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba."
+          this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
           this.abrirModal();
           this.ngxLoader.stop();
         });
