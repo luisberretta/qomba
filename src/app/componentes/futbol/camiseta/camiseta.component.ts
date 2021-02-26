@@ -38,7 +38,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
   ESCUDO_DELANTERO = "Remera_escudo";
-  coloresLetrasYNumeros = ["#FFFFFF", "#000000"];
+  coloresLetrasYNumeros = ["#FFFF00", "#00FF0F", "#050fdf",
+                          "#db0606", "#FF8000", "#F300FF",
+                          "#8A571B", "#E303CC", "#9203E3",
+                          "#67636A", "#000000"];
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
@@ -151,17 +154,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
     if (changeRecord.formCamiseta && changeRecord.formCamiseta.currentValue) {
       this.generarFormulario(changeRecord.formCamiseta.currentValue);
     }
-
   }
 
   generarFormulario(formCamiseta) {
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
-    if (this.colorRemera == "#000000"){
-      this.coloresLetrasYNumeros = ["#FFFFFF"];
-    }
-    else{
-      this.coloresLetrasYNumeros = ["#000000"]
-    }
     this.formPasoCamiseta.get('llevaEscudoDelantero').setValue(formCamiseta.llevaEscudoDelantero ?? null);
     this.formPasoCamiseta.get('escudoDelantero').setValue(formCamiseta.escudoDelantero ?? null);
     this.formPasoCamiseta.get('posicionEscudoDelantero').setValue(formCamiseta.posicionEscudoDelantero ?? null);
@@ -173,13 +169,11 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? "SablonUp-College");
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
     if (this.colorRemera == "#000000"){
-      this.coloresLetrasYNumeros = ["#FFFFFF"];
       if(this.llevaEstampado){
         this.formPasoCamiseta.get('colorEstampado').setValue("#FFFFFF");
       }
     }
-    else{
-      this.coloresLetrasYNumeros = ["#000000"]
+    else {
       if(this.llevaEstampado){
         this.formPasoCamiseta.get('colorEstampado').setValue("#000000");
       }
