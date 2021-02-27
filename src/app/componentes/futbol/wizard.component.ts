@@ -43,9 +43,6 @@ export class WizardComponent implements OnInit {
   modeloElegido: any;
   modalRef: NgbModalRef;
   modalText: string;
-  canvas = document.createElement("canvas");
-  ctx = null;
-  img = document.createElement("img");
 
   @ViewChild('template', {static: true}) modalTemplate;
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
@@ -63,7 +60,7 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ctx = this.canvas.getContext("2d");
+
   }
 
   siguiente(event?) {
@@ -350,9 +347,7 @@ export class WizardComponent implements OnInit {
             this.ngxLoader.stop();
           });
       });
-      this.img.setAttribute("src",data);
-      this.ctx.drawImage(this.img,0,0);
-      this.pedido.imagenSvg = this.canvas.toDataURL("image/png",0.5);
+
     });
   }
 
