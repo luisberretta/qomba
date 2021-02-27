@@ -82,8 +82,8 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formModelo) {
-    setTimeout(()=> {
-      this.slick.slickGoTo(formModelo.modelo.id - 1)
+    setTimeout(() => {
+      this.slick.slickGoTo(formModelo.modelo.id - 1);
     }, 100);
 
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
@@ -116,10 +116,10 @@ export class ModeloComponent implements OnInit, OnChanges {
     this.submit = true;
     if (this.formPasoModelo.valid) {
       this.ngxLoader.start();
-      setTimeout(()=>{
+      setTimeout(() => {
         this.ngxLoader.stop();
         this.proximoPaso.emit(this.formPasoModelo.value);
-      },2000)
+      },500)
     }
   }
 
