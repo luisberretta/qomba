@@ -336,7 +336,7 @@ export class WizardComponent implements OnInit {
       this.pedido.imagenes = imagenesBase64;
       let generarPedido = this.confeccionarPedido();
       this.wizardService.generarPedido(generarPedido).subscribe((data) => {
-          this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
+          this.modalText = "Gracias por tu pedido! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega.";
           this.abrirModal();
           this.ngxLoader.stop();
           if (data) {
