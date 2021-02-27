@@ -43,6 +43,9 @@ export class WizardComponent implements OnInit {
   modeloElegido: any;
   modalRef: NgbModalRef;
   modalText: string;
+  canvas = document.createElement("canvas");
+  ctx = null;
+  img = document.createElement("img");
 
   @ViewChild('template', {static: true}) modalTemplate;
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
@@ -60,7 +63,7 @@ export class WizardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.ctx = this.canvas.getContext("2d");
   }
 
   siguiente(event?) {
@@ -323,37 +326,38 @@ export class WizardComponent implements OnInit {
 
   generarPedido() {
     this.ngxLoader.start();
-    let imagen = this.personaComponent.generarImagen();
-    svgAsPngUri(imagen, "svg.png").then((data) => {
-      this.pedido.imagenes.push(this.convertirABase64(data));
-      this.pedido.imagenes.push(this.pedido.imagenEscudo);
-      let imagenesBase64 = [];
-      for (let i = 0; i < this.pedido.imagenes.length; i++) {
-        if (this.pedido.imagenes[i]) {
-          imagenesBase64.push(this.convertirABase64(this.pedido.imagenes[i]));
-        }
-      }
-      this.pedido.imagenes = imagenesBase64;
-      let generarPedido = this.confeccionarPedido();
-      this.wizardService.generarPedido(generarPedido).subscribe((data) => {
-          this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
-          this.abrirModal();
-          this.ngxLoader.stop();
-          if (data) {
-            console.log("La operación se realizó con éxito.");
-          }
-        },
-        (error) => {
-          this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
-          this.abrirModal();
-          this.ngxLoader.stop();
-        });
+    let svgImage = this.personaComponent.generarImagen();
+    svgAsPngUri(svgImage, "svg.png").then((data) => {
+      fetch(data).then(res=> res.blob()).then( blob => {
+        let fileSVG = new File([blob], "imagenSVG",{type:"image/png"});
 
+        let pedido = this.confeccionarPedido();
+        let formData = new FormData();
+        formData.append("pedido",pedido);
+        formData.append("fileSVG", fileSVG);
+        formData.append("fileEscudo",this.pedido.archivoEscudo);
+        this.wizardService.generarPedido(formData).subscribe((data) => {
+            this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
+            this.abrirModal();
+            this.ngxLoader.stop();
+            if (data) {
+              console.log("La operación se realizó con éxito.");
+            }
+          },
+          (error) => {
+            this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
+            this.abrirModal();
+            this.ngxLoader.stop();
+          });
+      });
+      this.img.setAttribute("src",data);
+      this.ctx.drawImage(this.img,0,0);
+      this.pedido.imagenSvg = this.canvas.toDataURL("image/png",0.5);
     });
   }
 
   confeccionarPedido(){
-    return {
+    return JSON.stringify({
       nombreCliente: this.pedido.nombreContacto,
       celular: this.pedido.telefonoContacto,
       email: this.pedido.emailContacto,
@@ -374,7 +378,7 @@ export class WizardComponent implements OnInit {
       detalleEquipo: this.pedido.detalleEquipo,
       imagenes: this.pedido.imagenes,
       nombreEscudo: this.pedido.nombreEscudo,
-    };
+    });
   }
 
   convertirABase64(cadena) {
@@ -569,6 +573,7 @@ export class WizardComponent implements OnInit {
 
   archivoEscudo(escudo) {
     this.pedido.nombreEscudo = escudo.name;
+    this.pedido.archivoEscudo = escudo;
     this.personaComponent.estamparEscudo(escudo, this.ESCUDO_DELANTERO);
     this.personaComponent.estamparEscudo(escudo, this.ESCUDO_SHORT);
   }

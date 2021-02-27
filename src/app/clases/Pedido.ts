@@ -21,6 +21,7 @@ export interface Pedido {
   colorEstampado?: string;
   nombreEscudo?: string;
   tipoLetra?:string;
+  archivoEscudo?: File;
 
   //SHORT
   agregarEscudoShort?: boolean;
