@@ -1,0 +1,191 @@
+.indicador-progreso {
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin: 5px;
+  list-style: none;
+  li {
+    margin: 10px auto;
+    z-index: 2;
+    cursor: pointer;
+    a {
+      background-color: #edf1f2;
+      color: #a5aaab;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      font-weight: 600;
+      position: relative;
+      padding-top: 3px;
+      transition: color 300ms ease;
+      &:after {
+        display: none;
+        content: '';
+        position: absolute;
+        height: 35px;
+        width: 35px;
+        top: -2px;
+        left: -2px;
+      }
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    h5 {
+      font-size: 18px;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 100%;
+    border-top: dotted 5px #c2cccd;
+    z-index: 0;
+    @media screen and (max-width: 768px) {
+      border-top: dotted 4px #c2cccd;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 26px;
+    width: 0;
+    height: 3px;
+    z-index: 1;
+    transition: width 0.25s ease;
+  }
+  &.modelo {
+    &:after {
+      width: 10%;
+    }
+    li:nth-child(1) a {
+      color: #8d2429;
+    }
+  }
+  &.color {
+    &:after {
+      width: 30%;
+    }
+    li:nth-child(1) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      color: #8d2429;
+    }
+  }
+  &.camiseta, &.short, &.medias {
+    &:after {
+      width: 50%;
+    }
+    li:nth-child(1) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(3) a {
+      color: #8d2429;
+    }
+  }
+  &.equipo {
+    &:after {
+      width: 100%;
+    }
+    li:nth-child(1) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(3) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(4) a {
+      color: #8d2429;
+    }
+  }
+  &.resumen-precio {
+    &:after {
+      width: 100%;
+    }
+    li:nth-child(1) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(2) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(3) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(4) a {
+      background-color: #19bd9a;
+      color: white;
+      &:after {
+        display: block;
+      }
+    }
+    li:nth-child(5) a {
+      color: #8d2429;
+    }
+  }
+}
+
+.info {
+  cursor: pointer;
+  color: #1376d9;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-group {
+    display: grid;
+  }
+  .indicador-progreso li h5 {
+    display: none;
+  }
+  .paso h3 {
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+

@@ -1,0 +1,127 @@
+<form [formGroup]="formPasoEquipo" class="ml-md-2 mr-md-0">
+  <div class="form-group row">
+    <label for="nombreEquipo" class="col-md-5 col-7 text-left pr-0">Nombre de tu Equipo:</label>
+    <div class="col-md-7 col-5 text-left pl-0">
+      <input class="form-control" type="text" id="nombreEquipo" formControlName="nombreEquipo">
+      <div *ngIf="submit && formPasoEquipo.controls.nombreEquipo.errors" class="invalid-feedback">
+        <div *ngIf="formPasoEquipo.controls.nombreEquipo.errors.required">Nombre del equipo requerido.</div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="cantidadEquipo" class="col-md-5 col-7 text-left align-self-center pr-0">Cantidad Jugadores:</label>
+    <div class="col-md-2 col-5 text-left pl-0">
+      <div class="input-group">
+        <input class="form-control" type="number" min="1" max="99" id="cantidadEquipo" formControlName="cantidadEquipo">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <img (click)="aumentarJugador()" src="/assets/images/sort-up.svg" height="10" class="d-block">
+            <img (click)="restarJugador()" src="/assets/images/sort-down.svg" height="10">
+          </span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="submit && formPasoEquipo.controls.cantidadEquipo.errors" class="invalid-feedback">
+      <div *ngIf="formPasoEquipo.controls.cantidadEquipo.errors">Ingrese un valor válido.
+      </div>
+    </div>
+  </div>
+  <div class="form-group tabla-equipo">
+    <div class="row titulos">
+      <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
+        Nombre
+      </div>
+      <div class="col border-right border-left text-center"
+           placement="top" ngbTooltip="{{ !formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
+        Número
+      </div>
+      <div class="col text-center border-right border-left">
+        Camiseta
+      </div>
+      <div class="col text-md-center" placement="top" ngbTooltip="{{ !formEquipo.llevaShort ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
+        Short
+      </div>
+    </div>
+    <div formArrayName="equipo" class="row datos mt-2" *ngFor="let jugador of formEquipoControl.controls; index as i">
+      <div class="col" [formGroupName]="i">
+        <input type="text" formControlName="nombreCamiseta" class="form-control" [attr.disabled]="!formEquipo.llevaNombreCamiseta ? true : null"/>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('nombreCamiseta').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('nombreCamiseta').errors.required">Requerido.
+          </div>
+        </div>
+      </div>
+      <div class="col numero" [formGroupName]="i">
+        <input (focus)="true" type="number" min="0" max="99" formControlName="numero" class="form-control"
+               [attr.disabled]="!formEquipo.llevaNumeroCamiseta && !formEquipo.agregarNumeroShort ? true : null"/>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('numero').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('numero').errors.required">Requerido.
+          </div>
+        </div>
+      </div>
+      <div class="col camiseta" [formGroupName]="i">
+        <select class="form-control" formControlName="talleCamiseta">
+          <option disabled selected [ngValue]="null">Talle</option>
+          <option *ngFor="let talle of talles" [ngValue]="talle" >{{talle}}</option>
+        </select>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('talleCamiseta').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('talleCamiseta').errors.required">Requerido.
+          </div>
+        </div>
+      </div>
+      <div class="col short" [formGroupName]="i">
+        <select class="form-control" formControlName="talleShort" [attr.disabled]="!formEquipo.llevaShort ? true : null">
+          <option disabled selected [ngValue]="null">Talle</option>
+          <option *ngFor="let talle of talles" [ngValue]="talle">{{talle}}</option>
+        </select>
+        <div *ngIf="submit && formEquipoControl.controls[i].get('talleShort').errors" class="invalid-feedback">
+          <div *ngIf="formEquipoControl.controls[i].get('talleShort').errors.required">Requerido.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <fieldset>
+    <legend>
+      Datos de Contacto
+    </legend>
+    <div class="form-group row mt-3">
+      <label for="nombreContacto" class="col-md-2 col-4 text-left pr-0">Nombre:</label>
+      <div class="col-md-4 col-6 text-left pl-0">
+        <input class="form-control" type="text" id="nombreContacto" placeholder="Tu nombre" formControlName="nombreContacto">
+        <div *ngIf="submit && formPasoEquipo.controls.nombreContacto.errors" class="invalid-feedback">
+          <div *ngIf="formPasoEquipo.controls.nombreContacto.errors.required">Nombre requerido.</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="telefonoContacto" class="col-md-2 col-4 text-left pr-0">Celular:</label>
+      <div class="col-md-4 col-6 text-left pl-0">
+        <input class="form-control" type="text" id="telefonoContacto" placeholder="Cód. Área + Número" formControlName="telefonoContacto">
+        <div *ngIf="submit && formPasoEquipo.controls.telefonoContacto.errors" class="invalid-feedback">
+          <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.required">Teléfono requerido.</div>
+          <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.pattern">Ingrese sólo números.</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="emailContacto" class="col-md-2 col-4 text-left pr-0">E-mail:</label>
+      <div class="col-md-4 col-6 text-left pl-0">
+        <input class="form-control" type="text" id="emailContacto" placeholder="tumail@gmail.com" formControlName="emailContacto">
+        <div *ngIf="submit && formPasoEquipo.controls.emailContacto.errors" class="invalid-feedback">
+          <div *ngIf="formPasoEquipo.controls.emailContacto.errors.required">Email requerido.</div>
+          <div *ngIf="formPasoEquipo.controls.emailContacto.errors.email">El emáil no es una dirección válida.</div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</form>
+<ng-template #content let-modal>
+  <div class="modal-body text-center">
+    <h4 class="text-white">Listado de talles</h4>
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-10">
+        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,54 @@
+<form [formGroup]="vistaResumenPrecio" class="ml-md-2">
+<div class="ml-md-2 mr-md-0 mx-2">
+  <div class="form-group row">
+    <div class="col-6 text-left">
+      <label for="modelo">Modelo</label>
+      <input id="modelo" formControlName="modelo" readonly class="form-control">
+    </div>
+    <div class="col-6 text-left">
+      <label for="cantidadJugadores">Jugadores</label>
+      <input id="cantidadJugadores" formControlName="cantidadJugadores" type="number" readonly class="form-control">
+    </div>
+  </div>
+  <fieldset>
+    <legend>
+      Precio de tu Modelo:
+    </legend>
+    <div class="row form-group mt-2">
+      <label for="precioCamiseta" class="col-md-6 col-6">Por Camiseta $:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioCamiseta" formControlName="precioCamiseta" readonly class="form-control">
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="precioShort" class="col-md-6 col-6">Por Short $:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioShort" formControlName="precioShort" readonly class="form-control">
+      </div>
+    </div>
+    <div class="row form-group">
+      <label for="precioMedias" class="col-md-6 col-6">Por Medias $:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioMedias" formControlName="precioMedias" readonly class="form-control">
+      </div>
+    </div>
+    <hr>
+    <div class="row form-group conjunto">
+      <label for="precioConjunto" class="col-md-6 col-6 align-self-center">Por Conjunto $:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioConjunto" formControlName="precioConjunto" readonly class="form-control">
+      </div>
+    </div>
+    <hr>
+    <div class="row form-group">
+      <label for="precioTotal" class="col-md-6 col-6">Monto total $:</label>
+      <div class="col-md-6 col-6">
+        <input id="precioTotal" formControlName="precioTotal" type="number" readonly class="form-control">
+      </div>
+    </div>
+  </fieldset>
+</div>
+</form>
+
+
+

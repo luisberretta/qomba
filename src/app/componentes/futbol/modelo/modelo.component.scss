@@ -1,0 +1,71 @@
+.btn-group {
+  .btn {
+    background-color: white;
+    color: black;
+    display: block;
+    width: 100%;
+    border: solid 1px black;
+    font-size: 13px;
+    transition: font-size 200ms ease;
+    &.seleccionado {
+      background-color: #e0e0e0;
+      font-size: 14px;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+    &:first-child {
+      border-top-left-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
+    }
+    &:last-child {
+      border-top-right-radius: 0.75rem;
+      border-bottom-right-radius: 0.75rem;
+    }
+  }
+}
+
+.slide {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  img {
+    width: 250px;
+  }
+  &.seleccionado {
+    background-color: #ededef;
+  }
+  .zoom {
+    background-color: white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 3rem;
+    top: 5px;
+    cursor: pointer;
+    z-index: 100;
+    align-items: center;
+    display: grid;
+    i {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+}
+
+.carousel.mujer {
+  img {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slide {
+    .zoom {
+      right: 1rem;
+    }
+  }
+}

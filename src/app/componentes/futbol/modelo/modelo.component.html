@@ -1,0 +1,50 @@
+<form [formGroup]="formPasoModelo" class="ml-md-2">
+  <div class="text-right mr-md-4">
+    <div class="btn-group" role="group">
+      <a class="btn" (click)="modelosHombre()" [ngClass]="{ 'seleccionado': generoModelo == 'hombre' }">Hombre</a>
+      <a class="btn" (click)="modelosMujer()" [ngClass]="{ 'seleccionado': generoModelo == 'mujer' }">Mujer</a>
+    </div>
+  </div>
+  <ngx-slick-carousel *ngIf="generoModelo == 'hombre'" #slickModal="slick-carousel" class="carousel mt-3" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos;" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''"
+         (mouseover)="detallePrecioId = camiseta.id" (mouseleave)="detallePrecioId = null" (click)="detalle(camiseta.id)">
+      <ng-template [ngIf]="detallePrecioId == camiseta.id">
+        <div class="tooltip fade show bs-tooltip-top custom">
+          <div class="arrow"></div>
+          <div class="tooltip-inner"> Desde $ {{ obtenerPrecioFormateado(camiseta.precioMayorista) }}</div>
+        </div>
+      </ng-template>
+      <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>
+      <img src="{{ camiseta.url }}" alt="{{ camiseta.nombre }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
+      <p class="mb-0">{{ camiseta.nombre }}</p>
+    </div>
+  </ngx-slick-carousel>
+  <ngx-slick-carousel *ngIf="generoModelo == 'mujer'" #slickModal="slick-carousel" class="carousel mujer mt-3" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let camiseta of camisetaModelos" class="slide pt-3 pb-2" [ngClass]="camiseta.seleccionada? 'seleccionado' : ''"
+         (mouseover)="detallePrecioId = camiseta.id" (mouseleave)="detallePrecioId = null" (click)="detalle(camiseta.id)">
+      <ng-template [ngIf]="detallePrecioId == camiseta.id">
+        <div class="tooltip fade show bs-tooltip-top custom">
+          <div class="arrow"></div>
+          <div class="tooltip-inner"> Desde $ {{ camiseta.precioMayorista }}</div>
+        </div>
+      </ng-template>
+      <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>
+      <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
+      <p class="mb-0">{{ camiseta.nombre }}</p>
+    </div>
+  </ngx-slick-carousel>
+  <div *ngIf="submit && formPasoModelo.controls['modelo'].errors" class="invalid-feedback">
+    <div *ngIf="formPasoModelo.controls['modelo'].errors.required">Hacé click para seleccionar un modelo</div>
+  </div>
+</form>
+
+<ng-template #template>
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="cerrar()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-center">
+    <img [src]="modalText" [alt]="modalText" class="img-fluid">
+  </div>
+</ng-template>

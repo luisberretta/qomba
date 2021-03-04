@@ -1,0 +1,28 @@
+<div *ngIf="visible">
+  <form [formGroup]="formPasoColor" class="ml-2">
+    <div formArrayName="partesRemeraSVG" *ngFor="let parteColor of formPartesArrayControl.controls; index as i"
+         class="form-group">
+      <div [formGroupName]="i" class="row">
+        <div class="col-md-4 col-6 align-self-center">
+          <label>{{parteColor.value.nombreMostrar}}<span *ngIf="submit && !formPartesArrayControl.controls[i].valid" class="text-danger">* </span>: </label>
+        </div>
+        <div class="col-md-8 col-6">
+          <div class="cuadro-color">
+            <ngx-colors [id]="'selector-' + i" ngx-colors-trigger [palette]="parteColor.value.colores"
+                 [hideColorPicker]="true"
+                 [hideTextInput]="true"
+                 [style.background]="formPartesArrayControl.controls[i].get('color').value ? formPartesArrayControl.controls[i].get('color').value : 'black'"
+                 (change)="cambiarColor($event,parteColor.value.idParte)" formControlName="color"></ngx-colors>
+            <i class="fas fa-sort-down fa-lg" (click)="abrirSelector('selector-' + i)"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div *ngIf="submit && !this.formPasoColor.valid" class="invalid-feedback">
+      <div *ngIf="!this.formPasoColor.valid">*Obligatorio.</div>
+    </div>
+  </form>
+</div>
+
+
