@@ -2,7 +2,7 @@ import {Component, OnInit, Output, ViewChild} from '@angular/core';
 import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
-import {svgAsDataUri} from 'save-svg-as-png';
+import {svgAsPngUri} from 'save-svg-as-png';
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
 import {ModeloComponent} from "./modelo/modelo.component";
@@ -13,11 +13,10 @@ import {ShortComponent} from "./short/short.component";
 import {EquipoComponent} from "./equipo/equipo.component";
 import {MediasComponent} from "./medias/medias.component";
 import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component";
-import {NgxUiLoaderService} from "ngx-ui-loader";
+import {NgxUiLoaderConfig, NgxUiLoaderService} from "ngx-ui-loader";
 import {indumentariaInferior} from "../../clases/IndumentariaInferior";
 import {tipografias} from "../../clases/Tipografia";
 import {CompressorConfig, ImageCompressorService} from 'ngx-image-compressor';
-import {GeneratedFile, ParseSourceFile} from "@angular/compiler";
 
 @Component({
   selector: 'app-wizard',
@@ -322,33 +321,35 @@ export class WizardComponent implements OnInit {
     this.pedido.cantidadEquipo = formEquipo.cantidadEquipo;
   }
 
-  async generarPedido() {
-    this.ngxLoader.start();
+  generarPedido() {
+
     let svgImage = this.personaComponent.generarImagen();
-    let blob = new Blob([svgImage.outerHTML], {type: "image/svg+xml"});
-    // let archivo = new File([blob], 'imageSVG', {type: ""});
-    // console.log(archivo);
-    let fileSVG = new File([blob], "imagenSVG.svg", {type: "image/svg"});
-    let config: CompressorConfig = {orientation: 1, ratio: 50, quality: 50, enableLogs: true};
-    // let svgComprimida: File = await this.imageCompressor.compressFile(fileSVG, config);
-    let pedido = this.confeccionarPedido();
-    let formData = new FormData();
-    formData.append("pedido", pedido);
-    formData.append("fileSVG", fileSVG);
-    formData.append("fileEscudo", this.pedido.archivoEscudo);
-    this.wizardService.generarPedido(formData).subscribe((data) => {
-        this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
-        this.abrirModal();
-        this.ngxLoader.stop();
-        if (data) {
-          console.log("La operación se realizó con éxito.");
-        }
-      },
-      (error) => {
-        this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
-        this.abrirModal();
-        this.ngxLoader.stop();
+    svgAsPngUri(svgImage, "svg.png").then((data) => {
+      fetch(data).then(res=> res.blob()).then(async blob => {
+        let fileSVG = new File([blob], "imagenSVG",{type:"image/png"});
+        let config: CompressorConfig = {orientation: 1, ratio: 20, quality: 20, enableLogs: true};
+        let svgComprimida: File = await this.imageCompressor.compressFile(fileSVG, config);
+        let pedido = this.confeccionarPedido();
+        let formData = new FormData();
+        formData.append("pedido", pedido);
+        formData.append("fileSVG", svgComprimida);
+        formData.append("fileEscudo", this.pedido.archivoEscudo);
+        this.wizardService.generarPedido(formData).subscribe((data) => {
+            this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
+            this.abrirModal();
+            this.ngxLoader.stop();
+            if (data) {
+              console.log("La operación se realizó con éxito.");
+            }
+          },
+          (error) => {
+            this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
+            this.abrirModal();
+            this.ngxLoader.stop();
+          });
       });
+    });
+
   }
 
   confeccionarPedido() {

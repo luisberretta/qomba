@@ -30,7 +30,7 @@
     "ngx-slick-carousel": "^0.5.1",
     "ngx-ui-loader": "^10.0.0",
     "rxjs": "^6.6.6",
-    "save-svg-as-png": "^1.4.17",
+    "save-svg-as-png": "1.4.14",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.1.0",
     "zone.js": "~0.10.2"
