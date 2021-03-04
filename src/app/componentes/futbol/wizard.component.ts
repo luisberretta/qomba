@@ -322,7 +322,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedido() {
-
+    this.ngxLoader.start()
     let svgImage = this.personaComponent.generarImagen();
     svgAsPngUri(svgImage, "svg.png").then((data) => {
       fetch(data).then(res=> res.blob()).then(async blob => {
@@ -338,9 +338,6 @@ export class WizardComponent implements OnInit {
             this.modalText = "Gracias por tu pedido ! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega. Equipo Qomba Sport.";
             this.abrirModal();
             this.ngxLoader.stop();
-            if (data) {
-              console.log("La operación se realizó con éxito.");
-            }
           },
           (error) => {
             this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
