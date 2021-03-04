@@ -1,0 +1,86 @@
+<form [formGroup]="formPasoCamiseta" class="ml-2">
+  <div class="row form-group">
+    <div class="col-md-5 col-6 align-self-center">
+      <label class="switch">
+        <input class="form-check-input" formControlName="llevaEscudoDelantero" type="checkbox" id="lleva-escudo-delantero">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="lleva-escudo-delantero">Escudo Delantero</label>
+    </div>
+    <div>
+      <a class="btn btn-subir btn-block" [ngClass]="{ 'text-danger border-danger': (submit && !formPasoCamiseta.controls['escudoDelantero'].valid) || formatoEscudoInvalido }" (click)="archivo()" [attr.disabled]="!llevaEscudoDelantero ? true: null">Subir <i class="fas fa-upload"></i></a>
+      <input type="file" class="d-none" #archivoEscudo (change)="subirArchivo($event)" [attr.disabled]="!llevaEscudoDelantero? true: null">
+    </div>
+    <div class="col">
+      <select class="form-control" formControlName="posicionEscudoDelantero" [attr.disabled]="!llevaEscudoDelantero ? true: null">
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicionesEscudo" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-7 col-md-6 align-self-center">
+      <label class="switch">
+        <input class="form-check-input" formControlName="llevaNumeroDelantero" type="checkbox" id="lleva-numero-delantero">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="lleva-numero-delantero">Número Delantero</label>
+    </div>
+    <div class="col-5 offset-md-2 col-md-4">
+      <select class="form-control" formControlName="posicionNumeroDelantero" [attr.disabled]="!formPasoCamiseta.controls['llevaNumeroDelantero'].value ? true : null">
+        <option [ngValue]="null" selected disabled>Posición</option>
+        <option *ngFor="let posicion of posicionesNumeroDelantero" [ngValue]="posicion">{{ posicion }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-6 col-8">
+      <label class="switch">
+        <input class="form-check-input" formControlName="llevaNombreEspalda" type="checkbox" id="lleva-nombre-espalda">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="lleva-nombre-espalda">Nombre Espalda</label>
+    </div>
+  </div>
+  <div class="row form-group mt-4">
+    <div class="col-md-6 col-8">
+      <label class="switch">
+        <input class="form-check-input" formControlName="llevaNumeroEspalda" type="checkbox" id="lleva-numero-espalda">
+        <span class="slider round"></span>
+      </label>
+      <label class="form-check-label" for="lleva-numero-espalda">Número Espalda</label>
+    </div>
+  </div>
+  <div class="row form-group">
+    <div class="col-md-4 col-5 align-self-center">
+      <label>Tipo de letra: </label>
+    </div>
+    <div class="col-md-5 col-7">
+      <select [attr.disabled]="llevaEstampado() ? null: true" class="form-control" formControlName="tipoLetra">
+        <option *ngFor="let tipoLetra of tiposLetra" [value]="tipoLetra.valor">{{ tipoLetra.nombre }}</option>
+      </select>
+    </div>
+  </div>
+  <div *ngIf="llevaEstampado()" class="row form-group">
+    <div class="col-md-4 col-8 align-self-center">
+      <label>Color letras y número:</label>
+    </div>
+    <div class="col-md-8 col-4">
+      <div class="cuadro-color">
+        <ngx-colors [id]="'colorPickerNroEspalda'" ngx-colors-trigger [palette]="coloresLetrasYNumeros"
+             [hideColorPicker]="true"
+             [hideTextInput]="true"
+             [style.background]="formPasoCamiseta.get('colorEstampado').value ? formPasoCamiseta.get('colorEstampado').value : 'black'"
+             (change)="cambiarColor($event)" formControlName="colorEstampado">
+        </ngx-colors>
+        <i class="fas fa-sort-down fa-lg" (click)="abrirSelector('colorPickerNroEspalda')"></i>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="submit && !formPasoCamiseta.valid" class="invalid-feedback">
+    <div *ngIf="submit && !formPasoCamiseta.valid">*Obligatorio.</div>
+  </div>
+  <div *ngIf="formatoEscudoInvalido" class="invalid-feedback">
+    <div>*El formato del archivo debe ser png o jpg.</div>
+  </div>
+</form>

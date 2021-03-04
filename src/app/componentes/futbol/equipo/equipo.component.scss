@@ -1,0 +1,101 @@
+.fa-plus-circle, .fa-minus-circle {
+  color: #8d2429;
+  cursor: pointer;
+}
+
+.tabla-equipo {
+  max-height: 450px;
+  .titulos {
+    background-color: #eeeeee;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+.fa-info-circle {
+  cursor: pointer;
+  color: #8d2429;
+}
+
+.form-control:disabled {
+  opacity: 0.5;
+}
+
+.form-control::placeholder {
+  opacity: 0.7;
+}
+
+.input-group {
+  .form-control {
+    border-radius: 0.5rem;
+  }
+}
+
+.input-group-append {
+  .input-group-text {
+    display: block;
+  }
+}
+
+fieldset {
+  margin-bottom: 1rem;
+  legend {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input-group {
+    .form-control {
+      border-radius: 0.5rem 0 0 0.5rem;
+      border-right: 0;
+    }
+    .input-group-text {
+      border: solid 1px black;
+      background-color: white;
+      border-radius: 0 0.5rem 0.5rem 0;
+      padding: 2px 20px 0 0;
+      img {
+        &:first-child {
+          position: relative;
+          top: 3px;
+        }
+      }
+    }
+  }
+  .tabla-equipo {
+    width: initial;
+    padding: 5px;
+    .titulos {
+      margin-top: -5px;
+      .col {
+        font-size: 13px;
+      }
+    }
+    .datos {
+      .camiseta {
+        padding-left: 0;
+      }
+      .short {
+        padding-left: 0;
+        border-right: none;
+      }
+      .numero {
+        padding-left: 0;
+      }
+      .form-control {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input-group-append {
+    display: none;
+  }
+  input[type=number]::-webkit-inner-spin-button {
+    opacity: 1;
+  }
+}

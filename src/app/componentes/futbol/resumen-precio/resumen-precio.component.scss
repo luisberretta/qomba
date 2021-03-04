@@ -1,0 +1,24 @@
+fieldset {
+  margin-bottom: 1rem;
+  legend {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+}
+
+label {
+  text-align: left;
+}
+
+hr {
+  border-top: solid 1px black;
+}
+
+.conjunto {
+  label {
+    color: #1376d9;
+  }
+  .form-control {
+    border: solid 1px #1376d9;
+  }
+}

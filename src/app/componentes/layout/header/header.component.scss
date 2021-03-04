@@ -1,0 +1,106 @@
+.navbar {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  .navbar-brand img {
+    width: 80px;
+  }
+  .nav-link {
+    color: #8d2429;
+    font-weight: 500;
+  }
+  .navbar-toggler {
+    border: none;
+    &:focus {
+      outline: none;
+    }
+    .burger-icon {
+      width: 30px;
+      height: 2px;
+      background-color: #8d2429;
+      display: block;
+      transition: transform 500ms ease;
+      &:nth-child(1) {
+        margin-top: 2px;
+      }
+      &:nth-child(2) {
+        margin-top: 5px;
+      }
+      &:nth-child(3) {
+        margin-top: 5px;
+      }
+    }
+    &.abierto {
+      .burger-icon {
+        width: 28px;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+          margin-top: -2px;
+        }
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  nav.mobile {
+    background-color: #8d2429;
+    opacity: 0.9;
+    padding: 1rem;
+    position: absolute;
+    top: -1100px;
+    transition: top 300ms ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 500;
+    display: block;
+    width: 100%;
+    height: calc(100vh - 86px);
+    &.show {
+      top: 86px;
+    }
+    ul {
+      .nav-item {
+        text-align: center;
+        margin-bottom: 1rem;
+        .ng-fa-icon {
+          display: inline-flex;
+          align-items: center;
+          color: white;
+          vertical-align: middle;
+        }
+        .input-search {
+          display: inline-flex;
+          width: initial;
+          height: initial;
+          border: none;
+          border-bottom: solid 1px white;
+          font-weight: 600;
+          font-size: 22px;
+          border-radius: 0;
+          padding-left: 0;
+          margin-left: 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .nav-link {
+        font-size: 22px;
+        color: white;
+        font-weight: 600;
+      }
+      .btn-outline-light {
+        padding: 5px 30px;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .navbar .navbar-brand img {
+    width: 60px;
+  }
+}

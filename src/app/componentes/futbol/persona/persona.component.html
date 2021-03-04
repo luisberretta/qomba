@@ -1,0 +1,9 @@
+<div *ngIf="modeloSVG">
+  <div *ngIf="paso != 'modelo' && paso != 'resumen-precio'" class="text-right">Modelo: <strong>{{ modeloSeleccionado?.nombre }}</strong></div>
+  <div #dataContainer class="row" [hidden]="ocultarModelo">
+    <div class="col-12" #remera [innerHTML]="modeloSVG">
+    </div>
+  </div>
+</div>
+
+
