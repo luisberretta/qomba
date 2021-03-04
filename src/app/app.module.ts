@@ -16,7 +16,7 @@ import { MediasComponent } from './componentes/futbol/medias/medias.component';
 import { WizardComponent } from './componentes/futbol/wizard.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PersonaComponent } from './componentes/futbol/persona/persona.component';
-import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HomeComponent } from './componentes/home/home.component';
 import { PaginaNoEncontradaComponent } from './componentes/pagina-no-encontrada/pagina-no-encontrada.component';
 import {NgxUiLoaderModule} from "ngx-ui-loader";
@@ -25,6 +25,7 @@ import {ColorCircleModule} from "ngx-color/circle";
 import { NgxColorsModule } from 'ngx-colors';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SlickCarouselModule} from "ngx-slick-carousel";
+import { NgxImageCompressorModule } from 'ngx-image-compressor';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
     NgxColorsModule,
     HttpClientModule,
     AlifeFileToBase64Module,
-    SlickCarouselModule
+    SlickCarouselModule,
+    NgxImageCompressorModule
   ],
   providers: [],
   bootstrap: [AppComponent],

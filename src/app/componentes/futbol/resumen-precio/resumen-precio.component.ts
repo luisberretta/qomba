@@ -64,7 +64,8 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
     this.vistaResumenPrecio.get('precioShort').setValue(this.obtenerPrecioFormateado(this.formPasoResumenPrecio.get('precioShort').value));
     this.vistaResumenPrecio.get('precioMedias').setValue(this.obtenerPrecioFormateado(this.formPasoResumenPrecio.get('precioMedias').value));
     this.vistaResumenPrecio.get('precioConjunto').setValue(this.obtenerPrecioFormateado(this.calcularPrecioConjunto()));
-    this.vistaResumenPrecio.get('precioTotal').setValue(this.obtenerPrecioFormateado(this.calcularPrecioTotal()));
+    this.vistaResumenPrecio.get('precioTotal').setValue(this.calcularPrecioTotal());
+    this.vistaResumenPrecio.get('precioTotal').setValue(this.obtenerPrecioFormateado(this.precioTotal));
   }
 
   get cantidadJugadores(){
@@ -99,7 +100,7 @@ export class ResumenPrecioComponent implements OnInit, OnChanges {
   }
 
   calcularPrecioTotal(){
-    return this.precioConjunto * this.cantidadJugadores;
+    return (this.precioConjunto * this.cantidadJugadores);
   }
 
   anterior() {

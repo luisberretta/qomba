@@ -2,7 +2,7 @@ import {Component, OnInit, Output, ViewChild} from '@angular/core';
 import {Pedido} from "../../clases/Pedido";
 import {WizardService} from "../../servicios/wizard.service";
 import {PersonaComponent} from "./persona/persona.component";
-import {svgAsPngUri} from 'save-svg-as-png';
+import {svgAsDataUri} from 'save-svg-as-png';
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {Router} from "@angular/router";
 import {ModeloComponent} from "./modelo/modelo.component";
@@ -16,7 +16,8 @@ import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component"
 import {NgxUiLoaderService} from "ngx-ui-loader";
 import {indumentariaInferior} from "../../clases/IndumentariaInferior";
 import {tipografias} from "../../clases/Tipografia";
-import {EventEmitter} from "events";
+import {CompressorConfig, ImageCompressorService} from 'ngx-image-compressor';
+import {GeneratedFile, ParseSourceFile} from "@angular/compiler";
 
 @Component({
   selector: 'app-wizard',
@@ -43,9 +44,6 @@ export class WizardComponent implements OnInit {
   modeloElegido: any;
   modalRef: NgbModalRef;
   modalText: string;
-  canvas = document.createElement("canvas");
-  ctx = null;
-  img = document.createElement("img");
 
   @ViewChild('template', {static: true}) modalTemplate;
   @ViewChild(PersonaComponent) personaComponent: PersonaComponent;
@@ -58,12 +56,12 @@ export class WizardComponent implements OnInit {
   @ViewChild(ResumenPrecioComponent) resumenPrecioComponent: ResumenPrecioComponent;
 
   constructor(private wizardService: WizardService, private modalService: NgbModal,
-              private router: Router, private ngxLoader: NgxUiLoaderService) {
+              private router: Router, private ngxLoader: NgxUiLoaderService,
+              private imageCompressor: ImageCompressorService) {
 
   }
 
   ngOnInit(): void {
-    this.ctx = this.canvas.getContext("2d");
   }
 
   siguiente(event?) {
@@ -274,7 +272,7 @@ export class WizardComponent implements OnInit {
 
   generarPedidoShort(formShort) {
     this.pedido.agregarShort = !!formShort.agregarShort;
-    this.pedido.imagenEscudo = formShort.escudoShort? formShort.escudoShort : this.pedido.imagenEscudo;
+    this.pedido.imagenEscudo = formShort.escudoShort ? formShort.escudoShort : this.pedido.imagenEscudo;
     this.pedido.agregarEscudoShort = !!formShort.agregarEscudoShort;
     this.pedido.agregarNumeroShort = !!formShort.agregarNumeroShort;
     for (let i = 0; i < formShort.partesShortSVG.length; i++) {
@@ -324,39 +322,36 @@ export class WizardComponent implements OnInit {
     this.pedido.cantidadEquipo = formEquipo.cantidadEquipo;
   }
 
-  generarPedido() {
+  async generarPedido() {
     this.ngxLoader.start();
     let svgImage = this.personaComponent.generarImagen();
-    svgAsPngUri(svgImage, "svg.png").then((data) => {
-      fetch(data).then(res=> res.blob()).then( blob => {
-        let fileSVG = new File([blob], "imagenSVG",{type:"image/png"});
-
-        let pedido = this.confeccionarPedido();
-        let formData = new FormData();
-        formData.append("pedido",pedido);
-        formData.append("fileSVG", fileSVG);
-        formData.append("fileEscudo",this.pedido.archivoEscudo);
-        this.wizardService.generarPedido(formData).subscribe((data) => {
-            this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
-            this.abrirModal();
-            this.ngxLoader.stop();
-            if (data) {
-              console.log("La operación se realizó con éxito.");
-            }
-          },
-          (error) => {
-            this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
-            this.abrirModal();
-            this.ngxLoader.stop();
-          });
+    let blob = new Blob([svgImage.outerHTML], {type: "image/svg+xml"});
+    // let archivo = new File([blob], 'imageSVG', {type: ""});
+    // console.log(archivo);
+    let fileSVG = new File([blob], "imagenSVG.svg", {type: "image/svg"});
+    let config: CompressorConfig = {orientation: 1, ratio: 50, quality: 50, enableLogs: true};
+    // let svgComprimida: File = await this.imageCompressor.compressFile(fileSVG, config);
+    let pedido = this.confeccionarPedido();
+    let formData = new FormData();
+    formData.append("pedido", pedido);
+    formData.append("fileSVG", fileSVG);
+    formData.append("fileEscudo", this.pedido.archivoEscudo);
+    this.wizardService.generarPedido(formData).subscribe((data) => {
+        this.modalText = "Gracias por tu compra. Un asesor te contactará en 24 horas para coordinar el pago y el plazo de espera. Equipo Qomba.";
+        this.abrirModal();
+        this.ngxLoader.stop();
+        if (data) {
+          console.log("La operación se realizó con éxito.");
+        }
+      },
+      (error) => {
+        this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
+        this.abrirModal();
+        this.ngxLoader.stop();
       });
-      this.img.setAttribute("src",data);
-      this.ctx.drawImage(this.img,0,0);
-      this.pedido.imagenSvg = this.canvas.toDataURL("image/png",0.5);
-    });
   }
 
-  confeccionarPedido(){
+  confeccionarPedido() {
     return JSON.stringify({
       nombreCliente: this.pedido.nombreContacto,
       celular: this.pedido.telefonoContacto,
@@ -534,12 +529,12 @@ export class WizardComponent implements OnInit {
       modelo: this.pedido.modelo.nombre,
       cantidadJugadores: this.pedido.cantidadEquipo,
       precioCamiseta: this.pedido.cantidadEquipo > 6 ? this.pedido.modelo.precioMayorista : this.pedido.modelo.precioIndividual,
-      precioShort: this.pedido.cantidadEquipo> 6 ? this.pedido.agregarShort ? indumentariaInferior[0].precioMayorista : 0 : this.pedido.agregarShort? indumentariaInferior[0].precioIndividual : 0,
+      precioShort: this.pedido.cantidadEquipo > 6 ? this.pedido.agregarShort ? indumentariaInferior[0].precioMayorista : 0 : this.pedido.agregarShort ? indumentariaInferior[0].precioIndividual : 0,
       precioMedias: indumentariaInferior[1].precioIndividual,
     }
   }
 
-  agregarPrecioTotal(precioTotal){
+  agregarPrecioTotal(precioTotal) {
     this.pedido.precioTotal = precioTotal;
   }
 
