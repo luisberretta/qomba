@@ -13,7 +13,7 @@ import {ShortComponent} from "./short/short.component";
 import {EquipoComponent} from "./equipo/equipo.component";
 import {MediasComponent} from "./medias/medias.component";
 import {ResumenPrecioComponent} from "./resumen-precio/resumen-precio.component";
-import {NgxUiLoaderConfig, NgxUiLoaderService} from "ngx-ui-loader";
+import {NgxUiLoaderService} from "ngx-ui-loader";
 import {indumentariaInferior} from "../../clases/IndumentariaInferior";
 import {tipografias} from "../../clases/Tipografia";
 import {CompressorConfig, ImageCompressorService} from 'ngx-image-compressor';
@@ -322,7 +322,7 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedido() {
-    this.ngxLoader.start()
+    this.ngxLoader.startLoader('loader-pedido');
     let svgImage = this.personaComponent.generarImagen();
     svgAsPngUri(svgImage, "svg.png").then((data) => {
       fetch(data).then(res=> res.blob()).then(async blob => {
@@ -335,14 +335,14 @@ export class WizardComponent implements OnInit {
         formData.append("fileSVG", svgComprimida);
         formData.append("fileEscudo", this.pedido.archivoEscudo);
         this.wizardService.generarPedido(formData).subscribe((data) => {
-            this.modalText = "Gracias por tu pedido ! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega. Equipo Qomba Sport.";
+            this.modalText = "Gracias por tu pedido ! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega.";
             this.abrirModal();
-            this.ngxLoader.stop();
+            this.ngxLoader.stopLoader('loader-pedido');
           },
           (error) => {
             this.modalText = "Ocurrió un error al procesar el pedido, por favor intente nuevamente en unos minutos."
             this.abrirModal();
-            this.ngxLoader.stop();
+            this.ngxLoader.stopLoader('loader-pedido');
           });
       });
     });

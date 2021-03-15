@@ -2,6 +2,7 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 <ngx-ui-loader fgsColor="#8d2429" bgsType="ball-spin-clockwise-fade-rotating"></ngx-ui-loader>
+<ngx-ui-loader fgsColor="#8d2429" bgsType="ball-spin-clockwise-fade-rotating" [text]="'Procesando pedido, puede demorar unos minutos..'" [loaderId]="'loader-pedido'"></ngx-ui-loader>
 <ng-template #template let-modal>
   <div class="modal-header border-bottom">
     <h4 class="text-center">¿Quieres abandonar el armado de tu camiseta?</h4>

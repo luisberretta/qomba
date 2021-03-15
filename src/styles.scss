@@ -104,6 +104,10 @@ input.form-control, select.form-control {
   border: solid 1px black;
 }
 
+.ngx-loading-text {
+  font-size: 1rem !important;
+}
+
 ngx-colors .app-color-picker .preview {
   box-shadow: none !important;
   padding: 0 !important;
