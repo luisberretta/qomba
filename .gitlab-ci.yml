@@ -14,12 +14,15 @@ before_script:
 build_master:
   stage: build
   script:
-  - npm run build
+  - npm run build --prod
   only: ['master']
 
 # Job Two for deploy build to server
 deploy_master:
+  image: python:latest 
   stage: deploy
+  before_script:
+    - pip install awscli 
   script:
-    - echo "deploy Build"
+    - aws s3 sync ./dist s3://qomba/ --acl=public-read --delete
   only: ['master']
