@@ -7,7 +7,6 @@ import {
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../../clases/ColorParte";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-persona',
@@ -17,7 +16,7 @@ import {Router} from "@angular/router";
 export class PersonaComponent implements OnInit {
 
   ESCUDO_DELANTERO = "Remera_escudo";
-  VALORES_ESTAMPA = ['Número_espalda','Número_delantero','Nombre','Short_número'];
+  VALORES_ESTAMPA = ['Número_espalda', 'Número_delantero', 'Nombre', 'Short_número'];
   modeloSVG: any;
   url: string = '/assets/images/modelosSVG/';
   modeloSeleccionado: any;
@@ -29,7 +28,7 @@ export class PersonaComponent implements OnInit {
   @Input() posicionEscudoCamiseta;
   imgUrl: any;
 
-  constructor(private svgService: SvgService,private sanitizer: DomSanitizer) {
+  constructor(private svgService: SvgService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -39,7 +38,7 @@ export class PersonaComponent implements OnInit {
     this.modeloSeleccionado = modelo;
     this.modeloSVG = null;
     this.svgService.obtenerSVG(this.url + modelo.urlSvg).subscribe((data) => {
-      this.modeloSVG =this.sanitizer.bypassSecurityTrustHtml(data);
+      this.modeloSVG = this.sanitizer.bypassSecurityTrustHtml(data);
     });
   }
 
@@ -75,13 +74,13 @@ export class PersonaComponent implements OnInit {
   cambiarColorEstampa(cambiar) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if(this.perteneceEstampado(grupos[i]))
+      if (this.perteneceEstampado(grupos[i]))
         grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
     }
   }
 
-  perteneceEstampado(grupo){
-    return this.VALORES_ESTAMPA.find(x=> x == grupo.id);
+  perteneceEstampado(grupo) {
+    return this.VALORES_ESTAMPA.find(x => x == grupo.id);
   }
 
   visualizarEstampado(visualizar) {
@@ -101,25 +100,38 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     let estampado = grupos.namedItem(posicion.parte);
     if (estampado.id == this.ESCUDO_DELANTERO) {
-      estampado = estampado.getElementsByTagName('image').namedItem('escudo');
+      estampado = estampado.getElementsByTagName('image')[0];
     } else {
-      estampado = estampado.getElementsByTagName('text').namedItem('numero');
+      estampado = estampado.getElementsByTagName('text')[0];
     }
     let svgMatrix = null;
-    let coloresModelo = coloresParte.find(x=> x.idModelo == this.modeloSeleccionado.id).partes;
+    let coloresModelo = [];
+    let posicionesTipografia = [];
+    let posicionTipografia = null;
+    let posicionesEscudo = null;
+    coloresModelo = coloresParte.find(x => x.idModelo == this.modeloSeleccionado.id).partes;
+    posicionesTipografia = coloresModelo.find(x => x.idParte == posicion.parte).posicionesTipografia;
+    if (posicionesTipografia.length) {
+      posicionTipografia = posicionesTipografia.find(x => x.tipografia == posicion.tipografia);
+    } else {
+      posicionesEscudo = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix;
+    }
     switch (posicion.posicion) {
       case 'Centro':
-        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
+        svgMatrix = posicionTipografia ? posicionTipografia.posicionMatrix.centro : posicionesEscudo.centro;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
       case 'Derecha':
-        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
+        svgMatrix = posicionTipografia ? posicionTipografia.posicionMatrix.derecha : posicionesEscudo.derecha;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
       case 'Izquierda':
-        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
+        svgMatrix = posicionTipografia ? posicionTipografia.posicionMatrix.izquierda : posicionesEscudo.izquierda;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
+      case 'Unica':
+        svgMatrix = posicionTipografia.posicionMatrix.unica;
+        this.cambiarMatrix(estampado, svgMatrix)
     }
   }
 
@@ -174,11 +186,14 @@ export class PersonaComponent implements OnInit {
   cambiarTipografia(tipografia) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if(this.perteneceTipografia(grupos[i].id)) {
-        if(tipografia == 'Sablon') {
-          tipografia = 'SablonUp-College';
+      if (this.perteneceTipografia(grupos[i].id)) {
+        grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia.tipografia);
+        let visualizar = {
+          parte: grupos[i].id,
+          tipografia: tipografia.tipografia,
+          posicion: grupos[i].id == "Número_delantero" ? tipografia.posicion : 'Unica',
         }
-        grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia);
+        this.posicionEstampado(visualizar);
       }
     }
   }

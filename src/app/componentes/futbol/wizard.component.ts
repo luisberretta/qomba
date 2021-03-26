@@ -392,7 +392,9 @@ export class WizardComponent implements OnInit {
       if (this.perteneceRemera(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
+          let partes = [];
+          partes = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes
+          let parteColores = partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
@@ -438,7 +440,9 @@ export class WizardComponent implements OnInit {
       if (this.perteneceShort(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
+          let partes = [];
+          partes = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes
+          let parteColores = partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
@@ -476,7 +480,9 @@ export class WizardComponent implements OnInit {
       if (this.perteneceMedias(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
+          let partes = [];
+          partes = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes
+          let parteColores = partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;

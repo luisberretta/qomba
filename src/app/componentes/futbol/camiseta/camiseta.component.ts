@@ -39,9 +39,9 @@ export class CamisetaComponent implements OnInit, OnChanges {
   NOMBRE_ESPALDA = "Nombre";
   ESCUDO_DELANTERO = "Remera_escudo";
   coloresLetrasYNumeros = ["#FFFF00", "#00FF0F", "#050fdf",
-                          "#db0606", "#FF8000", "#F300FF",
-                          "#8A571B", "#E303CC", "#9203E3",
-                          "#67636A", "#000000","#FFFFFF"];
+    "#db0606", "#FF8000", "#F300FF",
+    "#8A571B", "#E303CC", "#9203E3",
+    "#67636A", "#000000", "#FFFFFF"];
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
@@ -59,8 +59,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
     valor: null,
     parte: null,
     posicionOcupada: null,
-    posicion: null
+    posicion: null,
+    tipografia: null,
   }
+  posicionNumeroActual = null;
   submit: boolean = false;
   formatoEscudoInvalido: boolean = false;
 
@@ -100,27 +102,35 @@ export class CamisetaComponent implements OnInit, OnChanges {
             this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(this.visualizar.posicion);
           }
         }
+        this.posicionNumeroActual = this.visualizar.posicion;
       } else {
         this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(null);
       }
+      this.visualizar.tipografia = this.obtenerTipoletra();
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNombreEspalda').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NOMBRE_ESPALDA;
+      this.visualizar.tipografia = this.obtenerTipoletra();
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNumeroEspalda').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NUMERO_ESPALDA;
+      this.visualizar.tipografia = this.obtenerTipoletra();
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
     });
 
     this.formPasoCamiseta.get('tipoLetra').valueChanges.subscribe((valor) => {
-      this.cambiarTipografia.emit(valor);
+      let tipografia = {
+        tipografia : valor,
+        posicion : this.posicionNumeroActual,
+      }
+      this.cambiarTipografia.emit(tipografia);
     });
 
     this.formPasoCamiseta.get('posicionEscudoDelantero').valueChanges.subscribe((valor) => {
@@ -139,6 +149,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
       if (valor) {
         this.visualizar.valor = true;
         this.visualizar.posicion = valor;
+        this.visualizar.tipografia = this.obtenerTipoletra();
         this.visualizar.parte = this.NUMERO_DELANTERO;
         this.posicionesEscudo = this.posicionesEscudo.filter(x => x != this.visualizar.posicion);
         this.visualizarEstampado.emit(this.visualizar);
@@ -168,13 +179,12 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? "SablonUp-College");
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
-    if (this.colorRemera == "#000000"){
-      if(this.llevaEstampado){
+    if (this.colorRemera == "#000000") {
+      if (this.llevaEstampado) {
         this.formPasoCamiseta.get('colorEstampado').setValue("#FFFFFF");
       }
-    }
-    else {
-      if(this.llevaEstampado){
+    } else {
+      if (this.llevaEstampado) {
         this.formPasoCamiseta.get('colorEstampado').setValue("#000000");
       }
     }
@@ -203,10 +213,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   cambiarColor(color) {
-      let cambio = {
-        color: color,
-        esEstampa: true,
-      }
+    let cambio = {
+      color: color,
+      esEstampa: true,
+    }
     this.colorSeleccionado.emit(cambio);
   }
 
@@ -234,10 +244,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
     return this.formPasoCamiseta.get('posicionEscudoDelantero').value;
   }
 
-  get colorEstampa() {
-    return this.formPasoCamiseta.get('colorEstampa').value;
-  }
-
   get colorRemera() {
     return this.formPasoCamiseta.get('colorRemera').value;
   }
@@ -254,6 +260,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
         this.visualizar.posicion = "Centro";
         break;
     }
+  }
+
+  obtenerTipoletra() {
+    return this.formPasoCamiseta.get('tipoLetra').value;
   }
 
   configurarValidadores() {
