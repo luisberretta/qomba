@@ -5,8 +5,15 @@ image: node:latest
 stages:
   - build
   - deploy
-  
-# This command is run before the execution of stages   
+
+# caching for reuse
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - dist/
+
+# This command is run before the execution of stages
 before_script:
   - npm install
 
@@ -19,10 +26,10 @@ build_master:
 
 # Job Two for deploy build to server
 deploy_master:
-  image: python:latest 
+  image: python:latest
   stage: deploy
   before_script:
-    - pip install awscli 
+    - pip install awscli
   script:
     - aws s3 sync ./dist s3://qomba/ --acl=public-read --delete
   only: ['master']
