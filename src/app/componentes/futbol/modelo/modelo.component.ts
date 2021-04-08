@@ -83,8 +83,8 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   generarFormulario(formModelo) {
-    setTimeout(()=> {
-      this.slick.slickGoTo(formModelo.modelo.id - 1)
+    setTimeout(() => {
+      this.slick.slickGoTo(formModelo.modelo.id - 1);
     }, 100);
 
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
