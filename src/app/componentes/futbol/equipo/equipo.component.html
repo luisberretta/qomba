@@ -26,6 +26,7 @@
       </div>
     </div>
   </div>
+  <a (click)="open(modalPrecios)" class="btn link-talles pl-0">Ver listado de talles<i class="fas fa-info-circle pl-2"></i></a>
   <div class="form-group tabla-equipo">
     <div class="row titulos">
       <div class="col border-right text-center" placement="top" ngbTooltip="{{ !formEquipo.llevaNombreCamiseta ? 'Tu diseño no tiene esta opción' : '' }}" triggers="click">
@@ -115,13 +116,13 @@
     </div>
   </fieldset>
 </form>
-<ng-template #content let-modal>
+<ng-template #modalPrecios let-modal>
+  <div class="modal-header pb-0">
+    <button type="button" class="close" aria-label="Close" (click)="modal.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
   <div class="modal-body text-center">
     <h4 class="text-white">Listado de talles</h4>
-    <div class="row justify-content-center">
-      <div class="col-md-5 col-10">
-        <button type="button" class="btn btn-naranja btn-block mt-3" (click)="modal.close()">OK</button>
-      </div>
-    </div>
   </div>
 </ng-template>

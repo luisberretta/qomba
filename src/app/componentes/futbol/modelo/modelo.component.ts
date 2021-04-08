@@ -36,7 +36,8 @@ export class ModeloComponent implements OnInit, OnChanges {
   detallePrecioId: number;
   mobile: boolean = false;
   modalRef: NgbModalRef;
-  modalText: string;
+  imgZoom: string;
+  imgZoomAlt: string;
   @ViewChild('template', { static: true }) modalTemplate;
   @ViewChild('slickModal') slick: SlickCarouselComponent;
   slideConfig = {
@@ -135,7 +136,8 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   aumentarZoom(camiseta) {
     this.abrirModal();
-    this.modalText = camiseta.urlZoom;
+    this.imgZoom = camiseta.urlZoom;
+    this.imgZoomAlt = camiseta.urlZoomAlt;
   }
 
   detalle(modeloId) {

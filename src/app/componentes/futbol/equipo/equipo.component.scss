@@ -3,6 +3,10 @@
   cursor: pointer;
 }
 
+.link-talles {
+  text-decoration: underline;
+}
+
 .tabla-equipo {
   max-height: 450px;
   .titulos {
@@ -10,11 +14,6 @@
     padding-top: 8px;
     padding-bottom: 8px;
   }
-}
-
-.fa-info-circle {
-  cursor: pointer;
-  color: #8d2429;
 }
 
 .form-control:disabled {
