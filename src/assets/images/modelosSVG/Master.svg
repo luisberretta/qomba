@@ -423,7 +423,7 @@ YII=" transform="matrix(0.3018 -3.972827e-02 3.711764e-02 0.2819 768.5872 1383.3
 <g id="Número_delantero" visibility="hidden">
 	<text id="numero" transform="matrix(1 0 0 1 702.6883 583.8918)" display="inline" font-family="'SablonUp-College'" font-size="100px">10</text>
 </g>
-<g id="Numero_espalda" visibility="hidden">
+<g id="Número_espalda" visibility="hidden">
 	<text id="numero" transform="matrix(1 0 0 1 1467.8 684.9999)" display="inline" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
 <g id="GENERICO">
