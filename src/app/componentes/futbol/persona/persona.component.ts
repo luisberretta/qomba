@@ -54,6 +54,7 @@ export class PersonaComponent implements OnInit {
         let polygon = grupos[i].getElementsByTagName('polygon');
         let line = grupos[i].getElementsByTagName('line');
         let polyline = grupos[i].getElementsByTagName('polyline');
+        let ellipse = grupos[i].getElementsByTagName('ellipse');
         for (let j = 0; j < paths.length; j++) {
           paths[j].setAttribute('fill', cambiar.color);
         }
@@ -66,6 +67,9 @@ export class PersonaComponent implements OnInit {
         for (let j = 0; j < polyline.length; j++) {
           polyline[j].setAttribute('fill', cambiar.color);
         }
+        for (let j = 0; j < ellipse.length; j++) {
+          ellipse[j].setAttribute('fill',cambiar.color);
+        }
         grupos[i].classList.remove('parte-seleccionada');
       }
     }
@@ -77,6 +81,13 @@ export class PersonaComponent implements OnInit {
       if (this.perteneceEstampado(grupos[i]))
         grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
     }
+  }
+
+  cambiarColorNumeroShort(color){
+    let grupos = this.obtenerGrupos();
+    let estampado = grupos.namedItem("Short_número");
+    let shortNumero = estampado.getElementsByTagName('text')[0];
+    shortNumero.setAttribute('fill',color);
   }
 
   perteneceEstampado(grupo) {
@@ -187,6 +198,7 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
       if (this.perteneceTipografia(grupos[i].id)) {
+        this.cambiarTamañoTipografia(tipografia,grupos[i]);
         grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia.tipografia);
         let visualizar = {
           parte: grupos[i].id,
@@ -195,6 +207,21 @@ export class PersonaComponent implements OnInit {
         }
         this.posicionEstampado(visualizar);
       }
+    }
+  }
+
+  cambiarTamañoTipografia(tipografia,grupo){
+    if(grupo.id == 'Número_espalda'){
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroEspalda);
+    }
+    if(grupo.id == 'Nombre'){
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNombre);
+    }
+    if(grupo.id == 'Short_número'){
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroShort);
+    }
+    if(grupo.id == 'Número_delantero'){
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroDelantero);
     }
   }
 

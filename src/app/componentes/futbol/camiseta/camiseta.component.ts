@@ -126,8 +126,13 @@ export class CamisetaComponent implements OnInit, OnChanges {
     });
 
     this.formPasoCamiseta.get('tipoLetra').valueChanges.subscribe((valor) => {
+      let tipoLetra = this.tiposLetra.find(x => x.valor == valor);
       let tipografia = {
-        tipografia : valor,
+        tipografia : tipoLetra.valor,
+        fontSizeNumeroDelantero : tipoLetra.fontSizeNumeroDelantero,
+        fontSizeNumeroShort : tipoLetra.fontSizeNumeroShort,
+        fontSizeNumeroEspalda : tipoLetra.fontSizeNumeroEspalda,
+        fontSizeNombre: tipoLetra.fontSizeNombre,
         posicion : this.posicionNumeroActual,
       }
       this.cambiarTipografia.emit(tipografia);

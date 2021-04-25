@@ -26,12 +26,18 @@ export class ShortComponent implements OnInit, OnChanges {
   @Output() archivoEscudo = new EventEmitter();
   @Output() visualizarEstampado = new EventEmitter();
   @Output() colorSeleccionado = new EventEmitter();
+  @Output() cambiarColorNumeroShort = new EventEmitter();
 
 
   ESCUDO_SHORT = "Short_escudo";
   NUMERO_SHORT = "Short_número";
   selectedColor: string = 'black';
   formatoEscudoInvalido: boolean = false;
+
+  coloresShort = ["#FFFF00", "#00FF0F", "#050fdf",
+    "#db0606", "#FF8000", "#F300FF",
+    "#8A571B", "#E303CC", "#9203E3",
+    "#67636A", "#000000", "#FFFFFF"];
 
   formPasoShort: FormGroup = new FormGroup({
     agregarShort: new FormControl(null,),
@@ -40,6 +46,7 @@ export class ShortComponent implements OnInit, OnChanges {
     escudoShort: new FormControl(''),
     agregarNumeroShort: new FormControl(''),
     partesShortSVG: new FormArray([]),
+    colorNumeroShort: new FormControl(null)
   });
 
 
@@ -92,6 +99,7 @@ export class ShortComponent implements OnInit, OnChanges {
     this.formPasoShort.get('agregarEscudoDelantero').setValue(formShort.llevaEscudoDelantero ?? null);
     this.formPasoShort.get('agregarEscudoShort').setValue(formShort.agregarEscudoShort ?? null);
     this.formPasoShort.get('agregarNumeroShort').setValue(formShort.agregarNumeroShort ?? null);
+    this.formPasoShort.get('colorNumeroShort').setValue(formShort.colorNumeroShort ?? null);
     this.crearFormPartesArray(formShort.partesShortSVG);
   }
 
@@ -124,12 +132,20 @@ export class ShortComponent implements OnInit, OnChanges {
     }
   }
 
+  cambiarColorShort(color) {
+    if (color) {
+      this.cambiarColorNumeroShort.emit(color);
+    }
+  }
+
   siguiente() {
     this.submit = true;
     if (this.formPasoShort.valid) {
       this.proximoPaso.emit(this.formPasoShort.value);
     }
   }
+
+
 
   anterior() {
     this.anteriorPaso.emit(this.formPasoShort.value);
@@ -149,6 +165,10 @@ export class ShortComponent implements OnInit, OnChanges {
 
   get agregarEscudoDelantero() {
     return this.formPasoShort.get('agregarEscudoDelantero').value;
+  }
+
+  get colorNumeroShort() {
+    return this.formPasoShort.get('colorNumeroShort').value;
   }
 
   open(content) {

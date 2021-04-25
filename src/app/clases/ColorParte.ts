@@ -5,7 +5,7 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#FFFFFF",
+        color: '#FFFFFF',
         colores: ["#FFFFFF"],
         posicionesTipografia: {},
         posicionMatrix: {}
@@ -78,8 +78,6 @@ export const coloresParte = [
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -96,13 +94,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1523.4911, 435.5717]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1524.2139, 443.0332]
             }
           }
         ]
@@ -110,8 +108,6 @@ export const coloresParte = [
       {
         idParte: "Número_espalda",
         nombreMostrar: "Número espalda",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -128,13 +124,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1516.4517, 737.7069]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1543.1255, 780.9069]
             }
           }
         ]
@@ -164,17 +160,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1,0, 0, 1, 408.9523, 523.048],
+              izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
+              centro: [1, 0, 0, 1, 578.3077, 606.3109]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 408.9523, 523.048],
+              izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
+              centro: [1, 0, 0, 1, 578.3077, 606.3109]
             }
           }
         ]
@@ -320,13 +316,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1528.0122, 404.6837]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1519.2363, 443.0332]
             }
           }
         ]
@@ -352,13 +348,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1520.9728, 706.8189]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1539.1025, 780.9069]
             }
           }
         ]
@@ -388,17 +384,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 408.9524, 559.0714],
+              izquierda: [1, 0, 0, 1, 707.7036, 564.0714],
+              centro: [1, 0, 0, 1, 579.3332, 610.4213]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.5283, 545.0519],
-              izquierda: [1, 0, 0, 1, 734.6883, 542.891],
-              centro: [1, 0, 0, 1, 572.6883, 586.0919]
+              derecha: [1, 0, 0, 1, 400.8062, 543.668],
+              izquierda: [1, 0, 0, 1, 706.1825, 594.9594],
+              centro: [1, 0, 0, 1, 580.7261, 614.2993]
             }
           }
         ],
@@ -554,13 +550,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1523.3981, 467.3575]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1523.9518, 442.8033]
             }
           }
         ]
@@ -586,13 +582,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1516.3586, 769.4927]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1535.818, 780.6769]
             }
           }
         ]
@@ -622,17 +618,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 400.9633, 544.5186],
+              izquierda: [1, 0, 0, 1, 713.491, 548.1772],
+              centro: [1, 0, 0, 1, 583.6071, 597.2949]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 402.8883, 555.6719],
-              izquierda: [1, 0, 0, 1, 735.5283, 554.2319],
-              centro: [1, 0, 0, 1, 568.3677, 608.9518]
+              derecha: [1, 0, 0, 1, 413.2346, 552.2189],
+              izquierda: [1, 0, 0, 1, 735.086, 552.2191],
+              centro: [1, 0, 0, 1, 583.3941, 605.0342]
             }
           }
         ],
@@ -777,13 +773,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1513.2628, 451.0859]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1526.6388, 442.8033]
             }
           }
         ]
@@ -809,13 +805,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1521.9141, 746.2208]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1538.505, 780.6769]
             }
           }
         ]
@@ -845,17 +841,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 407.3062, 550.1547],
+              izquierda: [1, 0, 0, 1, 734.0341, 550.1959],
+              centro: [1, 0, 0, 1, 572.2901, 593.1933]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 413.4681, 544.9119],
-              izquierda: [1, 0, 0, 1, 733.1481, 540.5919],
-              centro: [1, 0, 0, 1, 573.6281, 575.1519]
+              derecha: [1, 0, 0, 1, 415.8825, 554.0864],
+              izquierda: [1, 0, 0, 1, 735.0861, 558.5504],
+              centro: [1, 0, 0, 1, 579.2914, 592.487]
             }
           }
         ],
@@ -1000,13 +996,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1511.6979, 443.0333]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1525.8842, 438.5771]
             }
           }
         ]
@@ -1032,13 +1028,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1518.8232, 740.7808]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1537.7504, 776.4507]
             }
           }
         ]
@@ -1068,17 +1064,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 407.3999, 545.4331],
+              izquierda: [1, 0, 0, 1, 730.3798, 545.4333],
+              centro: [1, 0, 0, 1, 572.4399, 608.3988]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 412.1, 553.9713],
-              izquierda: [1, 0, 0, 1, 704.5998, 552],
-              centro: [1, 0, 0, 1, 583.0999, 593.5001]
+              derecha: [1, 0, 0, 1, 408.9524, 549.7021],
+              izquierda: [1, 0, 0, 1, 756.809, 549.7024],
+              centro: [1, 0, 0, 1, 577.1969, 594.9788]
             }
           }
         ],
@@ -1223,13 +1219,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1509.7548, 439.0403]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1526.6388, 450.7646]
             }
           }
         ]
@@ -1255,13 +1251,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1516.8801, 736.7877]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1538.505, 788.6383]
             }
           }
         ]
@@ -1291,17 +1287,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 413.2347, 541.4404],
+              izquierda: [1, 0, 0, 1, 730.3801, 541.4402],
+              centro: [1, 0, 0, 1, 578.3074, 600.657]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 400.6424, 526.5392],
-              izquierda: [1, 0, 0, 1, 730.6883, 526.8918],
-              centro: [1, 0, 0, 1, 579.3328, 562.0125]
+              derecha: [1, 0, 0, 1, 393.3276, 542.7787],
+              izquierda: [1, 0, 0, 1, 744.4818, 549.7025],
+              centro: [1, 0, 0, 1, 584.8476, 593.8187]
             }
           }
         ],
@@ -1431,13 +1427,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1437.0789, 396.5731]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1514.2841, 455.4656]
             }
           }
         ]
@@ -1463,13 +1459,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1444.2042, 694.3206]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1526.1503, 793.339]
             }
           }
         ]
@@ -1499,17 +1495,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 317.7809, 504.9729],
+              izquierda: [1, 0, 0, 1, 651.7809, 498.9729],
+              centro: [1, 0, 0, 1, 506.7809, 543.9729]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 361.8751, 488.2667],
-              izquierda: [1, 0, 0, 1, 656.6251, 488.2667],
-              centro: [1, 0, 0, 1, 510.1251, 488.2667]
+              derecha: [1, 0, 0, 1, 346.4592, 494.8961],
+              izquierda: [1, 0, 0, 1, 669.4592, 501.8961],
+              centro: [1, 0, 0, 1, 582.4653, 587.7681]
             }
           }
         ],
@@ -1654,13 +1650,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1512.7296, 450.1786]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1534.6395, 442.8035]
             }
           }
         ]
@@ -1686,13 +1682,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1519.855, 747.926]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1546.5057, 780.6772]
             }
           }
         ]
@@ -1722,17 +1718,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 401.0977, 553.0424],
+              izquierda: [1, 0, 0, 1, 722.753, 547.339],
+              centro: [1, 0, 0, 1, 578.3077, 610.4211]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 737.3083, 549.8518],
-              centro: [1, 0, 0, 1, 574.4484, 586.4117]
+              derecha: [1, 0, 0, 1, 413.2346, 543.2734],
+              izquierda: [1, 0, 0, 1, 743.231, 543.2732],
+              centro: [1, 0, 0, 1, 593.3549, 599.5085]
             }
           }
         ],
@@ -1788,15 +1784,15 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#E2E5E5",
+        colores: ["#E2E5E5", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_banda_central",
-        nombreMostrar: "Remera banda",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        idParte: "Remera_estampa",
+        nombreMostrar: "Remera bandas verticales",
+        color: "#070A35",
+        colores: ["#ffffff", "#000000", "#070A35", "#FF0000"],
         posicionMatrix: {}
       },
       {
@@ -1809,57 +1805,55 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#E2E5E5",
+        colores: ["#E2E5E5", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#0A0A0A",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#E2E5E5",
+        colores: ["#E2E5E5", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias líneas",
-        color: "#FFFFFF",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#070A35",
+        colores: ["#ffffff", "#000000", "#070A35", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#E8EAEF",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#E2E5E5",
+        colores: ["#E2E5E5", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#070A35",
+        colores: ["#ffffff", "#000000", "#070A35", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#070A35",
+        colores: ["#ffffff", "#000000", "#070A35", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#070A35",
+        colores: ["#ffffff", "#000000", "#070A35", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1876,13 +1870,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1509.7548, 441.2662]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1514.2841, 455.4656]
             }
           }
         ]
@@ -1890,8 +1884,6 @@ export const coloresParte = [
       {
         idParte: "Número_espalda",
         nombreMostrar: "Número espalda",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1908,13 +1900,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1516.8801, 739.0137]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1526.1503, 793.3393]
             }
           }
         ]
@@ -1944,17 +1936,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 582.4653, 608.8199],
+              izquierda: [1, 0, 0, 1, 734.1703, 543.666],
+              centro: [1, 0, 0, 1, 582.4653, 608.8199]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [0.9086, 0, 0, 1, 332.2709, 595.6812],
-              izquierda: [0.9086, 0, 0, 1, 617.4053, 595.6812],
-              centro: [0.9086, 0, 0, 1, 483.4053, 623.6368]
+              derecha: [0.9086, 0, 0, 1, 413.2345, 546.2186],
+              izquierda: [0.9086, 0, 0, 1, 751.558, 548.8766],
+              centro: [0.9086, 0, 0, 1, 582.4653, 587.7681]
             }
           }
         ],
@@ -1997,9 +1989,9 @@ export const coloresParte = [
         color: "#",
         colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
         posicionMatrix: {
-          derecha: [0.1122, 0, 0, 0.1029, 341.2709, 527.8898],
-          izquierda: [0.1122, 0, 0, 0.1029, 613.2725, 527.8898],
-          centro: [0.1122, 0, 0, 0.1029, 487.6725, 527.8898]
+          derecha: [0.5456, 0, 0, 0.5456, 397.034, 452.724],
+          izquierda: [0.5456, 0, 0, 0.5456, 729.8394, 460.097],
+          centro: [0.5456, 0, 0, 0.5456, 557.9551, 490.3045]
         }
       }
     ],
@@ -2010,18 +2002,18 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
+        color: "#589EC9",
         colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
           "#666666", "#000000", "#CC66CC", "#66FFCC",
           "#FFFF99", "#993333", "#990000", "#00FFFF",
-          "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+          "#589EC9", "#FF6666", "#669999", "#FF9900"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Remera estampa",
-        color: "#",
+        color: "#000000",
         colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
           "#666666", "#000000", "#CC66CC", "#66FFCC",
@@ -2032,7 +2024,7 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#ffffff",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -2053,36 +2045,34 @@ export const coloresParte = [
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#E8EAEF",
+        color: "#000000",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#589EC9",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#ffffff",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
+        color: "#589EC9",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
-        color: "#",
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -2099,13 +2089,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1522.3671, 437.5402]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1527.1704, 439.0773]
             }
           }
         ]
@@ -2131,13 +2121,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1529.4924, 735.2875]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1539.0366, 776.951]
             }
           }
         ]
@@ -2167,17 +2157,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 400.8061, 543.0588],
+              izquierda: [1, 0, 0, 1, 744.4818, 539.9399],
+              centro: [1, 0, 0, 1, 579.207, 580.3003]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.5283, 545.0519],
-              izquierda: [1, 0, 0, 1, 734.6883, 542.891],
-              centro: [1, 0, 0, 1, 572.6883, 586.0919]
+              derecha: [1, 0, 0, 1, 419.6794, 538.7389],
+              izquierda: [1, 0, 0, 1, 749.2509, 549.7026],
+              centro: [1, 0, 0, 1, 579.3332, 600.6571]
             }
           }
         ],
@@ -2255,7 +2245,7 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#ffffff",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -2276,29 +2266,29 @@ export const coloresParte = [
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#E8EAEF",
+        color: "#000000",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#ffffff",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#AA1111",
+        colores: ["#ffffff", "#000000", "#0000ff", "#AA1111"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea letaral",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#AA1111",
+        colores: ["#ffffff", "#000000", "#0000ff", "#AA1111"],
         posicionMatrix: {}
       },
       {
@@ -2310,7 +2300,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [0.5456, 0, 0, 0.5456, 622.189, 449.811]
+              unica: [1, 0, 0, 1, 1428.9427, 382.2039]
             }
           },
           {
@@ -2322,13 +2312,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1425.3478, 397.6642]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1438.2219, 396.061]
             }
           }
         ]
@@ -2354,13 +2344,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1432.4731, 695.4116]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1450.0881, 733.9347]
             }
           }
         ]
@@ -2390,17 +2380,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 316.0499, 490.064],
+              izquierda: [1, 0, 0, 1, 640.0499, 485.064],
+              centro: [1, 0, 0, 1, 490.0499, 546.064]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 579.3328, 562.0125]
+              derecha: [1, 0, 0, 329.1681, 489.9871],
+              izquierda: [1, 0, 0, 1, 650.1681, 489.9871],
+              centro: [1, 0, 0, 1, 495.1681, 537.9871]
             }
           }
         ],
@@ -2440,12 +2430,10 @@ export const coloresParte = [
       {
         idParte: "Remera_escudo",
         nombreMostrar: "Escudo remera",
-        color: "#",
-        colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
         posicionMatrix: {
-          derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-          izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-          centro: [0.5456, 0, 0, 0.5456, 562.7837, 478.4709]
+          derecha: [0.5456, 0, 0, 0.5456, 300.189, 447.811],
+          izquierda: [0.5456, 0, 0, 0.5456, 622.189, 449.811],
+          centro: [0.5456, 0, 0, 0.5456, 475.189, 440.811]
         }
       }
     ],
@@ -2456,23 +2444,41 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
+        color: "#E2E5E5",
+        colores: [
+          "#E2E5E5", "#F6E61E", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-          "#666666", "#000000", "#CC66CC", "#66FFCC",
-          "#FFFF99", "#993333", "#990000", "#00FFFF",
-          "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+          "#666666", "#000000"],
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_estampa",
-        nombreMostrar: "Estampa",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
+        idParte: "Remera_línea_derecha",
+        nombreMostrar: "Línea derecha",
+        color: "#F6E61E",
+        colores: [
+          "#E2E5E5", "#F6E61E", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-          "#666666", "#000000", "#CC66CC", "#66FFCC",
-          "#FFFF99", "#993333", "#990000", "#00FFFF",
-          "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+          "#666666", "#000000"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_línea_central",
+        nombreMostrar: "Línea central",
+        color: "#18792B",
+        colores: [
+          "#E2E5E5", "#F6E61E", "#18792B", "#99CCFF",
+          "#000099", "#FF9900", "#FFCCCC", "#FF0000",
+          "#666666", "#000000"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_línea_izquierda",
+        nombreMostrar: "Línea izquierda",
+        color: "#342A90",
+        colores: [
+          "#E2E5E5", "#F6E61E", "#00FF66", "#99CCFF",
+          "#342A90", "#FF9900", "#FFCCCC", "#FF0000",
+          "#666666", "#000000"],
         posicionMatrix: {}
       },
       {
@@ -2485,43 +2491,43 @@ export const coloresParte = [
       {
         idParte: "Medias_principal",
         nombreMostrar: "Medias principal",
-        color: "#0A0A0A",
+        color: "#ffffff",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {},
       },
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias línea",
-        color: "#FFFFFF",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#342A90",
+        colores: ["#ffffff", "#000000", "#342A90", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_principal",
         nombreMostrar: "Short principal",
-        color: "#E8EAEF",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#342A90",
+        colores: ["#ffffff", "#000000", "#342A90", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#F6E61E",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#18792B",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea letaral",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        color: "#E2E5E5",
+        colores: ["#E2E5E5", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
@@ -2545,13 +2551,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1497.1107, 476.0482]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1508.6414, 477.5852]
             }
           }
         ]
@@ -2577,13 +2583,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1504.2361, 773.7957]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1520.5076, 815.4589]
             }
           }
         ]
@@ -2613,17 +2619,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1, 0, 0, 1, 378.0175, 566.6191],
+              izquierda: [1, 0, 0, 1, 708.863, 566.6191],
+              centro: [1, 0, 0, 1, 556.5775, 627.3271]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 579.3328, 562.0125]
+              derecha: [0.5456, 0, 0, 0.5456, 385.4948, 579.619],
+              izquierda: [1, 0, 0, 1, 716.881, 582.619],
+              centro: [1, 0, 0, 1, 573.4148, 631.3693]
             }
           }
         ],
@@ -2663,12 +2669,10 @@ export const coloresParte = [
       {
         idParte: "Remera_escudo",
         nombreMostrar: "Escudo remera",
-        color: "#",
-        colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
         posicionMatrix: {
-          derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-          izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-          centro: [0.5456, 0, 0, 0.5456, 562.7837, 478.4709]
+          derecha: [0.5456, 0, 0, 0.5456, 369.1502, 476.202],
+          izquierda: [0.5456, 0, 0, 0.5456, 691.4632, 474.8475],
+          centro: [0.5456, 0, 0, 0.5456, 544.9675, 522.0126]
         }
       }
     ],
@@ -4989,13 +4993,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1424.4679, 531.4254]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1432.5411, 531.4254]
             }
           }
         ]
@@ -5022,13 +5026,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1416.1671, 801.5856]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1441.0939, 810.5856]
             }
           }
         ]
@@ -5058,17 +5062,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1.0493, 0, 0, 1, 372.8859, 614.0255],
+              izquierda: [1.0493, 0, 0, 1, 702.8859, 615.0255],
+              centro: [1.0493, 0, 0, 1, 543.8859, 653.0255]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1.0493, 0, 0, 1, 378.8859, 608.0255],
-              izquierda: [1.0493, 0, 0, 1, 702.8859, 607.0255],
-              centro: [1.0493, 0, 0, 1, 536.8847, 660.1455]
+              derecha: [1.0493, 0, 0, 1, 394.8859, 614.0255],
+              izquierda: [1.0493, 0, 0, 1, 706.8859, 616.0255],
+              centro: [1.0493, 0, 0, 1, 554.8859, 659.0255]
             }
           }
         ],
@@ -5083,7 +5087,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
@@ -5095,13 +5099,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
             }
           }
         ],
@@ -5214,13 +5218,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1422.4872, 533.6999]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [0, 0, 1, 1430.6913, 523.0263]
             }
           }
         ]
@@ -5246,13 +5250,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1414.1864, 803.86]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1439.244, 802.1865]
             }
           }
         ]
@@ -5282,17 +5286,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1.0493, 0, 0, 1, 372.9052, 626.3],
+              izquierda: [1.0493, 0, 0, 1, 700.9052, 617.3],
+              centro: [1.0493, 0, 0, 1, 544.9052, 671.3]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1.0493, 0, 0, 1, 387.3899, 614.8974],
-              izquierda: [1.0493, 0, 0, 1, 686.8859, 612.0255],
-              centro: [1.0493, 0, 0, 1, 540.2897, 655.1666]
+              derecha: [1.0493, 0, 0, 1, 386.036, 617.6264],
+              izquierda: [1.0493, 0, 0, 1, 705.036, 614.6264],
+              centro: [1.0493, 0, 0, 1, 553.036, 658.6264]
             }
           }
         ],
@@ -5306,7 +5310,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
@@ -5318,13 +5322,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
             }
           }
         ],
@@ -5448,13 +5452,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1421.8073, 528.3399]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1433.0114, 525.6663]
             }
           }
         ]
@@ -5480,13 +5484,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1413.5065, 798.5001]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1441.5641, 804.8265]
             }
           }
         ]
@@ -5516,17 +5520,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1.0493, 0, 0, 1, 383.2252, 599.94],
+              izquierda: [1.0493, 0, 0, 1, 698.2252, 602.94],
+              centro: [1.0493, 0, 0, 1, 546.2252, 651.94]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1.0493, 0, 0, 1, 383.8859, 584.0255],
-              izquierda: [1.0493, 0, 0, 1, 703.8859, 584.0255],
-              centro: [1.0493, 0, 0, 1, 546.0275, 634.6072]
+              derecha: [1.0493, 0, 0, 1, 375.356, 598.2664],
+              izquierda: [1.0493, 0, 0, 1, 707.356, 610.2664],
+              centro: [1.0493, 0, 0, 1, 563.356, 644.2664]
             }
           }
         ],
@@ -5540,7 +5544,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
@@ -5552,13 +5556,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
             }
           }
         ],
@@ -5667,13 +5671,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1422.4872, 536.6999]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1438.6915, 540.0263]
             }
           }
         ]
@@ -5699,13 +5703,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1414.1864, 806.86]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1447.2443, 819.1865]
             }
           }
         ]
@@ -5735,17 +5739,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1.0493, 0, 0, 1, 385.9052, 614.3],
+              izquierda: [1.0493, 0, 0, 1, 700.9052, 620.3],
+              centro: [1.0493, 0, 0, 1, 544.9052, 654.3]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1.0493, 0, 0, 1, 380.8859, 594.0255],
-              izquierda: [1.0493, 0, 0, 1, 700.8859, 600.0255],
-              centro: [1.0493, 0, 0, 1, 545.8859, 642.0255]
+              derecha: [1.0493, 0, 0, 1, 386.0363, 610.6264],
+              izquierda: [1.0493, 0, 0, 1, 723.0363, 617.6264],
+              centro: [1.0493, 0, 0, 1, 558.0363, 654.6264]
             }
           }
         ],
@@ -5760,7 +5764,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1.0493, 0, 0, 1, 770.5504, 1419.1583]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
@@ -5772,13 +5776,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
             }
           }
         ],
@@ -5902,13 +5906,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1422.2872, 536.6599]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1433.0114, 536.3463]
             }
           }
         ]
@@ -5934,13 +5938,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1413.9865, 806.8201]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1441.5641, 815.5065]
             }
           }
         ]
@@ -5956,7 +5960,7 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1.0493, 0, 0, 1, 386.8859, 607.0255],
               izquierda: [1.0493, 0, 0, 1, 705.8859, 607.0255],
-              centro: [1.0493, 0, 0, 1, 554.8859, 643.02559]
+              centro: [1.0493, 0, 0, 1, 554.8859, 643.0255]
             }
           },
           {
@@ -5970,17 +5974,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1.0493, 0, 0, 1, 372.7052, 620.26],
+              izquierda: [1.0493, 0, 0, 1, 700.7052, 620.26],
+              centro: [1.0493, 0, 0, 1, 544.7051, 659.26]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [0.9086, 0, 0, 1, 332.2709, 595.6812],
-              izquierda: [0.9086, 0, 0, 1, 617.4053, 595.6812],
-              centro: [0.9086, 0, 0, 1, 483.4053, 623.6368]
+              derecha: [1.0493, 0, 0, 1, 386.356, 613.9464],
+              izquierda: [1.0493, 0, 0, 1, 717.356, 613.9464],
+              centro: [1.0493, 0, 0, 1, 565.356, 653.9464]
             }
           }
         ],
@@ -5995,7 +5999,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1.0493, 0, 0, 1, 770.5504, 1419.1583]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
@@ -6007,13 +6011,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
             }
           }
         ],
@@ -6144,13 +6148,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1422.4872, 536.6999]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1422.4872, 536.6999]
             }
           }
         ]
@@ -6176,13 +6180,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1414.1864, 806.86]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1448.2443, 816.1865]
             }
           }
         ]
@@ -6213,17 +6217,17 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-              izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-              centro: [1, 0, 0, 1, 575.8483, 589.6519]
+              derecha: [1.0493, 0, 0, 1, 375.9052, 614.3],
+              izquierda: [1.0493, 0, 0, 1, 700.9052, 620.3],
+              centro: [1.0493, 0, 0, 1, 548.9052, 654.3]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 412.1, 553.9713],
-              izquierda: [1, 0, 0, 1, 704.5998, 552],
-              centro: [1, 0, 0, 1, 583.0999, 593.5001]
+              derecha: [1.0493, 0, 0, 1, 407.0363, 614.6264],
+              izquierda: [1.0493, 0, 0, 1, 724.0363, 614.6264],
+              centro: [1.0493, 0, 0, 1, 554.0363, 653.6264]
             }
           }
         ],
@@ -6237,7 +6241,7 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
@@ -6249,13 +6253,13 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
             }
           }
         ],

@@ -26,12 +26,22 @@
     </div>
   </div>
   <div class="row form-group" *ngIf="agregarShort">
-    <div class="col-md-6 col-8">
+    <div class="col-md-4 col-8">
       <label class="switch">
         <input  class="form-check-input" formControlName="agregarNumeroShort" type="checkbox" id="agregar-numero-short">
         <span class="slider round"></span>
       </label>
       <label class="form-check-label" for="agregar-numero-short">Número en short</label>
+    </div>
+    <div class="col-md-8 col-4" *ngIf="agregarNumeroShort">
+      <div class="cuadro-color">
+        <ngx-colors ngx-colors-trigger [palette]="coloresShort"
+                    [hideColorPicker]="true"
+                    [hideTextInput]="true"
+                    [style.background]="colorNumeroShort ? colorNumeroShort : 'black'"
+                    (change)="cambiarColorShort($event)" formControlName="colorNumeroShort"></ngx-colors>
+        <i class="fas fa-sort-down fa-lg" (click)="abrirSelector('selector-')"></i>
+      </div>
     </div>
   </div>
   <div class="row form-group" *ngIf="agregarShort">

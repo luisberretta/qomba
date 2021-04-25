@@ -228,6 +228,10 @@ export class WizardComponent implements OnInit {
     this.personaComponent.cambiarColorParte(cambiar);
   }
 
+  cambiarColorNumeroShort(color){
+    this.personaComponent.cambiarColorNumeroShort(color);
+  }
+
   visualizarEstampado(visualizar) {
     this.personaComponent.visualizarEstampado(visualizar);
   }
@@ -466,6 +470,7 @@ export class WizardComponent implements OnInit {
       escudoShort: this.pedido.imagenEscudo,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
+      colorNumeroShort: this.pedido.colorEstampado,
       agregarEscudoShort: this.pedido.agregarEscudoShort,
       agregarNumeroShort: this.pedido.agregarNumeroShort,
       partesShortSVG: partesShortSVG,
