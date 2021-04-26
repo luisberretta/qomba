@@ -278,6 +278,7 @@ export class WizardComponent implements OnInit {
     this.pedido.imagenEscudo = formShort.escudoShort ? formShort.escudoShort : this.pedido.imagenEscudo;
     this.pedido.agregarEscudoShort = !!formShort.agregarEscudoShort;
     this.pedido.agregarNumeroShort = !!formShort.agregarNumeroShort;
+    this.pedido.colorNumeroShort = formShort.colorNumeroShort;
     for (let i = 0; i < formShort.partesShortSVG.length; i++) {
       let indexParte = -1;
       for (let j = 0; j < this.pedido.coloresModelo.length; j++) {
@@ -470,7 +471,7 @@ export class WizardComponent implements OnInit {
       escudoShort: this.pedido.imagenEscudo,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
-      colorNumeroShort: this.pedido.colorEstampado,
+      colorNumeroShort: this.pedido.colorNumeroShort ? this.pedido.colorNumeroShort : this.pedido.colorEstampado,
       agregarEscudoShort: this.pedido.agregarEscudoShort,
       agregarNumeroShort: this.pedido.agregarNumeroShort,
       partesShortSVG: partesShortSVG,

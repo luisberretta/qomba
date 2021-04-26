@@ -125,11 +125,13 @@ export class PersonaComponent implements OnInit {
     let posicionTipografia = null;
     let posicionesEscudo = null;
     coloresModelo = coloresParte.find(x => x.idModelo == this.modeloSeleccionado.id).partes;
-    posicionesTipografia = coloresModelo.find(x => x.idParte == posicion.parte).posicionesTipografia;
-    if (posicionesTipografia?.length) {
-      posicionTipografia = posicionesTipografia.find(x => x.tipografia == posicion.tipografia);
-    } else {
-      posicionesEscudo = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix;
+    if(posicion.parte != 'Short_escudo') {
+      posicionesTipografia = coloresModelo.find(x => x.idParte == posicion.parte).posicionesTipografia;
+      if (posicionesTipografia?.length) {
+        posicionTipografia = posicionesTipografia.find(x => x.tipografia == posicion.tipografia);
+      } else {
+        posicionesEscudo = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix;
+      }
     }
     switch (posicion.posicion) {
       case 'Centro':

@@ -33,6 +33,7 @@ export interface Pedido {
   posicionSponsorTrasero?: string;
   sponsorManga?: boolean;
   posicionSponsorManga?: string;
+  colorNumeroShort?: string;
 
   //NUMERO
   llevaNombreCamiseta?: boolean;
