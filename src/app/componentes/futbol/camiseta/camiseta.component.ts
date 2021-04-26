@@ -183,11 +183,11 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? "SablonUp-College");
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
-    if (this.colorRemera == "#000000") {
+    if (this.colorRemera == "#000000" && formCamiseta.colorEstampado && formCamiseta.colorEstampado.toUpperCase() == "#000000") {
       if (this.llevaEstampado) {
         this.formPasoCamiseta.get('colorEstampado').setValue("#FFFFFF");
       }
-    } else {
+    } else if(this.colorRemera == "#FFFFFF" && formCamiseta.colorEstampado && formCamiseta.colorEstampado.toUpperCase() == "#FFFFFF") {
       if (this.llevaEstampado) {
         this.formPasoCamiseta.get('colorEstampado').setValue("#000000");
       }
@@ -284,6 +284,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
       this.formPasoCamiseta.controls['posicionNumeroDelantero'].setValidators(null);
     }
     if (this.llevaEstampado()) {
+
       this.formPasoCamiseta.controls['colorEstampado'].setValidators([Validators.required]);
     } else {
       this.formPasoCamiseta.controls['colorEstampado'].setValidators(null);

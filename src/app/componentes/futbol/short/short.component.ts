@@ -57,6 +57,7 @@ export class ShortComponent implements OnInit, OnChanges {
   submit: boolean = false;
   @Input() formShort;
   @Output() llevaShort = new EventEmitter();
+  numeroShort: boolean = false;
 
   visualizar = {
     valor: null,
@@ -76,6 +77,7 @@ export class ShortComponent implements OnInit, OnChanges {
     });
     this.formPasoShort.get('agregarNumeroShort').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
+      this.numeroShort = valor;
       this.visualizar.parte = this.NUMERO_SHORT;
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
@@ -99,6 +101,9 @@ export class ShortComponent implements OnInit, OnChanges {
     this.formPasoShort.get('agregarEscudoDelantero').setValue(formShort.llevaEscudoDelantero ?? null);
     this.formPasoShort.get('agregarEscudoShort').setValue(formShort.agregarEscudoShort ?? null);
     this.formPasoShort.get('agregarNumeroShort').setValue(formShort.agregarNumeroShort ?? null);
+    if(formShort.agregarNumeroShort) {
+      this.numeroShort = true;
+    }
     this.formPasoShort.get('colorNumeroShort').setValue(formShort.colorNumeroShort ?? null);
     this.crearFormPartesArray(formShort.partesShortSVG);
   }
@@ -144,8 +149,6 @@ export class ShortComponent implements OnInit, OnChanges {
       this.proximoPaso.emit(this.formPasoShort.value);
     }
   }
-
-
 
   anterior() {
     this.anteriorPaso.emit(this.formPasoShort.value);
