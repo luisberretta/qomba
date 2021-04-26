@@ -1944,9 +1944,9 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [0.9086, 0, 0, 1, 413.2345, 546.2186],
-              izquierda: [0.9086, 0, 0, 1, 751.558, 548.8766],
-              centro: [0.9086, 0, 0, 1, 582.4653, 587.7681]
+              derecha: [1, 0, 0, 1, 413.2345, 546.2186],
+              izquierda: [1, 0, 0, 1, 751.558, 548.8766],
+              centro: [1, 0, 0, 1, 582.4653, 587.7681]
             }
           }
         ],
@@ -2627,7 +2627,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [0.5456, 0, 0, 0.5456, 385.4948, 579.619],
+              derecha: [1, 0, 0, 0.5456, 385.4948, 579.619],
               izquierda: [1, 0, 0, 1, 716.881, 582.619],
               centro: [1, 0, 0, 1, 573.4148, 631.3693]
             }
@@ -4987,19 +4987,19 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1424.7174, 531.4254]
+              unica: [1, 0, 0, 1, 1411.0403, 543.1755]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1424.4679, 531.4254]
+              unica: [1, 0, 0, 1, 1415.5, 544.6118]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1432.5411, 531.4254]
+              unica: [1, 0, 0, 1, 1410.5, 533.6118]
             }
           }
         ]
@@ -5020,19 +5020,19 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1422.9176, 801.5856]
+              unica: [1, 0, 0, 1, 1410.3943, 841.4957]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1416.1671, 801.5856]
+              unica: [1, 0, 0, 1, 1417.8208, 842.9317]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1441.0939, 810.5856]
+              unica: [1, 0, 0, 1, 1430.8208, 854.9317]
             }
           }
         ]
@@ -5212,7 +5212,7 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1426.7174, 540.4254]
+              unica: [1, 0, 0, 1, 1409.7174, 545.4254]
             }
           },
           {
@@ -5224,7 +5224,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [0, 0, 1, 1430.6913, 523.0263]
+              unica: [1,0, 0, 1, 1405.7174, 552.4254]
             }
           }
         ]
@@ -5244,7 +5244,7 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1424.9176, 810.5856]
+              unica: [1, 0, 0, 1, 1409.9176, 825.5856]
             }
           },
           {
@@ -5256,7 +5256,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1439.244, 802.1865]
+              unica: [1, 0, 0, 1, 1426.9176, 872.5856]
             }
           }
         ]
@@ -5446,7 +5446,7 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1425.7174, 523.4254]
+              unica: [1, 0, 0, 1, 1410.7174, 522.4254]
             }
           },
           {
@@ -5458,7 +5458,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1433.0114, 525.6663]
+              unica: [1, 0, 0, 1, 1406.7174, 525.4254]
             }
           }
         ]
@@ -5478,7 +5478,7 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1423.9176, 793.5856]
+              unica: [1, 0, 0, 1, 1408.9176, 805.5856]
             }
           },
           {
@@ -5490,7 +5490,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1441.5641, 804.8265]
+              unica: [1, 0, 0, 1, 1427.9176, 840.5856]
             }
           }
         ]
@@ -5604,7 +5604,7 @@ export const coloresParte = [
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#0B0828",
+        color: "#AFC2D7",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -5665,7 +5665,7 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1425.7174, 537.4254]
+              unica: [1, 0, 0, 1, 1411.7174, 525.4254]
             }
           },
           {
@@ -5677,7 +5677,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1438.6915, 540.0263]
+              unica: [1, 0, 0, 1, 1409.7174, 525.4254]
             }
           }
         ]
@@ -5697,7 +5697,7 @@ export const coloresParte = [
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1423.9176, 807.5856]
+              unica: [1, 0, 0, 1, 1408.9176, 791.5856]
             }
           },
           {
@@ -5709,7 +5709,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1447.2443, 819.1865]
+              unica: [1, 0, 0, 1, 1428.9176, 828.5856]
             }
           }
         ]
@@ -5806,8 +5806,8 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
+        color: "#AFC2D7",
+        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#AFC2D7",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
           "#666666", "#000000", "#CC66CC", "#66FFCC",
           "#FFFF99", "#993333", "#990000", "#00FFFF",
@@ -5817,29 +5817,29 @@ export const coloresParte = [
       {
         idParte: "Remera_estampa_uno",
         nombreMostrar: "Remera estampa uno",
-        color: "#",
+        color: "#7EB3DB",
         colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
           "#666666", "#000000", "#CC66CC", "#66FFCC",
           "#FFFF99", "#993333", "#990000", "#00FFFF",
-          "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+          "#7EB3DB", "#FF6666", "#669999", "#FF9900"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_estampa_dos",
         nombreMostrar: "Remera estampa dos",
-        color: "#",
+        color: "#D7C5EB",
         colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
           "#666666", "#000000", "#CC66CC", "#66FFCC",
           "#FFFF99", "#993333", "#990000", "#00FFFF",
-          "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+          "#99CCCC", "#FF6666", "#D7C5EB", "#FF9900"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#",
+        color: "#000000",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -5853,7 +5853,7 @@ export const coloresParte = [
       {
         idParte: "Medias_linea",
         nombreMostrar: "Medias líneas",
-        color: "#FFFFFF",
+        color: "#4060AD",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -5867,21 +5867,21 @@ export const coloresParte = [
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#61ACC6",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#C9BADD",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea lateral",
-        color: "#",
+        color: "#61ACC6",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -5912,7 +5912,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1433.0114, 536.3463]
+              unica: [1, 0, 0, 1, 1414.9996, 530.4255]
             }
           }
         ]
@@ -5944,7 +5944,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1441.5641, 815.5065]
+              unica: [1, 0, 0, 1, 1428.158, 850.5848]
             }
           }
         ]
@@ -6041,8 +6041,8 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
+        color: "#E7EAEF",
+        colores: ["#E7EAEF", "#FFFF00", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
           "#666666", "#000000", "#CC66CC", "#66FFCC",
           "#FFFF99", "#993333", "#990000", "#00FFFF",
@@ -6052,36 +6052,25 @@ export const coloresParte = [
       {
         idParte: "Remera_estampa",
         nombreMostrar: "Estampa",
-        color: "#",
+        color: "#9B27B0",
         colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
           "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-          "#666666", "#000000", "#CC66CC", "#66FFCC",
+          "#666666", "#000000", "#9B27B0", "#66FFCC",
           "#FFFF99", "#993333", "#990000", "#00FFFF",
           "#99CCCC", "#FF6666", "#669999", "#FF9900"],
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Remera_estampa_inferior",
-        nombreMostrar: "Estampa inferior",
-        color: "#",
-        colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
-          "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-          "#666666", "#000000", "#CC66CC", "#66FFCC",
-          "#FFFF99", "#993333", "#990000", "#00FFFF",
-          "#99CCCC", "#FF6666", "#669999", "#FF9900"],
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Remera_cuello_y_puños",
-        nombreMostrar: "Cuello y puños",
-        color: "#",
-        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Remera_mangas_y_hombros",
         nombreMostrar: "Mangas y hombros",
-        color: "#",
+        color: "#9B27B0",
+        colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#000000",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -6109,21 +6098,21 @@ export const coloresParte = [
       {
         idParte: "Short_linea_superior",
         nombreMostrar: "Short línea superior",
-        color: "#",
+        color: "#000000",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_inferior",
         nombreMostrar: "Short línea inferior",
-        color: "#",
+        color: "#9B27B0",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
       {
         idParte: "Short_linea_lateral",
         nombreMostrar: "Short línea letaral",
-        color: "#",
+        color: "#9B27B0",
         colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
         posicionMatrix: {}
       },
@@ -6154,7 +6143,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1422.4872, 536.6999]
+              unica: [1, 0, 0, 1, 1407.8024, 534.4526]
             }
           }
         ]
@@ -6186,7 +6175,7 @@ export const coloresParte = [
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1448.2443, 816.1865]
+              unica: [1, 0, 0, 1, 1426.7628, 846.5878]
             }
           }
         ]

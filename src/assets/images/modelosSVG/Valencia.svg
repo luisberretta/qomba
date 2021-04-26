@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 2040.9 2721.3" enable-background="new 0 0 2040.9 2721.3" xml:space="preserve">
-<g id="Medias">
+<g id="Medias_principal">
 	<path fill="#F3F2F4" d="M1748.9,1685c1.5,10.3,6.3,43.5,9.3,79.3c3.7,43.2,11.6,57.8,6.6,104.5c-5.1,46.7-24.8,148.7-32,193.9
 		s0.4,80.6,2.4,99.5s-3,37.4-10,50.4s-64.8,9.1-69.8-14.7s-2.6-27,4.1-57.5c6.7-30.4-3.6-90.9-11.3-133
 		c-7.7-42.1-30.6-75.9-23.7-132.5s10.6-82.6,8.1-114.9c-2.5-32.4-18.6-36.1-17.1-56.9C1617.1,1680.6,1748.6,1682.9,1748.9,1685z"/>
@@ -19,7 +19,7 @@
 		c0,0-38.4-14.6-26-54c0,0,18.6-28.7,18.6-50.2s3.1-75.3-6.2-111.1c-9.3-35.8-9.3-78.8,6.2-121.8
 		C697.5,1732.6,690.3,1733.1,683.6,1709.3z"/>
 </g>
-<g id="Línea_medias">
+<g id="Medias_linea">
 	<g>
 		<path fill="#4060AD" d="M352.5,1724.9c0,0,17.9,27,128.1,25.9l-1.5,27.3c0,0-105.8-2.7-131.7-25.8
 			C347.4,1752.3,346.7,1735.4,352.5,1724.9z"/>
@@ -31,9 +31,7 @@
 			v25.9C1312,1739.9,1379.7,1673.7,1447.3,1733z"/>
 	</g>
 </g>
-<g id="GENERICO_3_">
-</g>
-<g id="Short">
+<g id="Short_principal">
 	<g>
 		<path fill="#F9F7F7" d="M583.7,1029c-64.5,0-178.5-11-178.5-11l-10.3,51.9c0,0,135.7,9,188.8,8h-5.1c53.1,1,188.8-8,188.8-8
 			l-10.3-51.9c0,0-114,11-178.5,11"/>
@@ -985,7 +983,7 @@ aidHnRqJ0/8AJ+P3U/zP/9k=" transform="matrix(1 0 0 1 317.4772 1069.0656)">
 			<clipPath id="SVGID_93_">
 				<use xlink:href="#SVGID_92_"  overflow="visible"/>
 			</clipPath>
-			<g id="estampa_2" clip-path="url(#SVGID_93_)">
+			<g id="Remera_estampa_dos" clip-path="url(#SVGID_93_)">
 				<g>
 					<g>
 						<path fill="#D7C5EB" d="M1533.7,576.8l-0.3-0.2c1.2,0.2,2.5,0.4,3.7,0.7l15.3,3.2l10.7,2.3c-0.6-0.3-1.5-0.2-1.9-0.6
@@ -2378,7 +2376,7 @@ aidHnRqJ0/8AJ+P3U/zP/9k=" transform="matrix(1 0 0 1 317.4772 1069.0656)">
 			<clipPath id="SVGID_95_">
 				<use xlink:href="#SVGID_94_"  overflow="visible"/>
 			</clipPath>
-			<g id="estampa_2_1_" clip-path="url(#SVGID_95_)">
+			<g id="Remera_estampa_dos" clip-path="url(#SVGID_95_)">
 				<g>
 					<g>
 						<path fill="#D7C5EB" d="M530.7,576.8l-0.3-0.2c1.2,0.2,2.5,0.4,3.7,0.7l15.3,3.2l10.7,2.3c-0.6-0.3-1.5-0.2-1.9-0.6
@@ -4000,7 +3998,7 @@ aidHnRqJ0/8AJ+P3U/zP/9k=" transform="matrix(1 0 0 1 317.4772 1069.0656)">
 			<clipPath id="SVGID_101_">
 				<use xlink:href="#SVGID_100_"  overflow="visible"/>
 			</clipPath>
-			<g id="estampa" clip-path="url(#SVGID_101_)">
+			<g id="Remera_estampa_uno" clip-path="url(#SVGID_101_)">
 				<path fill="#7EB3DB" d="M1654.9,520.6c-0.7,0-1.5,0-2.2,0c-12.4-0.7-25,1.1-37.4-2.1c-2.5-0.7-4.6-1.4-6.5-3.6
 					c5.9-2.1,10.8-3.1,17.5-1.5c9.8,2.3,20.4,4.1,30.9,0c3.9-1.5,9-0.9,13.5-1.2c10.6-0.8,21.1-2,31.6-2.8
 					c5.5-0.4,11.5-0.3,17.2,0.7c3.1,0.5,5.9,0.4,9,0c4.1-0.6,8.5-0.9,11.6,2.8c2,2.3,1.9,3.8-1.5,4.4c-4.1,0.7-8.3,1.8-12.4,2
@@ -4063,7 +4061,7 @@ aidHnRqJ0/8AJ+P3U/zP/9k=" transform="matrix(1 0 0 1 317.4772 1069.0656)">
 			<clipPath id="SVGID_103_">
 				<use xlink:href="#SVGID_102_"  overflow="visible"/>
 			</clipPath>
-			<g id="estampa_1_" clip-path="url(#SVGID_103_)">
+			<g id="Remera_estampa_uno" clip-path="url(#SVGID_103_)">
 				<path fill="#7EB3DB" d="M650.9,518.6c-0.7,0-1.5,0-2.2,0c-12.4-0.7-25,1.1-37.4-2.1c-2.5-0.7-4.6-1.4-6.5-3.6
 					c5.9-2.1,10.8-3.1,17.5-1.5c9.8,2.3,20.4,4.1,30.9,0c3.9-1.5,9-0.9,13.5-1.2c10.6-0.8,21.1-2,31.6-2.8
 					c5.5-0.4,11.5-0.3,17.2,0.7c3.1,0.5,5.9,0.4,9,0c4.1-0.6,8.5-0.9,11.6,2.8c2,2.3,1.9,3.8-1.5,4.4c-4.1,0.7-8.3,1.8-12.4,2
@@ -4112,15 +4110,11 @@ aidHnRqJ0/8AJ+P3U/zP/9k=" transform="matrix(1 0 0 1 317.4772 1069.0656)">
 		</g>
 	</g>
 </g>
-<g id="Nombre">
-	<g>
-		<text transform="matrix(1 0 0 1 1412.7174 530.4254)" fill="#3D60B1" font-family="'SablonUp-College'" font-size="85px">nombre</text>
-	</g>
+<g id="Nombre" visibility="hidden">
+<text transform="matrix(1 0 0 1 1412.7174 530.4254)" fill="#3D60B1" font-family="'SablonUp-College'" font-size="85px">NOMBRE</text>
 </g>
-<g id="Número_espalda">
-	<g>
-		<text transform="matrix(1 0 0 1 1420.1576 795.5848)" fill="#3D60B1" font-family="'SablonUp-College'" font-size="300px">10</text>
-	</g>
+<g id="Número_espalda" visibility="hidden">
+<text transform="matrix(1 0 0 1 1420.1576 795.5848)" fill="#3D60B1" font-family="'SablonUp-College'" font-size="300px">10</text>
 </g>
 <g id="GENERICO">
 	
@@ -5307,19 +5301,19 @@ DumDumDumFumFumFumFumFumDumDumDumDumFumFumFumFumDumDumDumDumDuk1/V/Un/r/AOsI
 			<text transform="matrix(1.1366 -0.1953 0.1693 0.9856 649.046 400.5862)" fill="#CCCCCC" font-family="'LucidaSansUnicode'" font-size="9.3145px">b</text>
 	</g>
 </g>
-<g id="Número_delantero">
+<g id="Número_delantero" visibility="hidden">
 	<g>
 		<text transform="matrix(1.0493 0 0 1 705.8857 607.0254)" fill="#3D60B1" font-family="'SablonUp-College'" font-size="90px">10</text>
 	</g>
 </g>
-<g id="Short_numero">
+<g id="Short_número" visibility="hidden">
 	<g>
 		<g>
 			<text transform="matrix(1.0493 0 0 1 342.5498 1427.1582)" fill="#3D60B1" font-family="'SablonUp-College'" font-size="80px">10</text>
 		</g>
 	</g>
 </g>
-<g id="Remera_escudo">
+<g id="Remera_escudo" visibility="hidden">
 	
 		<image overflow="visible" enable-background="new    " width="200" height="200" id="escudo_1_" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsSAAALEgHS3X78AAAg
 AElEQVR4nO19C3QUVbruLsmLIHQCwUAgJEIEkUeCd9AQZzBwUQbmYhLCPToqGCUsWY4oMLx0zYzo
@@ -5523,7 +5517,7 @@ OCIychgEbAZhYFAB00EYGFTACMLAoAJGEAYGFTCCMDCogBGEgUEFjCAMDCpgBGFgUAEjCAODChhB
 GBhUwAjCwKACRhAGBhUwgjAwKIEQ8v8B9xqCaIwR2LkAAAAASUVORK5CYII=" transform="matrix(0.4805 0 0 0.4579 371.4772 531.0656)">
 	</image>
 </g>
-<g id="Short_escudo">
+<g id="Short_escudo" visibility="hidden">
 	
 		<image overflow="visible" enable-background="new    " width="200" height="200" id="escudo" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAAAsSAAALEgHS3X78AAAg
 AElEQVR4nO19C3QUVbruLsmLIHQCwUAgJEIEkUeCd9AQZzBwUQbmYhLCPToqGCUsWY4oMLx0zYzo

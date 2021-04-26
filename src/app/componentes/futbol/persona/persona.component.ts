@@ -55,6 +55,7 @@ export class PersonaComponent implements OnInit {
         let line = grupos[i].getElementsByTagName('line');
         let polyline = grupos[i].getElementsByTagName('polyline');
         let ellipse = grupos[i].getElementsByTagName('ellipse');
+        let rect = grupos[i].getElementsByTagName('rect');
         for (let j = 0; j < paths.length; j++) {
           paths[j].setAttribute('fill', cambiar.color);
         }
@@ -69,6 +70,9 @@ export class PersonaComponent implements OnInit {
         }
         for (let j = 0; j < ellipse.length; j++) {
           ellipse[j].setAttribute('fill',cambiar.color);
+        }
+        for (let j = 0; j < rect.length; j++) {
+          rect[j].setAttribute('fill',cambiar.color);
         }
         grupos[i].classList.remove('parte-seleccionada');
       }

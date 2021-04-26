@@ -102,7 +102,6 @@ export class CamisetaComponent implements OnInit, OnChanges {
             this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(this.visualizar.posicion);
           }
         }
-        this.posicionNumeroActual = this.visualizar.posicion;
       } else {
         this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(null);
       }
@@ -153,7 +152,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
       this.posicionesEscudo = this.posicionesEscudoEstatico;
       if (valor) {
         this.visualizar.valor = true;
-        this.visualizar.posicion = valor;
+        this.visualizar.posicion = this.posicionNumeroActual = valor;
         this.visualizar.tipografia = this.obtenerTipoletra();
         this.visualizar.parte = this.NUMERO_DELANTERO;
         this.posicionesEscudo = this.posicionesEscudo.filter(x => x != this.visualizar.posicion);
