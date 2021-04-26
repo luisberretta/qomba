@@ -39,12 +39,15 @@
 </form>
 
 <ng-template #template>
-  <div class="modal-header">
+  <div class="modal-header pb-0">
     <button type="button" class="close" aria-label="Close" (click)="cerrar()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body text-center">
-    <img [src]="modalText" [alt]="modalText" class="img-fluid">
+  <div class="modal-body text-center pt-0">
+    <picture>
+      <source [srcset]="imgZoomAlt" type="image/png">
+      <img [src]="imgZoom" [alt]="imgZoom" class="img-fluid">
+    </picture>
   </div>
 </ng-template>

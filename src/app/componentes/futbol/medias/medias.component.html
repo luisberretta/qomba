@@ -1,7 +1,7 @@
 <form [formGroup]="formPasoMedias" class="ml-2">
   <div class="form-group">
     <label class="switch">
-      <input class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">
+      <input [attr.disabled]="true" class="form-check-input" formControlName="agregarMedias" type="checkbox" id="agregar-medias">
       <span class="slider round"></span>
     </label>
     <label class="form-check-label" for="agregar-medias">Agregar medias</label>
@@ -26,11 +26,11 @@
     </div>
   </div>
   <div class="cartel">
-    <div class="overlay" *ngIf="seleccionoSponsors">Próximamente</div>
+    <div class="overlay">Próximamente</div>
     <div class="row form-group">
       <div class="col-md-5 col-6 align-self-center">
         <label class="switch">
-          <input [attr.disabled]="seleccionoSponsors ? true : null" class="form-check-input" formControlName="agregarSponsorDelantero" type="checkbox" id="lleva-sponsor-delantero">
+          <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorDelantero" type="checkbox" id="lleva-sponsor-delantero">
           <span class="slider round"></span>
         </label>
         <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-delantero">Sponsor frente</label>
@@ -49,7 +49,7 @@
     <div class="row form-group">
       <div class="col-md-5 col-6 align-self-center">
         <label class="switch">
-          <input [attr.disabled]="seleccionoSponsors ? true : null" class="form-check-input" formControlName="agregarSponsorTrasero" type="checkbox" id="lleva-sponsor-trasero">
+          <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorTrasero" type="checkbox" id="lleva-sponsor-trasero">
           <span class="slider round"></span>
         </label>
         <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-trasero">Sponsor trasero</label>
@@ -68,7 +68,7 @@
     <div class="row form-group">
       <div class="col-md-5 col-6 align-self-center">
         <label class="switch">
-          <input [attr.disabled]="seleccionoSponsors ? true : null" class="form-check-input" formControlName="agregarSponsorManga" type="checkbox" id="lleva-sponsor-manga">
+          <input [attr.disabled]="true" class="form-check-input" formControlName="agregarSponsorManga" type="checkbox" id="lleva-sponsor-manga">
           <span class="slider round"></span>
         </label>
         <label [attr.disabled]="true" class="form-check-label" for="lleva-sponsor-manga">Sponsor manga</label>
