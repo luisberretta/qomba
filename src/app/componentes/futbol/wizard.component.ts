@@ -434,6 +434,7 @@ export class WizardComponent implements OnInit {
       llevaNumeroEspalda: this.pedido.llevaNumeroEspalda,
       colorEstampado: this.pedido.colorEstampado,
       tipoLetra: this.pedido.tipoLetra,
+      colorNumeroShort : this.pedido.colorNumeroShort
     }
   }
 

@@ -53,7 +53,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
     posicionNumeroDelantero: new FormControl(null),
     llevaNombreEspalda: new FormControl(),
     llevaNumeroEspalda: new FormControl(null),
-    colorEstampado: new FormControl(null)
+    colorEstampado: new FormControl(null),
+    colorNumeroShort: new FormControl(null)
   });
   visualizar = {
     valor: null,
@@ -183,12 +184,12 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? "SablonUp-College");
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
-    if (this.colorRemera == "#000000" && formCamiseta.colorEstampado && formCamiseta.colorEstampado.toUpperCase() == "#000000") {
-      if (this.llevaEstampado) {
+    this.formPasoCamiseta.get('colorNumeroShort').setValue(formCamiseta.colorNumeroShort);
+    if(!this.colorEstampado){
+      if(this.colorRemera == '#000000'){
         this.formPasoCamiseta.get('colorEstampado').setValue("#FFFFFF");
       }
-    } else if(this.colorRemera == "#FFFFFF" && formCamiseta.colorEstampado && formCamiseta.colorEstampado.toUpperCase() == "#FFFFFF") {
-      if (this.llevaEstampado) {
+      else{
         this.formPasoCamiseta.get('colorEstampado').setValue("#000000");
       }
     }
@@ -220,6 +221,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
     let cambio = {
       color: color,
       esEstampa: true,
+      llevaColorShort: this.llevaColorShort == this.colorEstampado
     }
     this.colorSeleccionado.emit(cambio);
   }
@@ -250,6 +252,14 @@ export class CamisetaComponent implements OnInit, OnChanges {
 
   get colorRemera() {
     return this.formPasoCamiseta.get('colorRemera').value;
+  }
+
+  get colorEstampado(){
+    return this.formPasoCamiseta.get('colorEstampado').value;
+  }
+
+  get llevaColorShort(){
+    return this.formPasoCamiseta.get('colorNumeroShort').value;
   }
 
   generarPosicion(posicionOcupada) {

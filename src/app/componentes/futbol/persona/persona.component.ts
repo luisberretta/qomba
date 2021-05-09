@@ -82,8 +82,16 @@ export class PersonaComponent implements OnInit {
   cambiarColorEstampa(cambiar) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if (this.perteneceEstampado(grupos[i]))
-        grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
+      if (this.perteneceEstampado(grupos[i])){
+        if(grupos[i].id == "Short_número"){
+          if(cambiar.llevaColorShort){
+            grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
+          }
+        }
+        else{
+          grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
+        }
+      }
     }
   }
 
