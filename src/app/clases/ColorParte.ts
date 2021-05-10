@@ -3409,6 +3409,13 @@
         posicionMatrix: {}
       },
       {
+        idParte: 'Short_linea_lateral',
+        nombreMostrar: 'Short línea lateral',
+        color: '#ACDAD6',
+        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        posicionMatrix: {}
+      },
+      {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
         posicionesTipografia: [
