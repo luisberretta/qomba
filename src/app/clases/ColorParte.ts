@@ -1193,7 +1193,7 @@
       },
       {
         idParte: 'Short_Línea_Lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#CCB510',
         colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -1624,7 +1624,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#FFFFFF',
         colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -2286,7 +2286,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#AA1111',
         colores: ['#ffffff', '#000000', '#0000ff', '#AA1111'],
         posicionMatrix: {}
@@ -2525,7 +2525,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#E2E5E5',
         colores: ['#E2E5E5', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -2744,7 +2744,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#AF1917',
         colores: ['#ffffFFFFFFff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -4260,7 +4260,7 @@
   //     },
   //     {
   //       idParte: "Short_linea_lateral",
-  //       nombreMostrar: "Short línea letaral",
+  //       nombreMostrar: "Short línea lateral",
   //       color: "#",
   //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
   //       posicionMatrix: {}
@@ -4716,7 +4716,7 @@
   //     },
   //     {
   //       idParte: "Short_linea_lateral",
-  //       nombreMostrar: "Short línea letaral",
+  //       nombreMostrar: "Short línea lateral",
   //       color: "#",
   //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
   //       posicionMatrix: {}
@@ -4935,7 +4935,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#EDEDED',
         colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -5160,7 +5160,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#F34135',
         colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -5394,7 +5394,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#2193CF',
         colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
@@ -5613,7 +5613,7 @@
   //     },
   //     {
   //       idParte: 'Short_linea_lateral',
-  //       nombreMostrar: 'Short línea letaral',
+  //       nombreMostrar: 'Short línea lateral',
   //       color: '#EDEDED',
   //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
   //       posicionMatrix: {}
@@ -6079,7 +6079,7 @@
       },
       {
         idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea letaral',
+        nombreMostrar: 'Short línea lateral',
         color: '#9B27B0',
         colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
         posicionMatrix: {}
