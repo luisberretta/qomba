@@ -40,6 +40,20 @@ export const constantesModelos = {
     colores: coloresPrincipales,
     posicionesTipografia: {},
     posicionMatrix: {}
+  },
+  mediasPrincipal: {
+    idParte: 'Medias_principal',
+    nombreMostrar: 'Medias principal',
+    colores: coloresPrincipales,
+    posicionesTipografia: {},
+    posicionMatrix: {},
+  },
+  mediasLinea: {
+    idParte: 'Medias_linea',
+    nombreMostrar: 'Medias línea',
+    colores: coloresPrincipales,
+    posicionesTipografia: {},
+    posicionMatrix: {}
   }
 }
 

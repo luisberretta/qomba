@@ -27,24 +27,10 @@ export const coloresParte = [
         posicionesTipografia: {},
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#EBEDF1',
-        colores: constantesModelos.coloresPrincipales,
-        posicionesTipografia: {},
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#484A9A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionesTipografia: {},
-        posicionMatrix: {}
-      },
-      //short principal
-      // constantesModelos.shortPrincipal.concat({color: '#484A9A'}),
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#E8EAEF'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#484A9A'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#484A9A'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E9EAEF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#484A9A'}),
@@ -219,20 +205,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#282828'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E4CA0D'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#282828'}),
@@ -417,20 +393,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#E9511A'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#361B13'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#FFFFFF'}),
@@ -608,20 +574,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#A9D2F2',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#A9D2F2'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#E8EAEF'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#A8D1F1'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#FFFFFF'}),
@@ -799,20 +755,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#030303'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#2275BB'}),
@@ -990,20 +936,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#020203'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E5CA0D'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#010202'}),
@@ -1174,20 +1110,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#24519B',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#24519B'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#24519B'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#24519B'}),
@@ -1365,20 +1291,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#BF181C',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#E62A3A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#E62A3A'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#C0181C'}),
@@ -1563,20 +1479,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#E2E5E5',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#070A35',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#E2E5E5'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#070A35'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#E2E5E5'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#06092D'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#06092D'}),
@@ -1750,20 +1656,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#030A13'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#589EC9'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ffffff'}),
@@ -1939,20 +1835,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0E0E0D'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#0E0E0D'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#ffffff'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1111'}),
@@ -2142,20 +2028,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#ffffff',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#342A90',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#ffffff'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#342A90'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#342A90'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFF01'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#18792B'}),
@@ -2331,20 +2207,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#AF1917',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#EDEBE0',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#AF1917'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#EDEBE0'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#ECEADF'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#AD0000'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ECEADF'}),
@@ -2516,20 +2382,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#080A3B',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#F1D500',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#040835'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#EDD519'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#040835'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#EDD519'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#040835'}),
@@ -2718,20 +2574,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#060D21',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#101E39'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#101E39'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ACDFDA'}),
@@ -2913,20 +2759,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0E0E0D'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
       Object.assign(constantesModelos.shortPrincipal, {color: '#0E0E0D'}),
       Object.assign(constantesModelos.shortLineaSuperior, {color: '#78797A'}),
       Object.assign(constantesModelos.shortLineaInferior, {color: '#232222'}),
@@ -4404,20 +4240,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#EDEDED',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#030323',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#E2DFDE'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#0A0A35'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#0A0A35'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E2DFDE'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1A1A'}),
@@ -4597,20 +4423,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#F3F2F4',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#374FAB',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#F3F2F4'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#374FAB'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#4052BE'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#F54233'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#3E52B5'}),
@@ -4795,20 +4611,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#000000',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#F54233',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#000000'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#F54233'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#000000'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#2193CF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#F54233'}),
@@ -4986,20 +4792,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#EDEDED',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#0B0828',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#E2DFDE'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#0B0828'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#0B0828'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E2DFDE'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1A1A'}),
@@ -5185,20 +4981,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias líneas',
-        color: '#4060AD',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#F9F7F7'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#61ACC6'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#F9F7F7'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#61ACC6'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#C9BADD'}),
@@ -5384,20 +5170,10 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Medias_principal',
-        nombreMostrar: 'Medias principal',
-        color: '#0A0A0A',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: 'Medias_linea',
-        nombreMostrar: 'Medias línea',
-        color: '#FFFFFF',
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#242423'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#E7EAEF'}),
+      //short
       Object.assign({}, constantesModelos.shortPrincipal, {color: '#E7EAEF'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#242423'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#9B27B0'}),

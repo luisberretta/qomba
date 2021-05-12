@@ -1,0 +1,23 @@
+export const nombreColor = [
+  { color: '#FFFFFF', nombre: 'Blanco' },
+  { color: '#000000', nombre: 'Negro' },
+  { color: '#0000FF', nombre: 'Azul' },
+  { color: '#FF0000', nombre: 'Rojo' },
+  { color: '#FFFF00', nombre: 'Amarillo' },
+  { color: '#00FF66', nombre: 'Verde' },
+  { color: '#99CCFF', nombre: 'Celeste' },
+  { color: '#000099', nombre: 'Azul oscuro' },
+  { color: '#FF9900', nombre: 'Naranja' },
+  { color: '#FFCCCC', nombre: 'Rosa' },
+  { color: '#666666', nombre: 'Gris' },
+  { color: '#CC66CC', nombre: 'Violeta' },
+  { color: '#66FFCC', nombre: 'Verde Agua' },
+  { color: '#FFFF99', nombre: 'Dorado' },
+  { color: '#993333', nombre: 'Marrón' },
+  { color: '#990000', nombre: 'Granate' },
+  { color: '#00FFFF', nombre: 'Cian' },
+  { color: '#99CCCC', nombre: 'Acero' },
+  { color: '#FF6666', nombre: 'Coral' },
+  { color: '#669999', nombre: 'Pizarra' },
+  { color: '#FF9900', nombre: 'Naranja 2' }
+]
