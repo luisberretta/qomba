@@ -1,4 +1,5 @@
-﻿export const coloresParte = [
+﻿import {constantesModelos} from "./ConstanteModelo";
+export const coloresParte = [
   {
     idModelo: 1,
     partes: [
@@ -14,7 +15,7 @@
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#484A99',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionesTipografia: {},
         posicionMatrix: {}
       },
@@ -22,7 +23,7 @@
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionesTipografia: {},
         posicionMatrix: {}
       },
@@ -30,7 +31,7 @@
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#EBEDF1',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionesTipografia: {},
         posicionMatrix: {},
       },
@@ -38,43 +39,16 @@
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#484A9A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000',
-          '#484A9A'],
+        colores: constantesModelos.coloresPrincipales,
         posicionesTipografia: {},
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#45478E',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionesTipografia: {},
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#E9EAEF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionesTipografia: {},
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#44478E',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionesTipografia: {},
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#E9EAEF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionesTipografia: {},
-        posicionMatrix: {}
-      },
+      //short principal
+      // constantesModelos.shortPrincipal.concat({color: '#484A9A'}),
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#484A9A'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E9EAEF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#484A9A'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E9EAEF'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -139,7 +113,7 @@
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
         color: '#',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -179,7 +153,7 @@
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
         color: '#',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -228,73 +202,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#000000',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera estampa',
         color: '#E5CA0B',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#E4CA0D',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#E6CD19',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#282828'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E4CA0D'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#282828'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E4CA0D'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -451,84 +393,48 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#EE7C29',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa_uno',
         nombreMostrar: 'Remera estampa uno',
         color: '#E84C1E',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa_dos',
         nombreMostrar: 'Remera estampa dos',
         color: '#39130F',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#2A201F',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#D54D1C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#361B13',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#412420',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E9511A'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#361B13'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#412420'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -685,73 +591,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#53B6E1',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera estampa',
         color: '#F9F9F9',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#AED5F1',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#A9D2F2',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#E4E6EB',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#A8D1F1',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#A1CBEC',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E8EAEF'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#A8D1F1'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#A1CBEC'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -908,73 +782,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#000000',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#2275BA',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#030303',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#030303',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#030303',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#030303',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#030303'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#2275BB'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#2275BB'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -1131,73 +973,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E5CA0B',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#000000',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#0D0D0D',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_Línea_Superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#CCB510',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_Línea_Inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#0D0D0D',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_Línea_Lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#CCB510',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#020203'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E5CA0D'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#010202'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E5CA0D'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -1354,58 +1164,34 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E2E5E5',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#345594',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#24519B',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#21498B',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#21498B',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea Short_linea_lateral',
-        color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#24519B'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#24519B'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#FFFFFF'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -1562,73 +1348,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E52A3A',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#6B5D5D',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#BF181C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#BF181C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#BF181C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#BF181C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E62A3A'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#C0181C'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#FFFFFF'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -1785,72 +1539,48 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E2E5E5',
-        colores: ['#E2E5E5', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera bandas verticales',
         color: '#070A35',
-        colores: ['#ffffff', '#000000', '#070A35', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_mangas_y_recorte',
         nombreMostrar: 'Mangas y recorte',
         color: '#',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#E2E5E5',
-        colores: ['#E2E5E5', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#E2E5E5',
-        colores: ['#E2E5E5', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#070A35',
-        colores: ['#ffffff', '#000000', '#070A35', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#E2E5E5',
-        colores: ['#E2E5E5', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#070A35',
-        colores: ['#ffffff', '#000000', '#070A35', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#070A35',
-        colores: ['#ffffff', '#000000', '#070A35', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#070A35',
-        colores: ['#ffffff', '#000000', '#070A35', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E2E5E5'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#06092D'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#06092D'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#06092D'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -1915,7 +1645,7 @@
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
         color: '#',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1955,7 +1685,7 @@
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
         color: '#',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -2003,73 +1733,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#589EC9',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#589EC9', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera estampa',
         color: '#000000',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#ffffff',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#589EC9',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#ffffff',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#589EC9',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#030A13'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#589EC9'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ffffff'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#589EC9'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -2224,73 +1922,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#AA1111',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#AA1111',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Corte izquierdo',
         color: '#000000',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#ffffff',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#ffffff',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#AA1111',
-        colores: ['#ffffff', '#000000', '#0000ff', '#AA1111'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#AA1111',
-        colores: ['#ffffff', '#000000', '#0000ff', '#AA1111'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#0E0E0D'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#ffffff'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1111'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#AA1111'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -2445,91 +2111,55 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E2E5E5',
-        colores: [
-          '#E2E5E5', '#F6E61E', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_línea_derecha',
         nombreMostrar: 'Línea derecha',
         color: '#F6E61E',
-        colores: [
-          '#E2E5E5', '#F6E61E', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_línea_central',
         nombreMostrar: 'Línea central',
         color: '#18792B',
-        colores: [
-          '#E2E5E5', '#F6E61E', '#18792B', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_línea_izquierda',
         nombreMostrar: 'Línea izquierda',
         color: '#342A90',
-        colores: [
-          '#E2E5E5', '#F6E61E', '#00FF66', '#99CCFF',
-          '#342A90', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#ffffff',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#342A90',
-        colores: ['#ffffff', '#000000', '#342A90', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#342A90',
-        colores: ['#ffffff', '#000000', '#342A90', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#F6E61E',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#18792B',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#E2E5E5',
-        colores: ['#E2E5E5', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#342A90'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFF01'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#18792B'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E2E5E5'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -2684,71 +2314,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#EDEBE0',
-        colores: [
-          '#EDEBE0', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#D11717',
-        colores: [
-          '#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#EDEBE0',
-        colores: ['#EDEBE0', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#AF1917',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#EDEBE0',
-        colores: ['#EDEBE0', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#EDEBE0',
-        colores: ['#EDEBE0', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#AF1917',
-        colores: ['#FFFFFF', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#EDEBE0',
-        colores: ['#EDEBE0', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#AF1917',
-        colores: ['#ffffFFFFFFff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#ECEADF'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#AD0000'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ECEADF'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#AD0000'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -2906,61 +2506,34 @@
         idParte: 'Remera_mangas',
         nombreMostrar: 'Remera mangas',
         color: '#080A3B',
-        colores: [
-          '#FFFFFF', '#F1D500', '#00FF66', '#99CCFF',
-          '#080A3B', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#F1D500',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#080A3B',
-        colores: ['#ffffff', '#000000', '#080A3B', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#F1D500',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#080A3B',
-        colores: ['#ffffff', '#000000', '#080A3B', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#F1D500',
-        colores: ['#ffffff', '#000000', '#080A3B', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#080A3B',
-        colores: ['#ffffff', '#000000', '#080A3B', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#F1D500',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#040835'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#EDD519'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#040835'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#EDD519'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -3107,86 +2680,62 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#384F65',
-        colores: ['#ffffff', '#000000', '#384F65', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera estampa',
         color: '#434554',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello',
         color: '#17213B',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_puño_superior',
         nombreMostrar: 'Puño superior',
         color: '#ACDAD6',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_puño_medio',
         nombreMostrar: 'Puño medio',
         color: '#FFFFFF',
-        colores: ['#FFFFFF', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_puño_inferior',
         nombreMostrar: 'Puño inferior',
         color: '#ACDAD6',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#060D21',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#091D3E',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#FFFFFF',
-        colores: ['#FFFFFF', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#ACDAD6',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#ACDAD6',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#101E39'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ACDFDA'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#FFFFFF'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -3340,81 +2889,48 @@
         idParte: 'Remera_linea_superior',
         nombreMostrar: 'Línea superior',
         color: '#959797',
-        colores: [
-          '#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_linea_media',
         nombreMostrar: 'Línea central',
         color: '#A7A9A9',
-        colores: [
-          '#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_linea_inferior',
         nombreMostrar: 'Línea inferior',
         color: '#E1E5E5',
-        colores: [
-          '#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#A7A9A9',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#78797A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#ffffff',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign(constantesModelos.shortPrincipal, {color: '#0E0E0D'}),
+      Object.assign(constantesModelos.shortLineaSuperior, {color: '#78797A'}),
+      Object.assign(constantesModelos.shortLineaInferior, {color: '#232222'}),
+      Object.assign(constantesModelos.shortLineaLateral, {color: '#E2E5E5'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -3561,63 +3077,63 @@
   //       idParte: "Remera_principal",
   //       nombreMostrar: "Remera principal",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_mangas_y_recorte",
   //       nombreMostrar: "Mangas y recorte",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_cuello_y_puños",
   //       nombreMostrar: "Cuello y puños",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
   //       color: "#0A0A0A",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
   //       color: "#FFFFFF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
   //       color: "#E8EAEF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_superior",
   //       nombreMostrar: "Short línea superior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_inferior",
   //       nombreMostrar: "Short línea inferior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Nombre",
   //       nombreMostrar: "Nombre",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3649,7 +3165,7 @@
   //       idParte: "Número_espalda",
   //       nombreMostrar: "Número espalda",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3681,7 +3197,7 @@
   //       idParte: "Número_delantero",
   //       nombreMostrar: "Número delantero",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3721,7 +3237,7 @@
   //       idParte: "Short_número",
   //       nombreMostrar: "Short número",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3776,63 +3292,63 @@
   //       idParte: "Remera_estampa",
   //       nombreMostrar: "Estampa",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_cuello_y_puños",
   //       nombreMostrar: "Cuello y puños",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
   //       color: "#0A0A0A",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
   //       color: "#FFFFFF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
   //       color: "#E8EAEF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_superior",
   //       nombreMostrar: "Short línea superior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_inferior",
   //       nombreMostrar: "Short línea inferior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_lateral",
   //       nombreMostrar: "Short línea lateral",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Nombre",
   //       nombreMostrar: "Nombre",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3864,7 +3380,7 @@
   //       idParte: "Número_espalda",
   //       nombreMostrar: "Número espalda",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3896,7 +3412,7 @@
   //       idParte: "Número_delantero",
   //       nombreMostrar: "Número delantero",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3936,7 +3452,7 @@
   //       idParte: "Short_número",
   //       nombreMostrar: "Short número",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -3991,77 +3507,77 @@
   //       idParte: "Remera_estampa",
   //       nombreMostrar: "Estampa",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_cuello",
   //       nombreMostrar: "Cuello",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_puño_izquierdo",
   //       nombreMostrar: "Puño izquierdo",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_puño_derecho",
   //       nombreMostrar: "Puño derecho",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
   //       color: "#0A0A0A",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
   //       color: "#FFFFFF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
   //       color: "#E8EAEF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_superior",
   //       nombreMostrar: "Short línea superior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_inferior",
   //       nombreMostrar: "Short línea inferior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_lateral",
   //       nombreMostrar: "Short línea lateral",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Nombre",
   //       nombreMostrar: "Nombre",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4093,7 +3609,7 @@
   //       idParte: "Número_espalda",
   //       nombreMostrar: "Número espalda",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4125,7 +3641,7 @@
   //       idParte: "Número_delantero",
   //       nombreMostrar: "Número delantero",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4165,7 +3681,7 @@
   //       idParte: "Short_número",
   //       nombreMostrar: "Short número",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4213,63 +3729,63 @@
   //       idParte: "Remera_principal",
   //       nombreMostrar: "Remera principal",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_estampa",
   //       nombreMostrar: "Estampa",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_cuello_y_puños",
   //       nombreMostrar: "Cuello y puños",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
   //       color: "#0A0A0A",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
   //       color: "#FFFFFF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
   //       color: "#E8EAEF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_superior",
   //       nombreMostrar: "Short línea superior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_inferior",
   //       nombreMostrar: "Short línea inferior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_lateral",
   //       nombreMostrar: "Short línea lateral",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
@@ -4428,49 +3944,49 @@
   //       idParte: "Remera_principal",
   //       nombreMostrar: "Remera principal",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_banda_vertical",
   //       nombreMostrar: "Banda vertical",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_mangas_y_recorte",
   //       nombreMostrar: "Mangas y recorte",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_cuello_y_puños",
   //       nombreMostrar: "Cuello y puños",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
   //       color: "#0A0A0A",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias líneas",
   //       color: "#FFFFFF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
   //       color: "#E8EAEF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
@@ -4491,7 +4007,7 @@
   //       idParte: "Nombre",
   //       nombreMostrar: "Nombre",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4523,7 +4039,7 @@
   //       idParte: "Número_espalda",
   //       nombreMostrar: "Número espalda",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4555,7 +4071,7 @@
   //       idParte: "Número_delantero",
   //       nombreMostrar: "Número delantero",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4595,7 +4111,7 @@
   //       idParte: "Short_número",
   //       nombreMostrar: "Short número",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF", "#000099", "#FF9900", "#FFCCCC", "#FF0000", "#666666", "#000000"],
+  //       colores: constantesModelos.paleta10,
   //       posicionesTipografia: [
   //         {
   //           tipografia: 'SablonUp-College',
@@ -4643,89 +4159,77 @@
   //       idParte: "Remera_principal",
   //       nombreMostrar: "Remera principal",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
-  //         "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-  //         "#666666", "#000000", "#CC66CC", "#66FFCC",
-  //         "#FFFF99", "#993333", "#990000", "#00FFFF",
-  //         "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+  //       colores: constantesModelos.paletaFull,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_estampa",
   //       nombreMostrar: "Estampa",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
-  //         "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-  //         "#666666", "#000000", "#CC66CC", "#66FFCC",
-  //         "#FFFF99", "#993333", "#990000", "#00FFFF",
-  //         "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+  //       colores: constantesModelos.paletaFull,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_estampa_inferior",
   //       nombreMostrar: "Estampa inferior",
   //       color: "#",
-  //       colores: ["#FFFFFF", "#FFFF00", "#00FF66", "#99CCFF",
-  //         "#000099", "#FF9900", "#FFCCCC", "#FF0000",
-  //         "#666666", "#000000", "#CC66CC", "#66FFCC",
-  //         "#FFFF99", "#993333", "#990000", "#00FFFF",
-  //         "#99CCCC", "#FF6666", "#669999", "#FF9900"],
+  //       colores: constantesModelos.paletaFull,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_cuello_y_puños",
   //       nombreMostrar: "Cuello y puños",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Remera_mangas_y_hombros",
   //       nombreMostrar: "Mangas y hombros",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Medias_principal",
   //       nombreMostrar: "Medias principal",
   //       color: "#0A0A0A",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {},
   //     },
   //     {
   //       idParte: "Medias_linea",
   //       nombreMostrar: "Medias línea",
   //       color: "#FFFFFF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_principal",
   //       nombreMostrar: "Short principal",
   //       color: "#E8EAEF",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_superior",
   //       nombreMostrar: "Short línea superior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_inferior",
   //       nombreMostrar: "Short línea inferior",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
   //       idParte: "Short_linea_lateral",
   //       nombreMostrar: "Short línea lateral",
   //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
+  //       colores: constantesModelos.coloresPrincipales,
   //       posicionMatrix: {}
   //     },
   //     {
@@ -4884,69 +4388,40 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#EDEDED',
-        colores: [
-          '#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#0A0A35',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#AB1C1C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#EDEDED',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#030323',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#0A0A35',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#EDEDED',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#AB1C1C',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#EDEDED',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#0A0A35'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E2DFDE'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1A1A'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E2DFDE'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -5105,73 +4580,41 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#F34135',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#4052BE',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#374FAB',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#F3F2F4',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#374FAB',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#374FAB',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#F34135',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#374FAB',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#F34135',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#4052BE'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#F54233'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#3E52B5'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#F34135'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -5328,84 +4771,48 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#2193CF',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa_uno',
         nombreMostrar: 'Estampa uno',
         color: '#F54233',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa_dos',
         nombreMostrar: 'Estampa dos',
         color: '#FFFFFF',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#EFEFEF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#F54233',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#2193CF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#F54233',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#2193CF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#000000'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#2193CF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#F54233'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#2193CF'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -5555,226 +4962,198 @@
       }
     ],
   },
-  // {
-  //   idModelo: 26,
-  //   partes: [
-  //     {
-  //       idParte: 'Remera_principal',
-  //       nombreMostrar: 'Remera principal',
-  //       color: '#EDEDED',
-  //       colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-  //         '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-  //         '#666666', '#000000', '#CC66CC', '#66FFCC',
-  //         '#FFFF99', '#993333', '#990000', '#00FFFF',
-  //         '#99CCCC', '#FF6666', '#669999', '#FF9900'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Remera_estampa',
-  //       nombreMostrar: 'Estampa',
-  //       color: '#0B0828',
-  //       colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF', '#000099', '#FF9900', '#FFCCCC', '#FF0000', '#666666', '#000000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Remera_cuello_y_puños',
-  //       nombreMostrar: 'Cuello y puños',
-  //       color: '#AFC2D7',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Medias_principal',
-  //       nombreMostrar: 'Medias principal',
-  //       color: '#EDEDED',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: 'Medias_linea',
-  //       nombreMostrar: 'Medias línea',
-  //       color: '#0B0828',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Short_principal',
-  //       nombreMostrar: 'Short principal',
-  //       color: '#0B0828',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Short_linea_superior',
-  //       nombreMostrar: 'Short línea superior',
-  //       color: '#EDEDED',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Short_linea_inferior',
-  //       nombreMostrar: 'Short línea inferior',
-  //       color: '#AA1A1A',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Short_linea_lateral',
-  //       nombreMostrar: 'Short línea lateral',
-  //       color: '#EDEDED',
-  //       colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: 'Nombre',
-  //       nombreMostrar: 'Nombre',
-  //       color: '#',
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1410.7174, 531.4254]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1411.7174, 525.4254]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1422.4872, 536.6999]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1409.7174, 525.4254]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: 'Número_espalda',
-  //       nombreMostrar: 'Número espalda',
-  //       color: '#',
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1418.9176, 801.5856]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1408.9176, 791.5856]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1414.1864, 806.86]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1428.9176, 828.5856]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: 'Número_delantero',
-  //       nombreMostrar: 'Número delantero',
-  //       color: '#',
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1.0493, 0, 0, 1, 380.8859, 594.0255],
-  //             izquierda: [1.0493, 0, 0, 1, 700.8859, 600.0255],
-  //             centro: [1.0493, 0, 0, 1, 545.8859, 642.0255]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1.0493, 0, 0, 1, 375.8859, 611.0255],
-  //             izquierda: [1.0493, 0, 0, 1, 703.8859, 617.0255],
-  //             centro: [1.0493, 0, 0, 1, 548.8859, 640.0255]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1.0493, 0, 0, 1, 385.9052, 614.3],
-  //             izquierda: [1.0493, 0, 0, 1, 700.9052, 620.3],
-  //             centro: [1.0493, 0, 0, 1, 544.9052, 654.3]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [1.0493, 0, 0, 1, 386.0363, 610.6264],
-  //             izquierda: [1.0493, 0, 0, 1, 723.0363, 617.6264],
-  //             centro: [1.0493, 0, 0, 1, 558.0363, 654.6264]
-  //           }
-  //         }
-  //       ],
-  //
-  //     },
-  //     {
-  //       idParte: 'Short_número',
-  //       nombreMostrar: 'Short número',
-  //       color: '#',
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: 'Remera_escudo',
-  //       nombreMostrar: 'Escudo remera',
-  //       color: '#',
-  //       colores: [],
-  //       posicionMatrix: {
-  //         derecha: [0.52, 0, 0, 0.46, 364.4772, 520.0656],
-  //         izquierda: [0.52, 0, 0, 0.46, 689.4772, 520.0656],
-  //         centro: [0.52, 0, 0, 0.46, 533.4772, 565.0656]
-  //       }
-  //     }
-  //   ],
-  // },
+  {
+    idModelo: 26,
+    partes: [
+      {
+        idParte: 'Remera_principal',
+        nombreMostrar: 'Remera principal',
+        color: '#EDEDED',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_estampa',
+        nombreMostrar: 'Estampa',
+        color: '#0B0828',
+        colores: constantesModelos.paleta10,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_cuello_y_puños',
+        nombreMostrar: 'Cuello y puños',
+        color: '#AFC2D7',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Medias_principal',
+        nombreMostrar: 'Medias principal',
+        color: '#EDEDED',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: 'Medias_linea',
+        nombreMostrar: 'Medias línea',
+        color: '#0B0828',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#0B0828'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E2DFDE'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1A1A'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E2DFDE'}),
+      {
+        idParte: 'Nombre',
+        nombreMostrar: 'Nombre',
+        color: '#',
+        colores: [],
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1410.7174, 531.4254]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1411.7174, 525.4254]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1422.4872, 536.6999]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1409.7174, 525.4254]
+            }
+          }
+        ]
+      },
+      {
+        idParte: 'Número_espalda',
+        nombreMostrar: 'Número espalda',
+        color: '#',
+        colores: [],
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1418.9176, 801.5856]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1408.9176, 791.5856]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1414.1864, 806.86]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1428.9176, 828.5856]
+            }
+          }
+        ]
+      },
+      {
+        idParte: 'Número_delantero',
+        nombreMostrar: 'Número delantero',
+        color: '#',
+        colores: [],
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1.0493, 0, 0, 1, 380.8859, 594.0255],
+              izquierda: [1.0493, 0, 0, 1, 700.8859, 600.0255],
+              centro: [1.0493, 0, 0, 1, 545.8859, 642.0255]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1.0493, 0, 0, 1, 375.8859, 611.0255],
+              izquierda: [1.0493, 0, 0, 1, 703.8859, 617.0255],
+              centro: [1.0493, 0, 0, 1, 548.8859, 640.0255]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1.0493, 0, 0, 1, 385.9052, 614.3],
+              izquierda: [1.0493, 0, 0, 1, 700.9052, 620.3],
+              centro: [1.0493, 0, 0, 1, 544.9052, 654.3]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1.0493, 0, 0, 1, 386.0363, 610.6264],
+              izquierda: [1.0493, 0, 0, 1, 723.0363, 617.6264],
+              centro: [1.0493, 0, 0, 1, 558.0363, 654.6264]
+            }
+          }
+        ],
+
+      },
+      {
+        idParte: 'Short_número',
+        nombreMostrar: 'Short número',
+        color: '#',
+        colores: [],
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
+            }
+          }
+        ],
+      },
+      {
+        idParte: 'Remera_escudo',
+        nombreMostrar: 'Escudo remera',
+        color: '#',
+        colores: [],
+        posicionMatrix: {
+          derecha: [0.52, 0, 0, 0.46, 364.4772, 520.0656],
+          izquierda: [0.52, 0, 0, 0.46, 689.4772, 520.0656],
+          centro: [0.52, 0, 0, 0.46, 533.4772, 565.0656]
+        }
+      }
+    ],
+  },
   {
     idModelo: 27,
     partes: [
@@ -5782,84 +5161,48 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#AFC2D7',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#AFC2D7',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa_uno',
         nombreMostrar: 'Remera estampa uno',
         color: '#7EB3DB',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#7EB3DB', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa_dos',
         nombreMostrar: 'Remera estampa dos',
         color: '#D7C5EB',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#D7C5EB', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias líneas',
         color: '#4060AD',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#E8EAEF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#61ACC6',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#C9BADD',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#61ACC6',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#F9F7F7'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#61ACC6'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#C9BADD'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#61ACC6'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -6017,80 +5360,48 @@
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E7EAEF',
-        colores: ['#E7EAEF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#CC66CC', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Estampa',
         color: '#9B27B0',
-        colores: ['#FFFFFF', '#FFFF00', '#00FF66', '#99CCFF',
-          '#000099', '#FF9900', '#FFCCCC', '#FF0000',
-          '#666666', '#000000', '#9B27B0', '#66FFCC',
-          '#FFFF99', '#993333', '#990000', '#00FFFF',
-          '#99CCCC', '#FF6666', '#669999', '#FF9900'],
+        colores: constantesModelos.paletaFull,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_mangas_y_hombros',
         nombreMostrar: 'Mangas y hombros',
         color: '#9B27B0',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
         color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
         idParte: 'Medias_principal',
         nombreMostrar: 'Medias principal',
         color: '#0A0A0A',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {},
       },
       {
         idParte: 'Medias_linea',
         nombreMostrar: 'Medias línea',
         color: '#FFFFFF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
+        colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: 'Short_principal',
-        nombreMostrar: 'Short principal',
-        color: '#E8EAEF',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_superior',
-        nombreMostrar: 'Short línea superior',
-        color: '#000000',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_inferior',
-        nombreMostrar: 'Short línea inferior',
-        color: '#9B27B0',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
-      {
-        idParte: 'Short_linea_lateral',
-        nombreMostrar: 'Short línea lateral',
-        color: '#9B27B0',
-        colores: ['#ffffff', '#000000', '#0000ff', '#FF0000'],
-        posicionMatrix: {}
-      },
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E7EAEF'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#242423'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#9B27B0'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#9C26B0'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',

@@ -208,7 +208,7 @@ export const camisetaModelos = [
     visible: false,
   },
   // {
-  //   id: 14,
+  //   id: 17,
   //   tipo: 'hombre',
   //   nombre: 'Vecort',
   //   url: '/assets/images/modelos/Vecort.png',
@@ -221,7 +221,7 @@ export const camisetaModelos = [
   // },
 
   // {
-  //   id: 16,
+  //   id: 18,
   //   tipo: 'hombre',
   //   nombre: 'Classic',
   //   url: '/assets/images/modelos/Classic.png',
