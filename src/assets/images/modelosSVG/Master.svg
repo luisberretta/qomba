@@ -418,7 +418,7 @@ YII=" transform="matrix(0.3018 -3.972827e-02 3.711764e-02 0.2819 768.5872 1383.3
 			C687.2,213,687.3,213.1,687.5,213.2z"/>
 </g>
 <g id="Nombre" visibility="hidden">
-	<text transform="matrix(1.0192 0 0 1 1408.9722 399.1395)" font-family="'SablonUp-College'" font-size="78.3628px">NOMBRE</text>
+	<text transform="matrix(1 0 0 1 1455.4897 386.97)" font-family="'SablonUp-College'" font-size="90px">NOMBRE</text>
 </g>
 <g id="Número_delantero" visibility="hidden">
 	<text id="numero" transform="matrix(1 0 0 1 702.6883 583.8918)" display="inline" font-family="'SablonUp-College'" font-size="100px">10</text>
