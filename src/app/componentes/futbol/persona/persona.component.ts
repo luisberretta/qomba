@@ -69,10 +69,10 @@ export class PersonaComponent implements OnInit {
           polyline[j].setAttribute('fill', cambiar.color);
         }
         for (let j = 0; j < ellipse.length; j++) {
-          ellipse[j].setAttribute('fill',cambiar.color);
+          ellipse[j].setAttribute('fill', cambiar.color);
         }
         for (let j = 0; j < rect.length; j++) {
-          rect[j].setAttribute('fill',cambiar.color);
+          rect[j].setAttribute('fill', cambiar.color);
         }
         grupos[i].classList.remove('parte-seleccionada');
       }
@@ -82,24 +82,23 @@ export class PersonaComponent implements OnInit {
   cambiarColorEstampa(cambiar) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if (this.perteneceEstampado(grupos[i])){
-        if(grupos[i].id == "Short_número"){
-          if(cambiar.llevaColorShort){
+      if (this.perteneceEstampado(grupos[i])) {
+        if (grupos[i].id == "Short_número") {
+          if (cambiar.llevaColorShort) {
             grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
           }
-        }
-        else{
+        } else {
           grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
         }
       }
     }
   }
 
-  cambiarColorNumeroShort(color){
+  cambiarColorNumeroShort(color) {
     let grupos = this.obtenerGrupos();
     let estampado = grupos.namedItem("Short_número");
     let shortNumero = estampado.getElementsByTagName('text')[0];
-    shortNumero.setAttribute('fill',color);
+    shortNumero.setAttribute('fill', color);
   }
 
   perteneceEstampado(grupo) {
@@ -133,7 +132,7 @@ export class PersonaComponent implements OnInit {
     let posicionTipografia = null;
     let posicionesEscudo = null;
     coloresModelo = coloresParte.find(x => x.idModelo == this.modeloSeleccionado.id).partes;
-    if(posicion.parte != 'Short_escudo') {
+    if (posicion.parte != 'Short_escudo') {
       posicionesTipografia = coloresModelo.find(x => x.idParte == posicion.parte).posicionesTipografia;
       if (posicionesTipografia?.length) {
         posicionTipografia = posicionesTipografia.find(x => x.tipografia == posicion.tipografia);
@@ -212,8 +211,17 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
       if (this.perteneceTipografia(grupos[i].id)) {
-        this.cambiarTamañoTipografia(tipografia,grupos[i]);
+        this.cambiarTamañoTipografia(tipografia, grupos[i]);
+        let esVisible = grupos[i].getAttribute('visibility') == 'visible';
+        grupos[i].setAttribute('visibility', 'hidden');
         grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia.tipografia);
+
+        setTimeout(() => {
+          if(esVisible) {
+            grupos[i].setAttribute('visibility', 'visible');
+          }
+        }, 200);
+
         let visualizar = {
           parte: grupos[i].id,
           tipografia: tipografia.tipografia,
@@ -224,17 +232,17 @@ export class PersonaComponent implements OnInit {
     }
   }
 
-  cambiarTamañoTipografia(tipografia,grupo){
-    if(grupo.id == 'Número_espalda'){
+  cambiarTamañoTipografia(tipografia, grupo) {
+    if (grupo.id == 'Número_espalda') {
       grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroEspalda);
     }
-    if(grupo.id == 'Nombre'){
+    if (grupo.id == 'Nombre') {
       grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNombre);
     }
-    if(grupo.id == 'Short_número'){
+    if (grupo.id == 'Short_número') {
       grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroShort);
     }
-    if(grupo.id == 'Número_delantero'){
+    if (grupo.id == 'Número_delantero') {
       grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroDelantero);
     }
   }
