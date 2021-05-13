@@ -138,8 +138,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: constantesModelos.paleta10,
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -170,8 +168,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionesTipografia: [],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
@@ -248,8 +244,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -280,8 +274,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -320,8 +312,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -352,8 +342,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 390.7539, 451.422],
           izquierda: [0.5456, 0, 0, 0.5456, 712.5939, 464.382],
@@ -436,8 +424,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -468,8 +454,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -508,8 +492,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -540,8 +522,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5402, 0, 0, 0.5402, 382.9537, 464.5029],
           izquierda: [0.5402, 0, 0, 0.5402, 729.2139, 465.3627],
@@ -617,8 +597,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -649,8 +627,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -689,8 +665,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -721,8 +695,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5402, 0, 0, 0.5402, 394.2561, 457.2935],
           izquierda: [0.5402, 0, 0, 0.5402, 714.7761, 447.3135],
@@ -798,8 +770,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -830,8 +800,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -870,8 +838,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -902,8 +868,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionMatrix: {
           derecha: [0.5349, 0, 0, 0.5349, 389.4749, 466.3067],
           izquierda: [0.5349, 0, 0, 0.5349, 705.9749, 468.183],
@@ -979,8 +943,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1011,8 +973,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1051,8 +1011,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1083,8 +1041,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
           izquierda: [0.5456, 0, 0, 0.5456, 730.5656, 440.891],
@@ -1153,8 +1109,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1185,8 +1139,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1225,8 +1177,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1257,8 +1207,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5402, 0, 0, 0.5402, 338.815, 399.1395],
           izquierda: [0.5402, 0, 0, 0.5402, 635.815, 396.23],
@@ -1334,8 +1282,6 @@ export const coloresParte = [
       {
         idParte: 'Número_espalda',
         nombreMostrar: 'Número espalda',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1366,8 +1312,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1406,8 +1350,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1438,8 +1380,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5402, 0, 0, 0.5402, 380.0514, 455.9552],
           izquierda: [0.5402, 0, 0, 0.5402, 720.2637, 455.9552],
@@ -1550,8 +1490,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: constantesModelos.paleta10,
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1622,8 +1560,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 397.034, 452.724],
           izquierda: [0.5456, 0, 0, 0.5456, 729.8394, 460.097],
@@ -1729,8 +1665,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -1801,8 +1735,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 390.7539, 451.422],
           izquierda: [0.5456, 0, 0, 0.5456, 712.5939, 464.382],
@@ -1910,8 +1842,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -2103,8 +2033,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -2316,8 +2244,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -2348,8 +2274,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.5456, 0, 0, 0.5456, 390.1781, 483.4277],
           izquierda: [0.5456, 0, 0, 0.5456, 693.691, 487.4277],
@@ -2906,1317 +2830,1245 @@ export const coloresParte = [
       }
     ],
   },
-  // {
-  //   idModelo: 17,
-  //   partes: [
-  //     {
-  //       idParte: "Remera_principal",
-  //       nombreMostrar: "Remera principal",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_mangas_y_recorte",
-  //       nombreMostrar: "Mangas y recorte",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_cuello_y_puños",
-  //       nombreMostrar: "Cuello y puños",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Medias_principal",
-  //       nombreMostrar: "Medias principal",
-  //       color: "#0A0A0A",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: "Medias_linea",
-  //       nombreMostrar: "Medias líneas",
-  //       color: "#FFFFFF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_principal",
-  //       nombreMostrar: "Short principal",
-  //       color: "#E8EAEF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_superior",
-  //       nombreMostrar: "Short línea superior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_inferior",
-  //       nombreMostrar: "Short línea inferior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Nombre",
-  //       nombreMostrar: "Nombre",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4098, 430.1458]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1523.4911, 435.5717]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_espalda",
-  //       nombreMostrar: "Número espalda",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4517, 737.7069]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_delantero",
-  //       nombreMostrar: "Número delantero",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 402.0226, 537.3593],
-  //             izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
-  //             centro: [1, 0, 0, 1, 578.5825, 620.9993]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [0.9086, 0, 0, 1, 332.2709, 595.6812],
-  //             izquierda: [0.9086, 0, 0, 1, 617.4053, 595.6812],
-  //             centro: [0.9086, 0, 0, 1, 483.4053, 623.6368]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Short_número",
-  //       nombreMostrar: "Short número",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Remera_escudo",
-  //       nombreMostrar: "Escudo remera",
-  //       color: "#",
-  //       colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
-  //       posicionMatrix: {
-  //         derecha: [0.1122, 0, 0, 0.1029, 341.2709, 527.8898],
-  //         izquierda: [0.1122, 0, 0, 0.1029, 613.2725, 527.8898],
-  //         centro: [0.1122, 0, 0, 0.1029, 487.6725, 527.8898]
-  //       }
-  //     }
-  //   ],
-  // },
-  // {
-  //   idModelo: 18,
-  //   partes: [
-  //     {
-  //       idParte: "Remera_principal",
-  //       nombreMostrar: "Remera principal",
-  //       color: "#",
-  //       colores: ["#FFFFFF"],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_estampa",
-  //       nombreMostrar: "Estampa",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_cuello_y_puños",
-  //       nombreMostrar: "Cuello y puños",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Medias_principal",
-  //       nombreMostrar: "Medias principal",
-  //       color: "#0A0A0A",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: "Medias_linea",
-  //       nombreMostrar: "Medias línea",
-  //       color: "#FFFFFF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_principal",
-  //       nombreMostrar: "Short principal",
-  //       color: "#E8EAEF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_superior",
-  //       nombreMostrar: "Short línea superior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_inferior",
-  //       nombreMostrar: "Short línea inferior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_lateral",
-  //       nombreMostrar: "Short línea lateral",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Nombre",
-  //       nombreMostrar: "Nombre",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4098, 430.1458]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1523.4911, 435.5717]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_espalda",
-  //       nombreMostrar: "Número espalda",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4517, 737.7069]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_delantero",
-  //       nombreMostrar: "Número delantero",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 402.0226, 537.3593],
-  //             izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
-  //             centro: [1, 0, 0, 1, 578.5825, 620.9993]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Short_número",
-  //       nombreMostrar: "Short número",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Remera_escudo",
-  //       nombreMostrar: "Escudo remera",
-  //       color: "#",
-  //       colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
-  //       posicionMatrix: {
-  //         derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-  //         izquierda: [0.5456, 0, 0, 0.5456, 681.2637, 502.2455],
-  //         centro: [0.5456, 0, 0, 0.5456, 563.0637, 499.3655]
-  //       }
-  //     }
-  //   ],
-  // },
-  // {
-  //   idModelo: 19,
-  //   partes: [
-  //     {
-  //       idParte: "Remera_principal",
-  //       nombreMostrar: "Remera principal",
-  //       color: "#",
-  //       colores: ["#FFFFFF"],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_estampa",
-  //       nombreMostrar: "Estampa",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_cuello",
-  //       nombreMostrar: "Cuello",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_puño_izquierdo",
-  //       nombreMostrar: "Puño izquierdo",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_puño_derecho",
-  //       nombreMostrar: "Puño derecho",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Medias_principal",
-  //       nombreMostrar: "Medias principal",
-  //       color: "#0A0A0A",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: "Medias_linea",
-  //       nombreMostrar: "Medias línea",
-  //       color: "#FFFFFF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_principal",
-  //       nombreMostrar: "Short principal",
-  //       color: "#E8EAEF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_superior",
-  //       nombreMostrar: "Short línea superior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_inferior",
-  //       nombreMostrar: "Short línea inferior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_lateral",
-  //       nombreMostrar: "Short línea lateral",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Nombre",
-  //       nombreMostrar: "Nombre",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4098, 430.1458]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1523.4911, 435.5717]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_espalda",
-  //       nombreMostrar: "Número espalda",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4517, 737.7069]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_delantero",
-  //       nombreMostrar: "Número delantero",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 402.0226, 537.3593],
-  //             izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
-  //             centro: [1, 0, 0, 1, 578.5825, 620.9993]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Short_número",
-  //       nombreMostrar: "Short número",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Remera_escudo",
-  //       nombreMostrar: "Escudo remera",
-  //       color: "#",
-  //       colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
-  //       posicionMatrix: {
-  //         derecha: [0.5456, 0, 0, 0.5456, 389.9837, 450.4055],
-  //         izquierda: [0.5456, 0, 0, 0.5456, 681.2637, 502.2455],
-  //         centro: [0.5456, 0, 0, 0.5456, 563.0637, 499.3655]
-  //       }
-  //     }
-  //   ],
-  // },
-  // {
-  //   idModelo: 20,
-  //   partes: [
-  //     {
-  //       idParte: "Remera_principal",
-  //       nombreMostrar: "Remera principal",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_estampa",
-  //       nombreMostrar: "Estampa",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_cuello_y_puños",
-  //       nombreMostrar: "Cuello y puños",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Medias_principal",
-  //       nombreMostrar: "Medias principal",
-  //       color: "#0A0A0A",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: "Medias_linea",
-  //       nombreMostrar: "Medias línea",
-  //       color: "#FFFFFF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_principal",
-  //       nombreMostrar: "Short principal",
-  //       color: "#E8EAEF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_superior",
-  //       nombreMostrar: "Short línea superior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_inferior",
-  //       nombreMostrar: "Short línea inferior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_lateral",
-  //       nombreMostrar: "Short línea lateral",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Nombre",
-  //       nombreMostrar: "Nombre",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4098, 430.1458]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1523.4911, 435.5717]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_espalda",
-  //       nombreMostrar: "Número espalda",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4517, 737.7069]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_delantero",
-  //       nombreMostrar: "Número delantero",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 402.0226, 537.3593],
-  //             izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
-  //             centro: [1, 0, 0, 1, 578.5825, 620.9993]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 737.3083, 549.8518],
-  //             centro: [1, 0, 0, 1, 574.4484, 586.4117]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Short_número",
-  //       nombreMostrar: "Short número",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Remera_escudo",
-  //       nombreMostrar: "Escudo remera",
-  //       color: "#",
-  //       colores: [],
-  //       posicionMatrix: {
-  //         derecha: [0.5402, 0, 0, 0.5402, 380.0514, 455.9552],
-  //         izquierda: [0.5402, 0, 0, 0.5402, 720.2637, 455.9552],
-  //         centro: [0.5402, 0, 0, 0.5402, 559.5714, 501.1152]
-  //       }
-  //     }
-  //   ],
-  // },
-  // {
-  //   idModelo: 21,
-  //   partes: [
-  //     {
-  //       idParte: "Remera_principal",
-  //       nombreMostrar: "Remera principal",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_banda_vertical",
-  //       nombreMostrar: "Banda vertical",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_mangas_y_recorte",
-  //       nombreMostrar: "Mangas y recorte",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_cuello_y_puños",
-  //       nombreMostrar: "Cuello y puños",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Medias_principal",
-  //       nombreMostrar: "Medias principal",
-  //       color: "#0A0A0A",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: "Medias_linea",
-  //       nombreMostrar: "Medias líneas",
-  //       color: "#FFFFFF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_principal",
-  //       nombreMostrar: "Short principal",
-  //       color: "#E8EAEF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_superior",
-  //       nombreMostrar: "Short línea superior",
-  //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_inferior",
-  //       nombreMostrar: "Short línea inferior",
-  //       color: "#",
-  //       colores: ["#ffffff", "#000000", "#0000ff", "#FF0000"],
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Nombre",
-  //       nombreMostrar: "Nombre",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4098, 430.1458]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1523.4911, 435.5717]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_espalda",
-  //       nombreMostrar: "Número espalda",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4517, 737.7069]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_delantero",
-  //       nombreMostrar: "Número delantero",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 402.0226, 537.3593],
-  //             izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
-  //             centro: [1, 0, 0, 1, 578.5825, 620.9993]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [0.9086, 0, 0, 1, 332.2709, 595.6812],
-  //             izquierda: [0.9086, 0, 0, 1, 617.4053, 595.6812],
-  //             centro: [0.9086, 0, 0, 1, 483.4053, 623.6368]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Short_número",
-  //       nombreMostrar: "Short número",
-  //       color: "#",
-  //       colores: constantesModelos.paleta10,
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Remera_escudo",
-  //       nombreMostrar: "Escudo remera",
-  //       color: "#",
-  //       colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
-  //       posicionMatrix: {
-  //         derecha: [0.1122, 0, 0, 0.1029, 341.2709, 527.8898],
-  //         izquierda: [0.1122, 0, 0, 0.1029, 613.2725, 527.8898],
-  //         centro: [0.1122, 0, 0, 0.1029, 487.6725, 527.8898]
-  //       }
-  //     }
-  //   ],
-  // },
-  // {
-  //   idModelo: 22,
-  //   partes: [
-  //     {
-  //       idParte: "Remera_principal",
-  //       nombreMostrar: "Remera principal",
-  //       color: "#",
-  //       colores: constantesModelos.paletaFull,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_estampa",
-  //       nombreMostrar: "Estampa",
-  //       color: "#",
-  //       colores: constantesModelos.paletaFull,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_estampa_inferior",
-  //       nombreMostrar: "Estampa inferior",
-  //       color: "#",
-  //       colores: constantesModelos.paletaFull,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_cuello_y_puños",
-  //       nombreMostrar: "Cuello y puños",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Remera_mangas_y_hombros",
-  //       nombreMostrar: "Mangas y hombros",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Medias_principal",
-  //       nombreMostrar: "Medias principal",
-  //       color: "#0A0A0A",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {},
-  //     },
-  //     {
-  //       idParte: "Medias_linea",
-  //       nombreMostrar: "Medias línea",
-  //       color: "#FFFFFF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_principal",
-  //       nombreMostrar: "Short principal",
-  //       color: "#E8EAEF",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_superior",
-  //       nombreMostrar: "Short línea superior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_inferior",
-  //       nombreMostrar: "Short línea inferior",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Short_linea_lateral",
-  //       nombreMostrar: "Short línea lateral",
-  //       color: "#",
-  //       colores: constantesModelos.coloresPrincipales,
-  //       posicionMatrix: {}
-  //     },
-  //     {
-  //       idParte: "Nombre",
-  //       nombreMostrar: "Nombre",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4098, 430.1458]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1523.4911, 435.5717]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_espalda",
-  //       nombreMostrar: "Número espalda",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1516.4517, 737.7069]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 1530.4102, 719.4009]
-  //           }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       idParte: "Número_delantero",
-  //       nombreMostrar: "Número delantero",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 402.0226, 537.3593],
-  //             izquierda: [1, 0, 0, 1, 703.1825, 594.9594],
-  //             centro: [1, 0, 0, 1, 578.5825, 620.9993]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 408.9283, 534.9319],
-  //             izquierda: [1, 0, 0, 1, 702.6883, 583.8918],
-  //             centro: [1, 0, 0, 1, 575.8483, 589.6519]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             derecha: [1, 0, 0, 1, 412.1, 553.9713],
-  //             izquierda: [1, 0, 0, 1, 704.5998, 552],
-  //             centro: [1, 0, 0, 1, 583.0999, 593.5001]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Short_número",
-  //       nombreMostrar: "Short número",
-  //       color: "#",
-  //       colores: [],
-  //       posicionesTipografia: [
-  //         {
-  //           tipografia: 'SablonUp-College',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Accidental Presidency',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Fools Errand',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         },
-  //         {
-  //           tipografia: 'Agron',
-  //           posicionMatrix: {
-  //             unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-  //           }
-  //         }
-  //       ],
-  //     },
-  //     {
-  //       idParte: "Remera_escudo",
-  //       nombreMostrar: "Escudo remera",
-  //       color: "#",
-  //       colores: ["#0E147C", "#0F3302", "#B2082E", "#F0F606"],
-  //       posicionMatrix: {
-  //         derecha: [0.5349, 0, 0, 0.5349, 389.4749, 466.3067],
-  //         izquierda: [0.5349, 0, 0, 0.5349, 705.9749, 468.183],
-  //         centro: [0.5349, 0, 0, 0.5349, 553.5249, 499.4115]
-  //       }
-  //     }
-  //   ],
-  // },
+  {
+    idModelo: 17,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#E6E8E8",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#E6E8E8",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Medias_principal",
+        nombreMostrar: "Medias principal",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias líneas",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_principal",
+        nombreMostrar: "Short principal",
+        color: "#000000",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_superior",
+        nombreMostrar: "Short línea superior",
+        color: "#FEFE00",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_inferior",
+        nombreMostrar: "Short línea inferior",
+        color: "#E82300",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea lateral",
+        color: "#E6E8E8",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.6738, 425.5527]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1467.7769, 510.6453]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1457.3994, 516.2723]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1457.0649, 510.6453]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        color: "#",
+        colores: constantesModelos.paleta10,
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1459.6743, 705.808]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1466.2661, 790.9005]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1465.7007, 796.5276]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1475.3995, 858.8698]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 317.2851, 543.4204],
+              izquierda: [1, 0, 0, 1, 660.2851, 543.4204],
+              centro: [1, 0, 0, 1, 496.2851, 573.4204]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 345.2002, 608.7087],
+              izquierda: [1, 0, 0, 1, 675.936, 609.2798],
+              centro: [1, 0, 0, 1, 516.3789, 666.8798]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 369.0001, 620.2002],
+              izquierda: [1, 0, 0, 1, 675.9362, 611.5602],
+              centro: [1, 0, 0, 1, 508.93, 683.4001]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 366.8527, 608.7086],
+              izquierda: [1, 0, 0, 1, 671.5501, 620.2],
+              centro: [1, 0, 0, 1, 520.3803, 669.5999]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 323.2217, 518.1902],
+          izquierda: [0.5456, 0, 0, 0.5456, 661.8315, 523.1576],
+          centro: [0.5456, 0, 0, 0.5456, 498.14, 570.64]
+        }
+      }
+    ],
+  },
+  {
+    idModelo: 18,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#60A53A",
+        colores: ["#FFFFFF"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_mangas_y_recortes",
+        nombreMostrar: "Mangas y recorte",
+        color: "#0B0B0A",
+        colores: constantesModelos.paleta10,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#D4D5D5",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Medias_principal",
+        nombreMostrar: "Medias principal",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias línea",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_principal",
+        nombreMostrar: "Short principal",
+        color: "#E8EAEF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_superior",
+        nombreMostrar: "Short línea superior",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_inferior",
+        nombreMostrar: "Short línea inferior",
+        color: "#5EAF30",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea lateral",
+        color: "#5EAF30",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.7704, 399.1481]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1449.5812, 399.1481]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1457.976, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1444.8693, 399.1481]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1461.8807, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1448.0699, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1457.976, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1462.7815, 736.7979]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 330.2921, 525.3805],
+              izquierda: [1, 0, 0, 1, 664.119, 525.3807],
+              centro: [1, 0, 0, 1, 501.4368, 556.0158]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 330.2921, 528.3805],
+              izquierda: [1, 0, 0, 1, 673.7001, 530.2802],
+              centro: [1, 0, 0, 1, 1448.0699, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 330.2921, 525.3805],
+              izquierda: [1, 0, 0, 1, 664.3362, 534.2002],
+              centro: [1, 0, 0, 1, 497.2422, 569.2]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 329.3501, 530.2803],
+              izquierda: [1, 0, 0, 1, 678.7001, 533.2798],
+              centro: [1, 0, 0, 1, 511.276, 577.4]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 316.8086, 435.6962],
+          izquierda: [0.5456, 0, 0, 0.5456, 662.184, 438.775],
+          centro: [0.5456, 0, 0, 0.5456, 488.54, 473.14]
+        }
+      }
+    ],
+  },
+  {
+    idModelo: 19,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#E6E8E8",
+        colores: ["#FFFFFF"],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_estampa",
+        nombreMostrar: "Estampa",
+        color: "#23263B",
+        colores: constantesModelos.paleta10,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello",
+        nombreMostrar: "Cuello",
+        color: "#4968A3",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_puño_izquierdo",
+        nombreMostrar: "Puño izquierdo",
+        color: "#3B5993",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_puño_derecho",
+        nombreMostrar: "Puño derecho",
+        color: "#E6E8E8",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Medias_principal",
+        nombreMostrar: "Medias principal",
+        color: "#040B1E",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias línea",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_principal",
+        nombreMostrar: "Short principal",
+        color: "#040B1E",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_superior",
+        nombreMostrar: "Short línea superior",
+        color: "#E6E8E8",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_inferior",
+        nombreMostrar: "Short línea inferior",
+        color: "#3B5993",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea lateral",
+        color: "#E6E8E8",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.6738, 425.5527]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1446.4292, 425.5527]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1442.6996, 428.5724]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1443.7178, 425.5527]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1459.6743, 705.808]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1444.9189, 705.808]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1451.0009, 708.8276]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1461.6299, 745.8502]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 317.2851, 543.4204],
+              izquierda: [1, 0, 0, 1, 660.2851, 543.4204],
+              centro: [1, 0, 0, 1, 496.2851, 573.4204]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 317.2851, 543.4204],
+              izquierda: [1, 0, 0, 1, 675.7, 547.5601],
+              centro: [1, 0, 0, 1, 501.8487, 568.7001]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 317.2851, 543.4204],
+              izquierda: [1, 0, 0, 1, 661.336, 547.7886],
+              centro: [1, 0, 0, 1, 494.888, 592.2]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 317.2851, 543.4204],
+              izquierda: [1, 0, 0, 1, 675.7002, 547.5601],
+              centro: [1, 0, 0, 1, 506.0397, 602.28]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 296, 453],
+          izquierda: [0.5456, 0, 0, 0.5456, 650, 457],
+          centro: [0.5456, 0, 0, 0.5456, 483.768, 490.3994]
+        }
+      }
+    ],
+  },
+  {
+    idModelo: 20,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#0D0D0D",
+        colores: constantesModelos.paleta10,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_estampa",
+        nombreMostrar: "Estampa",
+        color: "#5EB37C",
+        colores: constantesModelos.paleta10,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#0D0D0D",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Medias_principal",
+        nombreMostrar: "Medias principal",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias línea",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_principal",
+        nombreMostrar: "Short principal",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_superior",
+        nombreMostrar: "Short línea superior",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_inferior",
+        nombreMostrar: "Short línea inferior",
+        color: "#5EB37C",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea lateral",
+        color: "#5EB37C",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1511.1964, 432.0116]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1520.007, 432.0116]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1511.1964, 432.0116]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1526.2443, 430.9476]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1527.3063, 712.2668]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1518.4957, 712.266]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1527.3063, 712.2668]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1544.1565, 751.0746]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 393.3279, 548.1993],
+              izquierda: [1, 0, 0, 1, 749.2501, 548.1993],
+              centro: [1, 0, 0, 1, 574.8625, 579.8793]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 391.3279, 553.1992],
+              izquierda: [1, 0, 0, 1, 750.7, 555.5601],
+              centro: [1, 0, 0, 1, 579.3003, 593.5]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 393.3279, 548.1992],
+              izquierda: [1, 0, 0, 1, 750.6998, 548.1992],
+              centro: [1, 0, 0, 1, 570.2067, 609.5]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 393.3277, 557.1001],
+              izquierda: [1, 0, 0, 1, 760.5001, 557.1001],
+              centro: [1, 0, 0, 1, 583.7903, 601.4]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 374.0514, 459.9552],
+          izquierda: [0.5456, 0, 0, 0.5456, 732.6984, 461.9552],
+          centro: [0.5456, 0, 0, 0.5456, 560.14, 492.44]
+        }
+      }
+    ],
+  },
+  {
+    idModelo: 21,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#76B8E4",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_estampa",
+        nombreMostrar: "Banda vertical",
+        color: "#000000",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#9F3029",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Medias_principal",
+        nombreMostrar: "Medias principal",
+        color: "#0B0B0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias líneas",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_principal",
+        nombreMostrar: "Short principal",
+        color: "#0B0B0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_superior",
+        nombreMostrar: "Short línea superior",
+        color: "#79BAE5",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_inferior",
+        nombreMostrar: "Short línea inferior",
+        color: "#9F3029",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1436.8738, 378.5928]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1444.6294, 378.5928]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1439.7239, 378.5928]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1434.918, 378.5928]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1450.8743, 658.848]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1443.1187, 658.848]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1448.0242, 658.848]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1456.73, 702.3481]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 331.4851, 491.4604],
+              izquierda: [1, 0, 0, 1, 670.4851, 491.4604],
+              centro: [1, 0, 0, 1, 495.4851, 526.4604]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 319.8, 495.72],
+              izquierda: [1, 0, 0, 1, 670.4851, 491.4604],
+              centro: [1, 0, 0, 1, 495.8487, 535]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 329.4851, 501.4604],
+              izquierda: [1, 0, 0, 1, 671.6998, 500.04],
+              centro: [1, 0, 0, 1, 489.849, 545.35]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 331.4851, 491.4604],
+              izquierda: [1, 0, 0, 1, 681.6001, 491.4604],
+              centro: [1, 0, 0, 1, 504.2763, 537]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 316.8786, 405.4595],
+          izquierda: [0.5456, 0, 0, 0.5456, 659, 410],
+          centro: [0.5456, 0, 0, 0.5456, 478.64, 441.7719]
+        }
+      }
+    ],
+  },
+  {
+    idModelo: 22,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#E0E2E2",
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_estampa",
+        nombreMostrar: "Estampa",
+        color: "#4FAB3A",
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_mangas_y_hombros",
+        nombreMostrar: "Manga y hombros",
+        color: "#4FAB3A",
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_mangas_y_hombros",
+        nombreMostrar: "Mangas y hombros",
+        color: "#",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Medias_principal",
+        nombreMostrar: "Medias principal",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {},
+      },
+      {
+        idParte: "Medias_linea",
+        nombreMostrar: "Medias línea",
+        color: "#FFFFFF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_principal",
+        nombreMostrar: "Short principal",
+        color: "#E8EAEF",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_superior",
+        nombreMostrar: "Short línea superior",
+        color: "#0A0A0A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_inferior",
+        nombreMostrar: "Short línea inferior",
+        color: "#4FAB3A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Short_linea_lateral",
+        nombreMostrar: "Short línea lateral",
+        color: "#4FAB3A",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.7704, 399.1483]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1451.5812, 399.1483]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.7704, 399.1483]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1444.8695, 399.1483]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1461.8812, 688.4034]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1450.0704, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1461.8812, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1462.7822, 745.0645]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 674.7363, 512.9536],
+              centro: [1, 0, 0, 1, 501.4369, 556.0157]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 664.3359, 517.3198],
+              centro: [1, 0, 0, 1, 505.6923, 556]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 664.3359, 517.3199],
+              centro: [1, 0, 0, 1, 495.6928, 556.0001]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 690.8583, 512.9536],
+              centro: [1, 0, 0, 1, 510.0401, 558.2]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 305.537, 425.2753],
+          izquierda: [0.5456, 0, 0, 0.5456, 659.9744, 422.775],
+          centro: [0.5456, 0, 0, 0.5456, 487.0616, 469.0219]
+        }
+      }
+    ],
+  },
   {
     idModelo: 23,
     partes: [
@@ -4316,8 +4168,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4357,8 +4207,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4389,8 +4237,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.4564, 0, 0, 0.435, 366.4772, 534.0656],
           izquierda: [0.4564, 0, 0, 0.435, 694.4772, 538.0656],
@@ -4498,8 +4344,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4538,8 +4382,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4570,8 +4412,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionMatrix: {
           derecha: [0.4564, 0, 0, 0.435, 379.4772, 541.0656],
           izquierda: [0.4564, 0, 0, 0.435, 676.8717, 541.2022],
@@ -4686,8 +4526,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4726,8 +4564,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4758,8 +4594,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionMatrix: {
           derecha: [0.485, 0, 0, 0.4622, 372.4772, 512.0656],
           izquierda: [0.485, 0, 0, 0.4622, 705.4772, 510.0656],
@@ -4867,8 +4701,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4908,8 +4740,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -4940,8 +4770,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.52, 0, 0, 0.46, 364.4772, 520.0656],
           izquierda: [0.52, 0, 0, 0.46, 689.4772, 520.0656],
@@ -5056,8 +4884,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -5097,8 +4923,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -5129,8 +4953,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: [],
         posicionMatrix: {
           derecha: [0.1122, 0, 0, 0.1029, 341.2709, 527.8898],
           izquierda: [0.1122, 0, 0, 0.1029, 613.2725, 527.8898],
@@ -5245,8 +5067,6 @@ export const coloresParte = [
       {
         idParte: 'Número_delantero',
         nombreMostrar: 'Número delantero',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -5286,8 +5106,6 @@ export const coloresParte = [
       {
         idParte: 'Short_número',
         nombreMostrar: 'Short número',
-        color: '#',
-        colores: [],
         posicionesTipografia: [
           {
             tipografia: 'SablonUp-College',
@@ -5318,8 +5136,6 @@ export const coloresParte = [
       {
         idParte: 'Remera_escudo',
         nombreMostrar: 'Escudo remera',
-        color: '#',
-        colores: ['#0E147C', '#0F3302', '#B2082E', '#F0F606'],
         posicionMatrix: {
           derecha: [0.5349, 0, 0, 0.5349, 389.4749, 466.3067],
           izquierda: [0.5349, 0, 0, 0.5349, 705.9749, 468.183],
@@ -5328,4 +5144,369 @@ export const coloresParte = [
       }
     ],
   },
+  {
+    idModelo: 29,
+    partes: [
+      {
+        idParte: 'Remera_principal',
+        nombreMostrar: 'Remera principal',
+        color: '#384F65',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_estampa',
+        nombreMostrar: 'Remera estampa',
+        color: '#434554',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_cuello_y_puños',
+        nombreMostrar: 'Cuello',
+        color: '#17213B',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_puño_superior',
+        nombreMostrar: 'Puño superior',
+        color: '#ACDAD6',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_puño_medio',
+        nombreMostrar: 'Puño medio',
+        color: '#FFFFFF',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_puño_inferior',
+        nombreMostrar: 'Puño inferior',
+        color: '#ACDAD6',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#101E39'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#101E39'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ACDFDA'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#FFFFFF'}),
+      {
+        idParte: 'Nombre',
+        nombreMostrar: 'Nombre',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1397.7623, 530.4254]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1406.5731, 530.4254]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1397.7623, 530.4254]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1396.8612, 530.4254]
+            }
+          }
+        ]
+      },
+      {
+        idParte: 'Número_espalda',
+        nombreMostrar: 'Número espalda',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1413.8727, 794.5856]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1405.0619, 794.5856]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1413.8727, 794.5856]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1418.5004, 857.2656]
+            }
+          }
+        ]
+      },
+      {
+        idParte: 'Número_delantero',
+        nombreMostrar: 'Número delantero',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1.0493, 0, 0, 1, 378.8859, 609.0255],
+              izquierda: [1.0493, 0, 0, 1, 693.8859, 606.0255],
+              centro: [1.0493, 0, 0, 1, 539.8857, 648.0254]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 378.8857, 609.0254],
+              izquierda: [1, 0, 0, 1, 705.1859, 612.3254],
+              centro: [1, 0, 0, 1, 542.6859, 638.4254]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 364.5341, 609.0254],
+              izquierda: [1, 0, 0, 1, 698.3, 609.0254],
+              centro: [1, 0, 0, 1, 534.4001, 653.9253]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 378.8857, 609.0254],
+              izquierda: [1, 0, 0, 1, 711.4858, 610.0253],
+              centro: [1, 0, 0, 1, 552.2858, 655.4252]
+            }
+          }
+        ],
+      },
+      {
+        idParte: 'Short_número',
+        nombreMostrar: 'Short número',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
+            }
+          }
+        ],
+      },
+      {
+        idParte: 'Remera_escudo',
+        nombreMostrar: 'Escudo remera',
+        posicionMatrix: {
+          derecha: [0.5182, 0, 0, 0.4938, 364.8442, 523.4203],
+          izquierda: [0.5182, 0, 0, 0.4938, 693.4772, 526.0656],
+          centro: [0.5182, 0, 0, 0.4938, 530.4301, 566.72]
+        }
+      }
+    ]
+  },
+  {
+    idModelo: 6,
+    partes: [
+      {
+        idParte: 'Remera_principal',
+        nombreMostrar: 'Remera principal',
+        color: '#E5CA0B',
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_estampa',
+        nombreMostrar: 'Estampa',
+        color: '#000000',
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_cuello_y_puños',
+        nombreMostrar: 'Cuello y puños',
+        color: '#FFFFFF',
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#020203'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E5CA0D'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#010202'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E5CA0D'}),
+      {
+        idParte: 'Nombre',
+        nombreMostrar: 'Nombre',
+        color: '#',
+        colores: [],
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1516.4098, 430.1458]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1523.5026, 434.2055]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1509.7548, 439.0403]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1526.6388, 450.7646]
+            }
+          }
+        ]
+      },
+      {
+        idParte: 'Número_espalda',
+        nombreMostrar: 'Número espalda',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1516.4631, 736.3407]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1516.8801, 736.7877]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1538.505, 788.6383]
+            }
+          }
+        ]
+      },
+      {
+        idParte: 'Número_delantero',
+        nombreMostrar: 'Número delantero',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 400.6424, 526.5392],
+              izquierda: [1, 0, 0, 1, 730.6883, 526.8918],
+              centro: [1, 0, 0, 1, 579.3328, 562.0125]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 396.4629, 526.1116],
+              izquierda: [1, 0, 0, 1, 744.9429, 526.1116],
+              centro: [1, 0, 0, 1, 580.7829, 557.7916]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 413.2347, 541.4404],
+              izquierda: [1, 0, 0, 1, 730.3801, 541.4402],
+              centro: [1, 0, 0, 1, 578.3074, 600.657]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 393.3276, 542.7787],
+              izquierda: [1, 0, 0, 1, 744.4818, 549.7025],
+              centro: [1, 0, 0, 1, 584.8476, 593.8187]
+            }
+          }
+        ],
+      },
+      {
+        idParte: 'Short_número',
+        nombreMostrar: 'Short número',
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 342.5504, 1427.1583]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1.0493, 0, 0, 1, 340.7006, 1428.7593]
+            }
+          }
+        ],
+      },
+      {
+        idParte: 'Remera_escudo',
+        nombreMostrar: 'Escudo remera',
+        posicionMatrix: {
+          derecha: [0.5725, 0, 0, 0.5456, 360.4772, 525.0656],
+          izquierda: [0.5725, 0, 0, 0.5456, 680.4772, 523.0656],
+          centro: [0.5725, 0, 0, 0.5456, 520.3172, 570.2394]
+        }
+      }
+    ]
+  }
 ];
