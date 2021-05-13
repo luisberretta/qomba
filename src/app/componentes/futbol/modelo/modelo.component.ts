@@ -6,7 +6,7 @@ import {
   EventEmitter,
   ViewChild,
   OnChanges,
-  SimpleChanges, AfterViewInit, HostListener
+  SimpleChanges
 } from '@angular/core';
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
