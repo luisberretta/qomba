@@ -2687,10 +2687,10 @@ export const coloresParte = [
       Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0E0E0D'}),
       Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
       //short
-      Object.assign(constantesModelos.shortPrincipal, {color: '#0E0E0D'}),
-      Object.assign(constantesModelos.shortLineaSuperior, {color: '#78797A'}),
-      Object.assign(constantesModelos.shortLineaInferior, {color: '#232222'}),
-      Object.assign(constantesModelos.shortLineaLateral, {color: '#E2E5E5'}),
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#0E0E0D'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#78797A'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#232222'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E2E5E5'}),
       {
         idParte: 'Nombre',
         nombreMostrar: 'Nombre',
@@ -2848,47 +2848,34 @@ export const coloresParte = [
         posicionMatrix: {}
       },
       {
-        idParte: "Medias_principal",
-        nombreMostrar: "Medias principal",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: "Medias_linea",
-        nombreMostrar: "Medias líneas",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_principal",
-        nombreMostrar: "Short principal",
+        idParte: "Remera_linea_superior",
+        nombreMostrar: "Remera línea superior",
         color: "#000000",
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
-        idParte: "Short_linea_superior",
-        nombreMostrar: "Short línea superior",
-        color: "#FEFE00",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_inferior",
-        nombreMostrar: "Short línea inferior",
+        idParte: "Remera_linea_media",
+        nombreMostrar: "Remera línea media",
         color: "#E82300",
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
       {
-        idParte: "Short_linea_lateral",
-        nombreMostrar: "Short línea lateral",
-        color: "#E6E8E8",
+        idParte: "Remera_linea_inferior",
+        nombreMostrar: "Remera línea inferior",
+        color: "#FEFE00",
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#000000'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FEFE00'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#E82300'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E6E8E8'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -2960,31 +2947,31 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1, 0, 0, 1, 317.2851, 543.4204],
               izquierda: [1, 0, 0, 1, 660.2851, 543.4204],
-              centro: [1, 0, 0, 1, 496.2851, 573.4204]
+              centro: [1, 0, 0, 1, 510.2851, 573.4204]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 345.2002, 608.7087],
-              izquierda: [1, 0, 0, 1, 675.936, 609.2798],
-              centro: [1, 0, 0, 1, 516.3789, 666.8798]
+              derecha: [1, 0, 0, 1, 345.2002, 543.4204],
+              izquierda: [1, 0, 0, 1, 675.936, 543.4204],
+              centro: [1, 0, 0, 1, 516.3789, 573.42]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 369.0001, 620.2002],
-              izquierda: [1, 0, 0, 1, 675.9362, 611.5602],
-              centro: [1, 0, 0, 1, 508.93, 683.4001]
+              derecha: [1, 0, 0, 1, 369.0001, 543.4204],
+              izquierda: [1, 0, 0, 1, 675.9362, 543.4204],
+              centro: [1, 0, 0, 1, 508.93, 573.42]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 366.8527, 608.7086],
-              izquierda: [1, 0, 0, 1, 671.5501, 620.2],
-              centro: [1, 0, 0, 1, 520.3803, 669.5999]
+              derecha: [1, 0, 0, 1, 366.8527, 543.4204],
+              izquierda: [1, 0, 0, 1, 671.5501, 543.4204],
+              centro: [1, 0, 0, 1, 520.3803, 573.42]
             }
           }
         ],
@@ -3041,7 +3028,7 @@ export const coloresParte = [
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_mangas_y_recortes",
+        idParte: "Remera_mangas_y_recorte",
         nombreMostrar: "Mangas y recorte",
         color: "#0B0B0A",
         colores: constantesModelos.paleta10,
@@ -3054,48 +3041,14 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: "Medias_principal",
-        nombreMostrar: "Medias principal",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: "Medias_linea",
-        nombreMostrar: "Medias línea",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_principal",
-        nombreMostrar: "Short principal",
-        color: "#E8EAEF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_superior",
-        nombreMostrar: "Short línea superior",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_inferior",
-        nombreMostrar: "Short línea inferior",
-        color: "#5EAF30",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_lateral",
-        nombreMostrar: "Short línea lateral",
-        color: "#5EAF30",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E2E5E5'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#5EAF30'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#5EAF30'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -3115,7 +3068,7 @@ export const coloresParte = [
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1457.976, 688.4033]
+              unica: [1, 0, 0, 1, 1457.976, 399.1481]
             }
           },
           {
@@ -3173,7 +3126,7 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1, 0, 0, 1, 330.2921, 528.3805],
               izquierda: [1, 0, 0, 1, 673.7001, 530.2802],
-              centro: [1, 0, 0, 1, 1448.0699, 688.4033]
+              centro: [1, 0, 0, 1, 501.4368, 559.4033]
             }
           },
           {
@@ -3273,48 +3226,14 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: "Medias_principal",
-        nombreMostrar: "Medias principal",
-        color: "#040B1E",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: "Medias_linea",
-        nombreMostrar: "Medias línea",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_principal",
-        nombreMostrar: "Short principal",
-        color: "#040B1E",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_superior",
-        nombreMostrar: "Short línea superior",
-        color: "#E6E8E8",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_inferior",
-        nombreMostrar: "Short línea inferior",
-        color: "#3B5993",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_lateral",
-        nombreMostrar: "Short línea lateral",
-        color: "#E6E8E8",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#040B1E'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#040B1E'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#E6E8E8'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#3B5993'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#E6E8E8'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -3420,25 +3339,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 330.1443, 1540.4573]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+              unica: [1, 0, 0, 1, 320.1443, 1533.6372]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 320.1443, 1540.4573]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 320.1443, 1540.4573]
             }
           }
         ],
@@ -3478,48 +3397,14 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: "Medias_principal",
-        nombreMostrar: "Medias principal",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: "Medias_linea",
-        nombreMostrar: "Medias línea",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_principal",
-        nombreMostrar: "Short principal",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_superior",
-        nombreMostrar: "Short línea superior",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_inferior",
-        nombreMostrar: "Short línea inferior",
-        color: "#5EB37C",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_lateral",
-        nombreMostrar: "Short línea lateral",
-        color: "#5EB37C",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#010101'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#5EB37C'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#5EB37C'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -3670,7 +3555,7 @@ export const coloresParte = [
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_estampa",
+        idParte: "Remera_banda",
         nombreMostrar: "Banda vertical",
         color: "#000000",
         colores: constantesModelos.coloresPrincipales,
@@ -3683,41 +3568,14 @@ export const coloresParte = [
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: "Medias_principal",
-        nombreMostrar: "Medias principal",
-        color: "#0B0B0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: "Medias_linea",
-        nombreMostrar: "Medias líneas",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_principal",
-        nombreMostrar: "Short principal",
-        color: "#0B0B0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_superior",
-        nombreMostrar: "Short línea superior",
-        color: "#79BAE5",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_inferior",
-        nombreMostrar: "Short línea inferior",
-        color: "#9F3029",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0B0B0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#0B0B0A'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#79BAE5'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#AA1111'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#AA1111'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -3823,25 +3681,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 290.6082, 1479.9044]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+              unica: [1, 0, 0, 1, 290.6082, 1479.9044]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 290.6082, 1479.9044]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 290.6082, 1479.9044]
             }
           }
         ],
@@ -3882,54 +3740,20 @@ export const coloresParte = [
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_mangas_y_hombros",
-        nombreMostrar: "Mangas y hombros",
-        color: "#",
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#000000",
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
-      {
-        idParte: "Medias_principal",
-        nombreMostrar: "Medias principal",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {},
-      },
-      {
-        idParte: "Medias_linea",
-        nombreMostrar: "Medias línea",
-        color: "#FFFFFF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_principal",
-        nombreMostrar: "Short principal",
-        color: "#E8EAEF",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_superior",
-        nombreMostrar: "Short línea superior",
-        color: "#0A0A0A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_inferior",
-        nombreMostrar: "Short línea inferior",
-        color: "#4FAB3A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Short_linea_lateral",
-        nombreMostrar: "Short línea lateral",
-        color: "#4FAB3A",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E8EAEF'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#35A12C'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#2B7B24'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -4035,25 +3859,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
             }
           }
         ],
@@ -5193,7 +5017,7 @@ export const coloresParte = [
       Object.assign({}, constantesModelos.mediasPrincipal, {color: '#101E39'}),
       Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
       //short
-      Object.assign({}, constantesModelos.shortPrincipal, {color: '#101E39'}),
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#1E3C54'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#FFFFFF'}),
       Object.assign({}, constantesModelos.shortLineaInferior, {color: '#ACDFDA'}),
       Object.assign({}, constantesModelos.shortLineaLateral, {color: '#FFFFFF'}),
@@ -5337,7 +5161,7 @@ export const coloresParte = [
     ]
   },
   {
-    idModelo: 6,
+    idModelo: 30,
     partes: [
       {
         idParte: 'Remera_principal',
@@ -5356,7 +5180,7 @@ export const coloresParte = [
       {
         idParte: 'Remera_cuello_y_puños',
         nombreMostrar: 'Cuello y puños',
-        color: '#FFFFFF',
+        color: '#000000',
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
@@ -5407,25 +5231,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1530.4102, 719.4009]
+              unica: [1, 0, 0, 1, 1404.7623, 527.4254]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1516.4631, 736.3407]
+              unica: [1, 0, 0, 1, 1404.7623, 527.4254]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1516.8801, 736.7877]
+              unica: [1, 0, 0, 1, 1404.7623, 527.4254]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1538.505, 788.6383]
+              unica: [1, 0, 0, 1, 1404.7623, 527.4254]
             }
           }
         ]
@@ -5439,7 +5263,7 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1, 0, 0, 1, 400.6424, 526.5392],
               izquierda: [1, 0, 0, 1, 730.6883, 526.8918],
-              centro: [1, 0, 0, 1, 579.3328, 562.0125]
+              centro: [1, 0, 0, 1, 545.3328, 580.0125]
             }
           },
           {
@@ -5447,7 +5271,7 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1, 0, 0, 1, 396.4629, 526.1116],
               izquierda: [1, 0, 0, 1, 744.9429, 526.1116],
-              centro: [1, 0, 0, 1, 580.7829, 557.7916]
+              centro: [1, 0, 0, 1, 550.7829, 580.7916]
             }
           },
           {
@@ -5455,7 +5279,7 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1, 0, 0, 1, 413.2347, 541.4404],
               izquierda: [1, 0, 0, 1, 730.3801, 541.4402],
-              centro: [1, 0, 0, 1, 578.3074, 600.657]
+              centro: [1, 0, 0, 1, 550.3074, 580.657]
             }
           },
           {
@@ -5463,7 +5287,7 @@ export const coloresParte = [
             posicionMatrix: {
               derecha: [1, 0, 0, 1, 393.3276, 542.7787],
               izquierda: [1, 0, 0, 1, 744.4818, 549.7025],
-              centro: [1, 0, 0, 1, 584.8476, 593.8187]
+              centro: [1, 0, 0, 1, 550.8476, 580.8187]
             }
           }
         ],
