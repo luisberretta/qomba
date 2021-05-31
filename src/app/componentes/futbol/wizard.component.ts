@@ -336,6 +336,7 @@ export class WizardComponent implements OnInit {
         let svgComprimida: File = await this.imageCompressor.compressFile(fileSVG, config);
         let pedido = this.confeccionarPedido();
         let formData = new FormData();
+        this.pedido.coloresElegidos = this.generarColoresModelo();
         formData.append("pedido", pedido);
         formData.append("fileSVG", svgComprimida);
         formData.append("fileEscudo", this.pedido.archivoEscudo);
@@ -352,6 +353,10 @@ export class WizardComponent implements OnInit {
       });
     });
 
+  }
+
+  generarColoresModelo(){
+    return this.personaComponent.obtenerColoresModelo();
   }
 
   confeccionarPedido() {

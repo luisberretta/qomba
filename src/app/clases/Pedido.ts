@@ -63,4 +63,6 @@ export interface Pedido {
   imagenEscudo?: string;
   imagenSvg?: string;
   imagenes?: string [];
+
+  coloresElegidos?: any[];
 }

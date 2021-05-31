@@ -7,6 +7,9 @@ import {
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../../clases/ColorParte";
+import {nombreColor} from "../../../clases/NombreColor";
+import {computeStartOfLinePositions} from "@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file";
+import {findIndex} from "rxjs/operators";
 
 @Component({
   selector: 'app-persona',
@@ -27,6 +30,9 @@ export class PersonaComponent implements OnInit {
   @Input() llevaShort;
   @Input() posicionEscudoCamiseta;
   imgUrl: any;
+  private coloresPartes = coloresParte;
+  private nombreColores = nombreColor;
+  private coloresModelo = [];
 
   constructor(private svgService: SvgService, private sanitizer: DomSanitizer) {
   }
@@ -50,6 +56,7 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
       if (grupos[i].id == cambiar.parte) {
+        this.asignarColorParte(cambiar.color,cambiar.parte);
         let paths = grupos[i].getElementsByTagName('path');
         let polygon = grupos[i].getElementsByTagName('polygon');
         let line = grupos[i].getElementsByTagName('line');
@@ -83,6 +90,7 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
       if (this.perteneceEstampado(grupos[i])) {
+        this.asignarColorParte(cambiar.color,grupos[i].id);
         if (grupos[i].id == "Short_número") {
           if (cambiar.llevaColorShort) {
             grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
@@ -92,6 +100,33 @@ export class PersonaComponent implements OnInit {
         }
       }
     }
+  }
+
+  private asignarColorParte(color,parte){
+    let partesModelo = [];
+    partesModelo = this.coloresPartes.find( x => x.idModelo = this.modeloSeleccionado.id).partes;
+    let parteModelo = partesModelo.find(x => x.idParte == parte)
+    let colorElegido = this.nombreColores.find( x => x.color == color.toUpperCase());
+    let colorModelo = {
+      nombreMostrar: parteModelo.nombreMostrar,
+      nombreParte : parteModelo.idParte,
+      colorHexa:  colorElegido? colorElegido.color : parteModelo.color,
+      color: colorElegido? colorElegido.nombre : 'original',
+    }
+    if(this.existeParteAsignada(parte)) {
+      let index = this.coloresModelo.findIndex(x => x.nombreParte == parte);
+      this.coloresModelo[index] = colorModelo;
+    }
+    else{
+      this.coloresModelo.push(colorModelo);
+    }
+  }
+
+  private existeParteAsignada(parte){
+    if(this.coloresModelo.length > 0){
+      return this.coloresModelo.find( x => x.nombreParte == parte);
+    }
+    return false;
   }
 
   cambiarColorNumeroShort(color) {
@@ -201,6 +236,10 @@ export class PersonaComponent implements OnInit {
     let imagen: HTMLAllCollection;
     imagen = this.remera.nativeElement.getElementsByTagName('svg')[0];
     return imagen;
+  }
+
+  obtenerColoresModelo(){
+    return this.coloresModelo;
   }
 
   obtenerGrupos() {
