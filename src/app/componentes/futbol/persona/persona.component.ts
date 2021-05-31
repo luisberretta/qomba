@@ -8,8 +8,6 @@ import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../../clases/ColorParte";
 import {nombreColor} from "../../../clases/NombreColor";
-import {computeStartOfLinePositions} from "@angular/compiler-cli/src/ngtsc/sourcemaps/src/source_file";
-import {findIndex} from "rxjs/operators";
 
 @Component({
   selector: 'app-persona',
@@ -30,7 +28,6 @@ export class PersonaComponent implements OnInit {
   @Input() llevaShort;
   @Input() posicionEscudoCamiseta;
   imgUrl: any;
-  private coloresPartes = coloresParte;
   private nombreColores = nombreColor;
   private coloresModelo = [];
 
@@ -104,7 +101,7 @@ export class PersonaComponent implements OnInit {
 
   private asignarColorParte(color,parte){
     let partesModelo = [];
-    partesModelo = this.coloresPartes.find( x => x.idModelo = this.modeloSeleccionado.id).partes;
+    partesModelo = coloresParte.find( x => x.idModelo == this.modeloSeleccionado.id).partes;
     let parteModelo = partesModelo.find(x => x.idParte == parte)
     let colorElegido = this.nombreColores.find( x => x.color == color.toUpperCase());
     let colorModelo = {

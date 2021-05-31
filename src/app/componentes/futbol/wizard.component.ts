@@ -340,6 +340,7 @@ export class WizardComponent implements OnInit {
         formData.append("pedido", pedido);
         formData.append("fileSVG", svgComprimida);
         formData.append("fileEscudo", this.pedido.archivoEscudo);
+        formData.append("coloresModelo", JSON.stringify(this.pedido.coloresElegidos));
         this.wizardService.generarPedido(formData).subscribe((data) => {
             this.modalText = "Gracias por tu pedido ! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega.";
             this.abrirModal();
