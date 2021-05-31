@@ -136,10 +136,11 @@ export class WizardComponent implements OnInit {
         if (!event) {
           break;
         }
+        this.inicioDePagina(0);
         this.generarPedido();
         break;
     }
-    this.inicioDePagina();
+    this.inicioDePagina(100);
   }
 
   anterior(event?) {
@@ -211,7 +212,7 @@ export class WizardComponent implements OnInit {
         this.generarFormEquipo();
         break;
     }
-    this.inicioDePagina();
+    this.inicioDePagina(100);
   }
 
 
@@ -599,9 +600,9 @@ export class WizardComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  inicioDePagina() {
+  inicioDePagina(scroll) {
     window.scroll({
-      top: 100,
+      top: scroll,
       behavior: 'smooth'
     });
   }
