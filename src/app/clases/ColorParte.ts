@@ -2983,25 +2983,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 328.7556, 1593.9569]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
+              unica: [1, 0, 0, 1, 328.7556, 1593.95692]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 328.7556, 1593.9569]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
+              unica: [1, 0, 0, 1, 328.7556, 1593.9569]
             }
           }
         ],
