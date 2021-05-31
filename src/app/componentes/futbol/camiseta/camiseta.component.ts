@@ -38,10 +38,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
   NUMERO_ESPALDA = "Número_espalda";
   NOMBRE_ESPALDA = "Nombre";
   ESCUDO_DELANTERO = "Remera_escudo";
-  coloresLetrasYNumeros = ["#FFFF00", "#00FF0F", "#050fdf",
-                          "#db0606", "#FF8000", "#F300FF",
-                          "#8A571B", "#E303CC", "#9203E3",
-                          "#67636A", "#000000","#FFFFFF"];
+  coloresLetrasYNumeros = [
+    "#FFFF00", "#00FF66", "#0000FF", "#FF0000",
+    "#FF9900", "#993333", "#CC66CC",
+    "#666666", "#000000", "#FFFFFF"];
 
   formPasoCamiseta: FormGroup = new FormGroup({
     colorRemera: new FormControl(null),
@@ -53,14 +53,17 @@ export class CamisetaComponent implements OnInit, OnChanges {
     posicionNumeroDelantero: new FormControl(null),
     llevaNombreEspalda: new FormControl(),
     llevaNumeroEspalda: new FormControl(null),
-    colorEstampado: new FormControl(null)
+    colorEstampado: new FormControl(null),
+    colorNumeroShort: new FormControl(null)
   });
   visualizar = {
     valor: null,
     parte: null,
     posicionOcupada: null,
-    posicion: null
+    posicion: null,
+    tipografia: null,
   }
+  posicionNumeroActual = null;
   submit: boolean = false;
   formatoEscudoInvalido: boolean = false;
 
@@ -103,24 +106,36 @@ export class CamisetaComponent implements OnInit, OnChanges {
       } else {
         this.formPasoCamiseta.get('posicionNumeroDelantero').setValue(null);
       }
+      this.visualizar.tipografia = this.obtenerTipoletra();
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNombreEspalda').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NOMBRE_ESPALDA;
+      this.visualizar.tipografia = this.obtenerTipoletra();
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
     });
     this.formPasoCamiseta.get('llevaNumeroEspalda').valueChanges.subscribe((valor) => {
       this.visualizar.valor = valor;
       this.visualizar.parte = this.NUMERO_ESPALDA;
+      this.visualizar.tipografia = this.obtenerTipoletra();
       this.visualizarEstampado.emit(this.visualizar);
       this.configurarValidadores();
     });
 
     this.formPasoCamiseta.get('tipoLetra').valueChanges.subscribe((valor) => {
-      this.cambiarTipografia.emit(valor);
+      let tipoLetra = this.tiposLetra.find(x => x.valor == valor);
+      let tipografia = {
+        tipografia : tipoLetra.valor,
+        fontSizeNumeroDelantero : tipoLetra.fontSizeNumeroDelantero,
+        fontSizeNumeroShort : tipoLetra.fontSizeNumeroShort,
+        fontSizeNumeroEspalda : tipoLetra.fontSizeNumeroEspalda,
+        fontSizeNombre: tipoLetra.fontSizeNombre,
+        posicion : this.posicionNumeroActual,
+      }
+      this.cambiarTipografia.emit(tipografia);
     });
 
     this.formPasoCamiseta.get('posicionEscudoDelantero').valueChanges.subscribe((valor) => {
@@ -138,7 +153,8 @@ export class CamisetaComponent implements OnInit, OnChanges {
       this.posicionesEscudo = this.posicionesEscudoEstatico;
       if (valor) {
         this.visualizar.valor = true;
-        this.visualizar.posicion = valor;
+        this.visualizar.posicion = this.posicionNumeroActual = valor;
+        this.visualizar.tipografia = this.obtenerTipoletra();
         this.visualizar.parte = this.NUMERO_DELANTERO;
         this.posicionesEscudo = this.posicionesEscudo.filter(x => x != this.visualizar.posicion);
         this.visualizarEstampado.emit(this.visualizar);
@@ -168,13 +184,12 @@ export class CamisetaComponent implements OnInit, OnChanges {
     this.formPasoCamiseta.get('colorEstampado').setValue(formCamiseta.colorEstampado ?? null);
     this.formPasoCamiseta.get('tipoLetra').setValue(formCamiseta.tipoLetra ?? "SablonUp-College");
     this.formPasoCamiseta.get('colorRemera').setValue(formCamiseta.colorCamiseta);
-    if (this.colorRemera == "#000000"){
-      if(this.llevaEstampado){
+    this.formPasoCamiseta.get('colorNumeroShort').setValue(formCamiseta.colorNumeroShort);
+    if(!this.colorEstampado){
+      if(this.colorRemera == '#000000'){
         this.formPasoCamiseta.get('colorEstampado').setValue("#FFFFFF");
       }
-    }
-    else {
-      if(this.llevaEstampado){
+      else{
         this.formPasoCamiseta.get('colorEstampado').setValue("#000000");
       }
     }
@@ -203,10 +218,11 @@ export class CamisetaComponent implements OnInit, OnChanges {
   }
 
   cambiarColor(color) {
-      let cambio = {
-        color: color,
-        esEstampa: true,
-      }
+    let cambio = {
+      color: color,
+      esEstampa: true,
+      llevaColorShort: this.llevaColorShort == this.colorEstampado
+    }
     this.colorSeleccionado.emit(cambio);
   }
 
@@ -234,12 +250,16 @@ export class CamisetaComponent implements OnInit, OnChanges {
     return this.formPasoCamiseta.get('posicionEscudoDelantero').value;
   }
 
-  get colorEstampa() {
-    return this.formPasoCamiseta.get('colorEstampa').value;
-  }
-
   get colorRemera() {
     return this.formPasoCamiseta.get('colorRemera').value;
+  }
+
+  get colorEstampado(){
+    return this.formPasoCamiseta.get('colorEstampado').value;
+  }
+
+  get llevaColorShort(){
+    return this.formPasoCamiseta.get('colorNumeroShort').value;
   }
 
   generarPosicion(posicionOcupada) {
@@ -256,6 +276,10 @@ export class CamisetaComponent implements OnInit, OnChanges {
     }
   }
 
+  obtenerTipoletra() {
+    return this.formPasoCamiseta.get('tipoLetra').value;
+  }
+
   configurarValidadores() {
     if (this.llevaEscudoDelantero) {
       this.formPasoCamiseta.controls['posicionEscudoDelantero'].setValidators([Validators.required]);
@@ -270,6 +294,7 @@ export class CamisetaComponent implements OnInit, OnChanges {
       this.formPasoCamiseta.controls['posicionNumeroDelantero'].setValidators(null);
     }
     if (this.llevaEstampado()) {
+
       this.formPasoCamiseta.controls['colorEstampado'].setValidators([Validators.required]);
     } else {
       this.formPasoCamiseta.controls['colorEstampado'].setValidators(null);

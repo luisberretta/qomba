@@ -228,6 +228,10 @@ export class WizardComponent implements OnInit {
     this.personaComponent.cambiarColorParte(cambiar);
   }
 
+  cambiarColorNumeroShort(color){
+    this.personaComponent.cambiarColorNumeroShort(color);
+  }
+
   visualizarEstampado(visualizar) {
     this.personaComponent.visualizarEstampado(visualizar);
   }
@@ -274,6 +278,7 @@ export class WizardComponent implements OnInit {
     this.pedido.imagenEscudo = formShort.escudoShort ? formShort.escudoShort : this.pedido.imagenEscudo;
     this.pedido.agregarEscudoShort = !!formShort.agregarEscudoShort;
     this.pedido.agregarNumeroShort = !!formShort.agregarNumeroShort;
+    this.pedido.colorNumeroShort = formShort.colorNumeroShort;
     for (let i = 0; i < formShort.partesShortSVG.length; i++) {
       let indexParte = -1;
       for (let j = 0; j < this.pedido.coloresModelo.length; j++) {
@@ -331,9 +336,11 @@ export class WizardComponent implements OnInit {
         let svgComprimida: File = await this.imageCompressor.compressFile(fileSVG, config);
         let pedido = this.confeccionarPedido();
         let formData = new FormData();
+        this.pedido.coloresElegidos = this.generarColoresModelo();
         formData.append("pedido", pedido);
         formData.append("fileSVG", svgComprimida);
         formData.append("fileEscudo", this.pedido.archivoEscudo);
+        formData.append("coloresModelo", JSON.stringify(this.pedido.coloresElegidos));
         this.wizardService.generarPedido(formData).subscribe((data) => {
             this.modalText = "Gracias por tu pedido ! Un asesor te contactará dentro de las 24 horas hábiles para coordinar el pago y el plazo de entrega.";
             this.abrirModal();
@@ -347,6 +354,10 @@ export class WizardComponent implements OnInit {
       });
     });
 
+  }
+
+  generarColoresModelo(){
+    return this.personaComponent.obtenerColoresModelo();
   }
 
   confeccionarPedido() {
@@ -392,7 +403,9 @@ export class WizardComponent implements OnInit {
       if (this.perteneceRemera(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
+          let partes = [];
+          partes = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes
+          let parteColores = partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
@@ -427,6 +440,7 @@ export class WizardComponent implements OnInit {
       llevaNumeroEspalda: this.pedido.llevaNumeroEspalda,
       colorEstampado: this.pedido.colorEstampado,
       tipoLetra: this.pedido.tipoLetra,
+      colorNumeroShort : this.pedido.colorNumeroShort
     }
   }
 
@@ -438,7 +452,9 @@ export class WizardComponent implements OnInit {
       if (this.perteneceShort(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
+          let partes = [];
+          partes = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes
+          let parteColores = partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;
@@ -462,6 +478,7 @@ export class WizardComponent implements OnInit {
       escudoShort: this.pedido.imagenEscudo,
       llevaEscudoDelantero: this.pedido.llevaEscudoDelantero,
       agregarShort: this.pedido.agregarShort,
+      colorNumeroShort: this.pedido.colorNumeroShort ? this.pedido.colorNumeroShort : this.pedido.colorEstampado,
       agregarEscudoShort: this.pedido.agregarEscudoShort,
       agregarNumeroShort: this.pedido.agregarNumeroShort,
       partesShortSVG: partesShortSVG,
@@ -476,7 +493,9 @@ export class WizardComponent implements OnInit {
       if (this.perteneceMedias(gruposColor[i])) {
         parteColor.idParte = gruposColor[i];
         if (parteColor.idParte) {
-          let parteColores = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes.find(x => x.idParte == parteColor.idParte);
+          let partes = [];
+          partes = coloresParte.find(x => x.idModelo == this.modeloElegido.id).partes
+          let parteColores = partes.find(x => x.idParte == parteColor.idParte);
           if (parteColores) {
             parteColor.colores = parteColores.colores;
             parteColor.nombreMostrar = parteColores.nombreMostrar;

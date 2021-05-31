@@ -7,7 +7,7 @@ import {
 import {SvgService} from "../../../servicios/svg.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {coloresParte} from "../../../clases/ColorParte";
-import {Router} from "@angular/router";
+import {nombreColor} from "../../../clases/NombreColor";
 
 @Component({
   selector: 'app-persona',
@@ -17,7 +17,7 @@ import {Router} from "@angular/router";
 export class PersonaComponent implements OnInit {
 
   ESCUDO_DELANTERO = "Remera_escudo";
-  VALORES_ESTAMPA = ['Número_espalda','Número_delantero','Nombre','Short_número'];
+  VALORES_ESTAMPA = ['Número_espalda', 'Número_delantero', 'Nombre', 'Short_número'];
   modeloSVG: any;
   url: string = '/assets/images/modelosSVG/';
   modeloSeleccionado: any;
@@ -28,8 +28,10 @@ export class PersonaComponent implements OnInit {
   @Input() llevaShort;
   @Input() posicionEscudoCamiseta;
   imgUrl: any;
+  private nombreColores = nombreColor;
+  private coloresModelo = [];
 
-  constructor(private svgService: SvgService,private sanitizer: DomSanitizer) {
+  constructor(private svgService: SvgService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
@@ -39,7 +41,7 @@ export class PersonaComponent implements OnInit {
     this.modeloSeleccionado = modelo;
     this.modeloSVG = null;
     this.svgService.obtenerSVG(this.url + modelo.urlSvg).subscribe((data) => {
-      this.modeloSVG =this.sanitizer.bypassSecurityTrustHtml(data);
+      this.modeloSVG = this.sanitizer.bypassSecurityTrustHtml(data);
     });
   }
 
@@ -51,10 +53,13 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
       if (grupos[i].id == cambiar.parte) {
+        this.asignarColorParte(cambiar.color,cambiar.parte);
         let paths = grupos[i].getElementsByTagName('path');
         let polygon = grupos[i].getElementsByTagName('polygon');
         let line = grupos[i].getElementsByTagName('line');
         let polyline = grupos[i].getElementsByTagName('polyline');
+        let ellipse = grupos[i].getElementsByTagName('ellipse');
+        let rect = grupos[i].getElementsByTagName('rect');
         for (let j = 0; j < paths.length; j++) {
           paths[j].setAttribute('fill', cambiar.color);
         }
@@ -67,6 +72,12 @@ export class PersonaComponent implements OnInit {
         for (let j = 0; j < polyline.length; j++) {
           polyline[j].setAttribute('fill', cambiar.color);
         }
+        for (let j = 0; j < ellipse.length; j++) {
+          ellipse[j].setAttribute('fill', cambiar.color);
+        }
+        for (let j = 0; j < rect.length; j++) {
+          rect[j].setAttribute('fill', cambiar.color);
+        }
         grupos[i].classList.remove('parte-seleccionada');
       }
     }
@@ -75,13 +86,55 @@ export class PersonaComponent implements OnInit {
   cambiarColorEstampa(cambiar) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if(this.perteneceEstampado(grupos[i]))
-        grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
+      if (this.perteneceEstampado(grupos[i])) {
+        this.asignarColorParte(cambiar.color,grupos[i].id);
+        if (grupos[i].id == "Short_número") {
+          if (cambiar.llevaColorShort) {
+            grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
+          }
+        } else {
+          grupos[i].getElementsByTagName('text')[0].setAttribute('fill', cambiar.color);
+        }
+      }
     }
   }
 
-  perteneceEstampado(grupo){
-    return this.VALORES_ESTAMPA.find(x=> x == grupo.id);
+  private asignarColorParte(color,parte){
+    let partesModelo = [];
+    partesModelo = coloresParte.find( x => x.idModelo == this.modeloSeleccionado.id).partes;
+    let parteModelo = partesModelo.find(x => x.idParte == parte)
+    let colorElegido = this.nombreColores.find( x => x.color == color.toUpperCase());
+    let colorModelo = {
+      nombreMostrar: parteModelo.nombreMostrar,
+      nombreParte : parteModelo.idParte,
+      colorHexa:  colorElegido? colorElegido.color : parteModelo.color,
+      color: colorElegido? colorElegido.nombre : 'original',
+    }
+    if(this.existeParteAsignada(parte)) {
+      let index = this.coloresModelo.findIndex(x => x.nombreParte == parte);
+      this.coloresModelo[index] = colorModelo;
+    }
+    else{
+      this.coloresModelo.push(colorModelo);
+    }
+  }
+
+  private existeParteAsignada(parte){
+    if(this.coloresModelo.length > 0){
+      return this.coloresModelo.find( x => x.nombreParte == parte);
+    }
+    return false;
+  }
+
+  cambiarColorNumeroShort(color) {
+    let grupos = this.obtenerGrupos();
+    let estampado = grupos.namedItem("Short_número");
+    let shortNumero = estampado.getElementsByTagName('text')[0];
+    shortNumero.setAttribute('fill', color);
+  }
+
+  perteneceEstampado(grupo) {
+    return this.VALORES_ESTAMPA.find(x => x == grupo.id);
   }
 
   visualizarEstampado(visualizar) {
@@ -101,25 +154,40 @@ export class PersonaComponent implements OnInit {
     let grupos = this.obtenerGrupos();
     let estampado = grupos.namedItem(posicion.parte);
     if (estampado.id == this.ESCUDO_DELANTERO) {
-      estampado = estampado.getElementsByTagName('image').namedItem('escudo');
+      estampado = estampado.getElementsByTagName('image')[0];
     } else {
-      estampado = estampado.getElementsByTagName('text').namedItem('numero');
+      estampado = estampado.getElementsByTagName('text')[0];
     }
     let svgMatrix = null;
-    let coloresModelo = coloresParte.find(x=> x.idModelo == this.modeloSeleccionado.id).partes;
+    let coloresModelo = [];
+    let posicionesTipografia = [];
+    let posicionTipografia = null;
+    let posicionesEscudo = null;
+    coloresModelo = coloresParte.find(x => x.idModelo == this.modeloSeleccionado.id).partes;
+    if (posicion.parte != 'Short_escudo') {
+      posicionesTipografia = coloresModelo.find(x => x.idParte == posicion.parte).posicionesTipografia;
+      if (posicionesTipografia?.length) {
+        posicionTipografia = posicionesTipografia.find(x => x.tipografia == posicion.tipografia);
+      } else {
+        posicionesEscudo = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix;
+      }
+    }
     switch (posicion.posicion) {
       case 'Centro':
-        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.centro;
+        svgMatrix = posicionTipografia ? posicionTipografia.posicionMatrix.centro : posicionesEscudo.centro;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
       case 'Derecha':
-        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.derecha;
+        svgMatrix = posicionTipografia ? posicionTipografia.posicionMatrix.derecha : posicionesEscudo.derecha;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
       case 'Izquierda':
-        svgMatrix = coloresModelo.find(x => x.idParte == posicion.parte).posicionMatrix.izquierda;
+        svgMatrix = posicionTipografia ? posicionTipografia.posicionMatrix.izquierda : posicionesEscudo.izquierda;
         this.cambiarMatrix(estampado, svgMatrix)
         break;
+      case 'Unica':
+        svgMatrix = posicionTipografia.posicionMatrix.unica;
+        this.cambiarMatrix(estampado, svgMatrix)
     }
   }
 
@@ -167,6 +235,10 @@ export class PersonaComponent implements OnInit {
     return imagen;
   }
 
+  obtenerColoresModelo(){
+    return this.coloresModelo;
+  }
+
   obtenerGrupos() {
     return this.dataContainer.nativeElement.getElementsByTagName('g');
   }
@@ -174,12 +246,40 @@ export class PersonaComponent implements OnInit {
   cambiarTipografia(tipografia) {
     let grupos = this.obtenerGrupos();
     for (let i = 0; i < grupos.length; i++) {
-      if(this.perteneceTipografia(grupos[i].id)) {
-        if(tipografia == 'Sablon') {
-          tipografia = 'SablonUp-College';
+      if (this.perteneceTipografia(grupos[i].id)) {
+        this.cambiarTamañoTipografia(tipografia, grupos[i]);
+        let esVisible = grupos[i].getAttribute('visibility') == 'visible';
+        grupos[i].setAttribute('visibility', 'hidden');
+        grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia.tipografia);
+
+        setTimeout(() => {
+          if(esVisible) {
+            grupos[i].setAttribute('visibility', 'visible');
+          }
+        }, 200);
+
+        let visualizar = {
+          parte: grupos[i].id,
+          tipografia: tipografia.tipografia,
+          posicion: grupos[i].id == "Número_delantero" ? tipografia.posicion : 'Unica',
         }
-        grupos[i].getElementsByTagName('text')[0].setAttribute('font-family', tipografia);
+        this.posicionEstampado(visualizar);
       }
+    }
+  }
+
+  cambiarTamañoTipografia(tipografia, grupo) {
+    if (grupo.id == 'Número_espalda') {
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroEspalda);
+    }
+    if (grupo.id == 'Nombre') {
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNombre);
+    }
+    if (grupo.id == 'Short_número') {
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroShort);
+    }
+    if (grupo.id == 'Número_delantero') {
+      grupo.getElementsByTagName('text')[0].setAttribute('font-size', tipografia.fontSizeNumeroDelantero);
     }
   }
 
