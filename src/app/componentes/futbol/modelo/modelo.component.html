@@ -29,7 +29,7 @@
         </div>
       </ng-template>
       <div class="zoom" (click)="aumentarZoom(camiseta)"><i class="fas fa-camera"></i></div>
-      <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto"/>
+      <img src="{{ camiseta.url }}" (click)="modeloElegido(camiseta.id)" class="img-fluid m-auto" [ngClass]="{ 'argento-femenino': camiseta.nombre == 'Argento' }"/>
       <p class="mb-0">{{ camiseta.nombre }}</p>
     </div>
   </ngx-slick-carousel>

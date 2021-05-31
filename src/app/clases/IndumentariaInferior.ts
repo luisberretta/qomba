@@ -1,8 +1,8 @@
 export const indumentariaInferior = [
   {
     nombre: 'short',
-    precioIndividual: 990,
-    precioMayorista: 790,
+    precioIndividual: 1090,
+    precioMayorista: 890,
   },
   {
     nombre: 'medias',
