@@ -1395,14 +1395,14 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E2E5E5',
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera bandas verticales',
         color: '#070A35',
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
@@ -1927,7 +1927,7 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E2E5E5',
-        colores: constantesModelos.paleta10,
+        colores: ['#FFFFFF'],
         posicionMatrix: {}
       },
       {
@@ -2289,7 +2289,14 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#080A3B',
-        colores: ['#FFFFFF'],
+        colores: constantesModelos.paleta10,
+        posicionMatrix: {}
+      },
+      {
+        idParte: 'Remera_banda_central',
+        nombreMostrar: 'Remera banda central',
+        color: '#EDD519',
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
@@ -2460,14 +2467,14 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#384F65',
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera estampa',
         color: '#434554',
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
@@ -2652,7 +2659,7 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E3E7E7',
-        colores: ['#E3E7E7'],
+        colores: ['#FFFFFF'],
         posicionMatrix: {}
       },
       {
@@ -2837,7 +2844,7 @@ export const coloresParte = [
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
         color: "#E6E8E8",
-        colores: constantesModelos.coloresPrincipales,
+        colores: ['#FFFFFF'],
         posicionMatrix: {}
       },
       {
@@ -2851,21 +2858,21 @@ export const coloresParte = [
         idParte: "Remera_linea_superior",
         nombreMostrar: "Remera línea superior",
         color: "#000000",
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: "Remera_linea_media",
         nombreMostrar: "Remera línea media",
         color: "#E82300",
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: "Remera_linea_inferior",
         nombreMostrar: "Remera línea inferior",
         color: "#FEFE00",
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       //medias
@@ -3024,7 +3031,7 @@ export const coloresParte = [
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
         color: "#60A53A",
-        colores: ["#FFFFFF"],
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
@@ -3366,7 +3373,7 @@ export const coloresParte = [
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
         color: "#E0E2E2",
-        colores: constantesModelos.paletaFull,
+        colores: ['#FFFFFF'],
         posicionMatrix: {}
       },
       {
@@ -4433,7 +4440,7 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#EDEDED',
-        colores: constantesModelos.coloresPrincipales,
+        colores: ['#FFFFFF'],
         posicionMatrix: {}
       },
       {
@@ -4792,7 +4799,7 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#E7EAEF',
-        colores: constantesModelos.paletaFull,
+        colores: ['#FFFFFF'],
         posicionMatrix: {}
       },
       {
@@ -4975,14 +4982,14 @@ export const coloresParte = [
         idParte: 'Remera_principal',
         nombreMostrar: 'Remera principal',
         color: '#384F65',
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: 'Remera_estampa',
         nombreMostrar: 'Remera estampa',
         color: '#434554',
-        colores: constantesModelos.coloresPrincipales,
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
