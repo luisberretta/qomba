@@ -3030,177 +3030,6 @@ export const coloresParte = [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#60A53A",
-        colores: constantesModelos.paleta10,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Remera_mangas_y_recorte",
-        nombreMostrar: "Mangas y recorte",
-        color: "#0B0B0A",
-        colores: constantesModelos.paleta10,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Remera_cuello_y_puños",
-        nombreMostrar: "Cuello y puños",
-        color: "#D4D5D5",
-        colores: constantesModelos.coloresPrincipales,
-        posicionMatrix: {}
-      },
-      //medias
-      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
-      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
-      //short
-      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E2E5E5'}),
-      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#0A0A0A'}),
-      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#5EAF30'}),
-      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#5EAF30'}),
-      {
-        idParte: "Nombre",
-        nombreMostrar: "Nombre",
-        posicionesTipografia: [
-          {
-            tipografia: 'SablonUp-College',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1445.7704, 399.1481]
-            }
-          },
-          {
-            tipografia: 'Accidental Presidency',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1449.5812, 399.1481]
-            }
-          },
-          {
-            tipografia: 'Fools Errand',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1457.976, 399.1481]
-            }
-          },
-          {
-            tipografia: 'Agron',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1444.8693, 399.1481]
-            }
-          }
-        ]
-      },
-      {
-        idParte: "Número_espalda",
-        nombreMostrar: "Número espalda",
-        posicionesTipografia: [
-          {
-            tipografia: 'SablonUp-College',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1461.8807, 688.4033]
-            }
-          },
-          {
-            tipografia: 'Accidental Presidency',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1448.0699, 688.4033]
-            }
-          },
-          {
-            tipografia: 'Fools Errand',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1457.976, 688.4033]
-            }
-          },
-          {
-            tipografia: 'Agron',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 1462.7815, 736.7979]
-            }
-          }
-        ]
-      },
-      {
-        idParte: "Número_delantero",
-        nombreMostrar: "Número delantero",
-        posicionesTipografia: [
-          {
-            tipografia: 'SablonUp-College',
-            posicionMatrix: {
-              derecha: [1, 0, 0, 1, 330.2921, 525.3805],
-              izquierda: [1, 0, 0, 1, 664.119, 525.3807],
-              centro: [1, 0, 0, 1, 501.4368, 556.0158]
-            }
-          },
-          {
-            tipografia: 'Accidental Presidency',
-            posicionMatrix: {
-              derecha: [1, 0, 0, 1, 330.2921, 528.3805],
-              izquierda: [1, 0, 0, 1, 673.7001, 530.2802],
-              centro: [1, 0, 0, 1, 501.4368, 559.4033]
-            }
-          },
-          {
-            tipografia: 'Fools Errand',
-            posicionMatrix: {
-              derecha: [1, 0, 0, 1, 330.2921, 525.3805],
-              izquierda: [1, 0, 0, 1, 664.3362, 534.2002],
-              centro: [1, 0, 0, 1, 497.2422, 569.2]
-            }
-          },
-          {
-            tipografia: 'Agron',
-            posicionMatrix: {
-              derecha: [1, 0, 0, 1, 329.3501, 530.2803],
-              izquierda: [1, 0, 0, 1, 678.7001, 533.2798],
-              centro: [1, 0, 0, 1, 511.276, 577.4]
-            }
-          }
-        ],
-      },
-      {
-        idParte: "Short_número",
-        nombreMostrar: "Short número",
-        posicionesTipografia: [
-          {
-            tipografia: 'SablonUp-College',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-            }
-          },
-          {
-            tipografia: 'Accidental Presidency',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
-            }
-          },
-          {
-            tipografia: 'Fools Errand',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-            }
-          },
-          {
-            tipografia: 'Agron',
-            posicionMatrix: {
-              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
-            }
-          }
-        ],
-      },
-      {
-        idParte: "Remera_escudo",
-        nombreMostrar: "Escudo remera",
-        posicionMatrix: {
-          derecha: [0.5456, 0, 0, 0.5456, 316.8086, 435.6962],
-          izquierda: [0.5456, 0, 0, 0.5456, 662.184, 438.775],
-          centro: [0.5456, 0, 0, 0.5456, 488.54, 473.14]
-        }
-      }
-    ],
-  },
-  {
-    idModelo: 19,
-    partes: [
-      {
-        idParte: "Remera_principal",
-        nombreMostrar: "Remera principal",
         color: "#0D0D0D",
         colores: constantesModelos.paleta10,
         posicionMatrix: {}
@@ -3367,33 +3196,26 @@ export const coloresParte = [
     ],
   },
   {
-    idModelo: 20,
+    idModelo: 19,
     partes: [
       {
         idParte: "Remera_principal",
         nombreMostrar: "Remera principal",
-        color: "#E0E2E2",
-        colores: ['#FFFFFF'],
+        color: "#60A53A",
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
-        idParte: "Remera_estampa",
-        nombreMostrar: "Estampa",
-        color: "#4FAB3A",
-        colores: constantesModelos.paletaFull,
-        posicionMatrix: {}
-      },
-      {
-        idParte: "Remera_mangas_y_hombros",
-        nombreMostrar: "Manga y hombros",
-        color: "#4FAB3A",
-        colores: constantesModelos.paletaFull,
+        idParte: "Remera_mangas_y_recorte",
+        nombreMostrar: "Mangas y recorte",
+        color: "#0B0B0A",
+        colores: constantesModelos.paleta10,
         posicionMatrix: {}
       },
       {
         idParte: "Remera_cuello_y_puños",
         nombreMostrar: "Cuello y puños",
-        color: "#000000",
+        color: "#D4D5D5",
         colores: constantesModelos.coloresPrincipales,
         posicionMatrix: {}
       },
@@ -3401,10 +3223,10 @@ export const coloresParte = [
       Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
       Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
       //short
-      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E8EAEF'}),
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E2E5E5'}),
       Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#0A0A0A'}),
-      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#35A12C'}),
-      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#2B7B24'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#5EAF30'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#5EAF30'}),
       {
         idParte: "Nombre",
         nombreMostrar: "Nombre",
@@ -3412,25 +3234,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1445.7704, 399.1483]
+              unica: [1, 0, 0, 1, 1445.7704, 399.1481]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1451.5812, 399.1483]
+              unica: [1, 0, 0, 1, 1449.5812, 399.1481]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1445.7704, 399.1483]
+              unica: [1, 0, 0, 1, 1457.976, 399.1481]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1444.8695, 399.1483]
+              unica: [1, 0, 0, 1, 1444.8693, 399.1481]
             }
           }
         ]
@@ -3442,25 +3264,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1461.8812, 688.4034]
+              unica: [1, 0, 0, 1, 1461.8807, 688.4033]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1450.0704, 688.4033]
+              unica: [1, 0, 0, 1, 1448.0699, 688.4033]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1461.8812, 688.4033]
+              unica: [1, 0, 0, 1, 1457.976, 688.4033]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 1462.7822, 745.0645]
+              unica: [1, 0, 0, 1, 1462.7815, 736.7979]
             }
           }
         ]
@@ -3472,33 +3294,33 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
-              izquierda: [1, 0, 0, 1, 674.7363, 512.9536],
-              centro: [1, 0, 0, 1, 501.4369, 556.0157]
+              derecha: [1, 0, 0, 1, 330.2921, 525.3805],
+              izquierda: [1, 0, 0, 1, 664.119, 525.3807],
+              centro: [1, 0, 0, 1, 501.4368, 556.0158]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
-              izquierda: [1, 0, 0, 1, 664.3359, 517.3198],
-              centro: [1, 0, 0, 1, 505.6923, 556]
+              derecha: [1, 0, 0, 1, 330.2921, 528.3805],
+              izquierda: [1, 0, 0, 1, 673.7001, 530.2802],
+              centro: [1, 0, 0, 1, 501.4368, 559.4033]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
-              izquierda: [1, 0, 0, 1, 664.3359, 517.3199],
-              centro: [1, 0, 0, 1, 495.6928, 556.0001]
+              derecha: [1, 0, 0, 1, 330.2921, 525.3805],
+              izquierda: [1, 0, 0, 1, 664.3362, 534.2002],
+              centro: [1, 0, 0, 1, 497.2422, 569.2]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
-              izquierda: [1, 0, 0, 1, 690.8583, 512.9536],
-              centro: [1, 0, 0, 1, 510.0401, 558.2]
+              derecha: [1, 0, 0, 1, 329.3501, 530.2803],
+              izquierda: [1, 0, 0, 1, 678.7001, 533.2798],
+              centro: [1, 0, 0, 1, 511.276, 577.4]
             }
           }
         ],
@@ -3510,25 +3332,25 @@ export const coloresParte = [
           {
             tipografia: 'SablonUp-College',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
             }
           },
           {
             tipografia: 'Accidental Presidency',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+              unica: [1, 0, 0, 1, 373.1173, 1533.6372]
             }
           },
           {
             tipografia: 'Fools Errand',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
             }
           },
           {
             tipografia: 'Agron',
             posicionMatrix: {
-              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+              unica: [1, 0, 0, 1, 378.1443, 1540.4573]
             }
           }
         ],
@@ -3537,15 +3359,15 @@ export const coloresParte = [
         idParte: "Remera_escudo",
         nombreMostrar: "Escudo remera",
         posicionMatrix: {
-          derecha: [0.5456, 0, 0, 0.5456, 305.537, 425.2753],
-          izquierda: [0.5456, 0, 0, 0.5456, 659.9744, 422.775],
-          centro: [0.5456, 0, 0, 0.5456, 487.0616, 469.0219]
+          derecha: [0.5456, 0, 0, 0.5456, 316.8086, 435.6962],
+          izquierda: [0.5456, 0, 0, 0.5456, 662.184, 438.775],
+          centro: [0.5456, 0, 0, 0.5456, 488.54, 473.14]
         }
       }
     ],
   },
   {
-    idModelo: 21,
+    idModelo: 20,
     partes: [
       {
         idParte: "Remera_principal",
@@ -3725,6 +3547,184 @@ export const coloresParte = [
           derecha: [0.5456, 0, 0, 0.5456, 296, 453],
           izquierda: [0.5456, 0, 0, 0.5456, 650, 457],
           centro: [0.5456, 0, 0, 0.5456, 483.768, 490.3994]
+        }
+      }
+    ],
+  },
+  {
+    idModelo: 21,
+    partes: [
+      {
+        idParte: "Remera_principal",
+        nombreMostrar: "Remera principal",
+        color: "#E0E2E2",
+        colores: ['#FFFFFF'],
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_estampa",
+        nombreMostrar: "Estampa",
+        color: "#4FAB3A",
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_mangas_y_hombros",
+        nombreMostrar: "Manga y hombros",
+        color: "#4FAB3A",
+        colores: constantesModelos.paletaFull,
+        posicionMatrix: {}
+      },
+      {
+        idParte: "Remera_cuello_y_puños",
+        nombreMostrar: "Cuello y puños",
+        color: "#000000",
+        colores: constantesModelos.coloresPrincipales,
+        posicionMatrix: {}
+      },
+      //medias
+      Object.assign({}, constantesModelos.mediasPrincipal, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.mediasLinea, {color: '#FFFFFF'}),
+      //short
+      Object.assign({}, constantesModelos.shortPrincipal, {color: '#E8EAEF'}),
+      Object.assign({}, constantesModelos.shortLineaSuperior, {color: '#0A0A0A'}),
+      Object.assign({}, constantesModelos.shortLineaInferior, {color: '#35A12C'}),
+      Object.assign({}, constantesModelos.shortLineaLateral, {color: '#2B7B24'}),
+      {
+        idParte: "Nombre",
+        nombreMostrar: "Nombre",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.7704, 399.1483]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1451.5812, 399.1483]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1445.7704, 399.1483]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1444.8695, 399.1483]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_espalda",
+        nombreMostrar: "Número espalda",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1461.8812, 688.4034]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1450.0704, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1461.8812, 688.4033]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 1462.7822, 745.0645]
+            }
+          }
+        ]
+      },
+      {
+        idParte: "Número_delantero",
+        nombreMostrar: "Número delantero",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 674.7363, 512.9536],
+              centro: [1, 0, 0, 1, 501.4369, 556.0157]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 664.3359, 517.3198],
+              centro: [1, 0, 0, 1, 505.6923, 556]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 664.3359, 517.3199],
+              centro: [1, 0, 0, 1, 495.6928, 556.0001]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              derecha: [1, 0, 0, 1, 320.2293, 512.9535],
+              izquierda: [1, 0, 0, 1, 690.8583, 512.9536],
+              centro: [1, 0, 0, 1, 510.0401, 558.2]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Short_número",
+        nombreMostrar: "Short número",
+        posicionesTipografia: [
+          {
+            tipografia: 'SablonUp-College',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+            }
+          },
+          {
+            tipografia: 'Accidental Presidency',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+            }
+          },
+          {
+            tipografia: 'Fools Errand',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+            }
+          },
+          {
+            tipografia: 'Agron',
+            posicionMatrix: {
+              unica: [1, 0, 0, 1, 296.5601, 1509.46]
+            }
+          }
+        ],
+      },
+      {
+        idParte: "Remera_escudo",
+        nombreMostrar: "Escudo remera",
+        posicionMatrix: {
+          derecha: [0.5456, 0, 0, 0.5456, 305.537, 425.2753],
+          izquierda: [0.5456, 0, 0, 0.5456, 659.9744, 422.775],
+          centro: [0.5456, 0, 0, 0.5456, 487.0616, 469.0219]
         }
       }
     ],

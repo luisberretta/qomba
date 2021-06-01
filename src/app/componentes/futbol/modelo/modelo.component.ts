@@ -120,7 +120,7 @@ export class ModeloComponent implements OnInit, OnChanges {
       setTimeout(() => {
         this.ngxLoader.stop();
         this.proximoPaso.emit(this.formPasoModelo.value);
-      },1500)
+      },1750)
     }
   }
 
