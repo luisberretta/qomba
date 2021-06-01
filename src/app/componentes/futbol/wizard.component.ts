@@ -239,6 +239,7 @@ export class WizardComponent implements OnInit {
 
   generarPedidoModelo(formModelo) {
     this.pedido.modelo = formModelo.modelo;
+    this.pedido.indexModelo = formModelo.index;
   }
 
   generarPedidoColor(formColor) {
@@ -396,6 +397,7 @@ export class WizardComponent implements OnInit {
   generarFormModelo() {
     this.formModelo = {
       modelo: this.pedido.modelo,
+      index: this.pedido.indexModelo
     };
   }
 

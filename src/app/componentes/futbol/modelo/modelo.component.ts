@@ -8,11 +8,10 @@ import {
   OnChanges,
   SimpleChanges
 } from '@angular/core';
-import $ from 'jquery';
 
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {NgbModal,NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {camisetaModelos} from "../../../clases/CamisetaModelo";
 import {SlickCarouselComponent} from "ngx-slick-carousel";
 import {NgxUiLoaderService} from "ngx-ui-loader";
@@ -25,7 +24,8 @@ import {NgxUiLoaderService} from "ngx-ui-loader";
 export class ModeloComponent implements OnInit, OnChanges {
 
   formPasoModelo: FormGroup = new FormGroup({
-    modelo: new FormControl(null,[Validators.required])
+    modelo: new FormControl(null, [Validators.required]),
+    index: new FormControl(0,[Validators.required])
   });
   submit: boolean = false;
   @Output() proximoPaso = new EventEmitter<string>();
@@ -40,7 +40,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   modalRef: NgbModalRef;
   imgZoom: string;
   imgZoomAlt: string;
-  @ViewChild('template', { static: true }) modalTemplate;
+  @ViewChild('template', {static: true}) modalTemplate;
   @ViewChild('slickModal') slick: SlickCarouselComponent;
   slideConfig = {
     "slidesToShow": 4,
@@ -62,13 +62,15 @@ export class ModeloComponent implements OnInit, OnChanges {
     ]
   };
 
-  constructor(private modalService: NgbModal, private ngxLoader: NgxUiLoaderService ) {
+  constructor(private modalService: NgbModal, private ngxLoader: NgxUiLoaderService) {
   }
 
   ngOnInit(): void {
     this.initCamisetas();
     this.formPasoModelo.get('modelo').valueChanges.subscribe(() => {
       this.modeloSeleccionado.emit(this.formPasoModelo.get('modelo').value);
+      // @ts-ignore
+      this.formPasoModelo.get('index').setValue(this.slick.currentIndex);
     });
   }
 
@@ -86,21 +88,17 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   generarFormulario(formModelo) {
     setTimeout(() => {
-      if(window.innerWidth < 768) {
-        this.slick.slickGoTo(formModelo.modelo.id - 3);
-      } else {
-        this.slick.slickGoTo(formModelo.modelo.id - 1);
-      }
+      this.slick.slickGoTo(formModelo.index);
     }, 100);
-
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
+    this.formPasoModelo.get('index').setValue(formModelo.index);
     this.generoModelo = formModelo.modelo.tipo;
-    this.generoModelo == 'hombre'? this.modelosHombre() :this.modelosMujer();
+    this.generoModelo == 'hombre' ? this.modelosHombre() : this.modelosMujer();
     this.modeloElegido(this.formPasoModelo.get('modelo').value.id);
   }
 
   abrirModal() {
-    this.modalRef = this.modalService.open(this.modalTemplate, { centered: true });
+    this.modalRef = this.modalService.open(this.modalTemplate, {centered: true});
   }
 
   cerrar() {
@@ -147,7 +145,7 @@ export class ModeloComponent implements OnInit, OnChanges {
   }
 
   detalle(modeloId) {
-    if(window.innerWidth <= 768) {
+    if (window.innerWidth <= 768) {
       this.detallePrecioId = modeloId;
     } else {
       this.detallePrecioId = null;
