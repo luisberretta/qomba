@@ -4,6 +4,7 @@ export interface Pedido {
 
   //MODELO
   modelo?:any;
+  indexModelo?:number;
   agregarShort?: boolean;
   agregarMedias?:boolean;
 
