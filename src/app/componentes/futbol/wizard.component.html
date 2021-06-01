@@ -36,10 +36,10 @@
     </div>
     <div class="row justify-content-center">
       <div class="{{ paso == 'resumen-precio' ? 'col-5' : 'col-6' }} text-right col-md-2" *ngIf="paso != 'modelo'">
-        <a class="btn btn-atras btn-block" (click)="anterior()">Atrás</a>
+        <a class="btn btn-atras btn-block" (click)="anterior()" tabindex="1">Atrás</a>
       </div>
       <div class="col-6 col-md-2" [ngClass]="{ 'text-center': paso == 'modelo' }" *ngIf="paso != 'resumen-precio'">
-        <a class="btn btn-continuar btn-block" (click)="siguiente()">Siguiente</a>
+        <a class="btn btn-continuar btn-block" (click)="siguiente()" (keydown.enter)="siguiente()" tabindex="0">Siguiente</a>
       </div>
       <div class="col-md-2 col-5" *ngIf="paso == 'resumen-precio'">
         <a class="btn btn-primary btn-confirmar btn-block" (click)="generarPedido()">Confirmar</a>

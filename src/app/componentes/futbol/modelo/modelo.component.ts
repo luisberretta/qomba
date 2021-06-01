@@ -8,6 +8,8 @@ import {
   OnChanges,
   SimpleChanges
 } from '@angular/core';
+import $ from 'jquery';
+
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal,NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
@@ -84,7 +86,11 @@ export class ModeloComponent implements OnInit, OnChanges {
 
   generarFormulario(formModelo) {
     setTimeout(() => {
-      this.slick.slickGoTo(formModelo.modelo.id - 1);
+      if(window.innerWidth < 768) {
+        this.slick.slickGoTo(formModelo.modelo.id - 3);
+      } else {
+        this.slick.slickGoTo(formModelo.modelo.id - 1);
+      }
     }, 100);
 
     this.formPasoModelo.get('modelo').setValue(formModelo.modelo);
