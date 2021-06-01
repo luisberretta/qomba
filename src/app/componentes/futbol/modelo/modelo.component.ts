@@ -9,6 +9,7 @@ import {
   SimpleChanges
 } from '@angular/core';
 
+
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {NgbModal, NgbModalRef} from "@ng-bootstrap/ng-bootstrap";
 import {camisetaModelos} from "../../../clases/CamisetaModelo";
@@ -123,7 +124,7 @@ export class ModeloComponent implements OnInit, OnChanges {
       setTimeout(() => {
         this.ngxLoader.stop();
         this.proximoPaso.emit(this.formPasoModelo.value);
-      }, 1500)
+      },1750)
     }
   }
 

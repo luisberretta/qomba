@@ -329,6 +329,10 @@ export class WizardComponent implements OnInit {
   }
 
   generarPedido() {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth'
+    });
     this.ngxLoader.startLoader('loader-pedido');
     let svgImage = this.personaComponent.generarImagen();
     svgAsPngUri(svgImage, "svg.png").then((data) => {
@@ -355,7 +359,6 @@ export class WizardComponent implements OnInit {
           });
       });
     });
-
   }
 
   generarColoresModelo(){
@@ -628,5 +631,9 @@ export class WizardComponent implements OnInit {
   redireccionar() {
     this.modalService.dismissAll();
     window.location.reload();
+  }
+
+  event() {
+    console.log("Enter");
   }
 }
