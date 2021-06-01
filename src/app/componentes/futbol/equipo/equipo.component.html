@@ -98,9 +98,11 @@
       <label for="telefonoContacto" class="col-md-2 col-4 text-left pr-0">Celular:</label>
       <div class="col-md-4 col-8 text-left pl-0">
         <input class="form-control" type="text" id="telefonoContacto" placeholder="Cód. Área + Número" formControlName="telefonoContacto">
+        <small>Sin el 0 y sin el 15.</small>
         <div *ngIf="submit && formPasoEquipo.controls.telefonoContacto.errors" class="invalid-feedback">
           <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.required">Teléfono requerido.</div>
           <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors.pattern">Ingrese sólo números.</div>
+          <div *ngIf="formPasoEquipo.controls.telefonoContacto.errors?.maxlength || formPasoEquipo.controls.telefonoContacto.errors?.minlength">Debe tener 10 números.</div>
         </div>
       </div>
     </div>

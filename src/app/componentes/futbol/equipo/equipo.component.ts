@@ -17,7 +17,7 @@ export class EquipoComponent implements OnInit, OnChanges {
   formPasoEquipo: FormGroup = new FormGroup({
     nombreEquipo: new FormControl(null, [Validators.required]),
     nombreContacto: new FormControl(null, [Validators.required]),
-    telefonoContacto: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")]),
+    telefonoContacto: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]),
     emailContacto: new FormControl(null, [Validators.required, Validators.email]),
     cantidadEquipo: new FormControl(1, [Validators.min(1), Validators.required]),
     equipo: new FormArray([])
@@ -47,6 +47,11 @@ export class EquipoComponent implements OnInit, OnChanges {
           jugador = this.agregarValidadores(jugador);
           this.formEquipoControl.push(jugador);
         }
+      }
+    });
+    this.formPasoEquipo.get('telefonoContacto').valueChanges.subscribe((valor) => {
+      if(isNaN(Number(valor))) {
+        this.formPasoEquipo.get('telefonoContacto').setValue("", { emitEvent: false });
       }
     });
   }
