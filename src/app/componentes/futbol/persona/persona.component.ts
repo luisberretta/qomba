@@ -38,6 +38,7 @@ export class PersonaComponent implements OnInit {
   }
 
   generarModelo(modelo) {
+    this.coloresModelo = [];
     this.modeloSeleccionado = modelo;
     this.modeloSVG = null;
     this.svgService.obtenerSVG(this.url + modelo.urlSvg).subscribe((data) => {
