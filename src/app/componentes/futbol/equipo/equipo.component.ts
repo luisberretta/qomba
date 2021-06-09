@@ -12,7 +12,7 @@ export class EquipoComponent implements OnInit, OnChanges {
   @Input() formEquipo: any;
   @Output() proximoPaso = new EventEmitter();
   @Output() anteriorPaso = new EventEmitter();
-  talles: string[] = ["XS", "S", "M", "L", "XL", "XXL"];
+  talles: string[] = ['XS', "S", "M", "L", "XL", "XXL"];
   submit: boolean = false;
   formPasoEquipo: FormGroup = new FormGroup({
     nombreEquipo: new FormControl(null, [Validators.required]),
@@ -42,8 +42,8 @@ export class EquipoComponent implements OnInit, OnChanges {
             nombreCamiseta: new FormControl(null),
             numero: new FormControl(null, [Validators.min(0), Validators.max(99)]),
             talleCamiseta: new FormControl(null, [Validators.required]),
-            talleShort: new FormControl(null,)
-          })
+            talleShort: new FormControl(null),
+          });
           jugador = this.agregarValidadores(jugador);
           this.formEquipoControl.push(jugador);
         }

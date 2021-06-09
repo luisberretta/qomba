@@ -536,7 +536,7 @@ export class WizardComponent implements OnInit {
   generarFormEquipo() {
     this.formEquipo = {
       llevaNombreCamiseta: this.pedido.llevaNombreEspalda,
-      llevaNumeroCamiseta: this.pedido.llevaNumeroDelantero,
+      llevaNumeroCamiseta: this.pedido.llevaNumeroDelantero || this.pedido.llevaNumeroEspalda,
       llevaShort: this.pedido.agregarShort,
       detalleEquipo: this.pedido.detalleEquipo,
       nombreEquipo: this.pedido.nombreEquipo,
